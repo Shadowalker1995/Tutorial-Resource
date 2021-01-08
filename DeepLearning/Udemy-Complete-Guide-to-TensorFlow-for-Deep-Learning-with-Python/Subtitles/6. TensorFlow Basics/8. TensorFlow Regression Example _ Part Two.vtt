@@ -1,0 +1,946 @@
+WEBVTT
+
+00:05.530 --> 00:07.540
+Welcome back everyone in this lecture.
+
+00:07.540 --> 00:13.390
+We're going to see how we can now solve the regression task with the tensor estimator API.
+
+00:13.400 --> 00:19.460
+Now there are lots of other higher level API such as carious the senseful layers API tensor Flo's slim
+
+00:19.760 --> 00:20.400
+etc..
+
+00:20.430 --> 00:24.960
+Now we're going to cover the most popular ones later on in the Miscellaneous section of the course.
+
+00:25.130 --> 00:30.380
+We'll usually deal with either a pure tensor flow or this estimator API just here in the beginning to
+
+00:30.380 --> 00:33.890
+kind of get you slowly ranking up on your intenser flow skills.
+
+00:33.980 --> 00:38.560
+But right now let's quickly describe how to use the estimator API.
+
+00:38.640 --> 00:42.840
+So the T.F. estimator API actually has several model types to choose from going to quickly show you
+
+00:42.840 --> 00:44.390
+the various options.
+
+00:44.970 --> 00:46.280
+So here are the estimators types.
+
+00:46.300 --> 00:50.980
+There's first just the classic linear classifier and it just constructs a linear classification model.
+
+00:51.180 --> 00:54.760
+And there's also a linear regressors which constructs a linear regression model.
+
+00:54.870 --> 01:00.220
+Things that we've seen in the past then there's also the densely connected neural network classifier
+
+01:00.220 --> 01:04.660
+which constructs a neural network classification model and then there's also the DNN regressors which
+
+01:04.660 --> 01:07.630
+is densely connected neural network regress model.
+
+01:07.810 --> 01:13.750
+So before we had these classic linear classification and linear regression methods now we can use neural
+
+01:13.750 --> 01:17.770
+network classification models and there's slight differences in how you can use these two which will
+
+01:17.770 --> 01:23.380
+cover later on when we actually show the examples of the way the feature columns have to be given to
+
+01:23.380 --> 01:25.060
+the estimator object.
+
+01:25.120 --> 01:27.960
+And then besides those there's actually combine versions.
+
+01:28.090 --> 01:31.790
+So there's DNN will in your combine classifier and it just constructs a neural network.
+
+01:31.870 --> 01:36.970
+And when you combine classification model and similarly there's the same thing for the regress or you
+
+01:36.970 --> 01:38.250
+don't have to worry about memorizing.
+
+01:38.320 --> 01:43.510
+Right now we'll walk you through it very slowly and again we'll cover it in more detail than that miscellaneous
+
+01:43.510 --> 01:45.370
+section.
+
+01:45.600 --> 01:49.660
+So in general the format to use these estimator API is we do the following.
+
+01:49.750 --> 01:53.600
+We first the final list of feature columns and the feature columns.
+
+01:53.610 --> 01:56.350
+It's actually a special estimator data type.
+
+01:56.430 --> 02:02.010
+So you end up doing is you can either define just a general feature column and then pass that into a
+
+02:02.010 --> 02:07.860
+list or later on we're going to see that the estimator API actually has a lot of built in tools to help
+
+02:07.860 --> 02:12.300
+you deal with things like categorical features and not having to worry about making dummy variables
+
+02:12.300 --> 02:12.980
+out of them.
+
+02:13.170 --> 02:17.970
+So the final list of feature columns are typical example right now it's going to be really simple.
+
+02:17.970 --> 02:22.800
+So you're basically just going to see us make that estimator feature columns API call but later on we'll
+
+02:22.800 --> 02:27.320
+see more complicated examples and we'll see how the customary path can really help you with that.
+
+02:27.330 --> 02:31.310
+So once you have the final list of feature columns what you end up doing is you create the estimator
+
+02:31.320 --> 02:35.420
+model and then after you do that you go ahead and create a data input function.
+
+02:35.550 --> 02:36.880
+And that's just another convenience.
+
+02:36.880 --> 02:41.730
+The major API has for you the data input function is basically an input function that either takes in
+
+02:42.000 --> 02:47.900
+your data as a null array or there's a separate data input function for Pandurs data frames.
+
+02:47.940 --> 02:51.480
+So if you like working pie you can stick a pie if you prefer Pancho's.
+
+02:51.660 --> 02:56.490
+You can stick with pand those is just two different calls depending on what kind of format your data
+
+02:56.490 --> 02:57.440
+is in.
+
+02:57.450 --> 03:01.920
+Then once you've done that it almost works like if you're familiar of sikat learn it works like one
+
+03:01.920 --> 03:02.400
+of their.
+
+03:02.390 --> 03:06.870
+Machine learning model objects So basically once you have your estimator model and you pass in the feature
+
+03:06.870 --> 03:09.330
+columns you call train to train the model.
+
+03:09.390 --> 03:13.980
+You can call it evaluate it to evaluate it against some test data that you already know the labels for
+
+03:14.370 --> 03:16.260
+and then you can also separately call predict.
+
+03:16.260 --> 03:20.460
+So maybe you have some test data that you don't know the correct labels for and you just want to predict
+
+03:20.790 --> 03:23.710
+what you think the labels could be called a predict method.
+
+03:23.730 --> 03:28.040
+So you have to train a method evaluate method and predict method all the estimate or object.
+
+03:28.080 --> 03:29.970
+So let's go ahead and jump right in.
+
+03:29.970 --> 03:34.860
+Keep in mind this is a really simple example so it may not be the best use case for the estimator API
+
+03:34.890 --> 03:40.890
+just because it really only has one feature later on for the other examples of regression and classification
+
+03:40.890 --> 03:42.970
+that we'll see later on in the section.
+
+03:42.990 --> 03:45.960
+You'll see the estimate API is a lot more useful here.
+
+03:45.960 --> 03:47.570
+OK let's start off by creating that feature.
+
+03:47.570 --> 03:53.490
+COLLINS We were discussing earlier I'll head over to the notebook now for underscore column and then
+
+03:53.490 --> 03:59.300
+Dot again you can see that there's different columns so you can basically apply two.
+
+03:59.490 --> 04:03.950
+And we're going to show a lot more examples of this in our classification walk through our code along.
+
+04:03.960 --> 04:09.600
+So right now I'm going to kind of wave my hand over this part but keep in mind we will take a much deeper
+
+04:09.600 --> 04:16.380
+dive into this feature column but I'm going to say T.F. feature column Gnumeric column because we do
+
+04:16.380 --> 04:23.250
+have a numeric column value of x data and then if you do shift tab here it needs a key and a shape so
+
+04:23.250 --> 04:26.850
+I'll say the key is to string x and the shape.
+
+04:26.850 --> 04:31.620
+Remember we just have essentially one dimension here so just say shape is 1.
+
+04:31.620 --> 04:34.380
+And then this whole thing needs to go into a list.
+
+04:34.410 --> 04:39.750
+So we actually just have one feature here so we have all the feature columns essentially just a list
+
+04:39.750 --> 04:43.790
+of a single item here a single feature column and it's a numeric column.
+
+04:43.920 --> 04:46.840
+So kind of keep this in mind for the classification code along.
+
+04:46.950 --> 04:53.360
+We're going to walk through a realistic example that has many more columns and what we're showing here.
+
+04:53.370 --> 04:55.570
+OK so we have our feature set up.
+
+04:55.770 --> 04:59.220
+Then we set up our estimator and to do that.
+
+04:59.230 --> 05:06.160
+This is basically the main part of the API say T.F. dot estimator dot and then we're going to do a linear
+
+05:06.190 --> 05:11.500
+regress or so there's a linear classifier and if you actually go back here you can see that there's
+
+05:11.980 --> 05:17.390
+various T.F. estimators There's also a dense near on that were classifier and that's neural network
+
+05:17.400 --> 05:18.100
+aggressor.
+
+05:18.160 --> 05:22.110
+We'll talk about those later on but for now we have a simple regressors.
+
+05:22.270 --> 05:27.640
+So we're going to say T.F. the estimator that linear aggressor and then we need to tell it where are
+
+05:27.640 --> 05:28.760
+the feature columns.
+
+05:28.900 --> 05:30.890
+So it has a parameter called feature columns.
+
+05:30.910 --> 05:34.040
+And then you pass in that list of feature columns that you created.
+
+05:34.390 --> 05:37.960
+And again we're going to see much more complicated examples where we have more than just one feature
+
+05:37.960 --> 05:40.570
+column OK.
+
+05:40.630 --> 05:43.170
+Then you should see kind of a bunch of warnings blah blah.
+
+05:43.180 --> 05:44.280
+But don't worry about that.
+
+05:44.290 --> 05:45.900
+It's just basically information.
+
+05:45.900 --> 05:51.850
+So estimator has been created and this kind of works basically like a psychic learn as the mater if
+
+05:51.850 --> 05:52.890
+you've used those before.
+
+05:53.050 --> 05:57.120
+But I also want to show you how did that train split you've got over it before.
+
+05:57.130 --> 05:58.990
+So let's actually implement it now.
+
+05:59.340 --> 06:09.550
+We'll say from S-K learn the model underscore selection import train test split and then if we say train
+
+06:09.550 --> 06:21.130
+test play here I'm going to do the following or say that X train and then X event or X tests.
+
+06:21.150 --> 06:27.000
+Really depends what we want to call it and then why train and then we have y evil or white test is equal
+
+06:27.000 --> 06:28.570
+to train tests.
+
+06:29.130 --> 06:34.300
+And then I'm going to pass in my X data and then I'm going to pass on the true values for that.
+
+06:34.300 --> 06:39.550
+And let's go ahead and say my test size is equal to 0.3.
+
+06:39.780 --> 06:47.370
+And then let's also give it a random states of ones or want in case you kind of want to follow along.
+
+06:47.380 --> 06:47.670
+All right.
+
+06:47.680 --> 06:49.520
+So now I've done my train split.
+
+06:49.610 --> 06:51.720
+Let's confirm that I kind of check these out.
+
+06:52.060 --> 06:54.860
+So if I take a look at my training data.
+
+06:55.270 --> 06:57.260
+I want to actually print out the shape of this trick.
+
+06:57.280 --> 07:02.950
+So check out the shape and I have 700000 points that make sense.
+
+07:02.950 --> 07:08.360
+My training point should be 70 percent of my data and 70 percent of a million is 700000.
+
+07:08.500 --> 07:11.840
+Let's go ahead and check the same thing for my x evil.
+
+07:12.190 --> 07:19.000
+So say X eveil shape and that's 300000 and you'll see the same things for the White train and why eveil
+
+07:19.600 --> 07:22.420
+belts go ahead and set up the estimator inputs.
+
+07:22.420 --> 07:28.390
+So S-meter inputs a little bit of this funky thing but basically you need to have an input function
+
+07:28.420 --> 07:34.240
+that kind of acts like your feed dictionary and batch size indicator all at once.
+
+07:35.030 --> 07:36.760
+So we show you how to do that right now.
+
+07:37.100 --> 07:41.060
+You're going to say inputs underscore if you are see.
+
+07:41.210 --> 07:42.890
+So just the variable name.
+
+07:43.160 --> 07:50.690
+Then you're going to call T.F. estimator that inputs and then right now we're going to be inputting
+
+07:50.690 --> 07:52.110
+from a null PI array.
+
+07:52.280 --> 07:58.370
+So we're going to say no PI inputs a fan but if you also hit tab here you'll notice there's an option
+
+07:58.370 --> 08:00.240
+for a pair of those data input.
+
+08:00.410 --> 08:02.740
+So what's nice about this T.F. the estimator API.
+
+08:02.870 --> 08:05.760
+It can take inputs from both NUMP pie and Pandurs.
+
+08:05.780 --> 08:07.780
+Right now we're dealing with some pie in the future.
+
+08:07.790 --> 08:13.180
+We'll see it coatl example with a panda state of free.
+
+08:13.310 --> 08:17.420
+The next step to passen is basically the x and y.
+
+08:17.420 --> 08:22.980
+So we're going to do here is essentially pasan a dictionary here.
+
+08:23.210 --> 08:28.960
+So remember appear if we come back we said that this feature column has this key X.
+
+08:29.240 --> 08:36.580
+So we're going to pass in the same key X there and then say X underscore train.
+
+08:36.710 --> 08:42.680
+So there'll be X data and then we're also going to use y train and then let's go ahead and give it a
+
+08:42.680 --> 08:48.290
+batch size so what you can see we're kind of doing all these steps though we there are multiple lines
+
+08:48.380 --> 08:51.900
+in one single input function with the estimator API.
+
+08:52.130 --> 08:56.100
+We can say batch size 8 or 4 you can kind of play around with that.
+
+08:56.240 --> 08:59.300
+And here I'm just going to say a couple of more arguments.
+
+08:59.300 --> 09:02.520
+Number of e POCs is equal to none.
+
+09:02.550 --> 09:07.620
+And then I'm also going to say shuffle is equal to true.
+
+09:07.730 --> 09:08.300
+All right.
+
+09:08.300 --> 09:14.300
+So I have my PI input function ready to go and then I'm going to do a really similar thing here.
+
+09:14.330 --> 09:19.780
+I'm going to copy and paste this and then I'm going to create two more input functions later on there
+
+09:19.820 --> 09:23.140
+we're going to use for evaluation.
+
+09:23.230 --> 09:31.020
+So I'm going to basically rename this to train and put phunk and then set that equal to the same thing
+
+09:31.020 --> 09:31.410
+here.
+
+09:31.410 --> 09:36.120
+Let me zoom in or zoom out one level so we can kind of see a little bit more of all this.
+
+09:36.300 --> 09:37.390
+So there's my input function.
+
+09:37.390 --> 09:38.510
+There's my original one.
+
+09:38.700 --> 09:45.350
+And now I have one almost the exact copy called Train funk except here I'm going to say that the number
+
+09:45.380 --> 09:45.920
+epochs.
+
+09:45.930 --> 09:49.920
+I want it to be trained on is specifically 1000.
+
+09:49.920 --> 09:55.030
+And I also want to shuffle equal to false OK.
+
+09:55.030 --> 09:55.830
+There we go.
+
+09:57.600 --> 10:02.040
+And the reason I have a shuffle equals false here for this train is because I'm going to be using this
+
+10:02.040 --> 10:06.870
+train input function for evaluation against a test input function.
+
+10:06.960 --> 10:09.360
+So I'm actually going to copy this whole thing again.
+
+10:11.670 --> 10:13.090
+Do shift enter.
+
+10:13.110 --> 10:18.370
+Paste it but instead of being trained it's going to be tested and also it's going to be called evolves.
+
+10:18.390 --> 10:20.860
+Kind of follow the same naming convention we have earlier.
+
+10:21.090 --> 10:27.660
+And instead of X train this will be X evil and instead of Y train that will be y Ebell
+
+10:30.730 --> 10:32.100
+OK perfect.
+
+10:32.120 --> 10:33.950
+So we have these three input functions.
+
+10:33.950 --> 10:36.710
+Our first step is to train the estimator.
+
+10:36.710 --> 10:44.370
+So the way we do that is we say estimator that train and then you just pasand the input function that
+
+10:44.370 --> 10:45.590
+you just created.
+
+10:45.630 --> 10:47.600
+So say input phunk.
+
+10:47.760 --> 10:53.100
+Now for this very first one we didn't actually specify the number of epoxy or steps we want it to run.
+
+10:53.130 --> 10:58.000
+So we're going to do that here in the train so you can say input func and you can say steps.
+
+10:58.020 --> 10:59.820
+So that's how we're going to have here.
+
+10:59.820 --> 11:02.920
+We'll say run it for 1000 steps.
+
+11:03.090 --> 11:04.300
+So we're going to run that.
+
+11:04.350 --> 11:08.850
+Ill save it and then you should eventually see the steps running gives you information.
+
+11:08.860 --> 11:14.430
+Mary these are errors essentially just reporting back what the final last step is et cetera slashed
+
+11:14.430 --> 11:16.010
+the loss at each of these steps.
+
+11:16.110 --> 11:21.720
+So you can see here we start with a huge loss 4:51 And very quickly we begin to die down.
+
+11:21.720 --> 11:25.770
+It may come up and down as you continue training can see here kind of oscillates a little bit between
+
+11:25.770 --> 11:31.900
+6 and 11 but eventually we get some sort of convergence to a loss here on our training set.
+
+11:31.920 --> 11:34.010
+So we're able to train the estimator.
+
+11:34.050 --> 11:39.690
+Now it's time to actually get some evaluation metrics and the estimator API also has nice methods or
+
+11:39.690 --> 11:41.070
+convenience methods for that.
+
+11:41.970 --> 11:44.720
+So I will zoom in on my time here so we can see that.
+
+11:44.890 --> 11:51.560
+Let's go to get the metrics on the training data the way I'm going to do that is I will say train underscore
+
+11:51.710 --> 11:59.000
+metrics and then off of this estimator object instead of saying like that up here train I'm going to
+
+11:59.000 --> 12:06.080
+say evaluates and then I'm going to specify that my input function is now that train input function
+
+12:06.750 --> 12:10.340
+and I'll say steps is equal to 1000.
+
+12:10.340 --> 12:16.610
+So the reason I want this train input function instead of this input function is because since I'm using
+
+12:16.610 --> 12:21.560
+this to evaluate I specifically don't want to shuffle this I want to make sure everything's in the same
+
+12:21.620 --> 12:22.220
+order.
+
+12:22.280 --> 12:27.980
+That way I can do the evaluation correctly and see how it performs against the true label.
+
+12:27.980 --> 12:31.160
+So we're going to run that get those train metrics.
+
+12:31.160 --> 12:33.830
+So depending on your computer this may take a little bit of time.
+
+12:33.830 --> 12:36.020
+You should end up with some kind of huge output here.
+
+12:36.170 --> 12:40.910
+And if this output is bothering you you can always click here on cell and say current output.
+
+12:40.910 --> 12:44.680
+Clear your results will still exist but it will clear the output.
+
+12:44.750 --> 12:50.360
+So I'll go ahead and run that again and keep the output there and then scroll down a little bit.
+
+12:50.390 --> 12:52.290
+I have a pretty fast computer so keep that in mind.
+
+12:52.310 --> 12:58.570
+Your results may not be as fast as mine next what we're going to do is the exact same thing will say
+
+12:58.630 --> 12:59.660
+eveil metrics.
+
+12:59.680 --> 13:08.740
+Essentially our test metrics so say estimator evaluates and then will say input function is equal to
+
+13:08.770 --> 13:10.700
+my evil input function.
+
+13:11.580 --> 13:14.490
+And then when you say steps as equal to 1000 here.
+
+13:14.820 --> 13:15.920
+Let's run that again.
+
+13:15.930 --> 13:20.310
+You kind of see this huge output and once that's done running what we can do is compare the results
+
+13:20.670 --> 13:25.240
+on the evaluation of our training data in our test data.
+
+13:25.410 --> 13:27.370
+We're going to scroll down here in order to do that.
+
+13:27.540 --> 13:38.590
+And what we're going to do is we're going to say Prince the train metrics so that evaluation method
+
+13:38.590 --> 13:44.350
+we just did or that evaluate method we just did has a nice output which is essentially like a dictionary
+
+13:44.350 --> 13:49.940
+Sarno and say training data metrics.
+
+13:49.990 --> 13:50.830
+Let's run that.
+
+13:50.870 --> 13:52.490
+And so we can see our loss.
+
+13:52.510 --> 13:56.130
+The average loss and then Globalstar which was something to find earlier.
+
+13:56.260 --> 14:02.620
+Now that I understand my training data metrics I want to compare that to my tests or evaluation set
+
+14:02.620 --> 14:03.450
+metrics.
+
+14:03.520 --> 14:13.600
+So I will do the exact same thing here except I will print out evil metrics and then say print's evil
+
+14:14.220 --> 14:15.440
+metrics.
+
+14:15.670 --> 14:20.490
+And this is a really nice way to check if your model is overfitting to your training data.
+
+14:20.560 --> 14:27.640
+A good indicator of your model being overfit to your training data is when you have a really low loss
+
+14:27.650 --> 14:31.500
+on your training data but a really high loss on your evil data.
+
+14:31.510 --> 14:35.680
+We want these to be basically as close as possible to each other.
+
+14:35.680 --> 14:37.540
+That doesn't mean we want them both to be high.
+
+14:37.540 --> 14:43.420
+We want them both to be low hopefully but a good sign that you're not overfitting is that your training
+
+14:43.420 --> 14:46.380
+data loss is pretty similar to your test data loss.
+
+14:46.390 --> 14:51.430
+You should always expect your evaluation cost to perform slightly worse than your training data.
+
+14:51.430 --> 14:53.240
+Again this really depends on your data.
+
+14:53.260 --> 14:58.460
+Uranium splits how much data you gave the training versus how much gave to test revaluation etc..
+
+14:58.600 --> 15:05.140
+Lots of specific factors for your specific situation but in general you kind of want these to be relatively
+
+15:05.140 --> 15:10.360
+similar and not way off from each other if you're training data metrics are much much better than your
+
+15:10.420 --> 15:14.700
+evaluation or test data metrics that you're probably overfitting to your training data.
+
+15:15.250 --> 15:21.730
+OK so we're almost done here except a really common question where we're creating models is the question
+
+15:21.850 --> 15:24.350
+well how do I predict new values.
+
+15:24.400 --> 15:28.040
+The metrics are nice but let's say actually wanted to play this thing.
+
+15:28.060 --> 15:35.290
+How do we get those new values those predicted values well that show you are going to create a new input
+
+15:35.290 --> 15:46.040
+function called input Ethen predict and it's going to be T.F. estimator inputs again a PI input function
+
+15:46.700 --> 15:51.250
+and I'm going to pass in test or new data here.
+
+15:51.320 --> 15:52.940
+So what does that actually mean.
+
+15:52.940 --> 15:58.670
+Well let's say I have some new data of X Remember we're doing just a simple linear regression.
+
+15:58.670 --> 16:03.170
+So I'm going to say my brand new data to predict.
+
+16:03.220 --> 16:08.680
+So given some x value what is its corresponding y label according to your model.
+
+16:08.770 --> 16:16.340
+So we're going to say my brand new data is P Lynde's space 0 10 10 points here.
+
+16:16.500 --> 16:21.810
+So these are 10 points that my model has never seen before and they're conveniently linearly spaced
+
+16:21.890 --> 16:27.570
+again you kind of play around these values here but this essentially brand new data the model has never
+
+16:27.570 --> 16:29.150
+really seen these data points before.
+
+16:29.280 --> 16:31.730
+In a sense it kind of has depending on how you created data.
+
+16:31.890 --> 16:34.490
+But we're going to pretend like it's never seen before.
+
+16:34.620 --> 16:39.350
+So we have our input function to predict and we're going to pass that in as X here.
+
+16:39.360 --> 16:50.190
+Our brand new data so brand new data and then we're also going to do here is say shuffle is false so
+
+16:50.230 --> 16:54.100
+say shuffle is equal to false.
+
+16:54.350 --> 16:54.990
+We'll run that.
+
+16:54.990 --> 16:56.770
+So now we have an input function to predict.
+
+16:56.780 --> 17:02.210
+So we're going to say estimator and instead of saying train or evaluate the final method I want to show
+
+17:02.210 --> 17:08.330
+you is the Predict method where you just pass in that input function predicts.
+
+17:08.340 --> 17:13.680
+So the difference between this T.F. estimator input that we created versus the previous ones is here
+
+17:13.740 --> 17:17.580
+I'm passing brand new data that I want to predict for.
+
+17:17.610 --> 17:20.700
+So let's go ahead and run this.
+
+17:20.700 --> 17:25.320
+And you'll notice it's a generator object which means if I actually want to see the results I need to
+
+17:25.620 --> 17:31.230
+either iterate through this or conveniently I can cast that to a list and then I'll see a list of all
+
+17:31.230 --> 17:34.200
+the predictions and here we have it.
+
+17:34.190 --> 17:39.860
+It basically returns a list of dictionaries where the key is predictions and we have some sort of array
+
+17:39.860 --> 17:43.550
+value as well as the data type that it is.
+
+17:43.550 --> 17:47.340
+So let's actually kind of plot these out and see how we did.
+
+17:47.450 --> 17:57.700
+So what we could do is say we'll say predictions is equal to an empty list Scalzo be an array and then
+
+17:57.700 --> 18:07.550
+I'm going to say for pred in estimator predict actually I'm going to copy and paste from here.
+
+18:07.580 --> 18:18.370
+So basically in that list so for prediction created by this generator objects I'm going to say predictions
+
+18:19.210 --> 18:21.730
+and I'm going to append x.
+
+18:21.730 --> 18:22.730
+Whoops.
+
+18:22.850 --> 18:26.850
+Fred predictions.
+
+18:27.070 --> 18:32.860
+The reason I'm doing this append operation here is because remember each of these items is a dictionary.
+
+18:32.860 --> 18:38.800
+So in calling the predictions key which is going to return that array value it predicted for it and
+
+18:38.800 --> 18:41.380
+then I'm going to run that.
+
+18:41.590 --> 18:44.860
+And then we should be able to see a nice list of predictions.
+
+18:44.920 --> 18:45.790
+So great.
+
+18:45.790 --> 18:49.180
+There is my array Let's actually plot these out and see how we did.
+
+18:49.630 --> 18:56.620
+So I will say my data are going to sample an equal to 250 here.
+
+18:56.820 --> 19:00.070
+And let's go in and do a random scatter plot again like we did last time.
+
+19:01.290 --> 19:12.170
+So scatter where x is equal to x data and Y is equal to y so remember those are our samples here.
+
+19:13.140 --> 19:16.920
+And let's do a plot based off of our predictions.
+
+19:16.920 --> 19:24.730
+So I'm going to say N.P. when space actually I could just pass in our brand new data that we have so
+
+19:25.360 --> 19:32.560
+that brand new data plotted out our predictions and then let's make it a red line and you can see we
+
+19:32.560 --> 19:35.860
+have kind of the same linear fit we predicted last time.
+
+19:35.890 --> 19:37.960
+Now we can even do the points themselves.
+
+19:37.960 --> 19:42.150
+So these are the points I predicted according to my model you could see here is essentially falling
+
+19:42.160 --> 19:45.010
+that Weikel said it's supposed be that we did earlier.
+
+19:45.010 --> 19:46.960
+So that is how you use the S-meter object.
+
+19:46.960 --> 19:49.510
+Let's quickly do a review of everything we just did.
+
+19:49.720 --> 19:53.890
+And if it's still a little fuzzy to you don't worry we're going to do a classification example that
+
+19:53.890 --> 19:55.640
+uses a T.F. estimator API.
+
+19:55.870 --> 19:57.940
+And I think that's going to make it a lot clearer.
+
+19:57.940 --> 20:03.220
+This was pretty confusing to me personally when I first saw it but once I went through a couple of examples
+
+20:03.280 --> 20:06.850
+it became a lot clearer and the workflow became really clear.
+
+20:06.910 --> 20:09.910
+So we won't be using the estimator API beyond this section.
+
+20:09.910 --> 20:10.960
+Not really.
+
+20:10.980 --> 20:16.680
+Said We're going to be using kind of the more thorough way with the placeholders the variables etc..
+
+20:16.750 --> 20:21.720
+But I do want you to be aware in case you ever plan to use tensor flow for simpler tasks such as regression
+
+20:21.740 --> 20:23.200
+classification.
+
+20:23.350 --> 20:25.990
+The S-meter API is really useful here.
+
+20:26.110 --> 20:32.590
+So really quick review we have to create the list of feature columns and every item in this list does
+
+20:32.590 --> 20:36.420
+a special feature called Call where either you have a numeric column.
+
+20:36.430 --> 20:40.630
+Maybe you have a categorical column and we'll show you how to create those later and then you provide
+
+20:40.630 --> 20:42.320
+it with a key as well as a shape.
+
+20:42.580 --> 20:47.680
+Then you actually create your estimator later on we'll show you how to do more complicated estimators
+
+20:47.680 --> 20:51.270
+such as a dense neural network classifier or aggressor.
+
+20:51.400 --> 20:53.530
+Then we do a train test split.
+
+20:53.530 --> 20:57.400
+You should really be doing this regardless of using T.F. estimator or not.
+
+20:57.690 --> 20:59.990
+Then we actually create some input functions.
+
+21:00.060 --> 21:02.840
+I create an input function based on my training data.
+
+21:02.860 --> 21:09.790
+Then I create two more input functions one for my training data one for my test data and the main difference
+
+21:09.790 --> 21:14.880
+there is I'm telling it not to shuffle it that way my evaluations are an order then I train the data
+
+21:15.040 --> 21:17.560
+on that first input function based off the training data.
+
+21:17.560 --> 21:21.180
+Once that's done I can evaluate my training data metrics.
+
+21:21.190 --> 21:27.260
+I can also evaluate my eveil metrics which is basically going to calculate the loss function for me.
+
+21:27.490 --> 21:32.350
+So then it reports back the last this is a nice way to check for overfitting if I ever want to predict
+
+21:32.460 --> 21:38.500
+off of New data points I can just create a new input function for prediction where I passen the data
+
+21:38.500 --> 21:40.020
+values I want to predict for.
+
+21:40.120 --> 21:45.160
+And then I can say shuffle is equal to false then I call a scimitar that predict which remember is a
+
+21:45.160 --> 21:50.650
+generator object seen in either case as a list or if you want just iterate through it and then append
+
+21:50.650 --> 21:55.540
+the new results and then we can plot them out to a histogram whatever you really want to do.
+
+21:55.540 --> 21:56.140
+OK.
+
+21:56.360 --> 21:57.670
+Put those interesting to you.
+
+21:57.670 --> 22:01.870
+Again if you're a little fuzzy on this don't worry the classification examples going to clear up even
+
+22:01.870 --> 22:02.690
+further.
+
+22:02.690 --> 22:03.410
+I'll see you there.

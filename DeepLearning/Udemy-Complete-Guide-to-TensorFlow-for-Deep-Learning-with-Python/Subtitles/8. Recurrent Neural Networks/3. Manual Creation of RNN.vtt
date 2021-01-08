@@ -1,0 +1,475 @@
+WEBVTT
+
+00:05.490 --> 00:10.290
+Hello everyone and welcome to this lecture we're going to magically create a very simple recurrent near
+
+00:10.290 --> 00:15.600
+all that work with tensor flow and then later on we'll see in a future lecture how to use tensor flows
+
+00:15.960 --> 00:19.830
+a little bit higher level API for a current neural networks.
+
+00:19.930 --> 00:24.610
+So we're going to mainly create a three year on a recurrent neural network layer with tensor flow.
+
+00:24.760 --> 00:29.290
+And the main idea to really focus on here is not the actual manual creation of the recurrent neural
+
+00:29.290 --> 00:32.560
+network because that's not really scalable for larger problems.
+
+00:32.570 --> 00:36.030
+Instead I want you to focus on the input format of the data.
+
+00:36.100 --> 00:39.580
+So let's quickly review what we are actually going to create.
+
+00:39.610 --> 00:42.890
+We're going to construct the following recurrent neural network layer.
+
+00:42.940 --> 00:47.050
+We've actually seen this before in the past but basically we're going to do is have an input X that
+
+00:47.050 --> 00:53.260
+goes into three neurons in the layer that produces an output y and then that y output gets fed back
+
+00:53.320 --> 00:54.710
+into that same layer.
+
+00:54.880 --> 00:57.120
+So you can imagine we're going to need two sets of weights here.
+
+00:57.190 --> 01:03.100
+One called W X for that original input and then another set of weights called W-why for that second
+
+01:03.160 --> 01:05.260
+output.
+
+01:05.270 --> 01:07.810
+So if we want to unroll this through time it's going to look something like this.
+
+01:07.820 --> 01:13.540
+Basically will 0 and then sequel's one or zero plus one.
+
+01:13.540 --> 01:17.940
+So again we're going to start by running the recurrent neural network just for two batches of data sequel's
+
+01:17.960 --> 01:22.210
+zero and sequel's one where each recurrent neuron has two sets of weights.
+
+01:22.240 --> 01:28.480
+So W X for the input weights on that original input X and then W-why for the weights on the output of
+
+01:28.480 --> 01:30.410
+original x.
+
+01:30.420 --> 01:35.490
+Now before we dive into that Jupiter note book I want to walk through an example the formatting of the
+
+01:35.490 --> 01:36.330
+input data.
+
+01:36.450 --> 01:41.760
+So in this case we're going to show an example using words but the Jubran no books just going to use
+
+01:41.760 --> 01:43.950
+numerical data in this case.
+
+01:43.950 --> 01:47.970
+I want to show you before it's because it's a lot easier to understand what gives you a much more intuitive
+
+01:47.970 --> 01:50.800
+feeling about what the batches actually represent.
+
+01:51.150 --> 01:53.310
+So let's say we have two samples of data.
+
+01:53.310 --> 01:58.680
+In this case we have two sequences so two sentences the first sequence you have is the brown fox is
+
+01:58.680 --> 01:59.370
+quick.
+
+01:59.370 --> 02:05.940
+The second sequence we have is the Redfox jumped high and you can see for each of these two samples
+
+02:05.940 --> 02:11.230
+we have five times that it's sequel 0 2 1 2 3 and 4.
+
+02:11.250 --> 02:17.850
+So the way we actually feed in batches is let's say we have five batches we'll call the entire set of
+
+02:17.850 --> 02:20.240
+all the batches words and data set.
+
+02:20.460 --> 02:27.720
+And the first batch has a batch size of two so that there's two samples in the batch and you feed in
+
+02:28.230 --> 02:29.750
+based off the time stamp.
+
+02:29.790 --> 02:31.770
+Not based off the sample itself.
+
+02:31.770 --> 02:37.070
+So the very first batch you feed in is everything at teakwood 0 for however many samples you want.
+
+02:37.070 --> 02:42.480
+In this case we only have two samples so we pass in the the then the next batch is going to be at sequel's
+
+02:42.480 --> 02:42.800
+1.
+
+02:42.810 --> 02:46.520
+Brown bread next batch is Fox Fox next batch.
+
+02:46.550 --> 02:49.360
+Is jumped the next batch is quick high.
+
+02:49.440 --> 02:54.710
+And hopefully are able to relate this understanding to how we've seen the recurrent neural network and
+
+02:54.760 --> 02:55.220
+role.
+
+02:55.220 --> 03:03.200
+Remember we have those inputs at sequel's one equals one plus one etc. so the swan steepens to people
+
+03:03.340 --> 03:05.350
+Street cetera keep going on.
+
+03:05.640 --> 03:07.340
+So again a number of batches shown here.
+
+03:07.370 --> 03:12.390
+We have five batches that size is based off of two samples and the number of time steps was five total
+
+03:12.390 --> 03:13.470
+time steps.
+
+03:13.470 --> 03:16.280
+So we're going be dealing with numeric data in a really simple example.
+
+03:16.440 --> 03:22.710
+So let's open up a super notebook and code along it OK so first going to start off of a couple of imports
+
+03:22.710 --> 03:26.820
+will say non-pay SNP import sensor flow.
+
+03:26.850 --> 03:39.120
+Make sure Isbel import import tensor flow as T.F. then import lib pipe plot as P.L. t in case we need
+
+03:39.120 --> 03:42.180
+to actually visualize anything although we may not.
+
+03:42.540 --> 03:44.620
+And then Matt plotless in line.
+
+03:44.750 --> 03:49.300
+OK so we're going to start off with the constants that we're going to create.
+
+03:49.390 --> 03:54.430
+So the constants we first start off with the number of inputs for each example.
+
+03:54.470 --> 03:57.730
+So the examples we're going to be showing the number of inputs is going to be two.
+
+03:58.280 --> 04:00.930
+And then we also want the number of neurons.
+
+04:01.130 --> 04:03.810
+So we'll have just three neurons in that first layer.
+
+04:03.820 --> 04:09.260
+Remember we're just going to create a simple layer that only has two time steps worth of information
+
+04:09.260 --> 04:10.200
+placed into it.
+
+04:10.490 --> 04:11.720
+So now we need placeholders
+
+04:14.740 --> 04:18.720
+so unlike before where we just had a simple X placeholder.
+
+04:18.850 --> 04:23.200
+We're going to need in our manual recreation a placeholder for each time stamp.
+
+04:23.390 --> 04:28.230
+So say x 0 for the data at X time stamped 0.
+
+04:28.510 --> 04:36.050
+So that will be a placeholder we'll say that data type is a float 32 and then the actual shape is going
+
+04:36.050 --> 04:38.760
+to be done by the number of inputs.
+
+04:38.810 --> 04:41.360
+And in this case we just have two inputs.
+
+04:41.360 --> 04:49.490
+So we're just going to show two samples then we need another one for time at time 1 so say placeholder
+
+04:51.260 --> 04:52.790
+placeholder.
+
+04:52.810 --> 04:55.990
+It's also going to flip 32 and same size.
+
+04:55.990 --> 05:00.870
+So none by a number of inputs OK.
+
+05:00.880 --> 05:03.590
+Now again this is just for man or recreation.
+
+05:03.700 --> 05:08.450
+But we actually perform a real recurrent neural network on a real data set.
+
+05:08.470 --> 05:09.320
+This won't scale.
+
+05:09.340 --> 05:14.530
+Otherwise we'd have to do this for every single time stamp which would be ridiculous now that we have
+
+05:14.590 --> 05:15.280
+placeholders.
+
+05:15.280 --> 05:20.860
+Let's go ahead and create our variables and it's going to be the same deal here where we have two sets
+
+05:20.860 --> 05:21.860
+of variables.
+
+05:22.990 --> 05:24.460
+As far as the weights are concerned.
+
+05:24.520 --> 05:37.690
+So for the weights we'll say to variable and we'll have random normal and the shape is going to be the
+
+05:37.690 --> 05:45.890
+number of inputs by the number of neurons so these are the weights that are attached to that initial
+
+05:45.920 --> 05:46.900
+x that's fed in.
+
+05:46.910 --> 05:49.760
+So these weights are attached to the specs zero.
+
+05:49.880 --> 05:53.200
+We're going to need when we actually get the output of x 0.
+
+05:53.220 --> 05:55.270
+Another set of weights attached to it.
+
+05:55.370 --> 05:58.930
+We're going to call that w Why.
+
+05:59.030 --> 06:02.670
+Because we're going to say the output of that original X is Y.
+
+06:03.050 --> 06:09.560
+So it's going to be variable and we'll say it's also random normal
+
+06:12.460 --> 06:19.980
+and the shape is going to be not number of inputs now but number of neurons because we have weights
+
+06:19.980 --> 06:28.960
+for each neuron because we have the output now and then the number of neurons of the second axis and
+
+06:28.960 --> 06:34.200
+then we can have one set of biased terms so we'll say a variable and we'll just initialize these as
+
+06:34.230 --> 06:37.290
+zeros.
+
+06:37.330 --> 06:41.290
+Again we're not really calculating anything real here if this really simple example we're just dealing
+
+06:41.290 --> 06:44.480
+with the concept of recurrent neural networks.
+
+06:44.710 --> 06:46.920
+Then we're going to have graphs.
+
+06:47.020 --> 06:51.880
+So for our graphs basically the set of operations we're again going to have to do think twice.
+
+06:52.100 --> 06:58.460
+So we have our initial output from that first ex-pastor which is going to be hyperbolic tangents as
+
+06:58.460 --> 07:06.710
+our activation function here and we'll do a matrix multiplication of X not times w x and then we'll
+
+07:06.800 --> 07:08.190
+add the bias term.
+
+07:08.210 --> 07:13.870
+So we're essentially kind of repeating back when we performed our really simple neural networks were
+
+07:13.910 --> 07:15.660
+doing all these steps or doing them twice.
+
+07:15.670 --> 07:21.370
+Now we're using a different activation function here from the very beginning of course using sigmoid.
+
+07:21.370 --> 07:23.110
+Now we're using hyperbolic Tandja.
+
+07:23.680 --> 07:29.290
+So then on that second output we're going to end up happening and we say why one it's going to be we
+
+07:29.350 --> 07:40.820
+passed the activation function to the matrix multiplication of why not times W-why then we're going
+
+07:40.820 --> 07:54.650
+to need to add on T.F. matrix multiplication of x1 times w 1 W X I should say plus B.
+
+07:55.150 --> 07:57.330
+Ok so what's actually going on here.
+
+07:57.340 --> 08:03.400
+Well remember this is our initial output which is just going to be the input X multiply by those initial
+
+08:03.550 --> 08:07.180
+those first Waite's we'll call them w x plus the bias term.
+
+08:07.180 --> 08:09.730
+And then we pass it through an activation function.
+
+08:09.730 --> 08:16.150
+Then at the next timestep we end up taking that output and multiply it by our second set of weights
+
+08:16.230 --> 08:17.440
+w a y.
+
+08:17.440 --> 08:21.140
+And then once we have that we're going to end up adding that current input.
+
+08:21.160 --> 08:27.270
+So memory the current input is x 1 multiplied by those initial sets of weights then plus a biased term.
+
+08:27.550 --> 08:35.460
+So again just basically coding out that unrolled recurrent neural network layer then we need to initialises
+
+08:35.460 --> 08:38.430
+variables so such a from here is just smooth sailing.
+
+08:38.670 --> 08:45.600
+We'll say it is equal to T.F. global variables initialiser and we're going to create our data.
+
+08:45.600 --> 08:47.450
+So this is just totally made up data.
+
+08:47.670 --> 08:49.480
+It's not going to be really significant here.
+
+08:50.630 --> 08:54.540
+So I'm going to basically try to make it as clear as possible how are feeding in these batches.
+
+08:54.950 --> 09:04.080
+So we're going to have zero and we're going to say the following will say 0 1 and those of them mentioned
+
+09:04.140 --> 09:10.340
+here to three four or five.
+
+09:10.490 --> 09:14.170
+So this is all the data at time stamp is equal to zero.
+
+09:14.720 --> 09:23.910
+So say this is time stamp 0 and let's create another batch for a time stamp.
+
+09:23.980 --> 09:26.950
+One the numbers here kind of meaningless.
+
+09:27.310 --> 09:30.960
+So let's say at time stamp 1 everything has gone up by a hundred.
+
+09:30.970 --> 09:39.460
+So say array and we're going to essentially copy and paste this and then we're going to add 100 to all
+
+09:39.460 --> 09:39.970
+these.
+
+09:39.970 --> 09:45.400
+So the next time stamp for all these samples they went up by 100.
+
+09:45.580 --> 09:48.300
+Again whether or not that's realistic it doesn't really matter.
+
+09:49.790 --> 09:54.130
+1 0 4 1 0 5.
+
+09:54.140 --> 09:56.420
+OK so then we can run our session.
+
+09:56.870 --> 10:08.140
+So we'll say the following with T.F. that session as s.c.s us I'm going to run in it to actually initialize
+
+10:08.140 --> 10:11.260
+the variables and then I'll end up having 2 outputs.
+
+10:13.260 --> 10:16.020
+I'll have my output values of why not.
+
+10:16.020 --> 10:17.930
+Or why 0.
+
+10:18.060 --> 10:20.980
+And then my output values at y one.
+
+10:21.000 --> 10:31.740
+So why when output values and then we're going to just run y zero y one or my feed dictionary.
+
+10:32.940 --> 10:40.940
+Is it going to be equal to with X not being equal to that X not Bache and then zoom out one level here
+
+10:41.910 --> 10:47.870
+x1 x1 Bache OK.
+
+10:47.930 --> 10:51.140
+Run that and then relatively quickly you should get the outputs.
+
+10:51.140 --> 10:57.860
+Now the outputs here are going to be kind of meaningless but you should get something that looks relatively
+
+10:57.860 --> 11:02.110
+like this towards the end you should get a bunch of ones on that second value.
+
+11:02.120 --> 11:06.590
+Now whether the negative ones are ones that won't match up exactly what I have here due to the fact
+
+11:06.590 --> 11:12.800
+that we initialize things randomly but this is the basic idea for manually recreating a recurrent neural
+
+11:12.800 --> 11:16.220
+network that's able to operate on just two time steps.
+
+11:16.250 --> 11:22.060
+Now definitely a lot of problems here because this won't scale to larger time serious problems.
+
+11:22.070 --> 11:28.460
+If I add something that has 100 times steps that would mean I have to write 100 W's manually 100 output
+
+11:28.460 --> 11:33.240
+wise manually and then feed in these manually as well a hundred times.
+
+11:33.440 --> 11:39.650
+So that's not really possible a reasonable tensor flow has an API for the neural networks that allows
+
+11:39.650 --> 11:42.320
+us to take care of all that under the hood.
+
+11:42.440 --> 11:47.240
+But I want you to be aware of what's actually going on when you unroll a recurrent neural network layer
+
+11:47.690 --> 11:51.720
+and hopefully actually coding it out man really helped your understanding of that.
+
+11:52.110 --> 11:53.260
+OK that's it for this lecture.
+
+11:53.270 --> 11:55.970
+If you have any questions feel free to post the Q&amp;A forums.
+
+11:55.970 --> 11:57.060
+I'll see at the next lecture.

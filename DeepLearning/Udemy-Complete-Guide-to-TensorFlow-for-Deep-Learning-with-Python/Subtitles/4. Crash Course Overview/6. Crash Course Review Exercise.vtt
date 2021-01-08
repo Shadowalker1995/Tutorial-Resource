@@ -1,0 +1,109 @@
+WEBVTT
+
+00:05.720 --> 00:09.270
+Welcome everyone to the crash course review exercises.
+
+00:09.290 --> 00:13.580
+So if you went ahead and went through those Crash Course Lectures we have a little note book as a quick
+
+00:13.580 --> 00:18.650
+review of a couple of questions for you to answer so you can find that no book under crash course basics
+
+00:18.650 --> 00:20.600
+crash course review exercises.
+
+00:20.710 --> 00:24.570
+And there's also a solution note book that we're going to go through in the very next lecture.
+
+00:24.740 --> 00:28.430
+Let's quickly have a quick overview of the review exercises notebook.
+
+00:28.430 --> 00:28.660
+All right.
+
+00:28.660 --> 00:31.400
+Here I am at the crash course review exercises notebook.
+
+00:31.400 --> 00:36.500
+The basic idea here is that you'll have some sort of instructions in bold and then a cell below for
+
+00:36.500 --> 00:40.910
+you to execute them in for example the very first one just ask you to import the libraries that we've
+
+00:40.910 --> 00:42.000
+been working with.
+
+00:42.140 --> 00:43.050
+So you could say something like.
+
+00:43.070 --> 00:47.040
+Import some PI and P and as a quick little tip.
+
+00:47.210 --> 00:49.940
+If you do shift enter that will execute a cell.
+
+00:50.060 --> 00:55.610
+If you want to insert a cell below this one you can do alt enter and it will also execute the cell but
+
+00:55.610 --> 00:57.040
+then insert a cell below.
+
+00:57.230 --> 00:58.790
+So that's really nice that we can do.
+
+00:58.820 --> 01:02.300
+All tenter all tents are all tenter so you can insert cells below.
+
+01:02.300 --> 01:08.160
+In case you need more cells or more space than what you want to do is non-firing them see that it asks
+
+01:08.160 --> 01:09.410
+you to create a matrix.
+
+01:09.450 --> 01:15.440
+Then later on after you create that matrix it asks you to do some sort of visualization of that matrix.
+
+01:15.480 --> 01:20.700
+They also ask you to do things like add a title add a color bar and then there's a little bonus aspect
+
+01:20.700 --> 01:21.230
+to this.
+
+01:21.240 --> 01:24.740
+It asks you to how can you change the aspect of this show plot.
+
+01:24.750 --> 01:27.070
+So there's a parameter called aspect there to play around with.
+
+01:27.210 --> 01:30.090
+And notice there's a little link here that kind of gives you a hint.
+
+01:30.360 --> 01:34.990
+Then you go ahead and use Panas data frame to read in that player Ray as a data frame.
+
+01:35.160 --> 01:37.560
+We actually should have to do that earlier in the lectures.
+
+01:37.740 --> 01:43.440
+Then you'll create a scatterplot using panderers then you will scale the data to have a minimum of zero
+
+01:43.530 --> 01:47.820
+maximum value of 1 using Cyke learn the preprocessing you went through.
+
+01:48.000 --> 01:53.870
+Then once you've done that you'll go ahead and create a data frame and then perform a train test pilot.
+
+01:54.150 --> 01:54.650
+OK.
+
+01:54.810 --> 01:57.300
+Basically right in line of everything we just covered.
+
+01:57.300 --> 02:01.110
+Those are all the basic tools that we're going to be using throughout the rest of the course when we
+
+02:01.110 --> 02:03.750
+actually discuss neural networks and sensor flow.
+
+02:03.960 --> 02:06.800
+Thinks everyone in the next lecture will go over the solutions.

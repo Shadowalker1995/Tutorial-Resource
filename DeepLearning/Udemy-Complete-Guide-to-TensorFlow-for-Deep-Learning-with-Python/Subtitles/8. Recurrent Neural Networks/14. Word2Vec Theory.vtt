@@ -1,0 +1,499 @@
+WEBVTT
+
+00:05.690 --> 00:10.460
+Welcome everyone to this lecture where we're going to be discussing warts HVAC which is a really awesome
+
+00:10.490 --> 00:17.720
+algorithm or model that ends up embedding words into a vector of space.
+
+00:17.910 --> 00:20.380
+So we understand how to work with time series data.
+
+00:20.550 --> 00:24.630
+So we're going to take a look at another common series data source which is just words.
+
+00:24.750 --> 00:27.740
+So we can think of words in a sentence as a sequence.
+
+00:27.750 --> 00:30.400
+So for example a sentence can be thought of as a sequence like.
+
+00:30.480 --> 00:35.480
+Hi how are you now in classic natural language processing.
+
+00:35.480 --> 00:41.090
+Words are typically replaced by numbers and it indicates some sort of frequency relationship to their
+
+00:41.090 --> 00:41.920
+documents.
+
+00:42.140 --> 00:47.860
+And in doing this approach we end up losing information about the relationship between the words themselves
+
+00:49.680 --> 00:54.510
+so we can think of natural language processing as having two approaches either a counter based approach
+
+00:54.570 --> 00:56.690
+or a predictive based approach.
+
+00:56.790 --> 01:03.870
+So basically count based methods compute the statistics of how often some words co-occur with its neighbor
+
+01:03.870 --> 01:09.810
+words in a large teks corpus and then they end up mapping these counts autistics down to a small dense
+
+01:09.810 --> 01:14.260
+vector for each word essentially replacing the words with numbers.
+
+01:14.280 --> 01:20.310
+Now predictive models directly try to predict the word from its neighbors in terms of learned small
+
+01:20.520 --> 01:22.200
+dense embedding of vectors.
+
+01:22.200 --> 01:24.990
+And these are then considered the parameters of the model.
+
+01:25.200 --> 01:29.610
+So where its effect is going to take a predictive based approach where neighboring words are predicted
+
+01:29.700 --> 01:31.170
+based on the vector space.
+
+01:31.350 --> 01:36.000
+Instead of doing a classical count based approach where we essentially lose that sort of information
+
+01:37.960 --> 01:39.270
+so we can explore on your own that works.
+
+01:39.270 --> 01:43.850
+Most Famous use cases for this predictive based approach for natural language processing which is the
+
+01:43.850 --> 01:48.150
+word to VEC model created by Thomas Micallef.
+
+01:48.350 --> 01:54.470
+And again the goal of words of model is to learn the word embeddings by modeling each word as a vector
+
+01:54.530 --> 01:59.750
+in some dimensional space and later on we'll see that we actually have the capability to define how
+
+01:59.750 --> 02:01.610
+large of a dimensional space we want.
+
+02:01.820 --> 02:07.520
+So when we actually code this out we're going to find each word as a vector in a hundred and fifty them
+
+02:07.520 --> 02:08.870
+emotional space.
+
+02:08.900 --> 02:14.540
+So the question arises What is the actual motivation behind using word embeddings instead of just this
+
+02:15.200 --> 02:17.460
+approach that we discussed earlier.
+
+02:17.480 --> 02:24.170
+Well if we think about the representation of data across various data sources such as audio images or
+
+02:24.170 --> 02:26.720
+text we think about audio and images.
+
+02:26.750 --> 02:32.110
+These happened to be really rich high dimensional data sets that are also very dense in their information
+
+02:32.120 --> 02:36.040
+so you can have things like an audio spectrogram or image pixels.
+
+02:36.110 --> 02:38.420
+And these are really dense data sets.
+
+02:38.420 --> 02:44.270
+However when you take a approach like a count based approach to text data you end up getting a very
+
+02:44.270 --> 02:46.070
+sparse data set.
+
+02:46.070 --> 02:52.340
+So for tasks like object or speech recognition we actually already know that all the information required
+
+02:52.640 --> 02:56.310
+to successfully perform the task is encoded in the data.
+
+02:56.510 --> 03:00.670
+And we actually know this because humans themselves can perform tasks from the raw data.
+
+03:00.710 --> 03:04.050
+You can read a sentence and understand the meaning behind it.
+
+03:04.100 --> 03:10.460
+However natural language processing systems that traditionally treat words as discrete symbols will
+
+03:10.520 --> 03:14.060
+end up not being able to understand this information.
+
+03:14.060 --> 03:20.270
+So what I mean by that is a word such as cat is going to be represented as some number like the word
+
+03:20.450 --> 03:27.890
+5:37 and a word as such as dog is going to be represented as some other number like ID 6:59 or something
+
+03:27.890 --> 03:28.990
+of that nature.
+
+03:29.000 --> 03:34.850
+So you end up getting these arbitrary encodings that don't actually provide any useful information to
+
+03:34.850 --> 03:40.530
+the system regarding the relationships that may exist between those individual words or symbols.
+
+03:40.550 --> 03:45.410
+So you don't get to realize that dogs and cats are similar because they're both animals they're both
+
+03:45.410 --> 03:47.930
+popular as pets they both have four legs etc..
+
+03:48.170 --> 03:52.440
+You lose that information about the relationship between these words.
+
+03:52.490 --> 03:59.210
+Instead you just get information about the relationship of the frequency of these words showing up in
+
+03:59.210 --> 04:07.060
+a document so word to Veck trying to solve this problem by creating a vector based model that represents
+
+04:07.120 --> 04:13.180
+or in other words embeds the words into a continuous vector space with the words represented as vectors
+
+04:13.240 --> 04:18.070
+we can then actually do really cool things like perform vector mathematics on words which is kind of
+
+04:18.070 --> 04:20.350
+a crazy idea when you really think about it.
+
+04:20.500 --> 04:25.810
+So what that actually means is because each of these words is a vector you can do things like check
+
+04:25.810 --> 04:31.030
+how similar two vectors are to each other using something like cosigned similarity which means you can
+
+04:31.150 --> 04:34.280
+check how close and how similar two words are to each other.
+
+04:34.440 --> 04:38.170
+And then what's really cool is you can actually add and subtract vectors together.
+
+04:38.350 --> 04:43.300
+Meaning that once you actually embed these words as vectors you could technically add and subtract words
+
+04:43.300 --> 04:44.880
+to get different results.
+
+04:45.710 --> 04:51.140
+So at the start of training what happens is each embedding is random but through back propagation in
+
+04:51.140 --> 04:56.230
+the model we end up adjusting the value of each word vector in the given number of dimensions.
+
+04:56.330 --> 04:59.830
+So you slowly begin to adjust these vectors for these words.
+
+05:00.080 --> 05:02.680
+And more than mentions does mean more training time.
+
+05:02.810 --> 05:05.380
+But it also means more information per word.
+
+05:05.390 --> 05:11.480
+So what ends up happening is each dimension sometimes represents some sort of idea so similar words
+
+05:11.480 --> 05:16.870
+will end up being closer together as they're vectors are slowly brought closer together.
+
+05:16.940 --> 05:21.530
+And what's even more impressive as I mentioned the model is going to end up producing accessories that
+
+05:21.620 --> 05:27.620
+represent concepts or ideas so they may be mentioned that represents gender or another dimension for
+
+05:27.620 --> 05:30.160
+verbs singular vs plural etc..
+
+05:31.700 --> 05:33.720
+So what does this actually result in.
+
+05:33.920 --> 05:37.750
+Well you can end up plotting out the vectors and performing mathematics on them.
+
+05:37.910 --> 05:44.150
+So maybe you'll end up realizing that you can have two words such as man and King and realized that
+
+05:44.150 --> 05:49.780
+along a particular of them mention they have their gender counterparts such as woman and queen.
+
+05:49.820 --> 05:56.570
+So a lot of times there's a famous example where someone says a king Minus Man plus woman and the vector
+
+05:56.570 --> 05:58.320
+that's output is queen.
+
+05:58.400 --> 06:02.870
+So you can see that the model is actually learning the relationship and even the meaning behind some
+
+06:02.870 --> 06:03.800
+of these words.
+
+06:04.040 --> 06:08.960
+And then there's other dimensions such as understanding a verb tense so walking to walked or swimming
+
+06:08.960 --> 06:14.500
+to swam and then you end up getting a relationships between just even geographical location.
+
+06:14.490 --> 06:21.230
+So the model and the understanding that Madrid is related to Spain Rome is related to Italy etc. just
+
+06:21.230 --> 06:27.170
+based off the neighboring words which kind of makes sense because as you read some large corpus attacks
+
+06:27.440 --> 06:29.730
+you're more likely to find Berlin very close.
+
+06:29.730 --> 06:34.530
+The word Germany and you're more likely to find the word Tokyo very close to the word Japan.
+
+06:34.540 --> 06:37.710
+So those vectors end up having a relationship.
+
+06:37.820 --> 06:44.390
+Now it's actually discuss how words HVAC actually creates these word embeddings and how it learns these
+
+06:44.390 --> 06:46.070
+from raw text.
+
+06:46.070 --> 06:52.310
+So words of Veck actually comes in two flavors if you will and that is the continuous bag of words model
+
+06:52.560 --> 06:58.760
+and the skip Graham model and algorithmically speaking the models are really similar except in the way
+
+06:58.760 --> 07:01.140
+that they end up predicting target words.
+
+07:01.370 --> 07:05.760
+So let's actually first take a look at this bottom continuous bag of words approach.
+
+07:05.810 --> 07:10.370
+So the bag of words approach basically takes in a source context.
+
+07:10.370 --> 07:17.090
+Words such as the dog choose the and then attempts to find its prediction target which is just a single
+
+07:17.090 --> 07:17.720
+word.
+
+07:17.720 --> 07:19.820
+So that target word maybe something like bone.
+
+07:19.820 --> 07:22.030
+So you feed in the dog chews the.
+
+07:22.100 --> 07:26.130
+And it ends up trying to find the best target fit as just an individual word.
+
+07:26.270 --> 07:31.670
+And in that case it could be something like bone the skip gram model that one on the top does the exact
+
+07:31.760 --> 07:35.970
+inverse to it predicts source contex words from the target words.
+
+07:35.990 --> 07:41.170
+So you end up feeding it bone and it tries to predict the context around it such as the dog chews the
+
+07:42.110 --> 07:43.220
+SO for the most part.
+
+07:43.340 --> 07:49.520
+This turns out to be useful for larger data sets and the continuous bag of words approach tends to be
+
+07:49.640 --> 07:56.060
+better for smaller data sets and that's usually because statistically speaking the bag of words is going
+
+07:56.060 --> 08:02.170
+to smooth over a lot of the distributional information and it does that by treating an entire context
+
+08:02.420 --> 08:04.160
+as one observation.
+
+08:04.160 --> 08:07.360
+So again bag of words tends to be a little better for smaller data sets.
+
+08:07.580 --> 08:14.720
+OK so let's go ahead and basically talk about how it actually trains the model and it does this by something
+
+08:14.720 --> 08:18.240
+called Noise contrastive training.
+
+08:18.260 --> 08:24.790
+So the way this works if we think about the bag of words approach is that given the dog choose the blank
+
+08:24.830 --> 08:29.200
+we're looking for the word that's going to be the real target word.
+
+08:29.360 --> 08:31.020
+So we'll call that W T.
+
+08:31.220 --> 08:33.460
+And we know the real target word is bone.
+
+08:33.560 --> 08:39.010
+And then we also have a bunch of noise words throw our document such as book car house on guitar.
+
+08:39.110 --> 08:45.580
+So we're looking for the word that's most likely to fit there as the target so for me to visualize this
+
+08:45.580 --> 08:47.500
+it would look something like this.
+
+08:47.500 --> 08:51.290
+So again we're to Vic doesn't actually need a full probabilistic model.
+
+08:51.460 --> 08:57.310
+Instead what we end up doing is we use a binary classification objective such as a logistic regression
+
+08:57.700 --> 08:59.710
+to discriminate the real target words.
+
+08:59.710 --> 09:05.390
+That is WFC from imaginary noise words we'll call those K in the same context.
+
+09:05.410 --> 09:10.660
+So this is basically a simple visualization where we have our projection layer.
+
+09:10.780 --> 09:12.640
+The cat sits on the blank.
+
+09:12.640 --> 09:15.200
+So Matt in this case so that's the target word.
+
+09:15.340 --> 09:17.610
+And we're going to have some sort of noise classifier.
+
+09:17.640 --> 09:23.110
+So it's a binary classification where we compare that target word versus the rest of these noise words
+
+09:23.110 --> 09:28.070
+and then we pass that in through some hidden layers and eventually we get some sort of embeddings.
+
+09:28.070 --> 09:31.620
+So our training process is going to be noise contrastive training.
+
+09:31.660 --> 09:37.580
+We're basically contrasting the noise versus the actual target word.
+
+09:37.630 --> 09:40.970
+So the target word is predicted by maximizing this equation right here.
+
+09:41.140 --> 09:44.000
+And don't worry too much about memorizing every little detail here.
+
+09:44.020 --> 09:48.720
+Instead try to understand the basic idea so let's look at that first term of the equation.
+
+09:48.820 --> 09:54.340
+So that first term is the binary logistic regression probability under the model of seeing the word
+
+09:54.430 --> 10:02.850
+w or W of T in the context H for some dataset capital D and it's cockily in terms of the learn them
+
+10:02.860 --> 10:05.540
+betting vectors theta.
+
+10:05.540 --> 10:11.950
+So in practice we approximate the expectation by drawing a contrast of words from the noise distribution.
+
+10:12.140 --> 10:14.480
+So here we're only drawing K words.
+
+10:14.480 --> 10:17.780
+We're not drawing the entire corpus text data.
+
+10:17.780 --> 10:21.660
+Instead we're just drawing a certain amount of words for the noise distribution.
+
+10:21.680 --> 10:27.590
+So this works really well for us because computationally it's really efficient because now we're just
+
+10:27.590 --> 10:29.030
+computing the last function.
+
+10:29.180 --> 10:32.270
+And it scales only to the number of noise words that we select.
+
+10:32.270 --> 10:37.610
+That is that case number not all the words in the vocabulary which would be let's say capital V or something
+
+10:37.610 --> 10:38.510
+of that nature.
+
+10:38.540 --> 10:44.060
+So that makes it a lot faster to train because we're only drawing keywords as are noise words instead
+
+10:44.060 --> 10:46.690
+of drawing and comparing to the entire vocabulary.
+
+10:46.850 --> 10:51.740
+So that's what makes effect computationally efficient for the task it's actually doing.
+
+10:51.740 --> 10:56.240
+Now again the larger the amount of keywords you end up drawing the longer your training time is going
+
+10:56.240 --> 10:56.830
+to take.
+
+10:56.870 --> 11:02.570
+But that should then make it more accurate to predict the target word versus a wide variety of noise
+
+11:02.570 --> 11:03.560
+words.
+
+11:03.860 --> 11:09.380
+However you'll see you can get really reasonable results for smaller values of k.
+
+11:09.400 --> 11:15.170
+So again the goal is to assign high probability to correct words and low probability to noise words.
+
+11:15.250 --> 11:19.260
+Then once you've ran through this model process you'll have vectors for each word.
+
+11:19.420 --> 11:24.400
+And what's really cool is you can visualize the relationships through some sort of dimension reduction
+
+11:24.730 --> 11:30.280
+and a really popular one especially for Wurtz HVAC is t distributed the classic neighbor imbedding.
+
+11:30.310 --> 11:35.650
+So in our practice we're going to have each vector be represented by a hundred and fifty dimensions
+
+11:35.920 --> 11:38.510
+and then we're going to use this process to reduce it down to two.
+
+11:38.620 --> 11:43.390
+So then we just have these words represented by two missional vectors which means we can then plot them
+
+11:43.390 --> 11:46.670
+out because we have two coordinates per word.
+
+11:46.840 --> 11:49.600
+So that ends up giving you something that looks like this.
+
+11:49.600 --> 11:54.370
+So this is actually the final plot we'll be creating and hopefully we'll end up realizing that points
+
+11:54.370 --> 11:57.040
+that are close to each other tend to have some similarity.
+
+11:57.880 --> 12:00.050
+All right let's get started in the next lecture.
+
+12:00.070 --> 12:01.830
+We'll code out the words havock model.

@@ -1,0 +1,493 @@
+WEBVTT
+
+00:05.350 --> 00:06.580
+Welcome back everyone.
+
+00:06.580 --> 00:12.850
+Now it's time to actually take what we did previously in the last lecture for data and apply it to creating
+
+00:12.850 --> 00:13.600
+our model.
+
+00:13.600 --> 00:20.800
+First thing we need to do is actually create an input function or create a variable called input underscore
+
+00:20.830 --> 00:29.380
+funk so that equal to T.F. thought estimator that inputs and instead of using a PI input function we're
+
+00:29.380 --> 00:34.890
+going to be using 8 Panda's input function because we have this in the form of Panas data frames.
+
+00:34.930 --> 00:43.310
+So we're going to say our x is equal to x train and R R Y is equal to y train.
+
+00:43.690 --> 00:49.960
+And then we can do things like set the batch size so it's fitted in batches of 10 at a time and then
+
+00:49.960 --> 00:56.800
+we can see that the number of the pox Let's go and just say a thousand and then will say shuffle is
+
+00:56.800 --> 01:00.470
+equal to true OK.
+
+01:00.660 --> 01:07.520
+Now it's time to create our model will say T.F. estimator and will start off of a linear classifier
+
+01:07.520 --> 01:13.730
+later on we'll do a neural network classifier and then we're going to say feature columns is equal to
+
+01:13.730 --> 01:20.530
+that feat calls column that we are list that we made earlier and then we also supply the number of classes.
+
+01:20.540 --> 01:22.310
+So by default it's 2.
+
+01:22.310 --> 01:26.520
+But in case you ever doing more than that you can change that number.
+
+01:26.520 --> 01:30.600
+But for analysis binary classification classifications we'll say number classes too.
+
+01:30.620 --> 01:35.410
+And once you run that you should see an output basically telling you the configuration of the model.
+
+01:35.630 --> 01:37.590
+Now all you do is train that model.
+
+01:37.850 --> 01:45.610
+So we'll say model train and we'll say input function is equal to that input function we just created
+
+01:47.410 --> 01:54.380
+and it's good and train for 1000 steps run that and you should see eventually some output here.
+
+01:54.590 --> 01:59.450
+As your models being trained and the pinning of how fast your computer uses may be a little slower or
+
+01:59.450 --> 02:01.180
+a little faster than what you see here.
+
+02:02.730 --> 02:03.360
+All right.
+
+02:03.570 --> 02:11.910
+So coming back down let's time to evaluate our model so we need an evaluation function will see evil
+
+02:11.940 --> 02:22.460
+underscore and put underscore phunk is equal to T.F. estimator dot and put stop Pandurs funk and we'll
+
+02:22.460 --> 02:23.290
+do the following.
+
+02:23.310 --> 02:27.210
+We'll say x is equal to now say x.
+
+02:27.210 --> 02:33.990
+Test don't say Y is equal to Y test we'll do the same batch size.
+
+02:34.080 --> 02:41.220
+Set it to turn and we're going to run this once we'll say number of epoxies equal to 1 which is also
+
+02:41.220 --> 02:41.940
+the default.
+
+02:41.970 --> 02:43.550
+And let's make sure we have Comus here.
+
+02:44.290 --> 02:51.490
+Comma comma and then finally we'll say shuffle is equal to false because we want to make sure that we're
+
+02:51.490 --> 02:53.670
+evaluating this in the same order.
+
+02:53.770 --> 03:01.710
+So they will see results is equal to model evaluates and say evil and put phunk run that.
+
+03:01.820 --> 03:04.090
+And then we should be able to see the results
+
+03:07.310 --> 03:12.070
+once we evaluate this we should be able to see our actual accuracy in area under the curve.
+
+03:12.080 --> 03:17.190
+So that would be something like in Orosi curve which we can do for binary classification you can see
+
+03:17.350 --> 03:22.880
+your accuracy baseline Silex we're getting about 74 percent accuracy it's not so bad.
+
+03:23.120 --> 03:27.160
+Let's go ahead and practice getting some predictions off of this.
+
+03:27.230 --> 03:42.110
+So to get predictions who saying pred and put funk and T.F. estimator input X dots inputs Pandurs input
+
+03:42.110 --> 03:42.740
+function.
+
+03:42.830 --> 03:47.400
+And in this case you would say x is equal to whatever new data you had in.
+
+03:47.600 --> 03:51.710
+So we don't actually have any new data within it create a hold out data set.
+
+03:51.770 --> 03:59.360
+We're just going to head and passing the test data again we'll see batch size is equal to 10.
+
+03:59.360 --> 04:03.920
+Now I'm not passing any y value because technically if we want to predict something we won't really
+
+04:03.920 --> 04:07.690
+know the y value for it otherwise to be no point in predicting it.
+
+04:07.790 --> 04:10.890
+That's an evaluation not a prediction.
+
+04:10.970 --> 04:17.010
+I will say in the report six to one and then we'll say shuffle is equal to false.
+
+04:17.040 --> 04:18.510
+Ok so now we have our Pred.
+
+04:18.510 --> 04:23.600
+So let's go out and create some predictions here will say model predict and then we're going to pass
+
+04:23.600 --> 04:25.160
+in that prediction function.
+
+04:25.160 --> 04:30.490
+So model that predicts pass and Pred input function let that happen.
+
+04:30.500 --> 04:33.270
+And remember predictions is going to be a generator.
+
+04:33.350 --> 04:36.240
+So we want we can pass it in as a list.
+
+04:37.000 --> 04:45.050
+Let's go in and say that as my pride or my predictions and then if I check out my pred I can see here
+
+04:45.140 --> 04:51.530
+I essentially have a list of dictionaries where it actually reports back the classes it predicted and
+
+04:51.530 --> 04:53.250
+also the probabilities for each class.
+
+04:53.270 --> 04:57.430
+You can see here on the first one it was split pretty evenly between the two classes.
+
+04:57.590 --> 05:04.430
+But just by a smidge point 0 1 percent he went ahead and classified it as one as having diabetes according
+
+05:04.430 --> 05:05.480
+to its own prediction.
+
+05:07.170 --> 05:11.820
+All right so that was for a linear classifier we noticed the linear clus for overall got 74 percent
+
+05:11.880 --> 05:12.510
+accuracy.
+
+05:12.510 --> 05:16.440
+We showed you how to do predictions on new data that it hasn't seen before.
+
+05:16.560 --> 05:19.070
+Essentially the same thing is evil except you don't provide it why.
+
+05:19.060 --> 05:21.280
+Because that wouldn't make sense for prediction.
+
+05:21.510 --> 05:25.310
+Let's go out and show you now how to do it dense neural network classifier.
+
+05:25.380 --> 05:30.220
+So say DNN model is equal to T.F. estimator.
+
+05:30.480 --> 05:38.400
+And I'm going to say that's neural network classifier and I will say it in units unhidden units basically
+
+05:38.400 --> 05:42.000
+defines Well how many neurons you want and how many layers.
+
+05:42.000 --> 05:45.360
+So you provide a list of neurons per layer.
+
+05:45.360 --> 05:51.580
+So if I want three layers with 10 year on each I say 10 common 10 commet 10.
+
+05:51.810 --> 05:56.610
+So that's 10 year olds and it's densely connected meaning every neuron is connected to every other neuron
+
+05:56.910 --> 06:01.070
+in the next layer and then we just pass in the feature columns that we defined earlier.
+
+06:01.260 --> 06:05.040
+So a feature column is equal to feet calls.
+
+06:05.370 --> 06:10.520
+And then when you specify the number of classes which again is just to OK.
+
+06:10.730 --> 06:13.940
+So we have our dense neural network classifier.
+
+06:13.940 --> 06:18.970
+Unfortunately if we try to do the exact same thing we did before you'll get an error if you say the
+
+06:19.130 --> 06:22.090
+model train and try to use the same input function.
+
+06:23.020 --> 06:29.770
+So if I use input func and say steps is equal to a thousand you're going to get an error here.
+
+06:29.800 --> 06:35.070
+And the reason because of that is you can check out the fooling in the stack overflow page in the notebook.
+
+06:35.170 --> 06:42.540
+But basically if we have a feature column and we're trying to use this on a densely connected neural
+
+06:42.550 --> 06:46.810
+network then what we did do is pass it into an embedding column.
+
+06:46.810 --> 06:47.890
+So it's giving us trouble.
+
+06:47.890 --> 06:51.800
+Are these categorical columns so he created so I'll show you how to do that.
+
+06:52.530 --> 07:05.270
+Basically what you need to do is you say embedded group call is equal to T.F. feature column.
+
+07:05.310 --> 07:11.790
+And then you need to say imbedding column and then passen the previous categorical column which is just
+
+07:12.480 --> 07:18.560
+assigned group and then you give it they mention which was the number of groups so that was ABC the
+
+07:18.990 --> 07:21.040
+xul say for their.
+
+07:21.120 --> 07:21.720
+There we go.
+
+07:21.770 --> 07:27.650
+So that's what you need to do if you end up defining your own column using a vocabulary list in the
+
+07:27.790 --> 07:30.020
+past into this imbedding column.
+
+07:30.020 --> 07:33.040
+And again that's only for those densely neural networks.
+
+07:33.050 --> 07:36.080
+Once we have them that we need to reset our feature columns.
+
+07:36.080 --> 07:41.290
+So you say feek calls is equal to and a scroll up and grab the last thing we did.
+
+07:41.330 --> 07:43.170
+We don't need to rewrite all that.
+
+07:43.250 --> 07:46.600
+So come up all the way back here are just copying pieces from the notes.
+
+07:46.790 --> 07:49.140
+But here we have our feature columns.
+
+07:49.370 --> 07:54.830
+So I'm going to copy that scroll back down and paste it here.
+
+07:55.050 --> 07:58.690
+But now I'm going to replace my group feature.
+
+07:58.700 --> 08:01.950
+So remember that was a group with the embedded group call.
+
+08:01.960 --> 08:07.110
+So copy that and then replace that here.
+
+08:07.150 --> 08:12.390
+There we go put that all zoom out a little bit so you can see it and you can always copy and paste this
+
+08:12.390 --> 08:13.670
+from the notes as well.
+
+08:13.710 --> 08:15.310
+So let's try this again.
+
+08:15.320 --> 08:26.180
+I'm going to define my input function as T.F. estimator inputs panel's input function.
+
+08:26.200 --> 08:30.510
+Again I'm going to do X train y train.
+
+08:30.680 --> 08:38.430
+I'll say it that size 10 number of Eat pocks is going to be a thousand Nells say shuffle is equal to
+
+08:39.540 --> 08:40.110
+true.
+
+08:40.350 --> 08:50.350
+So have that input function again three days ago in Altes create our model so it's NTFS the matre that
+
+08:50.530 --> 08:58.530
+see neural network hidden units go with 10 10 10 and these are values you can play around with.
+
+08:58.600 --> 09:02.860
+Obviously the more neurons and more hidden units as we kind of saw in the tents for a playground the
+
+09:02.860 --> 09:08.620
+longer it's going to take the train this thing they'll see a feature of school to see calls and then
+
+09:08.740 --> 09:12.850
+number classes is equal to two run that.
+
+09:13.030 --> 09:17.800
+And let's see if we can train and also say the N-N model school down here.
+
+09:17.830 --> 09:27.180
+We can see it in effect zoom in again scroll down we say DNN model that train and the input phunk we're
+
+09:27.180 --> 09:33.910
+going to train on is the one we just read the fine input phunk illustrated for a thousand steps.
+
+09:33.910 --> 09:36.370
+OK so now looks like everything is running.
+
+09:36.380 --> 09:41.140
+We're not getting any errors anymore due to that fix the imbedding column.
+
+09:41.150 --> 09:42.910
+All right so it looks like you're finished training.
+
+09:42.920 --> 09:45.050
+So let's evaluate it.
+
+09:45.050 --> 09:53.070
+We're going to say again evil input funk T.F. estimator inputs hopefully starting to feel a little more
+
+09:53.070 --> 09:54.130
+familiar now.
+
+09:54.750 --> 09:55.880
+And those input function.
+
+09:55.920 --> 09:57.100
+And then we pass and what we want.
+
+09:57.150 --> 10:05.690
+So we want X test Y is equal to Y test pass in a batch size
+
+10:08.650 --> 10:12.400
+we'll say the number of epoxies just one because it's an evaluation.
+
+10:12.550 --> 10:19.410
+And we also want to make sure that shuffle is equal to Fox so that all that line run that will say the
+
+10:19.540 --> 10:22.890
+model call evaluates on it.
+
+10:23.290 --> 10:25.440
+So we passen evaluate input function.
+
+10:25.540 --> 10:27.640
+And this is going to evaluate on the test data.
+
+10:27.850 --> 10:33.010
+So it's going to run the model that we just train on our test data and then compare his predictions
+
+10:33.010 --> 10:34.940
+to the actual true values here.
+
+10:35.890 --> 10:43.310
+So run that evaluation and looks like we get almost the exact same accuracy as we got before.
+
+10:43.320 --> 10:48.720
+So it looks like our densely connected neural networks is performing almost the same.
+
+10:48.720 --> 10:53.660
+So we got let's see 74 on accuracy 82 under the curve.
+
+10:53.870 --> 11:01.380
+To come back up here previously we got we scroll way back up here 74 and 80s is performing a little
+
+11:01.380 --> 11:01.940
+better.
+
+11:02.070 --> 11:06.080
+Let's see if we go crazy on the number of neurons and number of layers.
+
+11:06.270 --> 11:11.660
+If we perform any better granted we may just end up overfitting So it may not be that helpful.
+
+11:11.820 --> 11:16.290
+Let's say I believe we only have 10 features that's probably not going to be very helpful to create
+
+11:18.340 --> 11:21.100
+more neurons but it's kind of see what happens.
+
+11:21.100 --> 11:23.920
+Just for fun little run these again.
+
+11:24.950 --> 11:26.760
+And see what happens when you get it.
+
+11:27.140 --> 11:30.920
+So I'm going to jump forward in time to finish training.
+
+11:30.920 --> 11:32.290
+All right so jumping forward in time.
+
+11:32.300 --> 11:35.460
+Looks like I was not really able to squeeze much more actually out of that.
+
+11:35.480 --> 11:40.870
+So hovering around 74 75 an area under the curve still 82 83.
+
+11:40.910 --> 11:44.320
+So looks like Rupert is reaching the limits of what this data can do.
+
+11:44.610 --> 11:45.230
+OK.
+
+11:45.320 --> 11:50.060
+Hopefully that was useful to you and hopefully you got the chance to see how you can get a real data
+
+11:50.360 --> 11:54.100
+CXXVI and use the T.F. estimator API to work with it.
+
+11:54.110 --> 12:00.060
+So as a quick review you take in your data and then you normalize it at least the continuous numeric
+
+12:00.080 --> 12:01.620
+columns you plan to use.
+
+12:01.760 --> 12:06.500
+And then you go ahead and create your feature columns using feature column that numeric column.
+
+12:06.620 --> 12:11.730
+And if you have categorical columns you use feature column that categorical column either with Yvo vocab
+
+12:11.720 --> 12:13.500
+list or a Hash bucket.
+
+12:13.520 --> 12:18.470
+Then you can go ahead and Bucha ties in the continuous columns you want to make categorical.
+
+12:18.470 --> 12:21.670
+Then you create your list of feature columns do a train test split.
+
+12:21.710 --> 12:27.680
+Also you can do a train test puts you on hold outset then you're going to go ahead and do is create
+
+12:27.680 --> 12:32.690
+your input function depending if you're using Pandurs or not pi pass passing the training data choose
+
+12:32.690 --> 12:36.890
+your batch size shuffle et cetera create your linear classifier.
+
+12:37.040 --> 12:39.430
+Train it then you can't evaluate it.
+
+12:39.500 --> 12:42.860
+And then if you want later on you can predict on your data.
+
+12:42.860 --> 12:45.860
+OK thanks everyone and I'll see at the next lecture.

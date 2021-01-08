@@ -1,0 +1,781 @@
+WEBVTT
+
+00:05.230 --> 00:06.430
+Welcome back everyone.
+
+00:06.430 --> 00:08.530
+We're right where we left off last time.
+
+00:08.530 --> 00:13.150
+Previously in this Jupiter note book we had already created our data and this is a class that's able
+
+00:13.150 --> 00:18.730
+to give us batches of a new social wave and you go ahead and provide the minimum value of the maximum
+
+00:18.730 --> 00:20.260
+value and the number of points you want.
+
+00:20.260 --> 00:26.350
+In between those two an hour we're going to do is actually create the model and the first thing to do
+
+00:26.440 --> 00:29.920
+is just have a cell reset the default graph.
+
+00:29.920 --> 00:33.940
+This technically shouldn't be necessary in this particular note but because I haven't actually created
+
+00:33.940 --> 00:34.800
+that graph yet.
+
+00:34.930 --> 00:40.030
+But in my personal experience I was encountering some bugs because I was using a graphical processing
+
+00:40.030 --> 00:46.270
+unit AGP that is and I had to keep resetting of the default graph every time I ran my session.
+
+00:46.280 --> 00:47.560
+So getting any issues.
+
+00:47.560 --> 00:52.420
+Just go ahead and use the provided notebook and then say kernel restart and run it all and it should
+
+00:52.420 --> 00:53.410
+work for you.
+
+00:53.440 --> 00:57.020
+So I'm going to keep that in mind as I continue on coding this out.
+
+00:57.400 --> 01:01.110
+So up next I'm going to create just some constants.
+
+01:01.440 --> 01:07.200
+So first off we'll say the number of inputs is equal to 1 because we basically just have one feature
+
+01:07.200 --> 01:08.290
+in this time series.
+
+01:08.460 --> 01:11.770
+Given some value x what is the value y.
+
+01:11.790 --> 01:17.610
+So we have a number of inputs 1 and then we can also ask how many neurons we want in our layer.
+
+01:17.610 --> 01:19.830
+So this is definitely something you can play around with.
+
+01:19.920 --> 01:26.200
+We'll just go ahead and say we want 100 neurons in our léa and then I'm going to just ask for one output
+
+01:26.350 --> 01:30.970
+the predicted time series so we'll say the number of outputs wanted is just one.
+
+01:31.420 --> 01:33.970
+And then we're going to define a learning rate variable.
+
+01:33.970 --> 01:35.720
+Again this is something in play around with.
+
+01:35.740 --> 01:39.000
+We'll start off with 0.00 0 1.
+
+01:39.010 --> 01:40.680
+So pretty slow learning right there.
+
+01:41.720 --> 01:46.100
+And then the number of training iterations we want to go through again and other value you can play
+
+01:46.100 --> 01:46.630
+around with.
+
+01:46.640 --> 01:49.820
+So I'll say a number of train iterations.
+
+01:49.850 --> 01:54.880
+Make sure it's an underscore is equal to 2000.
+
+01:55.090 --> 02:00.160
+So we'll have run through 2000 steps and then our actual batch size we're just going to fit in one match
+
+02:00.290 --> 02:02.230
+at a time.
+
+02:02.230 --> 02:06.360
+OK so now let's get back to kind of our classic format.
+
+02:06.580 --> 02:08.820
+So we need some placeholders.
+
+02:09.340 --> 02:11.710
+So the placeholders we need are x.
+
+02:11.890 --> 02:18.910
+So it's going to be T.F. placeholder and that's going to be floating point 32 and then we're going to
+
+02:18.920 --> 02:25.510
+pasan none because it's going to be defined by the batch size than the number of time steps by the number
+
+02:25.510 --> 02:26.370
+of inputs.
+
+02:28.460 --> 02:30.730
+And that's why it's just going to be this almost the same thing.
+
+02:30.740 --> 02:35.850
+Placeholder to float 32.
+
+02:36.030 --> 02:41.190
+And again none because that's the best size for that dimension number of times steps that's going to
+
+02:41.190 --> 02:46.040
+be the same except this time y is going to be number outputs along that dimension.
+
+02:46.050 --> 02:47.410
+The third dimension there.
+
+02:47.640 --> 02:49.840
+So now we have placeholders X and Y.
+
+02:50.090 --> 02:50.390
+All right.
+
+02:50.400 --> 02:54.470
+Now the next step is to actually create the recurrent neural network cell layer.
+
+02:54.570 --> 02:56.030
+You have a lot of options here.
+
+02:56.070 --> 03:03.060
+You have things like basic RNA and cells basic LACMA cells multiply RNA and cells multiply Ellis tamps
+
+03:03.060 --> 03:03.870
+cells.
+
+03:03.870 --> 03:09.310
+But we're going to deal three very basic art and cell and see how those results are.
+
+03:09.420 --> 03:10.900
+So we'll say our cell.
+
+03:10.920 --> 03:12.830
+So let me actually just comment this first.
+
+03:12.840 --> 03:18.540
+It will say we are not right right now creating the recurrent neural network so layer and zoom in one
+
+03:18.540 --> 03:20.450
+more level here so it's clear.
+
+03:20.700 --> 03:29.240
+So are created the cell layer and I'm going to say cell is equal to T.F. contrib.
+
+03:29.450 --> 03:30.400
+Thoughts are.
+
+03:30.420 --> 03:37.230
+And and and then off of this you should see tons of options so you have a stem cell Arnon cell etc.
+
+03:37.290 --> 03:39.390
+The gated recurrent unit's cell.
+
+03:39.390 --> 03:40.820
+So you have tons and tons of options.
+
+03:40.860 --> 03:46.380
+A lot of these we didn't talk about but the one we did talk about is just a basic recurrent neural network
+
+03:46.380 --> 03:47.430
+cell.
+
+03:47.430 --> 03:51.540
+So for this guy to give it the number of units you want and the activation function.
+
+03:51.720 --> 03:56.700
+So you don't need to actually specify reuseable Gisli that is the default none but the number of units
+
+03:56.700 --> 04:01.980
+we want in this basic current year network cell will have that be the number of neurons.
+
+04:01.980 --> 04:07.590
+It's essentially a layer of recurrent neural network cells and then we're going to say the activation
+
+04:07.590 --> 04:14.130
+function will use Well go ahead and use T.F. and then we'll use a rectified linear activation unit.
+
+04:14.130 --> 04:18.450
+Now there's an issue of just using this basic recurrent year that work cell because the way we set this
+
+04:18.450 --> 04:22.580
+up remember that we're really just predicting one output here.
+
+04:22.590 --> 04:25.050
+We just want one time series output.
+
+04:25.050 --> 04:28.200
+If you take a look at the number of neurons we're using it's 100.
+
+04:28.200 --> 04:29.540
+So we don't want to 100 outputs.
+
+04:29.550 --> 04:36.120
+So the way we can actually project this just to be one is using output projection wrapper.
+
+04:36.240 --> 04:39.060
+So I'm gonna end up wrapping this whole thing.
+
+04:39.150 --> 04:47.100
+So then I will say cell is equal to T.F. contrib.
+
+04:47.230 --> 04:49.210
+R n n.
+
+04:49.380 --> 04:54.210
+And I'm going to call output projection wrapper and then that's going to take in that previous cell
+
+04:55.060 --> 04:58.900
+and then it's going to ask for an output size and the output size you want is just a number of outputs
+
+04:58.960 --> 05:01.890
+which in our case is just one time series output.
+
+05:01.930 --> 05:04.940
+OK so we'll go ahead and run that.
+
+05:05.070 --> 05:10.330
+And in fact just to make sure I don't get any confusion with this I'll go ahead and wrap this whole
+
+05:10.330 --> 05:10.820
+thing.
+
+05:10.840 --> 05:12.310
+Whoops.
+
+05:12.330 --> 05:18.030
+So let's take this whole guy cut it and just inject it in here.
+
+05:18.040 --> 05:19.750
+That way don't have two variables there.
+
+05:20.610 --> 05:22.880
+And then set this equal to the following.
+
+05:22.890 --> 05:25.200
+So let me make this simple but lines it's a little clear.
+
+05:25.220 --> 05:26.540
+It's actually happening here.
+
+05:26.910 --> 05:32.700
+So all I'm doing is taking that first basic recurrent neural that works well has 100 neurons that layer
+
+05:32.760 --> 05:37.980
+activation function as a rectified linear unit and then and then wrap it to the output projection wrapper.
+
+05:37.980 --> 05:40.790
+So I just get one output.
+
+05:40.840 --> 05:41.230
+All right.
+
+05:41.320 --> 05:45.850
+And then later on you can replace this with elist himself and see the differences etc..
+
+05:45.940 --> 05:49.410
+Or he can do multiday RNA and cells and play around with that.
+
+05:49.420 --> 05:55.200
+Now the next step is to actually get the outputs and the states of these basic RNA and cells.
+
+05:55.210 --> 06:02.590
+So the way we can do this is using a convenience function that's NCF to an end and it's the dynamic
+
+06:02.660 --> 06:03.080
+are.
+
+06:03.120 --> 06:08.890
+And so it just creates a recurrent neural network specified by the actual cell that we just created
+
+06:08.910 --> 06:10.220
+appear that cell.
+
+06:10.570 --> 06:16.090
+And what you can do is it's essentially going to automatically output both the outputs and the states
+
+06:16.090 --> 06:16.900
+of these cells.
+
+06:16.900 --> 06:23.530
+So it performs a dynamic unrolling of the inputs that basically just means it's using a while loop operation
+
+06:23.920 --> 06:27.840
+to run over the cell the appropriate number of times.
+
+06:27.880 --> 06:33.870
+So we're going to go ahead and say TFT and end that dynamic and then we're going to pass in that cell
+
+06:33.880 --> 06:41.250
+we just created and the next thing we're going to pasan are the actual x data points here.
+
+06:41.250 --> 06:43.910
+So that's the placeholder.
+
+06:43.980 --> 06:51.800
+And then finally we need to specify the type it is or say the type is equal to to float 32 OK and then
+
+06:51.800 --> 06:57.810
+that's going to return outputs.
+
+06:57.830 --> 07:00.460
+OK so that's the dynamic Arnon call.
+
+07:00.680 --> 07:03.420
+And then finally we need a last function in an optimizer.
+
+07:03.440 --> 07:08.060
+We're almost ready to start our session so we're going to go ahead and use mean square error as our
+
+07:08.060 --> 07:09.270
+last function.
+
+07:09.290 --> 07:11.960
+So for mean square error it's pretty straightforward.
+
+07:11.960 --> 07:24.280
+We just are going to say T.F. reduce mean T.F. square of our outputs minus the true value which in this
+
+07:24.280 --> 07:30.630
+case if we come back up here it's a placeholder y so all we're doing is taking the mean square error.
+
+07:30.660 --> 07:35.540
+So square mean mean square.
+
+07:35.760 --> 07:38.080
+Next we need to create the optimizer.
+
+07:38.210 --> 07:45.710
+So we'll say optimizer is T.F. train and we'll use an atom optimizer for this and we'll set the learning
+
+07:45.710 --> 07:52.130
+rates equal to the learning what we described above and offer this we're going to say train is equal
+
+07:52.130 --> 07:56.690
+to optimizer that minimize the loss.
+
+07:56.750 --> 08:01.970
+This is we them before finally we want to create in it so we can initialize the variables say global
+
+08:02.440 --> 08:09.820
+boops global variables initializer and now it's time to run a session.
+
+08:10.070 --> 08:15.770
+So since I am using AGP for this because it's going to run a little faster for me there is a slight
+
+08:15.770 --> 08:20.950
+bug that sometimes occurs where all the GPS memory gets taken and you'll get a little crash.
+
+08:21.080 --> 08:24.810
+So I'm going to copy and paste one line here from the notes.
+
+08:24.810 --> 08:28.670
+If you're using C.P you don't need to use this but it's you.
+
+08:28.760 --> 08:34.220
+Scuse me T.F. GPU options and it's basically just telling it how much of my cheap memory I'm allowed
+
+08:34.640 --> 08:35.370
+to use.
+
+08:35.450 --> 08:40.270
+So I'll go ahead and do this up to 85 percent my GP whose memory is allowed again for using c.p.
+
+08:40.270 --> 08:41.860
+You don't need to run this.
+
+08:41.990 --> 08:47.180
+They'll just take you a little longer if you're using GPS you you may not get this error and you may
+
+08:47.180 --> 08:48.480
+not need to provide this.
+
+08:48.500 --> 08:51.170
+It just happened to be on my specific Nvidia card.
+
+08:51.260 --> 08:56.210
+I was getting error and hopefully to actually fix this bug because I don't believe it was actually any
+
+08:56.210 --> 08:58.450
+fault of the tensor code.
+
+08:58.460 --> 09:06.560
+It was just some bug deeper intenser float 1.3 here and then finally I'm going to create a saver function
+
+09:07.480 --> 09:13.920
+or really an instance of T.F. train saver and that's going to allow me to be able to save my model.
+
+09:13.940 --> 09:21.920
+So now we can save our models and use them again later we'll say with T.F. session and I'm going to
+
+09:21.950 --> 09:27.040
+give the parameter we haven't actually provided parameters before but this pre-merge just for the GPU
+
+09:27.080 --> 09:33.450
+you can go in and skip it if you're not using sheepy you will say T.F. config Kroto and say GPU options.
+
+09:33.800 --> 09:45.290
+Is it cool to GPU options then we'll say as session go into say run and it's then I'll do the following.
+
+09:45.290 --> 09:52.680
+I'll say for every iteration in a range the number of training iterations I will do the following.
+
+09:54.490 --> 10:03.460
+I will get X batch and y batch and that's going to be my test data set and then I'm going to call next
+
+10:03.460 --> 10:08.740
+batch off for that can it pass in that batch size that it defined earlier along with the number of times
+
+10:08.740 --> 10:17.370
+steps then I'm going to actually run the trainer and I'll provide a feed dictionary.
+
+10:17.370 --> 10:19.280
+Let me scroll down a little bit here.
+
+10:19.650 --> 10:29.580
+I'll provide a feed dictionary of values where X is just the x batch and Y is just the Y that each Hopefully
+
+10:29.610 --> 10:31.110
+now this feels pretty familiar.
+
+10:31.410 --> 10:36.180
+And then let's go ahead and calculate our accuracy every 100 steps and report back.
+
+10:36.180 --> 10:43.470
+Or I mean squared error we'll say if iteration mod 100 is equal to zero.
+
+10:43.500 --> 10:46.900
+Just as we've done before we'll calculate mean squared error.
+
+10:46.970 --> 10:52.570
+So say loss evil and I'll write a feed dictionary here.
+
+10:53.760 --> 10:56.930
+Is equal to x.
+
+10:56.960 --> 11:07.140
+Wups next batch why y batch isn't calculating loss on this training set not on some separate testing
+
+11:07.140 --> 11:07.630
+set.
+
+11:08.720 --> 11:16.260
+And then we'll say iteration and let's go ahead and say just in quotes will say we'll put a tab there.
+
+11:16.270 --> 11:17.890
+So that's just tapping.
+
+11:17.990 --> 11:19.290
+They'll say mean square error.
+
+11:20.340 --> 11:24.320
+And they will say MSE OK so I still print function there.
+
+11:24.960 --> 11:29.980
+And then finally once this is all done I'm going to save my model so I call saver that save.
+
+11:30.210 --> 11:37.030
+And then I provide the session and then I provide a file path where I want the model to be saved so
+
+11:37.030 --> 11:46.540
+when I say dot slash aren't in time series model and then I'll say Code along.
+
+11:47.080 --> 11:52.940
+So I would recommend you add some sort of unique identifier here because I did save a model and it provided
+
+11:53.020 --> 11:54.470
+for you with the zip file.
+
+11:54.520 --> 11:55.990
+So don't overwrite that model.
+
+11:55.990 --> 11:58.260
+Otherwise you have to download the zip again.
+
+11:58.270 --> 12:01.570
+So let me run this and hopefully have no errors.
+
+12:01.570 --> 12:02.280
+And there we go.
+
+12:02.350 --> 12:08.440
+So now I can see every 100 steps so mine is running pretty fast because I'm using GPS to use maybe running
+
+12:08.470 --> 12:09.380
+a little slower.
+
+12:09.550 --> 12:15.580
+But what I'm going to do now is fast forward in time until these 2000 steps are then running OK.
+
+12:15.590 --> 12:20.220
+I just jumped forward in time that took a total of about 10 to 15 seconds for me.
+
+12:20.500 --> 12:25.150
+So now we're going to do is attempt to predict the time series or one step into the future.
+
+12:25.150 --> 12:25.940
+So how do we do that.
+
+12:25.990 --> 12:28.390
+Well we're going to run another session.
+
+12:28.660 --> 12:35.740
+We'll say with T.F. session as SPSS and Lotusphere And again this is just kind of a quirk of tent's
+
+12:35.740 --> 12:37.720
+flows maybe GPs bugs.
+
+12:37.780 --> 12:41.160
+I didn't actually have to provide the GPU configuration here.
+
+12:41.290 --> 12:42.360
+I don't know why that is.
+
+12:42.400 --> 12:46.760
+Basically it was just a bug for this particular session here.
+
+12:47.080 --> 12:51.300
+Technically you shouldn't have to ever provide these options and have it crash.
+
+12:51.310 --> 12:53.610
+But that was just the case for me.
+
+12:53.620 --> 12:55.640
+Hopefully that's a bug that's fixed by now.
+
+12:55.970 --> 12:59.370
+OK then I'm going to say Savir restore.
+
+12:59.620 --> 13:02.990
+And I'm going to restore that model I just saved.
+
+13:03.040 --> 13:09.150
+So let me copy and paste the file path here and again you can basically put whatever file path you want.
+
+13:09.500 --> 13:14.790
+I would again suggest that you don't overwrite the model that's saved with the actual zip file.
+
+13:15.260 --> 13:16.200
+So then I'm going to do the following.
+
+13:16.200 --> 13:26.480
+I'll say ex-New is equal to any peace sign I get to say NPR-A of the tree and we created earlier in
+
+13:26.490 --> 13:29.440
+the lecture Colon's negative one.
+
+13:29.460 --> 13:35.910
+And then I'm going to reshape this to make sure it actually matches the shape of the training it expects
+
+13:35.940 --> 13:39.390
+that's going to be negative one number of times.
+
+13:39.390 --> 13:45.320
+That's number of inputs.
+
+13:45.510 --> 13:46.780
+Zoom out one level here.
+
+13:48.260 --> 13:54.650
+And then we're going to say why prediction is equal to session run outputs.
+
+13:54.650 --> 14:03.450
+And then we're going to say feed dictionary is equal to x and then we'll say ex-New OK you run that
+
+14:03.570 --> 14:07.800
+should run really fast because you're essentially just doing one quick prediction here and now it's
+
+14:07.800 --> 14:09.640
+time to plot it out and see how he performs.
+
+14:09.640 --> 14:15.840
+So say Piazzi title is testing the model.
+
+14:16.100 --> 14:22.670
+So I'm first going to do the actual training instance all say training instance.
+
+14:22.860 --> 14:32.250
+And then after that we'll say target to predict that's essentially the correct test of values which
+
+14:32.250 --> 14:32.990
+are easy enough.
+
+14:33.000 --> 14:37.600
+That's just Pete that sign of the training data.
+
+14:40.250 --> 14:44.870
+And then the models actual prediction.
+
+14:44.940 --> 14:46.680
+So let's go ahead and do this now.
+
+14:48.360 --> 14:55.090
+So first thing I say till Kielty plot or grab the training instance.
+
+14:55.250 --> 15:06.160
+Colin too negative one than say peace sign of same thing train instance colon negative one and we'll
+
+15:06.160 --> 15:13.390
+go ahead and have this be a blue marker so I'll say be 0 for blue marker and she's the same size as
+
+15:13.390 --> 15:14.270
+before.
+
+15:14.380 --> 15:20.170
+And again you can go ahead and choose any markers any colors you want here then to create an alpha 0.5.
+
+15:20.180 --> 15:21.400
+It's a little more see through.
+
+15:21.490 --> 15:27.710
+And more importantly let's give this label training instance.
+
+15:27.720 --> 15:29.370
+Now the target to predict.
+
+15:29.570 --> 15:34.300
+And I say Piazzi plot again training instance.
+
+15:34.300 --> 15:38.170
+So now this is going to be time series shifted one into the future.
+
+15:38.290 --> 15:49.660
+So I'll say one colon and then we'll see any sign train instance one colon here and then this is going
+
+15:49.660 --> 15:58.160
+to be black will say marker size is equal to 10 and then we'll say label is target
+
+16:01.350 --> 16:05.290
+and then finally our markets or models predictions will appeal to.
+
+16:06.900 --> 16:19.950
+Train instance one colon then we're going to say why prediction zero colon zero.
+
+16:20.180 --> 16:28.180
+And then let's say let's have this be read thought so say our thoughts are period they're marker signs
+
+16:28.180 --> 16:32.930
+we'll have this be turns a little smaller and the label is going to be predictions.
+
+16:36.880 --> 16:43.980
+And let's go ahead and label the x axis x axis labels just going to be time we'll say Piazzi legend
+
+16:45.110 --> 16:47.100
+and that is called Pill teeth tightly.
+
+16:48.840 --> 16:49.200
+All right.
+
+16:49.200 --> 16:50.660
+So let's here we did.
+
+16:51.240 --> 16:55.990
+So we're testing our model we can see in the beginning we're actually not very good at predicting.
+
+16:56.190 --> 17:01.960
+But as we get further and further along the time series we're actually lining up with our target.
+
+17:01.980 --> 17:05.950
+So again the blue points here those are the points we trained on.
+
+17:06.180 --> 17:13.770
+And then I would fit in the values here for X and I said go ahead and predict one time series into the
+
+17:13.770 --> 17:18.030
+future for me and the correct values are these and black that it should have been hitting.
+
+17:18.090 --> 17:21.410
+You can see that they basically overlap perfectly with blue as they should.
+
+17:21.600 --> 17:24.530
+And then these red points are what our model actually predicted.
+
+17:24.690 --> 17:27.360
+So we're being a little bit off in the very beginning.
+
+17:27.600 --> 17:31.230
+And then as we continue along we're getting closer and closer there.
+
+17:31.260 --> 17:36.600
+Let's go ahead and see if swapping out the cell type will improve performance instead of a basic Arnett's
+
+17:36.600 --> 17:37.310
+cell.
+
+17:37.320 --> 17:41.370
+We'll use that gated recurrent unit that we talked about earlier.
+
+17:41.490 --> 17:45.720
+And since we're using that unit we can also decrease the learning rate a little bit.
+
+17:45.720 --> 17:49.380
+So we'll say 0.00 one and let's see how that does.
+
+17:49.380 --> 17:52.440
+Again you can play around to learning rate number of iterations even further.
+
+17:52.530 --> 17:57.840
+You can reduce the learning rate more give more iterations etc. but now I'm going to say kernel restart
+
+17:57.870 --> 18:04.070
+and run all and then while that's running I'm going to go ahead and jump forward in time and see how
+
+18:04.070 --> 18:05.690
+that model performed.
+
+18:05.690 --> 18:11.750
+All right so now that that's finished training we can see that overall our predictions are essentially
+
+18:11.780 --> 18:15.450
+a little higher than our actual target value.
+
+18:15.620 --> 18:20.070
+But you can see that those earlier inputs are now no longer being lost.
+
+18:20.120 --> 18:25.220
+So we're actually the behavior of this entire time series is a lot smoother.
+
+18:25.250 --> 18:29.510
+Even though the values seem to be shifted up a little higher than they should be off the target we're
+
+18:29.510 --> 18:34.580
+getting decent behavior towards the beginning of that time series as would be expected using those gaited
+
+18:34.880 --> 18:36.130
+recurrent units.
+
+18:36.200 --> 18:36.640
+OK.
+
+18:36.770 --> 18:42.350
+So I definitely encourage you to come back up here and play around a lot with different cell types as
+
+18:42.350 --> 18:45.360
+well as your learning rate and number of iterations.
+
+18:45.410 --> 18:48.220
+See if making a slower or faster learning really helps.
+
+18:48.350 --> 18:50.150
+You can even play around the number of neurons.
+
+18:50.220 --> 18:50.910
+Cetera.
+
+18:50.960 --> 18:51.250
+All right.
+
+18:51.260 --> 18:53.360
+Thanks everyone and we'll see you at the next lecture.
+
+18:53.380 --> 18:58.420
+We're actually going to generate completely new sequences not just one time step ahead.
+
+18:58.540 --> 18:59.290
+I'll see you there.

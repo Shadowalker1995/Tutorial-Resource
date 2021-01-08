@@ -1,0 +1,754 @@
+WEBVTT
+
+00:05.580 --> 00:10.950
+Welcome everyone to the CO-2 long lecture for the words of ex-model we're going to be using the tensor
+
+00:10.950 --> 00:15.480
+for documentation example which has a tutorial implementation of war effect.
+
+00:15.500 --> 00:17.990
+It's a really great example for the documentation.
+
+00:17.990 --> 00:19.750
+So we'll just be using that directly.
+
+00:19.790 --> 00:24.080
+So that means we're going to be referring to the provided notebook often for blocks of code that we're
+
+00:24.080 --> 00:26.720
+going to end up copying and pasting to this code along.
+
+00:26.720 --> 00:30.530
+So make sure you have that notebook or the documentation example of ready to go.
+
+00:31.750 --> 00:37.360
+So as a quick note if we're to VAK is a model that really interests you further and you want to explore
+
+00:37.360 --> 00:37.680
+it.
+
+00:37.870 --> 00:42.580
+I would actually recommend that you don't use tensor flow as your main source of this but instead check
+
+00:42.580 --> 00:44.010
+out the gensym library.
+
+00:44.020 --> 00:46.310
+It's linked as a resource for this lecture.
+
+00:46.310 --> 00:50.370
+It has a much simpler to use API for word to Veck and additional functionality.
+
+00:50.530 --> 00:55.140
+I've used it myself in the past and it's a lot easier to use than tensor flow.
+
+00:55.290 --> 00:59.920
+Discourse is an senseful that will be showing you the tensor flow version but definitely check out the
+
+00:59.920 --> 01:02.080
+gensym library if you intend to use words.
+
+01:02.260 --> 01:02.880
+Further on.
+
+01:02.880 --> 01:06.700
+It has a lot more functionality and honestly it's a lot simpler to use.
+
+01:06.700 --> 01:07.790
+All right let's get started.
+
+01:07.810 --> 01:08.960
+In the Jupiter notebook.
+
+01:09.040 --> 01:10.480
+OK here I am of the Jupiter notebook.
+
+01:10.480 --> 01:13.260
+The first thing you need to do is our imports.
+
+01:13.360 --> 01:15.970
+Many imports that we actually have to do.
+
+01:15.970 --> 01:18.540
+So I'm just going to copy and paste them from the notebook.
+
+01:18.580 --> 01:23.240
+You can see you're using collection's math our operating system so we can grab the files zip files so
+
+01:23.250 --> 01:25.420
+we can unzip them as well as things like pie.
+
+01:25.430 --> 01:26.890
+And of course sensor flow.
+
+01:26.920 --> 01:32.470
+So we go ahead and run all those imports again just copy and paste that from the notebook and then up
+
+01:32.470 --> 01:34.600
+next will actually get the data.
+
+01:34.600 --> 01:39.780
+So there's a function that we're going to be creating that will be able to fetch the data for you from
+
+01:39.780 --> 01:40.480
+the your l.
+
+01:40.540 --> 01:44.640
+It's going to check if it exists or not and if it doesn't exist it will download it for you.
+
+01:44.650 --> 01:47.350
+So let's go and just create that.
+
+01:47.390 --> 01:53.090
+So we're going to say our data directory is equal to and match this exactly.
+
+01:53.120 --> 01:55.310
+Otherwise you'll end up downloading the data all over again.
+
+01:55.310 --> 01:56.870
+It's already downloaded for you.
+
+01:57.610 --> 02:01.870
+With the zip file so I'll say words effect underscore data words.
+
+02:02.080 --> 02:06.760
+And then in case you ever want to download the state of yourself you can use this function to do it.
+
+02:06.940 --> 02:11.180
+So I'm going to copy and paste this your L from the notebook just to make sure I don't mess it up.
+
+02:12.110 --> 02:13.370
+But it's basically right here.
+
+02:13.550 --> 02:19.190
+So we're going to use this text a zip file that comes from this Web site so you can download it directly
+
+02:19.500 --> 02:24.230
+in the function we're going to end up copying and pasting here is going to allow you to either download
+
+02:24.230 --> 02:24.840
+the data.
+
+02:25.040 --> 02:29.600
+If it doesn't exist or just open up the data in case you already have it download it.
+
+02:29.600 --> 02:33.620
+So if you come back here to recurrent networks you'll notice that we already have the words effect data
+
+02:33.620 --> 02:34.280
+for you.
+
+02:34.400 --> 02:38.490
+If you go in there words words zip zip file We're going to be using.
+
+02:38.480 --> 02:44.870
+So I'll go ahead and copy and paste the fecche words data function and then basically walk through what
+
+02:44.870 --> 02:46.300
+it's doing here.
+
+02:46.310 --> 02:52.110
+So when you call this fetch where it's data you end up passing in the URL and the words data directory.
+
+02:52.310 --> 02:56.130
+So what ends up doing it's going to make that directory if that does not exist.
+
+02:56.210 --> 03:01.040
+The circuitry already exist for us as we just saw under the current US networks folder then it's going
+
+03:01.040 --> 03:03.050
+to set a path to the zip file.
+
+03:03.050 --> 03:07.010
+So it's going to take that directory and append words that zip to it or join it.
+
+03:07.010 --> 03:10.120
+And then if the zip file isn't there it then downloads it.
+
+03:10.310 --> 03:15.280
+So this particular line won't work for you if you have some sort of restriction on your internet.
+
+03:15.350 --> 03:19.670
+So if you're on a work computer and you get some failure at this line it's probably because you have
+
+03:19.670 --> 03:21.050
+a firewall blocking you.
+
+03:21.170 --> 03:25.080
+So you'll need to get admin privileges privileges or turn off that firewall.
+
+03:25.250 --> 03:30.020
+So again keep that in mind you will need full admin privileges to download this zip file or you can
+
+03:30.020 --> 03:32.990
+just go to the Internet and download it manually from this you are.
+
+03:33.290 --> 03:39.410
+Then once the zip files there well we end up doing is we just read in that data and then we end up decoding
+
+03:39.410 --> 03:40.220
+it and splitting it.
+
+03:40.220 --> 03:49.480
+So this returns a list of all the words in the data source so say words is equal to and I mean to call
+
+03:49.890 --> 03:51.790
+fecche words data.
+
+03:51.850 --> 03:53.170
+Open and close parentheses.
+
+03:53.200 --> 03:58.540
+And I'm just using open unclose princes because I will be using the default values of data and data
+
+03:58.540 --> 03:59.240
+directory.
+
+03:59.410 --> 04:04.670
+So this should not download anything it's just going to fetch the data for me.
+
+04:04.720 --> 04:06.360
+Now that data is quite large.
+
+04:06.400 --> 04:12.400
+So this may take a little time for you but once we actually run that we'll see the length of the words
+
+04:12.700 --> 04:14.560
+is quite large.
+
+04:14.560 --> 04:16.900
+So we have about 17 million words here.
+
+04:16.900 --> 04:18.280
+So really big.
+
+04:18.550 --> 04:25.000
+Let's go out and get a slice of the words just so we can see them say something like get totally random
+
+04:25.000 --> 04:31.420
+slice here some 40 words so we can see feelings and the auditory system of a person with autism often
+
+04:31.420 --> 04:36.280
+cannot sense fluctuations etc. and you can see here this is what the words look like.
+
+04:36.400 --> 04:42.370
+So we're gonna end up doing is say print out kind of a sentence of these words.
+
+04:42.370 --> 04:47.510
+Now these sentences aren't exactly directly pulled from a text source.
+
+04:47.800 --> 04:52.870
+The zip file is specialized in a way to work a little better for words HVAC which is why it's kind of
+
+04:52.870 --> 04:54.460
+a sampling.
+
+04:54.580 --> 04:58.000
+So that's why we're using this link here.
+
+04:58.060 --> 05:03.010
+So even though these technically are sentences they've been adjusted a little bit so that they work
+
+05:03.010 --> 05:04.580
+a little better with words of that.
+
+05:04.720 --> 05:08.330
+So we'll say and is equal to just a space years.
+
+05:08.330 --> 05:12.820
+Print it all out in one line so we can see here what an example sentence may look like.
+
+05:12.820 --> 05:17.610
+So it says feelings and the auditory system of a person with autism often cannot sense the fluctuations
+
+05:17.620 --> 05:22.600
+what seems to not to sick people like a high pitched sing song or flat robot like voice is common in
+
+05:22.600 --> 05:23.570
+autistic children.
+
+05:23.680 --> 05:25.650
+Some autistic children and it continues on.
+
+05:25.820 --> 05:28.120
+You notice here that we've actually removed punctuation.
+
+05:28.330 --> 05:31.520
+So it kind of feels like a run on us because there are no periods here.
+
+05:31.840 --> 05:36.130
+And those are some of the adjustments for words effect so obviously doesn't make sense punctuation since
+
+05:36.130 --> 05:38.770
+we want kind of stream of words.
+
+05:38.770 --> 05:40.660
+So now we're going to build a word count.
+
+05:40.870 --> 05:41.650
+And it's really easy.
+
+05:41.650 --> 05:47.410
+The collections library we imported all say from collections import counter.
+
+05:47.460 --> 05:50.030
+And as you may have guessed counter we'll just count stuff.
+
+05:50.040 --> 05:52.050
+So I want to show you a quick example of what it looks like.
+
+05:52.470 --> 06:07.000
+If I make a list of words like one two and two and run that and then I say counter of my list it just
+
+06:07.000 --> 06:09.640
+returns back a dictionary with the actual word.
+
+06:09.670 --> 06:11.110
+And then how many times it showed up.
+
+06:11.170 --> 06:14.010
+So one showed up one time to shoot up two times.
+
+06:14.110 --> 06:20.430
+So you can also then request a method called most common and it would return back.
+
+06:20.590 --> 06:26.020
+However many most common words you asked so this returns back the number one most common word which
+
+06:26.020 --> 06:27.190
+in this case is two.
+
+06:27.280 --> 06:31.690
+And if you wanted the two most common words that you pass into and in this case that's all we have.
+
+06:32.090 --> 06:35.860
+OK so let's go ahead and create the word data and vocabulary.
+
+06:36.010 --> 06:39.580
+So we'll do another function here and this one we can actually code along with.
+
+06:39.580 --> 06:41.940
+Let me zoom in one more level here.
+
+06:42.010 --> 06:50.600
+We're going to say create the counts and we'll sorry General vocab size is going to be fifty thousand
+
+06:50.600 --> 06:52.000
+words.
+
+06:52.050 --> 06:56.820
+So even though we have many more words than that in our actual data set some of these are definitely
+
+06:56.820 --> 07:01.230
+repeat words so you can see here we have like persons going to be repeated the word was going to be
+
+07:01.230 --> 07:02.900
+repeated many times etc..
+
+07:03.030 --> 07:10.490
+So we'll have our model just take into account a total of 50000 unique words and we're going to say
+
+07:10.490 --> 07:18.860
+that vocab is equal to an empty list here plus counter of words.
+
+07:19.460 --> 07:27.740
+And then we're going to say the most common based off cup size.
+
+07:28.160 --> 07:33.590
+It's actually change this sort of being vocable will that vocab size sorry for this confusion they're
+
+07:33.900 --> 07:37.080
+sort of defining vocabulary size as 50000.
+
+07:37.150 --> 07:43.570
+So basically we are saying is Hey grab the most common 50000 words and that's going to be my vocabulary.
+
+07:43.570 --> 07:45.760
+So then I'm going to turn that into an umpire.
+
+07:45.790 --> 07:47.910
+Which is why I have that kind of list there.
+
+07:47.910 --> 07:52.210
+So we'll say vocab is equal to the array.
+
+07:52.270 --> 07:56.190
+Then I'll use miscomprehension to say word for word.
+
+07:56.320 --> 08:02.920
+Word for word comma underscores a little bit of typing a tuple in packing their vocab.
+
+08:03.220 --> 08:05.660
+So what I'm actually doing here with this tuple unpacking.
+
+08:05.710 --> 08:11.170
+Remember that what I asked for the most common I get back a list of tuples where the first item in the
+
+08:11.170 --> 08:14.330
+tuple is the word itself and the second item is the count.
+
+08:14.390 --> 08:17.590
+And I don't really care about the count I just care about the most common words.
+
+08:17.620 --> 08:20.830
+So what I'm doing here is using list comprehension for this vocab.
+
+08:20.830 --> 08:26.980
+All I'm saying is hey for the word in this tuple unpacking I'm only grabbing the word.
+
+08:26.980 --> 08:31.460
+And typically if you're going to throw something away in an underscore or not use it you just use.
+
+08:31.540 --> 08:35.520
+Scuse me when you throw something away in a list comprehension or a tuple on packing.
+
+08:35.530 --> 08:37.120
+You just use an underscore.
+
+08:37.120 --> 08:40.960
+So since I don't really care about this number I'm just going to put it in as an underscore.
+
+08:40.960 --> 08:47.880
+So that's common in Python if you're going to not use something just underscore their next.
+
+08:47.920 --> 08:55.960
+I'm going to create my dictionary and that's going to be word and I will say code for code.
+
+08:57.320 --> 09:01.300
+Word and enumerates vocab.
+
+09:01.580 --> 09:04.490
+And this is essentially a dictionary comprehension.
+
+09:04.570 --> 09:08.660
+So we'll see the result of that in just a little bit but then I will create my data.
+
+09:09.260 --> 09:14.180
+And this is going to be an umpire Ray and we're going to have a list comprehension here.
+
+09:14.180 --> 09:25.420
+So lots of comprehensions and Orsen essay gets word zero for word in words.
+
+09:25.420 --> 09:30.040
+And then finally we're going to return the data and the vocab.
+
+09:30.090 --> 09:33.140
+So let's run this and see what is actually being returned here.
+
+09:33.150 --> 09:35.590
+So again a vocab size is 50000.
+
+09:35.610 --> 09:43.620
+So I'll say the following data and my vocabulary are equal to create counts.
+
+09:44.650 --> 09:47.360
+So I'll run that again this may take a little bit of time.
+
+09:47.560 --> 09:49.500
+So I get to hop 4 in time until this is done.
+
+09:50.680 --> 09:52.350
+Or it actually just finished for me.
+
+09:52.520 --> 09:54.830
+So let's take a look at the shape of data.
+
+09:55.890 --> 09:57.250
+So the shape of data.
+
+09:57.280 --> 09:59.180
+Notice it's as many words as there were.
+
+09:59.190 --> 10:03.490
+And if we take a look at vocabulary and the shape it's 50000.
+
+10:03.510 --> 10:04.890
+So what does that actually mean.
+
+10:05.110 --> 10:16.480
+Well it means if I were to grab the value add words in that 100 then my data will tell me what number
+
+10:16.490 --> 10:17.560
+vocab word it is.
+
+10:17.570 --> 10:26.120
+So interpretations is 4189 out of my entire vocabulary so I can see here that the various words in my
+
+10:26.120 --> 10:30.840
+data have some sort of index position in my vocabulary.
+
+10:30.850 --> 10:31.090
+All right.
+
+10:31.090 --> 10:36.720
+So it's going to be useful later on when we generate batches OK the next step is to create a function
+
+10:36.780 --> 10:39.200
+that actually generates batches for us.
+
+10:39.360 --> 10:45.180
+Now we're going to copy this directly from the documentation so it's a bit complicated but basically
+
+10:45.180 --> 10:49.410
+what this is going to end up doing is at the end it's going to return a batch as well as the labels
+
+10:49.470 --> 10:50.760
+associated with it.
+
+10:50.760 --> 10:54.630
+So we provide a batch size and then number of skips and skip window which we're going to talk about
+
+10:54.630 --> 10:55.290
+later on.
+
+10:55.440 --> 10:57.040
+They're just going to be some parameters we can set.
+
+10:57.070 --> 11:01.950
+And then this whole code is going to generate the batches and you can check out the documentation if
+
+11:01.950 --> 11:05.270
+you want some more information about line by line what this is doing.
+
+11:05.280 --> 11:08.580
+But for our case we can just think of it as in the batches.
+
+11:08.730 --> 11:13.470
+And as I mentioned previously this is one of the reasons why you don't really want to use tensor flow
+
+11:13.830 --> 11:17.910
+if you're going to be using or HVAC because gensym kind of takes care of all this.
+
+11:17.940 --> 11:19.760
+For you the background.
+
+11:20.260 --> 11:20.670
+OK.
+
+11:20.850 --> 11:23.470
+So we have a function that's going to be able to generate the batches.
+
+11:23.490 --> 11:29.300
+Now we just need to create some constants and then we can start building the placeholders for our recession.
+
+11:29.370 --> 11:33.250
+So let's create some constants here will say constants.
+
+11:33.270 --> 11:40.980
+So we create a size of the actual batch schoolFeed in batches of let's say 128 at a time.
+
+11:41.370 --> 11:45.670
+And then we also need to say in imbedding size.
+
+11:45.780 --> 11:51.060
+So the imbedding size is basically going to be how many dimensions will the embedding vector have.
+
+11:51.060 --> 11:56.090
+The more they mention the more information but the more they mentions also the longer it takes a train.
+
+11:56.100 --> 11:59.610
+So a common size if you check out literature on this is 150.
+
+11:59.610 --> 12:02.650
+Again you can always expand this and you can always decrease it to fit.
+
+12:02.670 --> 12:04.660
+Training is taking too long.
+
+12:04.770 --> 12:11.490
+Then we're going to define a skip window and the skip window is going to be how many words to consider.
+
+12:11.490 --> 12:12.990
+To the left and to the right.
+
+12:13.170 --> 12:15.470
+So the bigger this value again the longer the training.
+
+12:15.480 --> 12:20.850
+So we'll keep it as small as possible just one and then we have the number of skips.
+
+12:20.880 --> 12:25.530
+So this is how many times to reuse an input to generate a label and we'll go ahead and keep that value
+
+12:25.560 --> 12:27.330
+low as well say 2.
+
+12:27.930 --> 12:28.450
+OK.
+
+12:28.620 --> 12:32.400
+So then we need to pick a random validation set to sample nearest neighbors.
+
+12:32.400 --> 12:33.990
+So what we actually mean by that.
+
+12:34.050 --> 12:38.810
+Well I'll say valid size is equal to 16.
+
+12:38.820 --> 12:45.680
+So this is a random set of words to evaluate similarity on and then we're only going to pick samples
+
+12:45.830 --> 12:47.160
+from the head of that distribution.
+
+12:47.210 --> 12:59.100
+So we'll say a valid window is equal to 100 and we'll say valid examples is equal to the random choice
+
+13:00.420 --> 13:01.540
+valid window.
+
+13:02.680 --> 13:06.430
+Valot size or say replace is equal to false.
+
+13:09.210 --> 13:09.620
+OK.
+
+13:09.820 --> 13:12.730
+So here what we're actually doing is we're limiting the validation samples.
+
+13:12.730 --> 13:17.440
+The words that have a low numeric ID which by the way we constructed these are also the most frequent
+
+13:17.440 --> 13:18.350
+words.
+
+13:18.370 --> 13:26.890
+So then let's go ahead and get a number of negative examples sample so see num sample is equal to 64
+
+13:27.520 --> 13:30.700
+and then we're going to choose our learning rate for our model.
+
+13:31.150 --> 13:34.650
+So a learning rate is equal to zero points or one.
+
+13:34.810 --> 13:40.570
+If you start using smaller learning rates it's really him to take a super long time and then we I believe
+
+13:40.570 --> 13:42.240
+we already defined our vocabulary size.
+
+13:42.250 --> 13:43.740
+But let's do it again just in case.
+
+13:43.750 --> 13:44.300
+We'll see.
+
+13:44.370 --> 13:44.890
+OK.
+
+13:44.960 --> 13:52.150
+Size is equal to 50000.
+
+13:52.400 --> 13:57.030
+OK so now let's go ahead and create our tensor flow placeholders and constants.
+
+13:57.080 --> 14:03.050
+So the first thing to do is reset my default graph because I mean using the same notebook here and then
+
+14:03.050 --> 14:05.570
+we want our input data.
+
+14:05.670 --> 14:13.340
+So we're going to create our training inputs to be T.F. placeholder and they're actually just integers
+
+14:13.340 --> 14:21.420
+this time and the shape here is just going to be none because the find by the Bache pups shape equals
+
+14:24.470 --> 14:25.790
+There we go next.
+
+14:25.790 --> 14:31.410
+It's going to be the training labels so we'll have that to T.F. da
+
+14:34.080 --> 14:35.630
+placeholder.
+
+14:35.860 --> 14:44.320
+That's also going to be a 32 bit integer and the shape here that's going to be the size by one.
+
+14:44.540 --> 14:50.830
+And then finally we have valid data set and we're going to synthetical to T.F..
+
+14:50.830 --> 14:59.900
+Constance valid examples for the data type is again just T.F. integer 32.
+
+14:59.900 --> 15:04.640
+All right so now we're going to create some variables and then we'll create our last function.
+
+15:04.640 --> 15:09.260
+So remember last function is the end loss.
+
+15:09.360 --> 15:13.500
+So let's create those variables will create our initial embeddings.
+
+15:13.530 --> 15:17.890
+So remember we need to have each of these words have some sort of random embedding first.
+
+15:17.890 --> 15:24.000
+So it's going to be T.F. random and we'll pick this up from a uniform distribution and we need to be
+
+15:24.240 --> 15:26.230
+by vocabulary size.
+
+15:26.340 --> 15:32.900
+So for each of the words and then by the embedding size so 150 It's make sure imbedding size.
+
+15:33.400 --> 15:34.210
+There we go.
+
+15:34.440 --> 15:40.310
+And then the other dimensions to be are those things are going to pass in are from negative 1 to 1.
+
+15:40.480 --> 15:43.930
+So we're going to randomly start off the vector embeddings.
+
+15:43.990 --> 15:47.980
+So we have 50000 words by a hundred fifty definitions for each word.
+
+15:48.160 --> 15:52.250
+And we just randomly choose values from negative 1 to 1.
+
+15:52.320 --> 15:57.180
+So that's going to initialize them and then we're going to say that the embeddings themselves are equal
+
+15:57.180 --> 16:01.630
+to T.F. variable.
+
+16:02.090 --> 16:03.190
+And it's in bits
+
+16:06.990 --> 16:13.290
+and then we're going to say embed is equal to T.F. and end and there's actually an embedding lookup
+
+16:13.470 --> 16:15.450
+function that's built into tensor flow.
+
+16:15.660 --> 16:19.010
+So this just looks up ideas in a list of imbedding tensors.
+
+16:19.020 --> 16:20.590
+Essentially what we created earlier.
+
+16:20.730 --> 16:21.550
+So we'll do the following.
+
+16:21.550 --> 16:29.700
+We'll say the embeddings we just made and then passing in the train that puts all right.
+
+16:29.900 --> 16:34.210
+So all we have left is to create the last function the optimizer and then run our session
+
+16:37.840 --> 16:38.170
+OK.
+
+16:38.230 --> 16:42.910
+All we have left is to create our last function our optimizer run the session and then visualize our
+
+16:42.910 --> 16:43.630
+results.
+
+16:43.630 --> 16:45.850
+So let's go ahead and do that in the very next lecture.
+
+16:45.880 --> 16:46.550
+I'll see you there.

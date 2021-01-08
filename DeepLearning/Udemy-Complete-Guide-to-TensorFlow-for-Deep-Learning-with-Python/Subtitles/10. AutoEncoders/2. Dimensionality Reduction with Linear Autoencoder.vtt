@@ -1,0 +1,703 @@
+WEBVTT
+
+00:05.510 --> 00:09.650
+Welcome everyone to this lecture Well we show you how we can perform them and anality reduction with
+
+00:09.650 --> 00:16.210
+a linear auto encoder linear auto encoders can be used to perform what's known as a principal component
+
+00:16.270 --> 00:20.550
+analysis basically allowing us to reduce the dimensionality of our data.
+
+00:21.550 --> 00:27.920
+Dimensionality reduction allows us to get a lower mentioned representation of our data and the encoder.
+
+00:27.930 --> 00:34.230
+Half of the auto encoder creates new and fewer features from the input features.
+
+00:34.240 --> 00:39.190
+So for example we can take a three dimensional dataset an output a two dimensional representation of
+
+00:39.190 --> 00:39.530
+it.
+
+00:39.730 --> 00:44.380
+So we have an input layer with three neurons and a hidden layer of just two neurons.
+
+00:44.380 --> 00:50.620
+Now keep in mind we're not just simply choosing two of the original three features but instead we're
+
+00:50.620 --> 00:56.110
+constructing two new features from combinations of the original three and using those combinations we
+
+00:56.110 --> 01:03.220
+can then reduce the actual damage anality of the original data set and we achieve this effect by using
+
+01:03.220 --> 01:08.680
+a linear auto encoder and a linear auto encoders perform the linear transformations by only using the
+
+01:08.680 --> 01:09.890
+weights and biased terms.
+
+01:09.910 --> 01:13.320
+We actually don't use activation function.
+
+01:13.430 --> 01:16.500
+So essentially we have an auto encoder that looks like this.
+
+01:16.580 --> 01:21.290
+It's the exact same thing that we saw earlier in the previous lecture just know that we're not passing
+
+01:21.350 --> 01:23.000
+an activation function anymore.
+
+01:23.090 --> 01:29.160
+We're just using the linear transformation of the input and the hidden output.
+
+01:29.180 --> 01:35.150
+Now after training what we do is we use the hidden layer to obtain a reduced dimensionality.
+
+01:35.170 --> 01:38.110
+So let's go ahead and code this out to see how it works.
+
+01:38.110 --> 01:43.720
+If you want more substantial mathematical proof of why the linear auto encoder can perform this principle
+
+01:43.720 --> 01:46.760
+component analysis go ahead and check out the resource links.
+
+01:46.870 --> 01:51.880
+Some of the geometric notation is a little bit outside the scope of this course but you can go ahead
+
+01:51.880 --> 01:56.080
+and check out the link in case you want full mathematical proof of why this works.
+
+01:56.080 --> 02:00.160
+But let's not jump to the Jupiter note book and actually implement this.
+
+02:00.220 --> 02:04.780
+All right so here I am at a Jupiter notebook and the first thing I want to start off by doing is a couple
+
+02:04.780 --> 02:09.440
+of imports will Important them pie and then I also want to do a little bit of visualization.
+
+02:09.490 --> 02:16.160
+So we'll import matplotlib that pipeline as Piazzi as.
+
+02:16.300 --> 02:22.320
+And then I also need to indicate that live in line since I'm using the Jupiter notebook.
+
+02:22.480 --> 02:29.140
+So now I'm going to show you how we can easily create some data sets so you can say from S-K learn dot
+
+02:29.310 --> 02:31.360
+datasets import.
+
+02:31.670 --> 02:37.600
+And this is a really nice make Blob's functionality and make Blob's what it does is it basically creates
+
+02:37.600 --> 02:44.510
+classification data sets for you so you can say data is equal to and then call make Blob's.
+
+02:44.700 --> 02:47.840
+And if you do shift type here you can see what it actually does.
+
+02:47.860 --> 02:52.840
+It takes in the number of samples you want the number of features you want how many centers basically
+
+02:52.840 --> 02:58.000
+how many classes you want and then the cluster standard deviation so the standard deviation between
+
+02:58.000 --> 03:03.370
+these actual clusters and then you can also specify other things such as the random state.
+
+03:03.370 --> 03:08.750
+So I'm going to create a very simple example will say we'll have 100 samples.
+
+03:08.770 --> 03:10.720
+So that is 100 rows of data.
+
+03:11.260 --> 03:14.860
+The number of features we want is going to be three features.
+
+03:14.860 --> 03:17.330
+So we're basically creating a three dimensional data set.
+
+03:17.470 --> 03:22.650
+And this is the data set we're going to try to reduce into to them and Chinse and then we'll say centers.
+
+03:22.690 --> 03:23.440
+Just too.
+
+03:23.440 --> 03:26.890
+So this is going to be basically two blobs or two classes.
+
+03:27.220 --> 03:28.420
+And then here's the important part.
+
+03:28.420 --> 03:30.630
+Make sure you have the same random state as me.
+
+03:30.850 --> 03:32.550
+Otherwise you'll get different data set.
+
+03:32.590 --> 03:34.620
+So that basically sets were in them seed.
+
+03:35.080 --> 03:40.740
+OK so now that we have our data if we take a look at what type is actually return it's a tuple.
+
+03:40.750 --> 03:43.710
+And if you print all the data you end up seeing something like this.
+
+03:43.870 --> 03:44.920
+So you have a large array.
+
+03:44.950 --> 03:48.450
+Those are all your values so here's 100 samples with three features.
+
+03:48.460 --> 03:52.300
+Those are the columns and then you scroll all the way down you end up seeing the actual classes they
+
+03:52.300 --> 03:53.320
+belong to.
+
+03:53.320 --> 03:57.760
+Now keep in mind we're not actually performing any sort of classification task right now but the reason
+
+03:57.760 --> 04:03.400
+I like having these classes for walking you through PCa or it dimensionality reduction is because it
+
+04:03.400 --> 04:07.850
+makes it really clear that you're still able to retain a lot of information.
+
+04:07.900 --> 04:10.000
+And so what I mean by that is the following.
+
+04:10.000 --> 04:12.640
+So first off let's actually grab some of this data.
+
+04:13.120 --> 04:18.020
+So if we say data of 0 then this is just our actual data.
+
+04:18.070 --> 04:21.030
+If we say Data 1 then these are our labels.
+
+04:21.310 --> 04:29.700
+So we pass this in we're going to need to do some scaling which means we'll say from Escuela and pre-processing
+
+04:30.300 --> 04:37.940
+import that min max scaler were already familiar with I will say scaler minimax scaler and then we'll
+
+04:37.950 --> 04:43.170
+report back scaled data is equal to scaler transform
+
+04:46.210 --> 04:46.970
+and notice here.
+
+04:47.020 --> 04:49.980
+I'm going to just transform my entire dataset.
+
+04:50.050 --> 04:53.530
+That's because we're doing what is essentially an unsupervised task.
+
+04:53.530 --> 04:56.540
+So I don't really care about any sort of train split.
+
+04:56.560 --> 05:01.610
+I'm just going to take all my data that's three dimensional and try to convert it into two dimensions.
+
+05:01.690 --> 05:03.940
+So do a dimensionality reduction.
+
+05:04.030 --> 05:11.110
+But before I do that I need actually scale it sonand I have my data that's scaled and I'm going to basically
+
+05:11.110 --> 05:12.610
+plot it out for you.
+
+05:13.120 --> 05:15.240
+So let's grab it feature by feature.
+
+05:15.700 --> 05:22.780
+We'll say scaled data all the rows in the zero column I will say that's data X and then we'll do this
+
+05:23.050 --> 05:24.190
+three more times.
+
+05:24.490 --> 05:27.750
+Except for the other two columns.
+
+05:27.770 --> 05:32.780
+So what I'm doing here is I'm just grabbing the columns and then set in them as variables data x y and
+
+05:32.990 --> 05:38.260
+z so I scaled my data and I grab the three individual columns.
+
+05:38.260 --> 05:41.500
+And now what I can do is I can plot them in three dimensions.
+
+05:41.530 --> 05:50.950
+So the way we do that with MAP plot lib you say from NPL underscore toolkits dots and plot three the
+
+05:51.550 --> 06:00.430
+import axes 3D and this allows you to create some kind of rudimentary three dimensional plot and the
+
+06:00.430 --> 06:03.280
+way you do this is if you say fig peel.
+
+06:03.330 --> 06:05.500
+See that figure.
+
+06:05.510 --> 06:09.170
+So you create a figure object and then you get an access to this.
+
+06:09.400 --> 06:13.120
+And the worry about understand this too much because this is really just for the visualization of the
+
+06:13.120 --> 06:19.260
+problem it's not a huge part of this course you passing one on one to basically in the case that you're
+
+06:19.270 --> 06:27.800
+just doing one plot at the very first grade and then you need to specify a projection is equal to 3D.
+
+06:28.190 --> 06:31.750
+So if you run that you get this kind of 3D looking plot.
+
+06:31.760 --> 06:37.310
+Keep in mind map plot lib is not specifically designed to be a super great three dimensional visualization
+
+06:37.310 --> 06:37.940
+library.
+
+06:38.030 --> 06:42.620
+It does have a lot of useful tools for you but if you're really interested in a three dimensional plotting
+
+06:42.620 --> 06:47.230
+with Python I was just going for interactive library like Bocca or plot.
+
+06:47.230 --> 06:51.560
+Lee again we don't really cover these topics in this course because it's not a visualisation course
+
+06:51.860 --> 06:53.400
+but I just want to keep that in mind.
+
+06:53.420 --> 06:57.740
+This is not Matt Hotlips greatest strength but it does have the capabilities for it.
+
+06:57.740 --> 07:01.970
+So the reason that I want to show you this is because this is what we're going to plot on.
+
+07:01.970 --> 07:08.270
+So on this axis I'm then going to say X and call a scatterplot on it just like you would normally say
+
+07:08.270 --> 07:09.360
+appeal to scatter.
+
+07:09.440 --> 07:17.990
+Except now what's special about it is I can define X Y and Z which means I'll just pasan those columns
+
+07:17.990 --> 07:18.390
+of data
+
+07:21.520 --> 07:21.960
+OK.
+
+07:21.980 --> 07:22.640
+There we have it.
+
+07:22.640 --> 07:26.090
+So now I can see my two blobs in three dimensional space.
+
+07:26.210 --> 07:32.090
+So clearly when I plotted out in three dimensions they're very separable and you could basically put
+
+07:32.090 --> 07:37.670
+in you can imagine like a theoretical piece of paper somewhere here and easily separate those two classes.
+
+07:37.850 --> 07:44.330
+And we can actually pass in a third argument or a fourth argument really see and then say this is data
+
+07:44.330 --> 07:47.550
+one those labels and then I can color it.
+
+07:47.600 --> 07:54.020
+And now we're going to attempt to basically answer is given that we have three dimensions worth of data
+
+07:54.500 --> 07:58.940
+and with three dimensions I can clearly see that this data is highly separable.
+
+07:58.940 --> 08:01.120
+The two blobs are completely separate.
+
+08:01.130 --> 08:07.030
+If I try to use a linear auto encoder to reduce these three dimensions to just two them mentions will
+
+08:07.050 --> 08:12.230
+I still have that same level of separation and it should be obvious because I will plot it out just
+
+08:12.230 --> 08:16.320
+on two axes and then see if I color them by their specific labels.
+
+08:16.340 --> 08:21.830
+If I still get that same separation or if by reducing through them inches into to them inches now I
+
+08:21.830 --> 08:22.960
+have quite a bit of.
+
+08:23.000 --> 08:25.240
+So to speak cross-contamination.
+
+08:25.490 --> 08:30.740
+Let's go ahead and explore this idea and see if we can successfully reduce these three dimensions of
+
+08:30.770 --> 08:35.670
+data by using combinations for linear auto encoder into to them engines of data.
+
+08:35.720 --> 08:41.870
+Again just to be very clear I'm not just throwing away one column and then having two columns.
+
+08:41.900 --> 08:46.760
+I'm going to try to make two new dimensions out of these three old ones and that's where the linear
+
+08:46.820 --> 08:48.650
+auto encoder comes into play.
+
+08:48.650 --> 08:49.760
+So let's go ahead and do this.
+
+08:49.760 --> 08:58.400
+We'll say sensor flow as T.F. and then we're going to be using a higher level a Pine-Sol say from Florida
+
+08:58.430 --> 09:01.850
+courtroom the layers in poor.
+
+09:02.110 --> 09:06.250
+And if hit tab here was being hit it's because I haven't imported it yet.
+
+09:06.470 --> 09:08.590
+You should be able to say fully connected.
+
+09:08.690 --> 09:09.320
+What's that.
+
+09:09.350 --> 09:10.120
+Oh OK.
+
+09:10.160 --> 09:12.070
+Now the tab shows up a little too late.
+
+09:12.080 --> 09:15.570
+They can see here there's a bunch of letters that are already created for you.
+
+09:15.620 --> 09:19.540
+The one we're going to be using is a very simple fully connected layer just like we saw in our diagrams
+
+09:19.940 --> 09:25.980
+and now we're going to do is create a couple of variables we'll see the number of inputs is equal to
+
+09:25.980 --> 09:28.840
+3 because we have three dimensions for data.
+
+09:28.890 --> 09:33.980
+We'll have our hidden layer be equal to two mentions of data.
+
+09:34.160 --> 09:38.990
+And then finally remember because we're using an auto encoder the number of outputs needs to be equal
+
+09:38.990 --> 09:42.360
+to the number of inputs.
+
+09:42.610 --> 09:46.900
+And while we're at it if we're defining constants we may as well define or learning rate.
+
+09:47.050 --> 09:53.270
+Well go ahead and set this to 0.01 we don't have a lot of data so we don't have to learn that slowly.
+
+09:53.290 --> 09:58.360
+Up next we're going to create a placeholder so there's only one placeholder because unsupervised hask
+
+09:58.360 --> 10:00.140
+we're not dealing with any labels.
+
+10:00.440 --> 10:05.200
+So I'll say placeholder to float 32.
+
+10:05.450 --> 10:10.470
+And the shape is going to be defined by whatever a batch size we feed so none.
+
+10:10.550 --> 10:16.540
+And then by the number of them puts and then let's go ahead and create our layers using this contrib
+
+10:16.710 --> 10:17.300
+layers.
+
+10:17.320 --> 10:26.650
+So we'll say it in is equal to a fully connected layer and a fully connected layer needs some inputs
+
+10:26.950 --> 10:30.410
+number of outputs and activation function and it can take more than that.
+
+10:30.640 --> 10:39.250
+But we're going to pass an X as the input the output is going to be the number of hidden units and then
+
+10:39.250 --> 10:43.610
+we have our activation function and this is where we're actually going to say none.
+
+10:43.750 --> 10:48.850
+Because remember with that linear auto encoder just as we showed in the slides we are actually passing
+
+10:48.850 --> 10:53.740
+this with an activation function that we have or outputs layer.
+
+10:53.890 --> 11:00.780
+And again this is going to be fully connected layer and that's going to take in that hidden layer.
+
+11:00.960 --> 11:06.300
+It's going to have the number of outputs it's going to spit it back out to three and then again no activation
+
+11:06.300 --> 11:07.820
+function.
+
+11:07.840 --> 11:14.830
+So all this is trying to do is successfully reproduce the input at the output but there's a step in
+
+11:14.830 --> 11:19.610
+between where it reduces the number of dimensions OK.
+
+11:19.630 --> 11:21.830
+Now we have hidden and outputs.
+
+11:21.850 --> 11:22.990
+So let's do the rest of it.
+
+11:22.990 --> 11:29.370
+We need the last function here will say loss is equal to T.F. reduce mean.
+
+11:29.640 --> 11:38.480
+This is just a mean square air T.F. square and then we'll say let's make sure it's all square right.
+
+11:42.160 --> 11:50.210
+And we'll say the outputs minus X because remember X is the actual input and then finally we need an
+
+11:50.210 --> 11:59.050
+optimizer will say optimizer is equal to T.F. train and we'll use an atom optimizer and I will specify
+
+11:59.050 --> 11:59.920
+some learning rate.
+
+12:01.530 --> 12:05.520
+And they will say train is equal to optimizer and we're trying to minimize that loss function
+
+12:08.520 --> 12:09.000
+OK.
+
+12:09.060 --> 12:15.640
+Almost there except we need to initialize a variable so say if global variables initialiser.
+
+12:16.000 --> 12:20.710
+Now it's time to actually run the session and see if we're able to successfully reduce this from three
+
+12:20.710 --> 12:26.560
+dimensions into two them mentions and still retain information and we'll say will basically clarify
+
+12:26.560 --> 12:33.330
+that we retain the information if we can still see that these two classes are highly separable Let's
+
+12:33.340 --> 12:38.550
+go ahead and run this for a thousand steps we'll say with T.F. session.
+
+12:38.590 --> 12:46.840
+As s s s say SPSS run that initialiser first and then we're going to do the following.
+
+12:47.090 --> 12:52.410
+We'll say for iteration in the number of steps we're taking.
+
+12:52.770 --> 13:03.600
+So 1000 steps we're going to run train and then pass in our feet dictionary surfie dictionary is just
+
+13:03.600 --> 13:06.800
+going to be X and we're going to pass in the scale data from before.
+
+13:06.810 --> 13:09.630
+So that's all three dimensions the features.
+
+13:09.810 --> 13:12.950
+And then once that's done training I'm going to do the following.
+
+13:12.960 --> 13:18.410
+I'm going to say my to that mentioner output is equal to the hidden layer.
+
+13:18.900 --> 13:21.980
+And then I'm going to evaluate the same feed dictionary.
+
+13:21.990 --> 13:26.620
+So I'll say feed dictionary X skilled data.
+
+13:26.670 --> 13:29.030
+So let's explain what we're actually doing here.
+
+13:29.070 --> 13:35.700
+I'm going to train my auto encoder for 1000 steps and I need to keep passing that scale data and this
+
+13:35.730 --> 13:41.790
+auto encoder all is trying to do is it takes and the inputs shrinks them down to just two neurons and
+
+13:41.790 --> 13:47.190
+then expands them back out to three and then the way it's actually being optimized is by trying to make
+
+13:47.190 --> 13:51.120
+sure its outputs match the inputs as closely as possible.
+
+13:51.360 --> 13:56.560
+And the challenges this hidden layer has to reduce from three dimensions into two them engines.
+
+13:56.580 --> 13:59.620
+Now given this actual data set it's not a very hard task.
+
+13:59.670 --> 14:03.780
+You could see that they were highly separable and the stonecutter is going to perform very well as you'll
+
+14:03.780 --> 14:04.740
+see in just a second.
+
+14:04.890 --> 14:09.530
+But keep in mind we'll still be able to apply the same practice for something with 30 dimensions and
+
+14:09.540 --> 14:15.240
+maybe reduce it down to three dimensions but all we're doing is trying to get that input passers through
+
+14:15.240 --> 14:20.340
+the hidden them put it through the outputs see how far we are from the outputs the original data source
+
+14:20.730 --> 14:24.870
+and then once we've done that through our training we're going to do is after these 1000 training steps.
+
+14:24.870 --> 14:26.460
+Notice this is outside the for loop.
+
+14:26.670 --> 14:33.650
+I'm going to say hey now taken my skill data and only pass it through that hidden layer.
+
+14:33.660 --> 14:36.540
+That way I get to them and output backout.
+
+14:36.780 --> 14:41.340
+And if you want to you could perform this in a separate session so it'll show how it looks in just a
+
+14:41.340 --> 14:42.040
+second.
+
+14:42.330 --> 14:44.310
+So I just ran that for a thousand training steps.
+
+14:44.340 --> 14:45.500
+It should be pretty fast.
+
+14:45.690 --> 14:52.920
+And now I have output to the end if you take a look at it and it's now the two that mentioned all representation
+
+14:53.220 --> 14:55.560
+of our original scale data source.
+
+14:55.590 --> 14:57.070
+So let's go ahead and plot this out.
+
+14:57.180 --> 15:09.670
+We'll say t scatter and I'm going to plot out the first column of data versus the second column of data.
+
+15:13.930 --> 15:14.800
+And we plot that out.
+
+15:14.800 --> 15:16.130
+We get two blobs.
+
+15:16.150 --> 15:19.770
+Now we still don't know whether we're separating these versus.
+
+15:19.770 --> 15:25.620
+Let's go and add a little bit of color in and hopefully these to match up with their respective classes.
+
+15:25.780 --> 15:31.080
+And now we can see that we were successfully able to reduce the number of mentions from three mentions
+
+15:31.090 --> 15:37.390
+to two that mentions the challenge in this interpretation of the results comes from trying to understand
+
+15:37.720 --> 15:40.040
+what these new dimensions actually represent.
+
+15:40.180 --> 15:46.810
+And unfortunately you can't just directly say hey this x axis relates to the first feature in our original
+
+15:46.810 --> 15:47.620
+dataset.
+
+15:47.710 --> 15:53.410
+There is definitely some relationship there but it's hard to interpret because it depends on the actual
+
+15:53.410 --> 15:56.800
+weights of that hidden layer in a simple auto encoder.
+
+15:56.800 --> 16:02.210
+You could definitely go back and actually look at the weights and see that hey maybe it's 60 percent
+
+16:02.220 --> 16:06.470
+a feature 1 30 percent a feature to 20 percent feature three etc..
+
+16:06.670 --> 16:11.800
+But as we get larger and larger with our inputs that interpretation is going to become harder and harder
+
+16:11.920 --> 16:16.570
+and then especially when we get to stack auto encoders where we don't just have one hidden layer is
+
+16:16.630 --> 16:21.550
+that we have multiple hidden layers actually interpreting the combinations is essentially going to be
+
+16:21.790 --> 16:22.740
+like a black box.
+
+16:22.750 --> 16:24.970
+You're not going to directly interpret that.
+
+16:25.020 --> 16:28.950
+Keep in mind that's also a challenge which is normal principal component analysis.
+
+16:28.990 --> 16:34.920
+So you're not really sacrificing interpretability in that sense by using a linear auto encoder.
+
+16:35.110 --> 16:36.100
+So keep that in mind.
+
+16:36.130 --> 16:41.290
+That's a normal principal component and also still suffers from that same interpretation problem that
+
+16:41.290 --> 16:46.850
+it's hard to just get an intuitive sense of what access won here and access to represents.
+
+16:46.930 --> 16:51.820
+However the most important part is we can clearly see even on a visual stance it still works.
+
+16:51.820 --> 16:57.640
+We were able to successfully reduce the number of dimensions in this dataset and still retain information
+
+16:57.910 --> 17:01.710
+or we're finding information as the separation of classes here.
+
+17:02.020 --> 17:02.620
+OK.
+
+17:02.950 --> 17:08.380
+So up next you're going to be running this same exercise except you're going to be doing it on a set
+
+17:08.380 --> 17:13.990
+of data that has 30 dimensions or features and hopefully you'll be able to see that even with 30 dimensions
+
+17:14.050 --> 17:19.040
+you'll be able to successfully reduce it back down to just two them engines and retain that super ability
+
+17:19.330 --> 17:20.360
+of data.
+
+17:20.380 --> 17:24.670
+Thanks everyone and I'll see you at the next lecture where we'll cover over the exercise.

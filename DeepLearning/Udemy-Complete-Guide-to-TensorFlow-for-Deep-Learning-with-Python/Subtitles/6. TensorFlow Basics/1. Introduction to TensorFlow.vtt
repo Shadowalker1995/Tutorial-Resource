@@ -1,0 +1,64 @@
+WEBVTT
+
+00:05.500 --> 00:11.640
+Welcome everyone the tensor flow basics section of the course so I've already had a crash course on
+
+00:11.640 --> 00:14.180
+the very basic libraries that we use of Python.
+
+00:14.280 --> 00:18.040
+And then we've already covered a very basic introduction to neural networks.
+
+00:18.060 --> 00:23.160
+Now it's time to use this section of the course to expand what have already learned and begin to actually
+
+00:23.160 --> 00:26.820
+explore tensor Flo's framework approach to neural networks.
+
+00:26.940 --> 00:31.950
+And hopefully you're going to be seeing lots of parallels with our own simple implementation that we
+
+00:31.950 --> 00:34.910
+performed in the previous section.
+
+00:35.150 --> 00:38.090
+So let's cover what this section is actually going to do.
+
+00:38.090 --> 00:42.470
+We're first going to start off with just going over the basic syntax for tensor flow and then we'll
+
+00:42.470 --> 00:45.650
+discuss tensor flow graphs variables and placeholders.
+
+00:45.650 --> 00:49.730
+And those are all going to feel very familiar based of what we've already covered.
+
+00:49.730 --> 00:55.640
+Then we'll actually implement a tensor float neural network then we'll continue showing some simple
+
+00:55.640 --> 01:01.700
+examples of using tensor flow for a regression task member that's supervised learning as well as a classification
+
+01:01.700 --> 01:02.060
+task.
+
+01:02.060 --> 01:05.880
+So we have to code along lectures one for aggression one for classification.
+
+01:06.080 --> 01:10.430
+Then to make sure you feel comfortable all the topics we've covered in the section we'll finish it off
+
+01:10.430 --> 01:16.340
+with two exercises a regression task exercise and then a corresponding solution lecture as well as a
+
+01:16.340 --> 01:17.950
+classification exercise.
+
+01:18.080 --> 01:20.240
+And again a solution lecture for that.
+
+01:20.730 --> 01:22.180
+OK let's get started.
+
+01:22.190 --> 01:25.720
+I'll see you at the next lecture where we began the basic syntax of tensor flow.

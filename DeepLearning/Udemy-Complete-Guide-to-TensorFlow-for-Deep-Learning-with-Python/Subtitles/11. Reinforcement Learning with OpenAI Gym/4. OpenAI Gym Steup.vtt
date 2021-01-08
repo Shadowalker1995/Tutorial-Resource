@@ -1,0 +1,346 @@
+WEBVTT
+
+00:05.460 --> 00:08.350
+Hello everyone before we actually get started with coding.
+
+00:08.430 --> 00:09.640
+Opening night gym.
+
+00:09.740 --> 00:16.460
+What I want to do is cover just a few basic setup and best practices when working with the gym library.
+
+00:17.790 --> 00:24.040
+So let's go ahead and review the best practices with open gym for working of opening night gym.
+
+00:24.090 --> 00:29.250
+I actually recommend that you use either a text editor or an integrated development environment instead
+
+00:29.250 --> 00:30.850
+of a Jupiter notebook.
+
+00:31.140 --> 00:36.930
+What we're going to be doing of that opening gym is rendering some to them mentionable drawings or environments
+
+00:37.290 --> 00:41.000
+and sometimes those renderings have issues of Jupiter notebooks.
+
+00:41.010 --> 00:46.490
+So what I recommend doing is using either a text editor such as subline text editor or Adam text editor.
+
+00:46.530 --> 00:51.090
+A simple Google search of those will just take you straight to the download page or if you want.
+
+00:51.120 --> 00:56.730
+You can use a full integrated development environment such as pi charm and or basic set up is going
+
+00:56.730 --> 01:02.550
+to be to code out the PI files or the high scripts in the editor and then execute the code at the command
+
+01:02.550 --> 01:03.100
+line.
+
+01:03.300 --> 01:08.100
+There are many possible plug ins for subline Texan Adam text editor that alive.
+
+01:08.120 --> 01:15.110
+Also have the command line or the terminal directly inside those text editors open AI.
+
+01:15.120 --> 01:19.590
+Thus again technically work in the Jupiter notebook but sometimes the pending on your operating system
+
+01:19.650 --> 01:25.740
+running multiple renderings of an environment can lead to freezing or just very slow behavior of the
+
+01:25.740 --> 01:26.410
+gym.
+
+01:26.490 --> 01:30.900
+So it always works when we run up Paice groups so that's what we're going to be using for this course.
+
+01:30.900 --> 01:35.550
+That way in case you're using another operating system you don't get hung up on any errors but you can
+
+01:35.550 --> 01:39.810
+if you want attempt to first off use cheaper notebooks.
+
+01:39.820 --> 01:43.050
+OK so we're going to do right now is quickly check the opening.
+
+01:43.070 --> 01:48.730
+Jim is installed and also show you how to run a PI script as well as going through how you would download
+
+01:48.730 --> 01:50.420
+a text editor if you need it.
+
+01:50.620 --> 01:56.020
+And I want a quick note here please feel free to use any either text editor or development environment
+
+01:56.020 --> 01:58.630
+configuration you prefer.
+
+01:58.650 --> 02:01.290
+So we're going to be using atom for this series of lectures.
+
+02:01.290 --> 02:04.320
+It's a open source free text editor from hub.
+
+02:04.440 --> 02:09.770
+And remember you have many options including just ticking of Jupiter notebooks in case you prefer that.
+
+02:09.780 --> 02:12.970
+So right now we're going to open up our browser and go to Adam.
+
+02:13.320 --> 02:15.460
+Let's hop over to that.
+
+02:15.520 --> 02:16.530
+OK so here we are.
+
+02:16.540 --> 02:20.470
+Adam Oh Adam is just a basic text editor.
+
+02:20.500 --> 02:25.870
+It's open source and it's free is provided from get hub and depending on what operating system you're
+
+02:25.870 --> 02:28.210
+using you should see a download button here.
+
+02:28.210 --> 02:32.210
+If you're on Windows you see the windows installer if you're on a Mac you should see the Mac installer.
+
+02:32.350 --> 02:37.660
+And if you're on Linux or Bluetooth should see some sort of download of either S.H. file or some sort
+
+02:37.660 --> 02:38.950
+of installation file.
+
+02:39.160 --> 02:42.420
+So go ahead and click on that and install the Adam text editor.
+
+02:42.430 --> 02:47.350
+It's a basic text editor and it's going to provide us things with syntax highlighting for that py files
+
+02:47.730 --> 02:48.320
+etc..
+
+02:48.340 --> 02:51.740
+So go ahead and download that and then I've already downloaded it.
+
+02:51.880 --> 02:53.270
+Open it up on my computer.
+
+02:53.350 --> 02:54.810
+Let's jump to that now.
+
+02:54.820 --> 02:58.440
+All right so once you open up Adam the first time it should look something like this.
+
+02:58.450 --> 03:03.220
+Well we're going to do teach you one last thing which is how to install a terminal package.
+
+03:03.220 --> 03:07.600
+That way you don't have to keep jumping back to either command prompt or terminal but instead you can
+
+03:07.600 --> 03:10.480
+have a terminal directly in the Adam text editor.
+
+03:10.510 --> 03:12.180
+This is optional you don't need to do this.
+
+03:12.220 --> 03:17.170
+You could always just open up your terminal command line separately and run up high script from there.
+
+03:17.350 --> 03:21.940
+But let me also show you how the general insulation package works and that them click here where it
+
+03:21.940 --> 03:28.240
+says install a package and then say open installer and that will open up this page and then you search
+
+03:28.240 --> 03:29.100
+packages.
+
+03:29.320 --> 03:34.930
+So you're going to search for terminal and then hit enter and then it will say the featured packages
+
+03:34.960 --> 03:39.700
+and it's going to say searching in packages for terminal and eventually you should see in this dropdown
+
+03:39.700 --> 03:43.200
+list the platform you dash the terminal.
+
+03:43.360 --> 03:48.340
+And this is the package that allows you to have basically a little plus sign that open up a command
+
+03:48.340 --> 03:50.410
+line directly in the Adam text editor.
+
+03:50.620 --> 03:54.480
+So I already have it installed but you should see a little Install button there.
+
+03:54.610 --> 03:58.520
+If you can't find that just by searching terminal go out and search the entire name platform you know
+
+03:58.530 --> 04:03.250
+dash ID dash terminal install it and if you ever want to mess around with the settings you can do is
+
+04:03.250 --> 04:08.740
+click here in settings and this will take you to the platform your ID settings and as you scroll down
+
+04:08.740 --> 04:14.530
+here what I recommend you do if you're on a Windows computer is to override the shell sometimes by default.
+
+04:14.530 --> 04:15.910
+It uses power shell.
+
+04:15.910 --> 04:21.370
+You can go ahead and copy and paste this line right here in and send it to your Siham the executable
+
+04:21.370 --> 04:22.150
+file.
+
+04:22.150 --> 04:23.680
+That way it launches the command prompt.
+
+04:23.680 --> 04:25.590
+It's sort of the power shell.
+
+04:25.660 --> 04:30.340
+Once you've done this you may need to restart items to go ahead and close out them again and open it
+
+04:30.340 --> 04:30.910
+up.
+
+04:30.910 --> 04:35.230
+Once you've done that you should see at the very bottom a little plus sign you can click on that plus
+
+04:35.230 --> 04:38.020
+sign and that opens up a new terminal for you.
+
+04:38.200 --> 04:42.660
+And here you can run things such as straight python from the command line so you can get Python and
+
+04:42.670 --> 04:45.810
+they have this little terminal in your text editor.
+
+04:45.880 --> 04:51.310
+So let's go ahead and quit this and let's practice and make sure that we have Jim installed onto our
+
+04:51.310 --> 04:52.170
+computer.
+
+04:52.180 --> 04:58.610
+So where are you going to do is you're going to activate C-f deep learning environment.
+
+04:58.610 --> 04:59.610
+We've been using.
+
+04:59.820 --> 05:03.950
+And Jim should already be installed in T.F. deep learning.
+
+05:04.050 --> 05:09.060
+But just in case it isn't you can use Pipp install Jim enter.
+
+05:09.260 --> 05:13.970
+And you should see it installed Lotusphere already get the requirement already satisfied because they
+
+05:13.980 --> 05:15.360
+already have gym installed.
+
+05:15.380 --> 05:18.450
+Once you've done that you can go ahead and run a thought PI script.
+
+05:18.650 --> 05:22.380
+In this TFT planning environment let's review how to do that.
+
+05:22.490 --> 05:29.120
+So we're going to just say file will save new file and this will open up a new file here and we're just
+
+05:29.120 --> 05:34.970
+going to say import Jim and then we'll print out.
+
+05:35.050 --> 05:37.090
+It works right now.
+
+05:37.100 --> 05:42.680
+There's no syntax highlighting because I haven't actually named this or save this so I'll say file or
+
+05:42.680 --> 05:46.150
+list control SLB easier just control as or commands.
+
+05:46.360 --> 05:48.380
+And then you can save this wherever you want.
+
+05:48.430 --> 05:53.290
+So since I'm under C users Marsat right now I will save it there.
+
+05:53.350 --> 05:58.410
+So I've moved over to that directory and then I'm just going to call it my test.
+
+05:58.420 --> 06:00.720
+Jim py file.
+
+06:00.720 --> 06:04.850
+Hit save and notice once becomes a PI file.
+
+06:04.900 --> 06:09.280
+What's going to happen is it's going to automatically open up all the folders there and your project
+
+06:09.280 --> 06:09.870
+folder.
+
+06:09.990 --> 06:14.130
+And it's also going to import that syntax highlighting which is nice and useful for us.
+
+06:14.170 --> 06:17.350
+So then what we can do here is Bechet this command line.
+
+06:17.350 --> 06:20.650
+Just type in Python and then begin to type in the name.
+
+06:20.650 --> 06:21.590
+My test.
+
+06:21.610 --> 06:27.150
+Jim you can just do tabbed to autocomplete there enter and you should see eventually it works.
+
+06:27.220 --> 06:31.750
+Hopefully you don't get any error that says Jim not found if you're getting an error saying Jim not
+
+06:31.750 --> 06:38.590
+found then triple check that you've activated your learning environment and that you also installed
+
+06:38.650 --> 06:40.830
+Jim using pipin Solanum.
+
+06:40.840 --> 06:41.240
+OK.
+
+06:41.320 --> 06:43.920
+If you have any questions feel free to post the Q&amp;A forums.
+
+06:43.960 --> 06:49.360
+Again you pretty much have total flexibility as far as what kind of method you want to use for running
+
+06:49.390 --> 06:51.000
+these dot scripts for Jim.
+
+06:51.010 --> 06:55.420
+You can use the Jupiter notebook but if you ever get into bugs then I recommend that you download that
+
+06:55.420 --> 06:59.680
+you print a book as it by script and then just run that PI script at your command line.
+
+06:59.680 --> 07:03.400
+So if you really use the Jupiter book you could technically keep using that as well.
+
+07:03.400 --> 07:08.110
+You actually don't need to switch to a text editor but I'm going to be using a text editor here just
+
+07:08.110 --> 07:13.390
+to make sure that everyone no matter what their O S here can follow along with me with no bugs or no
+
+07:13.390 --> 07:16.310
+errors when rendering their gym environments.
+
+07:16.330 --> 07:18.250
+Thanks everyone and I'll see you at the next lecture.

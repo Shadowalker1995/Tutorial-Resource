@@ -1,0 +1,256 @@
+WEBVTT
+
+00:05.590 --> 00:06.750
+Welcome back everyone.
+
+00:06.790 --> 00:11.430
+To finish off this section of the course we're going to manually create in your own network and what
+
+00:11.440 --> 00:16.450
+I mean by the word manual is we won't be using it frameworks such as tents or flow instead of we're
+
+00:16.450 --> 00:22.270
+going to be doing is trying to mimic sensor flow ourselves by manually coding out the classes and functions
+
+00:22.280 --> 00:27.580
+needed doing this before we actually use the tense flow of framework is really going to help build a
+
+00:27.580 --> 00:29.630
+nice foundation for your understanding.
+
+00:29.680 --> 00:35.290
+We're not going to build out something very complex here it's going to be a very primitive neural network
+
+00:35.320 --> 00:40.570
+but it should really help you for the future section when we actually show a lot of the same class names
+
+00:40.570 --> 00:43.100
+and functions used with tensor flow.
+
+00:43.360 --> 00:44.620
+Let's go ahead and get started.
+
+00:44.740 --> 00:49.360
+We're going to start off a really brief overview of object oriented programming and the super keyword
+
+00:49.450 --> 00:50.490
+in Python.
+
+00:50.500 --> 00:52.440
+Let's open up a new Jupiter notebook.
+
+00:52.450 --> 00:56.780
+All right so let's start off of a really quick overview of object oriented programming.
+
+00:56.800 --> 00:58.390
+Nothing too crazy here.
+
+00:58.720 --> 01:02.570
+And then we'll also show the super keywords and we're going to be using it later on.
+
+01:02.830 --> 01:07.660
+So to create your own objects in Python you just have the class keyword and then you can create something
+
+01:07.660 --> 01:14.260
+like a simple class and then inside of this when you have functions here instead of a closter called
+
+01:14.260 --> 01:20.300
+methods and you always start off this method which kind of initializes the class and then Ill always
+
+01:20.300 --> 01:22.180
+take in a soft keyword.
+
+01:22.460 --> 01:27.480
+So it's code to make a really simple one that just says Prince Hello.
+
+01:28.130 --> 01:28.450
+OK.
+
+01:28.450 --> 01:30.450
+So those are simple class.
+
+01:30.580 --> 01:35.790
+So if I say S is equal to the string let's say world.
+
+01:35.820 --> 01:40.850
+I can see hey the type of s it says some sort of string object.
+
+01:40.870 --> 01:47.560
+And if I do s dot and then hit tab here I can see the various methods and attributes that are available
+
+01:47.560 --> 01:49.040
+for that object.
+
+01:49.060 --> 01:54.300
+So let's try this for an object that we created will say x is equal to a simple class.
+
+01:54.400 --> 01:59.910
+And if you don't have any princes there and then you type in X it's going to say hey it's a simple class.
+
+01:59.950 --> 02:05.510
+If you actually want to create an instance of a simple class you have these princes right here.
+
+02:05.680 --> 02:14.530
+So let's run this again and then I see hello because this method executes upon a creation of an instance
+
+02:14.650 --> 02:15.820
+of this class.
+
+02:15.820 --> 02:20.920
+So it says hello and then if I check x that says hey simple class at.
+
+02:20.950 --> 02:25.870
+And it points to a specific point in your computer's memory saying hey this is actually an instance
+
+02:25.870 --> 02:32.290
+of this class simple class because it's not just me it's simple class it's living at this part in your
+
+02:32.290 --> 02:34.120
+computer's memory.
+
+02:34.120 --> 02:39.270
+So very basics of creating a class there let's go in and delete these cells.
+
+02:39.270 --> 02:42.900
+All right let's go ahead and add another method to our simple class.
+
+02:43.350 --> 02:50.940
+We'll say the IF and we'll just have it be called Yele and yell isn't really going to do anything except
+
+02:51.040 --> 02:59.460
+printouts yelling so again and when I say x is equal to a new instance of simple class and it's going
+
+02:59.460 --> 03:07.220
+to say hello and then went to X dot tab it will autocomplete yell and then it will say yelling.
+
+03:07.230 --> 03:11.280
+So now I have my method here of this simple class.
+
+03:11.280 --> 03:13.180
+Ok now that I have that simple class working.
+
+03:13.230 --> 03:18.980
+Let's go ahead and create in other class and we'll call this extended class.
+
+03:20.730 --> 03:25.170
+You can really call it whatever you want but the reason I'm calling extend that class is because I'm
+
+03:25.170 --> 03:32.940
+going to essentially extend or inherit from the simple class so have simple class.
+
+03:32.950 --> 03:40.020
+There and then I'm going to say the F underscore underscore in it or underscore pasand sulfur again
+
+03:40.830 --> 03:46.750
+in here it's just going to print out extend.
+
+03:46.830 --> 03:53.340
+So let's go ahead and say why is equal to an instance of this extended class.
+
+03:53.510 --> 03:56.120
+And now we see extend.
+
+03:56.120 --> 04:00.890
+Now notice what happened here is that we only saw extend but even if we inherited from simple class
+
+04:01.190 --> 04:01.870
+we didn't see.
+
+04:01.880 --> 04:02.620
+Hello.
+
+04:02.900 --> 04:06.830
+Now this inheritance does allow us to use methods from simple class.
+
+04:06.830 --> 04:12.050
+So even though I don't have a Yale method inside of this extended class it's only inside a simple class
+
+04:12.890 --> 04:18.710
+this variable y if I say y dots tab it still has yellow attached to it.
+
+04:18.770 --> 04:20.720
+Then it will still say yelling.
+
+04:20.780 --> 04:27.630
+So now the question arises How can I make this in a special method also execute inside of the success
+
+04:27.630 --> 04:28.450
+of the class.
+
+04:28.550 --> 04:32.970
+And the way you do that is through the super keyword.
+
+04:33.290 --> 04:40.490
+So when I call super Here it basically tells Python hey go grab whatever class I'm inheriting from and
+
+04:40.490 --> 04:48.710
+then I can say Dot underscore underscore in its underscore underscore close parentheses and then run
+
+04:48.710 --> 04:50.370
+this out and run.
+
+04:50.390 --> 04:55.880
+Extend that class again and going to see how low an extent because I basically said hey go ahead and
+
+04:56.660 --> 05:01.010
+run the init method of this simple class and then it prints out Hello.
+
+05:01.010 --> 05:10.320
+And if this hello took in arguments for example it says take an argument name and we go ahead and concatenate
+
+05:10.320 --> 05:16.230
+that name Runcible simple class again to make sure those changes are saved.
+
+05:16.250 --> 05:22.810
+Now if I run it here I can provide a name to run that again and they will say hello Jose.
+
+05:23.150 --> 05:23.460
+OK.
+
+05:23.480 --> 05:25.630
+So that's the very basics.
+
+05:25.640 --> 05:28.250
+Just very quick overview of object oriented programming.
+
+05:28.280 --> 05:31.900
+Hopefully I've already encountered object oriented programming before.
+
+05:32.030 --> 05:35.650
+This is really more an overview of this super keyword and O.P..
+
+05:35.780 --> 05:41.450
+If you're totally unfamiliar O.P. you may want to go back and check that out in a more normal Python
+
+05:41.450 --> 05:44.030
+course instead of a steep learning course.
+
+05:44.030 --> 05:44.700
+All right.
+
+05:44.780 --> 05:50.870
+Coming up next we're going to do is discuss operations and we're going to basically make our own operation
+
+05:50.870 --> 05:55.660
+which is a node in a graph and senseful is also going to use this concept of a graph.
+
+05:55.670 --> 05:59.930
+So once we have that operation class that we create We're going to create couple of example operations
+
+06:00.200 --> 06:03.800
+such as additional placation and matrix multiplication.
+
+06:03.890 --> 06:09.410
+Afterwards we'll create placeholders variables in our own graph class and then we'll be able to actually
+
+06:09.410 --> 06:12.710
+create a very very simple neural network.
+
+06:12.720 --> 06:13.010
+All right.
+
+06:13.010 --> 06:15.320
+So we'll do all of that in the next lecture.
+
+06:15.320 --> 06:16.570
+Thanks and I'll see you there.

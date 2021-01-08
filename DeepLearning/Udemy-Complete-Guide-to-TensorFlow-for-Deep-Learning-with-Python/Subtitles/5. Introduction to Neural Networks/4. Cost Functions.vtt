@@ -1,0 +1,145 @@
+WEBVTT
+
+00:06.410 --> 00:08.750
+Welcome back everyone in this lecture.
+
+00:08.750 --> 00:15.970
+We're going to discuss cost functions we'll now explore how can we evaluate the performance of a neuron
+
+00:16.540 --> 00:22.370
+we can use a cost function to measure how far off we are from the expected value.
+
+00:22.420 --> 00:25.060
+So we're going to use the following variables and notation.
+
+00:25.060 --> 00:29.980
+Let's quickly review this so you don't get confused when we actually see the cost functions we'll use
+
+00:29.980 --> 00:36.940
+the variable y to represent the true value and we'll use the variable A to represent the neurons prediction.
+
+00:36.940 --> 00:39.360
+So what does this actually mean in terms of weights and biases.
+
+00:39.370 --> 00:46.020
+Well remember that we said W times x that is the wait times the input plus the bias is equal to Z.
+
+00:46.120 --> 00:49.900
+And remember that we pass Z into the activation function.
+
+00:49.900 --> 00:56.430
+So for example if we're using the sigmoid function we could say that sigma of Z is equal to A.
+
+00:56.650 --> 01:03.170
+So that neurons prediction when we actually put in the some of those weights times the inputs plus those
+
+01:03.170 --> 01:09.130
+biased terms we get the Z and then we can pass that in to the activation function sigma of Z and that
+
+01:09.220 --> 01:09.980
+is equal to A.
+
+01:10.030 --> 01:14.470
+Which at the end of represents the neurons prediction.
+
+01:14.490 --> 01:20.010
+So the first cost function we're going to discuss is the quadratic cost function and that is equal to
+
+01:20.400 --> 01:25.280
+the sum of y minus a squared divided by.
+
+01:25.500 --> 01:27.510
+And you can if you want pull out one over.
+
+01:27.510 --> 01:30.120
+And so what do we actually see here.
+
+01:30.120 --> 01:35.730
+Well we can see that larger errors are more prominent due to squaring because remember why is that true
+
+01:35.730 --> 01:37.890
+value and A's are predictive value.
+
+01:38.040 --> 01:42.930
+So if there's a big difference there when we square it's going to really be prominent now.
+
+01:43.020 --> 01:48.180
+Unfortunately when you actually implement this quadratic costs function this coloration could cause
+
+01:48.180 --> 01:53.590
+a slowdown in our learning speed to the way that formulaically it actually works.
+
+01:54.400 --> 01:58.400
+So instead we're going to be using cross entropy as our cost function.
+
+01:58.570 --> 02:04.810
+And this is defined in the following manner we say negative 1 over and and then we take the sum of Y
+
+02:04.900 --> 02:10.910
+times the log a plus one minus Y times the log of 1 minus a.
+
+02:10.960 --> 02:14.740
+And this actual cost function allows for faster learning.
+
+02:14.770 --> 02:17.100
+And the reason for that is the following.
+
+02:17.110 --> 02:23.320
+The larger the difference between y and a D faster than your on ends up actually learning due to this
+
+02:23.320 --> 02:25.900
+cross and should be cost function.
+
+02:25.900 --> 02:30.880
+So that means that if we end up at the beginning for really large difference between our predicted value
+
+02:31.120 --> 02:37.090
+and the true value we can essentially quickly jump forward using this cost function because the larger
+
+02:37.090 --> 02:40.910
+the difference the faster Nero is going to learn.
+
+02:41.050 --> 02:46.420
+So now that we have these two key aspects of learning of general networks the neurons of their activation
+
+02:46.420 --> 02:48.160
+function and the cost function.
+
+02:48.280 --> 02:52.960
+We're still missing a key step and that's the actual learning process.
+
+02:53.050 --> 02:58.930
+So we need to figure out how we can use our neurons and the measurements of our air our cost function
+
+02:58.960 --> 03:02.920
+basically a measurement of how wrong we are and then attempt to correct our prediction.
+
+03:02.920 --> 03:04.900
+In other words actually learn.
+
+03:05.250 --> 03:11.260
+So again so far we understand the neurons the precept trons how we can link them together to get a neural
+
+03:11.260 --> 03:16.150
+net and then we also understand now that we have these cost functions that are essentially measurements
+
+03:16.150 --> 03:20.070
+of how off we are how wrong we are what our error in general is.
+
+03:20.290 --> 03:25.970
+So now that we have these two components we need to understand well how to actually fix that error and
+
+03:26.000 --> 03:30.290
+we're going to do in the next lecture we're going to briefly cover how we can do this with gradient
+
+03:30.290 --> 03:32.630
+descent which is probably a term you've heard before.
+
+03:32.630 --> 03:34.790
+If you've ever read anything on machine learning.
+
+03:35.100 --> 03:38.410
+OK let's go ahead and discuss gradient descent in the next lecture.
+
+03:38.450 --> 03:39.110
+I'll see it there.

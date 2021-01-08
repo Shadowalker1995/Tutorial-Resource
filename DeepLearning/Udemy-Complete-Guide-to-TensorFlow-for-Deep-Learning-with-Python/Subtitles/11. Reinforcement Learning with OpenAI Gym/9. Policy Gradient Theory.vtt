@@ -1,0 +1,334 @@
+WEBVTT
+
+00:05.360 --> 00:09.310
+Hello everyone and welcome to this lecture on policy gradients.
+
+00:09.350 --> 00:14.390
+Now our previous neural network didn't actually perform very well and this may be because we aren't
+
+00:14.390 --> 00:16.910
+really considering the history of our actions.
+
+00:16.910 --> 00:22.100
+Instead we're really only considering a single previous action and it's immediate reward instead of
+
+00:22.100 --> 00:28.780
+a sequence of actions and how that may affect rewards in the far future now this is often called an
+
+00:28.780 --> 00:34.300
+assignment of credit problem which action should actually be credited when the agent gets rewarded at
+
+00:34.300 --> 00:35.150
+time t.
+
+00:35.290 --> 00:40.600
+Should it be only the actions that happened right before team minus one or the entire series of historical
+
+00:40.600 --> 00:46.230
+actions and a lot of times just depends on the actual environment that your agent is working with.
+
+00:48.210 --> 00:54.210
+So if we have this problem of assigning credit to certain actions in the past we end up doing is we
+
+00:54.210 --> 00:56.170
+apply a discount rates.
+
+00:56.250 --> 01:01.470
+And this allows us to evaluate an action based off all the rewards that come after the action not just
+
+01:01.470 --> 01:03.390
+the first immediate reward.
+
+01:04.310 --> 01:09.290
+So let's go ahead and describe how this works mathematically what we end up doing is we choose a discount
+
+01:09.290 --> 01:14.200
+rate and it's typically around somewhere between 0.9 5 and 0.9 9.
+
+01:14.240 --> 01:19.550
+And we'll explain how changing that closer to either zero or one affects the actual calculation.
+
+01:19.820 --> 01:25.160
+But you essentially use that discount rate and apply a score to the action with this falling formula
+
+01:25.580 --> 01:30.770
+let's say our is your total reward that gets returned back from the environment and is that discount
+
+01:30.770 --> 01:34.440
+rate that point ninety five point ninety nine number.
+
+01:34.550 --> 01:38.630
+You end up doing is you calculate a specific score for the action.
+
+01:38.630 --> 01:40.880
+This is actually different than the reward.
+
+01:40.880 --> 01:46.520
+This is a discount score that you're assigning of that action and it's calculated by the reward at time
+
+01:46.520 --> 01:49.370
+zero when you actually immediately do that action.
+
+01:49.490 --> 01:55.440
+And then you add that to the next reward times the discount rate then the reward that comes after that.
+
+01:55.490 --> 01:57.130
+Times are discount rate squared.
+
+01:57.260 --> 02:01.850
+Then the reward that comes after that one time your discount rate to the power three and so on and so
+
+02:01.850 --> 02:06.460
+on all the way until you get that final reward times the discount to the power.
+
+02:06.490 --> 02:13.340
+And so you can see that future actions and the getting less and less because if you have something that's
+
+02:13.340 --> 02:16.890
+less than 1 and you keep squaring it that becomes a smaller and smaller number.
+
+02:18.300 --> 02:24.990
+So the closer that discount rate is to one that means the more Future Awards will have the closer that
+
+02:24.990 --> 02:26.460
+discount rate is to zero.
+
+02:26.460 --> 02:30.270
+That means Future Awards don't count as much as immediate rewards.
+
+02:30.330 --> 02:36.220
+And hopefully you can see that if you to kind of plug in some numbers into this score formula that choosing
+
+02:36.220 --> 02:41.770
+a discount rate often depends on the specific environment and whether actions have short or long term
+
+02:41.770 --> 02:42.770
+effects.
+
+02:42.820 --> 02:48.700
+We can kind of look at our poll problem and decide that the action of moving left or right is probably
+
+02:48.700 --> 02:50.990
+only going to have a short term effect.
+
+02:51.010 --> 02:56.950
+It's not really going to be important 50 actions into the future whether or not it turned right or left.
+
+02:56.950 --> 02:59.140
+However it probably has some importance.
+
+02:59.200 --> 03:04.120
+A couple of actions into the future so that will help you decide on whether you want a discount rate
+
+03:04.240 --> 03:05.250
+as you mentioned before.
+
+03:05.350 --> 03:11.260
+Closer to one meaning there's more weight on Future Awards or if you want it closer to zero you're more
+
+03:11.260 --> 03:11.770
+effected.
+
+03:11.860 --> 03:16.920
+You're more concerned with short term effects so Future Awards don't count as much as immediate rewards.
+
+03:16.990 --> 03:18.450
+And it is a careful balance.
+
+03:18.450 --> 03:20.840
+They are going to sign on based on the environment.
+
+03:20.890 --> 03:24.140
+And it's also something and play around with to see what models perform better.
+
+03:25.720 --> 03:27.770
+So let's quickly diagram this formula.
+
+03:27.790 --> 03:33.550
+Again what we're doing here is we're saying ours we're award these are at discount rate and we're calculating
+
+03:33.550 --> 03:40.600
+a score by doing this summation multiplied by the discount rate as an action gets accounted for Future
+
+03:40.600 --> 03:41.430
+Awards.
+
+03:42.270 --> 03:47.910
+OK so in this diagram we see here on the left hand side we have our agent or bought and then it's going
+
+03:47.910 --> 03:50.300
+to perform some actions and get some rewards.
+
+03:50.310 --> 03:52.830
+And in this case we're just looking at three time steps.
+
+03:52.890 --> 03:57.240
+So those arrows on the top in the case what actually happened in the environment.
+
+03:57.240 --> 04:03.170
+So the first action we perform is right or we give the signal of one and the pull went up a little bit.
+
+04:03.170 --> 04:04.190
+It got straightened out.
+
+04:04.230 --> 04:07.490
+And for that we get a reward of plus 10 then because of that.
+
+04:07.500 --> 04:11.620
+The next apt actually happened to take is going left or entering zero.
+
+04:11.700 --> 04:14.450
+And again the pull goes up so we get a plus 10.
+
+04:14.490 --> 04:18.870
+However the next action going right ends up with the pole falling over.
+
+04:18.870 --> 04:20.730
+So then you get a negative 100.
+
+04:20.940 --> 04:24.450
+So if we want to do is analyze the score of that first.
+
+04:24.450 --> 04:27.590
+Right now we're only looking at three time steps here.
+
+04:27.600 --> 04:33.360
+So typically what we did in the last year on that work is we just assign plus 10 to this action of going
+
+04:33.360 --> 04:33.980
+right.
+
+04:33.990 --> 04:41.040
+However in a policy gradient situation we want to learn if going right happened to have an effect in
+
+04:41.040 --> 04:44.210
+the future such as when the pool fell over.
+
+04:44.320 --> 04:48.640
+So we end up doing is we take the some of those discounted rewards.
+
+04:48.640 --> 04:56.020
+So we end up saying the original reward 10 plus the discount times and X are Warten Plus the discount
+
+04:56.020 --> 04:57.670
+squared times.
+
+04:57.670 --> 04:59.310
+The next reward negative 100.
+
+04:59.380 --> 05:05.050
+And so we end up applying a score of actually negative seventy point seventy five to that initial action
+
+05:05.050 --> 05:06.010
+of going right.
+
+05:06.010 --> 05:10.200
+So you can see here that we no longer treat this action as a positive.
+
+05:10.200 --> 05:12.160
+Instead we have a negative.
+
+05:12.160 --> 05:16.450
+So this was a bad action to take due to the effect they had in the future.
+
+05:16.450 --> 05:21.370
+And that's the whole idea of a policy Gradina being able to take into account the rewards that happen
+
+05:21.370 --> 05:24.040
+in the future based off your initial action.
+
+05:25.260 --> 05:30.990
+So because of this delayed effect sometimes good actions may actually receive bad scores due to bad
+
+05:30.990 --> 05:33.370
+actions that immediately follow a good action.
+
+05:33.540 --> 05:38.640
+So if we look back here maybe what is really going left on that second action that caused the poll to
+
+05:38.640 --> 05:40.200
+fall over.
+
+05:40.200 --> 05:45.150
+So there is a delayed effect there and good actions may receive some bad scores due to that.
+
+05:45.180 --> 05:50.550
+But to counter this will we end up doing is we train over many episodes and on average good actions
+
+05:50.550 --> 05:52.360
+will end up receiving higher scores.
+
+05:53.880 --> 05:59.610
+Now we also then in order to do the actual calculation is normalize the actual scores by subtracting
+
+05:59.610 --> 06:04.440
+the mean and dividing by the standard deviation and these steps can actually significantly increase
+
+06:04.440 --> 06:09.030
+training time for complex environments and you're going to notice that yourself when we actually code
+
+06:09.030 --> 06:14.880
+this all out and end up training over many episodes as we get further and further along in future episodes
+
+06:14.970 --> 06:16.950
+or more playing of the game.
+
+06:16.950 --> 06:19.830
+You'll actually notice that the training time takes longer and longer.
+
+06:20.930 --> 06:25.100
+So implementing this grading policy of python and sensor flow can be a bit complex so we're going to
+
+06:25.100 --> 06:29.540
+do is quickly go over the steps that we're actually going to be performing in our DOT PI script.
+
+06:29.540 --> 06:34.220
+So the first one we're going to do is have the neural network play several episodes of this game then
+
+06:34.220 --> 06:37.100
+the optimizer is going to calculate the gradients.
+
+06:37.100 --> 06:40.580
+So typically what we've been doing is we call minimize on the optimizer.
+
+06:40.700 --> 06:45.500
+But this time instead of minimizing it we're first going to actually compute the gradients and then
+
+06:45.500 --> 06:52.080
+we're going to compute each actions discounted and normalized score using the form that we just discussed.
+
+06:52.460 --> 06:58.280
+Then we're going to multiply that gradient vector by the actions score and negative scores will end
+
+06:58.280 --> 07:00.910
+up creating opposite gradients when multiplied.
+
+07:00.950 --> 07:04.900
+So that allows the neural network to learn based off that policy gradient.
+
+07:05.090 --> 07:09.710
+And we also want to calculate the mean of the resulting gradient vector to then perform gradient descent
+
+07:11.100 --> 07:16.110
+so because of the complexity of manually implementing this policy gradient technique with tensor flow
+
+07:16.440 --> 07:21.720
+I really encourage you to check out the extra resources for additional examples and explanations because
+
+07:22.110 --> 07:27.090
+as far as the overall idea is concerned it's pretty straightforward but implementing it specifically
+
+07:27.090 --> 07:31.010
+with tensor flow can be a bit complex so just keep that in mind take your time.
+
+07:31.050 --> 07:32.560
+When we actually code along with it.
+
+07:32.780 --> 07:33.240
+OK.
+
+07:33.330 --> 07:37.360
+In the next lecture we're going to hop the text editor and code out this policy grading.
+
+07:37.530 --> 07:38.330
+I'll see you there.

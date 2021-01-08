@@ -1,0 +1,298 @@
+WEBVTT
+
+00:05.670 --> 00:11.530
+Welcome everyone to the section on generative adversarial networks or Gannes Ga.
+
+00:12.300 --> 00:17.100
+So it's time to learn about the Ganor generative adversarial network and they were first reported in
+
+00:17.100 --> 00:22.100
+2014 from Ian Goodfellow as well as his other co-authors working the same lab.
+
+00:22.260 --> 00:27.180
+So as you can tell this is a really new technology and it's a really exciting technology in the space
+
+00:27.180 --> 00:28.160
+of deep learning.
+
+00:29.370 --> 00:34.860
+Gannes basically have the capability to generate new samples similar to the data they were trained on.
+
+00:34.860 --> 00:40.810
+So for example they can create new faces after being trained on a large data set of real faces so they
+
+00:40.810 --> 00:44.700
+will actually generate faces that mimic a real person's face.
+
+00:45.800 --> 00:50.240
+So they've been able to achieve some incredible results here we can see that just after a few training
+
+00:50.260 --> 00:56.180
+a pox the network is actually able to after being trained on images of faces begin to generate its own
+
+00:56.180 --> 00:57.290
+faces.
+
+00:57.290 --> 01:01.970
+Now the pocks and even after one of the POCs you can definitely tell here that these aren't real people
+
+01:01.970 --> 01:06.100
+they're kind of distorted images but some of the latest results from Invidia.
+
+01:06.140 --> 01:12.650
+And this is from basically late October 2017 so very very recent results as far as the filming of this
+
+01:12.650 --> 01:13.630
+presentation.
+
+01:13.640 --> 01:17.190
+These are fake celebrities that a network has generated.
+
+01:17.220 --> 01:19.370
+So none of these people are actually real.
+
+01:19.370 --> 01:24.140
+The network itself generated these images and they look very convincing.
+
+01:24.140 --> 01:26.930
+If you start looking closely you can tell that certain things are off.
+
+01:27.140 --> 01:32.440
+But this is really incredible work from the latest results of Invidia.
+
+01:32.680 --> 01:38.630
+So let's go over the general idea of how Gannes work we're going to end up to create again build two
+
+01:38.630 --> 01:41.220
+networks a generator and a discriminator.
+
+01:41.510 --> 01:45.440
+And these networks basically compete against each other.
+
+01:45.470 --> 01:50.510
+So the classic analogy for Ganns is the forger versus the detective.
+
+01:50.540 --> 01:56.330
+So you have a forger trying to forge paintings and make them real enough that the detective won't notice
+
+01:56.440 --> 02:01.170
+and you can think of the forger as a generator and the detective as the discriminator.
+
+02:01.190 --> 02:06.260
+So you have these two networks a generator which we have here in that little blue box and the discriminating
+
+02:06.260 --> 02:10.570
+network in that little like pink orange box and they're competing against each other.
+
+02:10.640 --> 02:16.460
+And basically what happens is the generator makes fake data to pass discriminator So the discriminator
+
+02:16.580 --> 02:19.470
+also sees real data that is real images.
+
+02:19.480 --> 02:22.430
+So for example real images of paintings or real images of faces.
+
+02:22.760 --> 02:29.330
+And it predicts if the data received is real or fake and the generator is being trained to try to fool
+
+02:29.330 --> 02:36.290
+the discriminator it wants the output data to look as close as possible to real data and the discriminator
+
+02:36.290 --> 02:41.780
+is trained to figure out which data is real and which data is fake and what ends up happening is that
+
+02:41.780 --> 02:46.690
+the generator learns to make data that's indistinguishable from your old data to this cremator.
+
+02:46.910 --> 02:52.720
+So if we follow this kind of example here starting from the top we have some real data and we take in
+
+02:52.730 --> 02:58.370
+some sample data from the real ceps in this case like a real painting and we show that the discriminator
+
+02:58.630 --> 03:03.770
+criminal choses side whether it's real or fake that's been trained on real data.
+
+03:03.950 --> 03:05.460
+Then we have latent data.
+
+03:05.480 --> 03:10.850
+So that can start off as random noise that we feed into the generator and the generator is then trying
+
+03:10.850 --> 03:12.770
+to fool the discriminator.
+
+03:12.770 --> 03:17.120
+So Ill slowly generate pretty poor examples trying to mimic the real data.
+
+03:17.270 --> 03:22.700
+And as it gets tradeoff off to trying to basically fool discriminator it gets better and better.
+
+03:22.910 --> 03:28.390
+So the latest sample is basically a random vector that the generator is using to construct fake images.
+
+03:28.460 --> 03:34.220
+And as the generator learns through training it can figure out how to map these random vectors to recognizable
+
+03:34.280 --> 03:36.220
+images that can fool the discriminator.
+
+03:36.380 --> 03:40.670
+And it doesn't actually have to be just images images or the most famous example of Ganns.
+
+03:40.700 --> 03:46.800
+They can also do things like using gas to try to generate for instance audio data.
+
+03:46.940 --> 03:51.950
+So eventually after a lot of training and usually a lot of tuning of hyper parameters that generator
+
+03:51.950 --> 03:57.880
+will hopefully be able to generate examples that are indistinguishable from the real data.
+
+03:57.940 --> 04:02.320
+Now putting out again can actually be relatively simple you're just essentially making two networks
+
+04:02.320 --> 04:07.120
+that we've done a lot in the past and we're going to use the T.F. layers API to make that even simpler
+
+04:07.120 --> 04:07.750
+for us.
+
+04:07.930 --> 04:13.770
+So it's just a discriminator network and then a generator network well isn't really simple is the tuning
+
+04:13.770 --> 04:18.690
+of the hyper parameters and the training time involved so let's briefly discuss some potential problems
+
+04:18.690 --> 04:26.320
+that occur with Gannes one potential problem is the discriminator over powering the generator.
+
+04:26.330 --> 04:27.970
+So sometimes the discriminator.
+
+04:27.990 --> 04:32.690
+Remember that's the network that's trying to tell whether or not something's real or fake from the generator.
+
+04:32.690 --> 04:37.960
+It can sometimes begin to classify every single generated example as fake.
+
+04:37.970 --> 04:43.580
+So what you may want to do to fix that is have a discriminator output be unskilled instead of a sigmoid.
+
+04:43.610 --> 04:48.980
+Because remember the sigmoid function returns something that's always 0 and 1 are between 0 and 1.
+
+04:49.220 --> 04:54.350
+And that may cause discriminator to just shut everything down to zero and have it all be called fake
+
+04:54.380 --> 04:55.680
+or false examples.
+
+04:57.290 --> 05:01.940
+There's also another problem that's known as moed collapse and that's where the generator discover some
+
+05:01.940 --> 05:03.810
+sort of weakness in the discriminator.
+
+05:03.860 --> 05:09.170
+Maybe if a certain section of an image has red pixels on it that discriminator automatically says it's
+
+05:09.170 --> 05:09.820
+real.
+
+05:09.920 --> 05:13.970
+And what ends up happening is the general just keeps sending the same image over and over again because
+
+05:13.970 --> 05:19.580
+it basically found this little trick to fool discriminators some sort of weird potential weakness and
+
+05:20.150 --> 05:24.980
+the generator is basically continually producing a similar example regardless of whatever variation
+
+05:24.980 --> 05:25.900
+you provide it.
+
+05:25.940 --> 05:28.220
+And it's let latent sample input.
+
+05:28.280 --> 05:33.470
+So the one way you can know if that's happening is if your generator as you check it keeps producing
+
+05:33.470 --> 05:36.360
+the same data over and over again.
+
+05:36.420 --> 05:41.270
+One way to fix this is you can try to adjust the training rate maybe slow it down a little bit.
+
+05:41.370 --> 05:45.870
+Or you can even change the layers of the discriminator in an attempt to make the discriminator better
+
+05:46.020 --> 05:50.850
+at detecting a real sample versus fake sample to avoid that potential weakness.
+
+05:52.430 --> 05:54.830
+Now keep in mind this technology is extremely new.
+
+05:54.830 --> 06:00.080
+It was just published in 2014 and the latest techniques are constantly being published like we just
+
+06:00.080 --> 06:04.390
+saw that invidia paper was just published as far as the time of this filming.
+
+06:04.520 --> 06:11.910
+Less than a few weeks ago now realistically if you're serious about Gannes only a GP power computer
+
+06:11.970 --> 06:16.140
+is going to be able to handle the training of again in a reasonable amount of time.
+
+06:16.140 --> 06:20.060
+That's not to say for simple problems a CPA you won't be able to handle it.
+
+06:20.070 --> 06:21.400
+A CPA can't handle it.
+
+06:21.450 --> 06:26.910
+It's just going to take a really long time we'll have to probably wait hours or days for a really simple
+
+06:26.910 --> 06:27.360
+problem.
+
+06:27.360 --> 06:32.910
+If you're just running it on C.P. you now with more complicated problems such as generating those faces
+
+06:32.910 --> 06:34.760
+we just saw really good news.
+
+06:34.830 --> 06:36.290
+The only realistic way to do it.
+
+06:36.330 --> 06:41.580
+And even then if you have a really strong GPU for some problems it can take a really long time like
+
+06:41.610 --> 06:44.230
+days two weeks for certain data types.
+
+06:44.250 --> 06:45.300
+So keep that in mind.
+
+06:45.330 --> 06:49.770
+This is really going to be limited by your hardware as far as what problems you can tackle.
+
+06:49.770 --> 06:56.940
+So if your locally limited to kind of mediocre hardware you may want to look for a service online that
+
+06:56.940 --> 07:00.800
+allows you to access higher power GPS use.
+
+07:00.850 --> 07:04.780
+So we're going to do now is code out the most famous example of again and that is creating again that
+
+07:04.780 --> 07:07.950
+generates numbers based off the data set.
+
+07:08.020 --> 07:11.530
+So we're going to hop straight into that in the very next lecture.
+
+07:11.530 --> 07:13.150
+Thanks and I'll see you there.

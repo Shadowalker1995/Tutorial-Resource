@@ -1,0 +1,316 @@
+WEBVTT
+
+00:05.330 --> 00:10.340
+Welcome back everyone in this lecture we're going to show you how to use the estimator API in order
+
+00:10.340 --> 00:13.610
+to solve the classification problem for that wind data set.
+
+00:13.610 --> 00:15.300
+Let's go back to Jupiter notebook.
+
+00:15.500 --> 00:17.530
+OK so we have our wind data set.
+
+00:17.540 --> 00:24.420
+The next thing I will do in order to start using the estimator API is they will import sensor flow as
+
+00:24.420 --> 00:36.530
+T.F. and then I also say from sensor flow in poor estimator and then I will go ahead and run that.
+
+00:36.640 --> 00:41.950
+OK so as a reminder if we take a look at our X train shape that 70 percent of the data.
+
+00:41.970 --> 00:47.210
+So we have 124 rows with 13 columns have the features.
+
+00:47.210 --> 00:50.030
+And then we have the additional label column.
+
+00:50.030 --> 00:55.820
+So to use the S-meter API which gives them before I need to create feature columns and if they're all
+
+00:55.820 --> 01:00.180
+numeric columns which if we take a look at x train that's actually the case here.
+
+01:00.200 --> 01:01.370
+So take a look at x train.
+
+01:01.370 --> 01:04.060
+These are all just numeric feature columns.
+
+01:04.070 --> 01:12.000
+What I can do to quickly create a list of just a bunch of numeric columns is say C-f feature column
+
+01:12.600 --> 01:18.180
+numeric column and then I going to pass in the string x to represent the actual features and then a
+
+01:18.250 --> 01:25.120
+pass a shape attribute to represent the actual 13 data features.
+
+01:25.130 --> 01:29.390
+So that's a really quick way to create feature columns if all your columns happen to be numeric.
+
+01:29.390 --> 01:32.900
+We've shown you before how to deal with category calls with the estimator API.
+
+01:32.900 --> 01:36.350
+So you can check back on those videos in case you need a refresher.
+
+01:36.350 --> 01:42.810
+Up next is actually straight to the model so create a variable called Deep underscore model and then
+
+01:42.840 --> 01:48.240
+off the estimator API if you do that here and then hit tab you can see the various functions that are
+
+01:48.240 --> 01:49.230
+available to us.
+
+01:49.230 --> 01:56.560
+We're going to do then Cely connected or a deep neural network classifier and then we have this hidden
+
+01:56.560 --> 01:58.560
+units argument which is just the list.
+
+01:58.690 --> 02:01.930
+And you basically say how many neurons you want in each layer.
+
+02:01.930 --> 02:06.790
+So in our case we're just going to say 13:13 13 if you start doing more than that you'll probably be
+
+02:06.790 --> 02:08.980
+overfitting especially for such a small data set.
+
+02:09.130 --> 02:13.120
+But if you're looking for really large dataset maybe you'll need more than you can adjust as you see
+
+02:13.120 --> 02:13.590
+fit.
+
+02:14.600 --> 02:20.700
+And the next one is to find the actual feature columns will say feature columns is equal to that feat
+
+02:20.700 --> 02:25.980
+calls variable we just made and then we also need to say the number of classes we're predicting.
+
+02:26.130 --> 02:27.920
+So by default it's binary classification.
+
+02:27.930 --> 02:29.960
+But in our case we have three different types.
+
+02:30.030 --> 02:34.810
+So we'll go ahead and say there's three different classes there and then we can also pass in an optimizer.
+
+02:34.830 --> 02:45.930
+So we'll pass A.F. train and we'll do a gradient optimizer with the learning rates equal to 0.01 OK
+
+02:45.930 --> 02:51.000
+so run that and you should be able to see your model created and then it's actually really easy to train
+
+02:51.000 --> 02:51.860
+your model.
+
+02:51.870 --> 02:55.030
+The only thing left we need to build out is our input function.
+
+02:55.530 --> 03:00.600
+Again we've shown you before how to create these input functions you just call estimator inputs and
+
+03:00.600 --> 03:05.520
+then you have two options one for an umpire function one for panderers murthering of just not pi.
+
+03:05.520 --> 03:10.050
+So we'll say x is equal to the x variable.
+
+03:10.050 --> 03:13.740
+We said earlier is kind of almost like a fit dictionary here.
+
+03:13.920 --> 03:21.030
+Scaled X train then the y component is equal to y train.
+
+03:21.030 --> 03:24.830
+And since we're training all this will say shuffle is equal to true.
+
+03:25.320 --> 03:27.750
+And then we can define a batch size.
+
+03:27.970 --> 03:33.100
+I'll go ahead and say 10 for this level data and then we can find the number of POCs how many times
+
+03:33.100 --> 03:39.980
+you want to run through this entire training set and we'll go on to say five run that and then let's
+
+03:39.980 --> 03:43.160
+go ahead and trayner deep model on that input function.
+
+03:43.160 --> 03:50.220
+So I will say input function here and let's run this and we can also if we want to or we can say steps
+
+03:50.220 --> 03:51.400
+here if necessary.
+
+03:51.570 --> 03:54.370
+So I could say something like subscales 500.
+
+03:54.460 --> 03:55.530
+So go ahead and run that.
+
+03:55.570 --> 03:59.130
+It's going to create that and then it will train it should be pretty straightforward.
+
+03:59.500 --> 04:03.430
+And then we're also going to create an evaluation function which is going to look really similar to
+
+04:03.430 --> 04:09.920
+our previous function again estimator inputs from PI input function.
+
+04:10.240 --> 04:15.750
+But in this case we're just going to be passing in our test data.
+
+04:15.940 --> 04:23.430
+So this will be scaled X test scale x test and then I also want to make sure that shuffle is equal to
+
+04:23.430 --> 04:24.420
+false.
+
+04:24.420 --> 04:30.900
+So don't shuffle my testate around run that and then all say predictions is equal to.
+
+04:30.900 --> 04:34.760
+And if you say deep model you can call the Predict method off of this.
+
+04:34.770 --> 04:38.630
+Keep in mind it also has if you'll remember and evaluate method.
+
+04:38.700 --> 04:42.030
+So I could pass in the actual test labels.
+
+04:42.050 --> 04:46.740
+But in this case we're going to do that manually which it predicts and the input function is going to
+
+04:46.740 --> 04:53.050
+be equal to input function evil evil remember and recall that this is actually a generator so if you
+
+04:53.050 --> 04:57.850
+want to get the actual results you know cast this something or loop through it later on.
+
+04:57.850 --> 05:01.030
+So we'll cast this into a list.
+
+05:01.040 --> 05:05.820
+So now if I take a look at Pretz it's this list of dictionary objects.
+
+05:05.840 --> 05:11.930
+So I will use some list comprehension to just grab what I'm looking for which is this array value the
+
+05:11.930 --> 05:21.210
+class ID so that predictions is equal to an say P class ID.
+
+05:21.210 --> 05:23.530
+So that's the dictionary inside there.
+
+05:23.680 --> 05:27.390
+And then I also want to grab the actual results here so that 0.
+
+05:27.480 --> 05:34.380
+So will say X off of that 0 and say for P and Pretz.
+
+05:34.580 --> 05:35.330
+So run that.
+
+05:35.450 --> 05:39.320
+And that's just a simple list comprehension that eventually just gets you back that list the actual
+
+05:39.320 --> 05:42.080
+classes predicted zeros ones or twos.
+
+05:42.410 --> 05:51.170
+And in order to evaluate this we're going to do is say from S-K learn the metrics import and you can
+
+05:51.170 --> 05:52.550
+do either confusion matrix.
+
+05:52.550 --> 05:54.580
+You can also do it classification report.
+
+05:54.830 --> 06:01.930
+Let's go in and just do a classification report here and we'll pass in our test and our predictions
+
+06:03.300 --> 06:06.290
+and let's print this up.
+
+06:06.720 --> 06:09.770
+OK so running that you should have some pretty good results for that.
+
+06:09.960 --> 06:12.000
+Hovering around above 85.
+
+06:12.000 --> 06:17.400
+So in this case I performed pretty well in 95 94 94 but that's the estimator API.
+
+06:17.520 --> 06:19.380
+You've already used that before in the beginning of the course.
+
+06:19.380 --> 06:21.400
+Hopefully that was basically all of you for you.
+
+06:21.570 --> 06:24.630
+Let's quickly do a quick rundown of everything we did.
+
+06:24.630 --> 06:26.900
+First things first you have to get your data in the right shape.
+
+06:26.910 --> 06:31.350
+Once you've done that you can go ahead and create your feature columns feature columns can be a little
+
+06:31.350 --> 06:36.800
+more complicated if you have categorical data but again recall that you can just call tab here and there's
+
+06:36.810 --> 06:38.630
+different versions of categorical data.
+
+06:38.640 --> 06:41.520
+We covered those in the beginning of the course using the estimator API.
+
+06:41.670 --> 06:46.600
+But if you have all numeric columns this is a nice little feature with the shape then we create a classifier
+
+06:47.010 --> 06:48.330
+defining the hidden units.
+
+06:48.320 --> 06:51.400
+You can easily add more layers just by making this larger.
+
+06:51.540 --> 06:55.730
+You have the feature columns and the Reclast to predict the specific optimizer with your learning right
+
+06:56.980 --> 07:01.860
+then you create these input functions which you like to basically act like a feed dictionary inputting
+
+07:01.870 --> 07:02.410
+that data.
+
+07:02.440 --> 07:06.730
+And if you're training you also want to make sure you pass and your training labels you want to shuffle
+
+07:06.730 --> 07:11.260
+this and you can find your batch size number of pocks you train your model all the data and then you
+
+07:11.260 --> 07:16.510
+can evaluate it and use predict or evaluation the Pennine what your estimate or input function looks
+
+07:16.510 --> 07:17.250
+like.
+
+07:17.300 --> 07:17.690
+OK.
+
+07:17.740 --> 07:19.330
+That's really all there is to it.
+
+07:19.330 --> 07:23.670
+Coming up next we're going to discuss the keris abstraction off of Tancer flow.
+
+07:23.700 --> 07:24.480
+I'll see it there.

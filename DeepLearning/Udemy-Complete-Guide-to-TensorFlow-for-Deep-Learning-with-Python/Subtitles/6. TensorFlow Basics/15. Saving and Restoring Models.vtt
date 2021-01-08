@@ -1,0 +1,301 @@
+WEBVTT
+
+00:05.360 --> 00:07.180
+Welcome back everyone in this lecture.
+
+00:07.190 --> 00:09.920
+We're going to quickly discuss saving and restoring models.
+
+00:09.920 --> 00:12.520
+You've created some pretty interesting models of tensor flow.
+
+00:12.650 --> 00:15.630
+So it might be nice to be able to save them and then recall them later.
+
+00:15.830 --> 00:18.680
+Let's open up a Jupiter notebook and show you how this is done.
+
+00:18.710 --> 00:23.930
+All right so here I am underneath the tensor flow basics folder and if you go to that folder and scroll
+
+00:23.930 --> 00:27.360
+down you'll see a notebook called saving and loading models.
+
+00:27.360 --> 00:31.880
+I'm trying to walk you through this notebook and show you how this is done because otherwise we'll have
+
+00:31.880 --> 00:33.960
+to create a whole nother model.
+
+00:34.040 --> 00:36.500
+And since we already have one ready we'll go ahead and use it.
+
+00:36.560 --> 00:41.360
+So saving and loading models and what this does is it runs through the network example that we've already
+
+00:41.360 --> 00:41.990
+created.
+
+00:42.200 --> 00:45.730
+So I'm going to go ahead and just run these cells and we kind of go along.
+
+00:46.040 --> 00:47.770
+We remember we created some artificial data.
+
+00:47.780 --> 00:53.840
+We saw the x data we plotted it out created some variables have our costs function the optimizer and
+
+00:53.860 --> 00:57.610
+then we initialize the variables and then it comes time to actually run the model.
+
+00:57.620 --> 01:03.810
+But this time we're going to save it and then restore it the easiest way to save a model intenser flow
+
+01:03.960 --> 01:07.090
+is using the ETF train that saver object.
+
+01:07.200 --> 01:10.190
+If you look at the documentation it shows you some other ways to do it.
+
+01:10.290 --> 01:15.090
+But if you actually start looking at Stack Overflow posts everyone suggests to use this method because
+
+01:15.090 --> 01:17.390
+it really is the easiest way to go.
+
+01:17.700 --> 01:22.740
+So all you have to do to save a model of tensor flow is say some Savir or whatever you want to call
+
+01:22.740 --> 01:27.870
+this variable is equal to an instance of the T.F. train that Savir object.
+
+01:27.870 --> 01:29.270
+So I'm going to go ahead and run that.
+
+01:29.580 --> 01:35.190
+And then during your session where you're going to do is you'll run your session initialiser variables
+
+01:35.520 --> 01:41.370
+either go first some epochs or some training steps et cetera you're going to run your training optimization
+
+01:41.370 --> 01:44.200
+algorithm you're going to get back any results you want to get back.
+
+01:44.220 --> 01:47.850
+And then once you're done with everything where you're going to do is at the very end you're going to
+
+01:47.850 --> 01:53.220
+call your saver object that you've already defined and then call the Save method off of it and it takes
+
+01:53.220 --> 01:58.110
+in two arguments it's going to take in SPSS or whatever you decided to call your session.
+
+01:58.290 --> 02:00.060
+In the course we always call it s.c.s.
+
+02:00.060 --> 02:05.040
+So you're going to pass in your session and then what you're going to do is passen the pathway to your
+
+02:05.040 --> 02:06.810
+checkpoint file.
+
+02:06.810 --> 02:11.120
+And typically this works a lot better if you provide a directory.
+
+02:11.130 --> 02:19.700
+So what you need to do is for instance if I want to say save or save I'm going to pasan my session and
+
+02:19.700 --> 02:26.060
+then I always recommend to pass some new directory for your model so we can say new model directory
+
+02:26.390 --> 02:33.920
+and forward slash when the whatever you want to call your model so we can say my second model that and
+
+02:33.910 --> 02:35.060
+then you're going to create a checkpoint.
+
+02:35.070 --> 02:41.610
+See Kate Peetie Now if you want to just say my second model checkpoint.
+
+02:41.640 --> 02:46.860
+Typically you get errors if you just pass in the checkpoint file itself.
+
+02:46.860 --> 02:50.100
+So if you just want the checkpoint file you don't want another folder so to show you what I mean by
+
+02:50.100 --> 02:50.960
+another folder.
+
+02:51.090 --> 02:55.110
+If I come back here you can see I already have a model's folder created and if I click on that model
+
+02:55.140 --> 02:56.940
+I can see that checkpoint data.
+
+02:57.240 --> 03:00.950
+But if you don't want to create another folder you just want the checkpoint data here.
+
+03:01.140 --> 03:05.370
+We usually have to do is put a dot and then a forward slash.
+
+03:05.370 --> 03:10.290
+Now if you get errors you know kind of depends on your operating system then I would suggest actually
+
+03:10.290 --> 03:13.340
+create in that directory depending on your operating system.
+
+03:13.350 --> 03:18.270
+If you just pass this checkpoint file as I'm doing on this last line you sometimes get errors or it
+
+03:18.270 --> 03:19.800
+doesn't actually save it.
+
+03:19.800 --> 03:26.520
+So again I recommend either providing a directory or doing a forward slash if you for whatever reason
+
+03:26.520 --> 03:30.110
+just really want the checkpoint files in the same directory as this notebook.
+
+03:30.120 --> 03:31.880
+So let's go ahead and test this out.
+
+03:32.030 --> 03:35.690
+And I put a hash tag here and let's go ahead and try this.
+
+03:35.700 --> 03:39.460
+So saying new models my second model.
+
+03:39.720 --> 03:45.100
+I'm going to run this now it trained it and if I come back over here to senseful basics now I see my
+
+03:45.120 --> 03:49.080
+new models folder and I see a bunch of stuff with the checkpoint data.
+
+03:49.290 --> 03:50.890
+So I'm going to actually restore it.
+
+03:51.120 --> 03:54.960
+And again if I evaluate my results and the training data that's still working.
+
+03:54.960 --> 03:55.800
+So that's good.
+
+03:55.920 --> 03:57.630
+So now we're going to show you how to load the model.
+
+03:57.630 --> 03:59.710
+So remember I still have my test data.
+
+04:00.210 --> 04:04.860
+So what I will do is you start another session and then the very first thing you do.
+
+04:04.920 --> 04:08.880
+Unlike last time it was the very last thing you're going to say Sabor thought restore you're going to
+
+04:08.880 --> 04:14.210
+pass in your session and then you going to pass in the path to that checkpoint file that you just created.
+
+04:14.220 --> 04:16.010
+So basically you can just copy and paste that.
+
+04:16.020 --> 04:18.270
+So it was Kennebec appear it was new models.
+
+04:18.270 --> 04:20.060
+My second model checkpoint.
+
+04:20.100 --> 04:22.440
+Copy that scroll down.
+
+04:22.620 --> 04:27.960
+Paste it in and then now you're going to have all the variables from your model so you can continue
+
+04:27.960 --> 04:30.110
+trading it on more data if you want to.
+
+04:30.120 --> 04:31.830
+Or you can just Fich back results.
+
+04:31.830 --> 04:34.420
+Remember model has the variables and B.
+
+04:34.440 --> 04:36.610
+So all that information is already saved here.
+
+04:36.840 --> 04:42.030
+So I could continue training on more data or I could just run the variables themselves and grab that
+
+04:42.030 --> 04:42.960
+information.
+
+04:42.990 --> 04:46.630
+So going to fetch back the results this restored slope and restored int..
+
+04:46.830 --> 04:51.870
+So let me run that real quick so you can see it's restoring the parameters from the model set.
+
+04:51.870 --> 04:53.680
+My second model checkpoint file.
+
+04:53.790 --> 04:54.920
+And just to show that it worked.
+
+04:54.930 --> 04:59.030
+I'm now going to do the plot with this restored slope and this restored intercept.
+
+04:59.040 --> 05:04.410
+And if you run that you should see kind of that same slope line because we're able to successfully restore
+
+05:04.410 --> 05:05.350
+it from our model.
+
+05:05.520 --> 05:06.040
+OK.
+
+05:06.210 --> 05:08.640
+And that's really the basics of saving and loading models.
+
+05:08.640 --> 05:13.110
+You'll see us use this later on in a little bit in the convolutional neural networks and a little bit
+
+05:13.110 --> 05:17.800
+more in the current year that works throughout the course whenever we need to call our model.
+
+05:17.820 --> 05:24.090
+And as far as general workflow for restoring a model and saving a model I personally like to usually
+
+05:24.390 --> 05:31.260
+have my training data in it's own session and then I save the model and then I restore the model for
+
+05:31.320 --> 05:32.640
+my test data.
+
+05:32.640 --> 05:34.440
+We won't do that throughout the course.
+
+05:34.440 --> 05:37.680
+A lot of times we'll just run everything in one session just to save time.
+
+05:37.680 --> 05:38.980
+As far as tape is concerned.
+
+05:39.210 --> 05:43.440
+But my personal preference is to have kind of a training session and then a testing session where I
+
+05:43.440 --> 05:45.210
+just restore the trained model.
+
+05:45.420 --> 05:45.810
+OK.
+
+05:45.900 --> 05:46.990
+Again that's a personal preference.
+
+05:47.030 --> 05:48.800
+There's no right or wrong way to go about it.
+
+05:48.810 --> 05:51.570
+You could just do everything in one session if you really wanted to.
+
+05:51.570 --> 05:53.760
+Thanks everyone and I will see you at the next lecture.

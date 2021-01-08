@@ -1,0 +1,469 @@
+WEBVTT
+
+00:06.290 --> 00:08.250
+OK here we are where we left off last time.
+
+00:08.270 --> 00:11.980
+Last time we created our generator function and our discriminator function.
+
+00:12.170 --> 00:17.570
+Now it's time to do a little bit of setup as far as placeholders losses and optimizers.
+
+00:17.570 --> 00:19.580
+So let's start off with the placeholders.
+
+00:19.820 --> 00:23.580
+So we're going to create two placeholders one for the real images that we're going to be passing into
+
+00:23.580 --> 00:30.250
+the discriminator and then one for z are basically the noise that we're going to pass into the generator.
+
+00:30.350 --> 00:33.740
+So we'll say really images is a placeholder.
+
+00:33.740 --> 00:41.420
+So it's a placeholder and it's just floating point 32 and the shape it's going to be none because that's
+
+00:41.420 --> 00:43.600
+defined by how large that batches.
+
+00:43.640 --> 00:45.440
+And then there's 784 pixels.
+
+00:45.440 --> 00:50.180
+Hopefully this feels pretty familiar given that you have used this dataset before in the convolutional
+
+00:50.180 --> 00:58.270
+neural networks section then for Z we're going to do as well say T.F. placeholder will say to float
+
+00:58.300 --> 00:59.140
+32.
+
+00:59.440 --> 01:06.700
+And the shape here again none for the batch size and we'll go ahead and feed our generator a vector
+
+01:06.700 --> 01:08.400
+of 100 random points.
+
+01:09.830 --> 01:14.150
+So once we have that we're going to go ahead and create an instance of regenerator so we'll say gee
+
+01:15.360 --> 01:20.620
+is generator not really an instance more like calling the function and then we pasan placeholder there.
+
+01:21.000 --> 01:25.890
+So we have a generator we're passing in this Z which eventually we're going to pass in a feed function
+
+01:26.340 --> 01:28.020
+because remember generator if we look up here.
+
+01:28.110 --> 01:33.570
+It's just a bunch of layers that eventually returns the output are passing in that placeholder for the
+
+01:33.570 --> 01:34.690
+actual noise.
+
+01:34.710 --> 01:38.140
+And later on we'll pass in a feed dictionary that feeds in that noise.
+
+01:38.820 --> 01:41.010
+So generators pretty straightforward.
+
+01:41.010 --> 01:45.480
+Now it's time for the discriminator and for discriminator where we're going to do here is we're going
+
+01:45.480 --> 01:50.100
+to edit this function a little bit so that we don't just return the output but we also return these
+
+01:50.100 --> 01:51.870
+long bits here.
+
+01:51.900 --> 01:58.380
+So let's go and do that run that again make sure you ran that and we're going to need to have two discriminators
+
+01:58.410 --> 02:05.400
+because remember we want to run the discriminator first on the real images so that the discriminator
+
+02:05.460 --> 02:12.090
+is actually trained on real images and understands what the real data set looks like that way once you
+
+02:12.090 --> 02:17.730
+start feeding it the generated images that are generators actually trying to fool discriminator with
+
+02:18.090 --> 02:23.280
+it's been trained on real data and understands what it should look like.
+
+02:23.400 --> 02:26.370
+So we're going to say the output real.
+
+02:26.580 --> 02:35.250
+So this is the real output and then we'll say the logic is real and we're calling them real because
+
+02:35.250 --> 02:42.380
+we're going to call that discriminator function and pasand the real images placeholder.
+
+02:42.540 --> 02:48.450
+OK so we have the output and the logic for the discriminator pasand the real images.
+
+02:48.480 --> 02:56.430
+So it's going to learn on the real images then we're going to do is say output fake.
+
+02:56.480 --> 03:03.230
+So we're going to call these Lodge's fake as well because this is going to be the discriminator except
+
+03:03.230 --> 03:05.600
+you're passing in the results of that generator.
+
+03:05.600 --> 03:10.530
+So say Gee and because of this we need to say reuse equals.
+
+03:10.550 --> 03:15.100
+True because if I just do this you end up getting a value error.
+
+03:15.170 --> 03:19.700
+So if you scroll down here if you try to run this all again what's going to happen it says hey this
+
+03:19.700 --> 03:23.230
+variable kernel already exists and that's disallowed.
+
+03:23.270 --> 03:26.550
+Did you mean to set re-uses equal to true in the variable scope.
+
+03:26.690 --> 03:31.140
+And that's why when we came up here we had to say re-uses equal to true.
+
+03:31.140 --> 03:35.510
+So that's where we had a set that variable scope because since we're running a discriminator essentially
+
+03:35.510 --> 03:41.250
+twice we need to be able to reuse those same variable names that we've been kind of assigning here.
+
+03:41.270 --> 03:47.210
+So when we need to say here is reuse is equal to true and that's going to take care of that issue.
+
+03:47.210 --> 03:51.530
+So that was kind of the main point of creating these scopes in order to be able to reuse a lot of the
+
+03:51.530 --> 03:55.730
+variable names and that the string is also going to come in handy later when we create a list of all
+
+03:55.730 --> 03:59.420
+the variables or building out our graph OK.
+
+03:59.610 --> 04:03.660
+So that's a discriminator notice has returning returning the output in the logic's because we're going
+
+04:03.660 --> 04:05.370
+to use buffer those for the losses.
+
+04:05.370 --> 04:08.780
+So let's go ahead and get some losses here.
+
+04:08.790 --> 04:15.050
+So I'll say losses and I'm going to define a basic loss function.
+
+04:15.050 --> 04:26.750
+So I'll say the loss function takes some logic and some labels in and it's going to return we'll say
+
+04:26.760 --> 04:37.180
+T.F. reduce mean and we're going to say sigmoid crossed entropy the floor is that he used before and
+
+04:37.180 --> 04:46.700
+then we'll just say here Blodgett's equals largest and labels equals
+
+04:50.040 --> 04:51.770
+labels in.
+
+04:51.960 --> 04:55.340
+OK so this is almost like a helper function that just basically wrote this function.
+
+04:55.350 --> 04:59.200
+So I don't have to constantly write reduce mean and sigmoid cross entropy.
+
+04:59.280 --> 04:59.520
+All right.
+
+04:59.520 --> 05:03.380
+So let's actually start calculating the losses of the use of this last function.
+
+05:03.390 --> 05:09.550
+The first one will do is the discriminator loss when it's trained on the real data.
+
+05:09.660 --> 05:14.730
+So that's going to be called the underscore real loss.
+
+05:14.730 --> 05:17.450
+So the calculated loss when it's being trained on the real data.
+
+05:17.520 --> 05:23.610
+So we'll call her last function and then we need to passen the logic and the labels.
+
+05:23.700 --> 05:25.020
+So we already know the lodge's here.
+
+05:25.020 --> 05:29.400
+Remember that's just right here at the lodge It's also can it pass that in.
+
+05:29.670 --> 05:31.900
+And then the second one or the actual labels.
+
+05:32.040 --> 05:38.790
+So recall that the discriminator here is not trying to be a neural network trained to the tech what
+
+05:38.790 --> 05:40.240
+number it's being presented.
+
+05:40.260 --> 05:47.100
+It's not trying to tell whether that number is 7 3 or 2 all discriminator is trying to really understand
+
+05:47.160 --> 05:53.510
+is is the image being presented to the discriminator network something that a real human being wrote.
+
+05:53.880 --> 05:58.950
+Or is it something that someone like a computer is trying to pass off as a handwritten digit.
+
+05:58.980 --> 06:03.510
+So when we train on the real data we want all the labels to be true.
+
+06:03.570 --> 06:11.220
+So what we can do is say T.F. ones and if we take a look at the documentation for T.F. ones by doing
+
+06:11.220 --> 06:13.130
+shift tab here and scroll down.
+
+06:13.260 --> 06:15.870
+This creates a sensor with all the elements set to one.
+
+06:16.080 --> 06:18.470
+However it takes an A shape argument.
+
+06:18.480 --> 06:20.870
+There's a more convenience and for our case here.
+
+06:20.940 --> 06:25.240
+T.F. ones like which again creates a tensor of all elements set to one.
+
+06:25.410 --> 06:28.560
+But you can pass in a straight tensor so you don't need to worry about the shape.
+
+06:28.800 --> 06:30.290
+So that's a little more flexible.
+
+06:30.300 --> 06:32.770
+So we'll go ahead and use that will say T.F. ones like.
+
+06:32.770 --> 06:35.710
+And we know the shape it needs is the same as tensor right here.
+
+06:35.910 --> 06:37.940
+So we'll just copy and paste that in.
+
+06:37.980 --> 06:40.460
+So that is the labels.
+
+06:40.470 --> 06:43.340
+Now there's one thing we're going to do here that's called smoothing.
+
+06:43.530 --> 06:49.710
+Right now this discriminator is passing in ones as the labels which makes sense we're going to pass
+
+06:49.800 --> 06:52.780
+that one through a sigmoid function that's going to stay as one.
+
+06:52.890 --> 06:59.220
+And then basically everything stays true what we want to do here is so that discriminator isn't so well
+
+06:59.220 --> 07:01.890
+to make the discriminator a little more generalized.
+
+07:01.890 --> 07:05.290
+What we can do is apply smoothing.
+
+07:05.400 --> 07:07.620
+So this helps discriminate generalize better.
+
+07:07.620 --> 07:13.470
+And basically it just means that you reduce the labels a bit from being perfect 1.0 to being something
+
+07:13.470 --> 07:15.100
+like 0.9.
+
+07:15.270 --> 07:20.090
+So you can just easily multiply by 0.9 to apply that smoothing factor.
+
+07:20.150 --> 07:20.780
+OK.
+
+07:21.060 --> 07:22.550
+So we'll go ahead and do that.
+
+07:24.270 --> 07:31.740
+And let's continue on to do something similar for the fake data we'll say fake loss is equal to the
+
+07:31.800 --> 07:39.210
+last function that we find earlier and will passen the lot it's fake copy and paste that in.
+
+07:39.350 --> 07:44.220
+And now it's that of ones we're just going to say these are zeros because we know these are all fake.
+
+07:44.570 --> 07:48.950
+So now we're going to say the loss for training on fake data is this.
+
+07:49.030 --> 07:54.900
+The logic's and this can actually be real as well.
+
+07:55.150 --> 07:57.430
+It can be fake it doesn't really matter here.
+
+07:57.480 --> 08:03.400
+So run those two and then we'll say the loss is equal to here.
+
+08:04.390 --> 08:12.550
+Lips The real loss plus the fake Clauss right.
+
+08:12.570 --> 08:14.460
+So that's a total discriminator loss.
+
+08:14.640 --> 08:20.220
+And then the generally the loss is pretty straightforward you're just going to call the loss function.
+
+08:20.220 --> 08:31.320
+And we can pass an lips the logic of the fake and then I will say T.F. ones like because we know wants
+
+08:31.320 --> 08:31.980
+to be true.
+
+08:31.980 --> 08:35.740
+So I'll say T.F. this can be Lodge's fake.
+
+08:35.750 --> 08:42.510
+Ok so now we have both our discriminator discriminated a loss by both the real loss and the loss and
+
+08:42.510 --> 08:44.360
+then the generator loss.
+
+08:44.370 --> 08:46.760
+Now let's go ahead and define the optimizers.
+
+08:46.890 --> 08:49.920
+We'll go ahead and give this a learning rate of Precilla learning right.
+
+08:50.000 --> 08:53.010
+0.00 one if you start going too fast.
+
+08:53.040 --> 08:55.710
+Basically just get a bunch of noise out from the generator.
+
+08:55.770 --> 09:01.290
+Keep in mind as we always say a slower learning rate means training time is going to take longer.
+
+09:01.380 --> 09:03.870
+So we're going to have to optimizers here.
+
+09:03.900 --> 09:08.080
+One for the discriminator trainer and one for the generator trainer.
+
+09:08.100 --> 09:12.610
+And in order to do that we need to basically create a list of the variable names.
+
+09:12.630 --> 09:17.110
+So I'm going to copy and paste some lines of code here.
+
+09:17.460 --> 09:22.020
+And you typically really only do this sort of thing when you're dealing with multiple networks that
+
+09:22.020 --> 09:23.800
+are going to be interacting to each other.
+
+09:23.820 --> 09:27.810
+But you're right to call trainable variables from tensor or flow.
+
+09:27.810 --> 09:32.270
+And this just returns all the variables that were created and by default when you create these variables
+
+09:32.280 --> 09:34.070
+they say trainable is equal to true.
+
+09:34.110 --> 09:38.250
+So we have all these variables that were created and then inside their names some of them are going
+
+09:38.250 --> 09:40.850
+to have details and some of them will how g n.
+
+09:40.900 --> 09:45.630
+And that's because of the variable scope we passed in that string code here that if your member for
+
+09:45.630 --> 09:49.180
+variable scope is the name.
+
+09:49.450 --> 09:54.070
+So we'll come back down here and the using list comprehension we're gonna grab every variable for every
+
+09:54.070 --> 09:56.030
+variable in these trainable variables.
+
+09:56.050 --> 10:02.770
+If either D.S. for discriminators name or GDNF generator is in that name and then we have two separate
+
+10:02.770 --> 10:04.930
+lists of the variables.
+
+10:04.990 --> 10:10.120
+So now that we have that we can go ahead and create our two optimizers.
+
+10:10.150 --> 10:19.290
+So say the trainer is equal to T.F. train I will use an atom optimizer here use the learning rate and
+
+10:19.290 --> 10:21.690
+then we'll just call the minimize function here.
+
+10:22.200 --> 10:29.930
+So we want to minimize the discriminator loss and the variable list that we're going to pasan is only
+
+10:29.930 --> 10:32.350
+the discriminator variables.
+
+10:32.350 --> 10:32.920
+Whoops.
+
+10:33.010 --> 10:34.140
+Learning rates.
+
+10:36.510 --> 10:39.080
+OK so that's our discriminator trainer.
+
+10:39.090 --> 10:42.010
+We're going to do a very similar thing for the generator trainer.
+
+10:42.020 --> 10:48.270
+So we'll see CEF train Adam optimizer pass are learning right.
+
+10:48.570 --> 10:56.080
+And then again minimize and now we're going to minimize the generator loss and the variable list is
+
+10:56.080 --> 10:58.240
+going to be equal to those generator variables.
+
+10:59.750 --> 11:04.100
+And if you want to explore those lists look like you can just do this and I'll tell you that it's a
+
+11:04.100 --> 11:05.680
+list of the variables you can see here.
+
+11:05.780 --> 11:08.620
+Kernel zero bias colonel by bias Colonel.
+
+11:08.630 --> 11:12.720
+Now we didn't have to do a lot of this work because this is essentially all done by the layers API.
+
+11:12.740 --> 11:14.380
+So just keep that in mind.
+
+11:14.390 --> 11:19.790
+All right so now we successfully have created our losses and then our optimizers.
+
+11:19.790 --> 11:23.370
+So we're all ready to go the next step is to just essentially train the session.
+
+11:23.600 --> 11:25.710
+So let's go ahead and do that in the next lecture.

@@ -1,0 +1,379 @@
+WEBVTT
+
+00:05.330 --> 00:11.180
+Welcome back everyone in this lecture we're going to be creating variables placeholders and graph classes
+
+00:11.390 --> 00:12.940
+for manual neural network.
+
+00:14.180 --> 00:17.550
+So let's go ahead and discuss these and then we'll hop over the Jupiter notebook.
+
+00:17.750 --> 00:23.330
+A placeholder is essentially going to be an empty node that needs a value to be provided to compute
+
+00:23.330 --> 00:29.880
+the output and its purpose is essentially to be a placeholder for data that you're going to bring in.
+
+00:29.900 --> 00:32.360
+That is the features or labels etc..
+
+00:32.360 --> 00:37.370
+So just a placeholder that's eventually going to be filled in by the data you provided.
+
+00:37.490 --> 00:40.470
+It's a placeholder because you're not going to initially have that data.
+
+00:40.490 --> 00:42.440
+It's going to come from your data source.
+
+00:42.500 --> 00:47.390
+Variables are basically already going to be filled in with changeable parameters of the graph so you
+
+00:47.390 --> 00:52.100
+can think of that as something like the weights of the actual neural network.
+
+00:52.130 --> 00:56.900
+Then finally we have the graph itself and the graph the way we're constructing it here is going to be
+
+00:56.900 --> 01:01.590
+a global variable connecting variables and placeholders to specific operations.
+
+01:01.850 --> 01:05.200
+Let's go ahead and jump the notebook and code this all out.
+
+01:05.240 --> 01:05.540
+All right.
+
+01:05.540 --> 01:06.380
+Back at the notebook.
+
+01:06.380 --> 01:09.490
+First thing you can do is create the placeholder wrap.
+
+01:09.730 --> 01:14.610
+So say class placeholder.
+
+01:14.630 --> 01:18.510
+Remember this is a no that's going to need to be provided a value later on.
+
+01:18.510 --> 01:27.140
+So we're going to say the and it's self and we're just going to initialize it with the output notes
+
+01:30.400 --> 01:35.510
+make them an empty list and then we're going to grab that global variable from the default graph.
+
+01:35.940 --> 01:42.550
+So say default underscore graph and then we're going to grab the placeholders of the graph.
+
+01:42.740 --> 01:49.220
+So basically this graph object is going to have a bunch of placeholders and then we're going to pen
+
+01:49.580 --> 01:52.670
+this placeholder to it when we actually create that graph.
+
+01:53.560 --> 01:58.130
+And we're going to do something really similar to our variable class or we're going to create.
+
+01:58.200 --> 02:02.340
+So we'll have variables and the variables a changeable parameter inside the graph.
+
+02:02.770 --> 02:04.130
+So we'll see it here.
+
+02:04.180 --> 02:05.190
+It's going to take self.
+
+02:05.260 --> 02:11.010
+And then usually often they'll have some sort of initial value such as randomly initializing the weights
+
+02:12.220 --> 02:20.590
+of a graph or of a network and then we're going to say soft value is equal to the initial value and
+
+02:20.590 --> 02:23.250
+then we're also going to say what are the output notes here.
+
+02:23.260 --> 02:29.530
+Started off as an empty list and then just as we did last time we're going to append this.
+
+02:29.630 --> 02:33.970
+So our default graph object is going to have some variables to it.
+
+02:34.960 --> 02:38.200
+And we're going to append those variables.
+
+02:38.200 --> 02:38.590
+OK.
+
+02:38.860 --> 02:40.460
+So we discussed this default graph.
+
+02:40.480 --> 02:41.730
+It's a global object.
+
+02:41.860 --> 02:45.010
+Let's go ahead and now create the class for it.
+
+02:45.040 --> 02:49.800
+So say class Grath.
+
+02:50.030 --> 02:59.470
+And we're going to initialize it with three attributes and that's going to be a list of operations and
+
+02:59.570 --> 03:09.710
+graph a list of placeholders and scrap and the list of variables in this graph.
+
+03:09.820 --> 03:11.310
+So what does scrap actually doing.
+
+03:11.320 --> 03:15.790
+This is essentially the main thing it's going to be connecting these placeholders in variables to the
+
+03:15.790 --> 03:17.800
+operations that they belong to.
+
+03:17.800 --> 03:23.710
+So again every time appear in these other placeholder and variable graphs when we're doing this specific
+
+03:24.280 --> 03:29.190
+attribute or assignment right here this a default graph variables a pen.
+
+03:29.350 --> 03:34.690
+All we're saying is hey this graph is going to contain a list of all the variables inside the graph.
+
+03:34.690 --> 03:41.810
+So when we create a variable go ahead and append it to the default Gras variables and then we're going
+
+03:41.820 --> 03:46.930
+to have one more method here called set as defaults.
+
+03:47.430 --> 03:53.000
+So to make sure that if we have multiple instances of graphs we're connected to the right one.
+
+03:53.160 --> 04:00.240
+We are to have this method here set as default and it's basically going to call global default graph
+
+04:00.720 --> 04:03.890
+essentially setting the default graph as a global variable.
+
+04:03.960 --> 04:09.050
+And that's what's going to allow us to access it inside this placeholder inside this variable class.
+
+04:09.060 --> 04:16.910
+And also if we come back up here inside our initial operation so let's go ahead and add that into our
+
+04:16.910 --> 04:17.810
+operation class.
+
+04:17.810 --> 04:28.340
+Now that we kind of know that it exists or say default graph operations pen self.
+
+04:29.130 --> 04:29.750
+OK.
+
+04:29.980 --> 04:36.100
+So now we have operations placeholders in variables and we have a graph that keeps track of them all
+
+04:36.160 --> 04:42.790
+in the form of a list and it also can then set its own graph as a global variable to be kind of accessed
+
+04:42.790 --> 04:51.360
+by those three main objects and then we'll say default graph is equal to self.
+
+04:51.460 --> 04:55.060
+OK so hopefully now you kind of get the sense that we have this graph object.
+
+04:55.200 --> 04:57.720
+It contains placeholders in variables.
+
+04:57.720 --> 05:02.010
+Variables are things that kind of can be changeable parameters within the graph.
+
+05:02.010 --> 05:07.500
+Placeholders are essentially empty nodes waiting for you to provide them data information and then operations
+
+05:07.500 --> 05:08.220
+will we know what those are.
+
+05:08.220 --> 05:13.590
+Those are just computation operations like matrix multiplication multiply addition etc..
+
+05:14.130 --> 05:14.580
+All right.
+
+05:14.700 --> 05:15.590
+So now we have this graph.
+
+05:15.600 --> 05:18.040
+Let's go ahead and work through a really simple example.
+
+05:18.330 --> 05:21.540
+So we're going to do something really simple.
+
+05:21.540 --> 05:28.150
+We're going to see if we can make this into a text box.
+
+05:28.150 --> 05:28.350
+OK.
+
+05:28.360 --> 05:34.410
+So we're going to something really important to say something like Z is equal to x plus B.
+
+05:35.150 --> 05:42.760
+And we're also going to say is equal to 10 and B is equal to 1.
+
+05:42.860 --> 05:49.540
+So that basically means we have the following problem where say OK if z is equal to x plus B if Z.
+
+05:49.640 --> 05:54.100
+Or excuse me if A's 10 and basic will to 1 then I should have the following function.
+
+05:54.110 --> 05:59.130
+I should say 10 x plus 1.
+
+05:59.150 --> 06:01.030
+So now we have a formula here.
+
+06:01.250 --> 06:04.260
+So I know we make this two lines here.
+
+06:04.280 --> 06:06.110
+I know Z is equal to x plus be.
+
+06:06.350 --> 06:12.020
+If I have these two variables A's equal to 10 and B is equal to 1 then I have this resulting output
+
+06:12.020 --> 06:17.870
+of Z depending on what my value of x x Here is a placeholder depending on what value you provide for
+
+06:17.870 --> 06:18.510
+x.
+
+06:18.530 --> 06:23.690
+We can do these two computations a multiplication and in addition to get the sexual result.
+
+06:23.720 --> 06:26.330
+So let's do this with what we just did right now.
+
+06:26.720 --> 06:29.990
+We'll say G is equal to a graph.
+
+06:30.240 --> 06:31.940
+So now we have a graph object.
+
+06:32.100 --> 06:35.000
+We're going to set G as a default graph.
+
+06:35.010 --> 06:38.250
+Now that initializes this global variable it's floating around.
+
+06:38.250 --> 06:39.890
+And then we have two variables.
+
+06:40.080 --> 06:46.830
+That is we have a that's a variable with a value of 10 and then we have B.
+
+06:47.190 --> 06:49.680
+And that's a variable with a value of 1.
+
+06:49.800 --> 06:53.580
+And this number 10 and 1 just totally arbitrarily chosen.
+
+06:53.580 --> 06:56.830
+Ok then X we technically don't know what it is yet.
+
+06:56.880 --> 07:02.770
+That's up to the user to provide because essentially the formula of a line right equals m s plus B.
+
+07:03.240 --> 07:08.910
+So we have X here and have that be a placeholder no need sobriety thing because it expects it to be
+
+07:08.910 --> 07:10.160
+provided later.
+
+07:10.170 --> 07:11.850
+Now I have two operations.
+
+07:11.850 --> 07:17.010
+I have a multiplication operation here 10 times X and then I have an addition operation the result of
+
+07:17.010 --> 07:18.600
+that plus 1.
+
+07:18.600 --> 07:20.170
+So let's go ahead and do the following.
+
+07:20.170 --> 07:30.140
+I'll say why is equal to multiply and I multiply the variable a by the placeholder X and then finally
+
+07:30.140 --> 07:32.050
+my final result is Z.
+
+07:32.520 --> 07:32.840
+Right.
+
+07:32.840 --> 07:40.310
+Add in the result of that multiply function which is why are most by class really and then B here and
+
+07:40.310 --> 07:41.870
+then I have Z right here.
+
+07:41.870 --> 07:48.160
+So the only thing left is to actually compute this Z.
+
+07:48.200 --> 07:54.230
+Now in order to compute these various operations as well as set these variables in placeholders we need
+
+07:54.230 --> 07:57.920
+to add in two more things we need to create a traverse.
+
+07:57.920 --> 08:04.130
+Post order function and that's basically going to allow us to do a post order traversal of nodes and
+
+08:04.130 --> 08:08.130
+that essentially mixtures that the computation is then the correct order.
+
+08:08.270 --> 08:12.970
+For instance I need to make sure that a multiply this out first before I add these two.
+
+08:13.130 --> 08:17.530
+Right now nothing is actually being done here because we haven't run this once I have that traverse.
+
+08:17.530 --> 08:23.000
+Post order operation function ready then I can create a session class and the session class is going
+
+08:23.000 --> 08:26.480
+to be the thing that actually executes this graph.
+
+08:26.480 --> 08:28.460
+So right now I kind of have all these empty things.
+
+08:28.550 --> 08:30.130
+None of these things have actually happened yet.
+
+08:30.140 --> 08:34.490
+I have actually multiplied anything that added anything yet because we're essentially still waiting
+
+08:34.490 --> 08:35.490
+on that placeholder.
+
+08:35.660 --> 08:40.430
+So in the next lecture we're going to add in a function called traverse post order which is going to
+
+08:40.430 --> 08:42.520
+the post order traversal of nodes.
+
+08:42.560 --> 08:47.800
+Or you may be familiar with if you ever done anything regarding tree theory with computer science and
+
+08:47.800 --> 08:51.800
+there we're going to have a session class and that session class is going to be the thing that actually
+
+08:52.070 --> 08:53.510
+execute sorry thing.
+
+08:53.510 --> 08:53.940
+OK.
+
+08:54.110 --> 08:56.490
+So let's go ahead and do that in the next lecture.

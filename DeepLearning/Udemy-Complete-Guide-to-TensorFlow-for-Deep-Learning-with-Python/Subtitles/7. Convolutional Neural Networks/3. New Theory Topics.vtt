@@ -1,0 +1,625 @@
+WEBVTT
+
+00:05.230 --> 00:11.870
+Welcome everyone to the new theory topics lecture we've already reviewed the basics of neural networks
+
+00:11.960 --> 00:16.550
+in the previous lecture but there's still some theory components we haven't covered yet.
+
+00:16.550 --> 00:21.780
+And there's also some things that we have introduced that haven't really dived too much in depth on.
+
+00:22.040 --> 00:27.510
+So let's go ahead and cover some of these topics in what we're calling this new theory lecture.
+
+00:27.630 --> 00:33.120
+First off we'll discuss initialization of weights and the various options we have and then we'll decide
+
+00:33.180 --> 00:36.260
+on Xavier initialization so.
+
+00:36.310 --> 00:41.660
+Already cited previously that we would just choose some sort of random value for our weights.
+
+00:41.840 --> 00:46.640
+But let's kind of go through the options first suffered we could have done is just initialize all our
+
+00:46.640 --> 00:48.520
+weights as zeros.
+
+00:48.530 --> 00:53.750
+However that presents a problem because there is essentially no randomness there meaning we're not being
+
+00:54.500 --> 00:59.450
+we're being a little too subjective when creating the neural network because we are introducing kind
+
+00:59.450 --> 01:02.500
+of our heavy hand of just choosing all zeros.
+
+01:02.540 --> 01:05.260
+So that's really not a great choice because there's no randomness there.
+
+01:05.390 --> 01:09.640
+And we want to be as impartial as possible when creating this network.
+
+01:09.710 --> 01:14.090
+So then we decide well let's do some sort of random distribution near-zero to try to get some of those
+
+01:14.150 --> 01:15.240
+smaller values.
+
+01:15.440 --> 01:20.210
+However this is still not optimal even if you try to do a uniform distribution from negative one to
+
+01:20.210 --> 01:23.210
+one or a normal distribution from negative 1 to 1.
+
+01:23.270 --> 01:27.010
+When you pass those random distributions into an activation function.
+
+01:27.020 --> 01:31.690
+They can sometimes get distorted to much larger values.
+
+01:31.710 --> 01:34.340
+So what kind of solution do we have then.
+
+01:34.620 --> 01:42.330
+Well we can use Xavier initialization and that comes both in uniform and normal distributions or flavors
+
+01:42.330 --> 01:43.160
+if you will.
+
+01:43.260 --> 01:50.190
+And the basic idea behind Xavier initialization is to draw weights from a distribution that has zero
+
+01:50.190 --> 01:58.620
+mean and a specific variance or that variance is defined as variance of W equal to 1 over and N where
+
+01:58.620 --> 02:03.900
+w is the initialization distribution for the neuron in question.
+
+02:03.900 --> 02:08.060
+And and n is the number of neurons feeding into it.
+
+02:08.130 --> 02:10.140
+So this is very specific neuron here.
+
+02:10.230 --> 02:17.100
+Again W is the initialization distribution for that neuron in question and one over and in is one over
+
+02:17.100 --> 02:22.320
+the number of neurons feeding into that neuron and the distribution again typically either Gaussian
+
+02:22.380 --> 02:26.790
+or uniform or Gaussian is just another word for a normal distribution.
+
+02:26.790 --> 02:30.050
+Let's go ahead and briefly discuss where this formula comes from.
+
+02:30.070 --> 02:34.500
+If you want more in-depth discussion you can check out the resource links for this.
+
+02:34.500 --> 02:37.660
+But let's going to walk through some of these equations.
+
+02:37.680 --> 02:44.910
+Let's suppose that we have an input X with any components and the linear neuron with random weights
+
+02:44.910 --> 02:46.800
+w that spits out a number.
+
+02:46.830 --> 02:47.380
+Why.
+
+02:47.610 --> 02:48.270
+So it's linear.
+
+02:48.270 --> 02:55.170
+So we basically just have y equals the weights times that input X and we're doing that all the way for
+
+02:55.350 --> 03:02.890
+weights and X and so now we have to ask well what if we wanted to know the variance of y.
+
+03:03.180 --> 03:08.790
+Well if you look up the variance formula on Wikipedia or a statistical book you end up getting the second
+
+03:08.790 --> 03:09.510
+equation.
+
+03:09.540 --> 03:16.620
+So you see the variance of Y or the variance of They'll be of-I times X or Y is equal to the expected
+
+03:16.620 --> 03:20.970
+value of x of-I square times the variance of W-why plus Exeter.
+
+03:21.000 --> 03:25.580
+All the way until W-why and we end up calling by X of.
+
+03:26.070 --> 03:31.940
+So if our inputs and weights both have a mean of zero.
+
+03:31.980 --> 03:37.700
+That second equation actually simplifies to the third equation where we can say the variance of W of
+
+03:38.400 --> 03:43.290
+times XVI is equal to the variance of W of-I times the variance of x.
+
+03:43.320 --> 03:48.690
+So you can basically do that separation because we know our inputs and our weights both have a mean
+
+03:48.870 --> 03:49.580
+of zero.
+
+03:49.680 --> 03:52.280
+Because we're basically defining it that way.
+
+03:52.290 --> 03:58.770
+So then if we can make the further assumption that the x y and W of II are all independent and identically
+
+03:58.770 --> 04:01.890
+distributed which is a common term in statistics.
+
+04:01.890 --> 04:08.470
+Otherwise known as ID then we can work out that the variance of Y is this top equation right here.
+
+04:08.490 --> 04:11.540
+So we're saying now the variance of y is equal to.
+
+04:12.030 --> 04:18.370
+And after some transformations and times the variance of W of-I times the variance of X of-I.
+
+04:18.840 --> 04:25.890
+So in other words the variance of the output is the variance of the input but scaled by N times the
+
+04:25.890 --> 04:27.600
+variance of W I.
+
+04:27.900 --> 04:33.660
+So if we want the variance of the input and the output to be the same that means that and variance of
+
+04:33.660 --> 04:40.110
+daylily of I should be equal to 1 which means the variance of the weights should then lead us to that
+
+04:40.110 --> 04:47.310
+second equation where we're saying variance w of-I is equal to 1 over end or equal to 1 over.
+
+04:47.340 --> 04:55.650
+And in Oregon and in a number of neurons feeding into that neuron and that is your Xavier initialization.
+
+04:55.740 --> 05:01.170
+Again you really don't need to worry too much about where this formula actually came from because it's
+
+05:01.170 --> 05:03.770
+essentially just an import we're going to be using from tensor flow.
+
+05:03.900 --> 05:07.450
+Then in case you're more interested in it you can always check out the resource links.
+
+05:07.740 --> 05:17.030
+And as a quick note the actual original formula was fine as two divided by the neurons in plus the neurons
+
+05:17.080 --> 05:17.450
+out.
+
+05:17.640 --> 05:22.050
+So if you check out the link to the original paper you'll actually see that bottom formula.
+
+05:22.110 --> 05:27.630
+But a lot of implementations for frameworks and they're just using kind of the more simplified one over
+
+05:27.670 --> 05:28.600
+neurons.
+
+05:28.800 --> 05:31.030
+OK so that's Xavier initialization.
+
+05:31.050 --> 05:36.240
+It's basically just telling you why we're going to be later on using Xavier initialization.
+
+05:36.270 --> 05:38.050
+Intenser flow.
+
+05:38.260 --> 05:43.860
+Now that we understand exeat here initialization what I want to go over are three components of gradient
+
+05:43.870 --> 05:49.020
+the sense something definitely heard of before and that is the learning rate the batch size.
+
+05:49.180 --> 05:53.850
+And then also the second order behavior of gradient descent or that learning rate.
+
+05:53.920 --> 05:59.120
+So remember that learning rate basically defines the step size during gradient descent.
+
+05:59.260 --> 06:05.020
+And if we choose a really small learning rate then you're going to be sending at a very very slow pace.
+
+06:05.020 --> 06:11.260
+So then you may take forever to actually train your model or you may even never converge within a reasonable
+
+06:11.260 --> 06:12.300
+timeframe.
+
+06:12.760 --> 06:18.610
+However if you choose too large of a step size then you may overshoot the minimum and then you may never
+
+06:18.610 --> 06:19.610
+converge.
+
+06:20.080 --> 06:21.150
+So that's learning rate.
+
+06:21.160 --> 06:24.970
+So we're going to keep that in the back of our minds of how to choose a good learning rate and we'll
+
+06:24.970 --> 06:28.200
+talk about that when we discuss the second order of gradient descent.
+
+06:28.420 --> 06:34.030
+But then there's also batch size which we actually have already seen before and batches allow us to
+
+06:34.030 --> 06:39.100
+use the stochastic form of gradient descent which is essentially what we've been using whenever we've
+
+06:39.310 --> 06:40.510
+shown batch sizes.
+
+06:40.510 --> 06:45.700
+Intenser flow but we haven't actually specifically said that we're using stochastic gradient descent.
+
+06:45.940 --> 06:52.270
+And the reason for that is if we were to feed all of our data into our neural network at once there
+
+06:52.270 --> 06:57.610
+would be so many parameters to try to solve for that it would just be computationally too expensive
+
+06:57.610 --> 07:03.580
+to perform a gradient descent which is why we need to feed in these so-called mini batches of data.
+
+07:03.580 --> 07:05.800
+Now there are tradeoffs for that.
+
+07:05.800 --> 07:12.910
+The smaller the batch size the less representative it is of the entire datasource and then the larger
+
+07:12.910 --> 07:15.480
+the batch size the longer it takes to train.
+
+07:15.550 --> 07:21.750
+And if you have too much as far as your data that's being input it will just take absolutely forever
+
+07:23.900 --> 07:29.840
+then I want to discuss the second order behavior of the gradient that is related to that third piece
+
+07:29.840 --> 07:30.740
+of this puzzle.
+
+07:30.950 --> 07:36.350
+So second order behavior of the brain and the sense allows us to actually adjust our learning rate based
+
+07:36.350 --> 07:38.500
+off the rate of descent.
+
+07:38.510 --> 07:44.480
+So as you can imagine when you're first beginning to do your green descent and you're first starting
+
+07:44.480 --> 07:47.210
+off training your errors going to be really large.
+
+07:47.240 --> 07:53.060
+So it would be nice if you could take really large steps or have a much faster learning rate in the
+
+07:53.060 --> 07:53.840
+beginning.
+
+07:53.840 --> 08:00.770
+And then as you get closer to the actual minimum that is you would know by the rate of descent sense
+
+08:00.950 --> 08:03.920
+that that's second order behavior essentially the riveted.
+
+08:04.250 --> 08:07.800
+You could then adjust your learning rate to make it a slower learning rate.
+
+08:07.850 --> 08:12.950
+So it'd be nice if we had some sort of mechanism for having kind of faster learning rates in the beginning
+
+08:13.010 --> 08:16.080
+and then slowing it down as we got closer to that minimum.
+
+08:16.100 --> 08:18.320
+And there's different methods of doing this.
+
+08:18.340 --> 08:24.440
+Adam Gerat r m s Propp is another one that we're really going to be focusing on Adam and we'll introduce
+
+08:24.440 --> 08:25.190
+that later on.
+
+08:25.190 --> 08:30.230
+Central is going to be a nice import from tensor flow but keep that in mind as you see us working with
+
+08:30.230 --> 08:31.270
+that intense flow.
+
+08:31.460 --> 08:38.050
+That's essentially taking advantage of second order behavior when it comes to gradient descent.
+
+08:38.050 --> 08:38.340
+All right.
+
+08:38.360 --> 08:43.070
+So again this allows us to start with larger steps and then eventually goes to smaller step sizes.
+
+08:43.070 --> 08:45.710
+So Adam allows that change happen automatically.
+
+08:48.060 --> 08:50.940
+Now I want to mention unstable and vanishing gradients.
+
+08:50.940 --> 08:58.410
+So as you increase the number of layers in a network the layers towards the input will be affected less
+
+08:58.620 --> 09:01.440
+by the error calculation occurring at the output.
+
+09:01.440 --> 09:07.950
+And this is especially true if you have a very deep neural network with tons of layers as you back propagate
+
+09:08.100 --> 09:09.270
+that gradient.
+
+09:09.270 --> 09:13.840
+It's going to get smaller smaller and smaller which is where the term vanishing gradient comes from.
+
+09:14.100 --> 09:19.440
+So as you go back to the network if you have a super deep network eventually you won't be changing any
+
+09:19.440 --> 09:21.850
+of the weights at the very beginning of the network.
+
+09:22.990 --> 09:27.440
+So initialization and normalization will help us mitigate some of these issues.
+
+09:27.490 --> 09:32.680
+And in fact if you have a good initialization and have good normalization you rarely have to worry about
+
+09:32.680 --> 09:33.700
+vanishing gradients.
+
+09:33.700 --> 09:36.460
+There's also an opposite problem called exploding gradients.
+
+09:36.580 --> 09:37.910
+But that's a little more rare.
+
+09:38.110 --> 09:43.960
+And we're going to discuss these unstable gradient ideas a lot more again in detail when we discuss
+
+09:43.960 --> 09:48.220
+recurrent neural networks because that's a situation where you really have to keep them in mind.
+
+09:49.790 --> 09:50.150
+OK.
+
+09:50.160 --> 09:54.570
+Finally I want to discuss overfitting versus underfeeding a model you've already heard me use these
+
+09:54.570 --> 09:58.440
+terms before and you may already have an idea of what we're talking about but I just really want to
+
+09:58.440 --> 10:03.270
+make sure that you fully understand what we're discussing when we say overfitting are under fitting.
+
+10:03.270 --> 10:06.370
+So let's imagine a really simple regression task here.
+
+10:06.510 --> 10:08.480
+We have some training data here in blue.
+
+10:08.610 --> 10:11.730
+We have an x axis and the y axis.
+
+10:11.730 --> 10:16.430
+So let's say we create this red line model and it's fitted to the training data.
+
+10:16.470 --> 10:21.690
+And you can see here that we're basically under fitting we're not really getting that more or less parabolic
+
+10:21.710 --> 10:22.610
+behavior.
+
+10:22.680 --> 10:24.040
+That is true for the data.
+
+10:24.060 --> 10:29.310
+So we're getting a large error on that training data for under fitting and then if we introduce test
+
+10:29.310 --> 10:32.240
+points we'll also get a larger error on those test points.
+
+10:32.240 --> 10:35.160
+So this is essentially just an indication that we're under.
+
+10:35.160 --> 10:39.270
+Fitting for getting a larger error on both your training step and your testing set.
+
+10:39.330 --> 10:44.430
+Then you're under fitting and you need to go back and either adjust parameters in your model or change
+
+10:44.430 --> 10:46.930
+your model again.
+
+10:46.950 --> 10:49.590
+High error on both the training and test data.
+
+10:49.590 --> 10:52.110
+Now let's discuss overfitting a model.
+
+10:52.200 --> 10:56.250
+Let's go back to the situation where we have some training data.
+
+10:56.310 --> 11:01.860
+Now you might be thinking to yourself Well if my last model was under fitting and I just drew a straight
+
+11:01.860 --> 11:07.640
+line let me try to build a model that basically hits every single point of my training data.
+
+11:07.650 --> 11:11.720
+So you may get some sort of wacky model that looks like this.
+
+11:11.730 --> 11:17.670
+However the danger here is that when you actually evaluate this model it's going to have a very low
+
+11:17.700 --> 11:22.770
+error on your training data and your data is going to be multi-dimensional so you won't be able to visualize
+
+11:22.770 --> 11:23.100
+it.
+
+11:23.220 --> 11:27.800
+As we've done here looking at this I can clearly see that there's an issue with my model.
+
+11:27.810 --> 11:32.310
+But if I'm working something in 12 dimensions not going to be able to really visualize something like
+
+11:32.310 --> 11:37.020
+this is the report I'm going to get back is the error on the training data.
+
+11:37.050 --> 11:41.910
+And unfortunately if you have a model that looks like this you're actually getting a very low error
+
+11:41.910 --> 11:45.890
+on that training data because you're basically getting to every point.
+
+11:46.040 --> 11:49.800
+Now the problem overfitting is when you introduce the test data.
+
+11:49.920 --> 11:55.410
+So if you have the test data you'll notice you end up getting a very large error on that test dataset.
+
+11:55.410 --> 12:01.020
+Then again this is a kind of cartoonish example for exaggeration purposes but hopefully you get the
+
+12:01.020 --> 12:07.290
+idea that if you're fitting very well to your training data but but then get a much larger error on
+
+12:07.290 --> 12:08.390
+your test data.
+
+12:08.550 --> 12:10.160
+Your overfitting your model.
+
+12:10.350 --> 12:14.340
+So those are differences between overfitting and underfeeding and overfitting.
+
+12:14.370 --> 12:19.950
+It's kind of dangerous and deceptive because you may run it on your training data and think wow look
+
+12:19.950 --> 12:21.390
+at all these great results and getting.
+
+12:21.490 --> 12:26.100
+But then you introduce your test data to your model and it performs really poorly.
+
+12:26.160 --> 12:31.730
+So that's a classic example of overfitting you need to strike some sort of balance.
+
+12:31.750 --> 12:34.770
+And here again it's kind of a parabolic shape.
+
+12:36.170 --> 12:40.310
+So again with potentially hundreds of parameters in a deep learning neural network the possibility of
+
+12:40.310 --> 12:42.460
+overfitting is very high.
+
+12:42.590 --> 12:47.950
+And there are a few ways to help mitigate this issue of overfitting which kind of plague's neural networks
+
+12:47.960 --> 12:48.860
+in general.
+
+12:48.860 --> 12:56.210
+There are statistical methods like L1 and L2 regularisation and the basic idea behind L1 and L2 regularisation
+
+12:56.750 --> 13:00.410
+is they essentially just add a penalty for larger weights in the model.
+
+13:00.470 --> 13:06.440
+So you don't get end up getting one feature in your training set that really has a large weight attached
+
+13:06.440 --> 13:10.580
+to it or when you're on in your training set that has a large weight attached to it.
+
+13:10.580 --> 13:15.540
+So this idea of L1 L2 regularisation it's not unique to neural networks.
+
+13:15.590 --> 13:19.520
+If you've done any sort of machine learning before you've probably heard of these regularisation methods
+
+13:19.610 --> 13:23.000
+and again it's just adding a penalty for larger weights in the model.
+
+13:24.840 --> 13:28.830
+Now another common technique is called dropout and this dropout technique.
+
+13:28.890 --> 13:33.330
+It's fundamentally a really simple idea and it's unique 10 year old that works but it's actually really
+
+13:33.330 --> 13:34.080
+effective.
+
+13:34.320 --> 13:38.400
+And the idea is that you just remove neurons during training randomly.
+
+13:38.550 --> 13:44.580
+So as you're training you pick random neurons to remove and that way the network doesn't over rely on
+
+13:44.610 --> 13:47.170
+any particular neuron as it's training.
+
+13:47.220 --> 13:51.910
+And that can help mitigate overfitting.
+
+13:52.090 --> 13:56.920
+Then there's another technique which is known as expanding your data and you can basically artificially
+
+13:56.920 --> 14:04.350
+expand your data by adding noise or you can tilt images or maybe at low white noise the sound data.
+
+14:04.360 --> 14:08.530
+Things of that nature so that you change your data that you're training on itself.
+
+14:08.620 --> 14:14.350
+That way you don't technically overfit to the real data source and we'll kind of explore that later
+
+14:14.350 --> 14:15.380
+on in the course.
+
+14:16.760 --> 14:21.070
+So we still have more theory to learn things such as pulling layers convolutional layers et cetera.
+
+14:21.200 --> 14:25.060
+But we'll wait until we actually begin to build convolutional neural networks to cover those.
+
+14:25.190 --> 14:30.080
+So we'll have an upcoming theory lecture where we really dive in to the specific theory of convolutional
+
+14:30.080 --> 14:35.240
+neural networks for now let's go ahead and explore the famous and this dataset which is essentially
+
+14:35.300 --> 14:40.280
+a must know for convolutional neural networks and a must know for deep learning in general pretty much
+
+14:40.370 --> 14:44.150
+every deep learning framework in course has some sort of amnesty example.
+
+14:44.150 --> 14:46.160
+So we're definitely going to cover it here.
+
+14:46.190 --> 14:48.640
+Coming up next we'll discuss the data in general.
+
+14:48.650 --> 14:49.300
+I'll see it there.

@@ -1,0 +1,193 @@
+WEBVTT
+
+00:05.300 --> 00:08.080
+Well everyone welcome to this quick overview of pandas.
+
+00:08.110 --> 00:12.670
+We're actually going to be using pi a lot more than pandas so we're going to show you here how you can
+
+00:12.670 --> 00:18.250
+use pandas to read in a sci fi file which will be our main use for pandas and then how to access things
+
+00:18.250 --> 00:20.710
+from the data frame which Pandurs creates.
+
+00:20.800 --> 00:22.870
+Let's hop over to Jupiter notebook.
+
+00:22.930 --> 00:29.860
+OK here I am in the Juber notebook and Lynsay import Pandurs as PD shift enter to run that and we're
+
+00:29.860 --> 00:36.650
+going to be mainly using panels to read in files so you can use PD read underscore and hit tab here.
+
+00:36.670 --> 00:41.110
+You'll notice that Pindar's can read from a variety of formats are mainly just going to be using C as
+
+00:41.120 --> 00:42.110
+V files.
+
+00:42.400 --> 00:49.060
+So then what you do here is you passen as a string the entire file path to the CSP file or if the CC
+
+00:49.090 --> 00:54.440
+file is located in the same directory as this particular notebook which is the case for the zip file
+
+00:54.440 --> 00:55.580
+that comes with this course.
+
+00:55.680 --> 00:57.970
+And if you ever wondering what directory you're in.
+
+00:58.090 --> 01:03.280
+Just type in P.W. the shift enter and I'll report back what directory you're in.
+
+01:03.280 --> 01:08.740
+So again all you need to do is passen the location of the CFE file.
+
+01:08.830 --> 01:14.920
+So I have the CC file located in this character right here so I'll have to do is type it in this file
+
+01:14.980 --> 01:16.800
+called salaries CXVII.
+
+01:16.810 --> 01:22.060
+Keep in mind every CACP file has the extension that cxxviii sometimes it's just salary's in the name
+
+01:22.060 --> 01:22.630
+of the file.
+
+01:22.630 --> 01:25.300
+So you can always use tab autocomplete to help you there.
+
+01:25.300 --> 01:26.690
+So those here a hit tab.
+
+01:26.830 --> 01:29.050
+It will auto complete if the files actually there.
+
+01:29.140 --> 01:33.280
+If you're not getting the auto complete that's probably a good sign or indicator that the file is not
+
+01:33.280 --> 01:36.220
+actually in the same directory that your notebooks in.
+
+01:36.310 --> 01:40.200
+So we do as we set this equal to a variable and then the variable is a data frame.
+
+01:40.210 --> 01:44.490
+So I just put in DFA there and a data frame essentially kind of looks like an Excel spreadsheet.
+
+01:44.500 --> 01:48.250
+You have column names and you have an index and then you have data points.
+
+01:48.310 --> 01:52.350
+And we're going to be using this for our various features in machine learning datasets.
+
+01:52.480 --> 01:57.180
+If you ever want to grab an entire column of information we end up doing it you will type in the name
+
+01:57.180 --> 02:01.360
+of your data frame square brackets and then pass in the name of the column.
+
+02:01.360 --> 02:07.600
+So for instance if I wanted the salary column I can run this and it returns back the salary column with
+
+02:07.600 --> 02:08.920
+the index location of it.
+
+02:09.070 --> 02:15.990
+If you want multiple columns back you end up doing is you can just type in a list of column names.
+
+02:16.030 --> 02:18.780
+For example I want salary and name.
+
+02:19.000 --> 02:20.620
+And then I get both of them back.
+
+02:20.620 --> 02:26.830
+Notice the difference here and passing in a list which is why I get those two sets of brackets.
+
+02:26.930 --> 02:30.360
+Remember I mentioned that panderers is directly built off of pi.
+
+02:30.380 --> 02:33.430
+So just like Num. pie has lots of the same features.
+
+02:33.470 --> 02:41.000
+For example if we say salary we can do things such as Max run that in order to turn back the max salary
+
+02:41.010 --> 02:43.390
+if you want to see a bunch of information.
+
+02:43.580 --> 02:49.580
+Statistically speaking about your data frame you can use the described method and it will take in the
+
+02:49.580 --> 02:51.280
+numerical columns and describe them.
+
+02:51.320 --> 02:55.860
+Count means standard deviation minimum portal's etc..
+
+02:56.270 --> 03:00.830
+Then finally what else also want to mention is just like them we can do boolean filters.
+
+03:01.040 --> 03:11.120
+So for example if I ask K where is the salary greater then let's see let's say 60000.
+
+03:11.130 --> 03:16.590
+So if I say back here in the cell where is a salary greater than 60000 run that I see.
+
+03:16.590 --> 03:17.180
+False.
+
+03:17.190 --> 03:17.940
+True true.
+
+03:17.970 --> 03:22.440
+So taking a look at my original data frame looks like Sally and Alyssa have salaries that are greater
+
+03:22.440 --> 03:27.840
+than 60000 if actually want the entries themselves and not just the boolean values.
+
+03:27.840 --> 03:35.370
+What I ended up doing is I can say my filter here run that and then pass in that filter.
+
+03:35.590 --> 03:39.740
+So my filter run that heresie Sally and Oliseh.
+
+03:39.880 --> 03:42.010
+Now again usually you don't do this in two steps.
+
+03:42.010 --> 03:47.470
+Instead we end up doing just copy and paste this here and you see something like this which looks a
+
+03:47.470 --> 03:51.540
+little weird at first but this is kind of a very common thing in Pandurs.
+
+03:51.760 --> 03:53.110
+That's really all we need to know.
+
+03:53.110 --> 03:55.050
+Again pandas can do a lot more to this.
+
+03:55.060 --> 03:59.980
+And I covered that in my Python for data science in machine learning boot camp but really won't encounter
+
+03:59.980 --> 04:04.930
+Python or excuse me pand those that much because we're sensory is going to be using it to read and to
+
+04:04.930 --> 04:13.710
+see as we file an offer that you can then say something like as Matrix you know return back a non-primary.
+
+04:13.760 --> 04:15.070
+That's what we're going to be doing a lot.
+
+04:15.170 --> 04:19.760
+Going to see as we file and then pass it off as a non PI matrix and then we're going to it work if not
+
+04:19.760 --> 04:20.330
+pay.
+
+04:20.690 --> 04:23.110
+OK thanks everyone and I'll see you at the next lecture.
