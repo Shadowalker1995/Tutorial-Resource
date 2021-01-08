@@ -1,0 +1,259 @@
+WEBVTT
+
+00:05.420 --> 00:10.850
+Welcome back in the previous lecture I mentioned that we can actually visualize tokenization with the
+
+00:11.390 --> 00:14.690
+built in display see that comes with Spacey.
+
+00:14.990 --> 00:19.560
+Let's go ahead and show you how it works by jumping back to the notebook or we left off last time.
+
+00:19.570 --> 00:19.790
+OK.
+
+00:19.790 --> 00:22.080
+Here we are at the notebook where we left off last time.
+
+00:22.400 --> 00:27.940
+Well we're going to do is say from Spacey import and we're going to say this.
+
+00:27.950 --> 00:31.790
+Blazey it's just a funny pun on display.
+
+00:31.790 --> 00:34.850
+So the Spacey is the actual built in visualizer.
+
+00:34.850 --> 00:36.050
+It's really cool.
+
+00:36.230 --> 00:41.240
+And what's awesome is you can run it both inside the notebook if you're using Jupiter notebook or you
+
+00:41.240 --> 00:46.680
+can create a little server if you're running stuff outside of Jupiter using just the normal Python script.
+
+00:46.790 --> 00:56.320
+First let's create a document that we want to visualize will say a.p and then say Apple is going to
+
+00:56.320 --> 01:06.180
+build a UK factory for and let's do six million.
+
+01:06.310 --> 01:12.170
+Now that we have that document the next we're going to call is displacer remember its display of facey
+
+01:12.220 --> 01:17.280
+there and then we're going to say render and then we pass in the documents.
+
+01:17.590 --> 01:20.340
+There's also different style parameters you can do.
+
+01:20.350 --> 01:25.210
+So I'll put in some defaults here and then we'll kind of look for the documentation to see what else
+
+01:25.210 --> 01:26.440
+we can provide.
+
+01:26.440 --> 01:31.050
+The one parameter we are going to make sure we say right now is because I'm using an open notebook also
+
+01:31.120 --> 01:33.340
+Jupiter is the true.
+
+01:33.480 --> 01:41.880
+And then there's an options dictionary comparison and I'll say distance is 110.
+
+01:41.950 --> 01:46.510
+So if you run that you should see inside of your notebook this display.
+
+01:46.510 --> 01:51.470
+So notice here we're able to see Apple is a proper noun is is a verb.
+
+01:51.640 --> 01:57.460
+And you can see also the syntactic display over here of the arrows.
+
+01:57.460 --> 02:04.570
+So again lots information that we're now able to show this optional distance argument is the distance
+
+02:04.570 --> 02:05.590
+between the tokens.
+
+02:05.680 --> 02:08.470
+So you can make this a little smaller.
+
+02:08.470 --> 02:13.350
+Let's go ahead to make it 50 and run that again and I can see everything is a lot closer together.
+
+02:13.360 --> 02:18.830
+So depending on how long your actual document is you may want to experiment with the size to make the
+
+02:18.830 --> 02:21.160
+distance larger or smaller.
+
+02:21.160 --> 02:24.090
+Now you can also visualize the entity recognizer.
+
+02:24.340 --> 02:25.650
+So let me show you how to do that.
+
+02:25.900 --> 02:33.400
+Let's create another document will say and LP Pasadena could string saying something like over the last
+
+02:33.400 --> 02:34.550
+quarter.
+
+02:35.200 --> 02:45.880
+Apple sold nearly 20000 iPods for the profits of I don't know let's go ahead and they say $6 million
+
+02:45.890 --> 02:46.320
+again.
+
+02:48.180 --> 02:48.960
+There we go.
+
+02:49.000 --> 02:52.770
+So we have that string noticed that we have Flip's Let's make shall we say Apple correctly.
+
+02:52.870 --> 02:57.740
+Laura SPEEs So we have apples we have iPods we have 20000.
+
+02:58.000 --> 02:59.680
+And then we have six million.
+
+02:59.890 --> 03:06.920
+Let's go ahead and run that through display see the render pass in that document.
+
+03:07.330 --> 03:10.570
+But now for the style We're going to say E and T.
+
+03:10.870 --> 03:14.910
+So again the original style was the eppi for syntactic dependency.
+
+03:14.990 --> 03:23.060
+Here we're saying E.A. for entity and since we're using Jupiter we'll say Jupiter is true.
+
+03:23.150 --> 03:26.190
+So run that and this is a different type of display.
+
+03:26.360 --> 03:31.160
+What it's going to do is it's going to attempt to find every entity that it can.
+
+03:31.220 --> 03:34.020
+Inside this document and it's going to highlight it.
+
+03:34.040 --> 03:40.730
+So over the last quarter and then so here we see the highlight and we also see the type of events titas.
+
+03:40.750 --> 03:47.060
+So the last quarter is that date Apple is an organization nearly 20000 that's some sort of cardinal
+
+03:47.060 --> 03:48.510
+entity i-Pods.
+
+03:48.560 --> 03:53.510
+It's smart enough to understand that that's a product and then a for profit of six million it understands
+
+03:53.510 --> 03:54.270
+its money.
+
+03:54.560 --> 03:59.360
+So Spacey is smart enough to do this all on its own which is really amazing.
+
+03:59.360 --> 04:05.430
+Finally if you are creating visualizations outside of Jupiter maybe you're just running this in some
+
+04:05.630 --> 04:06.810
+postscript.
+
+04:06.830 --> 04:09.290
+Let's show you an example of how you can work with that.
+
+04:09.290 --> 04:14.310
+You simply say a.p and we'll say this is a sentence
+
+04:17.140 --> 04:24.370
+you say display C and instead of saying render inside the notebook you can say serve and then pass in
+
+04:24.370 --> 04:27.620
+the document and then pass in whatever style you want.
+
+04:27.720 --> 04:31.200
+I'm going to pass on style as syntactic dependency.
+
+04:31.750 --> 04:35.760
+So if you read that you may get something that says hey your firewall is blocking it.
+
+04:35.770 --> 04:43.410
+Go ahead and allow access and then you'll notice it's serving on port 5000.
+
+04:43.480 --> 04:56.860
+So we're going to have to do is inside your browser you're going to go to 6:59 dot 0 0 1 Colan 5000.
+
+04:56.910 --> 05:03.510
+Essentially your local IP address at port five thousand if you're on that night should see here the
+
+05:03.510 --> 05:05.670
+actual visualization and this will work.
+
+05:05.880 --> 05:11.070
+Even if you're running a shop by a script so it would just run this code inside it that postscript and
+
+05:11.070 --> 05:12.440
+will report back that it's running.
+
+05:12.480 --> 05:16.470
+Essentially this little mini server with this visualization.
+
+05:16.680 --> 05:21.360
+And before we finished off this lecture I want to also talk about this options dictionary that we mentioned
+
+05:21.360 --> 05:22.400
+above here.
+
+05:22.440 --> 05:25.490
+So this option's dictionary it's basically a bunch of styling calls you can make.
+
+05:25.520 --> 05:30.570
+You can check out the link we have in the notebook for the documentation link on visualizing the dependencies
+
+05:30.660 --> 05:35.970
+so you can visualize the Pennsy parse or visualize and see the recognition and so on.
+
+05:36.000 --> 05:40.060
+There's a lot of options you can do here and you can do things like coloring.
+
+05:40.080 --> 05:41.490
+You can do background colors.
+
+05:41.520 --> 05:44.150
+You can do zoom in zoom out all that stuff.
+
+05:44.310 --> 05:49.050
+So essentially you have this options dictionary and you can provide the colors you want the different
+
+05:49.050 --> 05:51.790
+fonts you want the background color you want and so on.
+
+05:51.840 --> 05:55.980
+And here's a table of all the options you can provide for a list of even more options.
+
+05:55.980 --> 06:00.500
+You can check out this place the API documentation simply by clicking on this link.
+
+06:00.540 --> 06:02.750
+You can check out all these different options.
+
+06:02.970 --> 06:03.630
+OK.
+
+06:03.780 --> 06:04.570
+I hope you have fun.
+
+06:04.620 --> 06:09.330
+And I would encourage you to passen your own sentences or own strings and play around and see how you
+
+06:09.330 --> 06:10.780
+can visualize it.
+
+06:10.800 --> 06:12.900
+We'll see you at the next lecture where we talk about stemming.

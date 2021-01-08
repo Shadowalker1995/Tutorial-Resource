@@ -1,0 +1,286 @@
+WEBVTT
+
+00:05.100 --> 00:09.820
+We'll come back in this lecture we're going to go over the solution for the parts of speech assessment.
+
+00:09.920 --> 00:12.130
+Let's head over to the notebook and walk through it.
+
+00:12.440 --> 00:14.690
+OK so here are the parts of speech assessment.
+
+00:14.720 --> 00:19.740
+Don't forget to run the top sell in or its imports basically load English library and then have the
+
+00:19.770 --> 00:21.440
+Speccy ready to go.
+
+00:21.440 --> 00:26.570
+Next we want to create a doc object from the file Peter Rabbit that DXi and we can do this by simply
+
+00:26.570 --> 00:31.530
+saying with open and then we'll say from textfiles.
+
+00:31.670 --> 00:37.470
+Peter Rabbit you should be able to auto complete that using tab unless you're in a different directory.
+
+00:37.500 --> 00:42.930
+Then we'll say dock is equal to an LP f read.
+
+00:43.550 --> 00:48.110
+And now we have a document object the next for every token in the third sentence we want to print the
+
+00:48.110 --> 00:54.680
+token text the part of speech tag the fine green tag tag and the description of the fine green tag will
+
+00:54.710 --> 01:03.410
+say for token in list doc thought sentence or a sense for sentences and then we're to grab index too
+
+01:03.410 --> 01:06.310
+which is the third right because we have 0 1 to 2.
+
+01:06.320 --> 01:09.860
+The third sentence of these sentences from that list.
+
+01:09.860 --> 01:15.560
+So then for every token inside that tokenized third sentence we're just going to print out the following
+
+01:15.650 --> 01:26.740
+A little bit of strings will say print out the token text print out the token part a speech print out
+
+01:26.740 --> 01:33.880
+the token tag and then in order to get the explanation we just need to say a string of spacey explain
+
+01:35.890 --> 01:41.530
+token dot tag underscore and we're going to add in a little bit of formatting here simply by adding
+
+01:41.530 --> 01:48.730
+in Colon and then some spacing will just go ahead and say colon 10 for all these to add in a little
+
+01:48.730 --> 01:51.620
+bit of spacing so we get some nice formatting.
+
+01:52.210 --> 01:55.180
+You can add that in at the very end of vallies curly braces.
+
+01:55.540 --> 02:01.230
+If we run this we should get back kind of this nice looking table OK.
+
+02:01.490 --> 02:06.400
+Next was to provide a frequency list of the speech tags for the entire document.
+
+02:06.860 --> 02:14.870
+So for this we're going to use count by we'll say speech counts as equal to Doc count by and then we'll
+
+02:14.870 --> 02:29.350
+say Spacey to transfer attributes part of speech to then four key value pair in sorted POS counts items
+
+02:31.380 --> 02:32.540
+as we did during the lecture.
+
+02:32.550 --> 02:37.380
+We're just going to print out using again string formatting here.
+
+02:37.740 --> 02:50.140
+The key and then calling Dawk vocab at that key We're going to grab the text and then we'll actually
+
+02:50.140 --> 02:53.520
+say the for the value.
+
+02:53.950 --> 02:55.870
+So remember the values the actual count.
+
+02:55.870 --> 02:58.410
+So if you run this you should see something that looks like this.
+
+02:58.510 --> 03:02.690
+And you can add in a little bit of formatting if you want to you can say something like.
+
+03:03.310 --> 03:06.310
+There are the counts
+
+03:10.800 --> 03:15.220
+so 83 counts 127 counts seventy five count etc..
+
+03:15.220 --> 03:26.470
+Maybe you can even add something like ID and then POS so if you run those ID 83 POS a..
+
+03:26.550 --> 03:28.090
+83 counts and so on.
+
+03:28.140 --> 03:33.000
+Really up to you main idea is to remember you can call count by and that can use a dictionary which
+
+03:33.000 --> 03:36.190
+can then sort into items.
+
+03:36.270 --> 03:39.320
+The challenge was what percentage of tokens are known.
+
+03:39.390 --> 03:43.680
+So one needs to do is figure out how to actually get the length of all the tokens or how many tokens
+
+03:43.680 --> 03:45.160
+are there completely.
+
+03:45.210 --> 03:47.930
+For that you can just check the length of the document.
+
+03:48.330 --> 03:55.990
+And there's 1258 tokens and we're looking for nouns so we know that noun's is 91.
+
+03:56.040 --> 03:59.080
+We have it right here 176 counts.
+
+03:59.130 --> 04:07.050
+So we just say POS counts and what you could do is check out 91 and that returns back 176.
+
+04:07.190 --> 04:12.910
+And then we divide it by the length of the document and if we times that by 100.
+
+04:13.280 --> 04:15.080
+So we say 100 times this.
+
+04:15.160 --> 04:18.970
+That's thirteen point ninety nine percent of all the tokens are known.
+
+04:20.380 --> 04:23.870
+Next we want it to display the dependency parts for the third sentence.
+
+04:24.040 --> 04:25.870
+And that way we can do that.
+
+04:26.110 --> 04:35.040
+You can just simply say the splays see render and then we're going to pass and a list of Doc sense but
+
+04:35.040 --> 04:36.740
+we actually only want the third sentence.
+
+04:36.750 --> 04:43.450
+So just like before the index at two call style for syntactic dependency.
+
+04:43.590 --> 04:46.200
+In my case I'm using Jupiter said equal to true.
+
+04:46.440 --> 04:51.540
+If you're running a script to simply say the splays see that serve and then you can add in more options
+
+04:51.540 --> 04:55.530
+if you want but you should get something that looks more or less like this.
+
+04:55.530 --> 05:01.520
+This is the actual display see for the Dep. parts.
+
+05:01.540 --> 05:06.220
+Next he wanted you to show the first two named entities from the tale of Peter Rabbit.
+
+05:06.220 --> 05:11.070
+Remember we can grab all the Anstey's simply by calling Doc A.S..
+
+05:11.140 --> 05:16.180
+So this is essentially kind of these tuples of all these entities we're really only concerned with the
+
+05:16.180 --> 05:17.890
+first two.
+
+05:18.280 --> 05:23.690
+So we're going to go from everything at the beginning all the way index to essentially 0 and 1.
+
+05:23.770 --> 05:24.540
+So here they are.
+
+05:24.670 --> 05:26.720
+And now we want to print out their properties.
+
+05:26.830 --> 05:35.920
+So various ways to do this but we can say for entity in this little short list of tuples I'm going to
+
+05:35.920 --> 05:47.640
+print out the entity text plus the entity label plus the string explanation of it so I'll say Spacey
+
+05:47.650 --> 05:54.270
+thought explain that entity label and then we can add in some whitespace too.
+
+05:54.430 --> 06:01.030
+Just so has a little bit nicer formatting these in between make sure there's a plus there after that
+
+06:02.020 --> 06:03.670
+and then add in one more whitespace
+
+06:06.740 --> 06:08.640
+so we can go ahead and run that.
+
+06:08.740 --> 06:11.660
+And we see that we have tale of Peter Rabbit work of art.
+
+06:12.190 --> 06:14.200
+Beatrix Potter person.
+
+06:14.410 --> 06:17.630
+Now how many senses are contained in the tale of Peter Rabbit.
+
+06:17.830 --> 06:26.650
+For this you can check out Doc that sense run that and remember that's a generator.
+
+06:26.650 --> 06:34.060
+So what we need to do is we can cast that to a list and then just check the length of that list.
+
+06:34.340 --> 06:41.130
+It's going to turn 56 next for the challenge was how many sentences contained named entities.
+
+06:41.320 --> 06:43.150
+For this is going to be a little more complicated.
+
+06:43.390 --> 06:53.960
+Well we should first do is get a list of the actual sentence text so say list of sense is equal to and
+
+06:53.960 --> 07:02.160
+here we're going to say a.p of sent text for every sentence in Doc thought sense.
+
+07:02.160 --> 07:08.620
+So there's my list of sentences then I want a list of any R's.
+
+07:08.760 --> 07:20.790
+So it's going to be doc for Doc in list of sentences if Doc E.A. us which essentially is saying go through
+
+07:20.820 --> 07:25.830
+every document in this list of sentences and check if there's actually entities there and then we'll
+
+07:25.830 --> 07:32.070
+just check the length of list of any R's and this kind of a misnomer is not really the list of any R's
+
+07:32.430 --> 07:39.360
+It's the list of sentences with any R's and if you're in that you should get back 49 49 sentences contained
+
+07:39.420 --> 07:43.050
+named entities out of the 56 total sentences.
+
+07:43.170 --> 07:48.660
+The last challenge problem was display the name and see visualization for list of sense 0 from the previous
+
+07:48.660 --> 07:49.580
+problem.
+
+07:49.650 --> 07:52.620
+So that would be this list of sentences here.
+
+07:52.650 --> 08:04.740
+Let's go ahead and show that we can display the render list of sense zero and then call style is equal
+
+08:04.740 --> 08:06.360
+to E.A..
+
+08:07.080 --> 08:10.240
+And in my case I will say Jupiter is equal to true.
+
+08:10.290 --> 08:15.420
+Run that and wups make sure it's display C C and there we go.
+
+08:15.730 --> 08:18.080
+OK that's it for the assessment solutions.
+
+08:18.090 --> 08:20.970
+Feel free to post the Q&amp;A forums if you have any questions.
+
+08:21.000 --> 08:22.050
+We'll see you at the next section.

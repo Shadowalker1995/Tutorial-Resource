@@ -1,0 +1,487 @@
+WEBVTT
+
+00:05.310 --> 00:06.390
+Welcome back everyone.
+
+00:06.450 --> 00:12.960
+And this lecture we're going to discuss work and of PDA files often you may need to read in text data
+
+00:13.050 --> 00:15.810
+from a PDA file instead of a normal text file.
+
+00:15.870 --> 00:20.740
+We can use the pie PTF to library to read in text data from a PDA file.
+
+00:20.970 --> 00:28.100
+There's one key thing to keep in mind though not all PTF have text that can be easily extracted some
+
+00:28.100 --> 00:34.230
+PDA types are created through scanning and instead of being exported from a text editor like Word these
+
+00:34.240 --> 00:37.250
+sort of scanned PDA apps are really more like image files.
+
+00:37.310 --> 00:43.190
+And that makes it much much harder to actually extract the text if you have a scan PDA PDAF that usually
+
+00:43.190 --> 00:49.220
+requires specialized software and you can try googling different Python libraries for reading in those
+
+00:49.220 --> 00:49.910
+type of images.
+
+00:49.910 --> 00:55.130
+But a lot of times it's really hit and miss and much more the pen on the particular PDA file than the
+
+00:55.130 --> 00:56.690
+library itself.
+
+00:56.810 --> 00:59.710
+The pie PDAF to library that will be working with.
+
+00:59.720 --> 01:04.550
+And this lecture won't be able to extract text from a scanned PTF image.
+
+01:06.610 --> 01:12.130
+Now the pipes have of 2 library is made to extract text from files directly created from some sort of
+
+01:12.130 --> 01:13.180
+word processor.
+
+01:13.390 --> 01:19.000
+But even that you should keep in mind that not all word processors created PDX will have extractable
+
+01:19.000 --> 01:19.840
+text.
+
+01:19.930 --> 01:25.240
+So even if you actually exported from a direct word processor the library may still have difficulty
+
+01:25.240 --> 01:27.940
+extracting that text now to begin.
+
+01:27.940 --> 01:30.210
+Make sure you are using our environment file.
+
+01:30.310 --> 01:34.090
+Or that you've installed py PTF to since it's not a library that comes.
+
+01:34.090 --> 01:41.600
+Based Python to install pipes you have to simply open up your command line and directly type typin install
+
+01:41.740 --> 01:44.850
+py PDAF to and notice the capitalization there.
+
+01:45.200 --> 01:46.310
+Let's go ahead and get started.
+
+01:46.320 --> 01:50.930
+By opening up a notebook and showing you how to work with some PDA files what I'm going to do is inside
+
+01:50.930 --> 01:53.100
+of the Python Tex basic's folder.
+
+01:53.180 --> 01:56.900
+If you click on it you'll notice that there is some PTF here that we have for you.
+
+01:56.930 --> 02:02.120
+Make sure you go ahead and create your notebook in the same location as these pedia files or know the
+
+02:02.120 --> 02:04.250
+entire file path for these pedia.
+
+02:04.490 --> 02:06.510
+I'm going to go ahead and create a you note book.
+
+02:06.620 --> 02:08.360
+That way I can simply call the PDA.
+
+02:08.390 --> 02:13.220
+When I'm opening them and reading them so now that we have this new notebook created Let's go ahead
+
+02:13.220 --> 02:14.600
+and start off by running.
+
+02:14.600 --> 02:17.850
+Import py PDA to.
+
+02:18.350 --> 02:22.530
+And if you get an error here that means you need a Pipp install it or activate the environment.
+
+02:22.880 --> 02:24.800
+And now it's time to actually read a PDA.
+
+02:24.900 --> 02:28.170
+In reading a PDA it works a lot like reading a normal text file.
+
+02:28.280 --> 02:35.210
+We're just going to say my file is equal to open and let's go ahead and open up the U.S. declaration
+
+02:35.460 --> 02:36.230
+pedia.
+
+02:36.770 --> 02:41.870
+And the other thing we need to do here is there's going to be another mode and the mode that we're going
+
+02:41.870 --> 02:52.250
+to use is mode equal to r b and Arbi means reading binary method and we need that because it's no longer
+
+02:52.250 --> 02:53.510
+the normal text file.
+
+02:53.510 --> 02:55.160
+It's a PDA file.
+
+02:55.400 --> 02:56.530
+So we're going to run that.
+
+02:56.720 --> 03:02.270
+And then once you read in the file using normal Python we're going to convert it into a PDA file reader
+
+03:02.270 --> 03:12.650
+object so go ahead and make a variable called pedia reader and set that equal to pi PTF to dot and then
+
+03:12.650 --> 03:14.210
+we're going to call this hit tab.
+
+03:14.210 --> 03:15.740
+You should see a couple of options.
+
+03:15.740 --> 03:23.980
+The one we're looking for is pedia file reader and the past in the file you read in and now off this
+
+03:23.980 --> 03:30.410
+pedia reader where you can do is a few action is called pedia fritter hit dot and then hit tab.
+
+03:30.670 --> 03:32.830
+There's a lot of attributes and a lot of methods.
+
+03:32.830 --> 03:34.680
+I'll show you some of the main ones here.
+
+03:34.700 --> 03:39.700
+There's number of pages and if you run that report's back the number of pages inside the actual PDAF
+
+03:39.700 --> 03:45.150
+document and then you can't extract text and you can do it page by page.
+
+03:45.160 --> 03:53.800
+So for example I can say Page 1 is equal to then call pedia reader and call the get page method and
+
+03:53.800 --> 03:56.510
+then pasand the page you want there indexed at zero.
+
+03:56.500 --> 03:59.600
+So if you want the first page you just passen zero.
+
+04:00.040 --> 04:07.840
+So Page 1 index 0 and if you actually want the text you can do is say Page 1 DOPs and you can call the
+
+04:07.900 --> 04:09.680
+extract text method.
+
+04:09.730 --> 04:12.950
+Open and close print sees and that will extract all the text.
+
+04:12.950 --> 04:14.890
+It was able to read on that PDA.
+
+04:15.070 --> 04:16.960
+So here you can see the Declaration of Independence.
+
+04:16.990 --> 04:18.850
+And now we have it as a string.
+
+04:18.850 --> 04:22.630
+And so we have these new lines in order to indicate there's a new line.
+
+04:22.630 --> 04:29.170
+So if we actually wanted to print this out it would print this out along those lines and I can see the
+
+04:29.170 --> 04:30.870
+Declaration of Independence here.
+
+04:33.060 --> 04:37.800
+And just like a normal file after you're done working with it get in the pages you want extract the
+
+04:37.800 --> 04:38.410
+text.
+
+04:38.520 --> 04:44.740
+Maybe you want to save some text and say my text is equal to extract text.
+
+04:44.790 --> 04:48.630
+Once you're done doing whatever operations you're concerned with it's always a good idea to close the
+
+04:48.630 --> 04:49.250
+file.
+
+04:49.380 --> 04:54.780
+So just say my file doc close OK.
+
+04:54.900 --> 04:59.970
+So we learn how to read any page in it from a PDA file and then we learned how to extract text from
+
+04:59.970 --> 05:01.110
+that page.
+
+05:01.110 --> 05:04.170
+Often you may want to add another page to a PDA.
+
+05:04.470 --> 05:11.400
+Now unfortunately we cannot directly write Python string text onto a PDA because of the differences
+
+05:11.400 --> 05:17.160
+between a single string type of Python versus the variety of fonts and placements and other parameters
+
+05:17.460 --> 05:19.190
+that a PDA could have.
+
+05:19.230 --> 05:25.360
+What we can do is copy pages and append the pages to the end so you can copy a page from another PTF
+
+05:25.440 --> 05:30.030
+or the same PTF and then append that to the end of the current PDA if you're working with.
+
+05:30.030 --> 05:35.430
+Well you can't do is take a python string and suddenly insert it somewhere into the PTF because of so
+
+05:35.430 --> 05:39.540
+many different parameters that a normal PDA file could have.
+
+05:39.550 --> 05:44.800
+Let's see how we could add a page to a PDA if I'm just going to create a variable f and set that equal
+
+05:44.800 --> 05:46.230
+to open.
+
+05:47.050 --> 05:50.290
+Let's open up the U.S. declaration that pedia.
+
+05:50.310 --> 05:53.960
+Again remember since it's not going to be read in a PDA.
+
+05:54.210 --> 05:57.630
+I mean you say the mode is read binary.
+
+05:58.060 --> 06:09.040
+I'll create a PDA for object again and say hi PDAF to and then call PTF file reader and then pass an
+
+06:09.340 --> 06:17.200
+F which was the variable we gave the file and then I'm going to grab the first page and say PTF reader
+
+06:18.540 --> 06:24.570
+get page 0 and then I'm going to create a writer object.
+
+06:24.860 --> 06:34.120
+I will say PTF writer is equal to and directly off the pipes to a library I'm going to call.
+
+06:34.600 --> 06:46.170
+PTF file writer open and princes and this writer object is going to need to add pages so I can say PTF
+
+06:46.330 --> 06:56.830
+underscore writer thought add a page and then I can go ahead and add that first page that we copied
+
+06:57.040 --> 07:01.010
+off the US Declaration that PTF.
+
+07:01.030 --> 07:07.330
+And so now I have this new documents this new pedia file that it just added a page to what I can do
+
+07:07.690 --> 07:09.730
+is the following.
+
+07:09.730 --> 07:18.670
+I can say something like PTF output is equal to open and I went into Passons some new document so it
+
+07:18.670 --> 07:25.100
+can say my brand new doc PTF.
+
+07:25.390 --> 07:28.090
+So this is a PDA file that doesn't currently exist.
+
+07:28.090 --> 07:32.200
+If you check out the python text basics notice I don't have that actual PDA.
+
+07:32.230 --> 07:36.980
+I have some new doc PDA but I don't specifically have my brand new that PDA.
+
+07:37.270 --> 07:42.800
+But remember if we open things with the right permission it will automatically create files for us.
+
+07:42.800 --> 07:44.700
+So not only just going to use w here.
+
+07:44.770 --> 07:52.920
+I'm also going to use B to say write binary and now I have my PTF output and if you take a look at Python
+
+07:52.920 --> 07:55.260
+text basics you should see now kind of this.
+
+07:55.350 --> 08:01.140
+Empty my brand new that PDA so that PDA is waiting to be written to.
+
+08:01.210 --> 08:13.100
+So we're going to say PTF writer and I'm going to write to the output file you just created.
+
+08:13.350 --> 08:14.820
+So again what am I doing here.
+
+08:14.820 --> 08:20.130
+I'm reading in a file using pedia file reader and grabbing a page from that file.
+
+08:20.130 --> 08:21.230
+The first page.
+
+08:21.360 --> 08:28.110
+Then I'm creating a PTF file writer and then I'm onto the writer object adding that first page I extracted
+
+08:28.440 --> 08:34.470
+from my original document that I'm opening a brand new file with the right binary permission and then
+
+08:34.470 --> 08:37.460
+I'm going to write PTF output there.
+
+08:39.370 --> 08:44.970
+Run that and then I'm going to say PTF output.
+
+08:45.330 --> 08:55.220
+I want to close that file and I'm also going to close the original file and so now if I take a look
+
+08:55.220 --> 08:56.580
+at my brand new PDA.
+
+08:56.690 --> 09:00.050
+If I are to read that in it should have one single page in it.
+
+09:00.080 --> 09:02.710
+So let's go ahead and read in The File.
+
+09:02.960 --> 09:05.610
+We're going to say make a couple of new cells here.
+
+09:06.750 --> 09:14.190
+Say brand new is equal to open and I'm going to open my brand new PDA.
+
+09:14.370 --> 09:16.390
+I'm just going to open and read binary mode.
+
+09:19.160 --> 09:29.240
+Create a PTF reader object from pite PDAF to pedia file reader and I'm actually going to read in that
+
+09:29.390 --> 09:34.690
+brand you file and then let's check out the number of pages it has.
+
+09:34.710 --> 09:36.190
+It should have just one page.
+
+09:36.330 --> 09:44.130
+So if we say some pages we see that one page and then we can continue on and extract that page that
+
+09:44.190 --> 09:48.720
+will be the exact same text we saw here for the first page of the US Declaration.
+
+09:48.810 --> 09:52.040
+So now we know how to read text data from a PDA file.
+
+09:52.170 --> 09:55.090
+And we also know how to add to a PDA file.
+
+09:55.110 --> 09:57.480
+So now let's show one more example.
+
+09:57.480 --> 10:02.460
+This is a simple example of grabbing all the text from a particular PDA File.
+
+10:02.460 --> 10:09.360
+We're going to say the following f is equal to open let's go ahead and open that U.S. declaration pedia
+
+10:09.440 --> 10:10.720
+that we've been working with.
+
+10:11.150 --> 10:16.940
+I'll open it if read binary permission and let's imagine I wanted to list all the text here what I could
+
+10:16.940 --> 10:18.860
+do is the following.
+
+10:18.860 --> 10:24.430
+I could create an empty list of just one item zero.
+
+10:24.640 --> 10:26.630
+So it's essentially just a placeholder.
+
+10:26.630 --> 10:34.580
+So I have this PTF text list that just has a placeholder 0 and then I'm going to create a reader object
+
+10:36.710 --> 10:43.960
+so PTF file reader passen after I just read in from the U.S. declaration and then I can do the following.
+
+10:43.960 --> 10:52.420
+I'll say for p in range PTF reader number of pages.
+
+10:52.650 --> 11:00.180
+So essentially it's going to say for every page in this range we can go ahead and say page is equal
+
+11:00.180 --> 11:07.390
+to PTF reader get page P because P is essentially just a number here.
+
+11:07.520 --> 11:11.030
+0 1 2 3 all the way until we hit the number of pages.
+
+11:11.040 --> 11:18.820
+So I want to get that specific page save it to this page variable and then I'm going to grab that page.
+
+11:19.320 --> 11:25.050
+I'm going to extract the text from that page and then I'm going to append it to this list which is right
+
+11:25.050 --> 11:27.550
+now just the placeholder empty list right there.
+
+11:27.630 --> 11:38.450
+So I'll say PTF text append run that and then we can close the file.
+
+11:39.500 --> 11:41.200
+And in fact we can just have this be an empty list.
+
+11:41.300 --> 11:43.890
+Doesn't even need a zero there.
+
+11:43.910 --> 11:44.750
+Run that.
+
+11:44.750 --> 11:51.430
+And if we check out our PTF text list now we have a list of everything here.
+
+11:51.530 --> 11:55.080
+And those are all the tests in that particular file.
+
+11:55.080 --> 11:56.270
+So for every page.
+
+11:56.480 --> 12:01.190
+So we check out the lengthier it's a length of 5.
+
+12:01.270 --> 12:14.260
+So I could say for page in PTF text print the page and then I can say print a couple of new lines
+
+12:18.090 --> 12:22.890
+run that and you'll see kind of this giant document of the Declaration of Independence and then a bunch
+
+12:22.890 --> 12:25.440
+of spaces for each new page.
+
+12:25.440 --> 12:25.960
+All right.
+
+12:26.100 --> 12:28.280
+So that's the very basics of CMPD files.
+
+12:28.290 --> 12:30.900
+We don't really need to know much more than that for this course.
+
+12:30.900 --> 12:33.720
+Coming up next we're going to talk about regular expressions.
+
+12:33.750 --> 12:34.770
+We'll see at the next lecture.

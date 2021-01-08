@@ -1,0 +1,85 @@
+WEBVTT
+
+00:05.600 --> 00:06.380
+Welcome back.
+
+00:06.500 --> 00:11.240
+Let's quickly discuss an overview of what topic modeling is before we actually dive into the methods
+
+00:11.240 --> 00:12.420
+of topic modeling.
+
+00:13.970 --> 00:19.480
+So we're going to learn about latents there is a location and non-negative matrix factorization.
+
+00:19.520 --> 00:26.580
+The first to understand general topic of topic modeling topic modeling allows us to efficiently analyze
+
+00:26.580 --> 00:33.330
+large volumes of text by clustering documents together into topics a large amount of text data is actually
+
+00:33.420 --> 00:39.150
+unlabelled meaning we won't be able to apply our previous supervised learning approaches because those
+
+00:39.150 --> 00:44.580
+machine learning models would actually depend on historical labeled data and in the real world specifically
+
+00:44.580 --> 00:45.470
+for text data.
+
+00:45.600 --> 00:51.960
+You're not going to have a convenient label attached to a text dataset such as positive or negative
+
+00:52.410 --> 00:54.710
+or spam versus him.
+
+00:54.740 --> 00:59.130
+Instead you may have a variety of labels such as the different categories.
+
+00:59.160 --> 01:03.200
+A newspaper article could be in and you may just have the text itself unlabelled.
+
+01:03.390 --> 01:08.600
+So it's up to us to try to discover those labels through topic modeling.
+
+01:08.890 --> 01:12.960
+So again if we have unlabeled data then we can attempt to discover these labels.
+
+01:13.000 --> 01:18.160
+And in the case of text data this means really attempting to discover clusters of similar documents
+
+01:18.370 --> 01:24.720
+grouped together hopefully by some sort of topic a very important idea to keep in mind here is that
+
+01:24.720 --> 01:31.080
+it's actually very difficult to evaluate an unsupervised learning model's effectiveness because we didn't
+
+01:31.080 --> 01:34.790
+actually know the correct topic or the right answer to begin with.
+
+01:34.800 --> 01:39.970
+All we know is that the documents clustered together share some sort of similar topic ideas.
+
+01:40.050 --> 01:43.820
+It's up to the user to identify what these topics actually represent.
+
+01:44.070 --> 01:46.840
+So again these unsupervised learning algorithms.
+
+01:46.950 --> 01:51.450
+There's not really a good way to evaluate how well they did because we never really had a right answer
+
+01:51.450 --> 01:52.290
+to begin with.
+
+01:53.630 --> 01:58.250
+We're going to begin by examining how latents there Asli allocation works and how it can attempt to
+
+01:58.250 --> 02:01.010
+discover topics for a corpus of documents.
+
+02:01.010 --> 02:01.930
+Let's get started.
+
+02:01.970 --> 02:02.890
+Aasiya at the next lecture.

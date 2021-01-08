@@ -1,0 +1,331 @@
+WEBVTT
+
+00:05.310 --> 00:11.310
+Welcome back here we are where we left off last time fitting our model to our ex trainee and white training
+
+00:11.310 --> 00:12.410
+data set.
+
+00:12.420 --> 00:18.330
+Let's go ahead and learn how to test the accuracy of the model using the test data set to do this.
+
+00:18.330 --> 00:25.060
+We're going to say from S-K learn import metrics.
+
+00:25.290 --> 00:29.860
+Then we're going to grab the features from the test data set.
+
+00:29.880 --> 00:32.340
+Remember that was X test.
+
+00:32.340 --> 00:38.130
+Now we're going to predict on this the exact same way we would predict on brand new data we would simply
+
+00:38.130 --> 00:45.470
+call our train model called up predict and we passen new data that the model hasn't seen before.
+
+00:45.530 --> 00:50.990
+In this case for evaluation we're going to pass an X test against his brand new data the model hasn't
+
+00:50.990 --> 00:51.830
+seen before.
+
+00:52.040 --> 00:57.970
+But lucky for us we know the correct answers the correct answers are why test.
+
+00:58.060 --> 01:02.520
+So we're going to do is pass an X test and we're going to ask the model to predict on this test set
+
+01:03.070 --> 01:04.820
+and then see what their predictions are.
+
+01:06.370 --> 01:09.360
+So now we have predictions that look like this.
+
+01:09.370 --> 01:15.790
+HAM HAM and et cetera there's some spam in there and we have the true values the true values are why
+
+01:15.790 --> 01:18.660
+test and here are these true values.
+
+01:18.670 --> 01:24.190
+So now we're going to compare our predictions against Why test just as we explain in the slides during
+
+01:24.190 --> 01:25.540
+the previous lectures.
+
+01:25.540 --> 01:27.190
+There's various ways we can do this.
+
+01:27.190 --> 01:35.130
+One way is actually build out the confusion matrix ourselves so we could say metrics dots and then call
+
+01:35.130 --> 01:43.950
+confusion matrix and then pasan why test and predictions and then print out the result of this and we
+
+01:43.950 --> 01:46.520
+actually get back our confusion matrix.
+
+01:46.560 --> 01:48.790
+So our confusion matrix looks like this.
+
+01:48.870 --> 01:54.090
+And your confusion matrix may look slightly different depending on your train test split or how you
+
+01:54.090 --> 01:55.590
+actually train your model.
+
+01:55.620 --> 02:01.730
+But here we can see that overall it looks like we're not able to predict well on spam and you could
+
+02:01.740 --> 02:06.830
+actually make the confusion matrix a little better by passing it into a data frame.
+
+02:07.050 --> 02:11.870
+And I'm going to copy and paste the line of code that does this from the notes.
+
+02:12.270 --> 02:16.290
+So the line of code that does it's from the notes again you can just open up the notebook and scroll
+
+02:16.290 --> 02:19.290
+down until you get to test accuracy of the model.
+
+02:19.290 --> 02:24.360
+It's right here it is the line I just copied but we'll come back here and we're just passing in this
+
+02:24.360 --> 02:31.660
+confusion matrix into a Pandurs data frame and then we're labeling the index in the columns HAMOND spam.
+
+02:31.830 --> 02:37.680
+That way if actually the splay this data frame that I could see the labeled confusion matrix.
+
+02:37.680 --> 02:43.200
+So it looks like I only correctly classified 5 for the spam.
+
+02:43.440 --> 02:49.890
+And here you can see incorrectly classified 44 spam that were actually him and I incorrectly classify
+
+02:49.960 --> 02:58.020
+219 spam as him and I correctly classified 1404 for my test dataset correctly as him.
+
+02:58.020 --> 02:59.890
+So these results are definitely not good.
+
+02:59.900 --> 03:04.680
+Now we're going to get much better results when we take into account the text data set itself.
+
+03:04.680 --> 03:08.660
+That means that it's to say the actual text messages the raw text data.
+
+03:08.670 --> 03:13.290
+But we haven't learned about text feature extraction yet so we're going to leave that aside for now.
+
+03:13.290 --> 03:15.810
+Next I want to show you besides the confusion matrix.
+
+03:15.810 --> 03:22.710
+You can also print out a classification report and the way you do this is you say metric starts and
+
+03:22.710 --> 03:29.940
+then you call classification report and again you pass your test against the predictions that you made
+
+03:30.920 --> 03:31.850
+and you print this out.
+
+03:33.290 --> 03:36.560
+And you get back this classification report which tells you precision.
+
+03:36.580 --> 03:39.580
+Recall an EF 1 score for each of the categories.
+
+03:39.600 --> 03:45.000
+So here you can see I'm getting pretty good precision and recall on my ham but very poor precision and
+
+03:45.000 --> 03:46.820
+recall on the spam.
+
+03:46.830 --> 03:54.180
+So overall my model is pretty good at the testing Hahm but it's horrible at detecting spam text messages
+
+03:54.720 --> 04:02.710
+and I can print out the overall accuracy of the model by saying metrics accuracy score and then passing
+
+04:02.950 --> 04:11.940
+tests and predictions and I can print these out and here I see my model is eighty four point three percent
+
+04:11.940 --> 04:13.110
+accuracy.
+
+04:13.110 --> 04:18.270
+Now what you can also do is choose different machine learning models and see those perform better.
+
+04:18.270 --> 04:24.360
+Right now we've only ran a logistic regression model but we could try other models and we do that just
+
+04:24.360 --> 04:26.640
+to show you the syntax is actually the same.
+
+04:26.700 --> 04:32.550
+You'll say from S-K learn thought and then choose a family of models and to decide what family models
+
+04:32.550 --> 04:37.430
+to look at you can just look at the sikat learn documentation but you would say something like naive
+
+04:37.440 --> 04:39.230
+Beys import.
+
+04:39.630 --> 04:48.550
+And then we're going to use a multinomial Navy base model here it will say and B model is equal to multinomial
+
+04:48.580 --> 04:53.210
+and b c a very common classifier for text data sets.
+
+04:53.500 --> 05:01.660
+And then just like before we take our model now we fit it to the training data so we pass it x train
+
+05:01.720 --> 05:02.810
+and y train.
+
+05:03.070 --> 05:13.040
+And just as before we say predictions is equal to our model and then we predict off the excess data
+
+05:13.040 --> 05:24.910
+set and then we can printout the confusion matrix we can say confusion matrix and then pasan why test
+
+05:25.030 --> 05:27.490
+against these new predictions.
+
+05:27.490 --> 05:33.670
+So notice here how this code essentially looks all was exactly the same as the code we use for the logistic
+
+05:33.670 --> 05:34.610
+regression here.
+
+05:34.810 --> 05:40.870
+We just imported the model create an instance of the model fit the model and then predict using the
+
+05:40.870 --> 05:41.320
+model.
+
+05:41.350 --> 05:44.410
+And those are really the key steps we want to understand for this lecture.
+
+05:44.590 --> 05:50.790
+The fact that we can basically use the same syntax for a wide variety of models with sikat learn import
+
+05:50.800 --> 05:56.290
+the model create an instance of it fit the model and then predict what the model and you can use those
+
+05:56.290 --> 05:59.360
+predictions with the confusion matrix per classification report.
+
+06:00.930 --> 06:04.850
+So running this we see this model also does not perform well.
+
+06:04.920 --> 06:09.700
+In fact now we're not able to quickly than to fight any of the spam which means we're essentially doing
+
+06:09.740 --> 06:13.250
+zero precision and zero recall for spam.
+
+06:13.350 --> 06:23.160
+So we can actually prove this by printing out metrics or Doc classification report and saying why test
+
+06:23.190 --> 06:29.430
+and predictions run that and the spam we're failing to detect any spam correctly which is denoted here
+
+06:29.460 --> 06:30.770
+by that 0.
+
+06:30.780 --> 06:36.010
+So let's try another model and often you can experiment with various models quite easily.
+
+06:36.060 --> 06:43.670
+Like learn we can say from S-K learn let's try a vector machine model we're going to import as we see
+
+06:43.690 --> 06:52.130
+a support vector classification model will say as a VC model is equal to as we see in this case and
+
+06:52.160 --> 06:57.990
+only one of the parameters you can always shift tab on these models after you've imported them so you
+
+06:57.990 --> 07:02.910
+have to run this import line first and then you're able to shift tab here in order to see the various
+
+07:02.910 --> 07:03.830
+parameters.
+
+07:03.870 --> 07:07.010
+One of the things going to change here is just make sure that gamma is set to auto.
+
+07:07.010 --> 07:08.140
+It's actually at the fault.
+
+07:08.250 --> 07:10.370
+So in that case I don't need to set it.
+
+07:10.380 --> 07:12.780
+But if you want a different gamma you could.
+
+07:13.140 --> 07:15.650
+So there's Gamma's equal to auto default values.
+
+07:15.750 --> 07:24.960
+And then I going say support vector model and I'm going to fit it to the training data and just like
+
+07:24.960 --> 07:34.020
+before we're going to see predictions as equal to as we see model predict of X test and then print out
+
+07:34.110 --> 07:37.800
+the off of metrics.
+
+07:37.800 --> 07:44.560
+The confusion matrix passing in Y test and passing them predictions again the exact same process for
+
+07:44.560 --> 07:46.580
+a completely different machine learning model.
+
+07:46.650 --> 07:51.030
+If you understand these five lines of code then you basically understand the main point of the series
+
+07:51.030 --> 07:57.510
+of lectures for the syntax of psychic learn you import the model create the model fit the model and
+
+07:57.510 --> 08:01.250
+then predict using the model and then evaluate your predictions.
+
+08:01.260 --> 08:05.900
+So if you run this you're able to see how well the support vector classifier worked.
+
+08:06.090 --> 08:06.910
+OK.
+
+08:06.990 --> 08:13.890
+So again keep in mind this is really just the syntax we need to know and the way we can test our train
+
+08:13.890 --> 08:19.470
+models on new data simply by calling that predict and then getting those predictions.
+
+08:19.470 --> 08:23.940
+Now what we haven't learned yet is if we go all the way back to the top Remember we still have the actual
+
+08:24.030 --> 08:25.730
+text message itself.
+
+08:25.740 --> 08:30.690
+What we need to learn is how to actually extract features from the text information because right now
+
+08:30.960 --> 08:36.780
+the length and punctuation that numerical data is not enough to make an accurate assessment or an accurate
+
+08:36.780 --> 08:37.510
+model.
+
+08:37.530 --> 08:41.370
+We need to somehow convert this text message into numerical information.
+
+08:41.400 --> 08:45.070
+So coming up next we're going to learn about feature extraction from text.
+
+08:45.090 --> 08:45.700
+We'll see if they're.

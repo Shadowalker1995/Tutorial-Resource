@@ -1,0 +1,475 @@
+WEBVTT
+
+00:05.430 --> 00:10.410
+Welcome back everyone to this lecture on classification metrics.
+
+00:10.540 --> 00:16.840
+We just learn that after a machine learning process is complete we use performance metrics to evaluate
+
+00:16.870 --> 00:18.700
+how well our model did.
+
+00:18.700 --> 00:25.270
+Remember in that train test split step we ended up running our train model on some test data and then
+
+00:25.270 --> 00:27.220
+evaluating its performance.
+
+00:27.220 --> 00:32.530
+In this lecture we're actually going to discuss in more detail how we actually evaluate the performance
+
+00:32.590 --> 00:33.410
+of a model.
+
+00:33.630 --> 00:38.700
+And that comes in discussion with classification metrics.
+
+00:38.850 --> 00:45.360
+The key classification metrics we need to understand our accuracy recall precision and EF 1 score which
+
+00:45.360 --> 00:49.310
+is essentially a combination of recall and precision.
+
+00:49.340 --> 00:53.210
+But first we should really understand the reasoning behind these metrics and how they actually work
+
+00:53.210 --> 00:54.310
+in the real world.
+
+00:54.350 --> 01:01.250
+So we're going to follow along a little bit in a process with some more realistic example such as classifying
+
+01:01.280 --> 01:10.130
+a spam versus ham message so typically in any classification task your model can only achieve two results.
+
+01:10.310 --> 01:15.540
+Either your model was correct in its prediction or your model was incorrect in its prediction.
+
+01:16.600 --> 01:19.120
+Unfortunately incorrect versus correct.
+
+01:19.120 --> 01:21.660
+That expands to situations where you have multiple classes.
+
+01:21.790 --> 01:26.500
+It doesn't matter if you're trying to predict categories with eight different types of classes or eight
+
+01:26.500 --> 01:27.950
+different types of categories.
+
+01:27.970 --> 01:32.820
+Your model fundamentally only has two outputs either a correct output or incorrect output.
+
+01:32.860 --> 01:37.690
+When it comes classification now for the purposes of explaining the metrics we're going to imagine a
+
+01:37.750 --> 01:46.610
+binary classification situation where we only have two available classes spam versus him in our example.
+
+01:46.630 --> 01:52.630
+We're going to be attempting to predict if a text message is spam or ham ham being another word for
+
+01:52.630 --> 01:54.660
+a legitimate message.
+
+01:54.910 --> 02:01.300
+Since this is a supervised learning process we were going to first fit or train a model on training
+
+02:01.300 --> 02:02.140
+data.
+
+02:02.170 --> 02:05.300
+Then we will test the model on testing data.
+
+02:05.530 --> 02:11.560
+Once we have the models predictions from the XT test data we compare it to the true y values that is
+
+02:11.560 --> 02:17.590
+the correct labels because remember in a supervised learning process we're dealing with historical information
+
+02:17.890 --> 02:21.720
+that we already have the labels for.
+
+02:21.730 --> 02:27.970
+Keep in mind there are a few steps to convert the raw text message information into a format that the
+
+02:27.970 --> 02:29.640
+machine learning model can understand.
+
+02:29.830 --> 02:34.390
+So whenever we're dealing with raw text we're gonna have to do a little bit of work in vectorization
+
+02:34.750 --> 02:40.900
+in order to translate the raw text into numerical information the machine learning model can understand.
+
+02:40.900 --> 02:46.000
+So whether it's a text message from a cell phone whether it's an email whether it's a movie review that's
+
+02:46.000 --> 02:51.010
+been written down there will be some steps that we're going to cover later on in actually converting
+
+02:51.010 --> 02:55.960
+that raw text information into numerical information rather discuss these methods in much more detail
+
+02:55.960 --> 02:56.580
+later on.
+
+02:56.710 --> 03:01.960
+So just to give you a brief overview of kind of the process of vectorization going to wave our hands
+
+03:01.960 --> 03:02.660
+a little bit here.
+
+03:02.680 --> 03:08.520
+But essentially what we're doing is we're taking some sort of rock text message from the testing dataset
+
+03:08.590 --> 03:13.550
+that is the X test that we saw in the previous lecture we passes through some vectorize.
+
+03:13.630 --> 03:16.300
+And then we have a vectorized version of that.
+
+03:16.300 --> 03:21.220
+So to give you just a brief idea of what that actually is or that would look like Essentially we would
+
+03:21.220 --> 03:22.920
+have some raw text information.
+
+03:22.930 --> 03:26.050
+So here's a text message from a cell phone saying hey how are you doing.
+
+03:26.050 --> 03:27.880
+I've been doing well et cetera.
+
+03:27.910 --> 03:32.620
+Theoretically after we pass it through the vector laser it should be formatted in some sort of vectorize
+
+03:32.620 --> 03:37.090
+format that has a numerical matrix that the machine learning model can then understand.
+
+03:37.090 --> 03:41.860
+You can imagine that we can do things such as count the number of times certain words show up and that
+
+03:41.860 --> 03:46.660
+would be numerical information and we would format it in a way that the machine learning model can understand
+
+03:47.100 --> 03:48.700
+or to learn about this entire process.
+
+03:48.700 --> 03:54.220
+In a lot more detail things like term frequency inverse document frequency bag of words.
+
+03:54.220 --> 03:59.270
+Those are all different processes that we can employ in order to vectorize text information the way
+
+03:59.270 --> 04:05.470
+to learn about that in the feature or text feature extraction lecture right now who can kind of imagine
+
+04:05.470 --> 04:09.600
+behind the scenes or some sort of vectorization process taking place.
+
+04:09.700 --> 04:11.820
+So we set up this vectorization in a pipeline.
+
+04:12.040 --> 04:16.480
+And again there's many ways of transforming that raw text into murky information.
+
+04:16.480 --> 04:21.640
+For right now since we want to focus on understanding classification metrics we're just going to assume
+
+04:21.640 --> 04:28.370
+that there were some underlying vectorization process that took place OK so it's actually jump right
+
+04:28.430 --> 04:33.440
+into the middle of that machine learning process pipeline that we saw in the previous lecture and assume
+
+04:33.800 --> 04:38.900
+that we have a trained model and the model is trained on the training data.
+
+04:38.930 --> 04:43.730
+So we took in our next train and our white train and then we train the model.
+
+04:43.730 --> 04:46.760
+Now it comes time to actually evaluate the models performance.
+
+04:46.760 --> 04:52.960
+So what we need to do is taken our test dataset and then pass it into the train model.
+
+04:52.970 --> 05:00.190
+So for example I go ahead and grab a test message from X test and if you're wondering what X test means
+
+05:00.200 --> 05:02.560
+go ahead and watch the previous lecture we explain that there.
+
+05:02.840 --> 05:08.540
+So we have this text message from a cell phone and it's from the X test dataset and we pass it into
+
+05:08.540 --> 05:15.740
+the train model that I remember because a test message and this is supervised learning with historical
+
+05:15.740 --> 05:17.210
+labeled information.
+
+05:17.330 --> 05:21.680
+We actually already know whether or not this is a ham or spam.
+
+05:21.680 --> 05:26.540
+So keep in mind we always already know the correct label for this particular test data point that's
+
+05:26.540 --> 05:32.620
+going to allow sexually compare the output or the train model whether it's correct or incorrect.
+
+05:32.830 --> 05:37.780
+So we pass it through a train model and let's say in this particular instance the train model said I
+
+05:37.780 --> 05:42.810
+think this text message is ham or it's a legitimate test message.
+
+05:42.940 --> 05:49.090
+Then all we do is we simply compare the correct label that we already know to be true against the prediction
+
+05:49.090 --> 05:50.690
+that the train model output.
+
+05:50.710 --> 05:52.510
+So here we say it was hand equal to him.
+
+05:52.540 --> 05:53.830
+And in this case it's correct.
+
+05:53.830 --> 05:56.880
+So here we get a correct prediction.
+
+05:56.890 --> 06:02.080
+Keep in mind that for other data points the train model could be incorrect.
+
+06:02.110 --> 06:05.520
+It might say Oh I think this text message is spam.
+
+06:05.680 --> 06:09.040
+And in that case it would be incorrect for action.
+
+06:09.910 --> 06:15.790
+So what we're going to do is we just repeat this process for all the text messages inside of our test
+
+06:15.790 --> 06:16.620
+data.
+
+06:16.870 --> 06:22.950
+At the end we're going to have a count of correct matches and accounts of incorrect matches.
+
+06:22.960 --> 06:28.420
+Here's the absolute key realization probably the most fundamental part of this particular lecture in
+
+06:28.420 --> 06:30.100
+real world situations.
+
+06:30.100 --> 06:36.970
+Not all incorrect or correct matches hold equal value which is why we actually have those various classification
+
+06:36.970 --> 06:37.710
+metrics.
+
+06:37.720 --> 06:44.380
+It's not enough to understand that you got a particular count of correct versus incorrect its various
+
+06:44.380 --> 06:48.670
+ratios that we need to take into account.
+
+06:48.700 --> 06:52.510
+So in the real world a single metric won't tell the complete story.
+
+06:52.510 --> 06:56.380
+So to understand all of this we're going to bring back those four metrics we mentioned at the beginning
+
+06:56.800 --> 07:01.480
+and see how they're actually calculated and we could actually organize or predicted values compared
+
+07:01.480 --> 07:04.090
+to the real values in what's known as a confusion matrix.
+
+07:04.240 --> 07:10.690
+And the next lecture were to have a whole discussion of the confusion matrix the freight Now let's look
+
+07:10.690 --> 07:18.280
+at accuracy accuracy in classification problems is the number of correct predictions made by the model
+
+07:18.550 --> 07:21.310
+divided by the total number of predictions.
+
+07:21.310 --> 07:27.700
+So again what we do is we count up our Telia how many times the model was correct and then we divide
+
+07:27.700 --> 07:30.570
+it by the total number of predictions the model made.
+
+07:30.670 --> 07:38.920
+For example if the test dataset was 100 messages in our model correctly predicted 80 of those messages
+
+07:38.920 --> 07:45.400
+from the test dataset then we would have 80 out of a total of 100 predictions that were done correctly.
+
+07:45.400 --> 07:48.680
+And that means we were 0.8 or 80 percent accurate.
+
+07:50.810 --> 07:54.610
+Accuracy is really useful when target classes are well balanced.
+
+07:54.620 --> 07:59.510
+So in that example it would mean that we have roughly the same amount of spam messages in our test data
+
+07:59.870 --> 08:03.640
+as we have ham or legitimate messages.
+
+08:03.650 --> 08:05.170
+Now here's a problem.
+
+08:05.180 --> 08:09.520
+Accuracy is not a good choice with unbalanced classes.
+
+08:09.830 --> 08:17.240
+Let's imagine a situation where we had ninety nine legitimate ham messages in a one spam text message.
+
+08:17.330 --> 08:20.990
+If our model was a simple line of code that's always predicted him.
+
+08:21.140 --> 08:26.750
+That means we would get ninety nine percent accuracy even though it was incorrect on every single instance
+
+08:26.810 --> 08:28.000
+of spam.
+
+08:28.070 --> 08:34.420
+We got unlucky because we had an unbalanced class situation and our test data set.
+
+08:34.540 --> 08:36.840
+So in this situation we're going to want to understand.
+
+08:36.850 --> 08:42.670
+Recall and precision that's going to give us a better understanding of how it performs.
+
+08:42.790 --> 08:50.580
+On the other smaller class so let's quickly go over some formal definitions of precision.
+
+08:50.580 --> 08:55.790
+Recall an EF 1 score if one score is simply a combination of precision recall.
+
+08:56.010 --> 08:59.400
+We're going to go over their formal definitions and I think usually they make a lot more sense when
+
+08:59.400 --> 09:02.070
+you see them in combination with the confusion matrix.
+
+09:02.070 --> 09:06.430
+So keep in mind in the next lecture you'll see a confusion matrix which should clear up precision.
+
+09:06.450 --> 09:09.020
+Recall an EF 1 score with further detail.
+
+09:09.030 --> 09:10.720
+Let's start with free call.
+
+09:10.800 --> 09:16.910
+Recall is the ability of the machine learning model to find all the relevant cases within a data set
+
+09:17.610 --> 09:23.460
+and the actual mathematical formula for definition of recall is going to be the number of true positives
+
+09:23.940 --> 09:28.280
+divided by the number of true positives plus the number of false negatives.
+
+09:28.350 --> 09:31.650
+And when we see this in combination with the confusion matrix they'll make a lot more sense.
+
+09:31.650 --> 09:35.640
+So keep in mind the next lecture we're actually going to see the formulas and how they're calculated.
+
+09:35.820 --> 09:38.340
+So don't worry too much about these formal definitions.
+
+09:39.540 --> 09:45.530
+Precision is the ability of a classification model to identify only the relevant data points.
+
+09:45.540 --> 09:50.390
+Precision is defined as a number of true positives divided by the number of true positives plus the
+
+09:50.390 --> 09:56.100
+number of false positives in the next picture we'll talk more about true positives false positives true
+
+09:56.130 --> 09:57.700
+negatives and false negatives.
+
+09:59.510 --> 10:05.420
+So keep in mind often you have a tradeoff between recall a precision wall recall expresses the ability
+
+10:05.720 --> 10:12.530
+to find all relevant instances in the data set precision expresses the proportion of the data points.
+
+10:12.530 --> 10:16.210
+Our model says was relevant that actually were relevant.
+
+10:18.190 --> 10:24.380
+And in cases where we want to find an optimal blend of precision and recall we can combine the two metrics
+
+10:24.410 --> 10:31.810
+using what is called the EF 1 score the one score is the harmonic mean of precision and recall taking
+
+10:31.840 --> 10:35.120
+both metrics into account in the following equation.
+
+10:35.170 --> 10:41.290
+We say if one score is equal to two times and in the numerator we have precision times recall and then
+
+10:41.290 --> 10:45.730
+in denominator we have position of plus recall this is known as taking the harmonic mean in order to
+
+10:45.730 --> 10:47.710
+say normal mean.
+
+10:47.910 --> 10:53.510
+And the reason we use the harmonic mean instead of a simple average is because it punishes extreme values.
+
+10:53.730 --> 10:59.530
+Let's imagine we had a classifier for a precision of one point zero but a horrible recall of 0.0.
+
+10:59.700 --> 11:05.070
+If we were to perform the normal mean we'd end up getting in a score of 0.5.
+
+11:05.070 --> 11:06.900
+So that's just a simple average.
+
+11:06.990 --> 11:11.790
+If we take the harmonic mean we can be a little smarter about it and really punish this model for having
+
+11:11.790 --> 11:17.670
+a horrible recall because we're going to say precision times recall then that's going to say one time
+
+11:17.670 --> 11:18.780
+zero is zero.
+
+11:18.790 --> 11:23.130
+So that means the score automatically becomes very small or zero.
+
+11:23.340 --> 11:28.220
+If one of these values either precision or recall happens to be very poor.
+
+11:28.230 --> 11:33.930
+So again it's a better display of the optimal blend than just the simple average because it's punishing
+
+11:34.140 --> 11:35.580
+extreme values.
+
+11:37.260 --> 11:42.090
+So persistent recall as I keep mentioning typically make more sense in the context of the confusion
+
+11:42.090 --> 11:42.820
+matrix.
+
+11:42.840 --> 11:47.640
+So in this next lecture coming up we're going explore his confusion matrix and again talk again in more
+
+11:47.640 --> 11:53.170
+detail about the different classification metrics we'll be using throughout this section of the course.
+
+11:53.280 --> 11:54.300
+We'll see at the next lecture.

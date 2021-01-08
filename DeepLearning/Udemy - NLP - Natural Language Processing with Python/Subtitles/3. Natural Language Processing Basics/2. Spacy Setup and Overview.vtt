@@ -1,0 +1,322 @@
+WEBVTT
+
+00:05.390 --> 00:10.780
+Welcome everyone to this lecture on setting up Spacey before we set up Spacey and download the language
+
+00:10.780 --> 00:11.560
+library.
+
+00:11.560 --> 00:14.050
+Let's quickly discuss what Spacey actually is.
+
+00:14.050 --> 00:18.310
+Spacey is an open source natural language processing library for Python.
+
+00:18.340 --> 00:23.740
+It's designed to effectively handle an LP tasks with the most efficient implementation of common tasks
+
+00:23.800 --> 00:26.080
+and algorithms.
+
+00:26.200 --> 00:31.990
+That means for many natural language processing tasks Spacey only has one implemented a method choosing
+
+00:31.990 --> 00:34.390
+the most efficient algorithm currently available.
+
+00:34.390 --> 00:36.360
+Usually that means state of the art.
+
+00:36.370 --> 00:42.100
+This means you often don't actually have the option to choose between algorithms for a particular task.
+
+00:42.130 --> 00:49.660
+Spacey only has one option which is the most efficient currently available now and LDK is another library
+
+00:49.660 --> 00:53.350
+we're going to be using throughout this course and this one's more common so you may have already heard
+
+00:53.350 --> 00:59.730
+of it and LDK stands for the natural language toolkit and it's a very popular open source library.
+
+00:59.740 --> 01:06.110
+It was initially released in 2001 so that means it's much older and spacey which was released in 2015.
+
+01:06.130 --> 01:11.320
+It also provides many functionalities that includes less efficient implementations and that's probably
+
+01:11.320 --> 01:14.190
+one of the main differences between Speccy and LDK.
+
+01:14.200 --> 01:18.880
+So let's quickly compare that to for many comment and LP tasks.
+
+01:18.960 --> 01:25.020
+Speccy is much faster and more efficient at the cost of the user not being able to choose a specific
+
+01:25.080 --> 01:28.170
+algorithmic implementation for most use cases.
+
+01:28.170 --> 01:32.760
+That really doesn't matter because you care about the end result not using a particular form of the
+
+01:32.760 --> 01:33.750
+algorithm.
+
+01:33.750 --> 01:39.780
+So for that reason space is much faster than an LDK because until Teekay has a variety of implementations
+
+01:40.050 --> 01:45.060
+for a lot of common tasks when Spacey just defaults to the most efficient currently available and it's
+
+01:45.090 --> 01:49.590
+also much newer keep in mind space.
+
+01:49.610 --> 01:55.490
+This includes some pre-created models for some applications that caters such as sentiment analysis which
+
+01:55.490 --> 01:57.640
+is typically easier to perform with an altercation.
+
+01:59.730 --> 02:04.740
+That means in this course due to spaces state our approach and efficiency we're going to focus on using
+
+02:04.740 --> 02:09.330
+space where it really matters but will also introduce and use an altercation when it's easier to use
+
+02:09.330 --> 02:10.650
+for certain tasks.
+
+02:10.770 --> 02:14.880
+By the end of the course you should feel comfortable utilizing both libraries when they are best suited
+
+02:14.880 --> 02:16.210
+for a particular task.
+
+02:18.470 --> 02:22.900
+Now there is some processing data as far as efficiency of LDK versus Spacey.
+
+02:22.940 --> 02:27.450
+And here we can see a table comparing Spacey to a bunch of other libraries including analytics.
+
+02:27.470 --> 02:28.670
+They're at the bottom.
+
+02:28.670 --> 02:33.770
+And we have the absolute millisecond per documents on the same hardware being run.
+
+02:33.770 --> 02:37.230
+And we also have relative to space which is probably the more important part.
+
+02:37.250 --> 02:44.330
+So Lotusphere that spacey can tokenize tag and parse documents and if you compare it speed to an LTE
+
+02:44.330 --> 02:52.880
+K and old C K takes 20 times longer to actually tokenize in a document reading and it takes 443 times
+
+02:52.880 --> 02:56.520
+longer to tag and it actually doesn't even perform parsing.
+
+02:56.780 --> 03:03.530
+So you can already tell here that space is much more efficient than an LTE k up to 400 times more efficient
+
+03:03.560 --> 03:04.440
+or more.
+
+03:04.490 --> 03:07.400
+So that's really where we're focusing on spacing throughout this course.
+
+03:08.840 --> 03:14.000
+If you want to get more facts and figures of performance metrics of spacey versus other libraries you
+
+03:14.000 --> 03:20.990
+can check out this link above Spacey at the IO slash usage slash facts figures and Ill compare the capabilities
+
+03:21.040 --> 03:23.320
+a Speccy versus other libraries.
+
+03:23.330 --> 03:24.990
+Keep in mind we're focused on Python.
+
+03:25.010 --> 03:30.410
+So really should we focus on speccy versus And LDK and you can see here it has a lot more models implemented
+
+03:30.830 --> 03:35.990
+things like neural network model spaces built ready to perform state of the art neural network analysis
+
+03:36.080 --> 03:37.920
+and LDK really isn't suited for that.
+
+03:38.120 --> 03:42.620
+But there are a few cases where we're going to use analytics throughout the course so keep mine look
+
+03:42.630 --> 03:43.680
+at that link if you want.
+
+03:43.720 --> 03:47.340
+Spacey compare it to other libraries.
+
+03:47.600 --> 03:52.610
+For now let's quickly walk through setting up Spacey and downloading the language library for this I'm
+
+03:52.610 --> 03:54.700
+going to open up my command prompt.
+
+03:54.740 --> 04:01.670
+So if you're on Mac OS or Linux Open your terminal and if you're on Windows open up your either Anaconda
+
+04:01.670 --> 04:04.220
+prompt or your command prompt.
+
+04:04.220 --> 04:05.540
+Let's head over to that now.
+
+04:05.570 --> 04:10.190
+So depending on how you actually downloaded and installed Python in a anaconda you should be opening
+
+04:10.190 --> 04:13.430
+up either the Anaconda prompt or the command prompt.
+
+04:13.430 --> 04:17.240
+And if you're on a Windows computer you want to make sure you run this as an administrator.
+
+04:17.330 --> 04:20.660
+You also want to make sure you don't have a firewall because we're going to be downloading the language
+
+04:20.660 --> 04:22.120
+library from the Internet.
+
+04:22.130 --> 04:27.160
+So from a command prompt and willing to run this as an administrator and now I have my command prompt.
+
+04:27.260 --> 04:32.440
+Keep in mind sometimes when you run this as an administrator they'll automatically open the system 32.
+
+04:32.570 --> 04:34.960
+You probably just want to be located in your C folder.
+
+04:35.000 --> 04:38.990
+So the first thing in the Taipan is if you're located in kind of a strange folder with some permissions
+
+04:38.990 --> 04:44.870
+issues type See CD space dot dot and then see the space dot dot.
+
+04:44.990 --> 04:46.410
+And now we're in the C-Drive.
+
+04:46.610 --> 04:50.210
+That should make sure that we don't have any permission issues as well as the fact that we're running
+
+04:50.210 --> 04:52.060
+this as an administrator.
+
+04:52.100 --> 04:56.480
+The first thing to do is make sure you've activated our virtual environment that we provide.
+
+04:56.600 --> 05:01.900
+Or if you're not using our virtual environment make sure you actually have installed Spacey.
+
+05:01.910 --> 05:03.280
+Now there's several ways to do this.
+
+05:03.410 --> 05:16.060
+If you're using anaconda you can say Khanda install space dash see Conda dash forge Spacey and we actually
+
+05:16.060 --> 05:18.840
+have all of this in the Speccy basics notebook.
+
+05:18.910 --> 05:20.140
+You can go ahead and check that out.
+
+05:20.140 --> 05:26.520
+We have a two step process written now and you can enter here and that should install Spacey for you
+
+05:26.770 --> 05:31.030
+from the Anaconda packaging system.
+
+05:31.030 --> 05:34.590
+So let's go ahead and fast forward in time until that's done installing.
+
+05:34.870 --> 05:38.420
+Once that's done installing the thing you should see a bunch stuff that looks like this.
+
+05:38.440 --> 05:42.540
+Again if you're using our environment file there should have been installed for you already.
+
+05:42.550 --> 05:47.110
+The next thing however you're going to have to do even if you are using our environment file and that
+
+05:47.110 --> 05:52.720
+is from the command line we need to download the language library that spacey needs and that language
+
+05:52.720 --> 05:57.170
+library is a big reason about why space it can operate so efficiently.
+
+05:57.190 --> 06:02.020
+So to do this you're going to need to double check that you have full administrative capabilities to
+
+06:02.020 --> 06:03.430
+download stuff onto a computer.
+
+06:03.580 --> 06:06.410
+If you're on a work computer you may need to ask for those permissions.
+
+06:06.430 --> 06:10.150
+You may also need to check that make sure you don't have a firewall blocking your ability to download
+
+06:10.150 --> 06:11.260
+stuff from the Internet.
+
+06:11.530 --> 06:23.410
+So the next thing from the command line is you're going to type python space dash em space Spacey space
+
+06:24.530 --> 06:30.380
+download space e m which stands for English and you're going to do this once you've installed.
+
+06:30.400 --> 06:32.760
+Spacey go ahead and hit enter.
+
+06:34.170 --> 06:38.510
+Now what this is going to do is it's going to automatically download from the command line.
+
+06:38.640 --> 06:41.580
+The English language library now can see here.
+
+06:41.610 --> 06:44.140
+I've actually already performed this download.
+
+06:44.310 --> 06:46.110
+If you haven't yet it may take a while.
+
+06:46.130 --> 06:50.430
+But unsuccess you should see something that says something like linking successful.
+
+06:50.430 --> 06:54.400
+So it says you can now load the model using this command speccy that load.
+
+06:54.420 --> 07:00.090
+And so that's what we're going to be using in the next lecture to actually load up our English model
+
+07:00.240 --> 07:02.310
+and there's various versions of the English model.
+
+07:02.310 --> 07:06.420
+You can check out the Speccy documentation for more details and we'll explore as we go along for the
+
+07:06.420 --> 07:07.060
+course.
+
+07:07.170 --> 07:09.950
+But those are essentially the main two steps that we need to do.
+
+07:10.050 --> 07:14.520
+We need to make sure we had spacier installed and also make sure that we set up the spacey language
+
+07:14.520 --> 07:15.330
+library.
+
+07:15.330 --> 07:19.520
+Coming up next we're going to have a quick discussion on natural language processing basics.
+
+07:19.620 --> 07:22.980
+Before we jump into space basics we'll see at the next lecture.

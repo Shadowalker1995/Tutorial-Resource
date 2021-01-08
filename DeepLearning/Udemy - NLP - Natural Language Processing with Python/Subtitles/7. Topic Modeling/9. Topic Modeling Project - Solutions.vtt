@@ -1,0 +1,274 @@
+WEBVTT
+
+00:05.250 --> 00:06.180
+Welcome back everyone.
+
+00:06.270 --> 00:10.590
+And this lecture we're going to go through the solutions for the topic modeling Assessment Project.
+
+00:10.590 --> 00:12.620
+Let's head over to the notebook and get started.
+
+00:13.440 --> 00:13.670
+All right.
+
+00:13.680 --> 00:16.510
+Here I am at the topic modeling Assessment Project notebook.
+
+00:16.710 --> 00:24.000
+The first they're going to do is import pandas as PD and then read in that data set for Quora.
+
+00:24.270 --> 00:31.450
+So PD that read and it's a CSP file and it's called Korac questions you should be able to tap autocomplete
+
+00:31.470 --> 00:32.080
+this.
+
+00:32.130 --> 00:37.130
+If not you'll need to provide the entire file path and then we can check the head of the state of frame
+
+00:39.270 --> 00:42.210
+and you notice it's just a series of questions.
+
+00:42.330 --> 00:47.750
+So if you ever wanted to grab one of these singular questions where you could do is simply from the
+
+00:47.750 --> 00:50.450
+question column grab any index.
+
+00:50.480 --> 00:53.120
+So what is step by step guide to invest in share market.
+
+00:53.120 --> 00:55.540
+India is the first question.
+
+00:55.580 --> 00:57.890
+So for pre-processing it's pretty straightforward.
+
+00:57.950 --> 01:07.660
+We simply say from S-K learn the feature extraction thought text import T.F. IDF vectorize or then we'll
+
+01:07.660 --> 01:08.730
+create it.
+
+01:09.430 --> 01:17.870
+Let's create an instance of our vectorize or T.F. IDF and we'll say T.F. idea of vectorize or and you
+
+01:17.870 --> 01:24.950
+can play around with the max document frequency values will say we're looking for terms that show up
+
+01:25.650 --> 01:28.040
+at our max docking at frequencies 95 percent.
+
+01:28.040 --> 01:32.930
+So kind of drop the 5 percent most frequent terms since those probably aren't conducive to any particular
+
+01:32.930 --> 01:33.910
+topic.
+
+01:33.950 --> 01:40.160
+SR so common and then also essentially remove any words unique to any documents by saying that the words
+
+01:40.340 --> 01:48.990
+show up at least in two documents and also pasand upwards English English.
+
+01:48.990 --> 01:49.980
+There we go.
+
+01:50.670 --> 01:53.420
+And then we'll create our document matrix.
+
+01:53.440 --> 01:58.560
+Again it's not really a dominant term matrix we're also performing T.F. IDF on it but it's just to keep
+
+01:58.560 --> 01:59.160
+things in line.
+
+01:59.160 --> 02:07.070
+What we did before Deif IDF and then we fit transform on the article or on the question column here
+
+02:09.550 --> 02:18.270
+so run that and at the end you should see a matrix with 400 and 4000 ish questions and then around 40000
+
+02:18.280 --> 02:19.760
+words.
+
+02:19.780 --> 02:22.310
+Now it's time for non-negative matrix factorization.
+
+02:22.390 --> 02:26.130
+If you want you can also perform LDA but LDH takes quite a bit of time.
+
+02:26.200 --> 02:34.220
+So we're going to stick with an MF sual say from Skillern about the composition import and F. We'll
+
+02:34.220 --> 02:42.350
+create an instance of a MF model by calling an MF saying number of components.
+
+02:42.380 --> 02:47.330
+And here we specifically asked for 20 topics and if you want make sure the topics are lined up the same
+
+02:47.330 --> 02:48.650
+way I have them here.
+
+02:48.650 --> 02:51.690
+Go ahead and put in random state is equal to 42.
+
+02:51.740 --> 02:54.160
+Again the number 42 is completely arbitrary.
+
+02:54.180 --> 02:56.980
+It's just to make sure that your random values are the same as mine.
+
+02:57.010 --> 03:06.340
+Setting a random seed and then it's time to actually fit the model so we will fit the model to our documentary
+
+03:06.390 --> 03:12.830
+matrix and then we're going to print out our top 15 most common words for each of the topics.
+
+03:12.930 --> 03:15.220
+So I'll go ahead and get started on this while that's fitting.
+
+03:15.300 --> 03:28.350
+I will say for index topic in enumerate and IMF model and IMF underscore model components underscore
+
+03:29.130 --> 03:35.220
+we're going to do is we'll just print out that top 15 words a line using some string literals will say
+
+03:36.150 --> 03:44.380
+the top 15 words for topic number and then we'll pass an index and that's the current topic number we're
+
+03:44.380 --> 03:45.060
+on.
+
+03:45.360 --> 03:48.390
+And then we'll use less comprehension just like we did before.
+
+03:48.750 --> 03:58.440
+We simply grab that TAF IDF T.F. IDF object and then we're going to say get under score feature underscore
+
+03:58.440 --> 04:09.300
+names and then grab it at index eye for eye in topic loops in topic and recall we are sort.
+
+04:09.640 --> 04:17.240
+And then if we want the last 15 we say from negative 15 all the way to the end and then we're going
+
+04:17.240 --> 04:20.390
+to print out a new line.
+
+04:20.390 --> 04:20.820
+All right.
+
+04:21.020 --> 04:25.400
+So as I previously mentioned this is a much bigger file than before.
+
+04:25.400 --> 04:29.080
+So an IMF model is still going to take a while LDA will take even longer.
+
+04:29.190 --> 04:32.390
+Someone quickly hop forward in time until this is done training.
+
+04:32.690 --> 04:34.390
+OK so that's done training for me now.
+
+04:34.400 --> 04:38.930
+It took several minutes and I have a pretty fast computer so it may take you longer depending on your
+
+04:38.930 --> 04:39.570
+hardware.
+
+04:39.650 --> 04:44.420
+If you have a really slow or small hardware computer there's a possibility of getting a memory error
+
+04:44.420 --> 04:44.880
+here.
+
+04:45.080 --> 04:50.210
+And if that's the case there's really nothing you can do except either take a subset of that data set
+
+04:50.630 --> 04:52.410
+or get better hardware.
+
+04:52.670 --> 04:57.110
+So let me run this next topic and we can see here the top 15 words.
+
+04:57.110 --> 04:59.730
+So here are the various topics we found.
+
+04:59.750 --> 05:00.460
+Number two.
+
+05:00.470 --> 05:02.400
+Number three and so on.
+
+05:02.420 --> 05:07.250
+So the last thing to do is actually connect these topic numbers to the questions themselves.
+
+05:07.260 --> 05:09.630
+So remember our original data frame looks like this.
+
+05:09.650 --> 05:11.470
+And we want it to look something like that.
+
+05:11.870 --> 05:12.640
+And then we can do this.
+
+05:12.650 --> 05:13.690
+It's pretty straightforward.
+
+05:13.850 --> 05:25.680
+We simply say something like Topic results is equal to an MF model and we're going to transform our
+
+05:25.680 --> 05:35.470
+original DTM and then we're going to say topic results and Graham the max coefficient value along access
+
+05:35.500 --> 05:44.450
+equal to 1 and then we'll say Corra topic is equal to topic results.
+
+05:44.460 --> 05:48.880
+RMX is equal to 1.
+
+05:48.960 --> 05:53.030
+Actually we could just say that this is something else whip's kind of wrote this line twice there.
+
+05:53.160 --> 05:57.040
+So core topic topic results are maximal to 1.
+
+05:57.060 --> 06:02.670
+So if you run that and then check the head of the data frame that should have matched up the topic based
+
+06:02.670 --> 06:04.480
+on the index this for the questions.
+
+06:04.580 --> 06:09.960
+And we can see here if you use the same random state as I did the first three topics would be 5 16 and
+
+06:09.960 --> 06:10.800
+17.
+
+06:10.830 --> 06:13.690
+Again that's only if you happen to use the same or in them they did.
+
+06:14.030 --> 06:14.560
+OK.
+
+06:14.730 --> 06:16.380
+So that's it for this project.
+
+06:16.440 --> 06:21.870
+Hopefully you can see now it's pretty straightforward to perform topic modeling and psychic learns has
+
+06:21.870 --> 06:23.740
+a lot of convenient functions for you to use.
+
+06:23.880 --> 06:27.840
+And really all of this is essentially it looks like just around 15 cells.
+
+06:27.900 --> 06:33.360
+So just a few lines of code in order to perform topic modeling on a really large dataset.
+
+06:33.390 --> 06:33.830
+Thanks.
+
+06:33.870 --> 06:37.940
+And that concludes the topic modeling section will see at the next section of the course.

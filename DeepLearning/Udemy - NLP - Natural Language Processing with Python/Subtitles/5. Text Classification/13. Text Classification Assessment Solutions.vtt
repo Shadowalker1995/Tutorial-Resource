@@ -1,0 +1,253 @@
+WEBVTT
+
+00:05.160 --> 00:08.850
+Go over the solutions for the text classification Assessment Project.
+
+00:09.090 --> 00:11.640
+OK here we have the text classification assessment.
+
+00:11.740 --> 00:18.910
+So it's for a long and complete the tasks we're first going to import Pandurs as PD and then say DNA
+
+00:18.970 --> 00:28.970
+is equal to PD read CSB and then inside the text files folder you should be able to find movie reviews
+
+00:29.020 --> 00:35.630
+to ts V and remember because it's a TSB we want to indicate that it's a tab separated file.
+
+00:35.870 --> 00:40.430
+So after we run that we can check the head of the data frame just to confirm that the data frame is
+
+00:40.430 --> 00:40.730
+correct.
+
+00:40.730 --> 00:44.180
+So we see the labels and then we see the actual text review.
+
+00:44.180 --> 00:50.790
+Next we want to check for missing values so we can do this by saying DSF is null and then taking the
+
+00:50.810 --> 00:53.280
+sum of that.
+
+00:53.460 --> 00:55.330
+And it looks like we do have some missing values.
+
+00:55.350 --> 00:58.410
+In fact 20 of the reviews are missing.
+
+00:58.530 --> 01:01.440
+So we're going to want to make sure to remove those values.
+
+01:01.500 --> 01:04.340
+Now we also want to make sure to check for white string spaces.
+
+01:04.590 --> 01:07.560
+Next we're also going to check for whitespace strings.
+
+01:07.740 --> 01:12.640
+And then after we check for whitespace strings we'll go ahead and remove null values.
+
+01:12.690 --> 01:13.270
+It's up to you.
+
+01:13.280 --> 01:14.570
+Or do you want to do this in.
+
+01:14.820 --> 01:19.350
+And we're going to show you a caveat you have to keep in mind because we haven't removed the null values
+
+01:19.350 --> 01:19.740
+yet.
+
+01:20.070 --> 01:21.090
+So keep that in mind.
+
+01:21.200 --> 01:26.500
+We're going to create a list called blanks that's going to hold the actual index positions of any whitespace
+
+01:26.500 --> 01:38.390
+strings we encounter and then we'll say for the index label and review in ZF or tuples this is going
+
+01:38.390 --> 01:41.280
+to go and iterate through the data frame we'll do the following.
+
+01:41.330 --> 01:48.080
+If the review itself if the type of the review happens to be a string then we're going to check to see
+
+01:48.080 --> 01:49.430
+if it's an empty string.
+
+01:49.430 --> 01:52.850
+The reason I'm doing this check is because we know we have no values.
+
+01:52.850 --> 01:56.720
+In fact many of these reviews are not street types but there are no values.
+
+01:56.720 --> 02:04.390
+So if that happens to be the case that it's actually string then I can check if the review is space
+
+02:04.900 --> 02:12.330
+then I will say blanks append that particular index position.
+
+02:12.420 --> 02:16.910
+So then if I run this and actually check the length of blanks you realize that 0.
+
+02:16.920 --> 02:18.780
+So there actually are no whitespace strings.
+
+02:18.810 --> 02:20.960
+There's only these missing values that take care of.
+
+02:21.050 --> 02:27.090
+Now we can do that easily by just saying the F drop and a and then we'll say in place is equal to true
+
+02:28.920 --> 02:31.430
+task force to take a quick look at the label column.
+
+02:31.440 --> 02:32.500
+So let's go out and check it out.
+
+02:32.670 --> 02:40.500
+We'll say the label and let's call value counts in here we can see we have just as many positive reviews
+
+02:40.500 --> 02:44.000
+as we have negative reviews so it's a very well perfectly balanced data set.
+
+02:44.280 --> 02:48.560
+And so task five is that split the data into treating sets and test sets.
+
+02:49.380 --> 02:52.090
+We'll say from S-K learn model selection
+
+02:54.810 --> 03:06.520
+import train test split and then I will set x to be the review and Y to be the label and then finally
+
+03:06.520 --> 03:08.850
+we will call train to split.
+
+03:09.070 --> 03:15.700
+And then if you put this in a new cell and run the import You should then be able to shift tab and then
+
+03:16.390 --> 03:17.470
+expand on this.
+
+03:17.470 --> 03:22.410
+Scroll down until you find extreme excess weight training weightiest.
+
+03:22.570 --> 03:29.130
+So we'll go ahead and copy and paste those sort of to train test split and or passenger X or Y.
+
+03:29.410 --> 03:35.290
+And then our test size go ahead and set that equal to zero point three three and we'll set a random
+
+03:35.290 --> 03:39.610
+state of 42 so we run that.
+
+03:39.610 --> 03:43.730
+And now we can build a pipeline to vectorize the data then train and fit the model.
+
+03:43.870 --> 03:45.610
+So let's go ahead and do that.
+
+03:45.740 --> 03:52.750
+We will say from S-K learn and we're going to do it through a pipeline we'll import pipeline singular
+
+03:54.100 --> 04:05.170
+import pipeline and then from S-K learn thought feature extraction thought text import T.F. IDF vector
+
+04:05.190 --> 04:16.080
+Isar then we'll save from Eski learn as SVM import linear SABC that you will say create a text class
+
+04:16.080 --> 04:24.350
+for object with our pipeline object and this pipeline objects going to taken a list of tuples or say
+
+04:25.040 --> 04:33.990
+T.F. idea and then insert here a Tina Fey Effect raiser and then the next step in our pipeline will
+
+04:33.990 --> 04:39.100
+just be the classifier itself which we're here we're just going to use a linear support vector classifier.
+
+04:39.720 --> 04:45.240
+So say linear support vector classifier and then will actually fit the data.
+
+04:46.390 --> 04:49.720
+We'll call it on our next train.
+
+04:49.930 --> 04:53.590
+And there are white train that we can call extreme why train directly because we're going to have x
+
+04:53.590 --> 04:55.200
+rays within the pipeline.
+
+04:55.570 --> 05:00.420
+So let's make sure we didn't commit any typos and actually check to make sure this worked by running
+
+05:00.420 --> 05:02.330
+it.
+
+05:02.400 --> 05:06.650
+OK so don't worry if you get a warning as long as you see the actual output you should be good to go.
+
+05:07.010 --> 05:09.740
+So let's run the predictions and analyze the results.
+
+05:09.800 --> 05:17.510
+So we're going to say predictions is equal to text classifier or text CNF and we're going to predict
+
+05:17.600 --> 05:23.960
+off our test set and then we're going to report a confusion matrix which means we need to import it
+
+05:24.400 --> 05:32.510
+will say from S-K learn thought metrics in import a confusion matrix A classification report and we'll
+
+05:32.510 --> 05:38.450
+go in for accuracy score and then we'll just print all these out will print out the confusion matrix
+
+05:39.580 --> 05:41.530
+with the predictions versus the white.
+
+05:41.530 --> 05:46.320
+True so we'll say why test the true values against the predictions.
+
+05:47.830 --> 05:48.700
+So let's run that.
+
+05:48.700 --> 05:50.900
+So here we can see your confusion matrix.
+
+05:51.310 --> 05:58.100
+Let's check out the classification report and then see why test against the predictions.
+
+05:58.200 --> 05:59.630
+Looks like it's doing pretty darned good.
+
+05:59.700 --> 06:01.350
+And they need 2 percent precision recall.
+
+06:01.370 --> 06:07.990
+Let's put out the overall accuracy we'll say metrics and then accuracy score.
+
+06:08.100 --> 06:13.570
+We are actually in pretty accurate or we just call it directly and then pass y test of the predictions
+
+06:13.930 --> 06:16.370
+Alzugaray the 92 percent accuracy.
+
+06:16.630 --> 06:17.300
+OK.
+
+06:17.350 --> 06:22.030
+Hopefully this whole process now feels pretty straightforward to you we've seen it several times.
+
+06:22.270 --> 06:26.200
+But now you understand what each step is doing you understand is going on behind the scenes with the
+
+06:26.200 --> 06:27.220
+vectorization.
+
+06:27.430 --> 06:33.090
+And now you're able to form text classification using the raw text data as a major feature.
+
+06:33.100 --> 06:34.650
+Thanks and we'll see you at the next section.

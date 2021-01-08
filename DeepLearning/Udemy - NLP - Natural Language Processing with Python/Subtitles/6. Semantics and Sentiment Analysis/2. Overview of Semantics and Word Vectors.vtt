@@ -1,0 +1,277 @@
+WEBVTT
+
+00:00.240 --> 00:01.860
+Welcome back everyone.
+
+00:01.860 --> 00:08.980
+Let's now discuss semantics and word vectors but first in order to actually use spaces embedded word
+
+00:08.990 --> 00:12.960
+vectors we must download the larger Spacey English models.
+
+00:13.030 --> 00:17.680
+Full details about the models and as well as how to install them can be found at the link right here.
+
+00:17.680 --> 00:21.880
+Space is the IO forward slash usage forward slash models.
+
+00:21.970 --> 00:27.910
+Recall that when we first installed Spacey not only did we have to do an environmental install either
+
+00:27.910 --> 00:33.580
+using content install or pip install but we also at the command line had to install the full English
+
+00:33.640 --> 00:35.280
+language models.
+
+00:35.290 --> 00:40.840
+Now if you went ahead and downloaded the default model that would be the small model and that actually
+
+00:41.020 --> 00:46.570
+doesn't contain the word vectors because the word vectors themselves is actually a large enough piece
+
+00:46.570 --> 00:51.740
+of data that Spacey has medium size and larger size models for that.
+
+00:51.790 --> 00:57.490
+So in order to download either the medium or large space the English models at your command line you
+
+00:57.490 --> 01:06.160
+need to type out Python space dash M. space Spacey space download space and then e n underscore core
+
+01:06.340 --> 01:13.410
+underscore web underscore and then either M.D. for the medium English model or LG for the large spaces
+
+01:13.420 --> 01:18.970
+English model and the difference with medium and large for the context of these lectures doesn't really
+
+01:18.970 --> 01:20.040
+make a huge difference.
+
+01:20.050 --> 01:21.850
+So you can choose either one.
+
+01:21.940 --> 01:24.850
+I went ahead and downloaded the large English model.
+
+01:24.910 --> 01:28.450
+Just keep in mind these are really large files so they may take a while to download.
+
+01:28.870 --> 01:35.470
+So run either of these two lines at your command line in order to install the medium or large spacing
+
+01:35.470 --> 01:36.580
+English models.
+
+01:36.580 --> 01:43.990
+And again you can check out the link that usage slash models for full details on this installation process.
+
+01:44.050 --> 01:49.180
+So now that you have the larger models that contain the actual word vectors let's discuss how word vectors
+
+01:49.240 --> 01:58.340
+are created words of Vec is a two layer neural net that processes text its input as a text corpus and
+
+01:58.340 --> 02:05.280
+its output is a set of vectors which are essentially just feature vectors for words in that corpus the
+
+02:05.280 --> 02:11.040
+purpose and usefulness of where to Vec is to group the vectors of similar words together in this vector
+
+02:11.040 --> 02:12.000
+space.
+
+02:12.000 --> 02:16.890
+And that is it's able to the text similarities mathematically and we'll discuss that in further detail
+
+02:17.010 --> 02:17.780
+in just a little bit.
+
+02:19.480 --> 02:24.820
+But first try to understand that words of Vec is really just creating vectors that are distributed numerical
+
+02:24.820 --> 02:30.880
+representations of words features features such as the context of individual words and what's really
+
+02:30.880 --> 02:35.340
+interesting it's able to do all of this without any sort of human intervention.
+
+02:35.470 --> 02:38.590
+It's just learning naturally from a very large corpus of texts.
+
+02:38.770 --> 02:46.460
+The context of different words and which words are similar to other words so theoretically given enough
+
+02:46.460 --> 02:48.750
+data usage and contexts.
+
+02:48.770 --> 02:53.480
+So we're dealing for a really large corpus for example all of Wikipedia.
+
+02:53.480 --> 02:58.470
+Once you feed that into the words civic algorithm words that can make highly accurate guesses about
+
+02:58.470 --> 03:03.500
+a word's meaning based on past appearances and the context surrounding that particular word.
+
+03:03.530 --> 03:08.190
+So those guesses can then be used to establish a words association with other words.
+
+03:08.240 --> 03:14.040
+So after you actually train a word to model the vectors themselves will carry information and it's going
+
+03:14.040 --> 03:19.550
+to be able to understand associations such as man is the boy as woman is the girl.
+
+03:19.610 --> 03:24.590
+So while others understand that there's some sort of a relationship of age there that man and woman
+
+03:24.590 --> 03:31.490
+tend to be the older words you use versus boy and girl tend to be the younger words you use now where
+
+03:31.490 --> 03:37.370
+to Vec trains words against other words that neighbor them in the input corpus and a can actually do
+
+03:37.370 --> 03:44.270
+this one of two ways either using context to predict a target word and it is known as a continuous backwards
+
+03:44.300 --> 03:49.380
+approach or CB O W or C bow or the other method.
+
+03:49.390 --> 03:56.650
+That's also common is using a word to predict a target context which is called Skip Graham so here we
+
+03:56.650 --> 03:59.710
+see a diagram of the two possible approaches.
+
+03:59.710 --> 04:04.160
+And basically the kind of inverse of each other for the CBO approach.
+
+04:04.240 --> 04:11.140
+You have several input words and then your projection is essentially trying to predict what is the highest
+
+04:11.140 --> 04:13.630
+probability word to show up.
+
+04:13.630 --> 04:19.750
+Given the context of those surrounding words now the skip Graham method takes a little longer to train
+
+04:19.840 --> 04:25.780
+and to develop because it's essentially doing the opposite given an input of a single word using the
+
+04:25.780 --> 04:32.590
+auto encoder neural network projection try to output the weighted probabilities of the other words that
+
+04:32.590 --> 04:36.430
+are going to show up around the context of this input word.
+
+04:36.430 --> 04:42.430
+So again you have kind of two inverse methods here either given the context words and then predicting
+
+04:42.430 --> 04:50.450
+the output word or inputting the word and then trying to predict the output context words so at the
+
+04:50.450 --> 04:51.200
+end of all this.
+
+04:51.230 --> 04:57.710
+Recall that each word is now going to be represented by a vector and in Spacey each of these vectors
+
+04:57.710 --> 05:02.110
+has three hundred dimensions while you're actually trading training the auto encoder.
+
+05:02.150 --> 05:04.430
+If you were to implement or to vector yourself.
+
+05:04.430 --> 05:09.920
+Granted it takes a very long time on a very large corpus so it's unusual for people to actually not
+
+05:09.920 --> 05:12.640
+use some sort of built in embedded word vectors.
+
+05:12.770 --> 05:17.870
+But if you did want to actually train your own auto encoder for word to Vec then you could actually
+
+05:17.870 --> 05:21.100
+theoretically choose either less or more dimensions.
+
+05:21.170 --> 05:27.140
+Typically the ranges are between 100 to 1000 dimensions the higher number of dimensions the longer the
+
+05:27.140 --> 05:32.510
+training time but you should have then more context around each of these words since you have more dimensions
+
+05:32.510 --> 05:35.650
+to hold more information.
+
+05:35.650 --> 05:41.080
+Now what this means is since we have each word mapped to a vector in this three hundred dimensional
+
+05:41.110 --> 05:47.050
+space we can use cosine similarity to measure how similar word vectors are to each other.
+
+05:47.050 --> 05:51.790
+So cosine similarity is essentially just checking the distance between two vectors.
+
+05:51.790 --> 05:54.850
+And here we see a simple diagram in a two dimensional space.
+
+05:54.850 --> 05:58.600
+But this expands out to end dimensions in our case.
+
+05:58.600 --> 06:04.120
+We'll be taking several 300 dimensional vectors and then calculating the cosine similarity between them
+
+06:04.450 --> 06:07.210
+to see what vectors are most similar to each other.
+
+06:07.300 --> 06:10.550
+And in this case the actual vectors represent words.
+
+06:10.570 --> 06:16.360
+Now what's really interesting is this means we can outperform vector arithmetic with the new word vectors
+
+06:16.510 --> 06:23.110
+so we can calculate a brand new vector by performing arithmetic that is adding or subtracting different
+
+06:23.110 --> 06:28.720
+vectors so I can take the vector that three hundred dimensional vector for King and then subtract the
+
+06:28.720 --> 06:32.360
+vectors for man and then add the vector for a woman.
+
+06:32.410 --> 06:37.150
+So that creates a brand new vector that's not actually directly associated with a single word.
+
+06:37.570 --> 06:43.360
+Instead we performed an arithmetic between the vectors of several words and then when I can attempt
+
+06:43.360 --> 06:49.750
+to do is find the most similar existing vectors to this new vector so hopefully after you do something
+
+06:49.750 --> 06:55.330
+like King minus man policewoman that new vector its closest existing word vector could be something
+
+06:55.330 --> 06:56.420
+like Queen.
+
+06:56.650 --> 07:03.550
+Essentially understanding the context of royalty along one dimension and then moving along another dimension
+
+07:03.550 --> 07:06.270
+for gender.
+
+07:06.430 --> 07:12.340
+So this is able to actually establish really interesting relationships between the word vectors including
+
+07:12.340 --> 07:14.460
+relationships between male versus female.
+
+07:14.470 --> 07:21.040
+Like we just explained earlier or even dimensions for verb tense so I can understand that walking is
+
+07:21.040 --> 07:28.760
+to walked as swimming is the swim so let's begin to explore Spacey word vectors with Python.
+
+07:28.790 --> 07:29.840
+I'll see you at the next lecture.

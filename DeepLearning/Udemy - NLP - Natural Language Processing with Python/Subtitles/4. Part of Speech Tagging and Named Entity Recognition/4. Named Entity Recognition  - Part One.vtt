@@ -1,0 +1,379 @@
+WEBVTT
+
+00:05.360 --> 00:08.280
+Welcome back to this lecture unnamed entity recognition.
+
+00:09.450 --> 00:16.590
+Named entity recognition or any are for short seeks to locate and classify named entity mentions in
+
+00:16.710 --> 00:23.520
+unstructured text into pre-defined categories such as the person names organizations locations medical
+
+00:23.520 --> 00:28.090
+codes time expression's quantities percentages monetary values etc..
+
+00:28.140 --> 00:34.200
+So lots of different different types of Reyk entities that can be recognized here and space is going
+
+00:34.200 --> 00:36.030
+to do this automatically for us.
+
+00:36.880 --> 00:43.030
+So for example our goal would be to read in a raw text such as Jim bought 300 shares of Acme core in
+
+00:43.030 --> 00:46.860
+2006 and then add additional any attacks.
+
+00:47.020 --> 00:54.040
+So understand that Jim is a person or Acme core is an organization or that 2006 2006s time and for more
+
+00:54.040 --> 00:57.350
+complex data and see recognition we can add even more tags like understanding.
+
+00:57.360 --> 00:59.980
+Three hundred is a amount of something or.
+
+01:00.220 --> 01:03.190
+Refers to stock shares.
+
+01:03.310 --> 01:06.090
+So we're going explore names and see recognition of space.
+
+01:06.220 --> 01:10.190
+It does name recognition really really well even on its own.
+
+01:10.330 --> 01:13.570
+But we're also going to learn how to add our own custom entities.
+
+01:13.690 --> 01:18.190
+If you're working for a custom text data set there may be some entities that are pretty unique to your
+
+01:18.190 --> 01:18.910
+data set.
+
+01:18.940 --> 01:21.630
+You may want to add in as your own entity.
+
+01:21.670 --> 01:24.750
+Let's go ahead and jump to Jupiter notebook and get started.
+
+01:24.850 --> 01:25.300
+OK.
+
+01:25.420 --> 01:32.040
+In a brand new documents or a notebook I've imported Spacey and imported space's load in core web apps.
+
+01:32.440 --> 01:37.160
+Next we're going to do just write a function to display basic entity information.
+
+01:37.480 --> 01:40.320
+We're going to write a function called show eant.
+
+01:40.340 --> 01:47.570
+Yes it's going to accept a document and we'll say if Doc Yes.
+
+01:47.610 --> 01:57.430
+Meaning if it actually has named entities will say for every entity in Doc and yes we're going to print
+
+01:57.520 --> 02:10.250
+out the entity text plus a space and a dash and then we'll say print out the entities label label underscore
+
+02:11.240 --> 02:15.060
+and then we'll also put in the explanation.
+
+02:15.110 --> 02:24.700
+So we're saying add in the string Spacey explain and we'll have to explain that label for us.
+
+02:24.750 --> 02:28.480
+OK so else if that doesn't actually occur.
+
+02:28.480 --> 02:31.860
+So say coming back to this original if statement.
+
+02:31.930 --> 02:34.790
+Let me zoom out just a little bit here so you can see the whole thing.
+
+02:34.810 --> 02:39.670
+So we're saying OK if there's actually entities will print out the text that's the label an explanation
+
+02:39.670 --> 02:41.340
+of the s else.
+
+02:41.410 --> 02:47.090
+If there are no entities we're just going to print out no entities found.
+
+02:47.110 --> 02:49.670
+OK so there is a show entity function.
+
+02:49.690 --> 02:55.570
+Now we're going to say is our document is equal to and let's specifically do something that has the
+
+02:55.570 --> 02:57.730
+entities something like.
+
+02:58.030 --> 03:01.040
+Make sure that you said that string will say something like.
+
+03:01.060 --> 03:05.790
+Hi how are you.
+
+03:05.950 --> 03:09.290
+Then we'll pass and show ense on that document.
+
+03:09.370 --> 03:11.020
+And we say no entity is found.
+
+03:11.290 --> 03:16.030
+So now let's add in a document that we know should have entities.
+
+03:16.290 --> 03:27.520
+So we will say in LP passing the unicode string I will say May I go to Washington DC.
+
+03:31.110 --> 03:34.920
+Next May to see the.
+
+03:35.060 --> 03:37.110
+I will say Washington Monument
+
+03:39.770 --> 03:45.300
+questionmark and Naledge show the entities on that document.
+
+03:45.470 --> 03:51.560
+And notice here it picked up three entities it picked up Washington DC as some sort of location like
+
+03:51.560 --> 03:58.790
+a country a city or a state it picked up next May so those not just made but next May as a date and
+
+03:58.790 --> 04:05.630
+also the Washington Monument as some sort of company agency or institution otherwise tagged with o r
+
+04:05.630 --> 04:06.590
+g.
+
+04:06.620 --> 04:12.050
+So there's various entity annotations and if you take a look at parts of speech tagging you come over
+
+04:12.050 --> 04:13.860
+to named entity recognition.
+
+04:13.880 --> 04:15.590
+We provide a table of these.
+
+04:15.620 --> 04:21.620
+Just scroll down and you'll see the various entity annotations and the tokens fans come with their own
+
+04:21.620 --> 04:25.240
+set of annotations so you can see the edited text.
+
+04:25.280 --> 04:28.070
+The entity types hash value the entity types.
+
+04:28.070 --> 04:29.930
+String description.
+
+04:29.970 --> 04:35.850
+You can also grab the start and stop index positions as well as the start and stop in addition for the
+
+04:35.850 --> 04:37.300
+actual character.
+
+04:37.350 --> 04:40.910
+So notice one is the token span's and one is the actual entity text.
+
+04:41.250 --> 04:47.220
+Ok so I want to come back to our original documents here and if you wanted to you could do something
+
+04:47.220 --> 04:49.860
+like put another documents.
+
+04:49.900 --> 04:51.660
+Let's just see how it can perform.
+
+04:51.760 --> 04:54.370
+A couple of other entities will say something like.
+
+04:54.370 --> 05:08.970
+Can I please have $500 of Microsoft stock will say show ense on that documents and here it says $500.
+
+05:08.990 --> 05:12.500
+No it's smart enough to understand that this number and dollars go together.
+
+05:12.520 --> 05:14.000
+It's some sort of monetary value.
+
+05:14.160 --> 05:18.080
+And then Microsoft is some sort of again company agency or institution.
+
+05:18.130 --> 05:22.020
+There are quite a wide variety of named entity recognition tags.
+
+05:22.120 --> 05:29.040
+And again in this notebook we provide a table of them for you so there's persons buildings airports
+
+05:29.040 --> 05:33.900
+highways companies countries objects vehicles foods things like products.
+
+05:34.080 --> 05:39.810
+There's events laws work of arts languages percentages money quantities et cetera.
+
+05:40.050 --> 05:46.100
+So we have descriptions and examples for you so you can check out that table super useful as a reference.
+
+05:46.110 --> 05:50.820
+Now let's imagine that we want to add a named entity to a span.
+
+05:50.820 --> 05:56.100
+Now normally we would have Spacey build a library of named entities by training it on several samples
+
+05:56.100 --> 05:56.690
+of text.
+
+05:56.730 --> 06:02.220
+But in this case we only want to add one value sort of come back appear to our own notebook and we're
+
+06:02.220 --> 06:03.630
+going to create a new document.
+
+06:05.940 --> 06:20.160
+And this document is just going to be just to build a UK factory for 6 million people million right.
+
+06:20.550 --> 06:24.400
+And let's go ahead and run show entities on that particular document.
+
+06:24.780 --> 06:31.420
+So right now it's understanding that UK is some sort of country city or state and that 6 million dollars
+
+06:31.470 --> 06:32.760
+refers to money.
+
+06:33.010 --> 06:38.750
+But what's interesting is right now Spacey as a named entity isn't recognizing Tesla.
+
+06:39.000 --> 06:44.060
+We saw Tesla before in a previous example and it was able to realize that Tesla was a proper noun but
+
+06:44.070 --> 06:47.870
+it actually doesn't know that here referring to Tesla as a company.
+
+06:48.000 --> 06:54.390
+So it would be nice if we could tell Spacey Hey Tesla should be an orc it company agency or institution
+
+06:54.840 --> 06:59.430
+that's going to be super useful for your own custom text data sets where you have to find things maybe
+
+06:59.430 --> 07:02.070
+like a specific product name.
+
+07:02.220 --> 07:14.740
+So we'll come back up here and we'll say from speccy tokens import spam and then we'll say org is equal
+
+07:14.740 --> 07:24.140
+to Doc dot vocab strings and then grab the unicode string for cup.
+
+07:24.260 --> 07:26.800
+RG The Sea Organization entity label.
+
+07:26.990 --> 07:29.080
+So right now or right here.
+
+07:29.150 --> 07:33.340
+This is actually the hash value of the orch entity label.
+
+07:33.440 --> 07:42.510
+Next I want to create a span for the new entity so I will say my new entity is equal to a span pass
+
+07:42.720 --> 07:43.890
+in that document.
+
+07:44.000 --> 07:46.480
+And I know where the new entity is.
+
+07:46.670 --> 07:50.030
+It's the very first word here first token.
+
+07:50.030 --> 07:59.620
+So we're going to say go from 0 up to and including one and then give that the label for.
+
+07:59.710 --> 08:02.160
+Which is again this hash value.
+
+08:02.230 --> 08:08.980
+Now your index solutions may change depending on where actual tokin happens to be.
+
+08:10.740 --> 08:14.620
+And I want to add the entity to the existing document object.
+
+08:14.760 --> 08:19.890
+I'll say DMCE E.A. us is equal to list.
+
+08:20.130 --> 08:24.780
+Doc E.A. and then I'm going to add on a new item.
+
+08:25.960 --> 08:27.890
+Which is my new entity.
+
+08:27.890 --> 08:31.590
+And technically you could also use a pen here.
+
+08:31.620 --> 08:37.650
+So keep in mind in this code above here these four documents doc is the name of the document object
+
+08:38.190 --> 08:41.510
+0 is the star index position of the span.
+
+08:41.610 --> 08:45.030
+One is a stop in the exposition of the span Xclusive.
+
+08:45.030 --> 08:51.000
+So essentially from 0 to 1 you're describing 0 and then label is the label assigned to our entity.
+
+08:51.000 --> 09:01.360
+So now if I show Aunty's on that documents it now recognizes that Tesla should be a company agency or
+
+09:01.390 --> 09:02.710
+institution.
+
+09:02.710 --> 09:03.070
+All right.
+
+09:03.100 --> 09:06.760
+So that's it for part 1 of this lecture in this part one.
+
+09:06.760 --> 09:12.270
+We went over how to actually show entities by calling in ts for a list of entities.
+
+09:12.370 --> 09:16.070
+And we also show you the various attributes and call off an entity tag.
+
+09:16.270 --> 09:22.300
+So remember the attributes and call are the text the label the hash value label and then label underscore
+
+09:22.390 --> 09:27.640
+which is the string description and the start and end of the token and the actual characters.
+
+09:27.910 --> 09:31.990
+And again here all the any are tags that you can access.
+
+09:31.990 --> 09:37.720
+And if you want an explanation of them all you need to do is print out Spacey that explain that particular
+
+09:37.780 --> 09:39.150
+entity label.
+
+09:39.190 --> 09:45.430
+Coming up next we're going to talk about is adding named entities not just to a span but if you scroll
+
+09:45.430 --> 09:47.320
+down here we're going to talk about in part two.
+
+09:47.380 --> 09:49.860
+Adding the entities to all matching spans.
+
+09:49.990 --> 09:54.520
+So if we wanted to attack all occurrences of something like Tesla so we can continue right where we
+
+09:54.520 --> 09:57.010
+left off on part two in the next lecture.
+
+09:57.010 --> 09:57.780
+I'll see it there.

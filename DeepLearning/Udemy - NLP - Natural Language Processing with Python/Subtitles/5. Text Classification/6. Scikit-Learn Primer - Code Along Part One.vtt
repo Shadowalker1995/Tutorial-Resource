@@ -1,0 +1,619 @@
+WEBVTT
+
+00:05.280 --> 00:06.080
+Welcome back.
+
+00:06.270 --> 00:10.780
+Let's go ahead and learn how to use sikat learn through this code long lecture and open up Jupiter notebook
+
+00:10.860 --> 00:11.710
+now.
+
+00:11.730 --> 00:12.020
+All right.
+
+00:12.030 --> 00:19.440
+So of to begin we're going to import some pie as NPE and we're also going to be importing a library
+
+00:19.440 --> 00:25.530
+called pandas and pand is going to allow us to actually read in CXXVI files which are comma separated
+
+00:25.530 --> 00:31.230
+values files and other file types like text files or tab separated files and so on.
+
+00:31.230 --> 00:35.910
+So we're going to be using panels a little bit and we'll be showing you a quick look about a few various
+
+00:35.910 --> 00:43.080
+Pandurs methods that are really useful in conjuncture sikat learn so Pancho's can actually read in files
+
+00:43.170 --> 00:47.390
+into what's known as a data frame object and it does this through the command.
+
+00:47.390 --> 00:52.260
+PD read underscore see s the.
+
+00:52.360 --> 00:55.320
+And then we pass in the file path to the file.
+
+00:55.570 --> 00:58.990
+So we're going to be opening the up underneath text files.
+
+00:58.990 --> 01:06.740
+There is an Esam as spam collection that TSB file and it's a TSB meaning it's tabs separated.
+
+01:06.740 --> 01:10.590
+So we're going to pass in one more parameter here which is going to be backslash T.
+
+01:10.610 --> 01:16.640
+And that indicates a tab just telling Panne those in Python that this particular file isn't separated
+
+01:16.640 --> 01:22.520
+by commas for each column but separated by tabs and then we're going to assign this to a variable called
+
+01:22.520 --> 01:26.120
+the F and then off of this variable.
+
+01:26.260 --> 01:28.820
+If you hit that and then hit tab once it's been defined.
+
+01:28.930 --> 01:34.300
+So if you run that cell that actually defined if you hit tab you'll notice there's quite a few attributes
+
+01:34.390 --> 01:35.250
+and methods.
+
+01:35.380 --> 01:39.040
+We actually don't need to worry about too many of these but the one we're going to see right now is
+
+01:39.040 --> 01:40.130
+called head.
+
+01:40.450 --> 01:43.990
+And this is going to show us the first five rows.
+
+01:44.110 --> 01:46.920
+So these are actual data set and we've seen this before.
+
+01:46.990 --> 01:53.650
+We have a label indicating if a text message is ham or spam and then we have the actual text of the
+
+01:53.650 --> 01:58.980
+message and then we have the length of the message and then we have the punctuation.
+
+01:58.990 --> 02:01.950
+So how many actual punkish pieces of punctuation.
+
+02:01.960 --> 02:03.730
+Does this message contain.
+
+02:03.730 --> 02:07.660
+We still don't know how to extract features from the text.
+
+02:07.690 --> 02:13.180
+So instead we're just going to be using these direct numerical features and then later on we'll realize
+
+02:13.300 --> 02:19.540
+and learn how to actually convert this text message that the most important feature here into numerical
+
+02:19.540 --> 02:22.760
+information using text feature extraction.
+
+02:22.960 --> 02:27.880
+But for this lecture we're going to be focusing on things that are already numbers in this dataset in
+
+02:27.880 --> 02:33.620
+order to use them to actually perform a text classification machine learning model.
+
+02:33.670 --> 02:38.170
+Now machinery models usually require complete data.
+
+02:38.170 --> 02:45.490
+So one easy way to check if your data is missing anything is by taking this data from object and then
+
+02:45.490 --> 02:47.130
+calling is null.
+
+02:47.200 --> 02:53.740
+And if you just run is no by itself it returns back in other data frame of booleans in the killing true
+
+02:53.740 --> 02:56.730
+or false is a null or missing value.
+
+02:56.740 --> 03:03.020
+So what you can do is offer this simply take the sum and it's going to treat these falses as zeros.
+
+03:03.190 --> 03:08.380
+And if there's anything missing they'll say it's true that it is null and ill treat that as a 1.
+
+03:08.410 --> 03:11.510
+So if you say is no and then hold that sum.
+
+03:11.820 --> 03:17.340
+Then if you ever see a one here then you know there's a missing value in this case everything is zero.
+
+03:17.500 --> 03:19.910
+So actually no we're not missing any data.
+
+03:20.870 --> 03:26.510
+Now we can also check information about this data frame like how many rows it has by simply checking
+
+03:26.510 --> 03:31.700
+the length of state of frame and it returns back that currently we have five thousand five hundred and
+
+03:31.700 --> 03:33.020
+seventy two rows.
+
+03:33.020 --> 03:35.850
+So we have five thousand five hundred seventy two text messages.
+
+03:35.990 --> 03:40.880
+Each of them labeled as well as understanding their length and they're basically how much punctuation
+
+03:40.880 --> 03:43.240
+this particular message has.
+
+03:43.290 --> 03:49.200
+Now we're going to do is take a quick look at the ham and spam label columns and the way you can access
+
+03:49.200 --> 03:56.160
+columns off a data frame is by calling data frame and then in square braces passing in the name of the
+
+03:56.160 --> 04:02.600
+column the name of the column is right here symbol to see the label message length or PNC.
+
+04:02.730 --> 04:03.860
+So those are a column names.
+
+04:03.870 --> 04:11.240
+Let's go ahead and check in the label by passing it in as a string so here I just grab the label column
+
+04:11.540 --> 04:18.880
+and if I say that unique as a method it's going to return back the actually unique values.
+
+04:18.910 --> 04:20.380
+So here you have two unique values.
+
+04:20.410 --> 04:21.690
+Ham and spam.
+
+04:22.180 --> 04:24.040
+And then I can call off the same column
+
+04:26.920 --> 04:34.060
+the value underscore counts and it will actually count how many of each unique values we have.
+
+04:34.280 --> 04:40.730
+So it looks like we are four thousand eight hundred twenty five him text messages and 747 spam text
+
+04:40.730 --> 04:44.180
+messages.
+
+04:44.180 --> 04:51.080
+Now what we're going to attempt to do is try to build a very simple machine learning model that attempts
+
+04:51.080 --> 04:57.050
+to predict whether a message is ham or spam based solely on these two numerical features the length
+
+04:57.110 --> 05:00.770
+of the message and the punctuation of the message.
+
+05:00.770 --> 05:02.700
+And we can actually visualize this.
+
+05:02.840 --> 05:08.390
+In fact if you check out the notebook that goes along this lecture if you scroll down we show some code
+
+05:08.480 --> 05:14.950
+that allows us to visualize ham versus spam and the actual punctuation or the length of the message.
+
+05:14.990 --> 05:16.690
+We can produce histograms for it.
+
+05:16.910 --> 05:22.130
+So don't worry too much about what this actual code does because this isn't really a visualization course
+
+05:22.220 --> 05:24.300
+if you are interested in what this code is doing.
+
+05:24.320 --> 05:26.090
+You can check among other courses on that.
+
+05:26.180 --> 05:29.670
+But really here we're just interested in this visualization.
+
+05:29.960 --> 05:33.690
+So I'm going to just copy and paste the code that's here.
+
+05:34.860 --> 05:36.980
+And then explain what it's actually doing.
+
+05:36.990 --> 05:43.800
+So this is producing two histograms one for the hand messages and then one for the spam messages.
+
+05:43.800 --> 05:48.660
+So right now what this is doing is it's looking at the length column and it's actually showing on a
+
+05:48.660 --> 05:50.220
+logarithmic scale.
+
+05:50.310 --> 05:57.810
+And notice here that the actual distribution of ham text message length versus spam text message length
+
+05:57.870 --> 05:59.100
+is quite different.
+
+05:59.100 --> 06:07.260
+Spam text messages look to be longer in length than ham text messages and intuitively that actually
+
+06:07.260 --> 06:08.270
+makes sense.
+
+06:08.310 --> 06:13.800
+A lot of ham text messages are legitimate text messages are going to be short they're just going to
+
+06:13.800 --> 06:20.580
+say things like ok or on my way or see you there while spam text messages typically are going to be
+
+06:20.580 --> 06:26.160
+quite longer because there's a lot more information to convey because there's more spam so we can check
+
+06:26.160 --> 06:31.740
+it out here by actually seeing something like this free entry and a two weekly competition et cetera.
+
+06:32.010 --> 06:35.530
+Most likely if it's a spam text message going to be quite a bit longer.
+
+06:35.550 --> 06:40.350
+So this one is 155 versus these other hand ones tend to be a little shorter.
+
+06:40.350 --> 06:45.750
+That's not to say that ham or legitimate text messages can't be long as well but the distribution of
+
+06:45.750 --> 06:47.330
+each of these is quite different.
+
+06:47.580 --> 06:53.130
+So that probably in the Cate's that's a good numerical feature to provide to our machine learning model.
+
+06:53.200 --> 06:58.180
+It's still simplistic and we're really just focusing on how to use the sikat learn syntax.
+
+06:58.180 --> 07:02.740
+So don't worry too much about this being the most robust machine learning model ever.
+
+07:02.890 --> 07:07.420
+Now also we're going to do is we're going to take a look at the punctuation column and see if it has
+
+07:07.510 --> 07:09.220
+maybe a similar behavior.
+
+07:09.220 --> 07:11.070
+So again just coming from our notebook.
+
+07:11.070 --> 07:13.890
+We're going to scroll down here and then copy the code.
+
+07:13.960 --> 07:21.100
+It's essentially the same thing but now looking at the punctuation column on a logarithmic scale and
+
+07:21.160 --> 07:24.660
+you see here these are two histograms for ham versus spam.
+
+07:24.660 --> 07:30.150
+Punctuation wise and here that doesn't tend to be any distinct behavior.
+
+07:30.180 --> 07:37.250
+It looks like spam tends to have a little bit more relative to other hand messages.
+
+07:37.350 --> 07:43.340
+It it's a little more punctuation but tear the behavior is not as clear or the stink as it is here.
+
+07:43.350 --> 07:49.670
+So in general we can say that it looks like spam tends to have a higher range of values.
+
+07:49.710 --> 07:55.380
+It looks like spam messages tend to be longer and there's less of a range of overall values.
+
+07:55.380 --> 08:00.380
+They all tend to be pretty long versus him has quite a large range of length.
+
+08:00.510 --> 08:05.370
+So we're going to be attempting to use again these two numerical features along the label.
+
+08:05.400 --> 08:10.920
+Again we're really just focusing on sikat learn later on we'll actually learn how to use this text message
+
+08:11.190 --> 08:12.670
+data.
+
+08:12.720 --> 08:18.100
+So what we're going to do here is learn how to actually conduct a machine learning model of sikat learn.
+
+08:18.270 --> 08:22.220
+So the first thing to do is to split the data into a training set and a test.
+
+08:22.440 --> 08:32.960
+And the way we do this is we simply say from S-K learn the model selection and he should be able to
+
+08:32.980 --> 08:38.830
+tab a complete that we're going to import train test split and we've seen this before.
+
+08:39.200 --> 08:45.530
+And then we're going to call train test split and we're going to pasan x and y.
+
+08:45.670 --> 08:49.470
+But first we need to define X and Y actually are.
+
+08:49.730 --> 08:57.510
+So what we're going to do is we're going to say that X is our featured data.
+
+08:57.730 --> 09:02.430
+And why is our label so for feature data.
+
+09:02.760 --> 09:08.210
+We're going to say x is equal to the F and I'm going to use two sets of brackets here.
+
+09:08.220 --> 09:17.250
+I'm passing in a list of column names and will be passing in the length column and the punctuation column
+
+09:17.320 --> 09:17.640
+again.
+
+09:17.640 --> 09:23.820
+Note the use of double brackets I'm passing in a list of columns which is why I have two sets of brackets
+
+09:24.430 --> 09:30.520
+and then we're going to pass in our label which in this case that column is just called label.
+
+09:30.570 --> 09:33.540
+So have X feature data and white label data.
+
+09:34.140 --> 09:36.850
+Then what we want to do is pass that into train test split.
+
+09:36.960 --> 09:41.960
+And what I encourage you to do is if you do shift tab in Jupiter you can see the docstring for train
+
+09:41.960 --> 09:48.300
+test split and if you scroll down inside of this eventually see this nice example you can scroll down
+
+09:48.450 --> 09:56.850
+and essentially copy and paste this tuple that says X train x test Y train and white test because using
+
+09:56.850 --> 10:00.030
+tuple and packing we can see what is actually returned here.
+
+10:00.150 --> 10:06.360
+Train to split as we mentioned previously in the other lectures is going to return your training set
+
+10:06.600 --> 10:12.450
+and your X test set your wily Wil's for the training set and your y labels for the test set and then
+
+10:12.450 --> 10:16.790
+it's up to you to decide what the test size should be.
+
+10:16.800 --> 10:21.060
+So we're going to say that 30 percent of our data is going to the test data set.
+
+10:21.970 --> 10:28.480
+And then the other thing you may want to do is say a random state because this train split happens randomly.
+
+10:28.690 --> 10:34.540
+So it's going to grab random rows that way in case your data sorted that won't affect the actual train
+
+10:34.540 --> 10:35.700
+test split.
+
+10:35.710 --> 10:41.290
+So if for if you want to be able to repeat this sort of randomness and the train test split you can
+
+10:41.290 --> 10:49.810
+provide a random states and then choose an arbitrary integer value to in the actual value itself is
+
+10:49.810 --> 10:50.900
+kind of meaningless.
+
+10:50.920 --> 10:56.020
+What matters is that you use the same value if you want to repeat this train to split.
+
+10:56.350 --> 11:01.360
+So we're going to pass 42 and if you pass and 42 that means you'll get the same train to split that
+
+11:01.520 --> 11:02.060
+do.
+
+11:02.230 --> 11:06.720
+If you pass in a different random state that's fine you just won't get the same split that I do.
+
+11:06.760 --> 11:10.090
+So I encourage you to fall exactly and type in 42.
+
+11:10.090 --> 11:12.110
+Again that's just the random state for the split.
+
+11:13.670 --> 11:18.930
+So we're going to run that and now we can check out the shape of this data by simply saying X train
+
+11:18.960 --> 11:19.340
+sheep
+
+11:22.140 --> 11:27.510
+notice here X train is three thousand nine hundred rows and two columns.
+
+11:27.540 --> 11:32.800
+So the two columns there are length and punctuation X test.
+
+11:32.860 --> 11:41.410
+Check out the shape of that is 1672 rows with two columns so extreme that's going to be our training
+
+11:41.410 --> 11:47.080
+data for the features the length of punctuation X test that's going to be the test features.
+
+11:47.080 --> 11:53.740
+And remember it's still like the punctuation but it's only 30 percent of the data and we can see why
+
+11:53.740 --> 11:54.820
+test.
+
+11:54.820 --> 11:58.280
+And if you check out the shape of that that's essentially the labels right now.
+
+11:58.310 --> 11:58.930
+So no.
+
+11:58.950 --> 12:06.820
+1 6 7 2 because it's the labels that correspond with X tests so ham ham spam and the index position
+
+12:07.240 --> 12:08.820
+is kept in memory.
+
+12:08.830 --> 12:12.470
+So that's just the index that corresponds with X test.
+
+12:12.640 --> 12:18.550
+So if we delete that thought shape and look at X test notice that we have these index positions and
+
+12:18.550 --> 12:22.510
+that's going to allow us to match up the Y test to the X test.
+
+12:22.870 --> 12:29.710
+And that how this is not in order because we randomly selected them using train test split.
+
+12:29.730 --> 12:34.590
+OK so we have our X test our test our X train and are y train.
+
+12:34.590 --> 12:38.940
+Now it's time to actually create and train a machine learning model.
+
+12:39.000 --> 12:44.310
+So I'm going to show you how to train multiple models and you hopefully realize that the exact process
+
+12:44.370 --> 12:47.940
+is really similar regardless of what model you choose.
+
+12:47.940 --> 12:51.150
+So the general syntax is the following.
+
+12:51.150 --> 12:57.300
+You say from escolar dots and then the family of models and if you hit tab here you'll notice that there's
+
+12:57.360 --> 12:58.250
+a lot of options.
+
+12:58.270 --> 12:59.940
+Now all of these are families.
+
+13:00.030 --> 13:03.120
+The first we're going to show you is a logistic regression model.
+
+13:03.420 --> 13:10.670
+So we say he learned that linear model import and we're going to say logistic regression.
+
+13:10.770 --> 13:13.190
+So that's step number one in putting the model.
+
+13:13.380 --> 13:15.800
+Then it's time to create an instance of the model.
+
+13:16.020 --> 13:20.550
+We will say well our model is equal to.
+
+13:20.550 --> 13:26.160
+And then you create an instance of a logistic regression and if he does shift tab here you'll notice
+
+13:26.160 --> 13:30.810
+that you have a ton of different parameters that you can choose.
+
+13:30.840 --> 13:33.430
+Often the default values are actually quite good.
+
+13:33.900 --> 13:39.000
+If you want to learn more about how to actually edit these parameters what things like seemin or what
+
+13:39.000 --> 13:40.460
+solver's to use.
+
+13:40.500 --> 13:45.030
+You can check out the reading an introduction to the learning this the book we previously mentioned
+
+13:45.360 --> 13:50.430
+which goes into a lot more detail of the mathematics behind a lot of these parameters but these are
+
+13:50.430 --> 13:55.580
+the sort of parameters you'd be editing after you test your model against the test data.
+
+13:55.590 --> 13:59.630
+So just for example we could edit this particular solver.
+
+13:59.700 --> 14:04.950
+So if you scroll down here there's a lot of explanations over what these actually do these different
+
+14:04.950 --> 14:05.830
+parameters.
+
+14:05.850 --> 14:09.870
+So if you wanted to edit the solver you were to scroll down here until you see solver's.
+
+14:10.020 --> 14:14.550
+And this shows you the different algorithms it uses as well as what options you have.
+
+14:14.640 --> 14:17.740
+So you have this Newton option.
+
+14:17.810 --> 14:19.350
+Elby Yes et cetera.
+
+14:19.380 --> 14:24.630
+And that actually even gives me advice so for small data sets lib Liniers is a good choice for multiclass
+
+14:24.630 --> 14:25.450
+problems.
+
+14:25.560 --> 14:27.910
+These can handle multinomial loss etc..
+
+14:28.170 --> 14:32.670
+So just to show you an example of how you would actually do this you could just for instance choose
+
+14:32.670 --> 14:39.770
+a different solver like Elby G-S and then say for this particular logistic regression I want solver
+
+14:39.770 --> 14:42.580
+to be LBG of us.
+
+14:42.590 --> 14:47.110
+Once you've completed that step it's time to actually fit the model to the training data.
+
+14:47.540 --> 14:55.000
+So you just take your model called that fit and then pass your X training data and the labels that corresponds
+
+14:55.000 --> 14:56.120
+to that data set.
+
+14:56.120 --> 14:58.590
+Notice that I'm not setting this equal to a variable.
+
+14:58.760 --> 15:00.880
+I'm simply just calling that fit.
+
+15:00.920 --> 15:03.470
+I don't need to actually set the sequel to any variable.
+
+15:03.480 --> 15:09.710
+I'm calling that fit on the training data and then it will report back the actual model that was used
+
+15:10.040 --> 15:11.890
+along all the parameters that was used.
+
+15:11.960 --> 15:14.750
+And now the model is ready to predict.
+
+15:14.780 --> 15:19.550
+So coming up in the next lecture we're going to show you how to actually test the accuracy of the model
+
+15:19.640 --> 15:21.410
+against the test data set.
+
+15:21.470 --> 15:22.160
+We'll see if.

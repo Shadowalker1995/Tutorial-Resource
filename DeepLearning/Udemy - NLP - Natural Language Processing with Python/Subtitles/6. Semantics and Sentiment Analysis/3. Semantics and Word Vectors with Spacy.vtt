@@ -1,0 +1,649 @@
+WEBVTT
+
+00:00.300 --> 00:01.290
+Welcome back.
+
+00:01.290 --> 00:07.260
+Let's get started by learning and exploring word vectors that come already prepackaged for us with Spacey
+
+00:07.350 --> 00:08.700
+and python.
+
+00:08.700 --> 00:13.920
+Please remember to watch the previous lecture in order to download the larger Spacey English language
+
+00:13.920 --> 00:16.380
+models that actually contain the word vectors.
+
+00:16.380 --> 00:18.690
+The smaller models do not contain the word vectors.
+
+00:19.110 --> 00:21.830
+OK let's jump to the Jupiter notebook.
+
+00:21.870 --> 00:22.100
+OK.
+
+00:22.110 --> 00:24.690
+Let's begin by importing Spacey.
+
+00:24.960 --> 00:30.840
+And then we're going to load the large English or medium English download that we discussed in the previous
+
+00:30.840 --> 00:32.010
+lecture.
+
+00:32.010 --> 00:39.300
+So go ahead and say Spacey don't load and then even underscore core underscore web underscore and depending
+
+00:39.300 --> 00:45.720
+on how you proceeded in the previous lecture for dialing the libraries I would do M.D. or LG or underscore
+
+00:46.530 --> 00:51.460
+LG I went ahead and downloaded the large library so I'll go ahead and do that.
+
+00:51.480 --> 00:57.510
+Keep in mind the medium core English library and the large English core library We're both trained using
+
+00:57.510 --> 01:00.240
+the same familiar word to that family of algorithms.
+
+01:00.360 --> 01:02.150
+So they should be pretty similar.
+
+01:02.280 --> 01:06.660
+Once this is loaded up and keep in mind if you're loading up the large one it may take a while but once
+
+01:06.660 --> 01:12.950
+that's loaded up all you need to do is say LP and then pass in a unicode string.
+
+01:12.990 --> 01:16.130
+So for example we can say lion.
+
+01:16.200 --> 01:22.130
+And then once you do that you should be able to access an attribute for vector off of that.
+
+01:22.140 --> 01:27.420
+And so now here we have the actual vector components for the string lion.
+
+01:27.420 --> 01:29.810
+You'll notice that there's a ton of dimensions here.
+
+01:29.850 --> 01:35.150
+So that means we have a lot of information contained in this vector version of the word.
+
+01:35.160 --> 01:41.310
+Now what's interesting is that Doc and span objects themselves also have vectors and these vectors are
+
+01:41.310 --> 01:46.620
+then derived from the averages of the individual token vectors and that essentially allows you to not
+
+01:46.620 --> 01:52.110
+just preferred or perform a word to vector but actually document to check where the document itself
+
+01:52.410 --> 01:54.800
+is an average of all the words.
+
+01:54.870 --> 02:01.470
+So just to show you this you could say something like the quick brown fox jumped and if you run that
+
+02:01.560 --> 02:04.170
+and then ask for the vector notice here what happens.
+
+02:04.200 --> 02:09.600
+We get back a vector and we can check up the shape of this vector since it's essentially an umpire.
+
+02:10.890 --> 02:16.560
+And there's three hundred different dimensions to this vector that the formatting was slightly different
+
+02:16.650 --> 02:17.710
+than a single word.
+
+02:17.940 --> 02:20.560
+So it can say an LP you hear.
+
+02:20.650 --> 02:25.810
+Now let's just say Fox lost for the vector and ask for the shape here.
+
+02:25.950 --> 02:27.240
+But the dimensions are the same.
+
+02:27.270 --> 02:29.070
+So we have three hundred by three hundred.
+
+02:29.850 --> 02:34.710
+So what that basically means is there's three dimensions to the vector for this essentially a document
+
+02:34.710 --> 02:40.560
+here and through dimensions for the single word this document is just the average of all the singular
+
+02:40.560 --> 02:42.660
+vectors for all the words there.
+
+02:42.660 --> 02:45.870
+So now let's try identifying similar vectors.
+
+02:45.870 --> 02:51.210
+The best way to expose vector relationships is through the dots similarity method of the actual document
+
+02:51.210 --> 02:51.990
+tokens.
+
+02:51.990 --> 03:00.070
+So I'm going to create some tokens by simply saying an LP and then we're gonna pass in some similar
+
+03:00.070 --> 03:05.490
+words but not the exact same words we'll say lion cat and pet.
+
+03:05.560 --> 03:09.610
+So just naturally we can tell there's probably some sort of relationship between things like cat and
+
+03:09.610 --> 03:10.260
+pet.
+
+03:10.300 --> 03:16.360
+Cats are often pets and we also know that lions and cats are similar just because a lion is kind of
+
+03:16.360 --> 03:17.070
+a form of a cat.
+
+03:17.080 --> 03:20.350
+They're essentially from the same family of animals.
+
+03:20.350 --> 03:29.230
+So then we're going to do is say for token one in tokens and we'll have a nested for loop then for talking
+
+03:29.290 --> 03:33.830
+to in tokens essentially comparing each word to every other word.
+
+03:34.060 --> 03:45.790
+We'll say print out the token one text then the token to text and then grab the first token and check
+
+03:45.790 --> 03:50.250
+its similarity with the second token to a token too.
+
+03:50.520 --> 03:55.190
+And then as here you just grab similarly directly off the token not off the text.
+
+03:55.210 --> 04:01.560
+So what's interesting here is on the outputs you'll notice that line line cat cat and pet pet have 100
+
+04:01.660 --> 04:03.310
+percent similarity between each other.
+
+04:03.310 --> 04:07.180
+So the similarity values are going to be between 0 and 1.
+
+04:07.270 --> 04:13.450
+So it makes sense that a word is totally similar to itself but what's really interesting here is that
+
+04:13.510 --> 04:19.790
+the word vectors contain enough information to realize that line and cat do have some similarity.
+
+04:19.840 --> 04:21.460
+They're at zero point five too.
+
+04:21.880 --> 04:24.400
+So that means they're above zero point five similarity.
+
+04:24.400 --> 04:29.500
+And what's really interesting is that cat and pet tend to have a very high similarity because most cats
+
+04:29.590 --> 04:35.600
+are gonna be pets and pets are essentially at least Tyrion I'd say it's either cats dogs or birds.
+
+04:35.620 --> 04:40.150
+So it makes sense that they have a very high similarity and it makes even more sense that line and pet
+
+04:40.450 --> 04:42.420
+have a similarity less than zero point five.
+
+04:42.430 --> 04:47.440
+It's probably not the best idea to have a line as a pet although some people do have that.
+
+04:47.500 --> 04:51.460
+So we can already see that we have established relationships just from the word of actors themselves
+
+04:51.820 --> 04:59.410
+essentially all this is doing is checking the cosine similarity between token one and token to something
+
+04:59.410 --> 05:05.020
+you should keep in mind is that words that have opposite meaning but that often appear in the same context
+
+05:05.140 --> 05:13.320
+may actually have similar vectors as well so let's put in three other words here we'll say like love
+
+05:13.800 --> 05:19.860
+and then hate so you can imagine that love and hate are very different words of very different meanings
+
+05:20.220 --> 05:24.340
+however they're used often in the same typical context.
+
+05:24.450 --> 05:28.080
+You either love a movie or you hate the movie Love a book or hate a book.
+
+05:28.410 --> 05:33.300
+So they're very similar words in that aspect in that they are often used in similar contexts.
+
+05:33.300 --> 05:37.380
+So words like that can often have very similar vectors.
+
+05:37.380 --> 05:43.170
+So we're going to run this tokens again and rerun this cell and so we can see again like and like love
+
+05:43.170 --> 05:50.400
+and love and hate and hate are very similar but you'll notice that like and love and like and hate almost
+
+05:50.400 --> 05:57.700
+have the exact same similarity relationship as well as love and hate here are also quite similar.
+
+05:57.750 --> 06:04.110
+So keep in mind that if the words are used in similar contexts they may also be similar even if in normal
+
+06:04.140 --> 06:07.190
+English they have the opposite meaning.
+
+06:07.390 --> 06:14.680
+Now it's sometimes helpful to aggregate three hundred dimensions into a Euclidean L2 norm.
+
+06:14.680 --> 06:20.470
+And so basically what that means is we're going compute this as the square root of the sum of squared
+
+06:20.620 --> 06:27.390
+vectors and this is actually accessible as an attribute of the token called vector underscore norm.
+
+06:27.640 --> 06:35.880
+And there's a couple other helpful attributes including has vector and is Ovi or is out of vocabulary.
+
+06:35.950 --> 06:43.450
+So if we want to take a look at our current vocabulary we can just say MLP dot vocab dot vectors.
+
+06:43.560 --> 06:46.590
+And so this is the list of all the vectors in the vocabulary.
+
+06:46.590 --> 06:52.860
+So we could just check the length of this and here we see six hundred eighty four thousand eight hundred
+
+06:52.860 --> 06:53.880
+thirty one.
+
+06:53.910 --> 06:58.980
+So that means there is essentially around six hundred eighty five thousand unique words in the vocabulary
+
+06:59.280 --> 07:00.690
+that we have vectors for.
+
+07:00.810 --> 07:03.190
+So if we were to check the shape of this.
+
+07:03.210 --> 07:08.820
+So learning to check the length just the shape of how this is held you'll let us it's this many words
+
+07:08.880 --> 07:13.320
+by three hundred dimensions for each particular word vector.
+
+07:13.320 --> 07:19.800
+So out of those around six or eight five thousand words we're gonna be able to understand if we have
+
+07:19.800 --> 07:22.020
+a new word that is outside of the vocabulary.
+
+07:22.080 --> 07:24.610
+So that could be someone's proper name.
+
+07:24.600 --> 07:28.390
+Maybe there's an unusual name so that one's not going to have a vector.
+
+07:28.440 --> 07:30.350
+We'll go ahead and check that out.
+
+07:30.390 --> 07:35.070
+We're going to say tokens is equal to an LP.
+
+07:35.180 --> 07:42.600
+Now let's provide a string with dog cat and then I'm going to kind of make something up so normal.
+
+07:42.660 --> 07:43.240
+There you go.
+
+07:43.320 --> 07:47.680
+And we'll say for token in tokens prints.
+
+07:47.880 --> 07:50.840
+We'll print out the token text.
+
+07:51.150 --> 07:58.380
+We'll print out has vector essentially answering true or false thus this sexual word have a vector associated
+
+07:58.380 --> 08:02.930
+with it and then we'll say token dot vector underscore.
+
+08:03.060 --> 08:12.640
+Norm and they will say token thought is underscore O O V which stands for out of vocabulary.
+
+08:12.640 --> 08:20.230
+So when we run this as we may expect the dog and cat tokens do have vectors true and true and they have
+
+08:20.230 --> 08:22.250
+these normalized representations.
+
+08:22.300 --> 08:26.580
+Essentially the sum of the squares of all three hundred dimensions.
+
+08:26.590 --> 08:32.290
+Now how interpretable that is is sometimes a little hard reducing three dimensions just one scalar value.
+
+08:32.320 --> 08:37.210
+So it may not be very interpretable but keep in mind it is kind of there for convenience.
+
+08:37.210 --> 08:42.850
+And then this last attribute is out of vocabulary is false for the first two because dog and cat are
+
+08:42.850 --> 08:47.230
+in the vocabulary of these six hundred eighty four thousand ish words.
+
+08:47.260 --> 08:49.870
+However this kind of made up word is false.
+
+08:49.870 --> 08:54.940
+It doesn't have a vector so that means it returns back a norm of zero point zero and is it out of the
+
+08:54.940 --> 08:55.810
+vocabulary.
+
+08:55.870 --> 08:56.860
+It's true.
+
+08:56.860 --> 09:01.040
+So keep in mind common names may actually be vector.
+
+09:01.060 --> 09:06.130
+So if we just put John in there that actually does have a vector associated with it and even uncommon
+
+09:06.130 --> 09:06.420
+names.
+
+09:06.430 --> 09:11.770
+So if I were to put in my middle name that actually is in the vocabulary which is kind of interesting.
+
+09:11.860 --> 09:16.480
+But if we kind of misspell this as something stranger that's gonna be false.
+
+09:16.520 --> 09:22.210
+Okay so let's say you can check and understand that Spacey doesn't actually have a problem with words
+
+09:22.240 --> 09:26.710
+in an MLP documents that it doesn't have a vector for they'll just go ahead and assign them a vector
+
+09:26.710 --> 09:31.450
+norm of zero point zero and then inform you that it is outside of its vocabulary and it doesn't have
+
+09:31.450 --> 09:32.610
+a vector.
+
+09:32.710 --> 09:35.820
+So the last thing you really want to explore here is vector arithmetic.
+
+09:35.860 --> 09:41.380
+So believe or not we can actually calculate a new vector by adding and subtracting related vectors from
+
+09:41.380 --> 09:48.040
+these words and a really famous example is king minus man plus woman is equal to Queen and we talked
+
+09:48.040 --> 09:49.380
+about this previously.
+
+09:49.480 --> 09:52.110
+So let's go ahead and try it out ourselves.
+
+09:52.120 --> 09:59.120
+So in order to do this we need to be able to calculate the cosine similarity ourselves.
+
+09:59.680 --> 10:08.320
+So we're going to say from side pi import spatial and then we're going to essentially write the formula
+
+10:08.590 --> 10:14.080
+for cosine similarity and we're going to write it as a lambda expression just for convenience.
+
+10:14.080 --> 10:22.480
+So say lambda and we'll say that one Vec two and we'll say 1 minus.
+
+10:22.750 --> 10:28.990
+And this is why we're importing side PI will say spatial thought distance thought cosine so essentially
+
+10:29.020 --> 10:32.960
+cosine function there and we'll say Vec 1 vector.
+
+10:33.520 --> 10:39.490
+So this essentially just returns back cosine so one minus that cosine similarity.
+
+10:39.490 --> 10:44.950
+So how this little land the expression for cosine similarity and then we're going to do is we'll create
+
+10:44.950 --> 10:47.220
+three variables one for King.
+
+10:47.410 --> 10:56.440
+So out of our vocab we'll go ahead and grab King and then ask for its vector and we'll do the same for
+
+10:56.800 --> 11:06.420
+man so MLP the vocab man ask for that vector and then we'll say the same for women.
+
+11:06.500 --> 11:13.820
+So MLP that vocab woman and then grab that vector.
+
+11:13.910 --> 11:21.380
+So the idea that we're going to do here is we're going to ask for the king vector minus the man vector
+
+11:22.070 --> 11:28.790
+plus the woman vector and we hope that somewhere along the most similar vectors to this like brand new
+
+11:28.790 --> 11:36.740
+vector we hope that this new vector is somehow similar to Queen or possibly princess or Highness or
+
+11:36.740 --> 11:37.840
+something like that.
+
+11:38.000 --> 11:44.000
+Essentially we're assuming that somewhere in those three hundred dimensions there is some sort of understanding
+
+11:44.120 --> 11:50.870
+of maybe formality or royalty with the words King and there's some sort of understanding of the words
+
+11:51.230 --> 11:58.340
+gender so we understand that kings are men and if we were to subtract the gender dimension from King
+
+11:58.520 --> 12:04.820
+and then add woman to it maybe we get something that has royalty as well as those aspects of something
+
+12:04.820 --> 12:07.220
+female like Queen Princess or Highness.
+
+12:07.220 --> 12:08.130
+So that's our hope.
+
+12:08.150 --> 12:15.600
+Again this isn't kind of a perfect science so we'll try it out who will say our new vector is equal
+
+12:15.600 --> 12:20.260
+to and here we're just gonna say King minus man plus woman.
+
+12:20.400 --> 12:26.190
+So I can just add and subtract these vectors so there's our new vector and then we're going to say computed
+
+12:27.610 --> 12:36.610
+similarities is equal to an empty list and we'll do a little for loop here we'll say for word in an
+
+12:36.610 --> 12:43.530
+LP dot vocab so notice I'm going through the entire vocabulary and I'm going to search for words that
+
+12:43.540 --> 12:45.660
+have very similar values.
+
+12:45.660 --> 12:51.790
+This new vector essentially checking for the cosine similarity for between this new vector and all the
+
+12:51.790 --> 12:53.590
+words in my current vocabulary.
+
+12:53.650 --> 13:01.720
+So essentially for all words in my vocab so all six hundred and or a hundred and eighty four six or
+
+13:01.750 --> 13:06.670
+eighty four thousand ish words what we're going to do is say four word in that vocab.
+
+13:06.670 --> 13:17.520
+I'll say if that word actually has a vector associated with it I'll say if that word is lowercase and
+
+13:17.640 --> 13:25.140
+then I'll do one more thing if that word is Alpha which essentially means it's not like a number or
+
+13:25.140 --> 13:26.490
+something.
+
+13:26.640 --> 13:33.640
+Then what I'm going to do is I'm going to calculate its similarity and I will say cosine essentially
+
+13:33.640 --> 13:40.420
+calling my lambda function on between my new vector that I just calculated using my custom formula of
+
+13:40.420 --> 13:50.680
+King minus me and policewoman and then that current words vector and then I will say computed similarities
+
+13:51.720 --> 13:58.760
+and I am going to append and what I'm going to a pen whips is a tuple so I'll put another set of parentheses
+
+13:58.760 --> 14:08.680
+there and I'm going to pass in the word itself as well as the similarity value OK so let's make sure
+
+14:08.680 --> 14:12.340
+I don't have a typo there whoops.
+
+14:12.350 --> 14:14.330
+It should be has vector.
+
+14:14.390 --> 14:14.960
+There we go.
+
+14:14.990 --> 14:15.820
+Run that.
+
+14:15.860 --> 14:21.470
+So keep in mind this may take a little bit of time since we are running it across around six or a four
+
+14:21.560 --> 14:28.610
+thousand words but once that's done running well we're going to do is we're going to sort this list
+
+14:28.610 --> 14:29.780
+of tuples.
+
+14:29.780 --> 14:40.340
+So I'm going to say my computed similarities so computed similarities is going to be equal to sort in
+
+14:42.130 --> 14:45.430
+computed similarities.
+
+14:45.430 --> 14:51.010
+And then what I'm going to do is specify there's actually a special form of sorting if you have a list
+
+14:51.010 --> 14:56.120
+of tuples or we can sort by the very first item it's the way we do this.
+
+14:56.380 --> 14:58.100
+We simply say lambda is
+
+15:01.030 --> 15:07.380
+lambda item and then we'll say minus item one.
+
+15:07.400 --> 15:11.270
+So what that means is essentially going to come in descending order.
+
+15:11.270 --> 15:12.740
+That's what this minus is for.
+
+15:12.740 --> 15:20.150
+So descending order of the item at index 1 which is this similarity essentially is kind of a fancy way
+
+15:20.210 --> 15:24.800
+of sorting by these tuples based on their similarity value in descending order.
+
+15:24.800 --> 15:28.250
+If you didn't have this minus here it would do him in ascending order and then you would get the least
+
+15:28.250 --> 15:29.660
+similar words.
+
+15:29.660 --> 15:34.520
+So we're gonna go ahead and sort that so run that sorting that one shouldn't take too long.
+
+15:34.670 --> 15:42.000
+And then let's go ahead and print out the top 10 most similar words so we're going to say print and
+
+15:41.990 --> 15:44.090
+we can do this with list comprehension or before loop.
+
+15:44.090 --> 15:45.800
+What are you more comfortable with.
+
+15:45.800 --> 15:52.940
+We'll say remember we have a tuple here of a word and similarity so gram the first item in the tuple
+
+15:52.940 --> 16:00.800
+which is the word and then ask for its text and we'll do that for tuple in computed similarities.
+
+16:00.800 --> 16:03.460
+And we're just going to go through the top 10.
+
+16:03.560 --> 16:05.520
+So colon 10.
+
+16:05.630 --> 16:08.140
+So let's run that and there we go.
+
+16:08.920 --> 16:16.030
+So we have king queen Prince Kings princess royal throne Queen's monarch and King them.
+
+16:16.030 --> 16:21.560
+So in this case what's interesting is that the word King is still the most similar.
+
+16:21.760 --> 16:25.110
+When you do this new vector of King minus man plus woman.
+
+16:25.210 --> 16:31.210
+So trying to remove the man gender and then adding the woman gender still doesn't remove enough information
+
+16:31.210 --> 16:37.120
+about King to make a new vector the most similar however knows what happens the second most similar
+
+16:37.540 --> 16:38.680
+is queen.
+
+16:38.680 --> 16:39.080
+OK.
+
+16:39.130 --> 16:41.950
+I hope you thought this was super cool basically.
+
+16:41.950 --> 16:48.100
+Now we understand that there's a wealth of information in these word vectors and you can add or subtract
+
+16:48.100 --> 16:53.500
+word vectors and you can even expand this to documents so you could later on add and subtract documents
+
+16:53.650 --> 16:58.130
+to find more similar documents after your experimentations.
+
+16:58.210 --> 17:03.280
+So if you want go ahead and play around with this go ahead and choose a couple of new vocab words create
+
+17:03.280 --> 17:06.790
+your new vector and then compute the most similar vectors.
+
+17:06.850 --> 17:07.090
+All right.
+
+17:07.090 --> 17:10.160
+Coming up next we're going to discuss sentiment analysis.
+
+17:10.170 --> 17:10.740
+I'll see you there.

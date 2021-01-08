@@ -1,0 +1,262 @@
+WEBVTT
+
+00:05.350 --> 00:09.290
+Welcome back everyone to this lecture unlimited ization.
+
+00:09.370 --> 00:15.640
+In contrast systemin limitation looks beyond word reduction and considers it languages full vocabulary
+
+00:15.970 --> 00:24.190
+to apply a morphological analysis towards the lemma of was B and the lemma of mice is mouse.
+
+00:24.190 --> 00:27.010
+So we're not just shortening words or cutting off the end of them.
+
+00:27.040 --> 00:30.050
+Instead we're looking at the full context of the word.
+
+00:30.070 --> 00:35.410
+Furthermore the lemma of meeting might be meet or meeting depending on its actual use.
+
+00:35.410 --> 00:42.070
+In a sense this limitation is typically seen as much more informative than simple stemming which is
+
+00:42.070 --> 00:49.160
+why the Speccy library has opted to only have limitation available instead of simple stemming and again
+
+00:49.160 --> 00:51.700
+limitation is going to look at the surrounding text.
+
+00:51.700 --> 00:54.230
+The Terman a given words part of speech.
+
+00:54.230 --> 00:59.050
+It doesn't categorize words into just general phrases in an upcoming lecture.
+
+00:59.060 --> 01:02.540
+We're going to investigate word vectors and similarity in a lot more detail.
+
+01:02.540 --> 01:06.230
+But for right now let's learn how to perform limitation with space.
+
+01:06.440 --> 01:08.260
+Let's jump over to Jupiter notebook.
+
+01:08.510 --> 01:14.330
+OK to begin we need to do our standard imports for Spacey which is importing Spacey and then also loading
+
+01:14.330 --> 01:17.470
+in the actual language library to use it.
+
+01:17.510 --> 01:24.710
+In our case it's going to be Spacey load and then an underscore core underscore web underscore S.M.
+
+01:25.520 --> 01:30.410
+So run that again that may take some time to put it in your computer and we're going to create a doc
+
+01:30.440 --> 01:37.740
+object going to pass in a unicode string here and say I am a runner.
+
+01:38.020 --> 01:46.710
+Running in a race and I'll say because I love to run since I ran today.
+
+01:46.820 --> 01:52.260
+OK so lots of different use cases for words that seem to all have at the core of the idea running.
+
+01:52.430 --> 01:58.380
+So runner running race run and ran but there are some distinct differences.
+
+01:58.430 --> 02:01.790
+Things like a runner is a noun versus running as a verb.
+
+02:02.120 --> 02:06.470
+A race itself is actually a noun and then run.
+
+02:06.470 --> 02:10.530
+In this case here that's a verb and ran as a past tense verb.
+
+02:11.460 --> 02:19.080
+Let's go ahead and create that document and then we're going to do is say for tokin in our documents
+
+02:19.950 --> 02:21.870
+we're going to print out the following.
+
+02:22.020 --> 02:31.290
+Will print out the token text and then we're going to have a tab so backslash t introduces a tab and
+
+02:31.290 --> 02:35.280
+then we're going to say print out the token part of speech.
+
+02:35.280 --> 02:43.050
+So POS underscore then we'll print out another time then we'll say print out the lemma of the tokens.
+
+02:43.060 --> 02:44.840
+That's actual limitation.
+
+02:44.940 --> 02:49.100
+And notice here when we say that Lema that's actually going to input or output a number.
+
+02:49.110 --> 02:52.920
+So we'll talk about that in just a little bit and then we'll put in another tab.
+
+02:53.130 --> 02:59.910
+Essentially just reformating and then we'll say token Lemme underscore So notice here one of these is
+
+02:59.910 --> 03:00.410
+just Lemma.
+
+03:00.420 --> 03:02.520
+The other one is lemma underscore.
+
+03:02.670 --> 03:07.300
+Go ahead and run this and you should see more or less a table that kind of looks like this.
+
+03:07.310 --> 03:11.570
+The formatting may be slightly off depending on these numbers if one of them is larger or if this word
+
+03:11.570 --> 03:16.550
+is a little longer than the shorter words the overall You should see the original word as the token.
+
+03:16.550 --> 03:17.900
+I am a runner.
+
+03:18.010 --> 03:22.490
+The speech pronoun verb noun adverb etc..
+
+03:22.730 --> 03:30.110
+And then here we actually have a number so that number is going to point to a specific lemma inside
+
+03:30.110 --> 03:35.360
+of this language library room of this language library supporters somewhere around like more than 50000
+
+03:35.360 --> 03:36.020
+words.
+
+03:36.080 --> 03:38.500
+So each of those has actually an individual hash.
+
+03:38.510 --> 03:43.730
+It's lemma that we can then reference and then dilemma underscore that's the actual lemma that we're
+
+03:43.730 --> 03:46.140
+going to be referring to here.
+
+03:46.160 --> 03:50.120
+Now something that's interesting to note here is that some of these words are actually getting reduced
+
+03:50.120 --> 03:53.270
+down to the same lemma even though they're being used in different senses.
+
+03:53.450 --> 04:02.120
+So running run and ran are all getting reduced down to the lemma run and you can actually check that
+
+04:02.120 --> 04:07.270
+it's the same lemma the run by taking a look at the actual hash value for this particular lemma.
+
+04:07.280 --> 04:10.950
+So each lemma has its own individual hash reference.
+
+04:11.030 --> 04:16.850
+And we're going to be seeing that sort of behavior a lot with Spacey and that not only can you access
+
+04:16.850 --> 04:22.170
+the lemmas or the parts of speech with these underscore arguments at the very end that this attribute.
+
+04:22.320 --> 04:29.180
+But there's also a hash code that then you can use essentially as a look up for this English language
+
+04:29.360 --> 04:34.710
+which is almost asking or it's acting like almost like a huge hash table with a bunch of lemmings.
+
+04:34.730 --> 04:36.480
+And parts of speech that you can look up.
+
+04:36.910 --> 04:37.880
+OK.
+
+04:38.120 --> 04:43.340
+Now you'll notice that this sort of printing out is a little sloppy because of the way that some of
+
+04:43.340 --> 04:47.350
+these tokens maybe longer than others so you get these sort of weird outputs.
+
+04:47.360 --> 04:51.780
+We went ahead and create a function for you that displays this sort of output nicely.
+
+04:51.800 --> 04:56.300
+So I'm going to copy and paste it from the notes and then quickly go over it.
+
+04:56.330 --> 04:58.760
+It's essentially that's using f string formatting.
+
+04:58.880 --> 05:00.410
+So it looks something like this.
+
+05:00.470 --> 05:02.230
+So you can go ahead and run that.
+
+05:02.450 --> 05:08.550
+But basically it's the show lemmas function from delimitation notebook inside the python BASIX folder.
+
+05:08.660 --> 05:10.550
+And what it does is you provided some text.
+
+05:10.610 --> 05:16.780
+Essentially it documents and for every token in that text it's going to print out the token text to
+
+05:17.060 --> 05:22.460
+speech the lemma or the hash code and then the actual limit itself.
+
+05:22.460 --> 05:26.840
+And we added in some alignment that we covered in the string literals lecture's one of the very first
+
+05:26.840 --> 05:28.040
+lectures in this course.
+
+05:28.040 --> 05:31.640
+So in case you're a little fuzzy on that you can review it but that's all it's doing is just printing
+
+05:31.640 --> 05:33.250
+things out nicely for us.
+
+05:33.320 --> 05:41.230
+So then what we can do is we can create a new document something like an LP and then say something like
+
+05:41.350 --> 05:53.410
+I saw 10 mice today and you can ask for show lemmas and then say doc to run that and it's going to print
+
+05:53.410 --> 05:57.340
+them out in a nicer table than printing manually with these tabs spaces.
+
+05:57.460 --> 06:03.280
+So I would encourage you to use this show lemmas and explore what gets reduced down to what particular
+
+06:03.340 --> 06:04.160
+lemmas.
+
+06:04.540 --> 06:05.100
+OK.
+
+06:05.290 --> 06:06.650
+So really that's it.
+
+06:06.910 --> 06:14.380
+And again limitation is a more informative way of reducing down words to really their true roots.
+
+06:14.380 --> 06:18.530
+And it's also going to take into account the way the words are actually being used in the sentence.
+
+06:18.550 --> 06:24.070
+So that's why Spacey is only going to implement limits ization instead of the kind of more crude stemming
+
+06:24.070 --> 06:27.290
+methods that we saw that essentially just chop off words.
+
+06:27.310 --> 06:27.750
+OK.
+
+06:27.760 --> 06:31.020
+Coming up next we're going to have a brief discussion on Stoppard's.
+
+06:31.060 --> 06:31.600
+We'll see other.

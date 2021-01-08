@@ -1,0 +1,127 @@
+WEBVTT
+
+00:00.390 --> 00:01.220
+Welcome back.
+
+00:01.230 --> 00:05.240
+Let's have a quick overview of your sentiment analysis Assessment Project.
+
+00:05.310 --> 00:07.380
+I'm gonna open up the notebook and do a quick review.
+
+00:07.630 --> 00:07.910
+Okay.
+
+00:07.920 --> 00:09.410
+Here I am at the notebook.
+
+00:09.480 --> 00:14.670
+We essentially just have two major tasks with an extra challenge associated with each task.
+
+00:14.670 --> 00:19.140
+So the first task has to do with those actual word vectors we discussed at the very beginning of this
+
+00:19.140 --> 00:23.880
+section of the course where we want you to perform vector arithmetic on your own words.
+
+00:23.910 --> 00:30.060
+So we want you to write code that evaluates vector arithmetic vector of Matic is just adding and subtracting
+
+00:30.090 --> 00:34.690
+those particular word vectors similar to what we did with King minus man plus woman.
+
+00:34.890 --> 00:39.310
+And the goal is to come as close to an expected word as possible.
+
+00:39.390 --> 00:45.660
+And if you have really good arithmetic you can feel free to share those success stories on the Q A forum.
+
+00:45.660 --> 00:49.380
+So essentially at the end what we want you to do is just follow along these comments.
+
+00:49.380 --> 00:54.440
+So import Spacey low the language library and also remember to use the larger model.
+
+00:54.440 --> 00:59.010
+So you have access to those word vectors and then choose the words you wish to compare and obtain their
+
+00:59.010 --> 00:59.820
+vectors.
+
+00:59.820 --> 01:06.690
+So for example you can choose the words that we had in our actual example like man king and woman or
+
+01:06.690 --> 01:07.430
+choose your own words.
+
+01:07.440 --> 01:12.360
+So I would really encourage you to choose your own words but if you're kind of stuck on this you can't
+
+01:12.360 --> 01:15.120
+just follow along the example we did during the course.
+
+01:15.150 --> 01:19.710
+So then you're going to import spatial and the finite cosine similarity function.
+
+01:19.710 --> 01:22.760
+There's actually cosine similarity function also available and psychic learn.
+
+01:22.860 --> 01:27.480
+So lots of different options here for actually calculating the cosine similarity then you'll write the
+
+01:27.480 --> 01:32.880
+expression calculating that new vector and then list the top 10 closest vectors in the vocabulary that
+
+01:32.880 --> 01:35.260
+results of this new vector.
+
+01:35.280 --> 01:40.770
+So very similar to what we did and then what would I want you to do is as a challenge kind of encapsulate
+
+01:40.800 --> 01:45.960
+all this into a function so write a function that takes in three strings and then performs an A minus
+
+01:45.960 --> 01:49.380
+B policy arithmetic and returns a top 10 result.
+
+01:49.440 --> 01:54.630
+So here's a empty function for you vector math you would pass in three strings like King man and woman
+
+01:54.930 --> 01:59.700
+and it would automatically return the top 10 for a minus B policy essentially repeating all the steps
+
+01:59.700 --> 02:06.090
+you have appear but just enough within a function then Task two is to perform voter sentiment analysis
+
+02:06.180 --> 02:07.540
+on your own review.
+
+02:07.590 --> 02:13.080
+So we want you to set up a sentiment intensity analyzer and then want you to write your own string review.
+
+02:13.110 --> 02:17.880
+Feel free to be as positive or a negative as you want and then obtain that aside these scores for your
+
+02:17.880 --> 02:23.400
+own review and then the challenge is to write a function that takes in a review and returns a score
+
+02:23.400 --> 02:25.440
+of positive negative or neutral.
+
+02:25.440 --> 02:28.880
+Very similar to what you're doing up here except it's actually just returning back.
+
+02:29.010 --> 02:30.360
+This string code.
+
+02:30.510 --> 02:32.340
+OK so pretty straightforward.
+
+02:32.340 --> 02:34.400
+It does match up a lot of what we did in the lectures.
+
+02:34.530 --> 02:39.330
+But if you're stuck on anything feel free to go to the next lecture or we're going to go over the solutions
+
+02:39.330 --> 02:40.770
+notebook we'll see if there.

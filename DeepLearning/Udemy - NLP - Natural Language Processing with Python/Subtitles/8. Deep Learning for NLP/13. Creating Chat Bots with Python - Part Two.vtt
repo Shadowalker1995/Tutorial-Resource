@@ -1,0 +1,445 @@
+WEBVTT
+
+00:05.370 --> 00:10.390
+Welcome back everyone to part two of our Q and A bot with Python 4 Part 2.
+
+00:10.400 --> 00:14.900
+We're going to begin to understand the steps on how to vector victories this particular data set including
+
+00:14.900 --> 00:20.060
+vector izing the questions and the stories as well as the answers and then we'll learn how to create
+
+00:20.060 --> 00:25.040
+a function that can victories data for us to really go through steps in a bit more of a manual process
+
+00:25.370 --> 00:28.130
+and then at the end we'll create a function that does it all for us.
+
+00:28.130 --> 00:32.580
+So let's go back to the notebook where we were before and continue where we left off last time.
+
+00:32.720 --> 00:33.020
+All right.
+
+00:33.020 --> 00:41.870
+To begin we'll say from Caris that pre processing that sequence import pad underscore sequences.
+
+00:41.870 --> 00:48.150
+And then we'll say from Kerry's stop pre processing that text import token either.
+
+00:48.200 --> 00:52.550
+We've actually seen both of these in our previous text generation project.
+
+00:52.550 --> 00:58.080
+The next thing we want to do is create an integer encoding for the sequences of words.
+
+00:58.460 --> 01:01.100
+So we'll create an instance of our token EIS or object.
+
+01:02.360 --> 01:05.270
+And in this case we don't actually want any filters.
+
+01:05.390 --> 01:11.090
+So remember if you look at the doctoring for this there's a list of filters here that could possibly
+
+01:11.090 --> 01:11.900
+be used.
+
+01:11.900 --> 01:13.270
+We actually don't want any of these.
+
+01:13.280 --> 01:17.510
+So we're going to see this as an empty list and you can also leave it as an empty string if you want
+
+01:17.510 --> 01:19.130
+that as well.
+
+01:19.130 --> 01:21.330
+It just needs to be an empty ignorable.
+
+01:21.770 --> 01:32.040
+And then we'll say took a nicer fit on and then we call Tex and we'll fit it on our vocabulary so after
+
+01:32.040 --> 01:37.320
+running that you can take a look at your token EIS or object and you should be able to see all the things
+
+01:37.320 --> 01:43.440
+we've talked about before but specifically a word index with essentially a dictionary that maps every
+
+01:43.440 --> 01:47.370
+word in our vocabulary set to a specific index number.
+
+01:47.370 --> 01:52.050
+So question mark is one apple is an index 37 and so on.
+
+01:52.050 --> 01:54.270
+So here we have every possible word.
+
+01:54.420 --> 01:57.180
+And notice it's been automatically lowercase for us.
+
+01:57.240 --> 02:01.230
+So Mary here is now been lowercase Sander is now lowercase and so on.
+
+02:01.230 --> 02:06.590
+So you have to keep that in mind as we're building out our own stories that we need to lowercase sometimes.
+
+02:06.630 --> 02:12.810
+Have took a nicer dot word index ready to go and then we're going to do is we're going to perform the
+
+02:12.810 --> 02:19.140
+same sort of tokenization but for the story questions and answers so I will show you how we could do
+
+02:19.140 --> 02:25.020
+this in a manual fashion but then will create a function that will vector write stories for us automatically
+
+02:27.670 --> 02:35.430
+so we'll create a list called Train story text set that to be an empty list I'll say train question
+
+02:35.430 --> 02:43.830
+text and set that to be an empty list and then we'll say train underscore answers and set that's being
+
+02:43.830 --> 02:45.060
+empty list.
+
+02:45.060 --> 02:49.230
+So remember there's three parts there's a story the question and the answers and then we'll say the
+
+02:49.230 --> 02:59.490
+following for the story the question and the answer in our training data I can simply take that train
+
+02:59.490 --> 03:04.910
+story text and then append the story to it.
+
+03:04.930 --> 03:09.640
+So essentially I'm just kind of separating out these components almost like an unzipping and then we
+
+03:09.640 --> 03:17.740
+can say train question text the append the question and I could do the same thing for the answers I
+
+03:17.740 --> 03:24.530
+could say train underscore answers and then append the answer.
+
+03:24.610 --> 03:27.880
+So if you run that and you take a look at any one of these.
+
+03:27.910 --> 03:32.400
+So for example a train story text this is now just the stories.
+
+03:32.440 --> 03:37.720
+So essentially we have just the stories just the questions and just the answers all separated out from
+
+03:37.720 --> 03:39.360
+each other.
+
+03:39.370 --> 03:46.240
+So what I could do is say something like this my train story sequence is going to be the token riser
+
+03:46.870 --> 03:54.490
+and then I call the function texts two sequences and then pass in the list such as train story text
+
+03:56.390 --> 04:02.860
+and now I check the length of train story text or sequence it's ten thousand because remember there's
+
+04:02.860 --> 04:10.660
+10000 stories the exact same as the story text but if we actually take a look at this object train story
+
+04:10.660 --> 04:16.660
+sequence notice it's now kind of the numerical version of what the original train story text was.
+
+04:16.660 --> 04:20.120
+So essentially converting this into the index calls.
+
+04:20.120 --> 04:23.890
+So Mary remember Mary is twenty three here.
+
+04:23.890 --> 04:29.320
+So we come back up here we look up Mary and there it is twenty three.
+
+04:29.340 --> 04:34.530
+So somebody is converting each word to its matching word index using the text the sequences.
+
+04:35.400 --> 04:41.130
+So what I'm going to do is create a function that can help us out with vector rising these particular
+
+04:41.130 --> 04:42.390
+stories.
+
+04:42.630 --> 04:54.170
+So we'll say the F vector rise underscore stories and it's going to take in all the data it's going
+
+04:54.170 --> 05:00.740
+to take in a word index and we'll go ahead and default this value to the word index that we just created.
+
+05:00.740 --> 05:06.800
+You can always overwrite it for other datasets or other sets questions and then we'll also need to know
+
+05:06.800 --> 05:09.580
+the max story length as well as the max question length.
+
+05:09.710 --> 05:13.960
+And the reason for that is because we're going to be using padding sequences because not every story
+
+05:13.960 --> 05:15.890
+not every question is the same length.
+
+05:15.890 --> 05:20.840
+But the actual recurrent neural network that we're training on it needs things to be in the same length.
+
+05:20.870 --> 05:27.800
+So we want to pad it out with zeros in case there's a story is too short or we want to cut down a story
+
+05:27.800 --> 05:29.160
+if it's too long.
+
+05:29.300 --> 05:36.790
+So we'll say Max story length is equal to the max story length.
+
+05:36.790 --> 05:44.320
+And then we'll say Max question length is equal to Max question length and I'm going to zoom out here
+
+05:44.320 --> 05:46.030
+just a little bit so you can see everything.
+
+05:46.160 --> 05:51.790
+But essentially I'm taking the data my word index that we defined earlier and then passing in the MAX
+
+05:51.790 --> 05:54.080
+story length as well as the max question length.
+
+05:54.100 --> 05:56.360
+So nothing too crazy here.
+
+05:56.520 --> 05:59.070
+And let's zoom back in.
+
+05:59.160 --> 06:04.140
+You can always copy and paste this and essentially this is taking in the data the data that's going
+
+06:04.140 --> 06:07.440
+to be both the stories the queries and the answers.
+
+06:07.440 --> 06:12.100
+And what I want to do is I want to victories the stories questions and answers into padded sequences.
+
+06:12.120 --> 06:17.310
+So first we need to do is loop for every story question answer that data then I can convert the raw
+
+06:17.310 --> 06:22.910
+words to a word index value and then I can append each set to their appropriate output list.
+
+06:22.920 --> 06:29.730
+So let's create those output lists and create one for stories which were what's called the stories we'll
+
+06:29.730 --> 06:32.730
+just call capital X. since that's our main training data.
+
+06:32.730 --> 06:41.690
+So here we have the stories that's our X then we have another essentially feature it's gonna be the
+
+06:41.690 --> 06:42.730
+actual question.
+
+06:42.800 --> 06:47.230
+So we'll call this X Q That's gonna be another empty list for now.
+
+06:47.240 --> 06:49.820
+So here we have our questions.
+
+06:49.820 --> 06:55.580
+X Q And then finally the target which is why that's going to be the correct answer.
+
+06:56.010 --> 07:01.640
+So that's the yes or no so say Y is an empty list.
+
+07:01.640 --> 07:07.960
+So have those empty lists and then for all my data I'm going to do the following we'll say for every
+
+07:07.960 --> 07:16.020
+story question or else just save a little bit of spaces a query and answer in data.
+
+07:16.100 --> 07:19.990
+I'm going to first grab the word index for every word in the story.
+
+07:20.000 --> 07:27.070
+So I'm going to say word lower for word.
+
+07:27.610 --> 07:32.930
+Let's make sure I spell that right foreword and story and I'm going to create a list comprehension where
+
+07:35.830 --> 07:42.190
+so I'm just saying word that lower forward in story and then actually want the index.
+
+07:42.190 --> 07:53.570
+So we'll say word underscore index for word dot lower and then I'm going to set this to a lower case
+
+07:53.630 --> 07:56.640
+x because I'm doing this for each story.
+
+07:56.660 --> 08:04.580
+So for each story I'm creating a list that essentially will look something like this will be a number
+
+08:04.580 --> 08:09.080
+like if Mary was the first one I'll be twenty three and then fourteen and so on really similar to what
+
+08:09.080 --> 08:10.340
+we just did before.
+
+08:10.340 --> 08:16.280
+However it's gonna be for each particular story in the dataset so let's lowercase x and then I'm going
+
+08:16.280 --> 08:23.730
+to do the exact same thing but for the questions so such I'm going to copy and paste this and lowercase
+
+08:23.850 --> 08:31.910
+x Q word index or that lower foreword except this time it's going to be in the query or the question
+
+08:33.080 --> 08:38.090
+now for the answers I can grab the answers and where the answers are a lot easier because it's either
+
+08:38.090 --> 08:39.320
+a yes or no.
+
+08:39.350 --> 08:42.320
+So I don't need to use this complicated list comprehension.
+
+08:42.320 --> 08:47.870
+Instead I'm going to start off by setting up an empty matrix of empty zeros.
+
+08:48.110 --> 08:55.850
+That is the length of the word index and then plus one because index zeroes reserve or using pad sequences.
+
+08:55.850 --> 08:57.590
+And now that Y is all zeros.
+
+08:57.620 --> 09:00.350
+Since we know it's simply just a yes or no.
+
+09:00.350 --> 09:08.330
+I can use none pi logic to create this assignment so I can simply say the following y a word index for
+
+09:08.330 --> 09:20.110
+that answer is equal to 1 and then all I need to do here is say X thought append the lowercase x x Q
+
+09:20.470 --> 09:27.400
+append the lowercase x Q And then y append the lower case Y.
+
+09:27.640 --> 09:33.850
+So all I'm doing here is I have these main lists that are capitalized and then for every story query
+
+09:33.850 --> 09:41.140
+and answer in the dataset that I pass in I'm going to do the word indexing myself here minus the ones
+
+09:41.140 --> 09:48.780
+for the Y and then I will append those Okay so once you're done with that for loop what you need to
+
+09:48.780 --> 09:51.090
+do is actually pad those sequences.
+
+09:51.240 --> 09:58.020
+So I'm going to return a final tuple that can be unpacked so we'll say return and set up my princess
+
+09:58.020 --> 10:01.160
+for the tuple we will call pad sequences.
+
+10:01.350 --> 10:02.490
+So pad sequences.
+
+10:02.490 --> 10:12.450
+Remember we import of that we'll pass an X and then say the max length is the max story length so that's
+
+10:12.450 --> 10:20.970
+the pattern sequences for X and we'll do the same for X Q the questions so pad sequences for X Q or
+
+10:20.970 --> 10:29.430
+the max length for this pattern sequence is Max question length and then with this one more time except
+
+10:29.430 --> 10:32.270
+for the essentials we just need to make this into an array.
+
+10:32.400 --> 10:37.350
+So say NPA array of Y OK so we definitely have a lot of code here.
+
+10:37.470 --> 10:43.680
+If you ever get any mistakes or typos or warnings or errors makes you use copy and paste from our provided
+
+10:43.680 --> 10:48.390
+notebook but all we're doing here is or vector I's and stories in a really similar fashion to what we've
+
+10:48.390 --> 10:50.810
+actually seen before in the text generation a book.
+
+10:50.910 --> 10:53.650
+So go ahead and run that and let's check it out.
+
+10:53.850 --> 10:57.930
+We'll say inputs train queries.
+
+10:57.930 --> 11:08.460
+Train and answers train is equal to victory stories on our training data then we'll repeat the exact
+
+11:08.460 --> 11:09.780
+same process for the test data.
+
+11:09.840 --> 11:14.820
+So we're going to copy and paste that in except for inputs train we'll just call these all tests so
+
+11:14.820 --> 11:22.260
+inputs test if you want it called stories has to we'll say queries test and then answers test on our
+
+11:22.440 --> 11:24.560
+test data.
+
+11:24.620 --> 11:31.910
+There we go run that and then if we take a look at inputs test versus input train just go ahead and
+
+11:31.910 --> 11:37.940
+take a look at all these notes now they're just arrays where we have their word in exposition along
+
+11:37.940 --> 11:39.610
+with their word index.
+
+11:39.890 --> 11:46.240
+So we must take a look at answers test if we wanted to notice only one of these words are all zeros
+
+11:46.240 --> 11:51.910
+except this one at this and this position either the S's or the nose so you can just say something like
+
+11:52.960 --> 12:06.360
+took a nicer word index for yes and that's the index twelve I'll say took a nicer word index at no and
+
+12:06.450 --> 12:09.570
+that's at index location thirty six.
+
+12:09.810 --> 12:17.190
+So let's go ahead and take the sum of our answers test and you notice we have all zeros except at these
+
+12:17.190 --> 12:20.350
+two index locations 4 9 7 and 5 0 3.
+
+12:20.460 --> 12:26.160
+And if you were to actually go along companies you'd go 0 1 2 3 4 5 6 all the way until you got to index
+
+12:26.210 --> 12:33.300
+12 and 4 9 7 which means there were four hundred ninety seven ones in next location twelve otherwise
+
+12:33.420 --> 12:40.410
+known as having four hundred ninety seven yeses as the answers and index location 36 5 0 3.
+
+12:40.410 --> 12:41.960
+So the word index for now.
+
+12:42.360 --> 12:47.820
+Okay so now we have successfully vector i's not only our stories but as well as our questions in our
+
+12:47.820 --> 12:48.580
+answers.
+
+12:48.810 --> 12:52.600
+And now we have the data in the correct format for creating the model.
+
+12:52.620 --> 12:56.440
+So coming up next we'll begin actually creating the model with Caris layers.
+
+12:56.610 --> 12:57.210
+We'll see it there.

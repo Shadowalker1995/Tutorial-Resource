@@ -1,0 +1,211 @@
+WEBVTT
+
+00:06.090 --> 00:10.430
+Welcome everyone to this lecture on an introduction to the perception.
+
+00:11.010 --> 00:15.690
+Before we launch straight into neural networks we to understand the individual components first such
+
+00:15.690 --> 00:22.840
+as a single neuron artificial neural networks or a and ends actually have a basis in biology.
+
+00:22.840 --> 00:25.900
+So we're going to see how we can attempt to mimic biological neurons.
+
+00:25.900 --> 00:30.820
+If an artificial neuron otherwise known as a perception and then once we go through the process of how
+
+00:30.820 --> 00:36.590
+a simple perceptual works we'll go ahead and show you how you can represent that mathematically but
+
+00:36.620 --> 00:40.780
+let's start off of a biological neuron such as a brain cell.
+
+00:41.030 --> 00:46.250
+So a biological neuron works as in a simplified way through the following manner.
+
+00:46.250 --> 00:49.740
+Basically you have dendrites that feed into the body of this cell.
+
+00:49.740 --> 00:54.380
+You can have many dendrites and what happens is an electrical signal gets passed through his dendrites
+
+00:54.380 --> 01:00.290
+to the body of the cell and then later on a single output or a single electrical signal is passed on
+
+01:00.290 --> 01:04.100
+through an axon to later on Connect to some other neuron.
+
+01:04.260 --> 01:09.350
+And that's the basic idea we have kind of these many input of electoral signals through the dendrites
+
+01:09.410 --> 01:15.600
+goes into the body and then a single electrical signal output through the axon so the artificial neuron
+
+01:15.750 --> 01:17.290
+also has inputs and outputs.
+
+01:17.310 --> 01:23.410
+So we're going attempt to mimic the biological neuron so this simple model again is just known as a
+
+01:23.410 --> 01:24.220
+perception.
+
+01:24.250 --> 01:29.040
+In this case we have two inputs so let's go ahead and see a simple example of how it can work.
+
+01:29.800 --> 01:33.340
+So we have two inputs and a single output and we start indexing at zero.
+
+01:33.340 --> 01:39.850
+So we have input of zero input 1 so the inputs can have values of features.
+
+01:39.850 --> 01:43.900
+So when you have your data set you're going to have various features and these features can be anything
+
+01:43.900 --> 01:50.290
+from how many rooms a house has or how dark an image is represented by some sort of pixel amount or
+
+01:50.290 --> 01:55.240
+some sort of darkness number etc. So essentially don't worry right now about what these numbers actually
+
+01:55.240 --> 01:56.050
+represent.
+
+01:56.050 --> 01:57.900
+Later on we're dealing with real data sets.
+
+01:57.910 --> 02:00.030
+We'll have something more tangible for right now.
+
+02:00.040 --> 02:04.320
+These are just arbitrary number choices but again we have input zero and input 1.
+
+02:04.330 --> 02:09.180
+So again indexing starts at zero here and we're going to assign them values of let's say twelve and
+
+02:09.190 --> 02:15.460
+four then the next step is to have these inputs multiplied by some sort of weight.
+
+02:15.520 --> 02:23.290
+So we have weight 0 4 input 0 and weight 1 for input 1 and typically the weights are actually initialized
+
+02:23.350 --> 02:25.240
+through some sort of random generation.
+
+02:25.240 --> 02:30.230
+So you just choose a random number for these weights in this case we'll just go ahead and pretend that
+
+02:30.230 --> 02:34.510
+the random numbers chosen was zero point five and negative 1.
+
+02:34.520 --> 02:40.200
+Again the numbers here are pretty much arbitrary really focus on the general process.
+
+02:40.250 --> 02:45.060
+So now these inputs are gonna be multiplied by the weights so that ends up looking like this.
+
+02:45.060 --> 02:48.540
+We have 12 times zero point five or one half and that equals six.
+
+02:48.540 --> 02:54.500
+And then we say four times negative one is equal to negative four the next step is to take these results
+
+02:54.560 --> 03:01.130
+of the inputs multiplied by their respective weights and pass them into an activation function there's
+
+03:01.130 --> 03:03.190
+many activation functions to choose from.
+
+03:03.200 --> 03:06.200
+Now we're gonna cover this in a lot more detail later on.
+
+03:06.440 --> 03:13.290
+For now our activation function is actually going to be very simple we're merely going to say the following.
+
+03:13.290 --> 03:20.130
+If the sum of the inputs is positive return 1 or output 1 if the sum of the inputs is negative then
+
+03:20.220 --> 03:23.230
+output 0 so in our case.
+
+03:23.250 --> 03:27.630
+If we say 6 plus negative 4 that's the same thing as saying 6 minus 4.
+
+03:27.630 --> 03:29.480
+So then we get 2 as the result.
+
+03:29.490 --> 03:37.780
+So since the sum of the inputs was positive the activation function returns 1 or outputs 1 so there's
+
+03:37.810 --> 03:41.110
+a possible issue here and the issue is the following.
+
+03:41.230 --> 03:47.150
+What if the original inputs started off as 0 then any way you chose.
+
+03:47.170 --> 03:51.880
+Even if it was randomly chosen multiplied by the input would still result in zero.
+
+03:51.880 --> 03:57.490
+So if input zero happened to be zero and if one happened to be zero as well instead of twelve and four
+
+03:57.730 --> 03:58.880
+then you could have a problem.
+
+03:58.900 --> 04:05.420
+You essentially always get out zero because zero multiplied by any way is still gonna be zero so we
+
+04:05.420 --> 04:07.970
+can actually fix this by adding in a bias term.
+
+04:08.000 --> 04:09.660
+And in this case we choose one.
+
+04:09.890 --> 04:15.070
+So we're gonna go ahead and add in our own bias term here plus 1.
+
+04:15.090 --> 04:16.410
+So what does this actually look like.
+
+04:16.410 --> 04:18.070
+Mathematically.
+
+04:18.260 --> 04:22.330
+Now let's quickly think about how we can represent this perception model mathematically.
+
+04:22.420 --> 04:24.020
+And it's actually quite simple.
+
+04:24.050 --> 04:28.070
+Basically we just say the following from i equals zero to N.
+
+04:28.100 --> 04:34.220
+That is the number of inputs we're gonna say W of I or that specific weight for the input multiplied
+
+04:34.220 --> 04:37.790
+by X or Y which is the input itself plus the bias term.
+
+04:37.850 --> 04:43.920
+And that's essentially it so once we have many perceptions in a network we'll see how we can easily
+
+04:43.920 --> 04:50.850
+extend this to a matrix form so as a quick review in this pretty simple lecture we just cover briefly
+
+04:50.850 --> 04:57.030
+the following we discussed in the very basic terms how a biological neuron works then how that can reflect
+
+04:57.060 --> 05:02.280
+to a perception model which is the artificial neuron and then the mathematical representation of that
+
+05:02.280 --> 05:03.700
+perception model.
+
+05:03.900 --> 05:08.820
+Coming up next we're going to continue discussing how we can build off this perception model to build
+
+05:08.850 --> 05:10.080
+a neural network.
+
+05:10.120 --> 05:11.730
+Thanks and I'll see you at the next lecture.

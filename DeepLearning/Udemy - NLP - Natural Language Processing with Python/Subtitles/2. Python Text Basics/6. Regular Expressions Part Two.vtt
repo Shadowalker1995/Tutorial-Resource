@@ -1,0 +1,400 @@
+WEBVTT
+
+00:05.040 --> 00:10.510
+We'll come back in this lecture and continue where we left off and go over a couple of more regular
+
+00:10.510 --> 00:11.950
+expression techniques.
+
+00:11.950 --> 00:14.330
+Let's head over back to the notebook.
+
+00:14.360 --> 00:20.470
+Here we are in the same notebook we left off last time previously we actually showed you how to reduce
+
+00:20.620 --> 00:26.080
+this pattern using regular expressions into this pattern with quantifiers.
+
+00:26.080 --> 00:30.520
+One other thing I want to mention are the ability to actually grab separate groups.
+
+00:30.520 --> 00:36.880
+Currently this entire phrase for the pattern is one solid group that you can compile separate groups
+
+00:36.940 --> 00:39.050
+using parentheses.
+
+00:39.150 --> 00:43.660
+So I can use parentheses to separate these groups
+
+00:46.360 --> 00:48.220
+in between the dashes.
+
+00:48.220 --> 00:54.520
+So I'm adding Prince C's and now when I search for this pattern inside of the original text which was
+
+00:54.520 --> 01:02.750
+my telephone number and if I actually say my Match.com group that grouped together everything but I
+
+01:02.750 --> 01:08.630
+can actually call individual groups starting at index position 1 and that's going to grab the first
+
+01:08.630 --> 01:10.760
+set that was inside the princes.
+
+01:10.760 --> 01:19.100
+So if I say Group 1 it just grabs 8 8 8 you can see here if I were to include the dash inside the princes
+
+01:19.580 --> 01:24.290
+and we run this group one would have been a dash.
+
+01:24.290 --> 01:31.100
+So this way you can actually use the same character identifiers and quantifiers as before except now
+
+01:31.310 --> 01:36.020
+you can easily group things because maybe you only wanted the area code so that you could just say Group
+
+01:36.020 --> 01:36.480
+One.
+
+01:36.680 --> 01:42.560
+Or if you wanted the last digits Well that would be in group 3 and those would be the last four digits.
+
+01:42.560 --> 01:46.670
+So that's the ability to use groups and if you want to group everything you just don't provide a number
+
+01:47.120 --> 01:47.580
+of groups.
+
+01:47.600 --> 01:53.060
+All the groups together some additional regular expression syntax that won't show you is the pipe operator
+
+01:53.330 --> 01:56.360
+you can use the pipe operator to have an OR statement.
+
+01:56.540 --> 02:07.030
+For example I can say Ariz search and the pattern I can search for is man pipe operator woman and I
+
+02:07.030 --> 02:14.550
+can say text is this man was here and we end up getting a match on man.
+
+02:14.950 --> 02:21.630
+Or I could say this woman was here and we end up getting a match on a woman so you can see here it'll
+
+02:21.640 --> 02:25.470
+work for either man or woman with the pipe operator.
+
+02:25.690 --> 02:31.630
+You can also use a wildcard character you can use a wildcard as a placement that will match any character
+
+02:31.630 --> 02:32.620
+placed there.
+
+02:32.650 --> 02:45.080
+For example I can say r e thought find all and I'll put a dot there for my wildcard and then say 80
+
+02:46.940 --> 02:53.190
+and then I'll create some Dr. Seuss sentence The Cat In The Hat set.
+
+02:53.780 --> 02:59.090
+And if you run this you can see it found cat and set basically a wild card.
+
+02:59.150 --> 03:00.390
+And then 80.
+
+03:00.480 --> 03:07.020
+So C.A.T. h a t an s t keep in mind the weight is currently working.
+
+03:07.020 --> 03:09.250
+You're only matching on one letter.
+
+03:09.300 --> 03:16.260
+So if you were to actually say splatt at the end of this and run this you would only get out 80.
+
+03:16.290 --> 03:22.710
+You could then continue on messing around with quantifiers or identifiers or even more wild cards.
+
+03:23.070 --> 03:28.570
+So you can place multiple wildcards here and illand the grabbing the space and then the letter.
+
+03:28.710 --> 03:32.610
+Or in this case a grab two letters before a and so on.
+
+03:32.610 --> 03:40.050
+So again a dot a wildcard character a combine it using the sort of grouping quantifiers or character
+
+03:40.080 --> 03:47.260
+identifiers next maybe you're just interested in things that start or end with a particular type of
+
+03:47.620 --> 03:48.320
+character.
+
+03:48.580 --> 03:56.290
+Well you can use the carrot which is above your six on your keyboard in order to say starts with a dollar
+
+03:56.290 --> 03:58.890
+sign signal's ends with.
+
+03:58.900 --> 04:02.220
+So for example I can say are either fine.
+
+04:02.230 --> 04:11.260
+All I will say backslash D for each digit and then a dollar sign and a dollar sign against signals ends
+
+04:11.260 --> 04:13.570
+with.
+
+04:13.660 --> 04:17.010
+So I can say this ends with a.
+
+04:17.060 --> 04:23.440
+Number two and return back and it's going to fine where it ends of the number.
+
+04:23.540 --> 04:25.380
+And there we see two.
+
+04:25.610 --> 04:30.960
+I could then also say carrot here instead of a dollar sign.
+
+04:31.110 --> 04:33.160
+And that and the Cate's starts with.
+
+04:33.210 --> 04:37.900
+So I could say one is the loneliest number.
+
+04:40.980 --> 04:44.460
+Run that then I get back one since it's starting with a digit.
+
+04:44.460 --> 04:49.020
+Now I should note that this is for the entire string not just for individual words.
+
+04:50.060 --> 04:55.580
+To exclude characters you can use the carrot symbol in conjunction with a set of brackets.
+
+04:55.580 --> 04:56.610
+Let me show what I mean by that.
+
+04:56.720 --> 05:08.930
+Let's create a much longer phrase and say there are three numbers 34 inside five this sentence.
+
+05:08.920 --> 05:13.250
+Now let's imagine I wanted to get rid of all the numbers inside this sentence.
+
+05:13.790 --> 05:16.370
+What I can do is I can say r e.
+
+05:16.770 --> 05:18.920
+Find all.
+
+05:19.070 --> 05:23.060
+And then I can pasan a pattern.
+
+05:23.360 --> 05:33.650
+So I'll say are I then quotes and then I'm going to say closed square brackets carot for backslash D.
+
+05:33.740 --> 05:35.880
+So my backslash d the carrot.
+
+05:35.900 --> 05:41.870
+And when the carrot is actually inside these square brackets that's going to indicate exclusion.
+
+05:41.900 --> 05:45.230
+So I'm basically saying exclude any digits.
+
+05:45.470 --> 05:51.140
+So it's pass in our phrase and you'll see there are.
+
+05:51.410 --> 05:56.370
+And then we just get spaces and then numbers inside this sentence.
+
+05:56.390 --> 06:00.950
+So it's actually no longer actually grabbing any of these numbers we're excluding it with the use of
+
+06:00.950 --> 06:02.900
+the square braces or brackets.
+
+06:03.050 --> 06:08.330
+And then this carrot symbol then if you actually want to get the boards all back together you can add
+
+06:08.360 --> 06:12.030
+a plus sign here and that's going to return back.
+
+06:12.080 --> 06:18.670
+Basically anything that isn't a digit so we can actually use this to remove punctuation from a sentence
+
+06:18.730 --> 06:23.910
+which is a common thing you have to do when working a natural language processing.
+
+06:23.920 --> 06:36.490
+Let's create another test phrase and say this is a string but it has punctuation how to remove it.
+
+06:36.630 --> 06:37.890
+Question mark.
+
+06:37.890 --> 06:40.020
+So there's a bunch of punctuation here.
+
+06:40.110 --> 06:46.190
+Again all you have to do is say R-E find all and then start indicating what we want to remove.
+
+06:46.260 --> 06:52.290
+So inside the square braces I'll have my care and it's a exclamation point.
+
+06:52.290 --> 06:53.210
+Period.
+
+06:53.310 --> 06:59.150
+Question mark and that's say plus.
+
+06:59.360 --> 07:03.720
+And then in my test phrase run that.
+
+07:03.860 --> 07:05.300
+And then I get see this nice list.
+
+07:05.300 --> 07:08.010
+This is a string but it has punctuation how to remove it.
+
+07:08.060 --> 07:11.900
+So you notice right now is a list of everything that isn't punctuation.
+
+07:11.930 --> 07:13.470
+So I'm using exclusion here.
+
+07:13.670 --> 07:21.020
+And if I wanted to I could say my list is equal to this and then I have my list here and I can use the
+
+07:21.410 --> 07:26.990
+join method off of a string in order to join this list together.
+
+07:26.990 --> 07:28.780
+So I could say join.
+
+07:28.790 --> 07:35.750
+Let's actually just say right here join a space six say space and that's going to join every item in
+
+07:35.750 --> 07:38.930
+this list with a space in between.
+
+07:38.930 --> 07:43.160
+So now I see this is a string that has punctuation how to remove it which now has successfully removed
+
+07:43.250 --> 07:45.230
+any punctuation from this test phrase.
+
+07:45.230 --> 07:48.990
+Main thing to note here is you have the square braces and the carrot.
+
+07:49.220 --> 07:53.710
+And then this plus sign and then anything inside these brackets after this.
+
+07:53.960 --> 07:56.240
+We're looking for exclusion.
+
+07:56.370 --> 08:01.080
+Now the last regular expression parameter I want to talk about is something we actually just saw which
+
+08:01.080 --> 08:04.680
+is the plus sign along with using brackets for grouping.
+
+08:04.770 --> 08:11.370
+So this plus sign along with brackets allows you to use grouping Mishu what I mean by that by saying
+
+08:11.400 --> 08:18.790
+text and the text string are going to work with is only find the we're going to say hyphenated words
+
+08:18.790 --> 08:18.970
+here.
+
+08:18.970 --> 08:31.830
+So hyphen words where are the longish dash words.
+
+08:31.830 --> 08:37.090
+So let's imagine a situation where we want to find any sort of words to have this hyphen in it.
+
+08:37.930 --> 08:45.740
+What we can do here is say Ari fine all so we're saying find some set of letters a dash and then some
+
+08:45.740 --> 08:48.530
+other set of letters and the way we're going to word this here.
+
+08:48.600 --> 08:51.150
+S.a.a be able to grab that period as well.
+
+08:51.200 --> 08:58.560
+So the way we do this is we say in square brackets backslash w which if you refer back to your expressions
+
+08:58.620 --> 09:02.290
+notebook and starts crawling up so you can find the table.
+
+09:02.380 --> 09:06.380
+Here we have the identifier backslash lowercase W..
+
+09:06.440 --> 09:07.940
+That stands for alphanumerics.
+
+09:07.960 --> 09:10.340
+So both letters and numbers will be picked up here.
+
+09:10.600 --> 09:15.010
+So this will grab inside square braces with a plus sign.
+
+09:15.010 --> 09:19.050
+This basically indicates grab any number of alphanumerics.
+
+09:19.060 --> 09:20.800
+So some group of alphanumerics.
+
+09:20.800 --> 09:27.160
+So alphanumerics is indicated by backslash w the square braces with the plus sign indicates any number
+
+09:28.080 --> 09:37.140
+then what we want is a dash and then backslash w and then plus for Again any number of alphanumerics
+
+09:37.860 --> 09:40.000
+and then we're going to search that text.
+
+09:40.290 --> 09:45.060
+We run that and it went ahead and find those words for us and actually then pick up this period because
+
+09:45.390 --> 09:50.220
+we didn't ask for punctuation we just asked for alphanumerics in a period doesn't count as that.
+
+09:50.220 --> 09:53.400
+So that allows you to actually grab anything of the sort of pattern.
+
+09:53.490 --> 09:59.400
+So you get the idea here is this again a group of alphanumerics a dash and then another out group of
+
+09:59.400 --> 10:00.440
+alphanumerics.
+
+10:00.480 --> 10:05.820
+Notice that we don't have to specify how long we expected either side of number of characters on the
+
+10:05.820 --> 10:08.090
+dash to be OK.
+
+10:08.370 --> 10:12.830
+So I know that's pretty complicated stuff but remember you should always be able to break out a regular
+
+10:12.840 --> 10:16.950
+expression using the tables that we provide here into it's basic steps.
+
+10:16.980 --> 10:21.840
+It should also be able to use the example matches and example Petar codes with identifiers and quantifiers
+
+10:22.180 --> 10:23.810
+to actually build up what you want.
+
+10:23.880 --> 10:29.340
+And the main one that we're looking for here was this plus one which means just occurs one or more times.
+
+10:29.370 --> 10:29.920
+OK.
+
+10:30.330 --> 10:34.050
+So coming up next is going to be your assessment to test your new skills.
+
+10:34.050 --> 10:35.010
+We'll see you at the next lecture.

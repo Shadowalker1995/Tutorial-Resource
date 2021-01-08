@@ -1,0 +1,298 @@
+WEBVTT
+
+00:05.380 --> 00:10.080
+Welcome back to part two of the vocabulary in matching lecture in this lecture.
+
+00:10.090 --> 00:12.090
+We're going to go over a phrase matching.
+
+00:12.160 --> 00:14.320
+Let's hop over to a notebook where we left off last time.
+
+00:14.400 --> 00:14.620
+OK.
+
+00:14.620 --> 00:19.930
+Here we are at the previous notebook now in the previous lecture we saw how we can use token patterns
+
+00:19.930 --> 00:26.320
+to perform rule based matching in alternative and often more efficient method is to actually match on
+
+00:26.320 --> 00:32.380
+a terminology list and in that case we're going to use a phrase matcher in order to create a document
+
+00:32.410 --> 00:36.320
+object from a list of phrases and past that into the matcher instead.
+
+00:36.430 --> 00:38.060
+Let me show you how that works.
+
+00:38.110 --> 00:43.830
+Previously we said from Spacey dot matcher import matcher.
+
+00:43.900 --> 00:50.180
+But in this case we're going to say import phrase Mecir and we'll create a metric object from that will
+
+00:50.180 --> 00:52.070
+say Free's matter.
+
+00:52.070 --> 00:55.970
+And just like before we pasand the vocab.
+
+00:55.970 --> 01:00.290
+And for this exercise we're going to import Wikipedia article on Reagonomics.
+
+01:00.290 --> 01:06.380
+So we have the source here in the actual link if you scroll down here you'll see a link to the Wikipedia
+
+01:06.380 --> 01:07.020
+article.
+
+01:07.070 --> 01:08.670
+But we actually saved it for you already.
+
+01:08.700 --> 01:09.840
+And textfiles.
+
+01:10.010 --> 01:12.460
+So if you're actually looking in the downloaded text files.
+
+01:12.500 --> 01:15.200
+So here it downloaded files go to text files.
+
+01:15.200 --> 01:18.030
+There should be a Reaganomics t x t.
+
+01:18.050 --> 01:20.000
+So that's the file We're going to be referencing.
+
+01:20.000 --> 01:22.600
+Make sure you passen the entire file path to that.
+
+01:22.610 --> 01:24.960
+So let's go ahead and use that file.
+
+01:25.040 --> 01:36.670
+We're going to say with open and Tex files dot Reagonomics you should be able to tab autocomplete if
+
+01:36.670 --> 01:40.450
+you're not able to have autocomplete it means you're not in the correct directory and just pasand the
+
+01:40.450 --> 01:44.170
+entire file path instead will say as f..
+
+01:44.500 --> 01:52.090
+Go ahead and say Doc three is equal to an LP and we're going to read in that file as one long string
+
+01:52.180 --> 01:57.480
+essentially passing the entire string of this Reagonomics text file into this document.
+
+01:58.210 --> 02:04.750
+So run that and then let's imagine we want to look for several phrases we can do is first create a list
+
+02:04.750 --> 02:05.830
+of those phrases.
+
+02:06.040 --> 02:10.510
+So maybe you're trying to study Reagonomics and you don't remember what specific term of economics they
+
+02:10.510 --> 02:11.320
+used.
+
+02:11.320 --> 02:15.240
+Maybe you thought it was called voodoo economics.
+
+02:15.240 --> 02:21.470
+Or maybe you thought it was called supply side economics.
+
+02:22.060 --> 02:30.530
+And let's also do a couple more like trickle down economics and let's add one more into free market
+
+02:30.530 --> 02:31.230
+economics.
+
+02:31.250 --> 02:38.110
+Free market economics economics.
+
+02:38.150 --> 02:38.840
+OK.
+
+02:38.840 --> 02:39.800
+So go in and run that.
+
+02:39.920 --> 02:41.600
+So you're trying to do a study of economics.
+
+02:41.620 --> 02:44.090
+I don't quite remember what the actually economics term was.
+
+02:44.210 --> 02:46.650
+She created a little list of phrases to search.
+
+02:46.670 --> 02:52.400
+Next we're going to do is convert each phrase to a document object and we can do this efficiently simply
+
+02:52.400 --> 03:03.590
+by using a list comprehension we'll say phrase patterns is equal to an LP text for text in phrase list.
+
+03:03.770 --> 03:08.890
+So all we're doing is for each of these pieces attacks inside of the phrase list we're making it into
+
+03:08.900 --> 03:09.930
+its own document object.
+
+03:09.920 --> 03:15.840
+So essentially have a list of a bunch of docs and phrase patterns then we're going to pass each doc
+
+03:15.900 --> 03:23.550
+object into the matcher so I'll say matcher add and then we can call this whatever we want so we can
+
+03:23.550 --> 03:31.870
+say Econ. matcher we're not going to have a callback here and then we're going to pasan each pattern
+
+03:31.870 --> 03:33.120
+inside this list.
+
+03:33.160 --> 03:39.880
+So if we actually check out what this list looks like phrase patterns it's going to look like a bunch
+
+03:39.970 --> 03:42.210
+of strings but not strings.
+
+03:42.250 --> 03:48.680
+Notice that we actually grab one of them and check the type it's a spacey doc.
+
+03:48.690 --> 03:51.610
+That's why I didn't see any quotes there when we actually output it.
+
+03:51.630 --> 03:57.930
+So in order to insert each baby doc when you do is put an asterix here and then we can provide each
+
+03:57.930 --> 04:03.180
+of them a little bit of short term that if you're familiar of some more advanced functionality of Python
+
+04:03.600 --> 04:09.980
+This is kind of keyword arguments and you can pass those in or you can just do Asterix args kind of
+
+04:10.020 --> 04:12.130
+same thing here.
+
+04:12.240 --> 04:17.520
+This essentially graps each document and passes in individually into this matter as a pattern.
+
+04:17.780 --> 04:21.370
+And then what we need to do is actually build a list of matches.
+
+04:21.500 --> 04:28.880
+So we're going to say matches or found matches is equal to match her and let's pass in the original
+
+04:28.880 --> 04:34.900
+document that we're trying to search which is this Reaganomics textfile doc three so we passed it Doc
+
+04:34.920 --> 04:42.590
+three here and then let's check out the found matches so notice it found lots of matches and we can
+
+04:42.590 --> 04:47.410
+actually again if we come back up here member we had that for loop.
+
+04:47.480 --> 04:52.790
+So we can just copy this and paste it in here.
+
+04:54.020 --> 05:00.980
+Run it and it'll show us where it's actually matching and and currently we actually provided the wrong
+
+05:00.980 --> 05:01.340
+doc.
+
+05:01.340 --> 05:02.350
+We said Doc here.
+
+05:02.360 --> 05:05.050
+So let's say Doc three run that.
+
+05:05.150 --> 05:11.210
+And now we see the actual matches match on supply side trickle down voodoo free market supply side and
+
+05:11.240 --> 05:12.160
+trickle down.
+
+05:12.170 --> 05:14.850
+So I had a little typo there because I directly copied and pasted.
+
+05:14.880 --> 05:17.420
+There were actually search in the updated documents.
+
+05:17.420 --> 05:17.960
+OK.
+
+05:18.260 --> 05:22.440
+So there we saw how we can easily create a list of phrases to match on.
+
+05:22.670 --> 05:26.510
+And then there's some kind of convenience code and if you want to just copy and paste this convenience
+
+05:26.510 --> 05:28.850
+code you can check up vocabulary and matching.
+
+05:28.850 --> 05:32.480
+Scroll down and we have the cell that essentially does all of this for you.
+
+05:32.510 --> 05:36.870
+It's the same code we wrote but it's in one cell you can easily copy and paste.
+
+05:36.890 --> 05:37.790
+All right.
+
+05:37.790 --> 05:42.230
+Now again if you want to view the matches all you need to do is copy paste this for loop that we showed
+
+05:42.230 --> 05:44.640
+here and actually provide the correct documents.
+
+05:46.200 --> 05:51.960
+If you actually want to grab the context of the document where you can do is subtract a little bit from
+
+05:51.960 --> 05:54.160
+your start and add a little bit to your end.
+
+05:54.360 --> 05:58.800
+So what I mean by that is maybe you say start minus five tokens back.
+
+05:58.980 --> 06:01.820
+An end is plus five tokens forward.
+
+06:01.950 --> 06:06.510
+And this is actually going to give you the tokens surrounding the term you're looking for.
+
+06:06.510 --> 06:12.590
+So when you run this it's going to give you essentially the sentence so policies are commonly associated
+
+06:12.590 --> 06:15.360
+with supply side economics referred to as trickle.
+
+06:15.410 --> 06:20.600
+And you can if you want to keep going past that could add more to the end and it will keep giving you
+
+06:20.600 --> 06:21.590
+more and more.
+
+06:21.620 --> 06:27.170
+So again you can mess around at the start and end to grab parts of the actual tax.
+
+06:27.170 --> 06:28.700
+So a very useful tool.
+
+06:29.100 --> 06:29.780
+OK.
+
+06:29.900 --> 06:35.360
+So that's it for this lecture and hopefully now you can see how you can easily use phrase matching as
+
+06:35.360 --> 06:37.390
+well as basic token matching.
+
+06:37.400 --> 06:40.520
+Coming up next is going to be your assessment to test your new skills.
+
+06:40.520 --> 06:41.530
+We'll see you at the next lecture.

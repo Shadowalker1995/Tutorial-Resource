@@ -1,0 +1,118 @@
+WEBVTT
+
+00:05.400 --> 00:06.270
+Welcome everyone.
+
+00:06.300 --> 00:11.010
+It's now time to test your skills so we went over in the section of the course by going through an assessment
+
+00:11.380 --> 00:15.480
+and this lecture will have an overview of the assessment questions and the next lecture will go over
+
+00:15.480 --> 00:16.550
+the solutions.
+
+00:16.560 --> 00:18.960
+Let's get started by checking out the assessment notebook.
+
+00:18.990 --> 00:21.690
+OK here we have the assessment notebook for this assessment.
+
+00:21.690 --> 00:25.740
+We're going to be using a short story the tale of Peter Rabbit from 1982.
+
+00:25.740 --> 00:30.900
+It's in the public domain and we here we have a cell that you can run for standard imports such a Speccy.
+
+00:30.930 --> 00:34.040
+Loading up this library and importing displays.
+
+00:34.410 --> 00:37.660
+First we want you to create a doc file or dock object from the file.
+
+00:37.680 --> 00:39.730
+Peter Rabbit TSC it's nifty.
+
+00:39.730 --> 00:41.280
+Text Files folder.
+
+00:41.280 --> 00:47.560
+Then for every token in the third sentence print the token text the speech tag the fine grained tag
+
+00:47.680 --> 00:51.540
+and the description of the fine green tag and see if you can format it nicely so it looks something
+
+00:51.540 --> 00:52.440
+like this.
+
+00:53.830 --> 00:58.950
+Next we wanted to provide a frequency list of parts of speech tags from the entire document.
+
+00:58.960 --> 01:07.370
+So remember there's a way to actually count the frequency of each part of speech after that for a challenge.
+
+01:07.380 --> 01:14.220
+We asked what percentage of all the tokens are nouns and the id attribute for noun is 91 and you should
+
+01:14.220 --> 01:16.020
+get around 14 percent.
+
+01:16.140 --> 01:20.790
+The next task is to display the dependency parts for the third sentence.
+
+01:20.910 --> 01:27.230
+And really what that is is it's using display C to render with the style the E.P..
+
+01:27.270 --> 01:29.910
+So keep in mind this is not actually what it should look like.
+
+01:30.000 --> 01:33.180
+Instead he should be performing the visualization of it.
+
+01:33.180 --> 01:38.380
+Essentially that visualization for syntactic dependencies.
+
+01:38.410 --> 01:43.360
+Next we wanted to show the first two named entities from the Tale of Peter Rabbit.
+
+01:43.360 --> 01:45.300
+So what are those first two named entities.
+
+01:45.340 --> 01:47.400
+They should be these two the tale of Peter Rabbit.
+
+01:47.400 --> 01:48.330
+It's a work of art.
+
+01:48.520 --> 01:53.620
+And Beatrix Potter which is a person seven is how many sentences are actually contained in the Tale
+
+01:53.620 --> 01:54.430
+of Peter Rabbit.
+
+01:54.430 --> 01:56.920
+Remember we talked about sentence segmentation.
+
+01:56.920 --> 02:01.440
+And as a challenge how many sentences actually contained named entities.
+
+02:01.750 --> 02:08.260
+And another challenge problem is to display the named entity visualization for the indexed one list
+
+02:08.260 --> 02:13.150
+of sentences from the previous problem and it should look something like this a work of art a person
+
+02:13.270 --> 02:14.300
+and then a date.
+
+02:14.350 --> 02:14.950
+OK.
+
+02:15.100 --> 02:16.340
+Best of luck on the assessment.
+
+02:16.360 --> 02:18.390
+We're going to go over the solutions in the next lecture.
+
+02:18.430 --> 02:19.000
+We'll see either.

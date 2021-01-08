@@ -1,0 +1,292 @@
+WEBVTT
+
+00:05.380 --> 00:10.030
+Hello everyone and welcome to the recurrent neural networks theory lecture here in this lecture we're
+
+00:10.030 --> 00:15.960
+just gonna give you a brief overview of the theory behind a recurrent neural net recurrent neural networks
+
+00:15.990 --> 00:19.170
+are specifically designed to work with sequence data.
+
+00:19.230 --> 00:25.140
+So examples of sequence data are things like time series data such as how many sales have happened over
+
+00:25.140 --> 00:29.960
+a previous time series or what the production has been over previous time series.
+
+00:29.970 --> 00:34.760
+There's also things like sentences which is what we're focusing on for natural language processing.
+
+00:34.920 --> 00:37.760
+So you can think of a sentence as just a sequence of words.
+
+00:37.890 --> 00:44.580
+Things like audio or music it's basically just a sequence of sounds or even things like car trajectories.
+
+00:44.610 --> 00:48.350
+There's just a sequence of instructions left right forward and back.
+
+00:48.420 --> 00:55.050
+So again recurrent neural networks when you understand them you're really going to be focusing on applying
+
+00:55.050 --> 01:00.670
+them to sequence based data and there's lots of different ways of applying recurrent year networks which
+
+01:00.670 --> 01:08.770
+you're going to learn about in this lecture so we can imagine a sequence as just a vector of information
+
+01:08.830 --> 01:14.590
+where the index location basically points out its points in time and then the actual values are the
+
+01:14.920 --> 01:16.100
+training values.
+
+01:16.120 --> 01:21.640
+So if we imagine a sequence that's one two three four five six a question that you could ask anybody's
+
+01:21.700 --> 01:26.030
+Are you able to predict a similar sequence shifted one tiny step into the future.
+
+01:26.170 --> 01:27.900
+And for most people it's actually pretty easy.
+
+01:27.910 --> 01:32.560
+You feel that there's a pattern here of increasing by one as you move along one time step.
+
+01:32.830 --> 01:37.300
+So if I asked you Hey what's the sequence that's similar to this except shift that over one times that
+
+01:37.650 --> 01:42.400
+you would hopefully build figure out well I'll just say two three four five six seven so we're going
+
+01:42.400 --> 01:49.230
+to try to later on training network to predict a time series shifted over one time step into the future.
+
+01:49.310 --> 01:53.410
+You can imagine that would be really beneficial if we're trying to predict sales for the next day
+
+01:56.420 --> 01:59.270
+so the way we can do this is by using a recurrent neural network.
+
+01:59.270 --> 02:03.460
+So let's review how a normal neuron works in a feed forward network.
+
+02:03.500 --> 02:08.990
+Remember that a normal neuron just takes in some input and it can be multiple inputs so it can aggregate
+
+02:08.990 --> 02:09.580
+them.
+
+02:09.710 --> 02:14.190
+And then once it aggregates those inputs it passes it through some sort of activation function.
+
+02:14.300 --> 02:19.100
+Here we're just using the symbol for a rectified linear unit that it can be things like a sigmoid function
+
+02:19.400 --> 02:23.310
+or a 10 H function etc. and then from that we have an output.
+
+02:23.360 --> 02:27.870
+So that's why a normal neuron works a recurrent neuron is a little different.
+
+02:28.010 --> 02:32.030
+What it's going to do is send the output back to itself.
+
+02:32.030 --> 02:37.100
+So the output goes back into input of the same neuron.
+
+02:37.100 --> 02:40.260
+So we can actually unroll this throughout time.
+
+02:40.610 --> 02:44.400
+So if we unroll this throughout time it ends up looking something like this.
+
+02:44.620 --> 02:49.820
+So we can see time here kind of represented on the x axis and we have this particular recurrent neuron
+
+02:50.210 --> 02:56.870
+where it's input at T minus one gives an output at T minus one and then that gets passed into the neuron
+
+02:57.200 --> 03:03.590
+in its state input at time t and then it has an output at time t and then we can take that output and
+
+03:03.590 --> 03:09.260
+pass it as input for the same neuron at time T plus 1 and then so on and so on.
+
+03:09.290 --> 03:14.420
+So this is called unrolling that recurrent neuron something that's important to note here is that the
+
+03:14.420 --> 03:20.630
+neuron is actually receiving both inputs from a previous timestamp as well as inputs from the current
+
+03:20.630 --> 03:21.480
+time step.
+
+03:21.560 --> 03:26.360
+So you can see each of these neurons has two sets of inputs they're these cells that are a function
+
+03:26.360 --> 03:32.120
+of input from previous time steps are also known as memory cells and recurrent neural networks are also
+
+03:32.120 --> 03:36.710
+flexible in their inputs and outputs for both sequences and single vector values.
+
+03:36.710 --> 03:41.450
+So we'll show a couple of examples of that in just a little bit but I want you to know it's also very
+
+03:41.450 --> 03:44.060
+easy to create a layer of recurrent neurons.
+
+03:44.060 --> 03:49.370
+Previously we just saw one recurrent neuron then we unrolled it through time but we could do the same
+
+03:49.370 --> 03:51.490
+thing for an entire layer.
+
+03:51.590 --> 03:57.200
+So if we want an entire layer of recurrent neurons then it would look something like this where we have
+
+03:57.290 --> 04:01.040
+input of X and then it goes through those recurrent neurons.
+
+04:01.040 --> 04:02.300
+Here we have three of them.
+
+04:02.300 --> 04:08.090
+Then we see the output at Y and then we take the output and then just pass it back in to all the neurons
+
+04:08.120 --> 04:09.260
+in that layer.
+
+04:09.260 --> 04:14.930
+And we could do the same idea and unroll this entire layer throughout time so that we get an input a
+
+04:14.930 --> 04:22.910
+T equals zero get an output it's equal zero and then pass that along with the output and input at time
+
+04:22.970 --> 04:27.300
+plus one and same idea except now we're doing it with an entire layer.
+
+04:27.300 --> 04:33.350
+Now since the output of these recurrent neurons at a time step t is technically a function of all the
+
+04:33.350 --> 04:39.700
+inputs from previous time steps you could then begin to think that has some form of memory because we're
+
+04:39.710 --> 04:45.560
+technically passing in historical information into that recurrent neuron or into that layer of recurrent
+
+04:45.560 --> 04:46.480
+neurons.
+
+04:46.490 --> 04:53.030
+So part of this neural network that preserves some sort of state across these time steps is called a
+
+04:53.060 --> 04:58.340
+memory cell and later on we're going to see much more complex examples of memory cells.
+
+04:58.340 --> 05:04.790
+But for now we have this basic recurrent neural neuron that just sends its output back into its input
+
+05:06.610 --> 05:10.570
+recurrent your own networks are also very flexible in their inputs and outputs.
+
+05:10.570 --> 05:15.760
+So let's walk through a few examples of different combinations of inputs and outputs we can use for
+
+05:15.760 --> 05:23.340
+recurrent neural networks so we can actually perform a sequence input to a sequence output and an example
+
+05:23.340 --> 05:29.900
+of that would be passing in a set of Time series information such as a year's worth of daily sales data
+
+05:30.320 --> 05:36.200
+and then wanting back a sequence of that same sales data shifted over a certain time period into the
+
+05:36.200 --> 05:36.730
+future.
+
+05:36.750 --> 05:41.660
+And that's basically the initial example we first thought of that one two three four five and then you
+
+05:41.660 --> 05:49.940
+asked back for two three four five six so a sequence however shifted over one step into the future another
+
+05:50.000 --> 05:56.360
+set of examples inputs and outputs would be to pass in a sequence input and request back a vector output
+
+05:56.930 --> 06:03.980
+so a common example of using recurring neural networks for this sort of input output is sentiment scores
+
+06:04.130 --> 06:10.670
+so you can feed in a sequence of words maybe a paragraph of a movie review and then request back a vector
+
+06:10.760 --> 06:14.650
+indicating whether it was a positive sentiment such as they really liked the movie.
+
+06:14.690 --> 06:19.880
+That's usually indicated by one versus they really dislike the movie which is indicated by usually negative
+
+06:19.880 --> 06:20.980
+1 or 0.
+
+06:21.170 --> 06:23.060
+So that would be an example of a sequence input.
+
+06:23.120 --> 06:27.860
+So that paragraph of words to just a single vector value and you essentially have a bunch of training
+
+06:27.860 --> 06:33.050
+data where you have a bunch of paragraphs and then some sort of sentiment score attached to them and
+
+06:33.050 --> 06:38.740
+you would train your recurrent your own network on that data to have a sequence input to a vector output.
+
+06:38.910 --> 06:45.530
+So on the opposite side you could also feed in a vector input so a single input just a first time step
+
+06:45.860 --> 06:51.640
+and basically passin zeros for the rest of your time steps and then let the output be a sequence.
+
+06:51.680 --> 06:55.330
+So that's a vector to sequence network.
+
+06:55.370 --> 07:00.860
+So an example of vectors a sequence could be just providing a single seed a word and then getting out
+
+07:01.010 --> 07:06.560
+an entire sequence of high probability sequence phrases that would actually come out.
+
+07:06.590 --> 07:12.290
+So you could have a word such as hello and then the sequence that gets generated something like How
+
+07:12.290 --> 07:13.070
+are you.
+
+07:13.070 --> 07:19.520
+Because after being trained on lots of introductory text maybe the neural network realizes that just
+
+07:19.520 --> 07:20.210
+based off the seed.
+
+07:20.210 --> 07:20.960
+Hello.
+
+07:20.960 --> 07:24.080
+One of the more common phrases is how are you.
+
+07:24.080 --> 07:28.550
+Now that we understand basic earnings we're gonna move on to understanding a particular cell structure
+
+07:28.610 --> 07:33.620
+known as Elysium or long short term memory in which is going to be necessary in order to actually generate
+
+07:33.620 --> 07:40.100
+text that makes sense because we want to have the network be aware of not just the most recent texts
+
+07:40.100 --> 07:44.090
+that scene but also the entire history of texts that it's seen.
+
+07:44.180 --> 07:47.120
+So we're gonna learn how that works in the very next lecture we'll see there.

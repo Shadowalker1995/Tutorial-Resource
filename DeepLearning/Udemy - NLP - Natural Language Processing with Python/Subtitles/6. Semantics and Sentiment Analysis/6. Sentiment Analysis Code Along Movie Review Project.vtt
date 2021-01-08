@@ -1,0 +1,286 @@
+WEBVTT
+
+00:00.930 --> 00:02.290
+Welcome back everyone.
+
+00:02.490 --> 00:07.260
+In this lecture we're going to again take a look at the previous movie reviews dataset that we've already
+
+00:07.380 --> 00:10.080
+explored using text classification techniques.
+
+00:10.530 --> 00:15.700
+Let's now apply sentiment analysis and see how that compares at discovering the labels.
+
+00:15.720 --> 00:18.790
+Let's open up a notebook and get started OK.
+
+00:18.790 --> 00:26.740
+Let's begin by importing numb pies and PPI and importing pandas as PD and then we're going to do is
+
+00:26.800 --> 00:33.400
+read in the as we file and underneath the text files folder depending on where you have it save on your
+
+00:33.400 --> 00:34.330
+computer.
+
+00:34.330 --> 00:41.290
+There is the movie's review that TSC file raising movie reviews that TSB not movie reviews too.
+
+00:41.650 --> 00:48.190
+And then since this is tab separated we need to indicate that by saying SGP and then separator is backslash
+
+00:48.190 --> 00:48.920
+T.
+
+00:49.180 --> 00:55.300
+So we've already seen this dataset again we can check it out with head and we see we have labels and
+
+00:55.390 --> 01:01.510
+as well as the reviews and we can also do a quick check to make sure there are no blank records so we
+
+01:01.510 --> 01:07.510
+can do here is say the F drop N A and then say in place is equal to true.
+
+01:07.510 --> 01:14.380
+So that's going to drop anything that is missing and then we can also remove single strings by creating
+
+01:14.380 --> 01:23.270
+a list called blanks and then iterating through the data frame for every index label and review in D
+
+01:23.270 --> 01:33.480
+F it or tuples we'll do what we did last time we'll check if the actual type of the review is equal
+
+01:33.480 --> 01:44.670
+to a string then we'll say if that review is a space go ahead and grab its index position by saying
+
+01:44.670 --> 01:51.980
+blanks and append that index position then we can check out blanks and see if we have any blanks.
+
+01:52.050 --> 01:57.090
+So looks like we do have quite a few blanks so we're gonna do is we'll go ahead and drop those simply
+
+01:57.090 --> 02:06.150
+by saying the F drop and then pass in those blanks index positions and then say in-place antithetical
+
+02:06.150 --> 02:06.950
+to true.
+
+02:07.230 --> 02:08.090
+Okay.
+
+02:08.310 --> 02:15.030
+So we can now check out our label counts simply by saying the F label value counts and we should have
+
+02:15.120 --> 02:18.970
+after that process nine hundred and sixty nine of each label.
+
+02:19.110 --> 02:26.370
+So let's go ahead now and import sentiment analysis and create the essay the object will say from an
+
+02:26.400 --> 02:31.040
+L T.K. that sentiment dot Vader.
+
+02:31.220 --> 02:33.420
+Notice now I don't need to download that Vader.
+
+02:33.420 --> 02:36.060
+You only have to do that once in the previous lecture.
+
+02:36.060 --> 02:44.420
+Then we're going to import sentiment intensity analyzer and create the essay the object from sentiment
+
+02:44.600 --> 02:45.650
+intensity analyzer.
+
+02:45.650 --> 02:53.470
+I'm just using tapped autocomplete here and then we'll go ahead and use sd to append a compound score
+
+02:53.980 --> 03:01.690
+as a column so just as before we say D F scores we'll go ahead and grab our review column and then we'll
+
+03:01.690 --> 03:10.330
+apply a lambda expression simply by saying lambda taken that review and then call essay The polarity
+
+03:10.330 --> 03:13.450
+scores on that particular review.
+
+03:13.480 --> 03:17.410
+So this is the line that's gonna take the longest to run because it's performing that polarity score
+
+03:17.410 --> 03:19.390
+analysis on every single review.
+
+03:19.720 --> 03:26.800
+But once we have the scores we can simply grab a compound off of that basically the value for compound
+
+03:27.400 --> 03:34.780
+by saying grab that score is dictionary and then apply lambda and then for that dictionary simply grab
+
+03:34.780 --> 03:37.960
+back the compound value.
+
+03:38.140 --> 03:42.970
+So we run that and then if we check up the head of our data frame at this point we have our scores dictionary
+
+03:43.060 --> 03:48.040
+we have the compound value let's go ahead and convert this compound value into a label either negative
+
+03:48.040 --> 03:53.830
+or positive by simply saying the following grabbed the compound value.
+
+03:53.900 --> 04:00.260
+It's actually saying this is our comp score or predicted label.
+
+04:00.450 --> 04:10.490
+However we want to label it but will say compound apply and we'll say lambda and then we'll say score.
+
+04:10.490 --> 04:13.550
+Passed in return positive.
+
+04:13.550 --> 04:20.590
+If the score is greater than or equal to zero else return negative.
+
+04:20.600 --> 04:24.610
+And the reason we choose P Os and energy is because that matches the labels here.
+
+04:24.650 --> 04:29.660
+Which is then going to allow us to actually use cycle learn to calculate things like accuracy precision
+
+04:29.660 --> 04:30.840
+and recall.
+
+04:31.190 --> 04:32.200
+So we run this whip.
+
+04:32.240 --> 04:39.420
+Let's make sure we have valid syntax so pause if there we go.
+
+04:39.470 --> 04:39.980
+There we go.
+
+04:39.980 --> 04:42.330
+Okay so fix that little type of there.
+
+04:42.500 --> 04:47.060
+And if you check out the head of the your frame at this point you should build see a comp score with
+
+04:47.060 --> 04:49.710
+the predicted value and the label.
+
+04:49.850 --> 04:55.730
+So right off the bat it looks like it's matching the first couple first five the compound score is working.
+
+04:55.730 --> 05:03.070
+Let's go ahead and compare it across the entire data frame so we will say from a scalar that metrics
+
+05:03.520 --> 05:10.570
+import will improve accuracy score classification report and then the confusion matrix.
+
+05:10.570 --> 05:15.420
+So run those and let's just check our accuracy remember our accuracy score.
+
+05:15.460 --> 05:20.480
+If we were randomly guessing if a movie review was positive or negative would be around 50 percent.
+
+05:20.620 --> 05:24.950
+So hopefully we're performing better than 50 percent otherwise then we're no we're not performing that
+
+05:24.950 --> 05:26.070
+in the random guessing.
+
+05:26.350 --> 05:33.630
+So we're going to compare our label column to our calculated compound Score Column so it looks like
+
+05:33.720 --> 05:37.100
+overall accuracy is around 64 percent.
+
+05:37.170 --> 05:43.010
+That's definitely not as good as our ATF IDF analysis with our train model from earlier.
+
+05:43.110 --> 05:46.180
+But keep in mind we're not really doing any sort of training step.
+
+05:46.230 --> 05:51.150
+We're essentially just importing this Vader sentiment analyzer and hoping that it works well enough
+
+05:51.300 --> 05:56.280
+on existing text data and you should also note that if you read some of these reviews there's a lot
+
+05:56.280 --> 05:59.760
+of sarcasm in the reviews which is again really hard to detect.
+
+05:59.970 --> 06:08.250
+So let's finish us off by also checking out our classification report on DFA label and the F Com Score.
+
+06:08.250 --> 06:10.020
+I'm simply just going to copy and paste these in
+
+06:12.720 --> 06:14.100
+so again.
+
+06:14.140 --> 06:19.500
+Looks like we're getting not so great precision and definitely not great recall on negative and we can
+
+06:19.500 --> 06:21.290
+see the F1 scores for both.
+
+06:21.360 --> 06:22.480
+Again negative reviews.
+
+06:22.490 --> 06:28.350
+Those tend to be often sarcastic and that's really hard to detect for any machine learning algorithm.
+
+06:28.530 --> 06:34.690
+And then let's also point out our confusion matrix in case that interest us and we can see here the
+
+06:34.690 --> 06:39.910
+supporting instances and the non supporting instances so it looks like Vader couldn't really judge the
+
+06:39.910 --> 06:45.430
+movie reviews very accurately and this demonstrates one of the biggest challenges incent him analysis
+
+06:45.670 --> 06:48.160
+really understanding human semantics.
+
+06:48.160 --> 06:53.980
+Many of the reviews had positive things to say about a movie reserving final judgment to just the very
+
+06:53.980 --> 06:54.980
+last sentence.
+
+06:55.060 --> 06:58.870
+So even a negative review can highlight positive things.
+
+06:58.870 --> 07:03.610
+Maybe saying oh the actors were really good in this movie but the script was horrible leading to a bad
+
+07:03.610 --> 07:04.360
+movie.
+
+07:04.390 --> 07:10.580
+That sort of dichotomy within a single review can be really hard for something like Vader to the text.
+
+07:10.600 --> 07:16.990
+And sometimes it takes something more robust like TFA IDF in order to create your own sort of classification
+
+07:16.990 --> 07:21.050
+models specifically for a positive versus negative sentiment analysis.
+
+07:21.130 --> 07:25.680
+So keep that in mind whenever you're exploring sentiment analysis of your own datasets.
+
+07:25.870 --> 07:30.880
+Coming up next we're going to test your full understanding on not just sentiment analysis but semantic
+
+07:30.880 --> 07:34.390
+word vectors as well with a project in the next lecture.
+
+07:34.390 --> 07:36.420
+We'll have an overview of that assessment.
+
+07:36.460 --> 07:37.130
+Let's get started.
+
+07:37.500 --> 07:38.380
+I'll see at the next lecture.

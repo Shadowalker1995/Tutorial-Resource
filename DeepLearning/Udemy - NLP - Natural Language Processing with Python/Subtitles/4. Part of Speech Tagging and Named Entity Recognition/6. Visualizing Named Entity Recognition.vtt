@@ -1,0 +1,298 @@
+WEBVTT
+
+00:05.340 --> 00:09.240
+Welcome back to this lecture on visualizing names and see recognition.
+
+00:09.840 --> 00:13.670
+Let's review how to visualize any are with Spacey and the spicy.
+
+00:13.740 --> 00:15.380
+Let's head over to Jupiter notebook.
+
+00:15.390 --> 00:21.540
+OK here I am at a Jupiter notebook and I've imported Spacey as well as loaded up the English library
+
+00:21.930 --> 00:24.540
+and I said from Spacey import this Blazey.
+
+00:24.960 --> 00:29.610
+Next we're going to do is create a document that we actually want to visualize.
+
+00:30.000 --> 00:31.400
+We'll say.
+
+00:31.860 --> 00:44.810
+And here we're going to say over the last quarter Apple sold nearly 20000 units or let's say 20000 iPods
+
+00:46.030 --> 00:50.740
+for a profit of $6 million.
+
+00:50.740 --> 00:59.140
+Next we're going to do is after we define that document we'll call display see and we will render the
+
+00:59.180 --> 01:03.600
+doc and then Style say E.A. for entity.
+
+01:03.900 --> 01:09.720
+And since I'm using Jupiter I'm going to say Jupiter is true and he can see space to the best of its
+
+01:09.720 --> 01:13.730
+ability is going to highlight and color the Anstey's it finds.
+
+01:13.730 --> 01:20.220
+So find the date and see in organization money i-Pods his product cardinal for some sort of amount nearly
+
+01:20.220 --> 01:22.150
+20000 and so on.
+
+01:22.170 --> 01:28.350
+So you can see already the power that displace has to highlight entities.
+
+01:28.350 --> 01:32.510
+Now let's imagine you want to have multiple lines and you want to view them line by line.
+
+01:32.520 --> 01:36.000
+So for example we're going to create one more line inside of the documents.
+
+01:36.000 --> 01:37.660
+In fact we're going to pass in another string.
+
+01:37.660 --> 01:42.560
+So inside these princes go ahead and create a new stream and we'll say something like.
+
+01:42.570 --> 01:53.560
+By contrast Sony only sold well say eight thousand music players.
+
+01:54.830 --> 01:56.370
+And let's say Walkmen music players
+
+01:59.490 --> 02:00.100
+OK.
+
+02:00.380 --> 02:05.570
+So if you actually call read they're now in the documents it'll show everything as kind of one giant
+
+02:05.570 --> 02:09.830
+long string but maybe you only want to do this line by line the way you do that is just separate out
+
+02:09.890 --> 02:17.890
+into sentence segmentation by saying For sent in docked that sense and then you're going to call display
+
+02:17.890 --> 02:26.710
+C render individually on each of those by saying an LP sent that DXi pass and the text of each individual
+
+02:26.710 --> 02:28.200
+sentence segmentation.
+
+02:28.390 --> 02:36.110
+Again make sure you say style lips style is equal to E.A..
+
+02:36.450 --> 02:41.730
+And since I'm running this in Jupiter I will say Jupiter is true and you can see it gives you a little
+
+02:41.730 --> 02:43.650
+more spacing between the lines.
+
+02:43.650 --> 02:48.590
+It's not too different between rendering everything versus this.
+
+02:48.620 --> 02:52.050
+You can see that each new line is left in that TD instead of.
+
+02:52.050 --> 02:55.150
+By contrast is this essentially a continuation.
+
+02:55.590 --> 02:56.220
+OK.
+
+02:56.340 --> 02:58.650
+Now you can also have different options.
+
+02:58.650 --> 03:00.570
+Remember there's an options dictionary.
+
+03:00.570 --> 03:05.910
+You can actually choose options for things like coloring or customized effects and more importantly
+
+03:06.000 --> 03:10.100
+you can choose options to only display or highlight certain entities.
+
+03:10.140 --> 03:17.460
+So maybe you're only really interested in product entities where you can do is say options and under
+
+03:18.090 --> 03:22.990
+A.S. key you can pasan a list of what you're interested in.
+
+03:23.010 --> 03:28.590
+So maybe we're only interested in product entities then we're going to render this will render the whole
+
+03:28.590 --> 03:37.960
+thing recopy And this this and pace it down here and then we'll say options is equal to options.
+
+03:37.960 --> 03:41.200
+Run that and then it will only highlight the entities that you said here.
+
+03:41.400 --> 03:46.280
+And if you want to add another one like organization you simply just add to this list of options and
+
+03:46.280 --> 03:47.660
+then it's going to highlight that.
+
+03:47.740 --> 03:50.220
+So that way maybe you're not interested in it.
+
+03:50.330 --> 03:52.180
+Entities don't want those highlighted.
+
+03:52.210 --> 03:55.000
+You can easily filter out whatever you want.
+
+03:55.090 --> 03:59.680
+Then as always there's things like different colors so you can actually choose different colors for
+
+03:59.680 --> 04:00.700
+different entities.
+
+04:00.700 --> 04:05.560
+There's the default colors but if you really want to choose your own all you need to do is create an
+
+04:05.800 --> 04:06.870
+other dictionary.
+
+04:07.880 --> 04:15.290
+Called colors and then we're going to do is choose an entity and then you're going to pass in a color
+
+04:15.290 --> 04:16.030
+that you want.
+
+04:16.070 --> 04:19.870
+So for example you can say that you want this entity to be red.
+
+04:19.970 --> 04:27.320
+Then once you've done that you need to do is inside your options state a color is key and set equal
+
+04:27.320 --> 04:31.040
+to or set its value equal to this colour's dictionary.
+
+04:31.070 --> 04:35.290
+So if you run this you'll let us now that organizations have been read.
+
+04:35.630 --> 04:41.000
+And as always you can pass in your own custom hex codes in case you want a color that isn't simple.
+
+04:41.000 --> 04:46.890
+So for example I can pass on this hex code color and it'll create something that looks like that.
+
+04:46.940 --> 04:53.410
+You can also customize these even more so you can actually add linear gradients or radial gradients.
+
+04:53.450 --> 04:58.740
+So let me show you example of that X is going to copy and paste these from the notes we provide.
+
+04:59.180 --> 05:01.730
+So there's a radial gradient.
+
+05:01.890 --> 05:07.520
+See all you need to do is choose the tag and then say radial dash gradient and choose two colors either
+
+05:07.520 --> 05:09.690
+hex codes or string color codes.
+
+05:10.040 --> 05:13.420
+And if you run that what's going to happen is going to radial gradient.
+
+05:13.490 --> 05:16.640
+The inside is going to start yellow and then the outside is going to go to green.
+
+05:16.640 --> 05:22.220
+So for example we could say from yellow inside to outside red and you get something that looks like
+
+05:22.220 --> 05:22.740
+that.
+
+05:22.940 --> 05:25.400
+You can then also do a linear gradient.
+
+05:25.460 --> 05:30.910
+So you just called the linear gradient function and then choose a start middle and end color.
+
+05:31.840 --> 05:33.400
+Let me copy and paste that.
+
+05:33.670 --> 05:39.430
+So here we're going to choose linear ash gradient and you can choose an actual degree and then a start
+
+05:39.550 --> 05:41.120
+and stop color.
+
+05:41.700 --> 05:47.660
+So you can run that and it's going to start at kind of this darker purple and go to this pink again.
+
+05:47.710 --> 05:49.800
+You can just pass and string codes here if you want.
+
+05:49.870 --> 05:54.040
+You can say go from maybe orange red.
+
+05:54.340 --> 05:59.320
+Run that it can see it going from orange to red and you can change these to 180 degrees if you want
+
+05:59.320 --> 06:05.440
+it to go from top to bottom or so on or you can even choose if you really want like a 45 degree to have
+
+06:05.440 --> 06:06.860
+it go from one corner to the other.
+
+06:06.880 --> 06:07.860
+It's really up to you.
+
+06:08.050 --> 06:12.790
+Usually you won't need to customize color effects that often unless you have a very specific style that
+
+06:12.790 --> 06:14.590
+you're looking for.
+
+06:14.590 --> 06:20.320
+Finally we've showed you how to render everything inside of the Juber notebook but maybe you're running
+
+06:20.320 --> 06:21.550
+a dot PI script.
+
+06:21.640 --> 06:29.330
+As always you can simply call the splays see serve pass in the document passen style is equal to E.A..
+
+06:29.560 --> 06:30.150
+And if you want.
+
+06:30.150 --> 06:36.110
+You can still passen options and then notice I'm not saying you Brezik that true it's that I'm just
+
+06:36.110 --> 06:37.040
+saying this.
+
+06:37.160 --> 06:40.310
+And when you run that you should see it being served.
+
+06:40.310 --> 06:45.920
+So you just need to go to 6:59 point 0.01 at whatever port it's telling you.
+
+06:45.920 --> 06:53.150
+So in my case it's a port 5000 you copy and paste that and then you'll see the being rendered at that
+
+06:53.150 --> 06:54.230
+location.
+
+06:54.230 --> 06:54.910
+All right.
+
+06:55.010 --> 06:59.780
+So that's really it for rendering the most important thing to note here I believe is not really the
+
+06:59.790 --> 07:05.840
+coloring but the fact that you get to choose and filter based off what you want so you can always have
+
+07:05.840 --> 07:09.510
+this ants and then choose specific entities you want to highlight.
+
+07:09.530 --> 07:11.060
+Thinks elsea at the next lecture.
