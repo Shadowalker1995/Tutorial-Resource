@@ -1,0 +1,795 @@
+1
+00:00:06,060 --> 00:00:11,480
+Hello, yes, students, in this lesson, you learn what most conflicts are in simple words, I will
+
+2
+00:00:11,480 --> 00:00:17,420
+explain in one, much conflicts could appear together, will reproduce real life scenarios, merge conflict.
+
+3
+00:00:17,750 --> 00:00:23,450
+And what is even more interesting, I will tell you how to solve major conflicts together during the
+
+4
+00:00:23,450 --> 00:00:23,920
+drama.
+
+5
+00:00:23,960 --> 00:00:28,360
+We are going to solve much conflict that will appear during the pulling from the remote repository.
+
+6
+00:00:28,970 --> 00:00:32,330
+And as usual, let's together give a definition to the conflict.
+
+7
+00:00:33,320 --> 00:00:39,290
+The conflict is a specific event that takes place when it is unable to resolve differences in code between
+
+8
+00:00:39,290 --> 00:00:40,760
+two commits automatically.
+
+9
+00:00:41,210 --> 00:00:45,220
+This is a event which we can't avoid during the development in the team.
+
+10
+00:00:45,560 --> 00:00:49,070
+Usually it may happen when two developers change in the same line of code.
+
+11
+00:00:49,430 --> 00:00:50,320
+How it can be.
+
+12
+00:00:50,750 --> 00:00:54,950
+For example, imagine that in our project we have some web page and developer.
+
+13
+00:00:54,950 --> 00:00:59,480
+No one worked on the task to implement login button and added some styles.
+
+14
+00:00:59,990 --> 00:01:06,650
+She included these styles into our HTML page and developing a number to work on the task for implementing
+
+15
+00:01:06,650 --> 00:01:08,380
+carcel on the home page.
+
+16
+00:01:08,780 --> 00:01:15,710
+Engineer number two also had to do adjustments in the home page because he wanted to include his custom
+
+17
+00:01:15,710 --> 00:01:18,080
+styles and adjust page markup a bit.
+
+18
+00:01:18,620 --> 00:01:21,740
+First, Engineer pushed his code to his original branch.
+
+19
+00:01:22,160 --> 00:01:25,130
+He also created a pool request that was successfully merged.
+
+20
+00:01:25,550 --> 00:01:28,710
+But one second engineer tried to create a pool request.
+
+21
+00:01:28,830 --> 00:01:31,590
+He received an error that there are no conflicts.
+
+22
+00:01:31,610 --> 00:01:32,060
+Why?
+
+23
+00:01:32,390 --> 00:01:38,780
+Because two engineers and they did the same file home that each demo and most likely in the same lines
+
+24
+00:01:38,780 --> 00:01:39,290
+of code.
+
+25
+00:01:39,800 --> 00:01:47,120
+And you can't understand what version of code is the latest one and the proper one, yet can't match
+
+26
+00:01:47,120 --> 00:01:48,470
+this code automatically.
+
+27
+00:01:48,890 --> 00:01:51,500
+This situation is called much conflict.
+
+28
+00:01:52,130 --> 00:01:53,330
+What to do in this case?
+
+29
+00:01:53,660 --> 00:01:56,210
+In this case, conflict should be resolved manually.
+
+30
+00:01:56,480 --> 00:02:02,380
+Engineer number two has to pull all the latest changes into his branch, investigate where exactly this
+
+31
+00:02:02,390 --> 00:02:06,260
+conflict is appeared and resolve it by saying resolve it.
+
+32
+00:02:06,260 --> 00:02:11,630
+I mean change source code and create a command that will be approved to the gate that these changes
+
+33
+00:02:11,630 --> 00:02:16,340
+are created intentionally and well reviewed by some engineer after much conflict.
+
+34
+00:02:16,340 --> 00:02:19,130
+As a result, the file can be merged to the master branch.
+
+35
+00:02:19,700 --> 00:02:25,430
+So today we are going to review the example, how this much conflict is created and how to solve it.
+
+36
+00:02:25,820 --> 00:02:31,640
+Let's start to start with I'd like to inform you that for the sake of the demo before this lesson,
+
+37
+00:02:31,640 --> 00:02:36,080
+I created this home, the HTML file in the Web content directory.
+
+38
+00:02:36,500 --> 00:02:37,580
+Let's take a look at it.
+
+39
+00:02:39,480 --> 00:02:46,020
+As you can see, this is the simplest possible HTML file with an overall text in it, nothing special
+
+40
+00:02:46,170 --> 00:02:48,700
+to not lose focus from the goal of our lesson.
+
+41
+00:02:49,200 --> 00:02:53,250
+This file was created in the separate branch and merged with the remote repository.
+
+42
+00:02:53,580 --> 00:02:55,050
+You already know how to do that.
+
+43
+00:02:55,830 --> 00:02:57,840
+Now imagine the developer.
+
+44
+00:02:57,840 --> 00:03:02,300
+One wanted to create styles for login button and pop up on the homepage.
+
+45
+00:03:02,850 --> 00:03:04,470
+Let's create a new branch for that.
+
+46
+00:03:04,920 --> 00:03:10,320
+Yes, which was option C Geet three zero four login styling.
+
+47
+00:03:11,040 --> 00:03:16,650
+Just for the sake of example, let's imagine that we have some styles folder where Altius has files
+
+48
+00:03:16,650 --> 00:03:19,470
+should be stored for those who are not aware.
+
+49
+00:03:19,770 --> 00:03:25,410
+Files with the Texas extension are used for styling your elements on the HTML pages.
+
+50
+00:03:25,990 --> 00:03:28,350
+This stands for Cascadian Stylesheets.
+
+51
+00:03:28,920 --> 00:03:32,490
+OK, let me create Styles folder in my SAAC directory.
+
+52
+00:03:33,000 --> 00:03:34,650
+Mkdir Styles.
+
+53
+00:03:35,280 --> 00:03:40,830
+Now let's imagine that during the task implementation developer, no one created Neuters as file was
+
+54
+00:03:40,840 --> 00:03:46,260
+description of custom styles touch styles again nauseousness.
+
+55
+00:03:46,860 --> 00:03:55,080
+Also Injinoo number one adjusted Holmwood HTML file to include this style there to reproduce the steps
+
+56
+00:03:55,080 --> 00:03:56,250
+that I did in this lesson.
+
+57
+00:03:56,250 --> 00:03:59,040
+You can use any text or code editor you would like.
+
+58
+00:03:59,370 --> 00:04:05,100
+For the sake of the demo, I will use Nano text editor to save time on switching between different screens.
+
+59
+00:04:05,690 --> 00:04:14,400
+Let me open home e-mail file to adjusted nano web content slash hamdard HDMI.
+
+60
+00:04:15,000 --> 00:04:20,880
+Just to remind you, I always use that key for auto completion internal according to rules.
+
+61
+00:04:20,880 --> 00:04:27,090
+I can include TSF style on this page like this and the hat that I should put my link back with.
+
+62
+00:04:27,100 --> 00:04:38,910
+The path to the text file had a link rel stylesheet HSF double dot slash styles slash again not to assess
+
+63
+00:04:39,090 --> 00:04:42,990
+and clotheslined attack and had attack is closed.
+
+64
+00:04:43,580 --> 00:04:45,270
+This is not a tumultuous assess.
+
+65
+00:04:45,690 --> 00:04:48,600
+That's why I won't stop on the things I wrote.
+
+66
+00:04:48,930 --> 00:04:52,650
+But I would like to draw attention to the lines which we changed.
+
+67
+00:04:53,250 --> 00:04:55,620
+We changed line three, four and five.
+
+68
+00:04:56,220 --> 00:04:57,180
+Remember this.
+
+69
+00:04:57,180 --> 00:05:00,150
+This is important for understanding of the conflict topic.
+
+70
+00:05:00,690 --> 00:05:03,480
+I access this file and save it now.
+
+71
+00:05:03,480 --> 00:05:08,520
+Add everything to the staging area, create and commit and push it to the original branch.
+
+72
+00:05:09,060 --> 00:05:12,600
+Those are the things that we have already learned in the previous lessons.
+
+73
+00:05:12,990 --> 00:05:14,340
+Give me a few seconds here.
+
+74
+00:05:15,490 --> 00:05:25,570
+Get at not yet committed again and again yet Bush with option you originally a three zero for Logan
+
+75
+00:05:25,570 --> 00:05:26,080
+stylin.
+
+76
+00:05:27,230 --> 00:05:33,380
+Also, I can create pool requests, but the important thing right now is not to match your pool request.
+
+77
+00:05:33,680 --> 00:05:36,530
+Why we need to imitate case one.
+
+78
+00:05:36,530 --> 00:05:42,380
+Developer number two started implementation of his task without knowing about changes in the home.
+
+79
+00:05:42,380 --> 00:05:44,060
+Each team will understand.
+
+80
+00:05:44,840 --> 00:05:47,720
+Right now, let's pretend that we as the other engineer.
+
+81
+00:05:48,630 --> 00:05:54,940
+Let me let me get back to the massive branch and create new branch for my task from it gets which M.
+
+82
+00:05:55,660 --> 00:05:59,770
+Gates, which was option C, a three zero five homecourt.
+
+83
+00:05:59,770 --> 00:06:01,520
+So nice.
+
+84
+00:06:02,080 --> 00:06:04,840
+Now I have to create my own styles for Carasso.
+
+85
+00:06:05,140 --> 00:06:09,750
+Let me create file in styles directory take into account with each branch.
+
+86
+00:06:09,760 --> 00:06:11,260
+I don't have styles directory.
+
+87
+00:06:11,260 --> 00:06:13,060
+Here, let me show you this.
+
+88
+00:06:14,160 --> 00:06:19,960
+It is optional and you can see that Styles directory is not created yet on this branch.
+
+89
+00:06:20,380 --> 00:06:23,460
+Let me quickly created mkdir styles.
+
+90
+00:06:23,980 --> 00:06:32,710
+Now I can create miticides, file touch styles Carasso not to assess and now let me adjust home html
+
+91
+00:06:32,710 --> 00:06:33,130
+file.
+
+92
+00:06:34,100 --> 00:06:40,160
+None of content slash home dot HMO, I will put reference to my sister's file here.
+
+93
+00:06:41,060 --> 00:06:48,450
+At least, Carol Stylesheet, a triple double dose slash style slash carrousel, not Ceressus, and
+
+94
+00:06:48,470 --> 00:06:49,670
+close the attack.
+
+95
+00:06:50,840 --> 00:06:52,430
+Attack is also closed.
+
+96
+00:06:53,800 --> 00:07:00,850
+And you can notice that I changed lines number three, four and five, the same lines that as a developer
+
+97
+00:07:00,850 --> 00:07:01,350
+changed.
+
+98
+00:07:01,780 --> 00:07:02,900
+This is important.
+
+99
+00:07:03,610 --> 00:07:05,490
+Let me close and save this file.
+
+100
+00:07:06,280 --> 00:07:09,040
+I'm going to add all changes to the staging area.
+
+101
+00:07:09,040 --> 00:07:11,730
+Come in then and push to the remote repository.
+
+102
+00:07:12,070 --> 00:07:13,390
+Give me a few seconds here.
+
+103
+00:07:14,200 --> 00:07:15,460
+Get at DOT.
+
+104
+00:07:15,640 --> 00:07:18,760
+You'd commit option and carrousel on the home page.
+
+105
+00:07:19,480 --> 00:07:23,930
+Get push resorption you a region key, a three zero five home Carasso.
+
+106
+00:07:24,700 --> 00:07:30,400
+Now imagine that during implementation of the home Carasso task pool request for logging's talent was
+
+107
+00:07:30,400 --> 00:07:31,730
+matched by a technique.
+
+108
+00:07:32,140 --> 00:07:33,040
+Let me merge it.
+
+109
+00:07:35,980 --> 00:07:38,890
+OK, it is merged and nothing bad happened.
+
+110
+00:07:39,340 --> 00:07:42,490
+Now let me create a pool request for carrousel implementation.
+
+111
+00:07:46,280 --> 00:07:53,120
+First of all, I see here warning that this branch can't be automatically merged, but still I can create
+
+112
+00:07:53,120 --> 00:07:53,930
+a pull request.
+
+113
+00:07:54,440 --> 00:08:00,950
+And after I created a request, I see that my emerge button is disabled because of the conflicts you
+
+114
+00:08:00,950 --> 00:08:06,860
+can see in here that you can solve conflicts in the Web editor, while this can be an option in case
+
+115
+00:08:06,860 --> 00:08:08,570
+of the resolving of the small conflict.
+
+116
+00:08:08,840 --> 00:08:10,880
+This is not an option for the most cases.
+
+117
+00:08:11,270 --> 00:08:11,780
+Why?
+
+118
+00:08:12,230 --> 00:08:13,950
+Because of the few reasons.
+
+119
+00:08:14,330 --> 00:08:20,060
+Reason number one, most likely you have more complicated conflicts than we have now here.
+
+120
+00:08:20,450 --> 00:08:26,960
+And this is not convenient to change it in Web editor reason number two, after resolving conflicts,
+
+121
+00:08:26,960 --> 00:08:30,740
+you want to be sure that you didn't break anything for this?
+
+122
+00:08:30,740 --> 00:08:37,120
+You have to have your code on your local machine to run unit tests or integration tests on case HDMI
+
+123
+00:08:37,250 --> 00:08:42,260
+additon to open each HTML page to make sure that everything is OK with your markup.
+
+124
+00:08:42,980 --> 00:08:46,320
+So I will show you how you can solve conflicts on your local machine.
+
+125
+00:08:46,880 --> 00:08:48,620
+Let me get back to the Kit Bash.
+
+126
+00:08:48,900 --> 00:08:55,010
+I'm on my task home carrousel branch, as you can see here, to resolve the conflicts, I have to merge
+
+127
+00:08:55,010 --> 00:08:57,320
+a region master branch into the current branch.
+
+128
+00:08:57,770 --> 00:08:59,000
+You already know that.
+
+129
+00:08:59,000 --> 00:09:01,190
+Merge command, merge different branches.
+
+130
+00:09:01,550 --> 00:09:07,970
+But let me show you how you can merge remote branch into the current one yet pull a region master.
+
+131
+00:09:08,630 --> 00:09:13,520
+You also learned in previous lessons that pull command, merge changes into the branch.
+
+132
+00:09:14,360 --> 00:09:18,220
+And here you can see the message that there is a conflict in this file.
+
+133
+00:09:18,590 --> 00:09:20,090
+Automatic merge is failed.
+
+134
+00:09:20,730 --> 00:09:22,070
+Let resolve conflicts.
+
+135
+00:09:22,670 --> 00:09:26,600
+I have to open in any code ed file where I have conflicts.
+
+136
+00:09:27,020 --> 00:09:28,160
+For the sake of the demo.
+
+137
+00:09:28,160 --> 00:09:31,530
+I will use Nnenna Ed in this lesson now.
+
+138
+00:09:31,540 --> 00:09:35,090
+No map content egholm not HMO.
+
+139
+00:09:35,840 --> 00:09:39,730
+And here you can find different symbols that get added to our file.
+
+140
+00:09:40,220 --> 00:09:42,260
+That is how it shows the conflicts.
+
+141
+00:09:42,680 --> 00:09:48,170
+You already know that hat is a pointer to the place where you are currently in your working directory.
+
+142
+00:09:48,500 --> 00:09:50,840
+So here you can see our version of code.
+
+143
+00:09:51,260 --> 00:09:57,530
+We want to insert carrousel to assess and here changes from the master branch that were merged after
+
+144
+00:09:57,530 --> 00:09:59,870
+implementation of task by the world number one.
+
+145
+00:10:00,110 --> 00:10:01,790
+And check some of that comment.
+
+146
+00:10:02,480 --> 00:10:06,020
+We have to adjust file after some analysis.
+
+147
+00:10:06,020 --> 00:10:10,910
+I understood that in this particular case, I want to keep my changes and changes of developer.
+
+148
+00:10:10,910 --> 00:10:13,250
+No one will see that line.
+
+149
+00:10:13,250 --> 00:10:18,830
+Three and five were the same in two versions of code, but only in line number four was different.
+
+150
+00:10:19,190 --> 00:10:21,980
+We used different sets, file names here.
+
+151
+00:10:22,490 --> 00:10:24,350
+Let me add just markup accordingly.
+
+152
+00:10:25,230 --> 00:10:28,530
+After I'm done with changes, I exit and save this file.
+
+153
+00:10:29,770 --> 00:10:35,630
+Here in parentheses, you see mansions that I'm in the process of merging two branches also.
+
+154
+00:10:35,650 --> 00:10:39,560
+You can see that suggested to me to create the once conflicts are resolved.
+
+155
+00:10:40,150 --> 00:10:42,520
+Let's follow this advice and create a committee.
+
+156
+00:10:43,180 --> 00:10:49,780
+If you would check status with get status comment, then we would see that new file logging success
+
+157
+00:10:49,780 --> 00:10:51,680
+is already added to the staging area.
+
+158
+00:10:52,160 --> 00:10:55,930
+That's the one from the master branch where we don't have any conflicts.
+
+159
+00:10:56,590 --> 00:10:59,240
+And here is the file where we had a conflict.
+
+160
+00:10:59,590 --> 00:11:07,600
+Let me add it to the staging area yet at not now let's check status and we can see that all files are
+
+161
+00:11:07,600 --> 00:11:08,540
+in the staging area.
+
+162
+00:11:08,560 --> 00:11:12,010
+Now, let's create a climate gate comment.
+
+163
+00:11:12,490 --> 00:11:18,820
+I will skip the message now because for such cases get already stolen message for me, the message that
+
+164
+00:11:18,820 --> 00:11:21,960
+states that must branch is merged into the task branch.
+
+165
+00:11:22,570 --> 00:11:27,270
+Let's close this text editor and we can see that we successfully merged changes.
+
+166
+00:11:27,970 --> 00:11:31,060
+Now we need to update our branch in remote repository.
+
+167
+00:11:31,570 --> 00:11:32,950
+Let's push our changes.
+
+168
+00:11:33,430 --> 00:11:34,180
+Get Bush.
+
+169
+00:11:36,620 --> 00:11:39,410
+Now, let me refresh page with my pool request.
+
+170
+00:11:42,620 --> 00:11:50,660
+I can't rebase and merge, and I will explain why in the next lesson, but I can merge with creating
+
+171
+00:11:50,660 --> 00:11:51,400
+a new command.
+
+172
+00:11:52,250 --> 00:11:57,620
+And if you remember that in previous lesson I showed you different margined strategies and how to allow
+
+173
+00:11:57,620 --> 00:12:02,050
+different merging strategies here in the settings and the merge button section.
+
+174
+00:12:02,690 --> 00:12:06,350
+Congratulations yourself, your first merge conflict.
+
+175
+00:12:06,470 --> 00:12:08,960
+But unfortunately, we are not falling right now.
+
+176
+00:12:08,990 --> 00:12:11,580
+Best practices of keeping it historically.
+
+177
+00:12:12,080 --> 00:12:12,560
+Why?
+
+178
+00:12:13,070 --> 00:12:17,630
+Because first of all, we created separate committees during the merger and Origin Master Branch was
+
+179
+00:12:17,630 --> 00:12:23,880
+our task branch and right now we are under the risk to create one more committee for merging branches.
+
+180
+00:12:24,500 --> 00:12:28,670
+Can you imagine how our history tree will look like after all of this?
+
+181
+00:12:29,000 --> 00:12:31,010
+Your tax rate will be disappointed.
+
+182
+00:12:31,580 --> 00:12:33,850
+Just joking in the next lessons.
+
+183
+00:12:33,860 --> 00:12:37,360
+I will show you how to avoid this and how to keep your tax rate happy.
+
+184
+00:12:38,030 --> 00:12:42,380
+But still to understand the next lessons, you had to understand this lesson.
+
+185
+00:12:42,380 --> 00:12:47,820
+And why pull an origin master into your branch to resolve conflicts is not the best approach.
+
+186
+00:12:48,410 --> 00:12:53,450
+While this approach is still valid in some companies and in some development teams, that is not the
+
+187
+00:12:53,450 --> 00:12:57,170
+approach which I would approve in my development team and in my company.
+
+188
+00:12:57,740 --> 00:13:02,020
+Probably already aware that I am CEO of my own software development company.
+
+189
+00:13:02,030 --> 00:13:08,720
+And when I interviewed engineers, I paid extra attention to the experience of working with it, because
+
+190
+00:13:08,720 --> 00:13:14,380
+during the development of complex projects and cross-functional teams, these skills are very important.
+
+191
+00:13:14,860 --> 00:13:19,070
+I am going to create top notch software engineers from you during this course.
+
+192
+00:13:19,110 --> 00:13:22,220
+That's why I will run as a way to solve financial conflicts.
+
+193
+00:13:22,880 --> 00:13:27,550
+OK, and if we are good for the day, let's recap what we have learned today.
+
+194
+00:13:28,420 --> 00:13:34,900
+In this lesson, you learned what marriage conflicts are more over together, even we produce much conflict
+
+195
+00:13:34,900 --> 00:13:35,560
+in real life.
+
+196
+00:13:35,560 --> 00:13:41,800
+Example, you learned how to resolve marriage conflicts locally and how to manage a region must rush
+
+197
+00:13:41,800 --> 00:13:43,100
+into a task branch.
+
+198
+00:13:43,690 --> 00:13:45,100
+Thanks a lot for your attention.
+
+199
+00:13:45,430 --> 00:13:47,200
+See you in the next lesson.

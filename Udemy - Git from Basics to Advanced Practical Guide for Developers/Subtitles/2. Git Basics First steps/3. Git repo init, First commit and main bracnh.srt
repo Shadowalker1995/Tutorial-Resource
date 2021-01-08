@@ -1,0 +1,471 @@
+1
+00:00:05,930 --> 00:00:11,180
+Hello, the students in this lesson, we're going to learn how to create a local repository and how
+
+2
+00:00:11,180 --> 00:00:12,440
+to make your first comment.
+
+3
+00:00:13,010 --> 00:00:17,240
+First of all, I want to say that there are two ways to create a repository.
+
+4
+00:00:17,480 --> 00:00:20,100
+The first one is to create the new one locally.
+
+5
+00:00:20,390 --> 00:00:23,840
+The second option is to clone existing repository.
+
+6
+00:00:24,230 --> 00:00:30,020
+In this lesson, we are going to cover only the first option and the second option will be covered in
+
+7
+00:00:30,040 --> 00:00:30,830
+obsolescence.
+
+8
+00:00:31,040 --> 00:00:33,950
+One will learn what remote repositories are.
+
+9
+00:00:34,610 --> 00:00:40,250
+Our goal during this course is not to run thousands of fans to get comments that you want to use.
+
+10
+00:00:40,520 --> 00:00:44,150
+Instead, we are going to focus on practice and learn everything.
+
+11
+00:00:44,150 --> 00:00:46,760
+What you need for your current or the future job.
+
+12
+00:00:47,240 --> 00:00:51,590
+That's why most part of the lesson will spend practice in real life scenarios.
+
+13
+00:00:51,860 --> 00:00:59,040
+I will show you such main comments as it, get at it and get status.
+
+14
+00:00:59,510 --> 00:01:05,600
+Also in this lesson, I will tell what the branches will discuss different cases when to use different
+
+15
+00:01:05,600 --> 00:01:07,570
+comments with different attributes.
+
+16
+00:01:08,090 --> 00:01:08,960
+Let's start.
+
+17
+00:01:09,260 --> 00:01:12,440
+And the best way to understand this topic is to practice.
+
+18
+00:01:13,070 --> 00:01:16,340
+We are going to start from the creative git repository locally.
+
+19
+00:01:16,730 --> 00:01:18,250
+Here is our Dharma project.
+
+20
+00:01:18,440 --> 00:01:25,850
+Imagine that we have some source code here in SLC folder here in Benfold where we have compiled binary
+
+21
+00:01:25,850 --> 00:01:30,350
+files and we want to use it to track changes in these files.
+
+22
+00:01:30,950 --> 00:01:32,940
+Let's open the box here first.
+
+23
+00:01:33,440 --> 00:01:35,810
+Now let's initialize the repository.
+
+24
+00:01:36,350 --> 00:01:42,560
+Let's perform, get any common type, get in it and press enter.
+
+25
+00:01:43,250 --> 00:01:46,250
+Now you see that in parentheses there is a new word.
+
+26
+00:01:46,550 --> 00:01:50,110
+Master Master is a main branch.
+
+27
+00:01:50,900 --> 00:01:56,300
+What is a branch branches and I part of everyday development process.
+
+28
+00:01:56,550 --> 00:01:59,540
+Each branch contains a history of snapshots.
+
+29
+00:01:59,990 --> 00:02:03,830
+Technically, we may call these snapshots with other words.
+
+30
+00:02:04,190 --> 00:02:10,820
+Those are our comments during the development will switch branches to separate development of a new
+
+31
+00:02:10,820 --> 00:02:15,110
+task or a new feature, and after that we'll merge branches.
+
+32
+00:02:15,650 --> 00:02:21,530
+Master is our single and the main branch which we have right after repository creation.
+
+33
+00:02:22,160 --> 00:02:24,110
+How to do operations with branches.
+
+34
+00:02:24,110 --> 00:02:27,940
+We are going to learn in the next lessons after we executed.
+
+35
+00:02:28,250 --> 00:02:32,390
+Any comment don't get folder was created in our project.
+
+36
+00:02:32,810 --> 00:02:39,980
+It is hidden by default, so make sure you are enabled view of hidden folders and here it is.
+
+37
+00:02:40,820 --> 00:02:45,800
+You're going to have to change files here manually just in case you're interested.
+
+38
+00:02:45,800 --> 00:02:50,510
+You can investigate how it stores, configurations and the history of the project.
+
+39
+00:02:51,140 --> 00:02:57,080
+Now, when they have git repository initialized in our folder, we want to track changes in existing
+
+40
+00:02:57,080 --> 00:02:57,590
+files.
+
+41
+00:02:58,190 --> 00:03:04,370
+The first thing that you need to understand in this lesson is that files can exist in one of two states
+
+42
+00:03:04,940 --> 00:03:12,920
+tracked and untracked, ensured tracked files are files that were present in the last snapshot of your
+
+43
+00:03:12,920 --> 00:03:21,470
+files, those files that Keith is aware of, untracked files, files that are present in the work and
+
+44
+00:03:21,470 --> 00:03:28,670
+directory, but that were not in the last snapshot and are not in the staging area to tell you that
+
+45
+00:03:28,670 --> 00:03:30,440
+you want to track changes in file.
+
+46
+00:03:30,440 --> 00:03:36,530
+We need to execute git at command, git add comment adds files to the staging area.
+
+47
+00:03:36,980 --> 00:03:40,190
+Do remember first lesson when I told you about staging area?
+
+48
+00:03:40,700 --> 00:03:44,060
+That's the area where we place files that we want to commit.
+
+49
+00:03:44,630 --> 00:03:47,330
+We can add one file or multiple files.
+
+50
+00:03:47,570 --> 00:03:54,560
+For example, to have one file, I have to write the following git add license 60.
+
+51
+00:03:55,340 --> 00:04:00,650
+If I want to add multiple files, I can type space and type new file name.
+
+52
+00:04:01,160 --> 00:04:02,450
+For the sake of example.
+
+53
+00:04:02,450 --> 00:04:04,670
+Let it be read me dot M.G..
+
+54
+00:04:05,720 --> 00:04:07,160
+Now you can press enter.
+
+55
+00:04:08,070 --> 00:04:14,250
+The check, what is the status of your repository on which branch you are and whether there are states
+
+56
+00:04:14,250 --> 00:04:20,970
+changes to be committed, we have to type next gate comment gate status here.
+
+57
+00:04:20,970 --> 00:04:28,200
+I can see that two files were added to stage an error and the rest of the files were not, including
+
+58
+00:04:28,200 --> 00:04:37,370
+all files that are in directories been and SLC to clear get and so you can press control and L simultaneously.
+
+59
+00:04:37,770 --> 00:04:39,090
+Now this much better.
+
+60
+00:04:39,720 --> 00:04:42,810
+We can add multiple files with the help of the mask.
+
+61
+00:04:43,260 --> 00:04:49,020
+For example, if you want to add all files with Java extension, I need to type the following.
+
+62
+00:04:49,560 --> 00:04:58,740
+Get at asterisk dot Java asterisk here means files with any name, but that has Java extension.
+
+63
+00:04:59,310 --> 00:05:00,480
+Lets press enter.
+
+64
+00:05:00,930 --> 00:05:06,090
+We see here that line field is changed with carriage return and Lindfield characters.
+
+65
+00:05:06,540 --> 00:05:08,220
+Let's now check it status.
+
+66
+00:05:08,760 --> 00:05:13,140
+I use Arrow up key to check comments which have recently enter it.
+
+67
+00:05:13,830 --> 00:05:21,720
+Here is a status hypocenter and you see now your file is also added to the staging area.
+
+68
+00:05:22,260 --> 00:05:28,380
+By the way, in case you don't like such verbose status, you can use short version of git status.
+
+69
+00:05:29,040 --> 00:05:30,720
+Get Status Desh.
+
+70
+00:05:30,720 --> 00:05:37,920
+As you can see that there is a letter with a status is a files are added to the staging area modified
+
+71
+00:05:37,920 --> 00:05:38,940
+and not added.
+
+72
+00:05:39,720 --> 00:05:47,220
+If we want to add all files, we can just use dot like this git at DOT here.
+
+73
+00:05:47,220 --> 00:05:53,700
+Dot means all possible names and extensions and if we will check its status now, we are going to see
+
+74
+00:05:53,700 --> 00:05:54,240
+that now.
+
+75
+00:05:54,240 --> 00:05:57,180
+All files in my project are ready to be committed.
+
+76
+00:05:57,780 --> 00:06:02,190
+Now when all files are in stage staging error, let me commit these changes.
+
+77
+00:06:02,760 --> 00:06:13,860
+We have to type the next comment, get commit dash, am in it, commit in quotes and FLOC in this case
+
+78
+00:06:13,860 --> 00:06:15,300
+stands for message.
+
+79
+00:06:15,810 --> 00:06:19,380
+Each snapshot of our file system should have a message.
+
+80
+00:06:19,920 --> 00:06:26,250
+Usually this message is used to describe the changes that were made in scope of this that you can use
+
+81
+00:06:26,250 --> 00:06:31,920
+dash and flag because it is very convenient to live can it message in line with comit command.
+
+82
+00:06:32,370 --> 00:06:38,340
+In case you forgot to specify, dot and flag, the default text editor will be opened.
+
+83
+00:06:39,060 --> 00:06:41,040
+Let's use in line message command.
+
+84
+00:06:41,850 --> 00:06:45,360
+Usually the commit the message of the first commit is in it.
+
+85
+00:06:45,360 --> 00:06:47,340
+Commit press enter.
+
+86
+00:06:48,290 --> 00:06:50,420
+Hey, you see that you created a snapshot.
+
+87
+00:06:51,080 --> 00:06:52,340
+Let's check status.
+
+88
+00:06:53,300 --> 00:06:58,880
+And you can see that there is nothing to connect because there were no any other changes from the last
+
+89
+00:06:58,880 --> 00:07:06,150
+comment, let me clear console, by the way, in case you forget any comment, you always can ask it
+
+90
+00:07:06,200 --> 00:07:07,340
+to give you a hint.
+
+91
+00:07:07,830 --> 00:07:09,080
+There are two options.
+
+92
+00:07:09,410 --> 00:07:17,660
+The first option type help after comment that you want to use, for example, get status, double Desh
+
+93
+00:07:17,810 --> 00:07:18,320
+help.
+
+94
+00:07:18,860 --> 00:07:24,130
+And you can see that page from manual is open automatically in your Web browser.
+
+95
+00:07:24,620 --> 00:07:29,210
+Here you can find common description and all possible options how you can use this.
+
+96
+00:07:29,880 --> 00:07:33,380
+The second option is to type shortcut from help like this.
+
+97
+00:07:33,980 --> 00:07:36,470
+It's status Desh H.
+
+98
+00:07:37,070 --> 00:07:42,950
+And you're going to see a list of options that you can use with this comment right here in console.
+
+99
+00:07:43,900 --> 00:07:50,140
+One more thing that I wanted to show you in this lesson is how you can combine aid into states and commit
+
+100
+00:07:50,140 --> 00:07:52,480
+in one command, for example.
+
+101
+00:07:52,710 --> 00:07:56,020
+Let me do a modification in one of the source code files.
+
+102
+00:07:56,350 --> 00:07:59,060
+I will add one more space in some line.
+
+103
+00:07:59,680 --> 00:08:01,330
+Let's check shirt status.
+
+104
+00:08:02,080 --> 00:08:04,030
+And we see that we have one file.
+
+105
+00:08:04,030 --> 00:08:04,740
+Modify it.
+
+106
+00:08:05,320 --> 00:08:09,790
+Let me come in this file and adding it to the staging area simultaneously.
+
+107
+00:08:10,420 --> 00:08:24,280
+Just type the following gate comit, dash a dash cam, new changes and press enter get automatically
+
+108
+00:08:24,280 --> 00:08:31,030
+staged every file that is already tracked before doing the comit, letting you skip the part where we
+
+109
+00:08:31,030 --> 00:08:35,230
+have to add files to the staging area and perform it at command.
+
+110
+00:08:36,250 --> 00:08:39,380
+OK, now let's recap what we have learned today.
+
+111
+00:08:40,120 --> 00:08:43,390
+Today, we learned how to create local git repository.
+
+112
+00:08:43,730 --> 00:08:46,420
+You know what a branch is today.
+
+113
+00:08:46,420 --> 00:08:50,230
+You also understand the difference between tract and untracked files.
+
+114
+00:08:50,710 --> 00:08:55,390
+Together, we're told you to track files and added them to the staging area.
+
+115
+00:08:55,870 --> 00:08:58,690
+Now you know how to commit a snapshot of your files.
+
+116
+00:08:59,110 --> 00:09:04,590
+And also we learned how to request a hint from it and how to use help government.
+
+117
+00:09:05,350 --> 00:09:06,430
+That's all for today.
+
+118
+00:09:06,970 --> 00:09:10,030
+Thanks a lot for your attention and see you in the next lesson.

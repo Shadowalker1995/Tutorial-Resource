@@ -1,0 +1,455 @@
+1
+00:00:06,000 --> 00:00:11,030
+Lot of the students in this lesson, we're going to talk about how you can undo things and adjust your
+
+2
+00:00:11,030 --> 00:00:14,600
+comments and we'll learn the basics of work and search console text.
+
+3
+00:00:14,600 --> 00:00:18,210
+Ed, as we in this lesson on real examples.
+
+4
+00:00:18,230 --> 00:00:25,340
+I'm going to show you how you can amend last comment, how to on stage files, if needed, more, longer
+
+5
+00:00:25,490 --> 00:00:29,600
+to restore command and how you can use it to restore state of files.
+
+6
+00:00:30,050 --> 00:00:35,780
+Also, I will show you how you can use tab for out to completion and get the brush to save your time
+
+7
+00:00:35,780 --> 00:00:36,940
+on typing words.
+
+8
+00:00:37,460 --> 00:00:40,870
+I will show you your basics of work in concert next week.
+
+9
+00:00:41,570 --> 00:00:43,460
+And as usual, let's practice.
+
+10
+00:00:43,760 --> 00:00:46,210
+I will open our project which we create.
+
+11
+00:00:47,210 --> 00:00:53,030
+OK, imagine that we need the command, but we forgot to include one more file or another.
+
+12
+00:00:53,030 --> 00:00:54,620
+Could change in that comment.
+
+13
+00:00:55,130 --> 00:00:58,910
+We can easily amend the last comment, but be careful.
+
+14
+00:00:59,090 --> 00:01:04,280
+Today we are going to learn one of the few errors and get where you may lose some work if you do it
+
+15
+00:01:04,280 --> 00:01:04,660
+wrong.
+
+16
+00:01:05,900 --> 00:01:06,560
+And changes.
+
+17
+00:01:06,560 --> 00:01:15,530
+We have to use the next command gate, commit double dash amand amant option takes current staging error
+
+18
+00:01:15,530 --> 00:01:17,420
+and uses it for the commit.
+
+19
+00:01:18,020 --> 00:01:24,260
+In case you have nassan staging area and the only thing you want to change is the commit message, then
+
+20
+00:01:24,260 --> 00:01:25,520
+just use this command.
+
+21
+00:01:26,030 --> 00:01:31,610
+For example, let me show you the message of our last week long dash.
+
+22
+00:01:31,610 --> 00:01:35,710
+One end of the gate ignore and removed from station.
+
+23
+00:01:35,990 --> 00:01:39,470
+That is our last message that we did on the previous lesson.
+
+24
+00:01:39,920 --> 00:01:43,010
+OK, now let's change it yet.
+
+25
+00:01:43,010 --> 00:01:45,950
+Commit double dash amand.
+
+26
+00:01:47,260 --> 00:01:55,090
+I had updated word at the beginning here, text editor is opened, just to remind you, not part is
+
+27
+00:01:55,090 --> 00:02:02,290
+open because I said not, but as a default text editor in global conflicts here, I can change message.
+
+28
+00:02:02,710 --> 00:02:06,620
+I press control and ask to save the file and close it.
+
+29
+00:02:07,350 --> 00:02:10,060
+Now let's check the last comit message.
+
+30
+00:02:10,720 --> 00:02:17,170
+And you can see that message is updated just in case not all students change the full text editor.
+
+31
+00:02:17,350 --> 00:02:21,100
+Let me show you what potentially you can see by default.
+
+32
+00:02:21,100 --> 00:02:23,460
+It bash users with text editor.
+
+33
+00:02:23,830 --> 00:02:29,640
+So in case you didn't change the full text editor, you're going to see unusual for you, text editor.
+
+34
+00:02:30,130 --> 00:02:32,940
+Let me change my global settings to demo this.
+
+35
+00:02:32,950 --> 00:02:39,130
+Do you get config demo Desh, Global Core Editor V.
+
+36
+00:02:40,240 --> 00:02:47,740
+Now, let me amend it myself one more time, which is a very powerful program that supports many cool
+
+37
+00:02:47,740 --> 00:02:48,380
+features.
+
+38
+00:02:48,850 --> 00:02:53,160
+Unfortunately, this course is not about me and I am not joking.
+
+39
+00:02:53,170 --> 00:02:57,280
+It is really possible to pass a course for the editor to learn more about it.
+
+40
+00:02:57,760 --> 00:03:03,400
+But I will show you now the basics so that you could navigate here just in case you forgot to change
+
+41
+00:03:03,400 --> 00:03:04,630
+the full text editor.
+
+42
+00:03:05,260 --> 00:03:12,310
+First of all, for cursor navigation, you have to use the next case out to move cursor to the right
+
+43
+00:03:12,760 --> 00:03:19,690
+just to move cursor down h to move cursor to the left, K to move cursor up.
+
+44
+00:03:20,380 --> 00:03:25,540
+The text editor has two modes command line mode and insert mode.
+
+45
+00:03:26,080 --> 00:03:31,210
+Let me show you on the example level of cursor after updated virt.
+
+46
+00:03:32,050 --> 00:03:34,660
+Now I need to switch to insert mode.
+
+47
+00:03:35,020 --> 00:03:36,940
+I need to press I key.
+
+48
+00:03:37,660 --> 00:03:41,680
+And you see here in the bottom we see insert words.
+
+49
+00:03:42,400 --> 00:03:45,090
+That means you're in the insert mode.
+
+50
+00:03:45,490 --> 00:03:49,570
+Now I can use backspace and all the keys to change the message.
+
+51
+00:03:50,290 --> 00:03:54,340
+Let me remove updated and write the editor test.
+
+52
+00:03:56,190 --> 00:04:02,970
+Now I have to say file and close it to do this, I need to switch with editor in command line mode.
+
+53
+00:04:03,300 --> 00:04:11,100
+I press escape button, you can see that there is no more insert is written down here to save changes
+
+54
+00:04:11,100 --> 00:04:11,690
+and exit.
+
+55
+00:04:11,700 --> 00:04:22,720
+We I have to type next column W and Q W stands for Right U stands for Quitte Press enter.
+
+56
+00:04:23,430 --> 00:04:29,310
+Now let's check our current message and receive that message is changed.
+
+57
+00:04:29,710 --> 00:04:30,320
+Awesome.
+
+58
+00:04:30,690 --> 00:04:36,980
+Now you understand what I meant when I said that we text Ed will be a bit unusual for you to use.
+
+59
+00:04:37,560 --> 00:04:38,370
+That's why.
+
+60
+00:04:38,430 --> 00:04:41,400
+Let's return back notepad as the default text editor.
+
+61
+00:04:42,470 --> 00:04:50,360
+OK, now let's imagine you forget to add some changes, let me add more spaces in the source code file.
+
+62
+00:04:56,740 --> 00:05:00,970
+Then I added the staging area get at DOT.
+
+63
+00:05:02,030 --> 00:05:08,930
+And now I want to adjust my last command so that it includes the latest changes and I don't want to
+
+64
+00:05:08,930 --> 00:05:18,170
+change comit message what I have to do, I have to perform next command, get commit double dash meant
+
+65
+00:05:18,800 --> 00:05:21,350
+double dash, no added.
+
+66
+00:05:22,350 --> 00:05:27,750
+And press, and here it is, let's check our combat history.
+
+67
+00:05:30,390 --> 00:05:32,750
+You can see that checksum is changed.
+
+68
+00:05:33,330 --> 00:05:40,700
+This is important just to remember that each time you do commit or just commit checksum, it's changed.
+
+69
+00:05:41,370 --> 00:05:45,110
+Later, I will show you one real example, why it is so important.
+
+70
+00:05:46,070 --> 00:05:51,890
+Now, I'd like to discuss with you next, Tenaris, that we create a new file, images, that we have
+
+71
+00:05:51,890 --> 00:05:53,390
+some important conflicts.
+
+72
+00:05:53,780 --> 00:06:01,850
+Let's create this file, watch some important conflicts, dot the 60, also edit changes to the existing
+
+73
+00:06:01,850 --> 00:06:05,060
+source code and put some new lines here.
+
+74
+00:06:05,630 --> 00:06:08,150
+And they added old files to the staging area.
+
+75
+00:06:08,870 --> 00:06:14,860
+Yet at DOT, now let's check status status.
+
+76
+00:06:15,770 --> 00:06:18,500
+Here's a new file and here's the existing one.
+
+77
+00:06:19,040 --> 00:06:25,520
+And I just realized that I don't want to have the one come with changes in the hello file and important
+
+78
+00:06:25,520 --> 00:06:30,470
+conflicts together, because logically that should be two different snapshots.
+
+79
+00:06:30,890 --> 00:06:35,840
+How I can stage changes and remove from the staging area files that I don't need.
+
+80
+00:06:36,650 --> 00:06:44,310
+Always remember to read, get hints, pay attention here use get restored about Desh staged file two
+
+81
+00:06:44,390 --> 00:06:45,020
+on stage.
+
+82
+00:06:45,800 --> 00:06:55,820
+Let's follow this hint it restore the modish staged SAAC slash and press stop key that provides us with
+
+83
+00:06:55,820 --> 00:07:00,710
+the auto completion so we won't waste our time on typing.
+
+84
+00:07:01,340 --> 00:07:02,150
+Press enter.
+
+85
+00:07:02,810 --> 00:07:09,920
+Let's check its status and we see that kilovolt file was removed from the staging area and wasn't removed
+
+86
+00:07:09,920 --> 00:07:11,480
+from my file system.
+
+87
+00:07:12,020 --> 00:07:14,720
+Also all changes are there on place.
+
+88
+00:07:15,290 --> 00:07:15,950
+Perfect.
+
+89
+00:07:16,160 --> 00:07:23,510
+I can create comment right now only with these changes and after that I can add to the stage a new file
+
+90
+00:07:23,510 --> 00:07:24,290
+and committed.
+
+91
+00:07:24,770 --> 00:07:25,460
+Awesome.
+
+92
+00:07:26,030 --> 00:07:28,190
+What if I want to discard changes?
+
+93
+00:07:28,790 --> 00:07:32,750
+Let's follow him from get here to discuss changes.
+
+94
+00:07:32,750 --> 00:07:35,380
+I have to type git restore and file name.
+
+95
+00:07:36,080 --> 00:07:38,800
+OK, let's do that git.
+
+96
+00:07:38,810 --> 00:07:44,630
+Restore a thirty slash and pressed up to autocomplete.
+
+97
+00:07:44,630 --> 00:07:45,710
+Hello World Java.
+
+98
+00:07:47,820 --> 00:07:51,750
+And now we can see that changes were averted great.
+
+99
+00:07:53,420 --> 00:08:00,410
+The one thing while I get the most is that everything what was committed can be recovered, even changes
+
+100
+00:08:00,410 --> 00:08:03,830
+that were done with the help of gift commitment commands.
+
+101
+00:08:04,310 --> 00:08:10,370
+Later in this course, I'll show you how you can use the travelogue to restore literally avarice and
+
+102
+00:08:10,370 --> 00:08:11,620
+what was ever committed.
+
+103
+00:08:12,140 --> 00:08:17,380
+However, the changes which should discard without committing is not possible to restore.
+
+104
+00:08:17,720 --> 00:08:19,310
+So be very careful.
+
+105
+00:08:20,000 --> 00:08:22,240
+That's all what I wanted to share with you today.
+
+106
+00:08:22,520 --> 00:08:24,560
+Let's recap what we have learned today.
+
+107
+00:08:25,220 --> 00:08:27,680
+Today we learned how to amend last comment.
+
+108
+00:08:28,100 --> 00:08:31,420
+We also learned how to change can message if you want.
+
+109
+00:08:31,430 --> 00:08:36,950
+So you saw the text editor and learn the basics to work in the editor.
+
+110
+00:08:37,460 --> 00:08:41,330
+Also, we learned how to use step for auto completion.
+
+111
+00:08:41,780 --> 00:08:48,530
+Now you know how to stage some changes and how to restore state of the file to the original state since
+
+112
+00:08:48,530 --> 00:08:49,450
+the last comment.
+
+113
+00:08:50,270 --> 00:08:51,370
+That's all for today.
+
+114
+00:08:51,770 --> 00:08:55,310
+Thanks a lot for your attention and see you in the next lesson.

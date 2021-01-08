@@ -1,0 +1,831 @@
+1
+00:00:06,490 --> 00:00:10,960
+And now the students in this class and we are going to discuss the topic that will be interesting for
+
+2
+00:00:10,960 --> 00:00:16,510
+developers who work in such integrated development environment as Eclipse, we're going to learn today
+
+3
+00:00:16,510 --> 00:00:22,960
+how to integrate it with eclipse for development come for besides buttons and widgets that will configure
+
+4
+00:00:22,960 --> 00:00:24,310
+an eclipse during the lesson.
+
+5
+00:00:24,490 --> 00:00:30,280
+I will show you how you can use get Bush directly from the eclipse together on real example.
+
+6
+00:00:30,310 --> 00:00:33,930
+We are going to learn how to execute basic operations from Eclipse.
+
+7
+00:00:34,600 --> 00:00:40,900
+I make overview of widgets that will allow you to see good history navigate between branches, push
+
+8
+00:00:40,900 --> 00:00:43,120
+and pull changes from the remote repository.
+
+9
+00:00:43,780 --> 00:00:48,280
+After this lesson, you will learn how you can resolve conflicts in eclipse interface.
+
+10
+00:00:49,000 --> 00:00:51,310
+Let's start and turn the topic.
+
+11
+00:00:51,310 --> 00:00:53,100
+I said just jump into the practice.
+
+12
+00:00:53,770 --> 00:00:55,510
+Here's my Eclipse workspace.
+
+13
+00:00:55,540 --> 00:01:00,610
+I created a completely new workspace and reset perspective for you to default to configure it with you
+
+14
+00:01:00,610 --> 00:01:01,350
+from scratch.
+
+15
+00:01:01,810 --> 00:01:07,000
+I have Empathies Java Project, which we did together during the learning of the get in the workspace.
+
+16
+00:01:07,420 --> 00:01:09,610
+How to Impact Projects into Eclipse.
+
+17
+00:01:09,620 --> 00:01:11,800
+I'm going to show you in the separate lesson.
+
+18
+00:01:11,800 --> 00:01:14,680
+Do not lose focus from the topic right now.
+
+19
+00:01:15,370 --> 00:01:22,270
+When I in the Project Eclipse automatically recognised that there is a git repository and you see that
+
+20
+00:01:22,270 --> 00:01:25,570
+in square brackets, it is even specifying my current branch.
+
+21
+00:01:26,290 --> 00:01:31,420
+But nevertheless, I will show you how that you get repository to eclipse manually just in case.
+
+22
+00:01:32,260 --> 00:01:35,810
+First of all, let's add all views here that we need.
+
+23
+00:01:36,550 --> 00:01:38,110
+Click on Window Show.
+
+24
+00:01:38,110 --> 00:01:43,870
+You are the one here git folder or use search bar to find it faster.
+
+25
+00:01:44,230 --> 00:01:47,140
+I would say that you'd stadion and git repositories.
+
+26
+00:01:47,170 --> 00:01:48,580
+Those are tools that you need.
+
+27
+00:01:48,580 --> 00:01:49,600
+One hundred percent.
+
+28
+00:01:50,200 --> 00:01:56,950
+Well, at least in my opinion, I'm holding control button and with a mouse left click select the options
+
+29
+00:01:56,950 --> 00:01:57,550
+that I need.
+
+30
+00:01:58,210 --> 00:02:04,270
+Let's also select get lock and it is good that we have learned how to work with Gatins again.
+
+31
+00:02:04,270 --> 00:02:08,920
+But at least now you already understand what all these views are about.
+
+32
+00:02:09,250 --> 00:02:13,110
+You already know what is a staging area, what is a good red flag.
+
+33
+00:02:13,390 --> 00:02:19,090
+You already know what they're getting directed for basis after we selected all use we need.
+
+34
+00:02:19,090 --> 00:02:20,500
+Let's press open button.
+
+35
+00:02:22,850 --> 00:02:30,110
+Nice views were opened just to remind you that you can move these views wherever you like them most
+
+36
+00:02:30,110 --> 00:02:32,250
+here in the clips, for example.
+
+37
+00:02:32,270 --> 00:02:36,200
+Let me move git repositories widget here at the bottom with other views.
+
+38
+00:02:36,860 --> 00:02:41,720
+And you can see that my clips recognized each repository in my project automatically.
+
+39
+00:02:42,290 --> 00:02:47,720
+But just for the future and just in case, I want you to know how to add the existing repository to
+
+40
+00:02:47,720 --> 00:02:53,330
+their clips, because it might be that the clips will not automatically recognize that you have not
+
+41
+00:02:53,330 --> 00:02:54,890
+get folder in your project.
+
+42
+00:02:54,900 --> 00:02:57,380
+And in this case you have to edit manually.
+
+43
+00:02:58,010 --> 00:03:03,980
+For the sake of example, let me remove the digital repository from this view in the clips mouse right.
+
+44
+00:03:03,980 --> 00:03:11,540
+Click remove repository from you because I want to remove git repository only from eclipse view and
+
+45
+00:03:11,540 --> 00:03:17,570
+I don't want to remove the don't get folder from the file system and I don't want to remove the project
+
+46
+00:03:17,570 --> 00:03:20,450
+and eclipse associated with this git repository.
+
+47
+00:03:20,750 --> 00:03:23,230
+I want to keep project in my workspace for you.
+
+48
+00:03:23,810 --> 00:03:25,740
+That's why I press this button.
+
+49
+00:03:26,570 --> 00:03:27,260
+Awesome.
+
+50
+00:03:27,830 --> 00:03:30,170
+Now we don't have any repository here.
+
+51
+00:03:30,590 --> 00:03:32,950
+You can create a new repository if you wish.
+
+52
+00:03:33,260 --> 00:03:35,170
+That is similar to executing Mutiny's.
+
+53
+00:03:35,180 --> 00:03:35,720
+Come on.
+
+54
+00:03:36,110 --> 00:03:40,160
+You might also an existing repository with the help of the eclipse wizard.
+
+55
+00:03:40,610 --> 00:03:45,370
+And in case you already have git repository in your computer, you can just add it to the workspace.
+
+56
+00:03:46,130 --> 00:03:51,620
+I believe there is no need to go over each of this option in detail because creating a good repository
+
+57
+00:03:51,620 --> 00:03:56,070
+is just specifying directory where you want to create don't get older and present.
+
+58
+00:03:56,090 --> 00:04:02,510
+Great Bottom Clonan Repository is just specifying the past as a repository and your credentials in case
+
+59
+00:04:02,510 --> 00:04:05,870
+you want a repository with the help of a HTTPS protocol.
+
+60
+00:04:06,560 --> 00:04:13,370
+But from my experience, this option at an existing local repository is used most of the times by me,
+
+61
+00:04:14,120 --> 00:04:19,760
+and I don't know why, probably because I don't rely on the eclipse tools to manage Mangat repository.
+
+62
+00:04:19,940 --> 00:04:26,720
+Usually I fetch all projects with a simple git clone command in the git bash and after that an important
+
+63
+00:04:26,720 --> 00:04:30,860
+project to the eclipse and an existing local git repository.
+
+64
+00:04:31,370 --> 00:04:37,130
+Personally, for me, this option is the easiest one, but my job is to share with you all possible
+
+65
+00:04:37,130 --> 00:04:40,570
+options and let you decide what works the best for you.
+
+66
+00:04:41,270 --> 00:04:46,010
+That's why let me show you how I usually add existing local repositories to Eclipse.
+
+67
+00:04:46,610 --> 00:04:53,060
+And now you should specify a folder where your local repository is located and navigate it to the folder
+
+68
+00:04:53,060 --> 00:04:59,470
+that we created together during the course while learning Gaede and press select folder button here
+
+69
+00:04:59,480 --> 00:05:02,480
+clip's shows me repositories that it found in this folder.
+
+70
+00:05:02,870 --> 00:05:08,450
+I checked this checkbox and press that button and here's my repository back again.
+
+71
+00:05:09,170 --> 00:05:10,250
+Let me expand it.
+
+72
+00:05:11,030 --> 00:05:13,430
+It is very convenient to switch branches here.
+
+73
+00:05:14,030 --> 00:05:20,120
+You might find here local and remote branches nable left click on the massive branch will move me to
+
+74
+00:05:20,120 --> 00:05:23,750
+the master branch eclipse will ask for confirmation.
+
+75
+00:05:24,050 --> 00:05:28,550
+Just click checkout and you already know how you check out command works.
+
+76
+00:05:28,910 --> 00:05:35,930
+So I believe you understood what happened behind the scene and you may see a small T care next to the
+
+77
+00:05:35,930 --> 00:05:36,890
+massive branch name.
+
+78
+00:05:37,610 --> 00:05:40,730
+Let me switch back to the Kayseri 09 branch.
+
+79
+00:05:41,480 --> 00:05:41,840
+Right.
+
+80
+00:05:41,840 --> 00:05:47,090
+Click on the branch would allow you to do the operations that will want to perform in Git Bush.
+
+81
+00:05:47,600 --> 00:05:51,890
+You may reset branch in different modes, so it makes and hard.
+
+82
+00:05:52,430 --> 00:05:58,850
+You may replace your branch if needed, merged, delete, rename and perform all other operations that
+
+83
+00:05:58,850 --> 00:06:00,440
+you may perform in the git bash.
+
+84
+00:06:01,280 --> 00:06:05,630
+We don't have docs in our repository yet, so it is empty here.
+
+85
+00:06:06,740 --> 00:06:13,100
+What a task is will be discussed in the separate question here, you may find your main references in
+
+86
+00:06:13,100 --> 00:06:13,940
+your repository.
+
+87
+00:06:13,940 --> 00:06:17,300
+You may check out the if you wish in remote.
+
+88
+00:06:17,300 --> 00:06:24,110
+You may check to what remote repository you are connected right now in Stasch comments, you can explore
+
+89
+00:06:24,110 --> 00:06:25,370
+the state of your stasch.
+
+90
+00:06:26,330 --> 00:06:33,050
+And you're working directory, that is technically a project that may collapse everything here, based
+
+91
+00:06:33,050 --> 00:06:38,660
+on my experience, I mostly use this section to navigate between branches, create new branch if needed,
+
+92
+00:06:38,660 --> 00:06:40,220
+and remove all branches.
+
+93
+00:06:41,250 --> 00:06:48,330
+Let's move on this, Sunny, as a positive name means that I have some onstage changes you may find
+
+94
+00:06:48,330 --> 00:06:48,750
+similar.
+
+95
+00:06:48,750 --> 00:06:54,030
+Some here in the package explore how to identify what change are we talking about?
+
+96
+00:06:54,540 --> 00:06:56,190
+Let's check separate tab for that.
+
+97
+00:06:56,460 --> 00:07:02,460
+Yet, Stadion here, you can manage what is in the staging area right here, commit message and commit
+
+98
+00:07:02,460 --> 00:07:03,490
+changes if you want.
+
+99
+00:07:03,990 --> 00:07:08,310
+You also can commit and push to the remote with a single button click here.
+
+100
+00:07:08,310 --> 00:07:13,970
+From this view, I see that DOT project file is marked as unstaged changes here.
+
+101
+00:07:14,610 --> 00:07:20,300
+This is configuration of eclipse file that the groups created after we implement the project into it.
+
+102
+00:07:20,880 --> 00:07:22,020
+Let me update yet.
+
+103
+00:07:22,020 --> 00:07:23,820
+Ignore the just ignore this file.
+
+104
+00:07:24,660 --> 00:07:28,350
+I can't find it in your file in the package Explorer review.
+
+105
+00:07:28,350 --> 00:07:30,510
+But let me open the gate of you for that.
+
+106
+00:07:31,170 --> 00:07:34,680
+I click window shoe view navigator.
+
+107
+00:07:35,620 --> 00:07:42,330
+And this view, I can see old files as they are look like in my file system and here's Technophile,
+
+108
+00:07:43,090 --> 00:07:46,120
+let me add here DOT Project and save the file.
+
+109
+00:07:47,010 --> 00:07:53,940
+And you must use it instantly, not project file is gone from unstaged changes and to ignore it, you're
+
+110
+00:07:54,000 --> 00:07:59,160
+going to press this green plus sign to add all files from this section to the stage changes section.
+
+111
+00:07:59,840 --> 00:08:00,450
+That's right.
+
+112
+00:08:00,470 --> 00:08:03,130
+Commit message and troops files ignored.
+
+113
+00:08:03,190 --> 00:08:09,840
+And I can make a comment by clicking here, but probably I would commit and push changes to the remote
+
+114
+00:08:09,840 --> 00:08:11,220
+repository simultaneously.
+
+115
+00:08:11,820 --> 00:08:16,690
+To do this, I have to click on it and push button here in the desert.
+
+116
+00:08:16,710 --> 00:08:19,290
+You should set up stream branch for the current branch.
+
+117
+00:08:19,800 --> 00:08:25,720
+That is exactly what we did when we specified you option during the push to the remote repository.
+
+118
+00:08:26,310 --> 00:08:32,010
+Just click all these buttons until you see confirmation that your changes were pushed because the remote
+
+119
+00:08:32,760 --> 00:08:37,030
+we may check GitHub, but believe me, changes are there in the remote already.
+
+120
+00:08:37,800 --> 00:08:40,560
+Let me show you a few more things you can press.
+
+121
+00:08:40,560 --> 00:08:41,160
+Mouse, right.
+
+122
+00:08:41,160 --> 00:08:44,640
+Click on the project and you'll find a team section.
+
+123
+00:08:45,190 --> 00:08:48,240
+This section is integration with it in Eclipse.
+
+124
+00:08:48,450 --> 00:08:54,570
+And you might find here a lot of different options like fetch from upstream push or bold changes and
+
+125
+00:08:54,570 --> 00:08:55,380
+many others.
+
+126
+00:08:56,280 --> 00:09:02,280
+Take your time to investigate the section and ask me in case you have any questions to check, commit
+
+127
+00:09:02,280 --> 00:09:02,850
+history.
+
+128
+00:09:03,090 --> 00:09:06,150
+You can press show in history here.
+
+129
+00:09:06,150 --> 00:09:11,370
+You may see cammed hash commit message, author of the Commit and Date of the Snapshot.
+
+130
+00:09:11,760 --> 00:09:16,020
+And this window, you can check what files were changed in scope of the particular comment.
+
+131
+00:09:16,470 --> 00:09:21,840
+You may open the file to see the difference before and after the snapshot to understand what exactly
+
+132
+00:09:21,840 --> 00:09:22,640
+was changed.
+
+133
+00:09:23,400 --> 00:09:28,530
+This is where we use a full tool during the investigation of the effects when after specific commit
+
+134
+00:09:28,540 --> 00:09:29,880
+something went wrong.
+
+135
+00:09:30,360 --> 00:09:35,700
+Also here in the history, you may reset your branch to a specific committee or check out there.
+
+136
+00:09:36,100 --> 00:09:37,490
+You just click mouse, right.
+
+137
+00:09:37,500 --> 00:09:40,430
+Click and select exactly what you need.
+
+138
+00:09:41,340 --> 00:09:46,110
+Now I want to show you a few more configurations that I found extremely helpful.
+
+139
+00:09:46,590 --> 00:09:50,100
+I want to tell you how you can add a few buttons here on the toolbar.
+
+140
+00:09:50,910 --> 00:09:54,480
+Click window perspective, customize perspective.
+
+141
+00:09:55,290 --> 00:09:59,340
+Now go to the action of ability and select it here.
+
+142
+00:09:59,970 --> 00:10:05,100
+After that, go to the toolbar visibility and make sure that it is selected here.
+
+143
+00:10:06,040 --> 00:10:11,830
+Click, apply and close, and now here on the top, you have very convenient buttons.
+
+144
+00:10:12,760 --> 00:10:20,560
+No matter what you want to do, push back from upstream pool, check out the branch, Rebase Mirch,
+
+145
+00:10:20,560 --> 00:10:26,200
+or he said you can start the separation's simply by clicking the right button in the toolbar.
+
+146
+00:10:27,040 --> 00:10:33,250
+And even in case you can't find is important that you need or you want to execute some specific command
+
+147
+00:10:33,250 --> 00:10:34,540
+was a specific option.
+
+148
+00:10:34,540 --> 00:10:40,480
+You always may open it feedback directly from Eclipse and start working it to open it.
+
+149
+00:10:40,480 --> 00:10:44,290
+Bushing An Eclipse finds the icon of the console in the toolbar.
+
+150
+00:10:45,040 --> 00:10:48,620
+Hear this, click on it and select it.
+
+151
+00:10:48,640 --> 00:10:53,410
+Bush in the dropdown here in the bus should be installed on your computer.
+
+152
+00:10:53,620 --> 00:10:58,210
+In either case, you won't be able to find it here in the dropdown list.
+
+153
+00:10:58,780 --> 00:11:02,680
+Now you may click OK Button and terminal is opened.
+
+154
+00:11:03,470 --> 00:11:05,290
+Important thing to mention here.
+
+155
+00:11:05,440 --> 00:11:11,430
+Always pay attention to the directory WAGGETT Bush is opened in case you have multiple yet repositories
+
+156
+00:11:11,440 --> 00:11:19,330
+in the single eclipse workspace that keeps my open you another directory or it may open your home directory
+
+157
+00:11:20,020 --> 00:11:23,040
+to make sure that eclipse will open the user right directly.
+
+158
+00:11:23,050 --> 00:11:29,770
+I always press the project first here and only after that I click open terminal icon homes.
+
+159
+00:11:29,830 --> 00:11:31,140
+This information will help you.
+
+160
+00:11:31,870 --> 00:11:33,070
+That is practical, deep.
+
+161
+00:11:33,070 --> 00:11:35,620
+That is really helpful to students in my opinion.
+
+162
+00:11:36,490 --> 00:11:38,500
+We didn't talk about Rafalski yet.
+
+163
+00:11:38,620 --> 00:11:40,030
+Nothing special here.
+
+164
+00:11:40,360 --> 00:11:44,770
+I believe you already learned in the separate lesson what a greater focus here.
+
+165
+00:11:44,770 --> 00:11:48,100
+You might find the red flag, if you will domus right click.
+
+166
+00:11:48,100 --> 00:11:51,520
+You can find additional options that might be useful for you.
+
+167
+00:11:52,300 --> 00:11:57,400
+And the last things that I wanted to share with you today is to show you how you can resolve conflicts
+
+168
+00:11:57,400 --> 00:12:02,890
+in eclipse, especially for that I prepared a separate branch where I reproduce, merge conflicts,
+
+169
+00:12:02,890 --> 00:12:06,400
+state how to reproduce and what merge conflict is.
+
+170
+00:12:06,880 --> 00:12:12,650
+Please feel free to learn in the separate lesson dedicated to the merge conflicts in this lesson output
+
+171
+00:12:12,650 --> 00:12:15,760
+the stress only on the eclipse tools to integrate with the grid.
+
+172
+00:12:16,540 --> 00:12:19,540
+Here is a separate branch with so much conflict in it.
+
+173
+00:12:20,110 --> 00:12:22,390
+I called the branch merge conflict dilemma.
+
+174
+00:12:23,020 --> 00:12:29,020
+Usually when you have much conflict, eclipse highlights to your files in which you have much conflict
+
+175
+00:12:29,020 --> 00:12:30,730
+with the red dots like this.
+
+176
+00:12:31,270 --> 00:12:37,600
+So now it is impossible to mis file with the next conflict when we open the file, which is a good science
+
+177
+00:12:37,600 --> 00:12:41,680
+where I get separated for different state of the file from different snapshots.
+
+178
+00:12:42,100 --> 00:12:45,790
+But the groups offer special tool to merge conflicts in files.
+
+179
+00:12:46,330 --> 00:12:48,760
+Let me show it to you, Mouse.
+
+180
+00:12:48,760 --> 00:12:53,950
+Right, click on file game merge two here on top.
+
+181
+00:12:53,950 --> 00:12:56,620
+You are going to see Kummetz hash that have conflict.
+
+182
+00:12:57,550 --> 00:13:04,150
+Usually you can't edit text in the window on the right, but you can modify text in the window on the
+
+183
+00:13:04,150 --> 00:13:04,450
+left.
+
+184
+00:13:04,450 --> 00:13:09,760
+Here you can click this arrow to place everything from the right window to the left window.
+
+185
+00:13:10,210 --> 00:13:15,490
+When you are going to have more conflicts, there will be different arrows for each specific conflict.
+
+186
+00:13:16,180 --> 00:13:21,250
+And after you modify the file on the left, you can press control and ask to save the file.
+
+187
+00:13:21,910 --> 00:13:27,370
+If we would check the same file in the text editor, we are going to find that all signs that it put
+
+188
+00:13:27,370 --> 00:13:27,760
+here.
+
+189
+00:13:27,760 --> 00:13:31,200
+I removed grate in the gas station.
+
+190
+00:13:31,210 --> 00:13:34,210
+You can put a file to the staging area to more conflict.
+
+191
+00:13:34,210 --> 00:13:39,430
+As a result, when conflict is resolved, you may see a small asterisk on the file.
+
+192
+00:13:39,910 --> 00:13:45,210
+And after all, conflicts are resolved and there are no more red dots, you can open it.
+
+193
+00:13:45,220 --> 00:13:46,350
+Brush and continue.
+
+194
+00:13:46,360 --> 00:13:48,940
+Is a rebasing or cherrypicking something?
+
+195
+00:13:48,940 --> 00:13:50,590
+What caused the merge conflicts?
+
+196
+00:13:51,470 --> 00:13:55,290
+I believe we learned a lot today about the clips and get integration.
+
+197
+00:13:55,910 --> 00:14:02,000
+Now I want you to take your time and as much heat related violence as possible to learn the material
+
+198
+00:14:02,000 --> 00:14:02,400
+better.
+
+199
+00:14:02,810 --> 00:14:06,590
+The best thing to learn this is to practice as much as you can.
+
+200
+00:14:07,100 --> 00:14:10,070
+Meanwhile, let's recap what we have learned today.
+
+201
+00:14:10,550 --> 00:14:13,240
+The Navy learned how we might interact with it.
+
+202
+00:14:13,250 --> 00:14:18,800
+With the help of a glimpse, we learned what views the clips we may use to execute to give commands.
+
+203
+00:14:19,250 --> 00:14:25,670
+Also today, you saw how you can execute basic operations from a collapse besides the collapse configuration.
+
+204
+00:14:25,700 --> 00:14:32,570
+We also learned how to use it directly from Eclipse today, where even did can commit and push that
+
+205
+00:14:32,570 --> 00:14:34,330
+snapshot to the remote repository.
+
+206
+00:14:34,730 --> 00:14:39,060
+And in the end of the lesson, I showed you how you might use magenta in eclipse.
+
+207
+00:14:39,830 --> 00:14:41,450
+Hope you enjoyed the lesson.
+
+208
+00:14:41,760 --> 00:14:44,900
+Thanks a lot for your attention and see you in the next lesson.

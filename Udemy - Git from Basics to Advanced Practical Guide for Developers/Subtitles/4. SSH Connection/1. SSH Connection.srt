@@ -1,0 +1,479 @@
+1
+00:00:06,320 --> 00:00:07,070
+Hello, Jim.
+
+2
+00:00:07,090 --> 00:00:11,280
+In this lesson, I'm going to show you how you can establish S.H. Connection.
+
+3
+00:00:11,510 --> 00:00:14,820
+We'll talk briefly about why do we need it after that.
+
+4
+00:00:14,840 --> 00:00:21,170
+I will tell you how you have to generate SSL keys on your computer and where to configure SSL connection
+
+5
+00:00:21,170 --> 00:00:22,650
+in your account.
+
+6
+00:00:22,910 --> 00:00:27,750
+Also in this lesson, I will show you how you can update your remote repository that is connected to
+
+7
+00:00:27,750 --> 00:00:28,520
+your local one.
+
+8
+00:00:28,970 --> 00:00:33,080
+To start with, I'd like you to understand first what is SNH?
+
+9
+00:00:33,560 --> 00:00:36,140
+Because you're in your life as a software engineer.
+
+10
+00:00:36,150 --> 00:00:42,650
+You're going to use this protocol many times to get access to other computers, as, say, stands for
+
+11
+00:00:42,650 --> 00:00:43,990
+Secure Socket Shell.
+
+12
+00:00:44,450 --> 00:00:50,120
+It is a security protocols that allows you to connect to a remote computer by using text based interface.
+
+13
+00:00:50,360 --> 00:00:56,300
+Using the Sensage, you can easily log into another computer from anywhere and perform any commands
+
+14
+00:00:56,300 --> 00:00:59,000
+on that computer or do any changes you wish.
+
+15
+00:00:59,330 --> 00:01:05,870
+The goal of SFH is to make remote connections to computers much more secure while working with remote
+
+16
+00:01:05,870 --> 00:01:06,500
+repositories.
+
+17
+00:01:06,500 --> 00:01:13,280
+You often have to identify yourself using your username and password and establish an SSA connection
+
+18
+00:01:13,280 --> 00:01:14,180
+is another way.
+
+19
+00:01:14,180 --> 00:01:17,990
+How to identify yourself without using the username or passwords.
+
+20
+00:01:17,990 --> 00:01:25,490
+Every time SSA requires both components to be configured server side, that is our remote repository.
+
+21
+00:01:25,520 --> 00:01:29,750
+In this case, this is a GitHub and the second part is a client side.
+
+22
+00:01:30,050 --> 00:01:37,760
+That is our local computer to authenticate user as I keys are quite the key come in pairs.
+
+23
+00:01:37,880 --> 00:01:40,690
+Public and private key public key.
+
+24
+00:01:40,690 --> 00:01:47,090
+You can store on any remote server on the GitHub for example, and the private keys stored only on your
+
+25
+00:01:47,090 --> 00:01:54,800
+computer during the establishment of S.H. Connection Key is checked in case they're matched SSA each
+
+26
+00:01:54,830 --> 00:01:56,180
+session is established.
+
+27
+00:01:56,750 --> 00:02:03,560
+The cryptographic behind SSL key ensures that no one can reverse engineer your private key from the
+
+28
+00:02:03,560 --> 00:02:04,280
+public one.
+
+29
+00:02:04,970 --> 00:02:09,700
+Now you understand that first thing we need to do is to generate SSL keys.
+
+30
+00:02:09,950 --> 00:02:10,850
+Let's do that.
+
+31
+00:02:11,710 --> 00:02:17,530
+The few different ways how to generate as a stage kiss on your computer and if you Google this question,
+
+32
+00:02:17,530 --> 00:02:21,780
+you might find a few commands that help you to generate MSH cues from the console.
+
+33
+00:02:22,060 --> 00:02:28,720
+But I'm going to show you the easiest way to generate a set of keys that almost never mentioned to generate
+
+34
+00:02:28,720 --> 00:02:29,280
+the key.
+
+35
+00:02:29,320 --> 00:02:30,880
+Open the app.
+
+36
+00:02:31,540 --> 00:02:34,660
+You can find it in window search or just by pressing a mouse.
+
+37
+00:02:34,660 --> 00:02:34,900
+Right.
+
+38
+00:02:34,900 --> 00:02:37,600
+Click in the file explorer and selecting it be.
+
+39
+00:02:38,260 --> 00:02:43,960
+If you open it in the folder where you have local git repository initialized, it can look like this.
+
+40
+00:02:44,350 --> 00:02:48,810
+But in case you open, get GUI in some other place it can look like this.
+
+41
+00:02:49,450 --> 00:02:56,940
+Nevertheless, in both cases we need to click on the help up here and after that show at S.A.G. Press
+
+42
+00:02:56,960 --> 00:02:58,250
+generate key button.
+
+43
+00:02:58,540 --> 00:03:01,050
+Now I'm asked to enter a passphrase.
+
+44
+00:03:01,330 --> 00:03:07,540
+The main goal of this passphrase is to encrypt your private key in case attacker would steal your private,
+
+45
+00:03:07,540 --> 00:03:08,460
+as I say, key.
+
+46
+00:03:08,500 --> 00:03:11,950
+It will be useless for him because he doesn't know your passphrase.
+
+47
+00:03:12,400 --> 00:03:18,150
+While attackers spend time on crack in your private key passphrase can buy you some time to revoke keys
+
+48
+00:03:18,160 --> 00:03:19,720
+and roll over to the new one.
+
+49
+00:03:20,050 --> 00:03:25,330
+By leaving this field empty, we acceptance the risk that the attacker can get access to the private
+
+50
+00:03:25,330 --> 00:03:26,680
+key on our computer.
+
+51
+00:03:27,130 --> 00:03:33,700
+I just click OK button and when I am asked to enter the same passphrase, I just click OK, button one
+
+52
+00:03:33,700 --> 00:03:34,180
+more time.
+
+53
+00:03:34,960 --> 00:03:40,810
+And here you are going to see only publicly that you can share copies is key to the clipboard.
+
+54
+00:03:40,810 --> 00:03:43,750
+And open your GitHub account here.
+
+55
+00:03:43,750 --> 00:03:48,010
+Click on icon of your profile and select settings here.
+
+56
+00:03:48,010 --> 00:03:52,030
+Find a cessation keys section, click on it.
+
+57
+00:03:52,540 --> 00:03:56,470
+You can have multiple SSL keys associated with your account.
+
+58
+00:03:56,830 --> 00:04:03,460
+For example, here I have my two laptops connected to the single account, my HP and ASUS laptops.
+
+59
+00:04:04,150 --> 00:04:07,000
+To add new SSL key, just click this button.
+
+60
+00:04:07,840 --> 00:04:10,090
+Title can be any title you would like.
+
+61
+00:04:10,450 --> 00:04:12,100
+For example, my laptop.
+
+62
+00:04:12,760 --> 00:04:18,610
+Then put your cursor in key text area and paste the content of your clipboard.
+
+63
+00:04:19,000 --> 00:04:21,760
+I press control and be awesome.
+
+64
+00:04:22,570 --> 00:04:28,210
+Now press at S.A.G. you have me ask you to insert password.
+
+65
+00:04:30,420 --> 00:04:37,980
+And I can see the new S.A.G. is added to this list, great, what to do next to work with your remote
+
+66
+00:04:37,980 --> 00:04:42,060
+repositories, we assess each protocol you have to set the proper remote.
+
+67
+00:04:42,480 --> 00:04:47,240
+Let's navigate back to our kybosh to check what remote repository we currently have said.
+
+68
+00:04:48,110 --> 00:04:54,210
+You remember the command to check the remote gate remote with option B here.
+
+69
+00:04:54,210 --> 00:04:59,070
+You can see that currently we use HTTPS protocol to connect to our remote.
+
+70
+00:04:59,550 --> 00:05:02,790
+We need to change our remote to connect our repository.
+
+71
+00:05:02,790 --> 00:05:05,940
+We are S.H. Where to find another Ururoa.
+
+72
+00:05:06,480 --> 00:05:09,650
+Let's go back to the Web browser to our good Happe account.
+
+73
+00:05:10,260 --> 00:05:13,520
+Here is the repository which we created together on the previous lesson.
+
+74
+00:05:14,220 --> 00:05:20,700
+Let's press this green button here to remember that on previous lesson we selected HTP on purpose during
+
+75
+00:05:20,700 --> 00:05:21,580
+the remote setting.
+
+76
+00:05:22,350 --> 00:05:28,140
+Now I want you to press this button as SNH copy to the clipboard, this URL.
+
+77
+00:05:28,710 --> 00:05:31,860
+Let's get back to the kybosh on previous lesson.
+
+78
+00:05:31,860 --> 00:05:38,610
+You learned that that remote we have to target remote at command, but to change the remote area, we
+
+79
+00:05:38,610 --> 00:05:41,670
+have to enter another command that's typed the following.
+
+80
+00:05:42,150 --> 00:05:48,090
+Guedes remote said Eurorail a region and paste Eurail that we copied on the GitHub.
+
+81
+00:05:49,140 --> 00:05:49,930
+Press enter.
+
+82
+00:05:50,730 --> 00:05:52,530
+Now let's check our remote.
+
+83
+00:05:54,890 --> 00:05:55,530
+Awesome.
+
+84
+00:05:55,790 --> 00:05:59,300
+Now we see that we are not using HTTPS protocol anymore.
+
+85
+00:05:59,660 --> 00:06:02,730
+Let me show you one more thing so that you will be ready for that.
+
+86
+00:06:03,080 --> 00:06:04,550
+I want to make some changes.
+
+87
+00:06:04,840 --> 00:06:07,060
+Let me make some changes in this file.
+
+88
+00:06:10,620 --> 00:06:18,290
+Now, let me add it to the staging area and create a commit you commit, dash a dash cam test, S.H.
+
+89
+00:06:18,300 --> 00:06:21,460
+Connection, OK, committers created.
+
+90
+00:06:22,080 --> 00:06:29,850
+Now let's push our changes to the remote repository yet push origin master Origin Master is a reference
+
+91
+00:06:29,850 --> 00:06:31,160
+to our remote repository.
+
+92
+00:06:31,500 --> 00:06:37,770
+But on previous lesson we already set up stream for our current branch by using EU option.
+
+93
+00:06:38,220 --> 00:06:44,850
+That means my local repository is already aware that this master branch is connected with Master Branch
+
+94
+00:06:44,850 --> 00:06:45,540
+in the region.
+
+95
+00:06:45,840 --> 00:06:50,630
+And that also means that for me it is not necessarily to write Origin Master.
+
+96
+00:06:51,090 --> 00:06:52,980
+Let me even remove that now.
+
+97
+00:06:53,970 --> 00:07:00,720
+Press enter the message, which you see here is just to ensure that you trust this remote host and want
+
+98
+00:07:00,720 --> 00:07:04,990
+to connect to it types to get help to the nonhostile.
+
+99
+00:07:05,670 --> 00:07:12,090
+This message will appear on the first time you connect to the host and sees a message that this host
+
+100
+00:07:12,090 --> 00:07:14,730
+is permanently added to the list of known hosts.
+
+101
+00:07:15,240 --> 00:07:18,860
+The list of known hosts is located in the same folder.
+
+102
+00:07:19,260 --> 00:07:25,780
+You can find this folder inside your computer user folder in Linux based systems, including Mac OS.
+
+103
+00:07:26,130 --> 00:07:28,890
+This folder is located in the home directory.
+
+104
+00:07:29,490 --> 00:07:35,370
+Here in the directory you can find private and public access key and file with a list of nonhostile.
+
+105
+00:07:35,910 --> 00:07:39,480
+You can open this file in the notepad if you want to explore it.
+
+106
+00:07:39,480 --> 00:07:40,070
+Contents.
+
+107
+00:07:40,620 --> 00:07:43,050
+Let me search for GitHub mentions in this file.
+
+108
+00:07:46,750 --> 00:07:52,870
+And here you can see you have was added at the end of the list and let's check our repository to make
+
+109
+00:07:52,870 --> 00:07:55,990
+sure that our commute was successfully pushed to the remote.
+
+110
+00:07:56,410 --> 00:08:03,430
+I refresh page and here all you can see my last commute message and also I can check comit history.
+
+111
+00:08:03,880 --> 00:08:05,220
+Click here on comments.
+
+112
+00:08:06,010 --> 00:08:07,510
+Here's our latest comit.
+
+113
+00:08:08,050 --> 00:08:08,590
+Great.
+
+114
+00:08:09,480 --> 00:08:11,740
+Now, let's recap what we have learned today.
+
+115
+00:08:12,210 --> 00:08:18,630
+Today, we learned what is SSR protocol and when we need to use it, you understand how sausage connection
+
+116
+00:08:18,630 --> 00:08:20,400
+is created and how to generate.
+
+117
+00:08:20,400 --> 00:08:26,880
+As I say, each case, we can figure out our remote repository to work through the S.H. and we learned
+
+118
+00:08:26,880 --> 00:08:30,900
+what are known hosts are and how to give hope to the nonhostile.
+
+119
+00:08:31,740 --> 00:08:32,870
+That's all for now.
+
+120
+00:08:33,090 --> 00:08:36,150
+Thanks a lot for your attention and see you in the next lesson.

@@ -1,0 +1,411 @@
+1
+00:00:06,260 --> 00:00:06,920
+Hello, Jim.
+
+2
+00:00:06,960 --> 00:00:11,750
+Today, we're going to have super interesting topic and this last one, I'll show you how you can restore
+
+3
+00:00:11,750 --> 00:00:12,890
+literally everything.
+
+4
+00:00:12,890 --> 00:00:18,770
+What was ever present in any snapshot in it, even if it was overwritten, is by force push or hard
+
+5
+00:00:18,770 --> 00:00:19,280
+reset.
+
+6
+00:00:19,640 --> 00:00:22,160
+But I will run such command as gets where flock.
+
+7
+00:00:22,520 --> 00:00:25,460
+We're going to understand when and why we have to use.
+
+8
+00:00:25,460 --> 00:00:30,380
+It will imitate cases when we lost some changes and we need to restore them.
+
+9
+00:00:30,950 --> 00:00:35,810
+After this lesson, you will be able to use reflood command with different options and variations.
+
+10
+00:00:35,810 --> 00:00:42,290
+Like a pro, you are going to learn how to restore lost command in the new branch or reset current branch
+
+11
+00:00:42,290 --> 00:00:43,730
+to the committees that were lost.
+
+12
+00:00:44,330 --> 00:00:49,690
+Let's understand first, why do we need to use lock and what problem it may help us to solve?
+
+13
+00:00:50,360 --> 00:00:55,220
+It may happen that at some point during your journey you may accidentally lose a command.
+
+14
+00:00:55,610 --> 00:01:00,830
+Like I told you before, it may happen during the force delete of your work or during the hard reset
+
+15
+00:01:01,310 --> 00:01:06,410
+or you use interactive rebate's to squash commands and the resolving of conflicts during the invasion
+
+16
+00:01:06,410 --> 00:01:08,540
+went wrong and some changes were lost.
+
+17
+00:01:08,810 --> 00:01:16,250
+So how to get those changes back in if something were ever committed, might be restored, yet won't
+
+18
+00:01:16,250 --> 00:01:21,710
+be able to restore files that were never in the staging area and were never committed before.
+
+19
+00:01:22,400 --> 00:01:26,930
+I suggest that a lot of the kids were locked directly from the practical exercise.
+
+20
+00:01:27,180 --> 00:01:30,060
+Let's start to show you how to restore changes.
+
+21
+00:01:30,080 --> 00:01:32,450
+Let me intentionally lose some data.
+
+22
+00:01:32,960 --> 00:01:34,310
+I'm on the master branch.
+
+23
+00:01:34,790 --> 00:01:35,460
+Let me show you.
+
+24
+00:01:35,480 --> 00:01:38,360
+Let latest Kummetz gate log dash three.
+
+25
+00:01:39,230 --> 00:01:47,960
+Let me Hardell said Doulos commits yet reset hard had yielded to OK the branches reset.
+
+26
+00:01:48,410 --> 00:01:51,320
+Let's check commit history Dedlock.
+
+27
+00:01:52,200 --> 00:01:59,030
+Now we can say that we lost to commit, OK, there is no harm for me to restore the changes from the
+
+28
+00:01:59,090 --> 00:02:05,040
+region branch, but it might happen that a regional branch was also accidentally overwritten or completely
+
+29
+00:02:05,040 --> 00:02:05,530
+removed.
+
+30
+00:02:06,210 --> 00:02:08,910
+You won't believe me, but such cases may happen.
+
+31
+00:02:09,390 --> 00:02:14,310
+At the first glance, it looks like that I only need to remember to check some of the lost comments,
+
+32
+00:02:14,670 --> 00:02:16,110
+but we didn't memorize them.
+
+33
+00:02:16,110 --> 00:02:19,650
+Agree the most complicated in this task to learn.
+
+34
+00:02:19,680 --> 00:02:21,180
+Check some of those comments.
+
+35
+00:02:21,660 --> 00:02:25,350
+And the easiest thing to answer this question is to call it red flag.
+
+36
+00:02:25,430 --> 00:02:27,840
+Come on, what is a red flag?
+
+37
+00:02:28,530 --> 00:02:32,880
+As we are working with gait and movement pointers get silently records.
+
+38
+00:02:32,880 --> 00:02:35,730
+What is our head pointer and how does it look like?
+
+39
+00:02:36,180 --> 00:02:42,450
+That means that each time we are creating a new snapshot or switching branches, the red flag is updated.
+
+40
+00:02:43,110 --> 00:02:49,240
+You can investigate the history of all changes in your repository by executing the next command gateway
+
+41
+00:02:49,260 --> 00:02:49,640
+flock.
+
+42
+00:02:50,190 --> 00:02:56,530
+We can see information about each operation that was done here about each commit, each research on
+
+43
+00:02:56,530 --> 00:02:57,750
+the region must have branch.
+
+44
+00:02:58,140 --> 00:03:02,370
+You can find information here about different branches by the reference in the parentheses.
+
+45
+00:03:02,970 --> 00:03:06,360
+Also, you may find checksum of each state right here.
+
+46
+00:03:06,870 --> 00:03:08,910
+By the way, this is the last program.
+
+47
+00:03:08,920 --> 00:03:13,320
+This is a program for text terminals, for Unix like systems to close it.
+
+48
+00:03:13,320 --> 00:03:16,320
+Just press Kyuki to remember it.
+
+49
+00:03:16,470 --> 00:03:18,000
+Q stands for it.
+
+50
+00:03:18,000 --> 00:03:20,220
+Here, let me press Q.
+
+51
+00:03:21,190 --> 00:03:22,310
+OK, Hillary.
+
+52
+00:03:22,370 --> 00:03:26,410
+So where's the place where you can get check some of the comments that you want to restore?
+
+53
+00:03:26,920 --> 00:03:31,750
+I know that for some students, the way our flag looks like is not very informative.
+
+54
+00:03:32,080 --> 00:03:38,080
+We can't see the detailed content messages we may find on the description of the operation, but not
+
+55
+00:03:38,080 --> 00:03:39,660
+the details about the commit.
+
+56
+00:03:40,180 --> 00:03:47,650
+What would I suggest to you is to use the next command get look with option G here you may find a list
+
+57
+00:03:47,650 --> 00:03:49,840
+of all commits was a red flag reference.
+
+58
+00:03:50,560 --> 00:03:52,450
+Here is our committee that we have lost.
+
+59
+00:03:53,060 --> 00:03:56,410
+Let me create a new branch with the state of that snapshot.
+
+60
+00:03:57,340 --> 00:03:59,380
+Yet Branch lost changes.
+
+61
+00:04:00,290 --> 00:04:08,810
+And now I have to specify, commit checks that I want to restore E 50, be a D great.
+
+62
+00:04:09,080 --> 00:04:13,460
+Now let's check commit history, get log last changes.
+
+63
+00:04:14,480 --> 00:04:19,790
+Just to remind you to check the current history of the specific branch, we should specify branch name
+
+64
+00:04:19,790 --> 00:04:25,840
+next to log command and we can see that our new branch contains commands that were lost.
+
+65
+00:04:26,450 --> 00:04:31,940
+So as far as you may understand, you can restore, Anderson, what was present in any committee in
+
+66
+00:04:31,940 --> 00:04:37,400
+your local repository or anything where hat pointer of your local repository ever pointed to.
+
+67
+00:04:37,970 --> 00:04:40,040
+Also, one more important note.
+
+68
+00:04:40,400 --> 00:04:44,210
+By default, information in red flag is stored for 90 days.
+
+69
+00:04:44,780 --> 00:04:45,890
+Usually it is enough.
+
+70
+00:04:46,260 --> 00:04:52,220
+It is very unlikely that you lived your happy life for 91 days and after that realized that you need
+
+71
+00:04:52,220 --> 00:04:53,810
+to restore some lost command.
+
+72
+00:04:54,680 --> 00:04:57,500
+Let me show you one more Syntex of restoring changes.
+
+73
+00:04:58,140 --> 00:05:03,890
+I'm on the massive branch and I didn't switch to the new branch with the name lost changes that we created
+
+74
+00:05:03,890 --> 00:05:06,680
+with the last comment on the massive branch.
+
+75
+00:05:06,690 --> 00:05:10,530
+I still don't have my last comments after the hard reset.
+
+76
+00:05:11,180 --> 00:05:13,040
+Let me reset was hard to Morcom.
+
+77
+00:05:13,040 --> 00:05:19,760
+It's back here is our leaders had hard to prove that we really moved a few comments back and that we
+
+78
+00:05:19,760 --> 00:05:21,400
+have lost even more comments.
+
+79
+00:05:21,440 --> 00:05:23,000
+Let me show you commit history.
+
+80
+00:05:23,810 --> 00:05:29,610
+You'd log that story and you can see that we lost our five zero beard commit.
+
+81
+00:05:30,400 --> 00:05:34,640
+Let me show you one more time that shows a whole raft.
+
+82
+00:05:34,640 --> 00:05:36,270
+Look, let me show you the flag.
+
+83
+00:05:36,380 --> 00:05:42,020
+Only for the past one hour traffic was option since equals to one our.
+
+84
+00:05:43,410 --> 00:05:48,330
+And I see limited amount of red flag you can use day instead of hours if you wish.
+
+85
+00:05:48,900 --> 00:05:52,770
+So here is a state of our head pointer before I set it.
+
+86
+00:05:52,770 --> 00:05:55,350
+Has Index had at nine and two.
+
+87
+00:05:56,130 --> 00:06:02,760
+That's the sad state of the current branch to the opposition leader, said resorption, hard hat and
+
+88
+00:06:03,180 --> 00:06:04,440
+to unlet.
+
+89
+00:06:04,440 --> 00:06:08,190
+Check our comment history one more time gridlock.
+
+90
+00:06:08,940 --> 00:06:09,860
+And here we are.
+
+91
+00:06:10,290 --> 00:06:13,970
+We successfully restored state of our filesystem and state of our branch.
+
+92
+00:06:13,990 --> 00:06:15,810
+That was before the last reset.
+
+93
+00:06:16,500 --> 00:06:19,550
+I believe this information will help you a lot in the future.
+
+94
+00:06:20,160 --> 00:06:22,410
+That's all what I planned to share with you today.
+
+95
+00:06:22,920 --> 00:06:24,900
+Let's recap what we have learned today.
+
+96
+00:06:25,710 --> 00:06:28,200
+So today we learned what a leader travelogue is.
+
+97
+00:06:28,440 --> 00:06:31,920
+Now you know how to use this command during the lesson.
+
+98
+00:06:31,920 --> 00:06:37,380
+We restore our lost commits by creating a branch from then lost it all by yourself in the current branch
+
+99
+00:06:37,380 --> 00:06:40,020
+to the previous state before some comments were lost.
+
+100
+00:06:40,770 --> 00:06:44,640
+Also, we learned how to show red filtered by time passed.
+
+101
+00:06:45,610 --> 00:06:47,030
+That's all what we have for today.
+
+102
+00:06:47,500 --> 00:06:48,790
+Thanks a lot for your attention.
+
+103
+00:06:49,090 --> 00:06:50,830
+See you in the next lesson.

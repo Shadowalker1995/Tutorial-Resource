@@ -1,0 +1,539 @@
+1
+00:00:06,110 --> 00:00:06,840
+Hello, Jim.
+
+2
+00:00:06,860 --> 00:00:10,040
+In this lesson, I'm going to show you how interactive remise works.
+
+3
+00:00:10,220 --> 00:00:15,340
+Today, I will show you when and how you can use interactive free based on real examples.
+
+4
+00:00:15,350 --> 00:00:20,600
+I will show you how you can change any message from your repository history and we'll show you how to
+
+5
+00:00:20,600 --> 00:00:22,340
+combine to commit into one.
+
+6
+00:00:22,730 --> 00:00:25,670
+After this lesson, you learn how to squash it.
+
+7
+00:00:26,030 --> 00:00:30,640
+I will share with you best practices of working with give and keep good history clean.
+
+8
+00:00:31,040 --> 00:00:35,190
+Let's start and we will start from the example that we had in previous lesson.
+
+9
+00:00:35,840 --> 00:00:40,790
+Imagine that the men on the task branch, you understood that you have to do one more comment.
+
+10
+00:00:41,060 --> 00:00:43,250
+Probably you forgot to add some styles.
+
+11
+00:00:43,700 --> 00:00:50,920
+For the sake of example, let me adjust carousel to assess file nonhostile slash carousel dot to assess.
+
+12
+00:00:51,410 --> 00:00:55,580
+I will just put new ones here to not spend a lot of time on modifying this file.
+
+13
+00:00:56,360 --> 00:01:03,200
+I add these changes to the staging area get at DOT and now you need to include latest changes into your
+
+14
+00:01:03,200 --> 00:01:03,680
+branch.
+
+15
+00:01:03,830 --> 00:01:04,690
+What you can do.
+
+16
+00:01:05,090 --> 00:01:09,780
+The first option, which we have already learned, and which I want to remind you is to amend the last
+
+17
+00:01:09,870 --> 00:01:11,890
+commit like this yet come.
+
+18
+00:01:11,930 --> 00:01:15,350
+It was optional and was optional added.
+
+19
+00:01:15,890 --> 00:01:19,610
+This will allow you to change your latest commit without changing commit message.
+
+20
+00:01:19,940 --> 00:01:25,760
+But let's pretend you didn't want to amend commit for some reasons and want to create one more comment.
+
+21
+00:01:26,300 --> 00:01:30,890
+When you're dealing with comments that were merged into your branch by a colleague of yours who doesn't
+
+22
+00:01:30,890 --> 00:01:32,720
+know, get as good as you are.
+
+23
+00:01:32,870 --> 00:01:35,870
+And that's why you have Xhaka credit for this change.
+
+24
+00:01:36,210 --> 00:01:37,640
+Let me create a committee now.
+
+25
+00:01:38,210 --> 00:01:41,930
+You can meet with Option M to assess class for homecare.
+
+26
+00:01:41,930 --> 00:01:46,430
+So Slider is added, OK, and now you have to comments on your branch.
+
+27
+00:01:46,640 --> 00:01:48,050
+Let's add one more comment.
+
+28
+00:01:48,410 --> 00:01:51,920
+We need this to have at least three comments to play with on our branch.
+
+29
+00:01:52,340 --> 00:01:55,580
+That is for the sake of the demo, the same as before.
+
+30
+00:01:55,580 --> 00:02:03,130
+I will quickly adjust our two file and I will create one more snapshot nonhostile slash Carasso dot
+
+31
+00:02:03,170 --> 00:02:05,840
+to assess engine your lines here.
+
+32
+00:02:07,880 --> 00:02:13,430
+You'd commit dash a dash and one Monticello's glass for home Kurzel Slider is added.
+
+33
+00:02:16,280 --> 00:02:18,640
+OK, now we have three comments.
+
+34
+00:02:19,100 --> 00:02:23,180
+Imagine that you are not happy with Canet message and want to change it.
+
+35
+00:02:23,780 --> 00:02:25,470
+What options do you have to adjust?
+
+36
+00:02:25,730 --> 00:02:32,270
+Can it get can it was option amand but what if you don't want to change economic message for the latest
+
+37
+00:02:32,270 --> 00:02:32,660
+comment?
+
+38
+00:02:33,320 --> 00:02:37,090
+What if you want to change economic message that goes right before the last one?
+
+39
+00:02:37,670 --> 00:02:39,740
+Interactive information will help you with this.
+
+40
+00:02:40,410 --> 00:02:42,410
+What is interactive freebase?
+
+41
+00:02:42,860 --> 00:02:44,290
+Interactive Freebasing?
+
+42
+00:02:44,300 --> 00:02:49,820
+It makes it easy to clean up your comments before they get based or moved onto another branch.
+
+43
+00:02:50,780 --> 00:02:59,780
+Military base was option I had to the three I stands for interactive free base, we want to proceed
+
+44
+00:02:59,780 --> 00:03:02,410
+with interactive rebates for last's recommits.
+
+45
+00:03:02,870 --> 00:03:04,550
+That's why I wrote Hand.
+
+46
+00:03:04,790 --> 00:03:06,740
+That is a pointer to our current state.
+
+47
+00:03:06,950 --> 00:03:07,760
+Delusory.
+
+48
+00:03:08,090 --> 00:03:10,760
+That means recommits back from the current one.
+
+49
+00:03:11,360 --> 00:03:12,680
+Lets press enter now.
+
+50
+00:03:13,370 --> 00:03:13,990
+Awesome.
+
+51
+00:03:14,390 --> 00:03:19,010
+Here we see our three last Kummetz starting from the latest to the newest.
+
+52
+00:03:19,250 --> 00:03:25,220
+And I see that the change message I have to write are letter near the camp where I want to change cammed
+
+53
+00:03:25,250 --> 00:03:31,840
+message and I want to change not the last message but commit message that goes before the last one.
+
+54
+00:03:32,450 --> 00:03:38,600
+So I put our letter next to the USS Glassful home carrousel is added commit message.
+
+55
+00:03:39,380 --> 00:03:46,610
+I say file by pressing control and s and close the text editor in this window we can change comit message
+
+56
+00:03:46,610 --> 00:03:47,500
+as we wish.
+
+57
+00:03:47,780 --> 00:03:54,110
+Let's add more details to first class for scrolling Carasso on the home page is added.
+
+58
+00:03:55,280 --> 00:04:01,030
+Now, let's save this file and close the text editor here, you can see notification that we successfully
+
+59
+00:04:01,220 --> 00:04:02,820
+based and updated the branch.
+
+60
+00:04:03,200 --> 00:04:06,530
+Let's check in with history, long story.
+
+61
+00:04:07,220 --> 00:04:14,030
+And we can see that my message for this CANET and check some of this can it was changed grade after
+
+62
+00:04:14,030 --> 00:04:15,570
+we changed the message for comment.
+
+63
+00:04:15,590 --> 00:04:21,650
+We took a look at our branch history one more time and realize that it is way too many comments about
+
+64
+00:04:21,650 --> 00:04:22,350
+the same thing.
+
+65
+00:04:22,940 --> 00:04:26,650
+We have three comments right now for the one single piece of functionality.
+
+66
+00:04:27,290 --> 00:04:32,610
+We know that in case we would put this change to the remote repository, our tech might be disappointed.
+
+67
+00:04:32,930 --> 00:04:33,350
+Why?
+
+68
+00:04:33,800 --> 00:04:37,890
+Because was the one single task grade style and focus on the home page.
+
+69
+00:04:38,090 --> 00:04:40,250
+We have three committees right now.
+
+70
+00:04:40,250 --> 00:04:46,250
+Instead of having one single command, your tablet might ask you to squash comments in order to keep
+
+71
+00:04:46,250 --> 00:04:47,200
+Guitry clean.
+
+72
+00:04:47,700 --> 00:04:48,980
+What does squash mean?
+
+73
+00:04:49,520 --> 00:04:55,300
+In other words, you can combine two or more commands into the one to ensure clean good history.
+
+74
+00:04:55,910 --> 00:05:02,780
+You can mount Kummetz so they would disappear, but not the changes which were done in scope of these
+
+75
+00:05:02,780 --> 00:05:03,460
+snapshots.
+
+76
+00:05:04,160 --> 00:05:09,350
+Let's imagine the case that during the development of your task, you get multiple commands and after
+
+77
+00:05:09,350 --> 00:05:14,840
+that you realized that it would be better to have either one commit a group, commit in a different
+
+78
+00:05:14,840 --> 00:05:16,610
+manner how to do this.
+
+79
+00:05:17,030 --> 00:05:20,000
+Interactive rebase will help us also with this task.
+
+80
+00:05:20,600 --> 00:05:22,130
+Guitry base was option.
+
+81
+00:05:22,130 --> 00:05:24,350
+I had killed the three.
+
+82
+00:05:25,010 --> 00:05:26,990
+You're already familiar with this command.
+
+83
+00:05:27,320 --> 00:05:31,030
+You can specify as many comments backwards as you want instead of three.
+
+84
+00:05:31,410 --> 00:05:36,410
+I am specifying only three right now because we all remember four rules of happy work with Gaete.
+
+85
+00:05:36,410 --> 00:05:42,650
+From the previous lesson, I can modify only commands that are on my branch but not commit that already
+
+86
+00:05:42,650 --> 00:05:48,980
+exist and must have branch I press and at the same time in history, as we already saw today, was ablated
+
+87
+00:05:48,980 --> 00:05:49,760
+commit message.
+
+88
+00:05:50,240 --> 00:05:54,320
+We can see that to combine commands we can use either squash or fix up.
+
+89
+00:05:54,890 --> 00:05:56,090
+Will you squash one.
+
+90
+00:05:56,090 --> 00:05:58,730
+We want to change it message and fix up one.
+
+91
+00:05:58,730 --> 00:05:59,690
+We want to keep coming.
+
+92
+00:05:59,690 --> 00:06:01,280
+The message of the first command.
+
+93
+00:06:02,030 --> 00:06:07,430
+Most likely if you combine multiple commands, you want to reflect this in the correct message.
+
+94
+00:06:07,880 --> 00:06:11,120
+That's why more often you're going to squash rather than fix.
+
+95
+00:06:11,140 --> 00:06:15,860
+An important thing to mention here, you can squash the first commit in the list.
+
+96
+00:06:16,400 --> 00:06:23,390
+In other words, here in the first row, you should have to be able to squash all the comments I wrote
+
+97
+00:06:23,390 --> 00:06:27,860
+as letter near to commit s stands for squash.
+
+98
+00:06:28,040 --> 00:06:30,950
+And in case you forgot, you can find other shorthands here.
+
+99
+00:06:31,640 --> 00:06:38,510
+I press control and ask to save the file and close it now and ask my I to address commit message.
+
+100
+00:06:39,080 --> 00:06:42,740
+I see the command lines and commit messages of my other comments.
+
+101
+00:06:43,160 --> 00:06:47,150
+Let me clean this up a bit and leave the one message which I'd like to keep.
+
+102
+00:06:47,810 --> 00:06:51,860
+In addition to this one I want to add a few words is styled.
+
+103
+00:06:52,550 --> 00:06:54,230
+I save the file and close it.
+
+104
+00:06:54,440 --> 00:06:56,900
+I see a message that I successfully replaced.
+
+105
+00:06:57,380 --> 00:06:59,420
+What else potentially might happen here?
+
+106
+00:06:59,960 --> 00:07:06,530
+Potentially you can see a message about much conflict during are basin similar to the one you saw in
+
+107
+00:07:06,530 --> 00:07:07,370
+previous lesson.
+
+108
+00:07:07,880 --> 00:07:13,550
+Take into account you combine comments that might be merged conflicts, but you don't really know how
+
+109
+00:07:13,550 --> 00:07:15,530
+to deal with conflicts during the invasion.
+
+110
+00:07:15,560 --> 00:07:20,090
+Since we showed this in the previous lesson, let's check our command history now.
+
+111
+00:07:20,600 --> 00:07:22,190
+Get log dash three.
+
+112
+00:07:23,110 --> 00:07:27,610
+Great, you can see our comment was updated message and pay attention.
+
+113
+00:07:27,760 --> 00:07:34,240
+You took some if checksum is different, your you know, that pushed the remote repository will be rejected.
+
+114
+00:07:34,900 --> 00:07:39,160
+Beside our audit committee here, you can see all the comments from the remote master branch.
+
+115
+00:07:39,430 --> 00:07:45,100
+And we can see here our chametz, where we adjusted Susanne's file because they're mounted.
+
+116
+00:07:45,430 --> 00:07:47,020
+But the changes are in place.
+
+117
+00:07:47,680 --> 00:07:55,540
+We can open our chasez file just to check this Nuna styles, Desh, Castle, Dot to assess and find
+
+118
+00:07:55,540 --> 00:07:56,290
+that newlines.
+
+119
+00:07:56,290 --> 00:08:00,130
+Edit editing first commit and new line so that you're in the second place.
+
+120
+00:08:00,550 --> 00:08:04,780
+We can count number of new lines, but I believe it is even visually obvious.
+
+121
+00:08:05,350 --> 00:08:10,600
+We did all we wanted and you already know that in case there is a difference between comment history
+
+122
+00:08:10,600 --> 00:08:16,490
+and my local branch and remote branch, we need to for update our remote repository and unpressed lesson
+
+123
+00:08:16,890 --> 00:08:18,340
+learned best practices.
+
+124
+00:08:18,340 --> 00:08:23,170
+And we are going to use force with at least now used brute force with less.
+
+125
+00:08:23,860 --> 00:08:28,770
+We added additional changes and combine them in one snapshot and updated our budget request.
+
+126
+00:08:29,320 --> 00:08:33,120
+This will make you happy on your future project, I promise you.
+
+127
+00:08:33,850 --> 00:08:36,040
+Now let's recap what we have learned today.
+
+128
+00:08:36,670 --> 00:08:39,640
+In this lesson we learned what interactive rebase is.
+
+129
+00:08:39,880 --> 00:08:42,370
+You learn how to start interactive replays.
+
+130
+00:08:42,760 --> 00:08:48,850
+You saw how you can change any commitments that in your repository after this lesson, you also know
+
+131
+00:08:48,850 --> 00:08:50,800
+how to combine few comments together.
+
+132
+00:08:51,520 --> 00:08:54,580
+We learned best practices of working with Gaede today.
+
+133
+00:08:55,270 --> 00:08:56,290
+That's all for now.
+
+134
+00:08:56,740 --> 00:08:58,200
+Thanks a lot for your attention.
+
+135
+00:08:58,240 --> 00:08:59,860
+See you in the next lesson.

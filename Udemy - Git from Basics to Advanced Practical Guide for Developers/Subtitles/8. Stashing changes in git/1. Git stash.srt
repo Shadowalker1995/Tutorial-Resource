@@ -1,0 +1,727 @@
+1
+00:00:06,110 --> 00:00:09,830
+Hello there, students in this class and we are going to lunch with you get Stasch command.
+
+2
+00:00:09,980 --> 00:00:12,610
+I'm going to tell you when you might need to use it.
+
+3
+00:00:12,620 --> 00:00:16,700
+You'll understand how to reapply changes from your stash on real examples.
+
+4
+00:00:16,700 --> 00:00:21,070
+I will show you how to manage multiple stashes and even how to create a branch from your stash.
+
+5
+00:00:21,320 --> 00:00:25,970
+And also, we are going to run different commands that will allow you to clean your stash and to perform
+
+6
+00:00:25,970 --> 00:00:27,200
+as operations with it.
+
+7
+00:00:27,500 --> 00:00:33,410
+Let's start first of all, let's understand potential problems at stash command may help us to resolve.
+
+8
+00:00:33,680 --> 00:00:39,020
+Imagine that you are sitting at your computer and work on some task and all of a sudden you receive
+
+9
+00:00:39,020 --> 00:00:40,190
+a call from your manager.
+
+10
+00:00:40,580 --> 00:00:46,010
+Your manager screams that you urgently need to fix some other thing or you have to start work on the
+
+11
+00:00:46,010 --> 00:00:47,300
+other task immediately.
+
+12
+00:00:47,570 --> 00:00:49,460
+But it didn't finish your current task.
+
+13
+00:00:49,790 --> 00:00:53,600
+Your manager told you that you have to give up everything and start work on the new task.
+
+14
+00:00:54,080 --> 00:00:59,400
+The state of a file system doesn't allow you to create a committee right now, probably because you
+
+15
+00:00:59,400 --> 00:01:04,550
+even can't build your project successfully or you are just in the middle of something important to finish.
+
+16
+00:01:04,940 --> 00:01:09,460
+And it looks like that you have to put all your changes aside to get back to them later.
+
+17
+00:01:10,160 --> 00:01:15,050
+Hope that you understood the problem and real life case that might happen with you almost on a daily
+
+18
+00:01:15,050 --> 00:01:15,500
+basis.
+
+19
+00:01:16,070 --> 00:01:23,150
+But how to address this issue with the help of the Get Eustache Command will help us with this station.
+
+20
+00:01:23,150 --> 00:01:30,680
+Take the state of a working directory that is humidified direct files, stage changes and saves it on
+
+21
+00:01:30,680 --> 00:01:35,900
+a stack of unfinished changes that you can apply at any time, even on different branch.
+
+22
+00:01:36,440 --> 00:01:37,480
+What a staircase.
+
+23
+00:01:37,490 --> 00:01:38,810
+I will explain a bit later.
+
+24
+00:01:39,080 --> 00:01:39,710
+Nonwork.
+
+25
+00:01:40,490 --> 00:01:45,410
+I believe that the best way to understand how Eustache Command works is to show it to you in it.
+
+26
+00:01:45,410 --> 00:01:49,450
+But I am a master branch right now and my work in tree is clean.
+
+27
+00:01:49,880 --> 00:01:53,540
+Let's imagine I'm in the process of implementation of some important task.
+
+28
+00:01:53,930 --> 00:02:00,080
+I create a new branch and get to reach resorption c a three zero six important task.
+
+29
+00:02:00,800 --> 00:02:08,030
+OK, and being on this branch in SASE folder, I modified home HTML file to not switch the windows between
+
+30
+00:02:08,030 --> 00:02:09,320
+different code editors.
+
+31
+00:02:09,320 --> 00:02:15,980
+Let me do small changes right here in the terminal using nano text editor nano web content slash home
+
+32
+00:02:15,980 --> 00:02:17,060
+dot html.
+
+33
+00:02:17,630 --> 00:02:19,610
+I added some important changes here.
+
+34
+00:02:20,330 --> 00:02:24,170
+Be some important line tag is closed.
+
+35
+00:02:24,980 --> 00:02:31,760
+After I did all my changes, I saved a file and now I received a message from my manager who is in panic
+
+36
+00:02:31,760 --> 00:02:34,700
+and asks me to start work on the super important task.
+
+37
+00:02:35,210 --> 00:02:39,260
+I don't need changes from home HTML file that we have just created.
+
+38
+00:02:39,440 --> 00:02:41,510
+Deunan another task implementation.
+
+39
+00:02:42,140 --> 00:02:50,030
+Let me check the status of my branch, get status and you can see I have one file modified and currently
+
+40
+00:02:50,030 --> 00:02:53,750
+it is in the state one creating snapshot with it doesn't make a lot of sense.
+
+41
+00:02:54,170 --> 00:02:56,480
+So I will put a temporary in my stash.
+
+42
+00:02:57,080 --> 00:02:59,960
+How simply by executing the next command.
+
+43
+00:03:00,170 --> 00:03:02,360
+Eustache Great.
+
+44
+00:03:02,450 --> 00:03:04,460
+Now our changes are in Stasch.
+
+45
+00:03:04,790 --> 00:03:09,860
+Let's check status one more time and you can see that right now it is nothing to commit.
+
+46
+00:03:10,340 --> 00:03:13,910
+But now I can be sure that my changes won't disappear.
+
+47
+00:03:14,510 --> 00:03:18,920
+I'm returning to the Master Branch to create the new branch uSwitch Dash.
+
+48
+00:03:19,670 --> 00:03:25,160
+Here I create a new branch, uSwitch, which resorption CGA three 07.
+
+49
+00:03:25,160 --> 00:03:26,660
+Super important task.
+
+50
+00:03:27,260 --> 00:03:31,070
+OK, and now I can continue work on my new important task.
+
+51
+00:03:31,610 --> 00:03:34,970
+My changes that are currently in Stasch are not present on this branch.
+
+52
+00:03:34,970 --> 00:03:35,960
+Let me show you this.
+
+53
+00:03:36,650 --> 00:03:39,260
+None of Condon's home, not HTML.
+
+54
+00:03:39,950 --> 00:03:48,080
+And we can find our important line here cuz now let's imagine that you realize that you need those changes
+
+55
+00:03:48,080 --> 00:03:49,880
+here and you need them back.
+
+56
+00:03:50,270 --> 00:03:52,160
+How get your changes back from Stasch.
+
+57
+00:03:52,790 --> 00:03:56,090
+You need to apply changes from your stash to do this.
+
+58
+00:03:56,090 --> 00:03:57,500
+Let's use the next command.
+
+59
+00:03:57,950 --> 00:03:59,090
+Eustache apply.
+
+60
+00:03:59,920 --> 00:04:06,400
+And instantly you see the status of the branch and indications and home e-mail file is modified, let
+
+61
+00:04:06,400 --> 00:04:07,780
+me open it to double check.
+
+62
+00:04:08,500 --> 00:04:11,130
+Yes, I see my important line here.
+
+63
+00:04:11,620 --> 00:04:12,210
+Awesome.
+
+64
+00:04:13,030 --> 00:04:18,190
+Now, important information about Stasch, this command, great stack of changes.
+
+65
+00:04:18,730 --> 00:04:21,250
+They understand how a stack of changes may look like.
+
+66
+00:04:21,760 --> 00:04:22,930
+Let me show you quickly.
+
+67
+00:04:23,940 --> 00:04:30,090
+In computer science, tech is an abstract data type that serves as a collection of elements, it works
+
+68
+00:04:30,090 --> 00:04:31,820
+according to leave for principle.
+
+69
+00:04:32,430 --> 00:04:35,760
+One more fancy word what does leave or stand for?
+
+70
+00:04:36,210 --> 00:04:39,470
+Leifur is an acronym from Last In, First Out.
+
+71
+00:04:40,020 --> 00:04:45,690
+This is a method of storing data in data structures, according to which the last element get into the
+
+72
+00:04:45,690 --> 00:04:48,210
+container, leaves the containers the first.
+
+73
+00:04:48,720 --> 00:04:51,450
+And on the screen you can see visualization of Steck.
+
+74
+00:04:51,870 --> 00:04:55,740
+Imagine that each element here is a separate batch of changes.
+
+75
+00:04:56,220 --> 00:05:00,780
+When you use Stasch command, your changes are on the bottom of this container.
+
+76
+00:05:01,350 --> 00:05:06,810
+When you use against apply command, the changes from top of the stack apply to your branch.
+
+77
+00:05:07,380 --> 00:05:12,990
+And if you use git stash command multiple times, the new changes will be on top.
+
+78
+00:05:13,500 --> 00:05:14,450
+Does it make sense?
+
+79
+00:05:15,270 --> 00:05:21,000
+Now imagine that you used Stasch command multiple times and you have a lot of changes in your Stasch
+
+80
+00:05:21,000 --> 00:05:24,990
+stack, how to view all changes that you have in your stack of changes.
+
+81
+00:05:25,290 --> 00:05:27,210
+Let me show you the list.
+
+82
+00:05:27,210 --> 00:05:28,830
+All the changes that you have in your stack.
+
+83
+00:05:28,830 --> 00:05:31,410
+Use the next command git stash list.
+
+84
+00:05:32,070 --> 00:05:36,450
+And specially for this lesson, I prepared a few items to have multiple elements here.
+
+85
+00:05:37,020 --> 00:05:41,840
+You can see that our last stash has index zero and it is on the top of our stack.
+
+86
+00:05:42,480 --> 00:05:48,030
+That means you can apply it on different branches, but probably you might be wondering how to apply.
+
+87
+00:05:48,030 --> 00:05:51,160
+Are the changes from the stack for the sake of the demo?
+
+88
+00:05:51,180 --> 00:05:52,980
+Let me apply changes from this stack.
+
+89
+00:05:52,980 --> 00:05:59,760
+Was the indexed One Eustache apply and after that I will use the name of the stash that is specified
+
+90
+00:05:59,760 --> 00:06:03,720
+here, stash add and one in curly brackets.
+
+91
+00:06:04,440 --> 00:06:10,170
+Before I press and I want to warn you that you're going to see error message hypocenter.
+
+92
+00:06:10,650 --> 00:06:13,440
+And as I promised, here is the error.
+
+93
+00:06:13,890 --> 00:06:16,020
+Don't worry, everything is under control.
+
+94
+00:06:16,290 --> 00:06:21,210
+I did this on purpose to show you this error message that you may see some time get.
+
+95
+00:06:21,210 --> 00:06:26,670
+Sometimes we'll show you this message to warn you that your changes might be overwritten after some
+
+96
+00:06:26,670 --> 00:06:27,840
+specific operation.
+
+97
+00:06:27,840 --> 00:06:31,950
+And this is one more case to Eustache as a temporary storage for your changes.
+
+98
+00:06:32,460 --> 00:06:34,620
+I already have these changes in my stash.
+
+99
+00:06:34,800 --> 00:06:39,450
+So let me just come in, then get dash a dash and commit.
+
+100
+00:06:40,300 --> 00:06:45,800
+Sorry about this message, just don't want to spend time on the details that we already discussed.
+
+101
+00:06:46,420 --> 00:06:50,470
+Hope you understand that such a meaningful message is not the best practice.
+
+102
+00:06:50,830 --> 00:06:54,890
+And I use it only for the sake of the drama to not lose the focus from the Stasch.
+
+103
+00:06:54,940 --> 00:06:56,830
+Come on now.
+
+104
+00:06:56,830 --> 00:07:00,060
+When I created the snapshot, let me try to apply one more time.
+
+105
+00:07:00,070 --> 00:07:04,750
+Are the changes from the Stasch and you see that some changes were applied here.
+
+106
+00:07:05,110 --> 00:07:11,680
+Namely, Log-in says, as file was removed and changes in home each time on file were also applied.
+
+107
+00:07:12,520 --> 00:07:16,770
+There is even a conflict in this file since it was modified in different versions.
+
+108
+00:07:17,080 --> 00:07:21,520
+You just have to open this file and to resolve conflicts for the sake of the demo.
+
+109
+00:07:21,640 --> 00:07:27,700
+Let me reset the state of the current branch to its original state, yet reset resorption heart to the
+
+110
+00:07:27,700 --> 00:07:28,560
+head pointer.
+
+111
+00:07:29,580 --> 00:07:31,180
+Let's talk about another problem.
+
+112
+00:07:31,560 --> 00:07:33,620
+Do you remember what is in my stash list?
+
+113
+00:07:33,690 --> 00:07:36,720
+Let me show it one more time yet stash lists.
+
+114
+00:07:37,500 --> 00:07:42,810
+How do you think will I remember that that changes and how much time I'll file in the stash tomorrow
+
+115
+00:07:43,380 --> 00:07:44,240
+or in a month.
+
+116
+00:07:44,820 --> 00:07:48,320
+That's why it usually does a good practice to give a name to each stash.
+
+117
+00:07:49,040 --> 00:07:51,030
+Let me do some changes in the repository.
+
+118
+00:07:51,390 --> 00:07:59,640
+For example, let me remove login scissors file ram style slash logging that says there is a standard
+
+119
+00:07:59,640 --> 00:08:02,580
+command in Linux terminals to remove files.
+
+120
+00:08:03,670 --> 00:08:10,570
+Let me stash my current changes with a specific message you'd stash safe logins, he says is removed
+
+121
+00:08:11,050 --> 00:08:12,140
+and lets presenta.
+
+122
+00:08:12,670 --> 00:08:18,340
+Now, when I will see the stash in the future in my specialist, I will instantly understand what changes
+
+123
+00:08:18,340 --> 00:08:20,950
+it contains existentialists.
+
+124
+00:08:21,460 --> 00:08:25,380
+And here I can see my last stash and it is on the top of the stack.
+
+125
+00:08:25,690 --> 00:08:26,200
+Great.
+
+126
+00:08:27,220 --> 00:08:33,430
+OK, now let me explain you one more thing, probably you noticed that I applied different stashes,
+
+127
+00:08:33,430 --> 00:08:39,340
+but they're still in my stack how to apply stash and remove it from the stack for doing this.
+
+128
+00:08:39,350 --> 00:08:42,280
+You have to use Bob Camonte instead of apply like this.
+
+129
+00:08:42,670 --> 00:08:48,270
+Eustache Pop, we see that I applied my last stash and login success is removed.
+
+130
+00:08:48,850 --> 00:08:50,680
+Let me check my specialist now.
+
+131
+00:08:51,760 --> 00:08:54,520
+And now you can see that it has disappeared from here.
+
+132
+00:08:55,330 --> 00:08:56,140
+Let's move on.
+
+133
+00:08:56,770 --> 00:09:02,170
+One more thing that we didn't discuss yet is that you can stash only changes that are in the staging
+
+134
+00:09:02,170 --> 00:09:06,480
+area or changes that were done in files that are tracked by it.
+
+135
+00:09:07,150 --> 00:09:10,870
+Imagine that we created a file and after that we were interrupted.
+
+136
+00:09:11,230 --> 00:09:12,280
+We have to stash it.
+
+137
+00:09:12,700 --> 00:09:19,240
+Let me quickly create a file here, touch some important file dot java right now.
+
+138
+00:09:19,270 --> 00:09:21,100
+This file isn't tracked by yet.
+
+139
+00:09:21,610 --> 00:09:22,540
+Let me show you this.
+
+140
+00:09:23,080 --> 00:09:23,950
+It's status.
+
+141
+00:09:24,840 --> 00:09:29,670
+And in case I would try to suggest changes on the removal of Logan's SS will be stored.
+
+142
+00:09:30,180 --> 00:09:32,670
+Let me prove you this, Eustache.
+
+143
+00:09:33,500 --> 00:09:40,250
+And now let's check your status one more time and see that my new file is still in Ontrack State and
+
+144
+00:09:40,250 --> 00:09:43,640
+is not in the Stasch, how to add it to the stash?
+
+145
+00:09:44,330 --> 00:09:46,400
+We have to use a special option for that.
+
+146
+00:09:46,610 --> 00:09:49,400
+Let me show you need Stasch with option U.
+
+147
+00:09:50,270 --> 00:09:52,520
+U stands for untracked files.
+
+148
+00:09:52,520 --> 00:09:54,890
+Instead of you, you can use a option.
+
+149
+00:09:55,370 --> 00:09:58,620
+A stands for all besides untracked files.
+
+150
+00:09:58,760 --> 00:10:02,840
+It would also stash files that are ignored according to our Getting Your File.
+
+151
+00:10:03,500 --> 00:10:07,530
+But I doubt that you would ever want it to include ignored files to your stash.
+
+152
+00:10:07,970 --> 00:10:08,750
+That's why.
+
+153
+00:10:08,780 --> 00:10:12,080
+Let's use you option here, Hypocenter.
+
+154
+00:10:13,020 --> 00:10:16,380
+Let me check your status now, your status.
+
+155
+00:10:17,330 --> 00:10:17,970
+Awesome.
+
+156
+00:10:18,650 --> 00:10:24,440
+Finally, it looks like our new file was stashed, and now imagine that you want to create a branch
+
+157
+00:10:24,440 --> 00:10:25,160
+from your stash.
+
+158
+00:10:25,640 --> 00:10:31,370
+Imagine that when you finished work on the super important task, you already removed all old branches
+
+159
+00:10:31,370 --> 00:10:32,900
+and you have to create a new one.
+
+160
+00:10:33,260 --> 00:10:41,600
+How to create a new branch from Stash use the next command, Eustache Branch, a three zero seven new.
+
+161
+00:10:42,410 --> 00:10:46,980
+You can specify here any Stasha you would like without specifying Stasha.
+
+162
+00:10:47,360 --> 00:10:53,810
+The first stash from the stack will be used and you see that I have new untracked file on my new branch
+
+163
+00:10:54,470 --> 00:10:56,720
+that also moved me to the new branch.
+
+164
+00:10:57,200 --> 00:11:03,440
+You can see it here in parentheses and what to do in case you don't want to apply your stash, but you
+
+165
+00:11:03,440 --> 00:11:08,200
+just want to remove it, use the next command, get stash, drop.
+
+166
+00:11:08,750 --> 00:11:10,310
+You can specify any stash.
+
+167
+00:11:10,310 --> 00:11:14,030
+I here, for example, stash at zero.
+
+168
+00:11:14,870 --> 00:11:18,170
+Now let's check stash list, new stash list.
+
+169
+00:11:18,890 --> 00:11:22,310
+And you see that our first stash in stack was removed by us.
+
+170
+00:11:25,390 --> 00:11:31,510
+In case you want to clear all stack of stashes, use the next command, get Stasch clear.
+
+171
+00:11:32,490 --> 00:11:38,010
+And in case we would check our specialists, now we are going to see nothing and here is empty list,
+
+172
+00:11:38,430 --> 00:11:39,510
+nothing is here.
+
+173
+00:11:40,430 --> 00:11:44,370
+Great, it looks like that is all what I plan to share with you in this lesson.
+
+174
+00:11:44,720 --> 00:11:46,640
+Let's recap what we have learned today.
+
+175
+00:11:47,240 --> 00:11:50,950
+So today we learned what the stashes now we know how to use stash.
+
+176
+00:11:50,960 --> 00:11:52,700
+Come on, on real examples.
+
+177
+00:11:52,700 --> 00:11:54,830
+We learned how to manage multiple stashes.
+
+178
+00:11:55,220 --> 00:11:59,240
+We learned how to stash direct files and how to clear your stash if needed.
+
+179
+00:11:59,840 --> 00:12:04,000
+We also learned what is the difference between stash supply and stash pop.
+
+180
+00:12:04,850 --> 00:12:05,810
+That's all for now.
+
+181
+00:12:06,200 --> 00:12:07,460
+Thanks a lot for your attention.
+
+182
+00:12:07,760 --> 00:12:09,410
+See you in the next lesson.

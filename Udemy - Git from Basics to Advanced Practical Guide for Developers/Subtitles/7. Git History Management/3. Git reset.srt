@@ -1,0 +1,655 @@
+1
+00:00:06,020 --> 00:00:10,940
+Hello, dear students, in this lesson, we are going to learn in detail what is Guter said command
+
+2
+00:00:10,940 --> 00:00:12,180
+and how we can use it.
+
+3
+00:00:12,650 --> 00:00:17,690
+We'll start from the problem statement and when we might want to use it afterwards.
+
+4
+00:00:17,720 --> 00:00:21,980
+We'll learn in theory how it works to understand how users networks will.
+
+5
+00:00:21,980 --> 00:00:29,120
+Compared with Check-Out Command, we'll use three different modes how to reset my work served mixed
+
+6
+00:00:29,120 --> 00:00:29,780
+and hard.
+
+7
+00:00:30,200 --> 00:00:31,700
+Besides a series overview.
+
+8
+00:00:31,700 --> 00:00:32,840
+One real example.
+
+9
+00:00:32,840 --> 00:00:36,280
+I'm going to show you how you might use this command in your repository.
+
+10
+00:00:36,620 --> 00:00:37,300
+Let's start.
+
+11
+00:00:38,060 --> 00:00:41,870
+So why do you need to use get reset command, get reset.
+
+12
+00:00:41,870 --> 00:00:45,890
+Command is a really powerful tool that will help you to undo changes.
+
+13
+00:00:46,160 --> 00:00:52,900
+It might happen that you created snapshots that you don't need anymore, or probably for some reasons
+
+14
+00:00:52,910 --> 00:00:57,800
+you want to remove commands from your local branch, but you don't want to remove changes from your
+
+15
+00:00:57,800 --> 00:01:00,440
+working directory for such cases.
+
+16
+00:01:00,440 --> 00:01:00,950
+Get reset.
+
+17
+00:01:00,950 --> 00:01:02,360
+Command might be used.
+
+18
+00:01:03,050 --> 00:01:05,240
+You can find tutorials on the Internet.
+
+19
+00:01:05,240 --> 00:01:10,340
+But in my opinion, they're really hard to understand for the people who have never had experience with
+
+20
+00:01:10,450 --> 00:01:10,660
+it.
+
+21
+00:01:11,400 --> 00:01:16,460
+That's why in this lesson, I will try to explain this topic from the practical point of view to help
+
+22
+00:01:16,460 --> 00:01:20,720
+you understand the topic better to understand how to reset command work.
+
+23
+00:01:20,720 --> 00:01:22,940
+Let's compare it with Check-Out Command.
+
+24
+00:01:23,330 --> 00:01:29,210
+Here's our Master Branch and here's our head pointer that points to the latest snapshot on this branch.
+
+25
+00:01:29,990 --> 00:01:35,540
+So what happened when we call you checkout command, when we try to switch to another commit?
+
+26
+00:01:36,400 --> 00:01:41,970
+We can execute Gitche called command with the region, checksum where we want to switch our head pointer
+
+27
+00:01:42,730 --> 00:01:48,430
+in this particular scenario, if checksum is me, then I can move head pointer by executing command
+
+28
+00:01:48,700 --> 00:01:53,920
+Check-Out B But the master branch is still pointing out to the latest command here.
+
+29
+00:01:54,550 --> 00:01:59,070
+If you remember, during one of our lessons we discussed Detached Heads State.
+
+30
+00:01:59,890 --> 00:02:02,320
+This is exactly the scenario of detached head.
+
+31
+00:02:02,980 --> 00:02:06,970
+So what does research come and do that is different from Chicot?
+
+32
+00:02:06,970 --> 00:02:07,420
+Come on.
+
+33
+00:02:08,050 --> 00:02:10,030
+In the case I will use gets reset command.
+
+34
+00:02:10,030 --> 00:02:16,450
+We check some of the specific revision that will move both head pointer and current branch pointer to
+
+35
+00:02:16,450 --> 00:02:17,650
+the specific revision.
+
+36
+00:02:18,020 --> 00:02:19,660
+That's what it always does.
+
+37
+00:02:19,660 --> 00:02:22,600
+No matter what option will be used with reset command.
+
+38
+00:02:23,500 --> 00:02:25,810
+Can you see the difference on this visualization?
+
+39
+00:02:26,350 --> 00:02:29,230
+Hope it is clear now what reset command does.
+
+40
+00:02:29,890 --> 00:02:36,010
+But besides updating of command pointers like head pointer and branch pointer, reset command will also
+
+41
+00:02:36,010 --> 00:02:40,120
+update the state of our staging area and update the state of our country.
+
+42
+00:02:40,510 --> 00:02:42,790
+That is our files in our file system.
+
+43
+00:02:43,270 --> 00:02:48,880
+Updates in the staging area and our country will be different depending on what mode of reset we are
+
+44
+00:02:48,880 --> 00:02:51,540
+going to use as a result from agenda.
+
+45
+00:02:51,550 --> 00:02:55,540
+There are three possible modes soft, mixed and hard.
+
+46
+00:02:56,050 --> 00:03:00,040
+Let's learn right now what will happen in case we reset in soft mode.
+
+47
+00:03:00,790 --> 00:03:06,760
+If we use get reset with soft option, we still move ahead and branch pointers to the specific region
+
+48
+00:03:06,760 --> 00:03:07,510
+and that's it.
+
+49
+00:03:07,990 --> 00:03:13,870
+Nice and above that changes from your working tree will be there and in the staging area.
+
+50
+00:03:14,410 --> 00:03:20,290
+In simple words, the changes that you did in files before reset and commit these changes, you will
+
+51
+00:03:20,290 --> 00:03:22,150
+be present in files of your project.
+
+52
+00:03:22,480 --> 00:03:28,300
+Moreover, these changes will be in the staging area in case after asset in soft mode.
+
+53
+00:03:28,300 --> 00:03:30,280
+You would call your status command.
+
+54
+00:03:30,640 --> 00:03:34,540
+You would find all your changes added to the staging area in green color.
+
+55
+00:03:35,020 --> 00:03:40,720
+Execution of command is going to lead you directly to the state where you were before 7:00.
+
+56
+00:03:41,380 --> 00:03:46,150
+Here on this slide, you can see that soft mode keeps all changes in the staging area.
+
+57
+00:03:46,840 --> 00:03:50,770
+In case you are going to use mixed option, it is similar to softwoods.
+
+58
+00:03:50,770 --> 00:03:57,460
+Only one difference changes still will be present in the working directory, but they won't be present
+
+59
+00:03:57,460 --> 00:03:58,480
+in the staging area.
+
+60
+00:03:58,960 --> 00:04:04,870
+In simple words, you still will be able to find the changes in files, but when you will call git status,
+
+61
+00:04:05,020 --> 00:04:08,830
+you're going to see that all changes are not added to the staging area.
+
+62
+00:04:09,400 --> 00:04:15,550
+You would need to perform it add and after that you commit command in case you want to restore the state
+
+63
+00:04:15,550 --> 00:04:20,860
+before setting the previous two options you might want to use when you kind of okay with changes that
+
+64
+00:04:20,860 --> 00:04:21,520
+you have done.
+
+65
+00:04:21,640 --> 00:04:24,280
+But you have to do some modifications in the good history.
+
+66
+00:04:24,730 --> 00:04:26,980
+The first option for that is really hard.
+
+67
+00:04:27,310 --> 00:04:32,980
+This is the most direct and dangerous option that is frequently used after executing this reset.
+
+68
+00:04:32,980 --> 00:04:34,600
+Command was a hard option.
+
+69
+00:04:34,750 --> 00:04:41,290
+Get will make sure that your staging area and are working very much that of the specific commit in simple
+
+70
+00:04:41,290 --> 00:04:48,040
+words, your file system will be the same as it was after which you specified in reset command when
+
+71
+00:04:48,050 --> 00:04:49,110
+this mode is needed.
+
+72
+00:04:49,660 --> 00:04:55,750
+Personally, I used this command a lot when I realized that I messed up completely the state of my files
+
+73
+00:04:55,750 --> 00:04:59,650
+and I want to get everything back as it was when it worked, at least somehow.
+
+74
+00:05:00,100 --> 00:05:03,910
+Sometimes you might want to reset the state of some specific revision.
+
+75
+00:05:04,330 --> 00:05:09,460
+Probably you want to reset state of your local repository to the state that you have in the remote repository.
+
+76
+00:05:09,970 --> 00:05:12,460
+You might want to do so in case something went wrong.
+
+77
+00:05:12,460 --> 00:05:15,670
+During The Amazing today you're in the demo.
+
+78
+00:05:15,670 --> 00:05:18,610
+I will show you how to reset your changes in different modes.
+
+79
+00:05:19,270 --> 00:05:24,280
+Now, when you understood the theory, let's practice a bit and I'll show you how you can use gets reset
+
+80
+00:05:24,280 --> 00:05:25,690
+command in different modes.
+
+81
+00:05:26,350 --> 00:05:27,700
+We are on the Master Branch.
+
+82
+00:05:27,970 --> 00:05:32,050
+Let's check our gate history gate log dash three.
+
+83
+00:05:32,740 --> 00:05:35,200
+Here is a command that we did during this course.
+
+84
+00:05:35,530 --> 00:05:39,610
+You remember we added stock management service and created separate snapshots for that.
+
+85
+00:05:40,300 --> 00:05:44,740
+Afterwards we credit card management service file and created separate snapshots for that.
+
+86
+00:05:45,550 --> 00:05:53,110
+And after that I did create HTML file homeport HTML for our lessons to understand much conflict topic.
+
+87
+00:05:53,530 --> 00:05:54,220
+Remember that.
+
+88
+00:05:54,910 --> 00:06:00,420
+Let me show you, for example, that after soft reset to the state of the Stock Management Command Card
+
+89
+00:06:00,430 --> 00:06:06,250
+Management Service and home e-mail are still present in the country, but the state of the branch and
+
+90
+00:06:06,250 --> 00:06:07,630
+head pointer is different.
+
+91
+00:06:08,640 --> 00:06:17,120
+Guter said was option soft e 71, A five, b, I entered first characters of this commit and press enter.
+
+92
+00:06:17,730 --> 00:06:21,120
+Let's check our comment history to understand where we are now.
+
+93
+00:06:21,870 --> 00:06:22,630
+Get lost there.
+
+94
+00:06:22,640 --> 00:06:28,320
+Three You see here in parenthesis that our head and master pointers are on this comment.
+
+95
+00:06:29,180 --> 00:06:36,440
+Let me check its status and its status and you can see the two files from the documents are present
+
+96
+00:06:36,440 --> 00:06:42,320
+in my file system and automatically added to the staging area to return my project to the state where
+
+97
+00:06:42,320 --> 00:06:43,810
+it was before the reset.
+
+98
+00:06:43,850 --> 00:06:50,630
+But with a new command, I have to come them one more time, get command with option and court management
+
+99
+00:06:50,630 --> 00:06:51,860
+and home HMO.
+
+100
+00:06:52,640 --> 00:06:55,110
+And we created new command with these changes.
+
+101
+00:06:55,850 --> 00:07:02,180
+Now I want to demo to you makes the more me find commands that we recently used and just change it a
+
+102
+00:07:02,180 --> 00:07:02,450
+bit.
+
+103
+00:07:03,170 --> 00:07:03,790
+Here it is.
+
+104
+00:07:04,520 --> 00:07:07,250
+Let me removed soft here, by the way.
+
+105
+00:07:07,280 --> 00:07:08,990
+Mixed mode is a default.
+
+106
+00:07:09,290 --> 00:07:12,680
+That means you shouldn't necessarily write me here.
+
+107
+00:07:13,010 --> 00:07:15,160
+You can just remove any options here.
+
+108
+00:07:15,290 --> 00:07:18,170
+That would mean resetting in the default mixed mode.
+
+109
+00:07:18,800 --> 00:07:22,100
+Let me check it lock now it log Destry.
+
+110
+00:07:22,760 --> 00:07:28,310
+I'm on the committee where I wanted to be and like check status now get status.
+
+111
+00:07:28,820 --> 00:07:33,950
+And you can see that files are present in my work entry in my file system, but they are not in the
+
+112
+00:07:33,950 --> 00:07:34,760
+staging area.
+
+113
+00:07:35,300 --> 00:07:38,450
+Can you understand the difference between soft and mixed mode now?
+
+114
+00:07:39,170 --> 00:07:44,840
+The return the previous state I should execute get at DOD command and after that it changes.
+
+115
+00:07:45,560 --> 00:07:48,740
+Let's use the same messages previously for the sake of the demo.
+
+116
+00:07:49,830 --> 00:07:56,340
+Awesome, and let me show you the last but not the least option, hard lessons said enhancement to this
+
+117
+00:07:56,340 --> 00:07:59,250
+commit spaces are added to the hello world.
+
+118
+00:07:59,250 --> 00:08:06,060
+While we should see how the state of our file system will be different from that e-mail, card management
+
+119
+00:08:06,060 --> 00:08:09,380
+servers and stock management service files would disappear.
+
+120
+00:08:10,380 --> 00:08:14,610
+Let's reset resorption heart two six seven two six F..
+
+121
+00:08:15,450 --> 00:08:16,970
+Let's check in with history now.
+
+122
+00:08:17,700 --> 00:08:18,840
+Get logged three.
+
+123
+00:08:19,780 --> 00:08:25,690
+OK, our head pointer and branch are pointing to the committee that we expect, but what is with our
+
+124
+00:08:25,690 --> 00:08:26,710
+filesystem now?
+
+125
+00:08:27,650 --> 00:08:34,850
+It's status and we can see that there is nothing to commit, and that is my voluntary claim, I'm in
+
+126
+00:08:34,850 --> 00:08:36,470
+the Israeli folder right now.
+
+127
+00:08:36,800 --> 00:08:44,120
+Let me check the state of the file system unless there shall we can see that I have only discount completion
+
+128
+00:08:44,120 --> 00:08:45,620
+service and hello, world file.
+
+129
+00:08:45,980 --> 00:08:50,420
+I do not have Nasacort nor stock folders where my other files were stored.
+
+130
+00:08:51,140 --> 00:08:54,500
+Now you can see how it was that was hard option, Kenora said.
+
+131
+00:08:54,500 --> 00:08:56,120
+The state of the file system.
+
+132
+00:08:56,840 --> 00:08:59,710
+One more trick, probably in some lessons.
+
+133
+00:08:59,720 --> 00:09:05,630
+You saw that I researched state of the branch without reference to the specific checks, but using relative
+
+134
+00:09:05,630 --> 00:09:07,240
+navigation from the head pointer.
+
+135
+00:09:07,880 --> 00:09:09,470
+Let me show you one more time.
+
+136
+00:09:10,110 --> 00:09:14,120
+Get reset with option heart had to the three.
+
+137
+00:09:14,750 --> 00:09:20,090
+You can see how I can move that Anabranch pointer to three cm is back from the point where I was.
+
+138
+00:09:20,660 --> 00:09:21,760
+This is pretty convenient.
+
+139
+00:09:21,770 --> 00:09:25,910
+As for me, probably you would also use this variation of reset command.
+
+140
+00:09:26,800 --> 00:09:33,250
+And one more real life scenario, imagine that you wanted either to squash commits or a message or something
+
+141
+00:09:33,250 --> 00:09:36,460
+else went wrong during the invasion or during the development.
+
+142
+00:09:36,460 --> 00:09:41,920
+And you want to reset the state of your working tree, your file system, as it is in a remote repository
+
+143
+00:09:41,920 --> 00:09:42,550
+right now.
+
+144
+00:09:43,210 --> 00:09:49,690
+What I recommend you to do, the first thing that I always do is execution of each command with option
+
+145
+00:09:49,690 --> 00:09:52,360
+like this need fetch resorption.
+
+146
+00:09:52,360 --> 00:09:59,800
+All this is just to make sure that you fetch the latest state of the remote repository after that reset
+
+147
+00:09:59,800 --> 00:10:02,440
+with the hard option to the State of Origin branch.
+
+148
+00:10:03,040 --> 00:10:09,130
+In this particular case, we played with our master branch and I want to restore the state of our region.
+
+149
+00:10:09,130 --> 00:10:14,050
+Must have branch reset with option, heart or region slash master.
+
+150
+00:10:14,620 --> 00:10:17,500
+And you can see that I'm on the latest commit right now.
+
+151
+00:10:18,040 --> 00:10:20,530
+So there you saw that in reset command.
+
+152
+00:10:20,530 --> 00:10:26,560
+You can use chametz checksum, relative amount of comments from the head pointer and even specific branch,
+
+153
+00:10:27,070 --> 00:10:27,550
+I believe.
+
+154
+00:10:27,550 --> 00:10:31,710
+Now you know about reset command even more than some senior software engineers.
+
+155
+00:10:32,290 --> 00:10:33,730
+Hope you enjoyed the lesson.
+
+156
+00:10:34,360 --> 00:10:36,400
+Let's recap what we have learned today.
+
+157
+00:10:37,240 --> 00:10:40,660
+Today, we learned what is a good reset command and when we can use it.
+
+158
+00:10:41,350 --> 00:10:44,680
+We understand the difference between reaching out and gives reset command.
+
+159
+00:10:45,190 --> 00:10:51,100
+You learn three modes of reset command, soft, mixed and hard on the real example.
+
+160
+00:10:51,100 --> 00:10:55,820
+You saw how to reset state of the branch if you coming back from the head pointer or to the specific
+
+161
+00:10:55,820 --> 00:10:56,230
+command.
+
+162
+00:10:56,800 --> 00:11:01,900
+Also, you learned how to reset state of the branch to the state of the branch in the remote repository.
+
+163
+00:11:02,530 --> 00:11:05,500
+That's all what I planned to talk about in this lesson with you.
+
+164
+00:11:05,860 --> 00:11:08,980
+Thanks a lot for your attention and see you in the next lesson.

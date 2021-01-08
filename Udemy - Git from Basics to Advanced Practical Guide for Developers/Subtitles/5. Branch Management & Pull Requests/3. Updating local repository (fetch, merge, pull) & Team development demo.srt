@@ -1,0 +1,711 @@
+1
+00:00:06,050 --> 00:00:10,710
+Hello, dear students in this class, and I'll teach you how you can update your local repository.
+
+2
+00:00:10,940 --> 00:00:16,070
+Today, I will explain to you why we need to update our local repository, how often we have to do that
+
+3
+00:00:16,070 --> 00:00:17,710
+and what commands we have to use.
+
+4
+00:00:18,140 --> 00:00:23,750
+Today, I prepared a special demo with the and flow in which I will show you commands that you are going
+
+5
+00:00:23,750 --> 00:00:25,680
+to use in most cases at your work.
+
+6
+00:00:26,180 --> 00:00:30,470
+I will tell you today, more and more to get fetch, get Merche, get pool commands.
+
+7
+00:00:30,960 --> 00:00:33,740
+Also, I will explain what does Fastforward mean.
+
+8
+00:00:34,490 --> 00:00:36,200
+We are going to learn a lot today.
+
+9
+00:00:36,440 --> 00:00:42,170
+Let's start first of all, let's answer the question why we have to update our local repository.
+
+10
+00:00:42,440 --> 00:00:47,330
+We have to update our local repository because we want to be sure that the codes that we created will
+
+11
+00:00:47,330 --> 00:00:49,540
+work with other the court as expected.
+
+12
+00:00:49,940 --> 00:00:54,470
+That is the most important reason of updating local repository as often as we can.
+
+13
+00:00:54,970 --> 00:00:56,030
+To what situations?
+
+14
+00:00:56,060 --> 00:01:01,340
+When you work on some task for one week or two weeks and when you need to merge your code with Master
+
+15
+00:01:01,340 --> 00:01:04,040
+Branch, you discover multiple conflicts in your code.
+
+16
+00:01:04,670 --> 00:01:09,110
+Today, I will show you command and real examples how you can update your local repository.
+
+17
+00:01:09,500 --> 00:01:13,380
+In previous lesson, you learned how to prepare people request and merge changes.
+
+18
+00:01:13,850 --> 00:01:19,130
+Now let's imagine that you successfully completed your previous task and you are about to start your
+
+19
+00:01:19,130 --> 00:01:20,300
+work on the new task.
+
+20
+00:01:20,750 --> 00:01:24,110
+Right now, in my local repository, I I'm on the task branch.
+
+21
+00:01:24,500 --> 00:01:29,840
+We already know that to start work on the new task and to separate code one from another, I have to
+
+22
+00:01:29,840 --> 00:01:30,800
+create a new branch.
+
+23
+00:01:31,130 --> 00:01:35,110
+Usually I want to create a new branch from the latest version of the source code.
+
+24
+00:01:35,390 --> 00:01:37,760
+So let me switch the master branch.
+
+25
+00:01:38,390 --> 00:01:43,430
+OK, I'm on the master branch, but do I have the latest version of my code here?
+
+26
+00:01:44,090 --> 00:01:49,010
+Let me navigate the SASE folder and check whether I have all the latest updates on this branch.
+
+27
+00:01:49,790 --> 00:01:53,810
+To navigate to the SRT folder, I have to type CGY SAAC.
+
+28
+00:01:54,940 --> 00:02:03,100
+OK, now let's list all the files else that shall and you see that we don't have this calculation service
+
+29
+00:02:03,100 --> 00:02:08,500
+here, why I'm on the Master Branch and we merged our changes with the master branch.
+
+30
+00:02:08,500 --> 00:02:15,040
+And the previous lesson, let's not confuse two things Master Branch and a region master branch.
+
+31
+00:02:15,670 --> 00:02:20,800
+And previous lesson when the merged request was called to the region master branch.
+
+32
+00:02:21,280 --> 00:02:24,420
+But we didn't merge, got into our master branch.
+
+33
+00:02:24,850 --> 00:02:25,920
+So what to do now?
+
+34
+00:02:26,290 --> 00:02:32,070
+Now we are going to learn a few commands, get fetch what is good for each command.
+
+35
+00:02:32,710 --> 00:02:38,980
+This command fetches all changes from the remote repository and put it in your local repository one
+
+36
+00:02:38,980 --> 00:02:39,510
+more time.
+
+37
+00:02:39,700 --> 00:02:44,560
+Important thing to mention here is that changes are not matched to your local branches.
+
+38
+00:02:44,920 --> 00:02:51,190
+So in case some comments in the region Master Branch exist, which a local repository is not aware of,
+
+39
+00:02:51,460 --> 00:02:56,110
+PFEG Command will save information about these changes in your local repository.
+
+40
+00:02:56,840 --> 00:02:58,120
+Let me press enter now.
+
+41
+00:02:58,900 --> 00:03:03,580
+Based on the log messages here, we can conclude that some changes were downloaded from the remote.
+
+42
+00:03:04,120 --> 00:03:10,090
+OK, probably now I have all the latest changes in my branch, including new file, discount calculation
+
+43
+00:03:10,090 --> 00:03:13,210
+service and all the latest changes from the Hello World File.
+
+44
+00:03:13,660 --> 00:03:16,990
+Let me check it one more time as well.
+
+45
+00:03:17,740 --> 00:03:20,290
+And again, I don't have any latest updates.
+
+46
+00:03:20,440 --> 00:03:21,010
+Why?
+
+47
+00:03:21,640 --> 00:03:27,880
+Because I have just downloaded information about these changes, but I didn't actually merge these changes
+
+48
+00:03:27,880 --> 00:03:28,960
+in the local branch.
+
+49
+00:03:29,560 --> 00:03:31,790
+Then what is the purpose of this command at all?
+
+50
+00:03:32,320 --> 00:03:37,930
+Imagine that you are working on the new changes and I don't want to merge latest code into your branch.
+
+51
+00:03:37,930 --> 00:03:39,190
+Do not break anything.
+
+52
+00:03:39,670 --> 00:03:44,800
+And you would like to know whether there are any changes in remote branch that are needed to be merged.
+
+53
+00:03:45,370 --> 00:03:47,860
+One more use case of using it for each command.
+
+54
+00:03:48,250 --> 00:03:53,680
+You can fetch changes while sitting in the office and the security VPN connection and you can merge
+
+55
+00:03:53,680 --> 00:03:58,630
+carefully your code later when you want while sitting on your cozy chair at your home.
+
+56
+00:03:59,350 --> 00:04:02,980
+But what if I am already at my home sitting on the couch?
+
+57
+00:04:03,610 --> 00:04:04,870
+What do I have to do now?
+
+58
+00:04:05,320 --> 00:04:10,360
+Now I have to merge these changes into my local branch, so I'm doing it.
+
+59
+00:04:10,360 --> 00:04:12,160
+Merge command gate.
+
+60
+00:04:12,160 --> 00:04:12,700
+Merge.
+
+61
+00:04:13,910 --> 00:04:14,670
+Awesome.
+
+62
+00:04:14,720 --> 00:04:20,780
+It looks like some changes have been merged with my master branch, I see Fastforward message here.
+
+63
+00:04:21,200 --> 00:04:22,270
+What does that mean?
+
+64
+00:04:23,030 --> 00:04:29,150
+And fast forward is what it does when you merge or a base against a branch that is simply ahead, the
+
+65
+00:04:29,150 --> 00:04:30,510
+one you have checked out.
+
+66
+00:04:31,250 --> 00:04:38,330
+That means there was no branches and that is the new value of the branch is a direct descendant of the
+
+67
+00:04:38,330 --> 00:04:39,310
+prior values.
+
+68
+00:04:39,920 --> 00:04:46,160
+So we had a region master branch that contains commands that are descendant of our previous master branch.
+
+69
+00:04:46,610 --> 00:04:52,580
+That's why we call such merging as fast forward now when we have merged the latest updates.
+
+70
+00:04:52,610 --> 00:04:56,370
+Let me check list of files and dash I'll command.
+
+71
+00:04:57,230 --> 00:04:57,720
+Wow.
+
+72
+00:04:57,890 --> 00:05:01,460
+Finally, I have this calculation service file in my file system.
+
+73
+00:05:01,820 --> 00:05:05,180
+That is the latest changes that have emerged in the remote repository.
+
+74
+00:05:05,600 --> 00:05:07,700
+Let me also check that update from Hello.
+
+75
+00:05:07,700 --> 00:05:09,530
+World File is also in place.
+
+76
+00:05:09,860 --> 00:05:14,210
+And previously we updated Hillenburg file and put extra lines in it.
+
+77
+00:05:14,670 --> 00:05:17,450
+Let me open this file in a text editor.
+
+78
+00:05:17,990 --> 00:05:18,650
+Nana.
+
+79
+00:05:18,650 --> 00:05:20,240
+Hello, World Dodgeville.
+
+80
+00:05:20,960 --> 00:05:21,680
+Nice.
+
+81
+00:05:21,680 --> 00:05:24,320
+I see only one characters outplays place here.
+
+82
+00:05:24,830 --> 00:05:30,020
+Let me exit now Ed by pressing control and simultaneously as described here.
+
+83
+00:05:31,140 --> 00:05:38,520
+Now, I want you to learn one more command that is good, but what is it command essentially getable
+
+84
+00:05:38,550 --> 00:05:41,750
+is a combination of two actions, PFEG and March.
+
+85
+00:05:42,360 --> 00:05:47,640
+So in case you want to fetch all changes from the remote repository and at the same time merge them
+
+86
+00:05:47,640 --> 00:05:50,310
+into the branch you have to use to command.
+
+87
+00:05:50,970 --> 00:05:52,290
+You're our demo today.
+
+88
+00:05:52,300 --> 00:05:56,190
+I want to show you real life scenarios that will happen with you on your workplace.
+
+89
+00:05:56,680 --> 00:06:02,100
+I want you not to learn just commands, but understand how you will use it while working with steam.
+
+90
+00:06:02,520 --> 00:06:08,610
+The name of this I prepared enter and flow that will show you the full scenario of what we learned so
+
+91
+00:06:08,610 --> 00:06:08,970
+far.
+
+92
+00:06:09,360 --> 00:06:11,010
+And I want you to be ready.
+
+93
+00:06:11,220 --> 00:06:16,350
+I want you to understand how team development is happening together.
+
+94
+00:06:16,350 --> 00:06:18,350
+We're going to imitate the next generation.
+
+95
+00:06:19,050 --> 00:06:23,970
+Imagine that we work on the implementation of virtual card in our online shop.
+
+96
+00:06:24,300 --> 00:06:25,860
+We are working on this task.
+
+97
+00:06:26,440 --> 00:06:32,310
+At the same time, developer number two works on the implementation of service that will provide functionality
+
+98
+00:06:32,310 --> 00:06:33,510
+of stock management.
+
+99
+00:06:34,110 --> 00:06:38,490
+Both engineers created the branch from the same revision, from the same command.
+
+100
+00:06:39,150 --> 00:06:43,530
+After that we created bool request and our changes were successfully merged.
+
+101
+00:06:43,980 --> 00:06:49,290
+And after that, developer number two created Pulu request and his request was successfully matched.
+
+102
+00:06:49,950 --> 00:06:56,190
+After that, we want to proceed with implementation of the next task product preservation, let's say.
+
+103
+00:06:56,850 --> 00:07:02,160
+But before start work on the new task, we have to pull all the latest changes to create the branch
+
+104
+00:07:02,160 --> 00:07:03,510
+with the latest updates.
+
+105
+00:07:03,900 --> 00:07:06,420
+And we have to execute get command.
+
+106
+00:07:07,050 --> 00:07:11,160
+Hope you you're not confused, but I want you to be prepared for the real life.
+
+107
+00:07:11,430 --> 00:07:14,850
+And this is the easiest real life scenario with only two developers.
+
+108
+00:07:15,360 --> 00:07:18,180
+Let them together, try to reproduce this in error.
+
+109
+00:07:18,810 --> 00:07:21,120
+So we are going to have next steps.
+
+110
+00:07:21,480 --> 00:07:28,200
+Developer one and two created branches and the changes after that, both engineers created peers that
+
+111
+00:07:28,200 --> 00:07:31,290
+were a match to the original master branch developer.
+
+112
+00:07:31,290 --> 00:07:34,410
+One post latest changes to start work on the new task.
+
+113
+00:07:35,100 --> 00:07:35,790
+Let's start.
+
+114
+00:07:36,390 --> 00:07:38,670
+Here is what we are going to do on our book.
+
+115
+00:07:39,060 --> 00:07:41,490
+Let's check the status of the master branch.
+
+116
+00:07:42,590 --> 00:07:45,230
+So it is up to date with the region masterbrand.
+
+117
+00:07:45,770 --> 00:07:46,100
+Cool.
+
+118
+00:07:46,710 --> 00:07:55,910
+Now let me create a new branch gates, which was option C G, a three zero to virtual car with which
+
+119
+00:07:55,940 --> 00:07:56,770
+to the new branch.
+
+120
+00:07:57,200 --> 00:07:59,480
+Let's imitate implementation of this task.
+
+121
+00:07:59,870 --> 00:08:04,970
+I will create a special directory called Card and Mkdir Card.
+
+122
+00:08:06,230 --> 00:08:08,700
+Here is a command that creates a directory.
+
+123
+00:08:09,200 --> 00:08:13,430
+Now let's navigate into this directory, S.A.G. cars.
+
+124
+00:08:14,300 --> 00:08:19,730
+Now let's create card management service file and we will pretend that there is a task implemented in
+
+125
+00:08:19,730 --> 00:08:20,330
+this file.
+
+126
+00:08:21,080 --> 00:08:23,950
+Darch Card Management Service Dajarra.
+
+127
+00:08:24,770 --> 00:08:31,430
+By the way, you can't push and commit only folder's if you want to set some basic folder structure
+
+128
+00:08:31,430 --> 00:08:32,340
+for your program.
+
+129
+00:08:32,360 --> 00:08:34,730
+There should be files in these folders.
+
+130
+00:08:35,450 --> 00:08:40,880
+OK, now let's add this to Sustagen yet at DOT and commit this change.
+
+131
+00:08:41,360 --> 00:08:45,440
+Yet commit dash and card management is implemented.
+
+132
+00:08:50,300 --> 00:08:58,670
+OK, we have a comment now let's push it to our region, yet push the our region keets three zero to
+
+133
+00:08:58,790 --> 00:08:59,840
+your troll car.
+
+134
+00:09:03,660 --> 00:09:05,150
+We'll create a pull request now.
+
+135
+00:09:05,970 --> 00:09:10,800
+Give me a few seconds here, you already know how to create a PR from the previous lesson.
+
+136
+00:09:17,280 --> 00:09:20,610
+PR is created what we want merge, they scored so far.
+
+137
+00:09:21,810 --> 00:09:26,340
+Meanwhile, developer number two created a separate branch to implement stock management.
+
+138
+00:09:30,940 --> 00:09:37,360
+OK, the same as here developer number two and the master branch and in the SLC directory, he wants
+
+139
+00:09:37,360 --> 00:09:44,110
+to start work on the new task and create a new branch Gates, which is option C, a three zero three
+
+140
+00:09:44,440 --> 00:09:45,410
+stock management.
+
+141
+00:09:45,940 --> 00:09:50,770
+Let's create a new folder in the SAAC directory mkdir stock.
+
+142
+00:09:51,400 --> 00:09:54,310
+Right now I create a directory in the search folder.
+
+143
+00:09:54,610 --> 00:09:57,530
+Let me navigate their C.G. stock.
+
+144
+00:09:58,420 --> 00:10:00,210
+OK, I'm here now.
+
+145
+00:10:00,220 --> 00:10:08,470
+Let me create a file Derg Stock Management Service Dot Java cuz that and this file to the staging area
+
+146
+00:10:09,070 --> 00:10:16,060
+get at dot and now let's commit yet command dash and stock management is implemented.
+
+147
+00:10:18,120 --> 00:10:25,440
+And let's push it to the remote, get push there for you, originally, a three zero three stock management.
+
+148
+00:10:27,390 --> 00:10:30,300
+Now I have to create a request for this change.
+
+149
+00:10:39,540 --> 00:10:41,820
+Let us manage to pull requests now.
+
+150
+00:10:58,650 --> 00:11:05,130
+And you see that quote in Monster is updated in caves during the new task, implementation you would
+
+151
+00:11:05,130 --> 00:11:08,540
+need is a correct management service or stock management service.
+
+152
+00:11:08,790 --> 00:11:14,340
+It is better for you to learn it earlier, because, first of all, probably you're going to use this
+
+153
+00:11:14,340 --> 00:11:18,920
+court or this court might break your court anyway.
+
+154
+00:11:19,290 --> 00:11:25,410
+It is better to have all changes from all developers on place in your local repository before start
+
+155
+00:11:25,410 --> 00:11:26,470
+any new work.
+
+156
+00:11:26,940 --> 00:11:31,620
+And finally, we return to the main branch and want to start work on the new task.
+
+157
+00:11:32,140 --> 00:11:37,740
+But right now, we have to make sure that we have the latest changes in the master branch before create
+
+158
+00:11:37,760 --> 00:11:38,600
+a new branch.
+
+159
+00:11:39,000 --> 00:11:45,570
+OK, what we have to do now, probably you would say get pfeg and get merge, but let's execute git
+
+160
+00:11:45,570 --> 00:11:46,410
+pull command.
+
+161
+00:11:48,760 --> 00:11:55,600
+Awesome, we pulled our changes and we are ready to work on the new task you see here, I pulled card
+
+162
+00:11:55,600 --> 00:12:00,820
+management service and stock management service and you see that we don't necessarily have to do get
+
+163
+00:12:00,820 --> 00:12:01,320
+pfeg.
+
+164
+00:12:01,330 --> 00:12:02,560
+And after that it gets merged.
+
+165
+00:12:02,560 --> 00:12:06,220
+Command get combines these two commands into one.
+
+166
+00:12:06,560 --> 00:12:11,500
+I can check my card and stock directory and find files there, you see.
+
+167
+00:12:12,490 --> 00:12:18,340
+We finished our practice exercise, Holmes's A Small Demo will help you to understand how we can use
+
+168
+00:12:18,350 --> 00:12:18,650
+it.
+
+169
+00:12:18,730 --> 00:12:21,940
+You're the game collaboration and new task implementation.
+
+170
+00:12:22,450 --> 00:12:24,640
+Let's recap what we have learned today.
+
+171
+00:12:25,330 --> 00:12:28,570
+Today, we learned why we need to update our local repository.
+
+172
+00:12:28,840 --> 00:12:32,280
+We also learned to get Fairgate marriage and get boogerman.
+
+173
+00:12:32,890 --> 00:12:38,170
+Now you know that you have to update your master branch before you start working on each new task.
+
+174
+00:12:38,650 --> 00:12:44,170
+You also understand the difference between a get FEG marriage and pull commence today.
+
+175
+00:12:44,200 --> 00:12:50,800
+So what is fastforward in it and at the end of the lesson I showed you and flow of how team development
+
+176
+00:12:50,800 --> 00:12:52,660
+is look like with the help of the get.
+
+177
+00:12:53,640 --> 00:12:54,990
+Thanks a lot for your attention.
+
+178
+00:12:55,380 --> 00:12:57,000
+See you in the next lesson.

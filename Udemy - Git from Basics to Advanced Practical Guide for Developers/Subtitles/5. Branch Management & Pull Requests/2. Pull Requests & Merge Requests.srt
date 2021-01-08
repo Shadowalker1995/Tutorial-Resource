@@ -1,0 +1,631 @@
+1
+00:00:05,990 --> 00:00:11,570
+Hello there, students today will learn with you what a pull request is and how to create one after
+
+2
+00:00:11,570 --> 00:00:13,550
+we'll understand the definition of PR.
+
+3
+00:00:13,590 --> 00:00:16,570
+I will show you how you can create your first pool request.
+
+4
+00:00:16,940 --> 00:00:20,330
+We'll learn what is the difference between pool request and Richard Quest.
+
+5
+00:00:20,660 --> 00:00:23,340
+In this lesson, we are going to learn how we can match.
+
+6
+00:00:23,400 --> 00:00:28,220
+Coming from different branches will learn the difference between different methods and strategies.
+
+7
+00:00:28,610 --> 00:00:31,790
+I will show you how to add collaborator's to your repository.
+
+8
+00:00:32,390 --> 00:00:36,290
+You'll add me as a collaborator so that I will be able to evaluate your code.
+
+9
+00:00:36,950 --> 00:00:42,830
+First of all, let's understand what is a pull request pull request as a method of submitting contributions
+
+10
+00:00:42,830 --> 00:00:43,510
+to a project.
+
+11
+00:00:43,910 --> 00:00:48,750
+Imagine that you wrote a few days and implementing logic of discount calculation for your users.
+
+12
+00:00:48,770 --> 00:00:50,650
+And finally, you completed your work.
+
+13
+00:00:51,260 --> 00:00:54,650
+Now you need to match your card with the latest version of the source code.
+
+14
+00:00:55,130 --> 00:00:59,880
+Literally, you have to much of yours with comments that were done by other developers.
+
+15
+00:01:00,470 --> 00:01:02,510
+Why is this method is called a pull request.
+
+16
+00:01:02,930 --> 00:01:06,590
+You can pull changes from one branch to update another branch.
+
+17
+00:01:06,920 --> 00:01:11,990
+And by submitting a budget request, you ask other people to review your changes and pull them into
+
+18
+00:01:11,990 --> 00:01:13,000
+another branch.
+
+19
+00:01:13,010 --> 00:01:14,070
+Does it make sense now?
+
+20
+00:01:14,690 --> 00:01:17,060
+Now words to request make more sense.
+
+21
+00:01:17,570 --> 00:01:22,400
+And by the way, we'll request the terminology of the GitHub and mid-market repositories.
+
+22
+00:01:22,940 --> 00:01:26,980
+Yet Lab uses another term to describe the same process merge request.
+
+23
+00:01:27,380 --> 00:01:28,870
+The idea is pretty similar.
+
+24
+00:01:29,480 --> 00:01:32,210
+We may want to merge two branches and merge.
+
+25
+00:01:32,210 --> 00:01:37,130
+Request means that you want to ask somebody to merge the changes with the other branch.
+
+26
+00:01:37,760 --> 00:01:42,230
+Both requests and merge requests use get pull and get merge commands.
+
+27
+00:01:42,860 --> 00:01:48,260
+We are going to learn these commands in the next lessons, but don't confuse this terminology.
+
+28
+00:01:48,770 --> 00:01:55,700
+PR and Anmar refers to a much broader topic, and I believe you understand that both of these terms
+
+29
+00:01:55,700 --> 00:01:57,010
+describe the same process.
+
+30
+00:01:57,800 --> 00:02:03,050
+Now, when you understood that, let's proceed with our demo on the previous lesson remerged.
+
+31
+00:02:03,050 --> 00:02:04,940
+Our branch does a remote repository.
+
+32
+00:02:05,300 --> 00:02:08,450
+We add new file added discount calculation service.
+
+33
+00:02:08,900 --> 00:02:11,730
+Let's also change existing file for the sake of the demo.
+
+34
+00:02:12,080 --> 00:02:15,050
+Let me add spaces here in the Hello World File.
+
+35
+00:02:17,530 --> 00:02:23,500
+And I save this file now, I will add changes to the staging area and we'll make a commit the spaces
+
+36
+00:02:23,500 --> 00:02:25,270
+were added to the hello world file.
+
+37
+00:02:33,770 --> 00:02:37,100
+After I created the command, I pushed it to the remote ranch.
+
+38
+00:02:40,490 --> 00:02:45,740
+To create a pull request, you have to have two branches, and right now we have massive branch and
+
+39
+00:02:45,740 --> 00:02:47,760
+our task branch nice.
+
+40
+00:02:48,230 --> 00:02:50,840
+There are a lot of different ways to create a pull request.
+
+41
+00:02:51,200 --> 00:02:52,400
+Let me show you one of them.
+
+42
+00:02:52,880 --> 00:02:54,640
+Click on Pull Request tab here.
+
+43
+00:02:54,980 --> 00:02:57,310
+Now click on the new pull request button.
+
+44
+00:02:57,650 --> 00:03:01,420
+And here you have to specify which branch you want to pull into which branch.
+
+45
+00:03:01,700 --> 00:03:07,550
+In our case, Master is a main development branch dependent on the branch and strategy that you are
+
+46
+00:03:07,550 --> 00:03:08,850
+going to have at your work.
+
+47
+00:03:09,050 --> 00:03:14,780
+You might have development branches and development branch and Master Branch will be used only for releases.
+
+48
+00:03:15,200 --> 00:03:19,290
+In our particular case, we want to merge Task One branch into master.
+
+49
+00:03:19,790 --> 00:03:24,200
+That's why here I select a task one and here I have Master Branch.
+
+50
+00:03:24,830 --> 00:03:28,270
+Here you will see the difference between the state of these two branches.
+
+51
+00:03:28,730 --> 00:03:30,320
+Let's create a pull request.
+
+52
+00:03:30,930 --> 00:03:35,720
+Additionally, you may specify pull request description here on the right.
+
+53
+00:03:35,810 --> 00:03:38,530
+You can specify, pull, request, review and request.
+
+54
+00:03:38,540 --> 00:03:40,960
+Ehsani What is a defense review?
+
+55
+00:03:41,010 --> 00:03:43,580
+What is someone you want to review the code?
+
+56
+00:03:43,760 --> 00:03:49,700
+And this can be the person who is not necessarily responsible for merging branches, probably colleagues
+
+57
+00:03:49,700 --> 00:03:52,880
+of yours or software engineers from another development team.
+
+58
+00:03:53,120 --> 00:03:55,610
+But who needs to be aware of changes in your project?
+
+59
+00:03:56,090 --> 00:04:01,930
+On the other hand, think is someone who is responsible for emergencies, quote, this can be a tech
+
+60
+00:04:01,940 --> 00:04:07,520
+lead on your project or owner of the repository who is in charge of margin call to the master branch
+
+61
+00:04:07,880 --> 00:04:08,690
+later today.
+
+62
+00:04:08,690 --> 00:04:16,310
+I will show you how you can add me as an EHSANI right now, just click, reply, request button and
+
+63
+00:04:16,310 --> 00:04:19,220
+pull request is created on this tab.
+
+64
+00:04:19,220 --> 00:04:21,920
+You can see what commands you have on your branch.
+
+65
+00:04:22,490 --> 00:04:27,950
+On this type, you can see what files were changed in comparison with the branch where you want to major
+
+66
+00:04:27,950 --> 00:04:28,520
+changes.
+
+67
+00:04:29,120 --> 00:04:31,220
+We can see that there are two changes.
+
+68
+00:04:31,550 --> 00:04:35,930
+New file is created and the spaces are added to the hello world file.
+
+69
+00:04:36,710 --> 00:04:43,010
+Azanian reviewers will go over all your changes to investigate what exactly is changed in your pull
+
+70
+00:04:43,010 --> 00:04:43,570
+request.
+
+71
+00:04:44,090 --> 00:04:47,840
+Review process can leave commands here and the specific lines of code.
+
+72
+00:04:48,350 --> 00:04:51,380
+For example, why so many spaces here?
+
+73
+00:04:52,940 --> 00:04:58,970
+And the discussions have to be resolved, all my students who works with me offline assigned me to the
+
+74
+00:04:58,970 --> 00:05:05,000
+airport requests and during the offline lessons we reuseable request together and discuss with the group
+
+75
+00:05:05,000 --> 00:05:06,260
+what can be improved.
+
+76
+00:05:06,920 --> 00:05:10,540
+Let me also teach you how to admit to your request as an EHSANI.
+
+77
+00:05:11,120 --> 00:05:16,760
+I don't guarantee that I will be able to check each year request because for homework verification,
+
+78
+00:05:16,760 --> 00:05:21,860
+I use special type of tasks, coding exercises that verifies your homework automatically.
+
+79
+00:05:22,280 --> 00:05:24,620
+But you can learn at least how to read me here.
+
+80
+00:05:24,620 --> 00:05:30,110
+As I say, click the settings button next click manage access.
+
+81
+00:05:30,650 --> 00:05:36,530
+You might be asked to enter your password and I believe you understood that this is project specific
+
+82
+00:05:36,530 --> 00:05:37,100
+settings.
+
+83
+00:05:37,430 --> 00:05:43,010
+So in case you want to add collaborator's to your another project, you should open settings of that
+
+84
+00:05:43,010 --> 00:05:44,300
+exact repository.
+
+85
+00:05:44,760 --> 00:05:47,450
+Let's add me as a collaborator to your repository.
+
+86
+00:05:47,840 --> 00:05:50,300
+Press this green button, invite a collaborator.
+
+87
+00:05:50,840 --> 00:05:54,140
+You can find me using my nickname and repetoire.
+
+88
+00:05:54,590 --> 00:05:59,480
+I can't find myself because this is against the rules and this doesn't make sense.
+
+89
+00:05:59,900 --> 00:06:01,820
+But I can find one of my friends.
+
+90
+00:06:02,270 --> 00:06:06,740
+For example, let me find a friend of mine with the nickname Sweater Matko.
+
+91
+00:06:07,190 --> 00:06:12,380
+Similarly, you have to find my picture, click on it and press green button.
+
+92
+00:06:12,980 --> 00:06:14,480
+That is the rule of the GitHub.
+
+93
+00:06:14,690 --> 00:06:16,220
+Always press the green button.
+
+94
+00:06:16,670 --> 00:06:17,480
+Just joking.
+
+95
+00:06:18,140 --> 00:06:24,770
+I will not add Anri because I don't want to spam him because after I press green button and we should
+
+96
+00:06:24,770 --> 00:06:31,580
+receive request to become a collaborator in my repository and he also has to approve this request and
+
+97
+00:06:31,580 --> 00:06:36,950
+only after he approved the request, only after that you will be able to find him in.
+
+98
+00:06:37,320 --> 00:06:42,200
+You drop down for your pull request to navigate back to your open request.
+
+99
+00:06:42,200 --> 00:06:44,360
+You can open pull requests tab.
+
+100
+00:06:44,540 --> 00:06:46,040
+And here is our fresh PR.
+
+101
+00:06:46,990 --> 00:06:50,200
+I can procedure, I can and assign this request to myself.
+
+102
+00:06:50,800 --> 00:06:52,210
+OK, let's proceed.
+
+103
+00:06:52,580 --> 00:06:58,960
+As I mentioned, reviewers and Ehsani check your piara and once all discussions are resolved as an emergency
+
+104
+00:06:59,140 --> 00:07:03,460
+request by pressing this button, this March button has three methods.
+
+105
+00:07:03,730 --> 00:07:05,790
+They are great American.
+
+106
+00:07:05,800 --> 00:07:09,190
+Commit squash and merge rebase and merge.
+
+107
+00:07:09,790 --> 00:07:14,710
+Keeping the clean data repository is one of the top priority tasks for all contributors.
+
+108
+00:07:14,950 --> 00:07:20,680
+That clean the tree can save you a lot of time when trying to track down comments related to embark
+
+109
+00:07:20,680 --> 00:07:24,100
+or issue the default option, which is create a much.
+
+110
+00:07:24,310 --> 00:07:29,670
+It will take all comments from the PR and add them to the master brunch with a new it.
+
+111
+00:07:30,100 --> 00:07:31,690
+Let's take a look at this slide.
+
+112
+00:07:32,350 --> 00:07:35,810
+Imagine that there is a main branch we have in it.
+
+113
+00:07:35,810 --> 00:07:37,930
+Commit and commit one and two.
+
+114
+00:07:38,590 --> 00:07:43,690
+You created your feature branch and that branch we created commits three and four.
+
+115
+00:07:44,050 --> 00:07:50,470
+You prepared to request and now we select default option from merging comments and you see that you
+
+116
+00:07:50,470 --> 00:07:57,220
+can it will be created on the master branch, the commit that you will look like this merge some specific
+
+117
+00:07:57,220 --> 00:07:57,610
+branch.
+
+118
+00:07:57,940 --> 00:07:58,540
+That's it.
+
+119
+00:07:59,170 --> 00:08:04,030
+The result message is not very helpful when you will try to understand what this comment is about.
+
+120
+00:08:04,510 --> 00:08:07,660
+That's why this is not a recommended option by many developers.
+
+121
+00:08:08,020 --> 00:08:13,300
+We want to keep our gate historically and imagine the same case, but this time we would select the
+
+122
+00:08:13,300 --> 00:08:15,850
+second possible option, which is squash and match.
+
+123
+00:08:16,270 --> 00:08:22,180
+What is going to happen in this case, commence three and four will be added to the master branch.
+
+124
+00:08:22,360 --> 00:08:29,530
+What will happen is that Cummins will become blind and any other commit message can be added comit four
+
+125
+00:08:29,530 --> 00:08:36,430
+will be squashed into three and we will give any message we like with the help of GitHub interface and
+
+126
+00:08:36,430 --> 00:08:39,280
+what will happen in case I will opt for the search option.
+
+127
+00:08:39,490 --> 00:08:46,540
+Ribis and merge neurons are based in our commands are put on top of the master branch like you see on
+
+128
+00:08:46,540 --> 00:08:47,140
+this slide.
+
+129
+00:08:47,470 --> 00:08:48,820
+Come in three and four.
+
+130
+00:08:48,850 --> 00:08:51,070
+I just put on the top of the Master Branch.
+
+131
+00:08:51,730 --> 00:08:53,060
+Definitely attack.
+
+132
+00:08:53,250 --> 00:08:55,540
+It will choose strategies that you have to follow.
+
+133
+00:08:55,900 --> 00:09:00,790
+But my personal preference is rebase and match is not squash and much.
+
+134
+00:09:01,240 --> 00:09:07,060
+I believe if a developer wants to squash Kummetz, he or she has to do that locally in the local repository
+
+135
+00:09:07,060 --> 00:09:11,170
+before even pushing branch to the remote repository, but not ask us.
+
+136
+00:09:11,170 --> 00:09:16,720
+I need to squash your comments, but I also met tech leads that would prefer squash and match.
+
+137
+00:09:16,720 --> 00:09:22,630
+Rather than teach engineers how to write Canete messages and how to do squash later in this course,
+
+138
+00:09:22,630 --> 00:09:24,550
+I will show you how you can squash Kummetz.
+
+139
+00:09:25,520 --> 00:09:31,700
+Being a project owner, you can disable much methods that you don't like to do that, click on the settings
+
+140
+00:09:31,700 --> 00:09:38,030
+button and scroll page to the bottom, find merge button and uncheck methods that you don't need.
+
+141
+00:09:43,390 --> 00:09:49,200
+And if I would open my paper one more time, I can see that I have only one option available.
+
+142
+00:09:49,720 --> 00:09:52,750
+Let me select the third method and close my pull request.
+
+143
+00:09:58,320 --> 00:09:58,900
+Awesome.
+
+144
+00:09:59,730 --> 00:10:05,550
+Now, you can delete the task branch because it is not needed anymore in remote repository, since you
+
+145
+00:10:05,550 --> 00:10:11,370
+have already merged into the master branch and to not confuse anyone, let's remove it.
+
+146
+00:10:16,630 --> 00:10:20,840
+You can see that there is no task branch anymore in our remote repository.
+
+147
+00:10:21,550 --> 00:10:26,540
+Now our request is closed and we can check our current history of the master branch.
+
+148
+00:10:27,040 --> 00:10:30,880
+Make sure you are on the master branch and click here on Kummetz.
+
+149
+00:10:31,600 --> 00:10:37,090
+And we see that no other comments from Ergin were created on the committees that were created by us.
+
+150
+00:10:38,320 --> 00:10:38,900
+Great.
+
+151
+00:10:39,190 --> 00:10:44,920
+I believe now we can recap everything, what we have learned today in this lesson, we learned what
+
+152
+00:10:44,920 --> 00:10:49,360
+a pull request is and what is the difference between a pull request and a magic quest.
+
+153
+00:10:49,750 --> 00:10:52,090
+Together, we created a pull request.
+
+154
+00:10:52,630 --> 00:10:57,550
+I showed you how you can add collaborator's to the repository and we discussed what is the difference
+
+155
+00:10:57,550 --> 00:11:00,100
+between us any and reviewer and two requests.
+
+156
+00:11:00,700 --> 00:11:05,470
+Also today, we learned different management strategies and understood the difference between them.
+
+157
+00:11:06,070 --> 00:11:07,070
+That's all for now.
+
+158
+00:11:07,600 --> 00:11:10,680
+Thanks a lot for your attention and see you in the next lesson.

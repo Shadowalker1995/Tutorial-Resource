@@ -1,0 +1,591 @@
+1
+00:00:06,080 --> 00:00:10,820
+Hello, Jim, today we're going to discuss with you one more important command that may help you to
+
+2
+00:00:10,820 --> 00:00:13,730
+modify comit history, then we'll talk about cherrypick.
+
+3
+00:00:13,730 --> 00:00:20,090
+Come on, as usual, we'll discuss when we need to use this command after we'll understand when we need
+
+4
+00:00:20,090 --> 00:00:20,890
+to use cherrypick.
+
+5
+00:00:20,900 --> 00:00:25,190
+Command will proceed with our practice exercise to understand how we can use it.
+
+6
+00:00:25,700 --> 00:00:31,010
+In this lesson, I will share with you my experience of using cherrypick and I will tell you why this
+
+7
+00:00:31,010 --> 00:00:33,440
+command is not considered as a best practice.
+
+8
+00:00:33,440 --> 00:00:37,580
+And even despite that, why we may need to use this command some time.
+
+9
+00:00:38,150 --> 00:00:43,190
+I'm going to teach you how to cherrypick multiple commands at once and how to resolve conflicts during
+
+10
+00:00:43,190 --> 00:00:43,880
+cherrypicking.
+
+11
+00:00:44,300 --> 00:00:48,800
+And at the end of the lesson, I will share with you best practices of using cherrypick.
+
+12
+00:00:49,580 --> 00:00:55,430
+So when we have to use cherrypick, there are different cases when you might want to use cherrypick
+
+13
+00:00:55,430 --> 00:00:56,060
+command.
+
+14
+00:00:56,270 --> 00:01:01,260
+Some of them deliver hotfix to the end user as fast as possible.
+
+15
+00:01:02,030 --> 00:01:04,160
+Imagine that you created Reles Branch.
+
+16
+00:01:04,640 --> 00:01:09,530
+Rie's branch should contain only source code that is going to be part of the built of your application
+
+17
+00:01:09,530 --> 00:01:14,530
+that is going to be deployed on your production environment where it will be available to the end user.
+
+18
+00:01:15,020 --> 00:01:20,300
+And imagine that you realize that you're basing on merging of the latest changes before creation of
+
+19
+00:01:20,300 --> 00:01:21,200
+the release branch.
+
+20
+00:01:21,500 --> 00:01:25,730
+You missed important change and now you have a defect in the release branch.
+
+21
+00:01:26,360 --> 00:01:30,790
+The fix for this defect is present in the snapshot in your feature branch.
+
+22
+00:01:31,070 --> 00:01:32,180
+It was tested.
+
+23
+00:01:32,180 --> 00:01:33,170
+It was approved.
+
+24
+00:01:33,800 --> 00:01:39,560
+So the only thing that you have to do is to move the committee from the feature branch to your branch
+
+25
+00:01:39,950 --> 00:01:42,860
+and to move one snapshot from one branch to another.
+
+26
+00:01:42,870 --> 00:01:49,940
+We have to use the feature command or imagine another case and doing changes and restoring lost Kummetz.
+
+27
+00:01:50,450 --> 00:01:56,700
+Not all branches are merged into the master branch and some chametz might be lost using letterer floor
+
+28
+00:01:56,720 --> 00:01:57,380
+command.
+
+29
+00:01:57,380 --> 00:02:01,100
+You may find snapshots that you need and cherrypick it into your branch.
+
+30
+00:02:01,970 --> 00:02:08,750
+One more scenario, regular time collaboration in case you and team members work on the same feature
+
+31
+00:02:08,750 --> 00:02:13,580
+and you have some shared functionality, you might want to test something on your branch that includes
+
+32
+00:02:13,580 --> 00:02:14,420
+other changes.
+
+33
+00:02:14,750 --> 00:02:21,830
+For example, backend engineers created a data structure that Fronton team also needs to use, and Fronton
+
+34
+00:02:21,830 --> 00:02:26,120
+developers may use cherrypick command to get those changes into their branch.
+
+35
+00:02:26,630 --> 00:02:31,970
+Probably during the life of the developer, you will find other real life cases when you may use to
+
+36
+00:02:31,970 --> 00:02:36,110
+be command, but I believe you understand why you may want to use it.
+
+37
+00:02:36,890 --> 00:02:38,060
+And now attention.
+
+38
+00:02:38,300 --> 00:02:41,030
+I don't want you to share with attack tactless information.
+
+39
+00:02:41,030 --> 00:02:44,750
+That and reporter had told you that using of cherrypick is a best practice.
+
+40
+00:02:45,410 --> 00:02:51,110
+I want to say that cherrypick command usually consider is not a good practice and regular mergers are
+
+41
+00:02:51,110 --> 00:02:53,540
+preferred instead when it is possible.
+
+42
+00:02:54,080 --> 00:03:01,070
+But sometimes you might want to use this command while you Topeka's consider it is not a best practice
+
+43
+00:03:01,610 --> 00:03:02,330
+notice.
+
+44
+00:03:02,330 --> 00:03:08,600
+I said literally consider it not as a best practice, but not necessarily the bad thing.
+
+45
+00:03:09,410 --> 00:03:12,440
+To understand this, let's review how Get-Rich-Quick works.
+
+46
+00:03:12,980 --> 00:03:15,970
+It creates a tension separate come.
+
+47
+00:03:15,980 --> 00:03:20,240
+It was different hash and has no reference to original comment.
+
+48
+00:03:21,050 --> 00:03:27,230
+Content of command will be fully duplicated, but it will consider Newcome it an original one as two
+
+49
+00:03:27,230 --> 00:03:28,100
+different commands.
+
+50
+00:03:28,820 --> 00:03:34,310
+That's why some developers may consider cherrypick as a bad thing because it may cause problems like
+
+51
+00:03:34,310 --> 00:03:38,960
+having duplicate commands and multiple branches messing up with a good history and others.
+
+52
+00:03:39,350 --> 00:03:43,640
+But in case you are using this command attentively, there is no harm in that.
+
+53
+00:03:44,270 --> 00:03:50,060
+For example, there might be cases when you can't merge some branch because it contains a lot of other
+
+54
+00:03:50,060 --> 00:03:52,070
+changes that are not needed anymore.
+
+55
+00:03:52,610 --> 00:03:56,210
+And at some specific moment of time, you need only one single command.
+
+56
+00:03:56,660 --> 00:04:02,120
+That's where cherrypick command may help you so used cherrypick with caution.
+
+57
+00:04:02,720 --> 00:04:07,790
+At the end of the lesson, we are going to summarize rules that you have to follow during the cherrypicking.
+
+58
+00:04:08,450 --> 00:04:14,480
+Now let me show you the real example of cherrypicking the head for this lesson for the sake of the Dharma
+
+59
+00:04:14,480 --> 00:04:16,340
+Abbotabad branch was fuken its.
+
+60
+00:04:16,550 --> 00:04:21,620
+Let me briefly explain to you the state of my current repository so that you would understand the example.
+
+61
+00:04:22,160 --> 00:04:27,800
+Imagine that I am working on the implementation of LOG-IN functionality and I create a separate branch
+
+62
+00:04:27,800 --> 00:04:30,890
+for that was the name Keet three zero eight log.
+
+63
+00:04:30,890 --> 00:04:33,800
+Again, you can see that I am currently on it.
+
+64
+00:04:34,470 --> 00:04:37,640
+Let me show you the history of what I have already done.
+
+65
+00:04:38,360 --> 00:04:41,000
+This log was option one line necessary.
+
+66
+00:04:41,870 --> 00:04:46,340
+Option one line allows me to format output in a bit different ways than usual.
+
+67
+00:04:46,910 --> 00:04:51,530
+I press enter here what I have already done while being on this branch.
+
+68
+00:04:52,130 --> 00:04:54,500
+I implement in styles for login bottom.
+
+69
+00:04:54,890 --> 00:04:58,250
+Also I implement and backend part of login feature.
+
+70
+00:04:58,760 --> 00:05:01,370
+And here's a snapshot of the original master branch.
+
+71
+00:05:01,970 --> 00:05:03,170
+And imagine that during the.
+
+72
+00:05:03,310 --> 00:05:09,280
+Essence of my work quality assurance engineers found a lot of defects, and we are not in the position
+
+73
+00:05:09,280 --> 00:05:16,450
+to match my branch to a three zero eight into the master branch, but everybody really liked the style
+
+74
+00:05:16,450 --> 00:05:21,950
+of my login button and product on requested to have the other buttons in the same style.
+
+75
+00:05:22,580 --> 00:05:28,870
+That's why I want to prepare pool requests for only styles of my button and we'll merge that branch
+
+76
+00:05:28,870 --> 00:05:33,850
+into the master so that other developers also will be able to pick up the changes.
+
+77
+00:05:33,860 --> 00:05:36,010
+While I will be fixing all the defects.
+
+78
+00:05:36,010 --> 00:05:38,430
+Was back in court for the next week or two.
+
+79
+00:05:39,280 --> 00:05:41,920
+Just joking, you know that I would fix it faster.
+
+80
+00:05:42,400 --> 00:05:48,370
+But just as an example, this shouldn't be a problem because I will rebase my branch with the back and
+
+81
+00:05:48,380 --> 00:05:55,450
+quote on the master before merging or even just remove Starlin snapshot from the current branch to understand
+
+82
+00:05:55,450 --> 00:05:56,450
+the real life case.
+
+83
+00:05:57,190 --> 00:05:59,270
+Let me now show you how to do that.
+
+84
+00:05:59,710 --> 00:06:03,190
+First of all, let me create the branch from the latest master branch.
+
+85
+00:06:04,110 --> 00:06:05,300
+Good switch, master.
+
+86
+00:06:06,310 --> 00:06:10,450
+Nudes, which resorption CGA three zero nine modern styles.
+
+87
+00:06:12,520 --> 00:06:19,720
+OK, I'm on the new branch and imagine that I did some changes in the log into this House file, just
+
+88
+00:06:19,720 --> 00:06:25,000
+did any random changes, Nonno style slash log in order to assess.
+
+89
+00:06:25,630 --> 00:06:29,230
+Let me write here some text, some changes.
+
+90
+00:06:30,260 --> 00:06:37,820
+And save it now, let me come in this year to commit with option A and resorption and subcamp.
+
+91
+00:06:39,890 --> 00:06:47,310
+Hypocenter and now being on this branch, I have to cherry pick this game, it was Jackson E, C, six,
+
+92
+00:06:47,310 --> 00:06:52,680
+B, five, E, C, two copies that come in and apply it on my new branch.
+
+93
+00:06:52,680 --> 00:06:54,330
+Let me execute the next command.
+
+94
+00:06:55,020 --> 00:06:57,900
+Get cherrypick E, C six.
+
+95
+00:06:57,900 --> 00:06:58,800
+B, five.
+
+96
+00:06:58,800 --> 00:06:59,520
+E, c.
+
+97
+00:07:00,380 --> 00:07:06,770
+In case we wouldn't adjust the says as file, we want to see conflicts here and your it would be applied,
+
+98
+00:07:07,190 --> 00:07:09,990
+but that is way too easy for you.
+
+99
+00:07:10,520 --> 00:07:16,250
+I wanted to imitate state of the conflict during the cherrypicking to show you the process of the conflict
+
+100
+00:07:16,260 --> 00:07:17,930
+resolving during the cherrypick.
+
+101
+00:07:18,590 --> 00:07:24,080
+You see that it indicates that we are in the process of the cherry picking and gives us advice to resolve
+
+102
+00:07:24,080 --> 00:07:26,480
+conflicts and add files to the staging area.
+
+103
+00:07:27,050 --> 00:07:28,370
+Let me check your status.
+
+104
+00:07:29,650 --> 00:07:37,750
+And see here in the but it is said that there is a conflict in Logan says file, so let's open it in
+
+105
+00:07:37,750 --> 00:07:40,980
+the editor and let's resolve the conflicts now.
+
+106
+00:07:41,030 --> 00:07:47,530
+No styles log into SS will imitate the fact that we resolved all conflicts.
+
+107
+00:07:49,150 --> 00:07:53,080
+Now, let's mark this file as a result, get at DOT.
+
+108
+00:07:53,960 --> 00:08:01,640
+Now, let's continue our cherry picking process to do this, let's perform the next command, get cherrypick
+
+109
+00:08:01,640 --> 00:08:07,870
+with option continue and it allows us to adjust, commit message by default.
+
+110
+00:08:07,880 --> 00:08:10,670
+It keeps the region commit message of the previous commit.
+
+111
+00:08:11,060 --> 00:08:16,180
+Let's save and close this file and we can see that we applied our changes here.
+
+112
+00:08:16,780 --> 00:08:18,610
+Let's check our current history.
+
+113
+00:08:19,320 --> 00:08:21,230
+Good luck with option one line.
+
+114
+00:08:21,560 --> 00:08:22,250
+That's three.
+
+115
+00:08:23,200 --> 00:08:28,780
+And here's our new comment and attention, in case you would compare, check some of this comet and
+
+116
+00:08:28,780 --> 00:08:34,770
+check some of original comet from a three zero eight range, you're going to find that they are different.
+
+117
+00:08:35,410 --> 00:08:38,770
+That means that these two are not the same comet.
+
+118
+00:08:39,460 --> 00:08:42,000
+This one is just a copy of the first one.
+
+119
+00:08:42,790 --> 00:08:49,150
+And now a few more important variations and options of cherrypick command in case something went wrong
+
+120
+00:08:49,150 --> 00:08:50,800
+during the conflict resolution.
+
+121
+00:08:50,830 --> 00:08:56,520
+You can just abort the process of cherrypicking like this, get cherrypick with option abort.
+
+122
+00:08:57,280 --> 00:09:01,270
+Also, if you wish, you may cherry pick multiple comets at once.
+
+123
+00:09:01,750 --> 00:09:02,470
+To do this.
+
+124
+00:09:02,740 --> 00:09:08,160
+You have specified checksum of all comets separated by space like this year.
+
+125
+00:09:08,210 --> 00:09:15,360
+Cherrypick E, C six B five e C and three F three one six six six.
+
+126
+00:09:16,030 --> 00:09:17,800
+Those are two comets from our damos.
+
+127
+00:09:18,640 --> 00:09:22,990
+Now when you know how to use cherrypick, let's talk about the best practices.
+
+128
+00:09:24,010 --> 00:09:30,370
+The rule number one, if it's not critical and you can apply necessary changes with much opt for much
+
+129
+00:09:30,370 --> 00:09:37,240
+option, it is considered to be a general practice to prefer much option of a cherrypick rule number
+
+130
+00:09:37,240 --> 00:09:44,020
+to avoid creating any duplication by using cherrypick if you cherry picked commands and removed all
+
+131
+00:09:44,020 --> 00:09:46,270
+branch or just reset the old branch.
+
+132
+00:09:46,480 --> 00:09:47,500
+That's fine.
+
+133
+00:09:47,500 --> 00:09:49,630
+And this will not lead to any issues.
+
+134
+00:09:50,080 --> 00:09:54,610
+Potential issues may happen in case you keep two branches and have duplicated Kummetz.
+
+135
+00:09:55,580 --> 00:10:01,100
+Rule number three, sometimes it is considered as a good practice during the cherrypick to specify the
+
+136
+00:10:01,100 --> 00:10:07,340
+hash code or the original commit, it may help you to do this in case you will use exception like this.
+
+137
+00:10:07,940 --> 00:10:10,040
+Get your pick was option X.
+
+138
+00:10:10,850 --> 00:10:16,000
+This option will automatically adds information about the regional committee into your new one.
+
+139
+00:10:16,550 --> 00:10:20,630
+And here on the screenshot, you may see how your comit message will look like.
+
+140
+00:10:21,830 --> 00:10:26,600
+You learned a lot today about cherrypick, let's recap what we have learned today.
+
+141
+00:10:27,230 --> 00:10:32,240
+Now, you know when you might need to apply cherrypick command, because we discussed with you different
+
+142
+00:10:32,240 --> 00:10:34,400
+cases when this command will help you.
+
+143
+00:10:35,000 --> 00:10:39,230
+Also, you understood why cherrypick is not considered to be as a good practice.
+
+144
+00:10:39,830 --> 00:10:43,680
+One real example, you saw how to resolve conflicts during cherrypicking.
+
+145
+00:10:44,180 --> 00:10:47,360
+Now you know how to cherrypick multiple Kummetz at once.
+
+146
+00:10:47,870 --> 00:10:52,300
+And at the end of the lesson, we learned best practices of using cherrypick command.
+
+147
+00:10:52,970 --> 00:10:54,070
+That's all for today.
+
+148
+00:10:54,500 --> 00:10:57,800
+Thanks a lot for your attention and see you in the next lesson.

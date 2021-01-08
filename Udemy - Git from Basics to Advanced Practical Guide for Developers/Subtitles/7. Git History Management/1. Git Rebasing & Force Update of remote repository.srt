@@ -1,0 +1,967 @@
+1
+00:00:06,380 --> 00:00:11,320
+Hello, dear students, in this lesson, we'll learn what a great rebellion is and what for some day
+
+2
+00:00:11,330 --> 00:00:11,870
+it is.
+
+3
+00:00:12,020 --> 00:00:14,390
+I will show you how and when you can apply.
+
+4
+00:00:14,390 --> 00:00:15,500
+Get your base command.
+
+5
+00:00:15,650 --> 00:00:18,180
+I will explain what rebase actually means.
+
+6
+00:00:18,650 --> 00:00:23,480
+Also, I will explain the difference between good marriage and get to base after.
+
+7
+00:00:23,480 --> 00:00:24,910
+We will understand Ceri.
+
+8
+00:00:24,920 --> 00:00:30,400
+We'll take a look at real example and we'll learn how we can use our base command on a daily basis.
+
+9
+00:00:31,010 --> 00:00:35,420
+You're going to see how to keep your military clean during the lesson.
+
+10
+00:00:35,420 --> 00:00:39,790
+You're going to learn how to solve conflicts that could appear during the invasion.
+
+11
+00:00:39,800 --> 00:00:45,830
+On the other branch, on real examples, I will show you what gets replaced with option continue means
+
+12
+00:00:46,010 --> 00:00:47,870
+and how to complete the remaining process.
+
+13
+00:00:48,320 --> 00:00:53,890
+After we change the local comment history, I will show you what force of date is and how force with
+
+14
+00:00:53,900 --> 00:00:55,430
+lease option may help us.
+
+15
+00:00:55,820 --> 00:01:01,530
+And at the end of the lesson I'm going to share with you four Rules of Happy Perquisite by Peter.
+
+16
+00:01:02,050 --> 00:01:03,380
+Just jokin is always.
+
+17
+00:01:04,340 --> 00:01:09,790
+And to start with, let's discuss the problem which we faced during the previous lesson, if we resolved
+
+18
+00:01:09,830 --> 00:01:16,550
+conflicts with Bookham and you saw that one more comment was created and you also saw that I can't merge
+
+19
+00:01:16,550 --> 00:01:20,470
+with the best strategy to M. I can only merge with new command.
+
+20
+00:01:20,960 --> 00:01:27,230
+So our problem is how to get his territory clean, the presidential and union commands.
+
+21
+00:01:27,250 --> 00:01:30,260
+Let's understand first what our base is and how it works.
+
+22
+00:01:30,890 --> 00:01:35,270
+In general, there are two main ways to integrate changes from one branch into another.
+
+23
+00:01:35,780 --> 00:01:38,410
+Zaya Yes, merge and military base.
+
+24
+00:01:38,870 --> 00:01:42,660
+We already learned in previous lessons more about Gaete merging branches.
+
+25
+00:01:43,070 --> 00:01:47,780
+Now let's understand on the high level what is a rebase let's recall an example.
+
+26
+00:01:47,780 --> 00:01:52,730
+When we had the branches, the easiest way to synchronize the branches is to merge them.
+
+27
+00:01:53,150 --> 00:01:58,130
+So to merge C3 and C4 snapshots, we have to create one more snapshot.
+
+28
+00:01:58,250 --> 00:01:59,740
+Thus one more comment.
+
+29
+00:01:59,870 --> 00:02:00,620
+C five.
+
+30
+00:02:01,130 --> 00:02:04,610
+This option works just fine and we saw how it works.
+
+31
+00:02:05,120 --> 00:02:10,250
+But do we have another option that will not create additional senseless commit?
+
+32
+00:02:11,060 --> 00:02:12,110
+Yes, we do.
+
+33
+00:02:12,590 --> 00:02:15,320
+Based on the awesome branch, what does that mean?
+
+34
+00:02:15,770 --> 00:02:20,930
+We can take changes that we have in C four commit and put them on top of C three.
+
+35
+00:02:21,590 --> 00:02:27,680
+That mean you can take changes that were done on one branch and apply those changes on the other branch.
+
+36
+00:02:28,010 --> 00:02:33,860
+In our example, I can execute Command Guitry Bassmaster while being on the experiment branch.
+
+37
+00:02:34,400 --> 00:02:38,060
+This will lead us to the good history that you can see on this slide.
+
+38
+00:02:38,810 --> 00:02:42,710
+You can see that C snapshot is going right after C three.
+
+39
+00:02:43,320 --> 00:02:48,260
+This will allow the great pull request and merge branches and help with the and strategy.
+
+40
+00:02:48,920 --> 00:02:54,650
+In this particular scenario, we can switch back to the Master Branch and do fastforward much like it
+
+41
+00:02:54,650 --> 00:02:55,850
+has shown on the slide.
+
+42
+00:02:56,420 --> 00:03:02,450
+And in this case, you can see that there are no any other comments from Najin branches and we have
+
+43
+00:03:02,450 --> 00:03:03,650
+Coingate history.
+
+44
+00:03:04,600 --> 00:03:09,700
+We're also going to have lessons about interactive freebase a bit later in this course, where I will
+
+45
+00:03:09,700 --> 00:03:14,790
+show you how you can use reverse command to combine commands or to change commit messages.
+
+46
+00:03:15,160 --> 00:03:20,170
+But in this lesson, we'll run the rebels command only from the point of margin changes from different
+
+47
+00:03:20,170 --> 00:03:20,680
+branches.
+
+48
+00:03:21,490 --> 00:03:26,020
+On the previous slide, you saw base command to replace changes from another branch.
+
+49
+00:03:26,210 --> 00:03:31,360
+But in real life example, later today we are going to use a bit another variation of this command,
+
+50
+00:03:31,690 --> 00:03:33,650
+get ball with a base option.
+
+51
+00:03:34,300 --> 00:03:38,110
+So what is the difference between a military base and pool with a base option?
+
+52
+00:03:38,740 --> 00:03:43,400
+Using base command replaces the branch which we want get bored with.
+
+53
+00:03:43,400 --> 00:03:48,450
+The base option can be treated as shorthand for git fetch and then get through base command.
+
+54
+00:03:48,760 --> 00:03:54,160
+You will be able to fetch all the latest changes from the remote repository prior to revising our code
+
+55
+00:03:54,160 --> 00:03:54,940
+on top of it.
+
+56
+00:03:55,480 --> 00:04:01,360
+Because if I would just use Guitry Bassmaster Command, it would only take into account what local repository
+
+57
+00:04:01,360 --> 00:04:05,020
+is already aware of, but not the changes from the remote repository.
+
+58
+00:04:05,440 --> 00:04:07,380
+This is very important, practical tip.
+
+59
+00:04:08,020 --> 00:04:13,030
+That's why this video, of course, is so valuable to all my students, because even if you would read
+
+60
+00:04:13,030 --> 00:04:17,170
+documentation and use it to base, you wouldn't read the expected goal.
+
+61
+00:04:17,590 --> 00:04:20,650
+And it is not clear that Boogerman has a base option.
+
+62
+00:04:20,770 --> 00:04:23,050
+If only you read all your documentation.
+
+63
+00:04:23,680 --> 00:04:30,610
+Probably by this very moment of our lesson, you are wondering what is better get much or get base?
+
+64
+00:04:31,000 --> 00:04:34,340
+Which one should I use to give you the full answer?
+
+65
+00:04:34,360 --> 00:04:39,610
+I'd like you to understand one more time what repositories history means from different point of use.
+
+66
+00:04:40,080 --> 00:04:43,600
+Repository history is the records of what actually happened.
+
+67
+00:04:44,170 --> 00:04:51,040
+From this point of view, it might seem like not a good idea to change history from this angle.
+
+68
+00:04:51,040 --> 00:04:56,110
+Using the base is similar to lying about what actually happened in your repository.
+
+69
+00:04:56,680 --> 00:05:01,050
+But is this valid comment all the times or there are some exceptions?
+
+70
+00:05:01,600 --> 00:05:07,240
+What if there are a series of large companies that brings us almost zero information about conversion
+
+71
+00:05:07,240 --> 00:05:08,020
+improvements?
+
+72
+00:05:08,630 --> 00:05:12,700
+That brings us information that branches remerged OK?
+
+73
+00:05:12,730 --> 00:05:17,410
+And what that is logical is that branches should be merged at some point.
+
+74
+00:05:17,980 --> 00:05:24,100
+But I am more interested in the functionality of the specific version of code rather than the fact that
+
+75
+00:05:24,100 --> 00:05:25,150
+there was not much.
+
+76
+00:05:25,720 --> 00:05:29,460
+That is the point of view on what repositories history means.
+
+77
+00:05:30,040 --> 00:05:35,260
+My personal opinion is that we should treat our history as a story of how our project was made.
+
+78
+00:05:35,890 --> 00:05:40,750
+If we are writing a story, there is no harm in doing side notes and tracking each step.
+
+79
+00:05:41,110 --> 00:05:46,750
+But when times come to release the story and show it to the world, I want to tell more coherent story
+
+80
+00:05:46,750 --> 00:05:48,250
+without all my drafts.
+
+81
+00:05:48,250 --> 00:05:49,450
+And that didn't pass.
+
+82
+00:05:50,260 --> 00:05:55,570
+But despite my personal opinion, I believe you understood that there is no right answer which approach
+
+83
+00:05:55,570 --> 00:05:56,080
+is better.
+
+84
+00:05:56,770 --> 00:06:02,250
+And just keep in mind that all projects are different and there is no silver bullet for each project.
+
+85
+00:06:02,740 --> 00:06:04,930
+There is no one size fits all approach.
+
+86
+00:06:05,170 --> 00:06:09,520
+But being a true professional, you have to be aware about different points of view.
+
+87
+00:06:09,920 --> 00:06:13,380
+That's why I believe it is important for me to share this with you.
+
+88
+00:06:14,340 --> 00:06:20,040
+OK, now, when you understood the theory of revision, I suggest looking at our practical example.
+
+89
+00:06:21,240 --> 00:06:26,160
+Keen to understand the damage in this lesson, you have to understand the drama from previous lesson
+
+90
+00:06:26,460 --> 00:06:32,030
+because we have the same context as in previous lesson will proceed from the point where we finished
+
+91
+00:06:32,050 --> 00:06:32,740
+previous time.
+
+92
+00:06:33,240 --> 00:06:37,890
+Let me call Gitlow command of last's recommits gridlock.
+
+93
+00:06:37,890 --> 00:06:39,840
+Dash three here.
+
+94
+00:06:39,840 --> 00:06:43,500
+You can see that I have not commit one result together.
+
+95
+00:06:43,530 --> 00:06:44,400
+Much conflict.
+
+96
+00:06:44,640 --> 00:06:50,760
+You can see here that this much coming of this Ansar's Kummetz, you can check, check, checksum here.
+
+97
+00:06:51,210 --> 00:06:53,580
+And here's a reference to Logan pop up.
+
+98
+00:06:53,580 --> 00:06:54,750
+You're in Logan Command.
+
+99
+00:06:55,290 --> 00:06:59,040
+That is command that emerged from a three zero four branch.
+
+100
+00:06:59,550 --> 00:07:06,180
+And we see in parentheses that it is from a region master branch and we have our own command, which
+
+101
+00:07:06,180 --> 00:07:12,370
+we did, and scope of this branch gursel on the home page and then Miyu another option of handling much
+
+102
+00:07:12,390 --> 00:07:13,080
+conflict.
+
+103
+00:07:13,080 --> 00:07:19,770
+And to them or a base to you, I suggest we said in our state to the state of this comit carrousel on
+
+104
+00:07:19,770 --> 00:07:24,360
+the home page before we even did a good pull origin master command.
+
+105
+00:07:25,140 --> 00:07:30,030
+Right now you are going to get reset command, which we are going to learn in the separate lesson.
+
+106
+00:07:30,390 --> 00:07:36,150
+I have to use it in this lesson so that you would keep track of all my changes in the git repository.
+
+107
+00:07:36,630 --> 00:07:42,990
+I believe that showing all my actions and to you is the best way to learn such a powerful tool as good.
+
+108
+00:07:43,800 --> 00:07:50,220
+I will perform the next command and I will explain in short what it does get reset.
+
+109
+00:07:50,880 --> 00:07:56,310
+This command can reset state of your file system to the specific revision option.
+
+110
+00:07:56,310 --> 00:08:02,970
+Hard reset command has different modes will learn all possible modes in the separate lesson.
+
+111
+00:08:03,750 --> 00:08:09,780
+Heart means that files from the other region will be restored and all changes from other revisions will
+
+112
+00:08:09,780 --> 00:08:10,350
+be removed.
+
+113
+00:08:11,070 --> 00:08:13,980
+Had had is appointed as a current place.
+
+114
+00:08:13,980 --> 00:08:17,400
+And yet that is our last comment to the one.
+
+115
+00:08:17,910 --> 00:08:22,530
+This means reset state of our file system to the state that was one commit ago.
+
+116
+00:08:22,920 --> 00:08:26,340
+That is right before we pulled changes from the original Master Branch.
+
+117
+00:08:26,790 --> 00:08:30,870
+Let's press enter and here we are on the castle on the home page.
+
+118
+00:08:30,870 --> 00:08:32,280
+Commit, let's check.
+
+119
+00:08:32,280 --> 00:08:33,330
+Commit history now.
+
+120
+00:08:33,960 --> 00:08:35,340
+Get locked command.
+
+121
+00:08:36,120 --> 00:08:36,780
+Awesome.
+
+122
+00:08:37,170 --> 00:08:39,270
+We can even check our file system.
+
+123
+00:08:39,420 --> 00:08:45,390
+Let me show you that we don't have Logan says says file from another branch, said Stiles.
+
+124
+00:08:47,390 --> 00:08:54,620
+And residential, and you can see that we only have Gursel to file and we don't have any logins, he
+
+125
+00:08:54,640 --> 00:08:55,620
+says file here.
+
+126
+00:08:56,150 --> 00:08:56,540
+Cool.
+
+127
+00:08:56,880 --> 00:09:00,800
+Let's get back to the SASE directory, Siggie double dot.
+
+128
+00:09:01,610 --> 00:09:04,400
+And now, instead of doing it, pull origin master.
+
+129
+00:09:04,430 --> 00:09:07,550
+Let me execute another commands that we have learned today.
+
+130
+00:09:08,060 --> 00:09:11,360
+Get was optional base a region master.
+
+131
+00:09:12,320 --> 00:09:18,680
+This was expected in case we wouldn't have any major conflicts, rebates would be very smooth, but
+
+132
+00:09:18,680 --> 00:09:20,270
+that is way too easy for you.
+
+133
+00:09:20,720 --> 00:09:23,790
+Let me show you how to resolve NAHJ conflicts during the invasion.
+
+134
+00:09:24,500 --> 00:09:30,800
+I believe you remember that we expect much conflict in home, not HTML file, but this time we have
+
+135
+00:09:30,800 --> 00:09:32,010
+a bit different message.
+
+136
+00:09:32,600 --> 00:09:38,530
+We see that error happened during the invasion and commit could not be applied here.
+
+137
+00:09:38,600 --> 00:09:41,450
+It leaves a hint for you what to do in this case.
+
+138
+00:09:41,960 --> 00:09:44,450
+We have to resolve all conflicts manually.
+
+139
+00:09:44,780 --> 00:09:50,810
+After that, we have to either add or remove files to the staging area and execute rebels continued
+
+140
+00:09:50,810 --> 00:09:51,360
+command.
+
+141
+00:09:52,250 --> 00:09:58,070
+I don't recommend this keep this coming like it is shown here, because our goal is to resolve conflicts
+
+142
+00:09:58,220 --> 00:09:59,350
+and finish freebasing.
+
+143
+00:10:00,080 --> 00:10:05,660
+In case you understand that it is a mistake and something is going wrong, you can execute Guitry base
+
+144
+00:10:05,660 --> 00:10:07,120
+with abort option.
+
+145
+00:10:07,970 --> 00:10:13,190
+By the way, here in parentheses, you can see indications that we are in the process of revision right
+
+146
+00:10:13,190 --> 00:10:15,920
+now, but let us resolve conflicts.
+
+147
+00:10:16,860 --> 00:10:19,840
+Nano web content slash home, not HDMI.
+
+148
+00:10:20,670 --> 00:10:22,890
+Let me quickly resolve these conflicts.
+
+149
+00:10:23,980 --> 00:10:27,370
+After conflicts are resolved, I close and save this file.
+
+150
+00:10:28,270 --> 00:10:36,210
+Now, as it was said before, I have to add files to the staging area yet at DOD and now we can proceed
+
+151
+00:10:36,220 --> 00:10:41,950
+our amazing database, continue to get offers me to adjust my message.
+
+152
+00:10:41,950 --> 00:10:45,480
+But I want to keep it the same cursor on the homepage.
+
+153
+00:10:45,970 --> 00:10:47,710
+That sounds just perfect.
+
+154
+00:10:48,340 --> 00:10:54,850
+So I just closed the file and I see a message that I was successfully based on the other branch.
+
+155
+00:10:55,600 --> 00:10:59,650
+Now let me update my branch in remote repository to update my poll request.
+
+156
+00:11:00,310 --> 00:11:01,120
+Get Bush.
+
+157
+00:11:02,260 --> 00:11:04,420
+Oh, I see error here.
+
+158
+00:11:05,200 --> 00:11:06,190
+Those were rejected.
+
+159
+00:11:07,060 --> 00:11:07,520
+Why?
+
+160
+00:11:07,900 --> 00:11:14,320
+Because I already had a ranch in the remote repository, my region, a three zero five home carousel
+
+161
+00:11:14,350 --> 00:11:17,950
+branch, has different comment history rather than my local branch.
+
+162
+00:11:17,950 --> 00:11:24,510
+Now, because the base command changes get history and it is not smart enough to understand this.
+
+163
+00:11:25,060 --> 00:11:27,270
+Forget it is just looks like a mess.
+
+164
+00:11:27,850 --> 00:11:31,420
+Now, our local branch and their branch has a different history of comments.
+
+165
+00:11:31,850 --> 00:11:35,670
+Let's take a look one more time at the history of Cummins of the remote branch.
+
+166
+00:11:36,250 --> 00:11:37,780
+Can you see these two comments?
+
+167
+00:11:38,410 --> 00:11:40,140
+And you can see comments, checksum.
+
+168
+00:11:40,870 --> 00:11:45,520
+Now let's return to get Bush and check Commissaire git log.
+
+169
+00:11:45,520 --> 00:11:47,680
+Deshotel, can I see this?
+
+170
+00:11:48,190 --> 00:11:52,900
+We put our cursor on the homepage comit right on top of the massive branch.
+
+171
+00:11:53,320 --> 00:11:58,150
+That is actually what we base does and pay attention to check some here.
+
+172
+00:11:58,630 --> 00:11:59,380
+Can I see that?
+
+173
+00:11:59,620 --> 00:12:02,060
+It was the same message has different checks.
+
+174
+00:12:03,020 --> 00:12:07,150
+OK, well understood that our committee history is different on different branches.
+
+175
+00:12:07,270 --> 00:12:08,380
+But what to do now?
+
+176
+00:12:08,710 --> 00:12:11,380
+I need to tell you which version is correct.
+
+177
+00:12:12,040 --> 00:12:18,130
+I know that my current branch is the most relevant branch, so I have to update my original branch so
+
+178
+00:12:18,130 --> 00:12:21,280
+that it would have the same comment history as my local branch.
+
+179
+00:12:21,700 --> 00:12:26,560
+To do this, I need to perform the next command, get Bush with option F.
+
+180
+00:12:27,460 --> 00:12:29,590
+F stands for Force Update.
+
+181
+00:12:30,130 --> 00:12:37,060
+Be extra careful when you do this, because force update will erase changes that are currently present
+
+182
+00:12:37,060 --> 00:12:41,710
+in the remote repository in this branch if you are going to use from base command.
+
+183
+00:12:41,740 --> 00:12:45,400
+That means sometimes you would need to use force update option.
+
+184
+00:12:45,730 --> 00:12:47,740
+But one more time.
+
+185
+00:12:48,130 --> 00:12:49,880
+Be extra careful.
+
+186
+00:12:50,200 --> 00:12:57,340
+Use this option only with your branches, only with branches that only you are aware of, because in
+
+187
+00:12:57,340 --> 00:13:03,490
+case somebody created the branch from your branch and you change history and your branch was merged,
+
+188
+00:13:03,760 --> 00:13:08,220
+that will cause extra efforts for the engineer who created the branch from your branch.
+
+189
+00:13:08,860 --> 00:13:15,730
+Real life example, KYAY automation engineer who is going to help you with writing your tests for your
+
+190
+00:13:15,730 --> 00:13:16,060
+home.
+
+191
+00:13:16,060 --> 00:13:23,020
+Carasso created his own branch from your branch, your updated comment history and merge it to the master
+
+192
+00:13:23,710 --> 00:13:25,740
+key engineer can't match.
+
+193
+00:13:25,750 --> 00:13:32,440
+Mostly his branch needs that your branch needs to master right now without freebasing and solving conflicts
+
+194
+00:13:32,440 --> 00:13:33,130
+one more time.
+
+195
+00:13:33,640 --> 00:13:39,190
+Or imagine that key engineer merged his or her changes into your branch.
+
+196
+00:13:39,700 --> 00:13:46,030
+And by applying for update, he overrides those changes and the documents were lost.
+
+197
+00:13:46,810 --> 00:13:51,880
+This even sounds complicated, so please try to avoid this.
+
+198
+00:13:52,780 --> 00:13:58,280
+Today, we're going to create a few rules that will save you a ton of time and your nerves in the future.
+
+199
+00:13:58,720 --> 00:14:01,450
+I call this rules for rules of happy workwise.
+
+200
+00:14:01,450 --> 00:14:03,850
+Get by and repeat the rule.
+
+201
+00:14:03,850 --> 00:14:09,580
+Number one, always create branches from the master branch, but not from the other development branches.
+
+202
+00:14:10,450 --> 00:14:18,250
+Rule number two, force update only your own branches that you can be sure nobody using because of the
+
+203
+00:14:18,250 --> 00:14:21,760
+risk of losing data force is very risky mode.
+
+204
+00:14:22,210 --> 00:14:27,410
+What is less risky is the rule of thumb is using force with less option.
+
+205
+00:14:27,940 --> 00:14:35,370
+What is this about force, which is a safer option that will not override any work on the remote branch
+
+206
+00:14:35,380 --> 00:14:39,010
+if more comments were added to the remote branch by another team member.
+
+207
+00:14:39,710 --> 00:14:42,430
+Based on this, let's make rule number three.
+
+208
+00:14:42,820 --> 00:14:47,100
+When you need to use force update, always use force with less option.
+
+209
+00:14:47,830 --> 00:14:52,690
+I can't even count how much time this simple rule saves me tons of time.
+
+210
+00:14:53,570 --> 00:14:56,080
+So we use force with this option.
+
+211
+00:14:56,230 --> 00:14:57,550
+Let's press enter button.
+
+212
+00:14:58,490 --> 00:15:04,520
+Take into account no update in my branch, I successfully updated my branch in the remote repository
+
+213
+00:15:04,520 --> 00:15:07,790
+and my request let's check my power now.
+
+214
+00:15:08,820 --> 00:15:09,640
+Can you see this?
+
+215
+00:15:09,900 --> 00:15:15,990
+I have one comment instead of two and also check some of the comment, carrousel on the home page is
+
+216
+00:15:15,990 --> 00:15:16,460
+changed.
+
+217
+00:15:17,310 --> 00:15:19,880
+Now I can use Rebase and my strategy.
+
+218
+00:15:20,290 --> 00:15:21,320
+That is awesome.
+
+219
+00:15:21,540 --> 00:15:25,650
+We did this together and now it is time for the rule number four.
+
+220
+00:15:26,430 --> 00:15:29,490
+Rule number four always are based on a region.
+
+221
+00:15:29,490 --> 00:15:31,440
+Must have brunch before creating a comet.
+
+222
+00:15:32,220 --> 00:15:34,850
+Now you know how to replace and M..
+
+223
+00:15:35,520 --> 00:15:41,430
+I would even say that this is a best practice to rule based on the region master as often as you can
+
+224
+00:15:41,610 --> 00:15:47,460
+to fix conflicts gradually and to test your implementation on the latest version of the code during
+
+225
+00:15:47,460 --> 00:15:50,310
+the development to not spend a lot of time.
+
+226
+00:15:50,310 --> 00:15:56,130
+When you worked one week on your task and after solving all conflicts, you realized that feature doesn't
+
+227
+00:15:56,130 --> 00:15:57,180
+work as expected.
+
+228
+00:15:57,960 --> 00:16:00,390
+OK, which is really a lot today.
+
+229
+00:16:00,570 --> 00:16:02,790
+Let's recap what we have learned today.
+
+230
+00:16:03,600 --> 00:16:04,380
+In this lesson.
+
+231
+00:16:04,380 --> 00:16:09,120
+We learned what the basis we understood the difference between merge and rebase.
+
+232
+00:16:09,570 --> 00:16:15,090
+We tried to answer the question, what is better to use it, merge or get rebates from different points
+
+233
+00:16:15,090 --> 00:16:15,450
+of view?
+
+234
+00:16:16,110 --> 00:16:19,140
+One real example, you saw how a command works.
+
+235
+00:16:19,620 --> 00:16:22,920
+You know, when you need to execute, get from base, continued command.
+
+236
+00:16:23,400 --> 00:16:27,060
+Also Villon, when we need to use force update mode.
+
+237
+00:16:27,060 --> 00:16:31,500
+And how fast was this option can help us to not override other comments.
+
+238
+00:16:32,100 --> 00:16:36,000
+And at the end of the lesson we reviewed for roles, have happy work with it.
+
+239
+00:16:36,750 --> 00:16:38,400
+We learned a lot today.
+
+240
+00:16:38,580 --> 00:16:40,470
+I'm really happy you saw this lesson.
+
+241
+00:16:41,160 --> 00:16:42,450
+Thanks a lot for your attention.
+
+242
+00:16:42,450 --> 00:16:46,410
+The students have agreed the rest of the day and see you in the next lesson.

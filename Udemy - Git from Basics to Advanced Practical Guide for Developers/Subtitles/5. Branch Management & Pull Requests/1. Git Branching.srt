@@ -1,0 +1,951 @@
+1
+00:00:06,020 --> 00:00:11,450
+Hello, dissidents, today we are going to a very important lesson today will learn what branches and
+
+2
+00:00:11,450 --> 00:00:13,820
+how to ensure smooth navigation between them.
+
+3
+00:00:14,150 --> 00:00:19,750
+I will explain you how comets, asteroids and get in a nutshell will answer the question, what actually
+
+4
+00:00:19,850 --> 00:00:20,680
+branches?
+
+5
+00:00:20,720 --> 00:00:21,910
+I will explain today.
+
+6
+00:00:21,920 --> 00:00:27,980
+What is it that after you will understand, the theory will proceed with practice exercises to learn
+
+7
+00:00:27,980 --> 00:00:33,110
+commands that will allow us to create new branches and navigate between already existing ones.
+
+8
+00:00:33,530 --> 00:00:39,260
+You learn such commands as Check-Out and Gifts, which will Ranjith branch command.
+
+9
+00:00:39,260 --> 00:00:43,040
+And I'll tell you how you can list all your local branches and remote.
+
+10
+00:00:43,040 --> 00:00:49,310
+Once you're in the practice exercises, I'll show you how you can remove branch locally and in remote
+
+11
+00:00:49,310 --> 00:00:52,550
+repository while navigating between the snapshots.
+
+12
+00:00:52,550 --> 00:00:55,000
+I will show you what the touch that state is.
+
+13
+00:00:55,520 --> 00:01:00,980
+Besides that, today I will show you basically next terminal commands for navigation in the file system,
+
+14
+00:01:00,980 --> 00:01:02,960
+creating files and listin files.
+
+15
+00:01:03,290 --> 00:01:08,450
+Lets start and to start with, let's imagine the case that you receive task on your work and you need
+
+16
+00:01:08,450 --> 00:01:11,480
+to implement it to start work on the new task.
+
+17
+00:01:11,480 --> 00:01:16,880
+You have to isolate your changes from the stable version of your code to make sure you will not mess
+
+18
+00:01:16,880 --> 00:01:18,860
+it up through the late hour code.
+
+19
+00:01:18,860 --> 00:01:22,790
+During the development of the new feature that allows us to create a separate branch.
+
+20
+00:01:23,120 --> 00:01:25,850
+What is the branch we briefly discussed?
+
+21
+00:01:25,850 --> 00:01:26,960
+What is the branch one?
+
+22
+00:01:26,960 --> 00:01:28,970
+We talked about our master branch.
+
+23
+00:01:29,240 --> 00:01:35,330
+But let's recap one more time and simple words unit branch to diverge from the main branch to continue
+
+24
+00:01:35,340 --> 00:01:38,540
+development without messing with the main development branch.
+
+25
+00:01:38,990 --> 00:01:44,780
+For example, here's the main development branch where the latest version of the code is stored and
+
+26
+00:01:44,780 --> 00:01:46,850
+you want to start work on the new task.
+
+27
+00:01:47,240 --> 00:01:53,090
+You create a separate branch, you create comments on that branch, and after that you merge a branch
+
+28
+00:01:53,090 --> 00:01:55,180
+with the development branch easy.
+
+29
+00:01:55,760 --> 00:02:01,550
+Meanwhile, another developer can create a new branch and work in parallel with you for some period
+
+30
+00:02:01,550 --> 00:02:04,720
+of time and merge his changes with years later.
+
+31
+00:02:05,090 --> 00:02:08,690
+That's why we need branches during the software development in a team.
+
+32
+00:02:09,170 --> 00:02:15,020
+To understand how branches work, we need to understand a bit deeper how get stores information you
+
+33
+00:02:15,020 --> 00:02:18,380
+remember that gets its files as a series of the snapshots.
+
+34
+00:02:18,920 --> 00:02:24,620
+When we create a command, get to commit objects that contains a pointer to the snapshot of the content
+
+35
+00:02:24,620 --> 00:02:26,380
+that we added to the staging area.
+
+36
+00:02:26,720 --> 00:02:32,300
+Also, this object stauss pointers to the comments that directly came before the current commit.
+
+37
+00:02:32,840 --> 00:02:38,030
+Before we start learning specific commands how to create branches, I want you to understand the theory,
+
+38
+00:02:38,150 --> 00:02:44,600
+at least on the high level, how it works, what actually happens when we create a new branch on this
+
+39
+00:02:44,600 --> 00:02:49,940
+slide, you can see that I created a new branch with the name testing what actually happened in the
+
+40
+00:02:49,940 --> 00:02:50,770
+language of it.
+
+41
+00:02:50,780 --> 00:02:56,480
+I just created a new pointer on the current commit on the moment when I create a new branch from the
+
+42
+00:02:56,480 --> 00:03:03,200
+master to pointers are pointing out to the same command, but how it knows that at this specific moment
+
+43
+00:03:03,200 --> 00:03:07,010
+of time I'm on the Master Branch, but not on the testing branch.
+
+44
+00:03:07,370 --> 00:03:08,510
+There is one more point.
+
+45
+00:03:08,510 --> 00:03:09,410
+I called that.
+
+46
+00:03:09,890 --> 00:03:11,990
+Now let's imagine we switched branches.
+
+47
+00:03:12,260 --> 00:03:16,610
+I will show you comments a bit later in this lesson when we will have practice exercise.
+
+48
+00:03:16,910 --> 00:03:23,270
+Right now, I want you to focus on the series and this visualization switch branches in the language
+
+49
+00:03:23,270 --> 00:03:25,400
+object is to change head pointer.
+
+50
+00:03:25,670 --> 00:03:31,490
+Now, Head is pointing out to the testing pointer being on this branch, we can create a new command.
+
+51
+00:03:31,880 --> 00:03:32,990
+What happens next?
+
+52
+00:03:33,530 --> 00:03:38,540
+Our testing branch moved forward while Master Branch still points to the previous command.
+
+53
+00:03:38,930 --> 00:03:44,060
+So in this particular case, if you would switch back to the master branch, you would see the state
+
+54
+00:03:44,060 --> 00:03:46,730
+of the file system, which was before your last commit.
+
+55
+00:03:47,240 --> 00:03:53,090
+OK, now you can imagine how pointers and it works, but let's move further now.
+
+56
+00:03:53,090 --> 00:03:58,820
+Imagine that somebody, some as a developer, managed to put changes into the master branch and then
+
+57
+00:03:58,820 --> 00:04:00,740
+you can meet and Master Branch appeared.
+
+58
+00:04:01,160 --> 00:04:03,140
+Your project history has diverged.
+
+59
+00:04:03,680 --> 00:04:07,460
+Both changes in these two countries are isolated from each other.
+
+60
+00:04:07,910 --> 00:04:08,930
+But we can merge.
+
+61
+00:04:08,930 --> 00:04:13,670
+This changes if we want that this exact scenario which we need to learn together.
+
+62
+00:04:13,910 --> 00:04:18,400
+And this course, we are going to learn how to merge changes together from different branches.
+
+63
+00:04:18,980 --> 00:04:22,550
+So right now, you already understand the theory of branches.
+
+64
+00:04:22,550 --> 00:04:28,460
+You can visualize in your mind how navigation between branches works and why do we need this now it
+
+65
+00:04:28,460 --> 00:04:32,540
+is time to run specific it commands that will allow you to navigate between branches.
+
+66
+00:04:32,810 --> 00:04:35,090
+Let's practice usually on the job.
+
+67
+00:04:35,090 --> 00:04:39,770
+You are going to use some task management system or issue trackers that will give you a unique idea
+
+68
+00:04:39,770 --> 00:04:40,670
+of your task.
+
+69
+00:04:41,030 --> 00:04:46,730
+Imagine that we have a task to implement logic of discount calculation for our customers based on the
+
+70
+00:04:46,730 --> 00:04:52,280
+history of purchases where we need to start, we need to start from creation of the branch.
+
+71
+00:04:52,790 --> 00:04:54,740
+There are different ways to create branches.
+
+72
+00:04:55,160 --> 00:05:02,510
+One of the options is to use the next command, get Branch G a three zero one.
+
+73
+00:05:03,350 --> 00:05:10,700
+Let's press enter new branch is created, but you see here in parentheses, I'm still in the master
+
+74
+00:05:10,710 --> 00:05:13,810
+branch to check which branches I have locally.
+
+75
+00:05:13,850 --> 00:05:19,550
+I have to just use the next command get branch to see all remoted branches.
+
+76
+00:05:19,550 --> 00:05:23,390
+I have to use the next command branch was option are.
+
+77
+00:05:24,110 --> 00:05:29,120
+And you see that right now I have only one branch and remote that is my original Austin branch.
+
+78
+00:05:29,840 --> 00:05:33,860
+To see all local and remote branches you have to use the EH option.
+
+79
+00:05:34,700 --> 00:05:36,290
+Get Branch Desh a.
+
+80
+00:05:37,170 --> 00:05:43,500
+And here we can find all local and remote branches, but to be honest, the branch command is rarely
+
+81
+00:05:43,500 --> 00:05:49,290
+used among developers to create a new branch because this command only creates branch but not get you
+
+82
+00:05:49,290 --> 00:05:50,360
+to the new branch.
+
+83
+00:05:50,730 --> 00:05:55,700
+Usually software engineers use the commands it creates and changed branches simultaneously.
+
+84
+00:05:56,100 --> 00:05:58,170
+So let's type the following year.
+
+85
+00:05:58,180 --> 00:05:59,910
+Check out, check out.
+
+86
+00:05:59,910 --> 00:06:01,860
+Command is for changing branches.
+
+87
+00:06:02,340 --> 00:06:07,710
+Option B, this option is to indicate that I want to change and create a new branch.
+
+88
+00:06:07,980 --> 00:06:17,220
+B stands for Branch and now let's specify the name of the branch task three zero one underscore discount.
+
+89
+00:06:17,220 --> 00:06:19,140
+Underscore calculation.
+
+90
+00:06:19,890 --> 00:06:25,440
+Usually with the task, we would like to specify a brief description of what changes will be in this
+
+91
+00:06:25,440 --> 00:06:26,700
+branch press.
+
+92
+00:06:26,700 --> 00:06:33,570
+Enter and we switch to the new branch and in parentheses you can easily identify on which branch you
+
+93
+00:06:33,570 --> 00:06:36,100
+are right now and where is your head pointer.
+
+94
+00:06:36,570 --> 00:06:38,450
+OK, we created changes.
+
+95
+00:06:38,820 --> 00:06:40,650
+Now let's implement our task.
+
+96
+00:06:41,100 --> 00:06:42,390
+For the sake of example.
+
+97
+00:06:42,390 --> 00:06:49,500
+I won't write any code and I will not implement any logic related to the discount calculation because
+
+98
+00:06:49,500 --> 00:06:51,870
+I want you now to focus only on it.
+
+99
+00:06:52,440 --> 00:06:53,880
+But let's imitate that.
+
+100
+00:06:53,880 --> 00:06:57,100
+We need some changes and all of them stored in the new file.
+
+101
+00:06:57,600 --> 00:07:00,360
+Let me use Linux commands to create a new file.
+
+102
+00:07:00,990 --> 00:07:07,670
+First of all, I want to navigate to the folder with the source code Siggie, SIRC and Presenta.
+
+103
+00:07:08,160 --> 00:07:15,360
+Sydney stands for Change Directory and you see here in the path that I navigated to the SC directory.
+
+104
+00:07:16,240 --> 00:07:22,510
+Dutch discount calculation service, Dutch Java Dutch Command allows us to create file.
+
+105
+00:07:23,080 --> 00:07:28,960
+This is one of the possible ways to create files with Linux terminals to check what files you have in
+
+106
+00:07:28,960 --> 00:07:29,830
+the directory.
+
+107
+00:07:29,860 --> 00:07:31,930
+Let me show you one more Linux command.
+
+108
+00:07:32,590 --> 00:07:35,820
+Alas, Resorption El Al.
+
+109
+00:07:35,830 --> 00:07:39,110
+S is a command that list files in the specific directories.
+
+110
+00:07:39,280 --> 00:07:45,910
+I don't see a lot of sense in reviewing all possible options for comment because most likely you want
+
+111
+00:07:45,910 --> 00:07:46,890
+to use them all.
+
+112
+00:07:47,290 --> 00:07:49,780
+I use Option L to have such formatting.
+
+113
+00:07:50,200 --> 00:07:55,060
+I will leave the link and attachments to this lesson about Allah's command and if you wish, you can
+
+114
+00:07:55,060 --> 00:07:56,710
+try different other options.
+
+115
+00:07:57,250 --> 00:07:59,670
+And we see that new file is created.
+
+116
+00:08:00,250 --> 00:08:00,950
+Here it is.
+
+117
+00:08:01,540 --> 00:08:07,490
+Let's also check that file was created in the File Explorer and we can also find it here.
+
+118
+00:08:07,680 --> 00:08:08,320
+Awesome.
+
+119
+00:08:08,590 --> 00:08:12,700
+We have just created a file and here it is in the SLC directory.
+
+120
+00:08:13,420 --> 00:08:18,430
+Before we proceed, I want to show you one more interesting command for navigation and file system.
+
+121
+00:08:18,440 --> 00:08:22,990
+We are terminal Siggie, dot, dot, dot, dot, dot.
+
+122
+00:08:22,990 --> 00:08:25,300
+Always references to the parent directory.
+
+123
+00:08:25,570 --> 00:08:31,810
+So in case you want to navigate one level up, you have to use this command and you see well, already
+
+124
+00:08:31,810 --> 00:08:35,840
+in our project directory and not in saac folder anymore.
+
+125
+00:08:36,670 --> 00:08:40,650
+Now let's pretend that our work on this task is completed and we need everything.
+
+126
+00:08:40,660 --> 00:08:42,490
+What is needed in scope of this task?
+
+127
+00:08:42,910 --> 00:08:45,130
+We have to create a command with our changes.
+
+128
+00:08:45,700 --> 00:08:50,230
+We add file to the staging area as usual, get at DOT.
+
+129
+00:08:50,980 --> 00:08:52,240
+Now we create command.
+
+130
+00:08:53,130 --> 00:08:58,350
+Gate comit dash cam, personal discount for user can be calculated.
+
+131
+00:09:01,540 --> 00:09:04,310
+Great, we have our committee now, a branch.
+
+132
+00:09:04,750 --> 00:09:11,020
+Let's check it, lock gate, lock dash to to see only last two comments.
+
+133
+00:09:11,590 --> 00:09:14,980
+We can see here that this comment is from Master Branch.
+
+134
+00:09:15,220 --> 00:09:18,190
+And here's our new comment on our new branch.
+
+135
+00:09:18,640 --> 00:09:25,300
+By the way, just to remind you that it shows you the history of the current branch only to watch all
+
+136
+00:09:25,300 --> 00:09:26,850
+committees across the repository.
+
+137
+00:09:26,860 --> 00:09:27,950
+You have to type it.
+
+138
+00:09:27,970 --> 00:09:35,770
+Look with options all like this log double dash, all towards the history of committees for the one
+
+139
+00:09:35,770 --> 00:09:43,480
+single branch type Gitlow command with the branch name like this gridlock g a double zero.
+
+140
+00:09:43,990 --> 00:09:47,350
+And do not forget, do you stop key for after completion.
+
+141
+00:09:48,310 --> 00:09:52,790
+OK, this information might help you in the future, and just for the reference.
+
+142
+00:09:53,170 --> 00:09:53,920
+Let's move on.
+
+143
+00:09:54,700 --> 00:09:58,010
+I can easily navigate between branches in my local repository.
+
+144
+00:09:58,390 --> 00:10:01,690
+We already learned the command that allows us to switch branches.
+
+145
+00:10:02,050 --> 00:10:04,200
+Now, let's switch back to the master branch.
+
+146
+00:10:05,020 --> 00:10:06,570
+You check out master.
+
+147
+00:10:07,300 --> 00:10:12,460
+I don't have to use the option because Master Branch already exists and I don't need to create a new
+
+148
+00:10:12,460 --> 00:10:12,790
+one.
+
+149
+00:10:13,150 --> 00:10:17,350
+And we can see that name of the branches changed here in the parentheses.
+
+150
+00:10:17,740 --> 00:10:20,860
+Let's check now the file lists in the SAAC folder.
+
+151
+00:10:21,280 --> 00:10:28,990
+Let's navigate to SASE folder, first CD SAAC and now let's use another command to list files.
+
+152
+00:10:29,420 --> 00:10:31,000
+Alas, that shall.
+
+153
+00:10:31,910 --> 00:10:32,520
+Wow.
+
+154
+00:10:32,690 --> 00:10:40,370
+Magic happened where discount calculation Java file, it is in another snapshot, if you don't believe
+
+155
+00:10:40,370 --> 00:10:41,630
+that file is disappeared.
+
+156
+00:10:41,660 --> 00:10:44,630
+Let me show you in the file Explorer, can you see this?
+
+157
+00:10:45,110 --> 00:10:46,620
+The file is disappeared.
+
+158
+00:10:47,300 --> 00:10:50,030
+Now you learned how to navigate between branches.
+
+159
+00:10:50,480 --> 00:10:52,320
+Can you navigate only between branches?
+
+160
+00:10:52,610 --> 00:10:53,090
+Oh, no.
+
+161
+00:10:53,780 --> 00:10:57,440
+You can also navigate to the specific limit how to do that.
+
+162
+00:10:57,860 --> 00:11:00,090
+Let me show you at the beginning.
+
+163
+00:11:00,120 --> 00:11:04,670
+Let's find the comet where I want to switch, get log dash three.
+
+164
+00:11:05,650 --> 00:11:09,730
+OK, let me switch to this cannot get out.
+
+165
+00:11:10,030 --> 00:11:14,020
+Zero six G, one B and Presenta.
+
+166
+00:11:14,740 --> 00:11:20,770
+So you need to enter a unique combination of characters so that you would understand where you are reference
+
+167
+00:11:20,770 --> 00:11:21,140
+into.
+
+168
+00:11:21,520 --> 00:11:24,820
+And now we switch to the state of this particular comet.
+
+169
+00:11:25,510 --> 00:11:31,080
+Right after you switch to the specific comet, you see one message that you are in the dust head state.
+
+170
+00:11:31,420 --> 00:11:32,580
+What does that mean?
+
+171
+00:11:33,040 --> 00:11:39,220
+That means we are not on the specific branch because most likely this comet is present in different
+
+172
+00:11:39,220 --> 00:11:39,820
+branches.
+
+173
+00:11:40,150 --> 00:11:45,790
+Even if you would create Comet being here, nobody would be able to find this comet other than we are
+
+174
+00:11:45,790 --> 00:11:51,660
+directly examining the fire because new comets won't be connected with any specific branch.
+
+175
+00:11:52,090 --> 00:11:58,140
+That means these changes can easily get lost once you check out a different revision on Branch.
+
+176
+00:11:58,660 --> 00:12:02,050
+So why then we need to check out the specific comet.
+
+177
+00:12:02,650 --> 00:12:08,020
+During your life as a software engineer, you might want to navigate to the specific committee to investigate
+
+178
+00:12:08,200 --> 00:12:11,440
+how some specific chunk of code worked in the past.
+
+179
+00:12:12,130 --> 00:12:15,130
+For example, in case to troubleshoot some defect.
+
+180
+00:12:15,130 --> 00:12:21,370
+You want to investigate how the code worked before and you want to execute this court and the market.
+
+181
+00:12:21,880 --> 00:12:24,910
+That's why you might want to navigate to the specific comet.
+
+182
+00:12:25,390 --> 00:12:32,440
+What I want you to remember is that you shouldn't do any comets in the state just investigating an experiment
+
+183
+00:12:32,440 --> 00:12:33,280
+in this fine.
+
+184
+00:12:33,280 --> 00:12:38,930
+Well, being in the state, doing the commands and the state is not the best idea.
+
+185
+00:12:39,640 --> 00:12:42,430
+Let's get back to our task branch yet.
+
+186
+00:12:42,430 --> 00:12:49,240
+Check out Geet zero zero zero one and press up two times for auto completion.
+
+187
+00:12:49,690 --> 00:12:56,650
+You have to press stop two times because we have a three zero one branch and a three zero one discount
+
+188
+00:12:56,650 --> 00:12:57,790
+calculation branch.
+
+189
+00:12:58,420 --> 00:13:02,520
+And Antep allows you to select the exact branch you need for auto completion.
+
+190
+00:13:03,070 --> 00:13:07,570
+Now, let's push it to a region, yet push our region with option.
+
+191
+00:13:07,570 --> 00:13:13,060
+You g a three zero one underscore and top key to autocomplete.
+
+192
+00:13:14,150 --> 00:13:21,020
+Nice branch was pushed to remote, new branch in remote has been created and the branch remote tracking
+
+193
+00:13:21,020 --> 00:13:22,070
+has been configured.
+
+194
+00:13:22,610 --> 00:13:24,870
+Let's check the branch in the remote repository.
+
+195
+00:13:25,340 --> 00:13:27,320
+Let's open a search directory.
+
+196
+00:13:27,680 --> 00:13:33,320
+And here you can switch branches and we can see that on our new branch, we have new file.
+
+197
+00:13:36,890 --> 00:13:44,180
+Click on Inside Sidestep Select Network here, you can see its history and see that our new branch is
+
+198
+00:13:44,180 --> 00:13:49,550
+one committee ahead of Master Branch, OK, well on how to create branches.
+
+199
+00:13:49,910 --> 00:13:53,230
+But at the beginning of the lesson, we also created one branch.
+
+200
+00:13:53,720 --> 00:13:56,600
+Let me list all branches and get back one more time.
+
+201
+00:13:57,410 --> 00:14:01,070
+Get Branch was option A this task branch.
+
+202
+00:14:01,070 --> 00:14:06,230
+I want to remove how to remove branch get branch was option.
+
+203
+00:14:06,230 --> 00:14:09,620
+The D stands for delete and the branch name.
+
+204
+00:14:10,560 --> 00:14:16,050
+We can find message that branch has been deleted, and for the sake of example, let's pretend that
+
+205
+00:14:16,050 --> 00:14:20,550
+I want to remove the calculation branch from the remote to how to do that.
+
+206
+00:14:21,270 --> 00:14:26,100
+Yet push a region was option delete and specifies a branch name here.
+
+207
+00:14:27,240 --> 00:14:28,080
+Press enter.
+
+208
+00:14:30,320 --> 00:14:32,810
+Let me open my remote repository one more time.
+
+209
+00:14:34,260 --> 00:14:39,310
+And when I try to switch branch, you see that I can't find my new branch here anymore.
+
+210
+00:14:39,870 --> 00:14:43,200
+Now you know how to remove branch locally and in remote.
+
+211
+00:14:43,920 --> 00:14:49,920
+But for our next lesson, let me push our branch to region one more time, because already in the next
+
+212
+00:14:49,920 --> 00:14:54,360
+lesson, we are going to learn how to grade pull requests and how to merge branches together.
+
+213
+00:14:55,060 --> 00:14:58,770
+Yet push a region was option you for this contemplation branch.
+
+214
+00:14:59,890 --> 00:15:05,200
+The last but nonetheless, thing that I would like to mention today is that starting from the get version
+
+215
+00:15:05,200 --> 00:15:10,840
+two point twenty three onwards, instead of checkout command, new command is also available to use
+
+216
+00:15:11,560 --> 00:15:13,290
+get switch master.
+
+217
+00:15:13,780 --> 00:15:20,410
+In case you want to switch to the new branch, you have to use C option like this and get switch options.
+
+218
+00:15:20,410 --> 00:15:23,050
+See New Branch here.
+
+219
+00:15:23,050 --> 00:15:30,100
+C option stands for create to navigate back to the previous branch type, the following gate switch
+
+220
+00:15:30,100 --> 00:15:33,590
+and hyphen and then navigated back to the Master Branch.
+
+221
+00:15:34,330 --> 00:15:35,420
+To be honest, I didn't.
+
+222
+00:15:35,480 --> 00:15:41,020
+So engineers who are already actively used to each command because it is a big habit to use Check-Out
+
+223
+00:15:41,020 --> 00:15:46,540
+Command for branch navigation in the community of engineers introducing Gates, which command wasn't
+
+224
+00:15:46,540 --> 00:15:48,580
+done to confuse developers even more.
+
+225
+00:15:49,030 --> 00:15:55,780
+The thing is that Check-Out commands sometimes might be used to reverse modifications, so to clearly
+
+226
+00:15:55,780 --> 00:16:02,800
+separate commands, Newcomen to a single goal to switch branches gets which was introduced that it.
+
+227
+00:16:03,730 --> 00:16:09,520
+I believe right now, you know about branch navigation even more than some senior engineers, and right
+
+228
+00:16:09,520 --> 00:16:13,420
+now let's recap what we have learned today in this lesson.
+
+229
+00:16:13,420 --> 00:16:17,770
+You learned what the branches you understand how mechanism of branch works.
+
+230
+00:16:18,150 --> 00:16:20,500
+Well, what is Healthpoint in it?
+
+231
+00:16:21,220 --> 00:16:22,580
+After we learn theory?
+
+232
+00:16:22,600 --> 00:16:28,300
+I showed you a few ways how to create a new branch and get ready to commit with our changes on the new
+
+233
+00:16:28,300 --> 00:16:33,490
+branch, we understood how we can navigate between the branches and what the Dutch had state is.
+
+234
+00:16:33,970 --> 00:16:40,000
+Also in this lesson we learn how to remove branches and how to use gifts which command to navigate between
+
+235
+00:16:40,000 --> 00:16:40,300
+them.
+
+236
+00:16:40,900 --> 00:16:46,510
+During the lesson you learned basically Linux commands that allows us to navigate and filesystem, create
+
+237
+00:16:46,510 --> 00:16:48,820
+files and leased files in that directory.
+
+238
+00:16:49,960 --> 00:16:53,170
+Thanks a lot for your attention and see you in the next lesson.

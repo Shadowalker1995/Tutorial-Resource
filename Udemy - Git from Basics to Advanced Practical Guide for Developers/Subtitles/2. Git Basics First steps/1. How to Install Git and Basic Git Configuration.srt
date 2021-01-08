@@ -1,0 +1,507 @@
+1
+00:00:05,670 --> 00:00:10,790
+And know the students today will install with you, get on your computers, I'll show you where you
+
+2
+00:00:10,790 --> 00:00:16,320
+can download and how you can install it on your computer after installation, I'm going to show you
+
+3
+00:00:16,340 --> 00:00:20,450
+basic configuration so that you will be ready for the next lesson.
+
+4
+00:00:20,750 --> 00:00:25,580
+Today, you will understand what repository is also in this lesson.
+
+5
+00:00:25,580 --> 00:00:27,320
+You will learn what is good bash.
+
+6
+00:00:27,350 --> 00:00:34,550
+And we let let's start open your web browser and type get download into the search.
+
+7
+00:00:35,130 --> 00:00:36,980
+Here's the website that we need.
+
+8
+00:00:37,400 --> 00:00:42,020
+Just in case, I will leave links to the website in attachments to this lesson.
+
+9
+00:00:42,560 --> 00:00:47,610
+So when you navigate it here, select your operating system and download the archive.
+
+10
+00:00:48,350 --> 00:00:53,570
+For Apple, the simple instructions how to install gate four windows.
+
+11
+00:00:53,720 --> 00:00:56,240
+We have download special guides installer.
+
+12
+00:00:56,810 --> 00:00:58,310
+Let me walk you through it.
+
+13
+00:00:58,940 --> 00:01:00,230
+Nable left clicks.
+
+14
+00:01:00,770 --> 00:01:02,540
+I agree with public license.
+
+15
+00:01:03,170 --> 00:01:07,400
+It is free for commercial use too, so don't worry about using it.
+
+16
+00:01:07,400 --> 00:01:13,010
+In commercial projects you have to select components that are needed to be installed.
+
+17
+00:01:13,220 --> 00:01:14,990
+You can keep the false selection.
+
+18
+00:01:15,230 --> 00:01:16,490
+Just a few words here.
+
+19
+00:01:16,930 --> 00:01:20,420
+Here is very convenient explorer integration for Windows.
+
+20
+00:01:20,630 --> 00:01:23,540
+In any place of your file system you can press right.
+
+21
+00:01:23,540 --> 00:01:24,440
+Click and open.
+
+22
+00:01:24,450 --> 00:01:26,870
+Get back or get gui get.
+
+23
+00:01:26,870 --> 00:01:32,450
+Bush is a special application for Microsoft Windows, which provides possibility to use good command
+
+24
+00:01:32,450 --> 00:01:32,840
+line.
+
+25
+00:01:33,140 --> 00:01:36,650
+Bush is a popular shell on Linux and Mac OS.
+
+26
+00:01:37,320 --> 00:01:42,230
+A Shell is a terminal application used to interface with an operating system.
+
+27
+00:01:42,830 --> 00:01:48,800
+In other words, Get Basche is a convenient way to have Linux like terminals that supports majority
+
+28
+00:01:48,800 --> 00:01:55,130
+of Linux Shell comments like file creation, copy of the file and lots of other things to interact with.
+
+29
+00:01:55,130 --> 00:02:01,970
+Git program get go as a separate program that provides user with graphical user interface to create
+
+30
+00:02:01,970 --> 00:02:09,020
+new repositories, clone repositories at to stage, commit and do other operations in more interactive
+
+31
+00:02:09,020 --> 00:02:12,590
+and intuitive manner rather than in git command line.
+
+32
+00:02:13,280 --> 00:02:18,680
+Later in the course we are going to run different apps that will help you to interact with get in more
+
+33
+00:02:18,680 --> 00:02:19,700
+intuitive way.
+
+34
+00:02:20,090 --> 00:02:26,840
+Almost all code EDS for different programming languages supports basic buttons that allows you to work
+
+35
+00:02:26,840 --> 00:02:27,440
+with GIT.
+
+36
+00:02:28,040 --> 00:02:33,260
+But I strongly believe that each developer should learn how to work with git bash because with the help
+
+37
+00:02:33,260 --> 00:02:40,040
+of fancy GUI application where often you can't perform all operations that you want to perform because
+
+38
+00:02:40,040 --> 00:02:42,890
+there is no exactly that button that you need.
+
+39
+00:02:43,250 --> 00:02:49,130
+And moreover, before you will press different button in desktop, get applications, you have to know
+
+40
+00:02:49,130 --> 00:02:55,820
+what this button for and the best way to learn it is to work with it was help to get back for a while.
+
+41
+00:02:56,700 --> 00:02:59,360
+Get large file storage is a pretty cool thing.
+
+42
+00:02:59,930 --> 00:03:05,960
+This is an extension that reduces the impact of large files in your repository by downloading the relevant
+
+43
+00:03:05,960 --> 00:03:06,890
+versions of them.
+
+44
+00:03:06,890 --> 00:03:13,220
+Lezley, that means it will download extremely huge files only when you will need them.
+
+45
+00:03:13,650 --> 00:03:20,150
+Let's keep this selected and another to checkboxes here is to associate good configuration files.
+
+46
+00:03:20,150 --> 00:03:28,670
+Was a default text editor and associate as H files to be run with bosz files with extension S.H. Ashwell
+
+47
+00:03:28,670 --> 00:03:33,140
+scripts that are used in many variations of Unix like operating systems.
+
+48
+00:03:33,770 --> 00:03:35,570
+I believe now we can click next.
+
+49
+00:03:36,050 --> 00:03:39,590
+At least now you know what you have selected here.
+
+50
+00:03:39,590 --> 00:03:41,780
+You have to choose the full text editor.
+
+51
+00:03:42,410 --> 00:03:45,740
+I have notepad plus plus installed on my computer.
+
+52
+00:03:45,770 --> 00:03:48,260
+That's why I didn't suggest it.
+
+53
+00:03:48,650 --> 00:03:51,230
+But you can choose any other text editor.
+
+54
+00:03:51,530 --> 00:03:57,530
+You're going to need a text editor in some rare cases when you want to use special comments to leave
+
+55
+00:03:57,530 --> 00:04:02,450
+content message with the help of command line or during the comments manipulation.
+
+56
+00:04:02,930 --> 00:04:07,430
+Anyway, I will show you how to change the full text editor whenever you want.
+
+57
+00:04:07,760 --> 00:04:10,700
+So don't worry about this and press next.
+
+58
+00:04:11,300 --> 00:04:13,160
+Keep this radio button selected.
+
+59
+00:04:13,310 --> 00:04:19,190
+It tells you that it will adjust your pass variable so that you can use it in your standard Windows
+
+60
+00:04:19,190 --> 00:04:23,750
+Command prompt use open SSL library and click next.
+
+61
+00:04:24,480 --> 00:04:31,850
+This configuration asks you whether you want to convert line endings and you probably already know Newline
+
+62
+00:04:31,850 --> 00:04:35,600
+character is different in Windows and Linux based systems.
+
+63
+00:04:36,290 --> 00:04:42,050
+Windows often still use carriage return and line in text files to start a your line.
+
+64
+00:04:42,560 --> 00:04:47,840
+That's what C RLF stands for in Unix based systems.
+
+65
+00:04:47,840 --> 00:04:50,360
+Mostly used only Lindfield character.
+
+66
+00:04:50,600 --> 00:04:56,300
+You can change it if you wish, but for the cross platform development, when team members use different
+
+67
+00:04:56,300 --> 00:04:59,900
+operating systems, the first radio button is recommended.
+
+68
+00:05:00,380 --> 00:05:01,160
+Click next.
+
+69
+00:05:01,670 --> 00:05:03,050
+Here, we need to select the.
+
+70
+00:05:03,390 --> 00:05:10,380
+Emulator for terminal, I recommend Torleif mean w why can you need to choose a default behavior of
+
+71
+00:05:10,380 --> 00:05:10,950
+gatepost?
+
+72
+00:05:11,520 --> 00:05:12,480
+What is getable?
+
+73
+00:05:12,480 --> 00:05:14,910
+Fastforward Mirch and rebate's.
+
+74
+00:05:14,910 --> 00:05:16,950
+We are going to learn on the next lessons.
+
+75
+00:05:17,220 --> 00:05:20,760
+This configuration also possible to change after installation.
+
+76
+00:05:21,240 --> 00:05:27,440
+Leave default here and click next to store your credentials and manage them in an efficient manner.
+
+77
+00:05:27,450 --> 00:05:29,370
+You can use git credential manager.
+
+78
+00:05:29,670 --> 00:05:37,140
+I recommend keeping this radio button selected and able filesystem Cashen that should increase performance
+
+79
+00:05:37,140 --> 00:05:37,710
+of the gate.
+
+80
+00:05:38,280 --> 00:05:45,090
+You can skip this one and live it unchecked and now just press install button that said.
+
+81
+00:05:46,670 --> 00:05:52,190
+Now, when you install the gate open file explorer in any place, click mouse, right, click.
+
+82
+00:05:53,250 --> 00:05:58,540
+You're going to see bushier option, click on it, and here is your kid Bash.
+
+83
+00:05:58,830 --> 00:05:59,900
+Congratulations.
+
+84
+00:06:00,630 --> 00:06:04,650
+Now, the first thing we need to do is to target who we are.
+
+85
+00:06:05,040 --> 00:06:11,030
+Every snapshot of the file system contains information about the author of The Snapshot.
+
+86
+00:06:11,640 --> 00:06:18,270
+Probably this was done to easily identify who broke system or who created the defect in the application.
+
+87
+00:06:18,750 --> 00:06:25,590
+But nevertheless, without telling you who you are, you won't be able to commit changes yet allows
+
+88
+00:06:25,590 --> 00:06:31,770
+you to set configuration on three different levels, system configurations that will be applied to all
+
+89
+00:06:31,770 --> 00:06:38,700
+users on your computer and all their repositories, global conflicts that will be applied to all the
+
+90
+00:06:38,700 --> 00:06:45,750
+repositories on your computer for the current user and local conflicts that will be applied only to
+
+91
+00:06:45,750 --> 00:06:47,110
+the current repository.
+
+92
+00:06:47,580 --> 00:06:53,610
+What you need to remember is that values on the lower level overrides values of the upper level.
+
+93
+00:06:54,180 --> 00:07:00,420
+For example, values that are set in local conflicts will override values from system conflicts because
+
+94
+00:07:00,420 --> 00:07:04,910
+they are more specific TSAs more important, probably.
+
+95
+00:07:04,910 --> 00:07:09,600
+You're interested what a repository is because we are using such term.
+
+96
+00:07:09,780 --> 00:07:10,970
+But I didn't explain.
+
+97
+00:07:11,190 --> 00:07:12,090
+What does it mean?
+
+98
+00:07:12,660 --> 00:07:16,890
+I get Repository is a get folder inside the project.
+
+99
+00:07:17,100 --> 00:07:23,940
+The repository contains multiple files with configuration and current project history to track all changes
+
+100
+00:07:23,940 --> 00:07:28,050
+made to files in project how to create a good repository.
+
+101
+00:07:28,050 --> 00:07:33,240
+We are going to learn in the next lesson, but now you understand what this term means.
+
+102
+00:07:33,600 --> 00:07:36,720
+Right now I suggest proceeding with git installation.
+
+103
+00:07:37,200 --> 00:07:41,010
+To tell you who you are, you need to perform the following commands.
+
+104
+00:07:41,790 --> 00:07:43,680
+Get config.
+
+105
+00:07:44,690 --> 00:07:49,010
+Global username and repetoire.
+
+106
+00:07:50,650 --> 00:07:52,250
+Here I said username.
+
+107
+00:07:52,900 --> 00:07:56,770
+And one more comment yet, config.
+
+108
+00:07:57,660 --> 00:08:09,060
+Global user email and repetoire at example, dot com, I recommend you use global FLAC here to set settings
+
+109
+00:08:09,060 --> 00:08:10,500
+for all repositories.
+
+110
+00:08:10,860 --> 00:08:13,860
+These conflicts will be applied on a global level.
+
+111
+00:08:14,490 --> 00:08:20,340
+That is awesome to check the value of the specific property you can use to get config command.
+
+112
+00:08:20,760 --> 00:08:26,220
+For example, to check username, I need to type next gate config.
+
+113
+00:08:26,760 --> 00:08:27,930
+User name.
+
+114
+00:08:29,050 --> 00:08:36,400
+To list all properties with values, I have to type the following gate config list.
+
+115
+00:08:37,240 --> 00:08:44,290
+And in this lesson, I promised you to show how you can change the default text editor to change it.
+
+116
+00:08:44,320 --> 00:08:45,940
+You need to type the following.
+
+117
+00:08:46,630 --> 00:08:51,760
+Get config lomo core editor.
+
+118
+00:08:53,420 --> 00:08:59,780
+C program files not paid, plus, plus not paid, plus, plus extra.
+
+119
+00:09:01,310 --> 00:09:06,980
+Instead of this text in quotes, you have to type the pass to your text editor.
+
+120
+00:09:08,470 --> 00:09:14,770
+Let's recap what we have learned today, today, we learned how to install, yet you also learned the
+
+121
+00:09:14,770 --> 00:09:16,260
+basic configuration.
+
+122
+00:09:16,600 --> 00:09:19,530
+Now you know what is good, Barsh and get gooey.
+
+123
+00:09:20,230 --> 00:09:27,070
+Now you understand how you can check and said get can fix on different levels, system, global and
+
+124
+00:09:27,070 --> 00:09:27,520
+local.
+
+125
+00:09:28,530 --> 00:09:31,380
+Also, you learned what a good repository is.
+
+126
+00:09:32,320 --> 00:09:35,120
+I believe now we can proceed with our next lesson.
+
+127
+00:09:35,860 --> 00:09:39,160
+Thanks a lot for your attention and see you in the next lesson.

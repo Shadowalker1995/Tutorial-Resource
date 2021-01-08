@@ -1,0 +1,367 @@
+1
+00:00:06,140 --> 00:00:12,140
+Hello, yes, students in this lesson will talk about version control systems, we are going to discuss
+
+2
+00:00:12,140 --> 00:00:13,160
+why do we need them?
+
+3
+00:00:13,370 --> 00:00:16,910
+I will give you the list of the most popular version, control systems.
+
+4
+00:00:16,910 --> 00:00:21,110
+And we will focus our attention on get why we have to learn it.
+
+5
+00:00:21,470 --> 00:00:27,320
+And at the end of this lesson, I will give you a short overview of good features and how it operates.
+
+6
+00:00:27,770 --> 00:00:33,760
+First of all, get the same as ours and mission control systems is not a programming language.
+
+7
+00:00:34,070 --> 00:00:36,740
+You might be wondering then why do we need to learn it?
+
+8
+00:00:37,100 --> 00:00:44,150
+It is pretty common that multiple software engineers work on the same program simultaneously or different
+
+9
+00:00:44,150 --> 00:00:47,330
+versions of a program are deployed on different environments.
+
+10
+00:00:47,750 --> 00:00:54,680
+Thus, GM needs to have some tools that will allow them to track changes in the source code, configuration
+
+11
+00:00:54,680 --> 00:00:57,020
+files and time documentation.
+
+12
+00:00:57,650 --> 00:01:03,080
+For example, each engineer may have archive was the source code and after that key members have to
+
+13
+00:01:03,080 --> 00:01:04,960
+merge got somehow together.
+
+14
+00:01:05,270 --> 00:01:11,200
+While this approach might work, it is extremely inefficient and doesn't allow to track changes closely
+
+15
+00:01:11,630 --> 00:01:16,580
+also for the purpose of finding localising and fixing the defect in the code.
+
+16
+00:01:16,700 --> 00:01:22,700
+It is critically important to compare different versions of the code to identify where exactly back
+
+17
+00:01:22,700 --> 00:01:24,060
+appeared to fix it.
+
+18
+00:01:24,680 --> 00:01:29,840
+That's why we are, as a programmers should know how to use version control systems.
+
+19
+00:01:30,440 --> 00:01:34,280
+Let's quickly discuss what is the most popular version control systems are.
+
+20
+00:01:34,880 --> 00:01:45,050
+They are Baza CBS Marcorelle Subversion Get and according to this survey, get this used by almost millions
+
+21
+00:01:45,050 --> 00:01:47,660
+of people who took part in this survey.
+
+22
+00:01:48,140 --> 00:01:53,360
+Definitely get the most powerful and popular version control system nowadays.
+
+23
+00:01:53,750 --> 00:01:56,480
+That is the first reason why we are going to learn it.
+
+24
+00:01:56,930 --> 00:02:02,630
+The second reason is the fact that knowing how it works, it would be like piece of cake for you to
+
+25
+00:02:02,630 --> 00:02:05,230
+understand how, as a controlled version, systems work.
+
+26
+00:02:05,990 --> 00:02:12,020
+Every job description for software engineer require from your knowledge of it because of its popularity.
+
+27
+00:02:12,770 --> 00:02:18,200
+As you might already understand, it is a program which is used to track changes in the source code
+
+28
+00:02:18,200 --> 00:02:22,490
+during the development, but it can be used with any type of files.
+
+29
+00:02:23,090 --> 00:02:26,090
+Right now we'll do high level overview of the gate.
+
+30
+00:02:26,360 --> 00:02:30,620
+I will tell you key features and basic principles of how it operates.
+
+31
+00:02:31,280 --> 00:02:37,130
+The key difference between the gate and other version control systems is that it doesn't store differences
+
+32
+00:02:37,130 --> 00:02:37,850
+in files.
+
+33
+00:02:38,120 --> 00:02:44,450
+It stores links to the snapshot of changed files in case file wasn't changed.
+
+34
+00:02:44,720 --> 00:02:46,940
+Get doesn't store this file again.
+
+35
+00:02:47,330 --> 00:02:52,430
+Instead, it stores just a link to the previous identical files that was already stored.
+
+36
+00:02:52,940 --> 00:02:59,690
+So each time you can make changes, it takes a picture of what all files look like at the moment and
+
+37
+00:02:59,690 --> 00:03:01,810
+stores a reference to that snapshot.
+
+38
+00:03:02,390 --> 00:03:06,620
+This is important distinction between GIT and other version control systems.
+
+39
+00:03:07,050 --> 00:03:13,820
+And another important get feature is the fact that you can't do anything without knowing this before
+
+40
+00:03:13,820 --> 00:03:21,230
+snapshot of your file system is created, everything is check samed and hashas created afterwards.
+
+41
+00:03:21,350 --> 00:03:26,090
+You can use this checksum to refer to this exact state of the files.
+
+42
+00:03:26,570 --> 00:03:33,550
+That means it is impossible to change the contents of any file or directory without knowing about it.
+
+43
+00:03:33,950 --> 00:03:41,660
+So each your command has 40 characters string composed of hexadecimal characters and calculated based
+
+44
+00:03:41,660 --> 00:03:45,020
+on the contents of a file or directories structure.
+
+45
+00:03:45,710 --> 00:03:52,250
+Hash looks like this and you can use this hash string to navigate between different versions of your
+
+46
+00:03:52,250 --> 00:03:53,900
+code version.
+
+47
+00:03:53,900 --> 00:03:58,610
+Control systems might be centralized and distributed in centralized.
+
+48
+00:03:58,610 --> 00:04:04,420
+All engineers are connected to the main server and all people collaborate through that server.
+
+49
+00:04:04,850 --> 00:04:12,560
+The biggest drawback here is the fact that when central server is down, you can't collaborate in distributed
+
+50
+00:04:12,560 --> 00:04:14,060
+version control systems.
+
+51
+00:04:14,060 --> 00:04:21,260
+Each engineer has a copy of the whole project and can easily restore it if needed or in case there is
+
+52
+00:04:21,260 --> 00:04:28,250
+no network get is a distributed version control system to perform most of operations.
+
+53
+00:04:28,250 --> 00:04:31,760
+And yet you don't need information from another computer.
+
+54
+00:04:32,090 --> 00:04:34,730
+That's why there is no latency overhead.
+
+55
+00:04:34,730 --> 00:04:41,270
+When you work with Target, you have entire history of your repository of all changes right on your
+
+56
+00:04:41,270 --> 00:04:42,230
+local computer.
+
+57
+00:04:42,770 --> 00:04:50,150
+You have hidden dot gate folder that contains all information about the repository and you don't necessarily
+
+58
+00:04:50,150 --> 00:04:56,480
+need Internet connection to perform some operations was get if you are in airplane and you want to do
+
+59
+00:04:56,480 --> 00:05:01,250
+some coding, you can do that and successfully save all your changes.
+
+60
+00:05:01,670 --> 00:05:03,140
+You can also navigate the.
+
+61
+00:05:03,180 --> 00:05:09,030
+In the repository of your project and navigate to different versions of your code while being offline,
+
+62
+00:05:09,540 --> 00:05:16,680
+for example, in simple version and CVS, you can edit files, but you can't save changes to database
+
+63
+00:05:16,680 --> 00:05:18,150
+just because you are offline.
+
+64
+00:05:18,570 --> 00:05:24,750
+It doesn't seem to be a huge problem, though, but probably in the real world you want love this.
+
+65
+00:05:25,470 --> 00:05:31,430
+Having all repository history on your local computer gives you instant access for all changes.
+
+66
+00:05:31,800 --> 00:05:34,440
+That also means much better performance.
+
+67
+00:05:35,460 --> 00:05:41,940
+Before we get deeper to get program and get comments, I want you to understand basic principle of interaction
+
+68
+00:05:41,940 --> 00:05:45,750
+with Get This will help you to understand our next lessons.
+
+69
+00:05:46,200 --> 00:05:50,280
+All your files, according to it, can be in three different states.
+
+70
+00:05:50,790 --> 00:05:51,630
+Modify it.
+
+71
+00:05:52,110 --> 00:05:56,730
+That means you modified the file, but you have not committed your changes yet.
+
+72
+00:05:57,240 --> 00:05:58,110
+Staged.
+
+73
+00:05:58,290 --> 00:06:04,170
+This means you have marked a modified file to be present in the next snapshot of your file system.
+
+74
+00:06:04,500 --> 00:06:08,880
+Information about such changes is placed in the file with name index.
+
+75
+00:06:09,420 --> 00:06:16,680
+That's why during the course, sometimes I'm going to say at file to stage or at the index, and you
+
+76
+00:06:16,680 --> 00:06:23,670
+will understand that this means the same across all files from staging area that are marked to be present
+
+77
+00:06:23,670 --> 00:06:27,080
+in the next snapshot are reflected in index file.
+
+78
+00:06:27,570 --> 00:06:28,680
+Does it make sense?
+
+79
+00:06:29,130 --> 00:06:31,490
+And the state is committed.
+
+80
+00:06:31,770 --> 00:06:35,850
+This means that data is safely stored in your local database.
+
+81
+00:06:36,330 --> 00:06:43,860
+We can say that you have working directly that a set of files you work with the staging area is the
+
+82
+00:06:43,860 --> 00:06:51,040
+index file and Hidden doGet folder is a folder where it stores all data about your project, including
+
+83
+00:06:51,060 --> 00:06:52,980
+database for your project.
+
+84
+00:06:53,280 --> 00:06:56,910
+So your basic interactions with GIT are going to look like this.
+
+85
+00:06:57,420 --> 00:07:00,510
+You changes do file or to a set of files.
+
+86
+00:07:00,870 --> 00:07:06,960
+You add those files to index, you can make the changes and you create a snapshot of your files.
+
+87
+00:07:07,710 --> 00:07:11,270
+That said, let's recap what we have learned today.
+
+88
+00:07:12,000 --> 00:07:15,060
+Today we learned why we need version control systems.
+
+89
+00:07:15,300 --> 00:07:18,270
+Now, you know, the most popular version, control systems.
+
+90
+00:07:18,270 --> 00:07:25,470
+And you know, that git is the most popular v.c as you learn the key features of the kit and understood
+
+91
+00:07:25,470 --> 00:07:30,890
+how it operates, I believe now we are ready to proceed with our next lesson.
+
+92
+00:07:31,470 --> 00:07:34,860
+Thanks a lot for your attention and see you in the next lesson.
