@@ -1,0 +1,373 @@
+WEBVTT
+
+00:00.120 --> 00:01.140
+OK that's great.
+
+00:01.230 --> 00:04.020
+Now I have learned a lot of new functionalities.
+
+00:04.190 --> 00:09.600
+And in this video we are going to put everything together in order to develop a colored boy tracking
+
+00:09.660 --> 00:10.350
+application.
+
+00:10.440 --> 00:16.500
+So in this video we're going to take us and any put an image of a board and then we will identify the
+
+00:16.500 --> 00:19.030
+board inside the image using color victory.
+
+00:19.050 --> 00:25.980
+And then we will detect the contour of the ball drop its location and surrounding it with an inclosing
+
+00:26.070 --> 00:27.090
+circuit.
+
+00:27.120 --> 00:33.010
+We're going to apply all the knowledge that you have the three sectors and you've all of these applications.
+
+00:33.060 --> 00:35.070
+So the algorithm will be as follows.
+
+00:35.070 --> 00:41.400
+Now I think you understand the steps we're going to need an image as an image and then we will use color
+
+00:41.730 --> 00:46.620
+coding techniques in order to identify the ball by its color in the image.
+
+00:46.620 --> 00:52.020
+So we're going to have kind of a mask where the body will be colored in white and everything will be
+
+00:52.020 --> 00:56.850
+colored in black and then we will have a bad image that represent the mass.
+
+00:56.910 --> 01:00.190
+We will use it as an input to to detection.
+
+01:00.270 --> 01:02.360
+So you will find the control for the ball.
+
+01:02.400 --> 01:08.100
+And finally when I don't if I do something with the ball and throw the surrounding circle on the ball
+
+01:08.280 --> 01:11.310
+let's see how we can implement this in practice.
+
+01:11.310 --> 01:14.800
+Let us now consider the code bolt action fight.
+
+01:14.850 --> 01:19.900
+So basically we're going to use some of the functions that we have defined in the previous videos of
+
+01:19.900 --> 01:20.310
+course.
+
+01:20.310 --> 01:23.170
+First of all we need to read the RG image.
+
+01:23.400 --> 01:30.540
+OK some way to use the same function using the previous videos and also the second step is to use this
+
+01:31.050 --> 01:36.300
+image and filter the color using the lower band color and the upper bunk on that we will want to use
+
+01:36.300 --> 01:43.250
+the same lower bound and upper bound that we find more for the yellow color in the color filtering.
+
+01:43.290 --> 01:49.110
+OK so filter color is going to return the mask which is a binary image.
+
+01:49.110 --> 01:54.390
+So in this particular case we don't need to use any kind of thresholding techniques because the Range
+
+01:54.390 --> 01:59.940
+method that we will use here is going to return a binary image with which we call a mask.
+
+01:59.940 --> 02:06.060
+The mask will be used as a binary image input for the get go to method which will be using the pipe
+
+02:06.060 --> 02:10.810
+contours method of open CD and then generate all the controls.
+
+02:10.830 --> 02:14.380
+So after that we will throw the ball control.
+
+02:14.410 --> 02:18.560
+We will use the image a binary image and the controls.
+
+02:18.600 --> 02:22.010
+So basically it's the same process that we did before.
+
+02:22.050 --> 02:28.590
+The only difference here is that we are going to choose a certain area a threshold for which we're going
+
+02:28.590 --> 02:30.960
+to draw the control of the detected object.
+
+02:30.960 --> 02:37.870
+So we will see that this condition is very important to eliminate some of the small contorted does not
+
+02:37.920 --> 02:39.920
+the present yellow tennis ball.
+
+02:39.990 --> 02:42.450
+So this is the arboretum that we are going to follow.
+
+02:42.450 --> 02:44.780
+First of all we take the name of the image.
+
+02:44.820 --> 02:48.820
+We define the yellow lower bound and the upper bound for the color.
+
+02:48.820 --> 02:54.250
+So these are basically the same ball that they have explained in the color of interring lecture then
+
+02:54.260 --> 02:55.280
+read the image OK.
+
+02:55.290 --> 03:02.310
+So we read the image and generate an image then we will generate the binary image masked by applying
+
+03:02.310 --> 03:10.500
+the filter coloring technique calling technique is going to take the image and the upper and lower box
+
+03:10.620 --> 03:17.220
+and then we generate the binary image mask then we will use these binary image to generate all the contours
+
+03:17.640 --> 03:21.400
+and then we will process the contours to draw only the contour.
+
+03:21.600 --> 03:25.990
+But so basically we have used most of the functions.
+
+03:25.990 --> 03:31.900
+The only difference is that the dimension just we have made here the area of the contour so let us know
+
+03:31.990 --> 03:33.700
+exactly what the detection
+
+03:37.270 --> 03:37.840
+OK.
+
+03:37.990 --> 03:43.750
+So the bomb detection here is going to be applied to tennis ball one image.
+
+03:43.750 --> 03:44.980
+So let's see what happens.
+
+03:45.070 --> 03:47.650
+Now this is the tennis club.
+
+03:47.980 --> 03:50.820
+Now this is the contour of the tennis ball.
+
+03:50.950 --> 03:55.280
+The surrounding circle in red and also into something absurd.
+
+03:55.520 --> 03:57.740
+Point which you have to hit here.
+
+03:57.760 --> 04:01.370
+I did see the two that circle the black image.
+
+04:01.630 --> 04:02.180
+OK.
+
+04:02.290 --> 04:06.000
+I just think the small circle of radius 5 feet.
+
+04:06.100 --> 04:11.000
+So I was minus one to make it to the center point see X Y and the outer circle here.
+
+04:11.020 --> 04:16.650
+This is actually the surrounding sliver of the enclosing circle that you have completed its radius here.
+
+04:16.660 --> 04:22.790
+So now let's apply the same code so that if we use your very small value of the radius.
+
+04:22.840 --> 04:25.310
+OK so what happens.
+
+04:25.310 --> 04:31.600
+So this particular image we don't have any problem because it's clear that you have only one yellow
+
+04:31.600 --> 04:32.590
+object that is the point.
+
+04:32.590 --> 04:34.140
+So let's look at the images.
+
+04:36.280 --> 04:44.790
+So I'm not good on the algorithm for the second ball and is Faltu and it matters.
+
+04:45.040 --> 04:51.340
+So you can see we are very very small things because you have a lot of yellow to be the colors which
+
+04:51.430 --> 04:55.680
+are like being thrown by Fichter.
+
+04:55.720 --> 05:01.190
+So they are kind of considered as detected objects and they are not.
+
+05:01.600 --> 05:06.700
+So one of the things we can do here to improve is to change the area.
+
+05:06.990 --> 05:07.450
+OK.
+
+05:07.570 --> 05:14.130
+We want to create a very large area for example here I'm going to use two thousand and you will see
+
+05:14.150 --> 05:20.040
+you know we're going to have much better New any unique.
+
+05:20.270 --> 05:24.130
+Most of the very small detected objects.
+
+05:24.360 --> 05:30.590
+And of course you can see that we have two circles for the symbol because basically this line that comes
+
+05:30.590 --> 05:33.810
+in the middle makes it like they are two separate objects.
+
+05:33.860 --> 05:34.210
+OK.
+
+05:34.220 --> 05:39.770
+So this is one of the problems of interaction is very sensitive to other colors.
+
+05:40.070 --> 05:44.580
+What does you know cause it is an object or part of the direction.
+
+05:44.700 --> 05:52.950
+Next I can find some object the left and another object that I would get some kind of edge is that that
+
+05:53.180 --> 05:58.730
+because it matches the light of the color but of course maybe what we can do.
+
+05:58.730 --> 06:02.040
+So who does it is are the different areas have here.
+
+06:02.080 --> 06:08.860
+So I mean you can see that in your little nine three thousand five hundred of these one thousand if
+
+06:09.740 --> 06:15.430
+you can get 10000 lose his or her on it's.
+
+06:15.770 --> 06:21.800
+So you're causing all the great deal of the area is actually on DVD for a film which to another site
+
+06:21.830 --> 06:28.730
+that you said that person or image number three is one number here of course here is that because we
+
+06:28.720 --> 06:38.210
+don't have any more than thousand maybe because the image is small here we can start by 100 just to
+
+06:38.210 --> 06:38.750
+check.
+
+06:39.090 --> 06:46.010
+Is it that spending much time of course here you see the scene the picnic the kind of thing that he
+
+06:46.070 --> 06:47.270
+is not worth that much.
+
+06:47.270 --> 06:52.460
+And maybe mean to you that it to be the separation and the brightness.
+
+06:52.480 --> 06:57.400
+You to have a more active section of his project because of the lighting effects.
+
+06:57.470 --> 07:03.220
+We can try another image number for five images of his work.
+
+07:03.320 --> 07:04.260
+So same thing here.
+
+07:04.310 --> 07:11.580
+You can see when you have a big and important and nice separation the mother's love so much in the area
+
+07:11.600 --> 07:17.500
+again to avoid having to duplicate and going towards our edges so you can see there are two areas one
+
+07:17.510 --> 07:22.190
+thousand or six thousand in this one the biggest
+
+07:28.490 --> 07:34.630
+and again only one of the days when it's applied on less.
+
+07:34.660 --> 07:35.150
+Even in
+
+07:42.020 --> 07:46.370
+course of there is one one so you can change the area.
+
+07:53.240 --> 08:02.600
+He's got a so we can see it's possible to use a for it to be together the contradiction of the objects
+
+08:02.660 --> 08:03.860
+based on their colors.
+
+08:03.890 --> 08:09.730
+But you can see also that the technique is not very robust but you can do the job very complex use cases.
+
+08:09.740 --> 08:15.110
+Of course nowadays there are much more sophisticated techniques in computer vision and image processing
+
+08:15.290 --> 08:21.830
+and basically rely on the technique of deep learning and neural networks which is able to classify and
+
+08:21.830 --> 08:25.800
+detect Cognos different type of images with high accuracy.
+
+08:25.820 --> 08:32.120
+Now having competed with both indiction apply on an image you're willing to extend this program to develop
+
+08:32.350 --> 08:37.650
+tennis ball tracking application Turcott it needs to apply on the video.
+
+08:37.670 --> 08:43.330
+In this case the board is going to soliton shoulder fired expect the output that you need to do.
+
+08:43.340 --> 08:44.070
+OK.
+
+08:44.480 --> 08:51.100
+So you need to extend the current code in order to develop an application because it comes in this is
+
+08:51.110 --> 08:51.890
+very good image.
+
+08:52.040 --> 08:57.680
+This is the image we can see here we had been tracking and designe we use the same code so all you need
+
+08:57.680 --> 09:05.260
+to do is to read the video stream and then process the frames one by one and everything you need applied.
+
+09:05.330 --> 09:06.840
+The point detection algorithm.
+
+09:06.850 --> 09:09.940
+So the assignment will do it in two different ways.
+
+09:09.950 --> 09:17.360
+The first way you're going to just read a five minute video file using a PC and process it three by
+
+09:17.360 --> 09:17.690
+three.
+
+09:17.690 --> 09:24.170
+The second part of the assignment you need to read from the file and publish the phrase using an image
+
+09:24.340 --> 09:29.310
+stop it and then you subscribe to the topic and process the frames in the same way.
+
+09:29.360 --> 09:36.710
+So in the different the second part of the assignment you need to use those notes to make the conversion
+
+09:36.800 --> 09:40.070
+of that image format of the city to us and vice versa.
+
+09:40.100 --> 09:44.300
+So you have more details about the assignments and some page following these will be.

@@ -1,0 +1,160 @@
+WEBVTT
+
+00:01.040 --> 00:06.400
+It don't want to make you this video.
+
+00:06.400 --> 00:12.910
+I'm going to show how to install Ubuntu operating system on a virtual machine for a Mac OS operating
+
+00:12.910 --> 00:13.600
+system.
+
+00:13.600 --> 00:18.040
+In fact my advice and recommendation it is always highly recommended.
+
+00:18.430 --> 00:25.290
+Working on a virtual machine because you can set up all your environment install applications all your
+
+00:25.390 --> 00:31.170
+integrated development environment only once and then you can start the fight of the virtual machine
+
+00:31.540 --> 00:33.540
+in any external hard drive.
+
+00:33.700 --> 00:39.980
+So later on in any case when there is a damage that happens to your virtual machine for example Rowse
+
+00:40.240 --> 00:46.930
+installation is compromised or something doesn't work fine after some updates and so one you can easily
+
+00:46.930 --> 00:54.770
+get back to your working environment by just getting a copy of your same little machine and open it
+
+00:54.760 --> 00:55.230
+again.
+
+00:55.420 --> 00:57.630
+However if you work on a physical machine.
+
+00:57.760 --> 01:02.300
+If there is any problem with your system you have to install everything from scratch.
+
+01:02.470 --> 01:06.350
+And this is sometimes very time consuming and tedious operation.
+
+01:06.430 --> 01:14.240
+So this demonstration is going to show how to install Ubuntu 18 0 4 on a virtual machine.
+
+01:14.410 --> 01:19.740
+However the process will be exactly the same if you install any other version of Ubuntu.
+
+01:19.840 --> 01:26.580
+So the first thing that you have to do is to go to Ubuntu website the only WW Ubuntu Look-Up slush.
+
+01:26.650 --> 01:28.350
+No lossless desktop.
+
+01:28.360 --> 01:31.620
+So you will download the desktop version of Ubuntu.
+
+01:31.720 --> 01:37.240
+You click on Golo then you access the file and let it download completely on your system.
+
+01:37.300 --> 01:41.780
+It's going to take a little bit of time depending on the speed of your connection.
+
+01:41.800 --> 01:48.370
+So after that if you have Mac operating system you can use any software a virtual machine you can use
+
+01:48.430 --> 01:52.080
+Freep options like your tool box from Aurukun which is free.
+
+01:52.150 --> 01:58.690
+But my recommendation is to use fusion virtual machine from VM way which provides very powerful functionalities
+
+01:58.840 --> 01:59.650
+very stable.
+
+01:59.690 --> 02:00.830
+But the problem is speed.
+
+02:00.850 --> 02:06.240
+So you have fusion you up and fusion and then you create a new virtual machine.
+
+02:06.280 --> 02:09.190
+You still have the option install from the disk or an image.
+
+02:09.220 --> 02:16.300
+Then you drag and paste the operating system image that you have downloaded and then follow the instructions.
+
+02:16.300 --> 02:18.870
+So you have to set the password for the virtual machine.
+
+02:19.030 --> 02:24.550
+You can also check the option make your home folder accessible to the virtual machine and then click
+
+02:24.550 --> 02:25.360
+Continue.
+
+02:25.630 --> 02:31.030
+So you can choose install but I recommend that you customize your setting before going further.
+
+02:31.030 --> 02:36.190
+First of all you have to give a name to the virtual machine and then you can change the setting on the
+
+02:36.190 --> 02:36.820
+virtual machine.
+
+02:36.820 --> 02:43.150
+For example you would like to increase the number of processors are at the butyl machine and the memory
+
+02:43.660 --> 02:46.340
+or any other setting like network settings or other.
+
+02:46.360 --> 02:47.230
+So you can do that.
+
+02:47.230 --> 02:50.100
+For example I would choose to have 4 processors.
+
+02:50.200 --> 02:51.410
+Unfortunately Off-Ramp.
+
+02:51.460 --> 02:57.400
+Of course this depends on the capabilities of your machine and then that it is done so the installation
+
+02:57.400 --> 03:03.370
+takes a little bit of time and then the virtual memory having the Ubuntu operating system is going to
+
+03:03.460 --> 03:08.950
+open and you can just type your password that you have set initially and finally you will be logging
+
+03:09.010 --> 03:14.800
+in with the virtual machine and you will have your bent operating system where you can install Russ
+
+03:14.920 --> 03:16.960
+and configure your environment over that.
+
+03:17.080 --> 03:23.530
+So after having the virtual machine installed you can install the Russ install your favorite integrated
+
+03:23.530 --> 03:24.680
+development environment.
+
+03:24.850 --> 03:30.910
+Like for example eclipse or visio pseudocode or any other ID of your choice.
+
+03:30.910 --> 03:34.260
+Install all the other libraries that you need for close.
+
+03:34.260 --> 03:40.490
+For example Total what packages for any packages that you need for sensors actuators or anything and
+
+03:40.490 --> 03:46.200
+then make a copy of your virtual machine with it on an external hard drive just in case.
+
+03:46.210 --> 03:53.380
+If you have any crash or any problem you can get back to a built in machine up and running without the
+
+03:53.380 --> 03:57.030
+need to install Ros and all the tools that you have already installed.

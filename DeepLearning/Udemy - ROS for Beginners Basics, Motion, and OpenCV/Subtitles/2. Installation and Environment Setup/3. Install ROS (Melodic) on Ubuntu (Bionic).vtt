@@ -1,0 +1,157 @@
+WEBVTT
+
+00:00.440 --> 00:05.140
+In this video I will demonstrate how to install and configure your logic.
+
+00:05.280 --> 00:10.480
+The latest version as of July 2008 80 on Ubuntu operating system.
+
+00:10.770 --> 00:17.490
+It has to be noted that the installation process is exactly the same for any other version of us Noon-Air
+
+00:17.630 --> 00:21.450
+genetic and legal or others to install groups.
+
+00:21.510 --> 00:24.600
+You first need to go to the installation page of Russ..
+
+00:24.630 --> 00:31.150
+As of today two versions are he commanded Roskill a dig which was really on May 2006.
+
+00:31.180 --> 00:35.700
+The interest which was the lead on making thousand eighty.
+
+00:35.700 --> 00:43.060
+Note that both versions have longtime support and yes in this venue we will install the Rossmiller or
+
+00:43.250 --> 00:46.530
+melody can be installed on different operating systems.
+
+00:46.530 --> 00:49.610
+We will choose your best operating system in our tutorial.
+
+00:49.620 --> 00:56.130
+The first thing to know is that trust me logic is only supported by Ubuntu eighteen point zero four
+
+00:56.580 --> 00:58.130
+which is Ubuntu by owning.
+
+00:58.230 --> 01:03.090
+So make sure that you have installed Ubuntu Byronic before starting the installation.
+
+01:03.270 --> 01:09.870
+In the previous video I have shown how to install Ubuntu by onic in a virtual machine on Mac operating
+
+01:09.870 --> 01:10.500
+system.
+
+01:10.500 --> 01:17.250
+It has to be noted that every version of us is supported by a particular version of Ubuntu that open
+
+01:17.250 --> 01:24.140
+a terminal and copy the first command that will accept software from rust packages repository.
+
+01:24.150 --> 01:31.330
+After that you need to set up your keys by using the second command before starting the installation.
+
+01:31.560 --> 01:39.300
+You'll need to make sure that your daily index is up to date by executing sudo abt get up then the system
+
+01:39.360 --> 01:41.930
+update your debian index.
+
+01:41.980 --> 01:47.250
+Now your system is ready to install or else there are different available options.
+
+01:47.260 --> 01:54.400
+It is recommended to install the desktop option which contains most of the important and required libraries
+
+01:54.400 --> 01:55.090
+in the.
+
+01:55.090 --> 01:56.290
+Let's do that.
+
+01:56.290 --> 02:02.140
+This operation will add a little bit more than 700 megabytes on your hard drive.
+
+02:02.140 --> 02:04.150
+The operation takes time.
+
+02:04.180 --> 02:06.040
+So wait until it completes
+
+02:12.800 --> 02:13.410
+grade.
+
+02:13.440 --> 02:15.300
+Now Ross is installed a new system.
+
+02:15.300 --> 02:21.850
+However there are still a few more things to do before you can use Rosse you need to initialize that
+
+02:22.740 --> 02:28.500
+allows you to easily install system dependencies for sources you want to compile and it is required
+
+02:28.620 --> 02:35.950
+to run some core components of Fras then write the command up the congratulations.
+
+02:36.080 --> 02:39.900
+You have no roads up and running to enable rest in your system.
+
+02:39.980 --> 02:43.670
+You need to source the setup bash of the OS workspace.
+
+02:43.700 --> 02:49.000
+Doing so you will be able to run commands to make this effective permanently.
+
+02:49.010 --> 02:59.690
+You need to add the command source up trust that's melodic slash set up that bash into bash RC 5 so
+
+02:59.690 --> 03:03.350
+that it is enabled automatically whenever you open a new terminal.
+
+03:03.440 --> 03:10.250
+So you do not have to manually type it every time you take the last step is to use those tools and other
+
+03:10.250 --> 03:12.950
+dependencies to build trust packages.
+
+03:12.950 --> 03:16.670
+Now having this done you are ready to start working with Ross.
+
+03:16.690 --> 03:18.600
+Apple Ficci installation.
+
+03:18.830 --> 03:23.620
+You should create a workspace where to put your proper projects in packages.
+
+03:23.930 --> 03:30.200
+For this you need to create a new workspace in the home directory and this what space will be used later
+
+03:30.200 --> 03:34.580
+to put all those projects in packages to do so.
+
+03:34.590 --> 03:43.180
+Look at the whole factory in an attempt to create a new folder called Get in the US or get your workspace.
+
+03:43.190 --> 03:45.960
+And besides why did you create a source file.
+
+03:46.050 --> 03:50.720
+Where to put your projects that compile your workspace you see.
+
+03:50.770 --> 03:51.820
+You may.
+
+03:51.830 --> 03:58.380
+Your face is not to leave other project in to enable your workspace as the default workspace.
+
+03:58.610 --> 04:05.660
+You have to source the standard Paschall this workspace into the RC file so open that bash or sci fi
+
+04:05.900 --> 04:07.960
+and add the following command inside of it.
+
+04:07.990 --> 04:14.840
+Now workspace is ready and you can type Rashidi to make sure that it is the default workspace.

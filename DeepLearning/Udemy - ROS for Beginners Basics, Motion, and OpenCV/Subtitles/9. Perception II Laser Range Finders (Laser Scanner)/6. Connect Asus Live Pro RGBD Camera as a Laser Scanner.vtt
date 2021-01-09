@@ -1,0 +1,613 @@
+WEBVTT
+
+00:00.200 --> 00:05.760
+In this video I'm going to demonstrate how to start an actual video camera and connected with thrusts
+
+00:05.850 --> 00:12.660
+and how to convert the depth image into a laser scanner and how to visualize it using a big echo and
+
+00:12.720 --> 00:15.580
+also using oddities in this demonstration.
+
+00:15.600 --> 00:21.410
+I'm going to consider the Acer's like pro camera and this is the description of the process.
+
+00:21.420 --> 00:25.580
+So first of all we need to start the drivers off the camera.
+
+00:25.620 --> 00:30.630
+And for this we can use the open eye to package that comes with thrust.
+
+00:30.690 --> 00:33.200
+So first of all we need to make sure that it is installed.
+
+00:33.270 --> 00:39.150
+I'm going to show you how to do it and then you need to started using large open eyes to underscore
+
+00:39.990 --> 00:41.640
+open an eye to the clutch.
+
+00:41.640 --> 00:47.910
+So this is going to start all the drivers that will be responsible for connecting with the rest and
+
+00:47.970 --> 00:52.120
+extracting all the information and publishing them as research topics.
+
+00:52.200 --> 00:55.750
+It has to be not that I too is a generic driver.
+
+00:55.770 --> 01:01.750
+It works with many commercially available A.E. cameras and like for example Microsoft Kinect.
+
+01:01.780 --> 01:09.120
+So for indigo and earlier versions the default R.G. the camera that is used by the open eye to driver
+
+01:09.270 --> 01:15.240
+was the Microsoft Kinect camera starting from network the default arch of the camera is the easiest
+
+01:15.240 --> 01:15.880
+life.
+
+01:15.990 --> 01:22.140
+So there are certain configurations to do if you want to switch between one camera to another.
+
+01:22.230 --> 01:27.660
+So in this demonstration we are going to use Russ QinetiQ with Asias life pro camera but if you use
+
+01:27.660 --> 01:32.700
+different versions you might want to check what is the default option to become rather be supported
+
+01:32.700 --> 01:33.530
+by the driver.
+
+01:33.600 --> 01:36.270
+Or how to change it to the camera that you have in hand.
+
+01:36.300 --> 01:40.600
+And after starting the driver we need to convert the decks image into a laser scanner.
+
+01:40.800 --> 01:46.190
+So when you start the driver the actually the camera is going to publish several type of images raw
+
+01:46.260 --> 01:53.280
+images compressed images and also depth images which contains also the depth information coming from
+
+01:53.550 --> 01:54.580
+the laser scanner.
+
+01:54.720 --> 01:58.880
+But we don't have any topic that provides the scant information for this.
+
+01:59.040 --> 02:05.480
+It is necessary to convert the death camera into a scan readings and to do so.
+
+02:05.520 --> 02:10.620
+We will use the package called the image to Laserscope and the node.
+
+02:10.770 --> 02:13.140
+It's called depth image police are scanned as well.
+
+02:13.320 --> 02:19.250
+So I put everything into a large file because we need to map the image topping to the correct image.
+
+02:19.250 --> 02:24.890
+That is a code here it has that depth such as you are going to explain these more into a demonstration.
+
+02:24.900 --> 02:31.140
+So for this reason I have defined a large file and a Lost fight is nothing that a fine that is able
+
+02:31.470 --> 02:39.570
+to start one node or multiple nodes and also to define the names of the topics and also provide the
+
+02:39.570 --> 02:40.880
+values of the parameters.
+
+02:40.890 --> 02:46.260
+So here we're going to start one note and then we are going to change the definition of the topic name
+
+02:46.290 --> 02:53.970
+from image into depth slash imagery because this is the name of that image that we are going to use
+
+02:54.030 --> 02:57.600
+in order to convert the image into a laser scan values.
+
+02:57.630 --> 03:04.370
+And finally we meet up open Arbys and test we go and also movies utilize the ranges collected by scanned
+
+03:04.710 --> 03:05.860
+using Arbys.
+
+03:06.120 --> 03:08.410
+So let's see how things works in practice.
+
+03:08.460 --> 03:13.340
+The first thing that we need to do is to connect the camera into our system.
+
+03:13.350 --> 03:18.930
+You have to connect it with the USP part and if you work in a virtual machine like I'm doing you will
+
+03:18.930 --> 03:24.090
+be prompted whether you want to connect and be committed to Mac or to Linux.
+
+03:24.090 --> 03:30.150
+So in our case we really connected to Linux because going to use was installed on your belt or in order
+
+03:30.150 --> 03:35.540
+to start the drivers of the camera and also collect all the information about it.
+
+03:35.610 --> 03:41.970
+So we click here on Connect to Linux and Cynara to make sure that it is connected we can go to the connection
+
+03:41.970 --> 03:42.850
+settings.
+
+03:42.900 --> 03:44.350
+So I'm using fusion.
+
+03:44.370 --> 03:51.330
+So and here you go to use the bluetooth and you make sure that perhaps sends device is connected to
+
+03:51.330 --> 03:56.470
+your virtual machine your Ubuntu operating system.
+
+03:56.480 --> 04:01.660
+So everything is in place and as we will be using open eyed.
+
+04:01.790 --> 04:09.290
+So we need to make sure that it is installed first of what we do so you do a pretty good update.
+
+04:10.760 --> 04:13.000
+To make sure that our system is up to date
+
+04:22.990 --> 04:23.970
+okay.
+
+04:24.000 --> 04:31.950
+And then we try to install open to it if it is not installed so we use to do a pretty good install.
+
+04:32.330 --> 04:43.000
+Russ I have using music in the attic version and then opened and I had to.
+
+04:43.300 --> 04:44.890
+So everything you're
+
+04:50.830 --> 04:53.350
+due will be upgraded and that I'm ready to go.
+
+04:53.380 --> 05:02.650
+OK so the first command that we need to do is actually the standalone side open to launch and then open
+
+05:03.760 --> 05:05.640
+and to that much
+
+05:10.600 --> 05:16.840
+if you want to make sure that our camera is correctly started we can use topic.
+
+05:17.730 --> 05:23.130
+And you can see these are the list of all topics published by the candidate.
+
+05:23.320 --> 05:25.430
+So we have that images.
+
+05:25.640 --> 05:31.150
+So this is what we'd be interested to learn when to use one of these topics.
+
+05:31.210 --> 05:33.600
+We have also infrared images.
+
+05:33.670 --> 05:37.890
+We have also added the images and so we can view one of these topics.
+
+05:37.900 --> 05:43.310
+For example they can use these topics and open it with image of you.
+
+05:43.410 --> 06:00.270
+I can use a restaurant image to view image you then image and then that typically you can see OK this
+
+06:00.270 --> 06:02.040
+is the camera.
+
+06:02.280 --> 06:05.210
+This is my iPhone OK.
+
+06:05.230 --> 06:06.930
+It's working pretty much.
+
+06:07.330 --> 06:09.250
+I will put a button here.
+
+06:10.010 --> 06:10.540
+OK.
+
+06:10.540 --> 06:13.860
+So you can see bucket of water testing for her.
+
+06:14.100 --> 06:15.610
+That's great.
+
+06:15.610 --> 06:18.490
+Of course we can also observe the depth image.
+
+06:18.970 --> 06:27.040
+So instead of me being used that's something basically to use one of the topics here on the top which
+
+06:27.040 --> 06:29.680
+is this one committed Depp's future.
+
+06:30.130 --> 06:31.280
+So let's use that
+
+06:35.100 --> 06:42.430
+and you can see here this is the image this is the home using the image so you can see it's grayscale
+
+06:42.490 --> 06:48.760
+color and the darker it is the closer is the object and the brighter it is the farther it is the object.
+
+06:48.760 --> 06:56.170
+Basically we're going to use this information in order to convert this image into a list of ranges.
+
+06:56.440 --> 06:59.770
+And for this we need to convert it into a scanned topic.
+
+06:59.800 --> 07:05.430
+So basically the scanned topic is the common name for the information coming from a laser range finder.
+
+07:05.470 --> 07:10.940
+And as you can see now the list of topics I don't have any topic at all.
+
+07:11.780 --> 07:12.150
+Why.
+
+07:12.260 --> 07:16.990
+Because this driver doesn't actually generate any sculped topics in gross.
+
+07:17.100 --> 07:23.950
+There is a particular package in particular that converts a depth image into the scan topic.
+
+07:24.200 --> 07:34.490
+OK so we can use the restaurant depth the mysterious deaths in Mr. Laserscope I can start this one and
+
+07:34.510 --> 07:39.040
+now I'm going to make a list of the list again and you can find this topic again.
+
+07:39.860 --> 07:40.560
+OK.
+
+07:41.720 --> 07:53.040
+Now the problem here if I may call this topic a called slash skun OK nothing will happen.
+
+07:53.080 --> 08:01.180
+This is because I didn't specify the name of the image to the know that image to or Scott.
+
+08:01.280 --> 08:07.030
+So since I didn't specify what is the name of the depth image it was not able to make any conversion.
+
+08:07.040 --> 08:14.090
+So in order to specify the name of the image I'm going to make image one and then it was busy by the
+
+08:14.090 --> 08:14.740
+topic.
+
+08:14.820 --> 08:18.610
+And of course the topic needed that image.
+
+08:18.750 --> 08:19.360
+OK.
+
+08:19.430 --> 08:26.960
+So not referring to post topic echo but just kind of get OK.
+
+08:26.990 --> 08:29.730
+And now I'm getting bad news.
+
+08:29.900 --> 08:32.500
+So this is the array of ranges.
+
+08:32.510 --> 08:35.980
+OK so you can see this is the area phalanges that you are getting.
+
+08:36.140 --> 08:43.280
+And you have a way of it is as I've explained before this is that information about the angle max angle
+
+08:43.280 --> 08:49.020
+me angle angle Inkley my timing three months time and all the different takes.
+
+08:49.310 --> 08:50.530
+Now to get to them.
+
+08:50.660 --> 08:51.030
+OK.
+
+08:51.080 --> 08:52.850
+So you can see it is working.
+
+08:52.850 --> 09:02.270
+So that's why we need to convert the image into Scott using the package and the no name depth images
+
+09:02.440 --> 09:03.000
+or scum.
+
+09:03.050 --> 09:09.080
+So this note is going to make the conversion we need to specify what is the depth image and then it's
+
+09:09.080 --> 09:16.110
+going to produce for us the scanned topic as you can see in topic.
+
+09:16.310 --> 09:21.230
+Ok there is another way that we can do it using a large file instead of every time that the name of
+
+09:21.230 --> 09:22.320
+the image.
+
+09:22.430 --> 09:25.690
+So I can go here all those essentials
+
+09:30.390 --> 09:37.640
+in reception and have lunch find that they have you can find it specifies the notes that you would like
+
+09:37.640 --> 09:38.400
+to start.
+
+09:38.600 --> 09:44.430
+It's flexible fight that specifies one or multiple nodes that you want to run at the same time in a
+
+09:44.430 --> 09:44.890
+long fight.
+
+09:44.900 --> 09:47.770
+So here the no need is depth image to whole.
+
+09:47.780 --> 09:50.230
+This is the name of the note that you want to create.
+
+09:50.240 --> 09:52.040
+This is the name of the package.
+
+09:52.100 --> 09:53.390
+And this is the name of it.
+
+09:53.430 --> 09:58.020
+So this is the name of the note that you want to cite whenever you execute the note.
+
+09:58.100 --> 10:00.250
+And this is the actual name of the note.
+
+10:00.320 --> 10:00.940
+OK.
+
+10:00.980 --> 10:07.360
+And here we make the conversion or the assignment of the death image into the public image.
+
+10:07.440 --> 10:14.640
+So like we did here this is an image equil camera that image so we can use it inside the lounge but
+
+10:15.290 --> 10:21.070
+using the tag remap the map means changing the name of the topic image into the swamp.
+
+10:21.080 --> 10:25.640
+So who's going to convert this topic into scanner topic as such.
+
+10:25.640 --> 10:31.080
+Now we can start that image laser rescanned node by launching large fight.
+
+10:31.100 --> 10:31.400
+OK.
+
+10:31.400 --> 10:33.510
+And one can do it.
+
+10:33.950 --> 10:35.750
+You can use the rest now.
+
+10:36.150 --> 10:42.040
+Another file is actually in ROS essential city as you have already observed.
+
+10:42.110 --> 10:47.820
+It is interesting to see the P S or C copeck 3 and the launch for there.
+
+10:47.840 --> 10:53.300
+So I could hear the long file and then it can actually call this large file contains all the information
+
+10:53.930 --> 10:58.160
+that image is that the camera is going to do the whole work.
+
+10:58.370 --> 11:06.920
+So it's going to start the no depth to Laserscope and is going also to really map the image name.
+
+11:07.430 --> 11:16.330
+So let's do Ruster because the gun rights of big news again and then you can also make a to topic a
+
+11:16.350 --> 11:24.480
+quote slash Scott and you can see now this gun is working right.
+
+11:27.560 --> 11:31.630
+So these are the list of reasons that you collect.
+
+11:31.630 --> 11:34.620
+Of course you can observe that some changes are not defined.
+
+11:34.650 --> 11:41.210
+Maybe error in the reading or problem in defining the value you get from the software side on the hardware
+
+11:41.210 --> 11:46.650
+side and you may later on we will see how to process this information using rush.
+
+11:46.780 --> 11:51.920
+OK so we can for example calculate the maximum value the minimum value in the next video I'm going to
+
+11:51.920 --> 11:56.600
+explain more details about the angle mean the angle Max and the different metrics.
+
+11:56.600 --> 12:02.180
+So you can see these values they are expressed in region and you are going to verify that these values
+
+12:02.180 --> 12:07.730
+actually correspond to minus 30 degrees and 30 degrees because we know that the field of view is equal
+
+12:07.730 --> 12:11.390
+to 60 degrees so I'm going to talk about more details in the next video.
+
+12:11.390 --> 12:17.150
+But now I would like to give you another means on how to visualize this information is actually very
+
+12:17.150 --> 12:22.580
+difficult to read these numerical information like this so I want a visualization tool.
+
+12:22.700 --> 12:30.230
+And in Russia there is a very nice and interesting tool that is called Arbys RBC mistrusts visualization
+
+12:30.440 --> 12:33.500
+and this to allow you to visualize different topics.
+
+12:33.530 --> 12:37.730
+And among them the laserscope so we can run Arbys.
+
+12:37.730 --> 12:41.090
+So first of all you have to make sure that Arbys is installed.
+
+12:41.280 --> 12:45.720
+So in principle it comes installed with the ros installation.
+
+12:45.860 --> 12:48.320
+So you don't need to do it manually.
+
+12:48.320 --> 12:53.490
+And then what we can do we can make restaurant Arbys Army
+
+12:57.480 --> 12:58.090
+OK.
+
+12:58.230 --> 13:04.110
+And it's a graphical interface for the moment we don't see anything because as you can see here we have
+
+13:04.140 --> 13:12.260
+only some global oxers we didn't specify any laser scanner topic so we can do it using a button here.
+
+13:12.510 --> 13:15.340
+But first of all we need to fix the correct frame.
+
+13:15.460 --> 13:21.480
+And I'm going to talk about frames in the next chapter when I'm going to talk about transformations
+
+13:21.510 --> 13:24.390
+because those sort of measures are very very very important.
+
+13:24.680 --> 13:29.460
+But for the moment don't worry if you don't know what are the transformations and what does it mean
+
+13:29.470 --> 13:32.300
+these different frames are going to explain this.
+
+13:32.460 --> 13:40.830
+So now when we started the driver of and two that connects to actually the camera it's going to create
+
+13:40.830 --> 13:44.900
+some frames and these frames are the reference frames of the camera.
+
+13:44.940 --> 13:49.540
+So there is a frame attached to our TV cameras or to the depth camera.
+
+13:49.590 --> 13:51.560
+I'm going to just come in here.
+
+13:51.600 --> 13:52.030
+OK.
+
+13:52.050 --> 13:53.670
+So I'm going to select this one
+
+13:59.220 --> 14:01.000
+so the earth has gone.
+
+14:01.010 --> 14:05.080
+Now I'm ready actually to add new topic.
+
+14:05.080 --> 14:13.670
+And of course some interested two laser range finder so I'm going to select laser scan topic and they
+
+14:13.670 --> 14:17.790
+can open the properties here and they have a topically.
+
+14:17.810 --> 14:19.560
+So the topics mimic unselect.
+
+14:19.700 --> 14:22.480
+Scott and you will see now.
+
+14:22.480 --> 14:27.000
+OK so this is the information because now I am in the loop.
+
+14:27.580 --> 14:33.230
+So this is part of the home and this is the corner of the room so you can see the laser scanner.
+
+14:33.370 --> 14:38.720
+Now it is floating to the cabinet and also part of the wall as you can see.
+
+14:38.950 --> 14:43.690
+It makes the corner and the way not to put something in its front.
+
+14:44.230 --> 14:51.450
+OK so I'm going to put a button here and you can see the pattern is reflected in our piece.
+
+14:51.870 --> 14:52.240
+OK.
+
+14:52.270 --> 15:01.170
+So if I remove the button so you can see that you have the corner of that was to go to the bottom again.
+
+15:02.510 --> 15:06.570
+It and you can see the bottom in the front of the laser scanner.
+
+15:08.020 --> 15:11.620
+Or this is reflected in the Army's interface.
+
+15:11.650 --> 15:15.590
+Of course we can play with the intensity of the visualization here.
+
+15:16.030 --> 15:19.580
+So let me put this to one.
+
+15:19.840 --> 15:26.490
+It's much more than zero five for
+
+15:29.360 --> 15:31.620
+one anymore.
+
+15:33.660 --> 15:38.210
+With the laser scanner provide us all the obstacles that come in.
+
+15:38.400 --> 15:39.260
+It's from.
+
+15:39.460 --> 15:49.320
+And also we are able to visualize the different obstacles.
+
+15:49.370 --> 15:53.700
+So now I have visualized the location of the arches to be coming to the
+
+15:57.910 --> 16:02.680
+of a and frames the come in.
+
+16:03.180 --> 16:06.440
+And this is the position of the camera.
+
+16:06.620 --> 16:09.370
+Is the obstacles in front of the camera.
+
+16:10.060 --> 16:16.530
+So in this video I have presented how to access the easiest life pro or just the camera and how to start
+
+16:16.820 --> 16:17.600
+drivers.
+
+16:17.650 --> 16:24.100
+Also I have presented how to convert a depth image into a laser scanner topic and how to visualize everything
+
+16:24.100 --> 16:26.220
+using Arbys in the next video.
+
+16:26.230 --> 16:32.080
+I'm willing to discuss in more detail the different parameters of the results can also how to create
+
+16:32.190 --> 16:35.790
+additional subscribers in the laser scan topic and processing.

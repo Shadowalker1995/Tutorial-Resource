@@ -1,0 +1,238 @@
+WEBVTT
+
+00:00.190 --> 00:06.040
+This video I'm going to show how to see the laser scan information into Rosebank file and how to play
+
+00:06.090 --> 00:06.370
+it.
+
+00:06.380 --> 00:10.310
+Of course this operation is useful because not everybody has a laser scanner.
+
+00:10.350 --> 00:13.740
+And later on there will be some and exercises to do.
+
+00:13.770 --> 00:18.350
+Probably not all of you would have a laser scanner to get the messages from really bites.
+
+00:18.360 --> 00:22.430
+So I'm going now to record all the messages coming from this country.
+
+00:22.470 --> 00:28.350
+And later on we can play them again so that the messages will be coming as they are really coming from
+
+00:28.650 --> 00:29.830
+the real device.
+
+00:29.970 --> 00:31.560
+Let's see how can we do that.
+
+00:31.560 --> 00:37.080
+First of all I need to start Lescaut and then we need to start the driver of the laser scanner.
+
+00:37.140 --> 00:39.980
+In this case I'm going to show you these range finder
+
+00:46.080 --> 00:52.050
+and then I would create a static transformer publisher as you already know so in order to define the
+
+00:52.050 --> 00:55.060
+location of the laser with respect to what frame.
+
+00:55.080 --> 00:56.570
+As already explained before.
+
+00:56.650 --> 01:01.300
+And then we need to create a new folder where to put the log information.
+
+01:01.350 --> 01:07.530
+I'm going to call these front back files OK and then we go to the butterflies of course initially it
+
+01:07.530 --> 01:10.490
+is empty before starting the logging of the messages.
+
+01:10.500 --> 01:15.590
+Let me Arbys first run armies and navies as usual.
+
+01:15.960 --> 01:17.850
+The information about the laser scanner.
+
+01:18.030 --> 01:25.980
+So here we need to select the scan to pick the laser scanner visualization we can increase the font.
+
+01:26.160 --> 01:33.140
+So it is more visible and they can also show the frame of the laser itself which is this one.
+
+01:33.330 --> 01:42.530
+Ok now I'm ready to start recording what they can do is not to use the rest but require Dash 8.
+
+01:42.590 --> 01:48.290
+So Leslie is going to record everything they can specify whether they want to record one topic or two
+
+01:48.290 --> 01:50.470
+topics but I'm going to record everything.
+
+01:51.670 --> 01:58.860
+Not as you can see it starts to put into a log file all the messages coming from these different topics.
+
+01:58.860 --> 02:04.060
+So in the meanwhile you can see now this is the laser scanner.
+
+02:04.110 --> 02:05.670
+Everything is being recorded.
+
+02:05.910 --> 02:11.880
+I'm going to move in front of the laser and you'll see me moving right in front of the lens.
+
+02:12.030 --> 02:18.300
+So later when we are going to play back again you'll see that the same motion is going to be replayed
+
+02:18.390 --> 02:19.160
+in the same way.
+
+02:19.290 --> 02:25.810
+So I'm going to start pulling now of service OK sir.
+
+02:26.080 --> 02:30.310
+This is a form that is not the case of movie.
+
+02:30.800 --> 02:34.230
+He is just capturing this
+
+02:40.700 --> 02:45.590
+so it's all white and then later on.
+
+02:45.710 --> 02:49.710
+Well I think it's going to be played exactly the same.
+
+03:00.020 --> 03:02.920
+Now and into those warm
+
+03:06.420 --> 03:07.180
+OK.
+
+03:07.550 --> 03:09.490
+So I have everything that
+
+03:12.340 --> 03:13.900
+I'm going to close everything now
+
+03:19.160 --> 03:22.280
+goes armies so we can stop recording
+
+03:25.240 --> 03:26.650
+I would stop everything now.
+
+03:26.680 --> 03:29.470
+Even the driver and us know.
+
+03:29.500 --> 03:32.280
+OK so let me go to again.
+
+03:35.310 --> 03:37.300
+And way to run articles.
+
+03:37.350 --> 03:39.600
+I will add the laser scanner.
+
+03:39.750 --> 03:41.630
+I mean those are the axes of course.
+
+03:41.640 --> 03:45.250
+There is nothing to show now because nothing is playing.
+
+03:45.320 --> 03:47.280
+There is not even a topic here.
+
+03:47.310 --> 03:49.320
+Now the idea is actually to play again.
+
+03:49.320 --> 03:53.880
+So looking at the point of the backfires you can find now a new log file that is called.
+
+03:53.940 --> 03:59.010
+This is the date of the get back so we can play this fight again.
+
+03:59.280 --> 04:06.190
+We can look at the formation of the butterfly using respect for this or the formation.
+
+04:06.210 --> 04:07.410
+This is the path.
+
+04:07.680 --> 04:14.190
+This is the version the duration the start the undie the signs and make up by the number of messages
+
+04:14.770 --> 04:18.890
+and the different topics that were monitored and recorded.
+
+04:19.020 --> 04:26.360
+So now if you want to play the bat file we can use the rest but they then the Badfinger.
+
+04:26.450 --> 04:27.530
+So now it is playing
+
+04:31.380 --> 04:41.230
+now I can play the message and you will observe now that the same operation that was done we sort of
+
+04:41.290 --> 04:43.100
+are going to be replayed and repeat it.
+
+04:43.200 --> 04:46.830
+So we wait a little bit and we will see now the object moving around.
+
+04:47.020 --> 04:48.460
+OK so the motion has started.
+
+04:48.460 --> 04:50.720
+Now you can see here.
+
+04:51.470 --> 04:53.210
+This is the place where I was moving.
+
+04:53.360 --> 04:57.410
+So I was going to continue moving in the same way that it was required.
+
+04:57.980 --> 04:58.620
+OK.
+
+05:00.040 --> 05:00.930
+Now the objective.
+
+05:01.000 --> 05:07.870
+So we can actually use the same backside in order to work with this topic to process the information
+
+05:07.870 --> 05:10.030
+coming in and the ugly times.
+
+05:10.150 --> 05:16.330
+So this is a useful method if you want to split a particular events into a bug fight and then you can
+
+05:16.330 --> 05:22.840
+play them and the Balata algorithm and test your algorithms with respect to the event that are stored
+
+05:22.930 --> 05:23.710
+in the log file.
+
+05:23.740 --> 05:32.510
+So this is when I come close to the sensor then going backward then we start recording of it.
+
+05:33.980 --> 05:40.220
+So the bagpipe is going to continue to play until it stops up dramatically and you can see everything
+
+05:40.220 --> 05:41.760
+was stopped.
+
+05:41.840 --> 05:48.600
+The and this is the way how we can actually store the information about not only this country but any
+
+05:48.600 --> 05:54.460
+kind of topic it can be recorded using those but then play game in the next video.
+
+05:54.480 --> 06:01.390
+I'm going to show how to write a note that subscribes to the skun topic whatever it comes from but it
+
+06:01.410 --> 06:03.140
+comes from a real laser.
+
+06:03.150 --> 06:07.740
+And then I will show you how to process this information both in Bison and C++.

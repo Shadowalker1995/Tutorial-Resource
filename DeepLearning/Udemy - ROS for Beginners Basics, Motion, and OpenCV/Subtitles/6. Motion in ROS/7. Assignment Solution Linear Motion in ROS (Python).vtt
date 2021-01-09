@@ -1,0 +1,310 @@
+WEBVTT
+
+00:00.200 --> 00:05.820
+In this video I'm going to provide the solution for the assignment related to the motion of turtle sim
+
+00:05.930 --> 00:08.190
+Indras this time is going to be in Python.
+
+00:08.190 --> 00:14.400
+So remember I have already made the motion with C++ and in this video we're going to need to say using
+
+00:14.400 --> 00:16.200
+the bison programming language.
+
+00:16.210 --> 00:17.510
+So let's get started.
+
+00:17.910 --> 00:24.360
+So let me see my objective is to develop an application to make turtle literacy move either in a straight
+
+00:24.360 --> 00:30.630
+line forward backward or also to rotate on itself and then develop an application that makes the robot
+
+00:30.630 --> 00:34.380
+for example going into grid shape or it is still cheap.
+
+00:34.380 --> 00:36.790
+So let's get started with the turtle.
+
+00:37.000 --> 00:38.420
+This is out of the sea.
+
+00:38.730 --> 00:45.480
+And this is now the Python code that is actually a translation of the C++ code that we have presented
+
+00:45.480 --> 00:50.550
+in the previous videos of course first of all we need to impart the necessary library we're going to
+
+00:50.550 --> 00:56.850
+be part Russified and these messages because here in the US is the command of the robot is this message
+
+00:57.450 --> 00:58.530
+we're going to impart.
+
+00:58.530 --> 01:08.600
+Also the pose of the see the pose message and some other libraries like the math of the time and the.
+
+01:08.650 --> 01:11.630
+And the message here we're going to need them later.
+
+01:11.850 --> 01:20.010
+The first thing that we need to do is to create a publisher and subscriber so we're to create the subscriber
+
+01:20.220 --> 01:23.040
+for the post topic and the post topic here.
+
+01:23.070 --> 01:28.200
+As you already know say I make a list of at least most of it.
+
+01:28.230 --> 01:30.840
+It's called total war posts.
+
+01:31.100 --> 01:36.580
+One post is a topic that is used to find the position of the rabbit.
+
+01:36.980 --> 01:40.080
+We will find subscriber for this topic.
+
+01:40.470 --> 01:45.630
+OK this is the type of the message is foe's and the pause Colback.
+
+01:45.630 --> 01:50.820
+This is a function that will be executed every time there is a new message that arrives.
+
+01:51.240 --> 01:59.130
+So the post-combat will just take a pause message as parameter that is the incoming message itself and
+
+01:59.130 --> 02:09.280
+then it will create the global variables x y z and you so x y y represent the information so Z will
+
+02:09.280 --> 02:17.290
+not need you because you have only two Imagine you have X is why the position of a robot and you is
+
+02:17.290 --> 02:19.550
+that data is the orientation of the other.
+
+02:19.720 --> 02:27.230
+So every time we receive a new message we are going to update the global variable x y and you.
+
+02:27.900 --> 02:34.270
+OK so x when you post a message that x and y equal to those matches that y.
+
+02:34.450 --> 02:37.210
+So you may wonder why it's like this.
+
+02:37.210 --> 02:44.920
+Remember that when topic in full slushed the little one of slush flows.
+
+02:45.240 --> 02:52.840
+OK this is the type of the message and if we show the content of the message using Russ and Z show
+
+02:56.440 --> 03:02.390
+then here we find that this message foe's contains X which is this one.
+
+03:02.530 --> 03:07.410
+OK what's the x y and Dot data.
+
+03:07.900 --> 03:08.640
+This is the only
+
+03:12.660 --> 03:14.470
+so why don't we do this.
+
+03:14.470 --> 03:20.530
+Actually we need to have the values of x y and you're interested in that method so make them global
+
+03:20.530 --> 03:23.740
+variables so we can access them anywhere in the program.
+
+03:23.800 --> 03:25.240
+Getting back to the main function.
+
+03:25.330 --> 03:29.440
+OK we have also lost the publisher although we can define it later.
+
+03:29.810 --> 03:37.600
+The publisher can be publishing on the topic once in the van because here we have the same level as
+
+03:37.870 --> 03:41.820
+the topic or the velocity message.
+
+03:41.890 --> 03:51.710
+And just to see the information about this message you can pick him for slash slash.
+
+03:52.390 --> 03:52.720
+Well
+
+03:55.380 --> 04:00.680
+OK and as a student you get the message with us.
+
+04:00.700 --> 04:10.170
+And as you show only you can see the content is as follows We have a linear component and you have additional
+
+04:10.220 --> 04:14.660
+component and we that we have X Y Z towards.
+
+04:14.960 --> 04:16.220
+OK that's pretty much.
+
+04:16.520 --> 04:20.650
+Let's get started with the first method method.
+
+04:21.060 --> 04:21.790
+OK.
+
+04:21.860 --> 04:28.600
+The method movie takes a C takes a distance to move and it takes that action.
+
+04:29.150 --> 04:33.340
+OK so how do you do that the same way we did in C this last version.
+
+04:33.560 --> 04:40.280
+We're going to be fine and then let's get the message object and here we're going to call the global
+
+04:40.280 --> 04:42.410
+variable x and y.
+
+04:42.620 --> 04:50.660
+So in this method I'm going to use the distance as the median distance between the current coordinates
+
+04:50.810 --> 04:56.230
+and the initial coordinates of for example when it moves in this location I'm going to calculate the
+
+04:56.460 --> 04:59.490
+distance between this point and the starting point.
+
+04:59.510 --> 05:05.650
+So what they need to do I need to see the starting point I need to study initially and then when that
+
+05:05.830 --> 05:10.720
+is going to move I can get the new position using the callback function and then calculate the median
+
+05:10.730 --> 05:18.490
+distance already that that is the distance between two point is the square root of x minus x 0 square.
+
+05:18.560 --> 05:20.710
+That's why my image was used.
+
+05:20.810 --> 05:25.840
+So you can look at the definition of medium distance which regulate light in this program.
+
+05:25.990 --> 05:26.360
+OK.
+
+05:26.360 --> 05:35.510
+So first of all we're going to take the current location before it starts moving and that the x x and
+
+05:35.510 --> 05:42.140
+y 0 equipped Y then depending on the direction whether it is forward or backward we're going to say
+
+05:42.170 --> 05:49.540
+that velocity then your X either to a positive battin That's why we use the absolute abs for the absolute
+
+05:49.540 --> 05:49.990
+value.
+
+05:50.060 --> 05:52.200
+So what am I doing here.
+
+05:52.210 --> 05:59.180
+I'm going to guarantee that the velocity immediate X will be positive and either direction is not fall
+
+05:59.180 --> 06:00.150
+or just backward.
+
+06:00.260 --> 06:02.380
+So I'm going to set a negative time.
+
+06:02.460 --> 06:05.940
+And of course as usual you have to set up a new plate.
+
+06:05.990 --> 06:12.020
+So we're going to publish the velocity commands 10 times a second and we create the publisher for the
+
+06:12.030 --> 06:19.340
+velocity and on the topic of the event then we lined up so that is going to keep going until it reaches
+
+06:19.400 --> 06:20.540
+a certain distance.
+
+06:20.540 --> 06:26.180
+So while you we're going to publish the message when we published the message this week.
+
+06:26.230 --> 06:27.740
+And then we'll see.
+
+06:27.800 --> 06:33.710
+So this is going to worry you that the messages were published 10 times a second and then after the
+
+06:33.710 --> 06:40.580
+game we're going to calculate that this is that this move is going to the absolute value of the square
+
+06:40.670 --> 06:45.220
+x minus 0 0 2 and y minus like you bout it.
+
+06:45.230 --> 06:48.000
+So this is the definition of distance.
+
+06:48.270 --> 06:52.180
+So if this move is a smaller one that is at a distance.
+
+06:52.220 --> 06:55.040
+So remember that this is a planet.
+
+06:55.130 --> 06:58.640
+For example I want to move one meter or two meters.
+
+06:59.000 --> 07:05.330
+If you had to remove one metre or two meters and this is a way to create a feature I'm going to exit
+
+07:05.450 --> 07:07.200
+that while using break.
+
+07:07.310 --> 07:13.330
+And then of course we should not forget to stop the rabbit when the distance is velocity that near the
+
+07:13.430 --> 07:14.600
+X equal to zero.
+
+07:14.660 --> 07:19.730
+And we have to publish the velocity message so that the robot is going to stop immediately.
+
+07:19.940 --> 07:21.330
+So this is for the whole function.
+
+07:21.340 --> 07:24.910
+You can just ask them function in the main.
+
+07:25.210 --> 07:31.830
+So maybe this will function I'm going to make a call at speed 1.
+
+07:32.180 --> 07:35.650
+What does this do in the football that actually.
+
+07:36.040 --> 07:40.920
+OK so it's pretty much the rest of us.
+
+07:41.000 --> 07:43.590
+Essentially the turtle simply knelt by
+
+07:46.790 --> 07:50.940
+OK and the robot is moving forward a distance of two meters.
+
+07:50.950 --> 07:54.950
+You can see here the distance is created that this this is what did here.
+
+07:55.150 --> 07:58.530
+Now I can move backwards if I want.
+
+07:59.350 --> 08:04.630
+So all I need to do is to just pull this false gate and begin to move back.
+
+08:07.010 --> 08:09.950
+So this is the first function length of the history motion.
+
+08:09.960 --> 08:10.330
+OK.
+
+08:10.340 --> 08:11.270
+Or in your motion.

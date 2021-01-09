@@ -1,0 +1,124 @@
+WEBVTT
+
+00:00.080 --> 00:06.990
+In the previous video I have introduced Cross services and they have explained how to call them using
+
+00:06.990 --> 00:08.670
+the command line in this video.
+
+00:08.700 --> 00:10.790
+I'm going to take it step by step right.
+
+00:10.830 --> 00:12.590
+A simple service in five.
+
+00:12.600 --> 00:13.650
+So let's get started.
+
+00:13.650 --> 00:14.900
+Let me first remind.
+
+00:14.940 --> 00:22.200
+What is a service so service can be seen as a client server application where we have a server that
+
+00:22.200 --> 00:27.390
+provides a certain service and the client will consume the service provided by the server.
+
+00:27.420 --> 00:35.310
+So the operation of their service it starts when a server first wake up and does this mean for incoming
+
+00:35.310 --> 00:42.750
+requests and then clients will send a service request to the server which will parse the incoming message
+
+00:43.080 --> 00:48.990
+process the requested service and then return a response back to the client.
+
+00:48.990 --> 00:56.730
+So here we have two entities a client and the server and also the message that will be exchanged between
+
+00:56.730 --> 00:58.460
+the client and the server.
+
+00:58.470 --> 01:00.750
+We have two type of messages.
+
+01:00.900 --> 01:07.500
+One message for sending the request and another message or receiving the response it has to be noted
+
+01:07.500 --> 01:13.530
+that there is a difference between the publisher's subscriber communication paradigm and also the client
+
+01:13.530 --> 01:15.190
+server communication.
+
+01:15.420 --> 01:21.150
+When using topics we have a publisher that will continuously some data to a subscriber.
+
+01:21.390 --> 01:28.350
+So there is only one type of message which is the topic message and the subscriber does not send anything
+
+01:28.350 --> 01:29.370
+back to the publisher.
+
+01:29.370 --> 01:33.890
+However using services we had a server and the client.
+
+01:33.990 --> 01:39.690
+So the client will send a request message which is the first step and then the second step the server
+
+01:39.690 --> 01:41.710
+will send back a response message.
+
+01:41.730 --> 01:48.900
+So here we have two type of messages and it is going to be observed when we go for implementation details
+
+01:49.110 --> 01:55.590
+before diving deeper into the code lets look at the steps that you need to follow in order to create
+
+01:55.860 --> 01:58.590
+a client server application in russets.
+
+01:58.590 --> 02:02.360
+So first of all we need to define the service message.
+
+02:02.370 --> 02:05.700
+We also call the service fight and the service message.
+
+02:05.790 --> 02:11.490
+We define the type of the message for the service request and the type of the message of the service
+
+02:11.580 --> 02:12.650
+response.
+
+02:12.660 --> 02:18.840
+This is very important even before defining the server and the client because we need to define what
+
+02:18.840 --> 02:25.090
+data will be sent in the request and what data will be sent back in response.
+
+02:25.500 --> 02:33.330
+Then we will create a server node which is Proz program that is going to provide the service and will
+
+02:33.330 --> 02:36.620
+be waiting for incoming requests to process them.
+
+02:36.750 --> 02:43.990
+So the server will complement the processing logic and then we have the client which is an other note
+
+02:44.080 --> 02:50.880
+or rest program that we request a service from the server by sending a request message and waiting for
+
+02:50.940 --> 02:52.730
+a response message from the server.
+
+02:52.740 --> 02:59.280
+And finally after creating the notes we can execute the service and then the client can continue the
+
+02:59.280 --> 03:01.040
+service provided by the server.
+
+03:01.080 --> 03:04.670
+We will also show how to analyze our services using command.
+
+03:04.680 --> 03:10.240
+So now it's time to go for the code and start the implementation of our first service in.

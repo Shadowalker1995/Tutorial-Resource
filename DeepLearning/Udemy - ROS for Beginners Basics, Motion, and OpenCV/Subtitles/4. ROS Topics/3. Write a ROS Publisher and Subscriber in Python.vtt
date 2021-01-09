@@ -1,0 +1,442 @@
+WEBVTT
+
+00:00.170 --> 00:07.950
+In the previous video I have demonstrated how to write publisher and subscriber in C++ for the Torker
+
+00:08.020 --> 00:13.050
+and listener application and all the application was very simple in C++.
+
+00:13.050 --> 00:19.050
+There are a lot of configurations and operations we have to do in order to compile and then execute
+
+00:19.050 --> 00:26.970
+the programs like for example adding executables of the program into the C made list then compile the
+
+00:26.970 --> 00:28.830
+programs and then execute them.
+
+00:28.830 --> 00:34.100
+So any change in the program we need to compile again and again it takes a lot of time.
+
+00:34.110 --> 00:42.720
+This is why Python is another thing that is much simpler than C++ and in this video I'm going to show
+
+00:42.720 --> 00:45.570
+how to write the publisher and subscriber in Python.
+
+00:45.570 --> 00:50.610
+And then you can compare how easy it is as compared to this last version.
+
+00:50.820 --> 00:51.860
+So not in this video.
+
+00:51.860 --> 00:57.650
+I'm using the visual studio code editor and you can see the tail pipe.
+
+00:58.040 --> 00:59.350
+And you know that right.
+
+00:59.400 --> 01:03.670
+So let's look at the top which is the publisher of the topic.
+
+01:04.050 --> 01:09.030
+So here first of all in every Python code we need to import let us fight.
+
+01:09.110 --> 01:09.820
+OK.
+
+01:10.050 --> 01:15.720
+And then we import the street type from Standard and then yes buy from Packard.
+
+01:15.720 --> 01:22.200
+So we bring the string type because this is the type of the message that is going to be exchanged between
+
+01:22.200 --> 01:23.920
+the target and the listener.
+
+01:24.180 --> 01:30.000
+So you may remember from the previous videos where we described the talker and listener application
+
+01:30.000 --> 01:31.400
+using C++.
+
+01:31.680 --> 01:34.710
+So the talker and the listener exchanged a strong message.
+
+01:34.710 --> 01:37.810
+So this is how we import the string message.
+
+01:38.130 --> 01:41.800
+And then we really find the method that we call Tulkarm.
+
+01:41.910 --> 01:45.570
+So later on we call the method into the main function.
+
+01:45.810 --> 01:48.390
+So this is the main function of the Python code.
+
+01:48.420 --> 01:51.330
+It is going just to call the toker method.
+
+01:51.540 --> 01:54.570
+So the method is going to create a new publisher.
+
+01:54.690 --> 02:03.010
+So we use your spine which is what you have imparted and we use the last publisher not a new publisher.
+
+02:03.120 --> 02:09.870
+We specify the name of the topic and then the type of the message to be exchanged and then the buffer
+
+02:09.870 --> 02:13.720
+size or the queue size will be equal to 10 years.
+
+02:13.920 --> 02:19.680
+So this is our now publisher variable that you have created which we are going to use later on to publish.
+
+02:19.680 --> 02:25.510
+So you can see here the syntax is very simple as compared to the C++ version.
+
+02:25.890 --> 02:32.040
+OK so this is now just to remind you about the C++ version and what we have used the generic method
+
+02:32.070 --> 02:33.470
+you know with the punches.
+
+02:33.510 --> 02:39.510
+So and then you know we have to initialize the node using Glos fighter in it.
+
+02:39.570 --> 02:41.060
+Where do we get the no need.
+
+02:41.190 --> 02:43.200
+So the not name would be target here.
+
+02:43.730 --> 02:49.320
+And Anonymous will be equal to two which means that I will choose a unique name for our Turkel.
+
+02:49.430 --> 02:52.650
+So I just avoid having the same name for my opponents.
+
+02:52.650 --> 02:56.740
+So then we are going to publish the topic every period of time.
+
+02:56.760 --> 03:02.460
+So here we said the period of time to be one message per second which is a quote one hurts and then
+
+03:02.640 --> 03:03.750
+inside the while loop.
+
+03:03.870 --> 03:07.020
+Why not try Spight is shut down.
+
+03:07.020 --> 03:15.320
+So this instruction allows to look forever until the user presses control C to exit the program.
+
+03:15.480 --> 03:16.840
+Why not.
+
+03:16.850 --> 03:18.140
+Was it shut down.
+
+03:18.220 --> 03:23.330
+So why it is still running in this case we formulate a strong message.
+
+03:23.330 --> 03:26.070
+So this is how we formulate the message in Python.
+
+03:26.120 --> 03:26.510
+OK.
+
+03:26.520 --> 03:27.340
+Hello word.
+
+03:27.360 --> 03:29.950
+And then we're going to write the time.
+
+03:30.180 --> 03:34.930
+And then we will print the string that will be published by the publisher.
+
+03:34.950 --> 03:41.160
+And finally using the variable pub that we have created We're going to call that method publish of the
+
+03:41.160 --> 03:41.730
+object.
+
+03:41.910 --> 03:46.060
+And then we put all the stream methods that will be published by the publisher.
+
+03:46.140 --> 03:49.910
+So let me specify that the tape will be streamed.
+
+03:49.950 --> 03:54.150
+And finally we see a certain amount of times or rate to sleep and dream.
+
+03:54.140 --> 03:59.880
+This is not the object that we have created to specify the sleeping rate equal to one second.
+
+04:00.090 --> 04:02.150
+So this is a very simple program.
+
+04:02.210 --> 04:04.070
+What you can see in Python.
+
+04:04.080 --> 04:05.550
+It is pretty much simple.
+
+04:05.610 --> 04:12.250
+Now looking at the listener code so remember the steps that we have described to develop the new subscriber.
+
+04:12.250 --> 04:18.090
+So first of all we need to identify the name so that the name that we have put in the publisher is called
+
+04:18.090 --> 04:21.610
+the chatter we need to identify the type of message.
+
+04:21.720 --> 04:23.800
+In our case it is three.
+
+04:23.880 --> 04:26.550
+And also we need to define a callback function.
+
+04:26.550 --> 04:31.710
+This is the function that is going to be automatically executed whenever a new message arrives.
+
+04:31.710 --> 04:34.710
+And finally we need to listen to the topic messages.
+
+04:34.740 --> 04:37.840
+So lets apply these five steps in our code.
+
+04:37.920 --> 04:43.920
+So as we mentioned the first thing when we want to define a subscriber is to identify the name of the
+
+04:43.920 --> 04:44.370
+topic.
+
+04:44.400 --> 04:47.720
+So since the publisher uses the name.
+
+04:47.730 --> 04:53.970
+Schachter So here in order for this listener not to listen from the Torker it must also subscribe to
+
+04:53.970 --> 04:55.970
+the same topic in the same name.
+
+04:55.990 --> 04:59.250
+Schachter And before subscribing in the subscriber.
+
+04:59.250 --> 05:04.620
+First of all with initializing the node and we give it a name and this name must be unique.
+
+05:04.680 --> 05:06.560
+As I already explained before.
+
+05:06.660 --> 05:12.930
+And then we subscribe to the topic of interest in our case it is chatter because this is the name of
+
+05:12.930 --> 05:17.290
+the topic from the publisher and also it must be the same message.
+
+05:17.400 --> 05:19.450
+So the message type here is history.
+
+05:19.530 --> 05:26.080
+This is why we need to import straying from standard image s and looking at the documentation of thrusts.
+
+05:26.190 --> 05:29.290
+So strong is a message in the Modu standard.
+
+05:29.320 --> 05:33.180
+MS Yes it has only one field that is called data.
+
+05:33.390 --> 05:39.580
+So we need to extract the information coming from the field data in the message.
+
+05:39.630 --> 05:41.040
+We will see how we can do that.
+
+05:41.040 --> 05:47.060
+So now that we have identified the name of the topic and the type of the message we need to define the
+
+05:47.070 --> 05:52.080
+callback function does use the callback function out and callback is going to have a parameter.
+
+05:52.140 --> 05:54.760
+So let me call this one as the message.
+
+05:55.050 --> 05:58.130
+OK so I'm going to call this parameter.
+
+05:58.140 --> 05:59.640
+It represents the message.
+
+05:59.640 --> 06:04.820
+So when a message is received we're going just to print the content of the message OK.
+
+06:04.950 --> 06:07.930
+And here the content of the message will be message.
+
+06:07.950 --> 06:11.000
+This is the name of the object that data.
+
+06:11.010 --> 06:13.120
+This is inside the message.
+
+06:13.140 --> 06:19.770
+As I already mentioned to you looking at the documentation of string it has one attribute that is called
+
+06:20.040 --> 06:21.690
+data.
+
+06:21.710 --> 06:28.150
+OK so and then we're going to get the same information that was sent by the publisher.
+
+06:28.180 --> 06:34.900
+And finally we need to be as you really imagine so that we keep listening on the topic whatever we find
+
+06:34.910 --> 06:38.650
+in here we have the method we have the main method that is going to cause the listener method.
+
+06:38.650 --> 06:40.290
+So now let's make the execution.
+
+06:40.330 --> 06:42.590
+As you can see it's much simpler.
+
+06:42.640 --> 06:45.920
+We don't need to make any kind of computation.
+
+06:46.060 --> 06:52.490
+Normally you find that you make least five you know the semi-gloss five Remember it was used to executables
+
+06:52.690 --> 06:59.720
+for the C++ version but for the bison we don't need to do anything only just executing the two fights.
+
+06:59.740 --> 07:07.060
+So since we have been using your code we cannot open the integrated terminal and in one terminal I'm
+
+07:07.060 --> 07:10.210
+going to start the talker node.
+
+07:10.240 --> 07:13.170
+So first of all I'm going to run Rascoff.
+
+07:13.540 --> 07:15.280
+Let me run it here in the background.
+
+07:17.610 --> 07:27.040
+So you have now what was running and then a way to run the Rowse and let's sit on the list in the first
+
+07:28.120 --> 07:28.690
+quarter.
+
+07:28.750 --> 07:33.030
+This is CBP and then listner dog bite.
+
+07:33.190 --> 07:38.320
+So we have to specify you bite because this is the name of a fight we want.
+
+07:38.450 --> 07:43.370
+Of course there is nothing no show why white because there is no publisher.
+
+07:43.540 --> 07:48.760
+So the designer keeps waiting until it receives something from the publisher.
+
+07:48.780 --> 07:53.380
+We remember that now that it has contacted us master it advertise it.
+
+07:53.380 --> 08:00.870
+It said that it is listening for a topic the name chatter and waiting for messages of steps 3.
+
+08:00.880 --> 08:04.600
+Now the toastmaster is aware of this information in a second.
+
+08:04.610 --> 08:05.380
+Let me know.
+
+08:05.620 --> 08:07.330
+You can now Torker
+
+08:12.340 --> 08:20.440
+and you can see you know the target is sending messages into war and then splitting the time this is
+
+08:20.440 --> 08:23.050
+not the time it's exactly the same time here.
+
+08:23.650 --> 08:29.720
+And on the other hand the listener so I go to the first is listening.
+
+08:29.890 --> 08:30.790
+Hello.
+
+08:30.880 --> 08:34.260
+I hear the word and hear the time.
+
+08:37.280 --> 08:39.890
+OK so it is working pretty much right.
+
+08:42.320 --> 08:48.230
+So instead of building the time it can be to counter the number of messages so I can make a quarter.
+
+08:48.290 --> 08:51.070
+I equate it to zero.
+
+08:53.520 --> 09:01.520
+And here I'm going to read in David Eagleman right after the operation.
+
+09:01.800 --> 09:02.790
+You the Dogood here.
+
+09:03.790 --> 09:04.450
+OK.
+
+09:04.480 --> 09:05.880
+So again the.
+
+09:07.040 --> 09:19.680
+Go you can see every second now it's showing the content and also if I make up the listener
+
+09:22.460 --> 09:26.440
+OK is going to hear in the water.
+
+09:26.440 --> 09:27.550
+And then also the counter
+
+09:32.540 --> 09:37.410
+case or this is a very brief example of Publisher and subscriber in private.
+
+09:37.610 --> 09:43.550
+So my recommended my recommendation even if you don't know by some it will be worth learning Python
+
+09:43.640 --> 09:50.930
+and use it for developing programs even if you know C++ and you are expecting C++ because working with
+
+09:50.930 --> 09:53.360
+Python will save you a lot of time.
+
+09:53.600 --> 10:00.470
+I have been working a lot with C++ in ROS for so many years and after that I switched to Python because
+
+10:00.470 --> 10:05.460
+Python language is really much much simpler than the C++ language.
+
+10:05.480 --> 10:12.500
+And in any case you can write any program either in C++ or in Python depending on your taste and depending
+
+10:12.500 --> 10:14.020
+on what you want to do.
+
+10:14.180 --> 10:20.090
+But for example for advanced things like processing sensory data or making advances computations like
+
+10:20.090 --> 10:24.210
+for example computer vision using Python libraries would be much easier.
+
+10:24.290 --> 10:30.150
+So now we have finished with the first introduction on how to implement a talker and listener meaning
+
+10:30.350 --> 10:32.230
+publisher and subscriber interest.
+
+10:32.370 --> 10:34.720
+And let's do a little bit of practice now.

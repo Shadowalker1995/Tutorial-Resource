@@ -1,0 +1,352 @@
+WEBVTT
+
+00:00.570 --> 00:04.470
+In the previous videos you have showed how to make a scene movie.
+
+00:04.740 --> 00:09.640
+In this video I'm going to show you that we can use actually the same code to move a real robot like
+
+00:09.640 --> 00:11.290
+for example the total book too.
+
+00:11.320 --> 00:16.930
+So in this video I'm going to show what some modification you have to do on the to see motion script
+
+00:17.020 --> 00:21.030
+in order to make that real robot that'll work to movie.
+
+00:21.070 --> 00:22.060
+So let's see how it works.
+
+00:22.060 --> 00:26.560
+First of all let me remind about the code so this is the code that we need for that to see more of what
+
+00:26.560 --> 00:29.590
+we do find a Makes move for word game.
+
+00:29.650 --> 00:36.200
+On the topic title one CMT event and here another function that is a state that makes the robot rotating
+
+00:36.340 --> 00:40.330
+and he will win just to execute more of 0.3 meters.
+
+00:40.360 --> 00:40.890
+OK.
+
+00:40.910 --> 00:41.920
+The backwards action.
+
+00:41.920 --> 00:44.700
+And then it would rotate in the clockwise direction.
+
+00:45.000 --> 00:52.230
+Now execute the code for him to see what I need to start to score and then play up and you tell me that
+
+00:52.360 --> 00:58.950
+I'm going to run the total simulator on the same note.
+
+00:59.410 --> 01:06.750
+OK so you have the simulator here and then we all started because the sensors and then we have to see
+
+01:07.090 --> 01:08.360
+him back.
+
+01:08.530 --> 01:09.390
+OK.
+
+01:09.760 --> 01:12.020
+And you can see now it going backwards.
+
+01:12.040 --> 01:14.550
+And then he could hit it in the clockwise direction.
+
+01:14.740 --> 01:21.080
+So what we want to make every little bit training and moving should we make too much changes in this
+
+01:21.080 --> 01:21.470
+video.
+
+01:21.490 --> 01:24.840
+I'm going to illustrate this on about two simulator.
+
+01:24.880 --> 01:32.460
+And by the way the same code can be also executed on the but to Robert let the first the close to him.
+
+01:33.280 --> 01:38.050
+Ok now I'm going to start to call back to you later.
+
+01:38.080 --> 01:40.630
+So I assume that you have already installed that too.
+
+01:40.750 --> 01:51.700
+If not you can do all pretty good things and then press my schematic and then you make turtle but dash
+
+01:51.960 --> 01:53.910
+stuck if you don't after that.
+
+01:54.050 --> 01:57.090
+Executed in this case you have to execute this command.
+
+01:57.170 --> 02:00.250
+OK so it is now creating 20 packages.
+
+02:01.340 --> 02:05.170
+But it's already installed on my computer so it is just upgrading for now.
+
+02:05.180 --> 02:06.630
+Now it's finished.
+
+02:07.010 --> 02:14.170
+And then we start to the commanders lounge underscored stage and then to the stage book launch.
+
+02:14.180 --> 02:21.100
+So this is going to start the start of boat simulator OK let me explain these interfaces.
+
+02:21.140 --> 02:24.230
+So the first interface is called armies.
+
+02:24.950 --> 02:28.730
+This one and this is actually very useful.
+
+02:28.730 --> 02:33.000
+You can use interface trusts which is called Cross visualization.
+
+02:33.080 --> 02:34.260
+What are these.
+
+02:34.340 --> 02:39.380
+It allows you to show the map a little bit and all its characteristics.
+
+02:39.410 --> 02:41.740
+For example here you can see this is the robot model.
+
+02:41.810 --> 02:44.380
+It can check or uncheck.
+
+02:44.480 --> 02:50.600
+You can see it here you can see for example here it is a scanner information they're going to study
+
+02:50.600 --> 02:52.160
+this in the future lectures.
+
+02:52.190 --> 02:55.610
+So I can use this a little bit to see the sights.
+
+02:55.700 --> 03:00.800
+So there are a lot of characteristics that really cannot tell you the location of the obstacles.
+
+03:00.850 --> 03:05.310
+OK so we have an obstacle here and that's an obstacle here using the laser scanner.
+
+03:05.450 --> 03:08.020
+We're going to have a complete chapter about these or something like that.
+
+03:08.030 --> 03:15.800
+So what you know about is their scanners and you can do a lot of things here but I'm going just to develop
+
+03:15.800 --> 03:20.910
+a small program that makes this robot more and another interface is this stage suited.
+
+03:20.950 --> 03:24.340
+So stage is a simulator of robots.
+
+03:24.490 --> 03:28.710
+We can also give you some data.
+
+03:28.730 --> 03:33.410
+So this is the laser scanner but you can see here and this is where we see an obstacle.
+
+03:33.410 --> 03:39.550
+We're not in here because of the laser is looking at these obstacles at these distances.
+
+03:39.870 --> 03:40.780
+OK.
+
+03:41.000 --> 03:42.960
+So this is not important for us for the moment.
+
+03:42.970 --> 03:47.170
+What is important is how to make use of actually for this.
+
+03:47.280 --> 03:54.100
+And the first thing that you see is the list of topics available as using the
+
+03:58.500 --> 04:00.900
+unhearing find a lot of topics.
+
+04:01.870 --> 04:06.850
+It's different from what I've seen not only three or four topics that really have a lot of topics.
+
+04:06.990 --> 04:12.120
+Of course several of them are made medication some others are made it to the camera and some of those
+
+04:12.450 --> 04:20.110
+formations are what is important for now is to know what he's picked the pace.
+
+04:20.580 --> 04:24.670
+And here you can see several topics starting to see and be ready.
+
+04:24.960 --> 04:25.750
+OK.
+
+04:26.060 --> 04:33.840
+Does it tell you that the topic that makes the robot mode is mix especially for slushed video.
+
+04:34.280 --> 04:37.900
+So if you want to make more it's very simple.
+
+04:37.900 --> 04:42.920
+I mean just don't use the Sims 3 and change the topic.
+
+04:43.020 --> 04:45.820
+Body needs input.
+
+04:46.020 --> 04:48.320
+I'm going to do that.
+
+04:48.390 --> 04:52.220
+So this is the topic that is used in the day before.
+
+04:52.360 --> 04:54.270
+But see what it does.
+
+04:54.330 --> 04:59.450
+OK so open can use us for and then check what's what's happening here.
+
+04:59.460 --> 05:07.320
+So the type of message is it's exactly the same as the message side of events.
+
+05:07.530 --> 05:08.160
+Of these.
+
+05:08.160 --> 05:11.990
+Basically the message strike or even the last month.
+
+05:12.020 --> 05:14.370
+This is the list of publishers and subscribers.
+
+05:14.370 --> 05:23.250
+So now if we go to misfiled to see underscored by so I have talked about that more exactly to see something
+
+05:23.330 --> 05:24.730
+seen the point of pirate.
+
+05:24.740 --> 05:29.550
+So the only way to do is the name of the topic on this.
+
+05:29.610 --> 05:34.680
+Look here interrupted see in the CBD the topic is just a little lost on you.
+
+05:34.770 --> 05:38.520
+You have to be this topic name of the company.
+
+05:38.550 --> 05:43.490
+Here in the name of the command and command of it is going to be useful.
+
+05:43.500 --> 05:47.270
+So they have to make sure that that is me.
+
+05:47.350 --> 05:47.630
+OK.
+
+05:47.640 --> 05:49.200
+Another to go the same experiment.
+
+05:49.200 --> 05:50.520
+I didn't change anything.
+
+05:50.520 --> 05:56.080
+So if you compare the calls for a to see and you can go turtle but it's exactly the same.
+
+05:56.240 --> 06:00.810
+But when you hear one of them to calculate the distance using this multiplied by time.
+
+06:00.810 --> 06:08.240
+So in this example I'm going to use the median distance because the way has been present in a pool but
+
+06:08.280 --> 06:11.300
+it's different from the way how the force is represented.
+
+06:11.320 --> 06:16.750
+See we're going to see this is a bigger stage so I was just using the simple formula that these things
+
+06:16.760 --> 06:20.580
+must be equal to the speed multiplied by the curation all the time.
+
+06:20.580 --> 06:27.090
+And same here for the rotation the angle didn't and B B and the low speed multiplied by the duration
+
+06:27.090 --> 06:27.540
+of time.
+
+06:27.550 --> 06:35.130
+OK I don't need this go to work function for the moment but I'm going to spin it here and we'll just
+
+06:35.740 --> 06:43.020
+move the 0.3 meters in the backwards direction of the gunfire or the action and then rotate clockwise
+
+06:43.170 --> 06:44.350
+90 degrees.
+
+06:44.740 --> 06:47.010
+OK let's see how it works.
+
+06:47.190 --> 06:52.820
+OK so now I'm going to make some of them move.
+
+06:52.940 --> 07:00.150
+OK here I'm going to move a distance 1.5 Earth speed point five before that action
+
+07:02.940 --> 07:04.630
+rotate 90 degrees.
+
+07:04.710 --> 07:09.600
+So you there's a bunch of these later and then make that up.
+
+07:12.470 --> 07:19.870
+And then rotating continuously so does is exactly the same speed as the turtle soup with absolutely
+
+07:19.870 --> 07:21.090
+no difference.
+
+07:21.160 --> 07:24.960
+I can only go over one point five meters.
+
+07:25.000 --> 07:26.070
+But what about actually.
+
+07:26.160 --> 07:33.200
+And then for example the turn of the clockwise monkey with the
+
+07:36.340 --> 07:46.690
+Molly Barkworth then that counter-clockwise is really what happens onto how you let go.
+
+07:47.030 --> 07:52.590
+But you have the balls for the nerve to make the cotton ball too much money.
+
+07:52.850 --> 08:01.070
+So here something that this imitates Mozart and in between he's saying go lucky or
+
+08:05.140 --> 08:05.460
+bucket
+
+08:09.210 --> 08:16.420
+is doing this for less than the more buffler
+
+08:19.830 --> 08:21.570
+battledore.
+
+08:22.190 --> 08:31.380
+And then Winterton if you degassing go and try and find out if you have a daughter who just just go
+
+08:31.640 --> 08:38.240
+scope it you are talking to or what you have her when you see the novel is going to behave exactly the
+
+08:38.240 --> 08:45.110
+same as in the simulator and this is why it also is very powerful because you can get over the same
+
+08:45.110 --> 08:45.560
+code.
+
+08:45.560 --> 08:50.430
+You can test the game simulator and then you can run it on the cover without any problem.

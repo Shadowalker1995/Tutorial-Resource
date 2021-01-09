@@ -1,0 +1,187 @@
+WEBVTT
+
+00:00.180 --> 00:06.140
+After installing Rosetti in the last workstation and also generating the libraries for the platform.
+
+00:06.420 --> 00:12.000
+Now it is time to run our first program and like in any programming language we start by the whole of
+
+00:12.000 --> 00:12.950
+our program.
+
+00:13.230 --> 00:14.600
+So let's see how it works.
+
+00:14.690 --> 00:20.610
+For the start of your work example you know then you go to find examples.
+
+00:20.860 --> 00:23.810
+Firstly we will find the hello world application.
+
+00:23.910 --> 00:29.660
+So you see this is actually exactly the same as any program in C language.
+
+00:29.700 --> 00:36.150
+OK so we include the rest library because that age and the standard messages that age and this program
+
+00:36.270 --> 00:41.920
+is going to behave exactly the same as the talkers know that we have already introduced in the first
+
+00:41.920 --> 00:47.690
+lectures of this course the darker application where the notebook publishes the messages.
+
+00:47.700 --> 00:50.850
+So we need to include standard Z-axis thing messages.
+
+00:50.850 --> 00:56.700
+We create a node handler and then we create this thing message and we see the creation of a chapter
+
+00:56.730 --> 01:00.380
+publisher it's topic chapter and this thing has to be set.
+
+01:00.510 --> 01:06.100
+So in the set up function we're going to initialize the node using an h the note handle that note.
+
+01:06.160 --> 01:12.810
+So this is the method that is used to initialize the nodes are doing a platform and then advertise our
+
+01:12.810 --> 01:17.310
+publisher and the publisher after doing the initialization.
+
+01:17.430 --> 01:19.430
+So we're going to loop forever.
+
+01:19.470 --> 01:24.830
+And every time we're going to assign the data feed of this the message the message Helu work.
+
+01:24.900 --> 01:31.560
+But you have created here as a string of 13 characters and then we will use the method publish of object
+
+01:31.620 --> 01:34.470
+chapter in order to publish the string message.
+
+01:34.470 --> 01:40.170
+So the sleep message is going to contain always will work and will be published every second so this
+
+01:40.170 --> 01:41.770
+is 100 millisecond.
+
+01:42.120 --> 01:48.760
+And then you use an HSP once in exactly the same way that we do for traditional roles applications.
+
+01:49.110 --> 01:54.330
+So let me get to arguing about our workstation and then I can upload this program.
+
+01:54.330 --> 01:55.810
+So first of all I need to check.
+
+01:55.810 --> 01:58.830
+OK so you have a connected right.
+
+01:58.900 --> 02:02.070
+Right I'm going to upload the program.
+
+02:02.660 --> 02:05.460
+It's not uploading now uploading is complete.
+
+02:05.820 --> 02:11.800
+And the next step now is to actually see the messages in the Rose ecosystem so let's do this now.
+
+02:11.940 --> 02:21.240
+Scott I mean so if I could begin with there is nothing of course in order to communicate between those
+
+02:21.270 --> 02:27.330
+programs that they have uploaded into the army and are bought and dross I need to run the server application
+
+02:27.530 --> 02:29.750
+Sodhi member the architecture of the city.
+
+02:29.790 --> 02:34.010
+We have already now uploaded that our city will allow you to bring them into the universe.
+
+02:34.080 --> 02:38.780
+And it's not sending massive messages to us a system which is landing here.
+
+02:38.970 --> 02:39.860
+But what is missing.
+
+02:39.870 --> 02:42.490
+We need to start the server application.
+
+02:42.540 --> 02:49.020
+So we're going to start several application using the Python based implementation or serial Python package.
+
+02:49.020 --> 02:58.280
+So let's see how it works in this case we can do and do research on a cell phone and then serial murder.
+
+02:58.290 --> 02:58.870
+Right.
+
+02:59.130 --> 03:03.840
+And then we have to specify what the port number to which the r.m.r is connected.
+
+03:03.840 --> 03:07.160
+So he did have to slash the key right.
+
+03:07.230 --> 03:08.730
+In our case it is
+
+03:11.660 --> 03:13.070
+AC zero.
+
+03:13.120 --> 03:24.500
+I'm going to use the same part number zero and that it is connecting set up Amisha contactor.
+
+03:24.600 --> 03:30.460
+So it's really connected that it is judger publisher and then let us know.
+
+03:30.480 --> 03:35.210
+Again Russ topic list and you find that we have a chapter topic.
+
+03:35.280 --> 03:37.680
+You have Questcor blending in this workstation.
+
+03:37.880 --> 03:42.400
+But some of the other topic gumps it comes from arguido.
+
+03:42.630 --> 03:44.590
+So I can do to stop it.
+
+03:45.690 --> 03:48.080
+The last 30
+
+03:51.030 --> 03:52.960
+and now I'm receiving word.
+
+03:53.330 --> 03:56.800
+It's the same message that is being sung by the admin not
+
+04:00.380 --> 04:08.740
+grapples enduros topic for us to start with a standard message stream and the publisher is the serial
+
+04:08.770 --> 04:10.090
+no data set.
+
+04:10.100 --> 04:13.340
+No because we have connected to using the city.
+
+04:14.010 --> 04:17.960
+So the now is the interface between the rest of the argument.
+
+04:18.050 --> 04:21.430
+That is what you plug into our window plug for.
+
+04:21.910 --> 04:26.680
+And also Rustico system that is running on this workstation.
+
+04:26.920 --> 04:37.720
+So this means an additional platform can act exactly as a 00 you can see also some details about the
+
+04:37.720 --> 04:46.890
+hidden word application and there are several more tutorials on the city Sestito the page in this video.
+
+04:46.890 --> 04:51.600
+I have presented how to make a publisher in Arduino in the next video.
+
+04:51.690 --> 04:55.440
+I'm going to present it to a subscriber in Urbino.

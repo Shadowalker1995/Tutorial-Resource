@@ -1,0 +1,187 @@
+WEBVTT
+
+00:00.280 --> 00:03.790
+Math the second function we talk about is interaction.
+
+00:03.900 --> 00:10.200
+And here instead of having a linear velocity we're going to have nagging people and you're city and
+
+00:10.410 --> 00:12.400
+you have to specify that a lot.
+
+00:12.510 --> 00:19.740
+And so here I specify that these values really in degree because by interests all angles are Ingredion
+
+00:19.800 --> 00:22.760
+But of course as human we understand more degrees.
+
+00:22.770 --> 00:27.550
+So I'm way to put the balance in degrees and then I would convert them to radian later on.
+
+00:27.840 --> 00:33.920
+And we have to specify also the direction of rotation whether it is clockwise or anticlockwise.
+
+00:33.960 --> 00:38.020
+So remember that clockwise means negate the angular velocity.
+
+00:38.070 --> 00:38.550
+OK.
+
+00:38.580 --> 00:42.130
+And anticlockwise means positive angular velocity.
+
+00:42.150 --> 00:47.680
+This is the convention or the sign of the velocity with respect to the direction of rotation.
+
+00:48.090 --> 00:52.410
+So first of all I'm going to impart or to get the value of the yoke.
+
+00:52.670 --> 00:53.940
+What is a global variable.
+
+00:54.060 --> 01:00.630
+And I'm going to initialize Christmas's everything will be 0 initially and then we have to set the velocity
+
+01:00.930 --> 01:07.860
+by converting this one ingredient is in Mediterraneans the way I am doing this because Russ only considers
+
+01:07.980 --> 01:10.790
+angles and angular speed in radius.
+
+01:10.950 --> 01:17.580
+So I'm going just to convert this angular speed degree into the radius and then depending on whether
+
+01:17.580 --> 01:23.550
+it is clockwise or not clockwise or going either to set a negative value or clockwise and if it is not
+
+01:23.550 --> 01:26.700
+clockwise we're going to set positive value for the angular speed.
+
+01:26.790 --> 01:33.410
+And then he says the underworld is equal to zero we specify our plate and we create a velocity published
+
+01:33.450 --> 01:34.670
+on the topic.
+
+01:34.690 --> 01:36.210
+Total 1 cm.
+
+01:36.390 --> 01:38.690
+And of course the type of message is this.
+
+01:38.700 --> 01:46.060
+So the idea here is that I'm going to calculate the angle based on the equation of angular speed multiplied
+
+01:46.080 --> 01:46.810
+by the time.
+
+01:46.900 --> 01:54.440
+OK if I multiply the time or liberation by the angular speed I can determine the intent.
+
+01:54.450 --> 01:59.460
+And so here you can see we have no way to make a single state.
+
+01:59.490 --> 02:02.640
+So when we publish a message and the velocity message.
+
+02:02.680 --> 02:09.750
+OK we'll take an angular velocity Z either positive or negative depending on whether it is clockwise
+
+02:09.750 --> 02:11.270
+or counterclockwise.
+
+02:11.610 --> 02:14.340
+And then I would calculate that couldn't you.
+
+02:14.370 --> 02:18.050
+So remember that they have calculated zero before going to the wind.
+
+02:18.090 --> 02:20.730
+So this is the time before starting the rotation.
+
+02:20.790 --> 02:26.340
+Then every time loop executes I'm going to calculate the new type will get you on.
+
+02:26.400 --> 02:30.870
+And then I can find the duration by making you at minus zero.
+
+02:30.950 --> 02:33.460
+Multiply by the angular speed degree.
+
+02:33.480 --> 02:36.810
+By the way this is not the best way on how to calculate the rotation.
+
+02:36.870 --> 02:44.080
+It's not the proper rate but later on in my next course I'm going to show how to calculate it I'm going
+
+02:44.100 --> 02:50.580
+to use the package or what we call transformations in the US and this is very important package that
+
+02:50.580 --> 02:54.690
+allows you not even to calculate rotation but also the distance moved translations.
+
+02:54.750 --> 02:57.540
+It can calculate both translations and rotations.
+
+02:57.540 --> 03:02.280
+This is going to be a little bit advanced but here for sake of simplicity we're going to use this very
+
+03:02.280 --> 03:08.030
+simple formula that is the multiplication of the angler's multiplied by the duration.
+
+03:08.370 --> 03:15.090
+And finally we calculate the current angle using this equation and we compare the current angle in degrees
+
+03:15.090 --> 03:17.820
+with relative and then that you want to move here.
+
+03:17.840 --> 03:24.570
+It can as parameter and if it is greater than the relative and the desired we're going to bring Richard.
+
+03:24.630 --> 03:26.570
+And then we exit the while loop.
+
+03:26.730 --> 03:32.610
+And finally we published the velocity so that the rocket is going to stop immediately so we can try
+
+03:33.120 --> 03:34.470
+this function again.
+
+03:34.470 --> 03:35.940
+I'm going to stop move here.
+
+03:36.060 --> 03:42.800
+That's making the robot rotating So here I'm going to choose 30 degrees per second as the rotation speed.
+
+03:42.960 --> 03:44.570
+This is the desired angle.
+
+03:44.580 --> 03:46.200
+It's going to be 90 degrees.
+
+03:46.200 --> 03:48.070
+So in principle it should rotate.
+
+03:48.120 --> 03:52.550
+All of these under three seconds and he'll falls anti-clockwise.
+
+03:52.560 --> 03:57.540
+So it's going to move into the left that action right in this one.
+
+03:59.210 --> 04:04.760
+So you can see it's moving in the left direction anti-clockwise and it's going to stop in 90 degrees.
+
+04:04.760 --> 04:09.850
+After 30 seconds I can replace this was five through.
+
+04:09.860 --> 04:11.290
+Are you going to do the same.
+
+04:11.510 --> 04:18.060
+But in the opposite direction as you observe.
+
+04:18.080 --> 04:20.000
+So this is a routine function.
+
+04:20.050 --> 04:24.120
+Now we talk about another force that is will go to go location.

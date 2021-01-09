@@ -1,0 +1,277 @@
+WEBVTT
+
+00:02.120 --> 00:05.500
+Snowball my son.
+
+00:05.730 --> 00:14.400
+Our next problem like stuff or something was sort of like you go from this position to his position
+
+00:14.490 --> 00:19.170
+which is pretty classes he could make straight lines.
+
+00:19.260 --> 00:26.590
+Now I would like to find another method that dildoe to go to a certain golden age.
+
+00:26.980 --> 00:32.950
+OK so I'm going to call this method the goal which I have to define close.
+
+00:32.990 --> 00:39.370
+It's not about define the method that is goal more goal.
+
+00:39.540 --> 00:40.580
+It takes two.
+
+00:40.710 --> 00:42.620
+And the first method is the goal.
+
+00:42.630 --> 00:45.950
+This is the point where I'm glad to see you go.
+
+00:46.410 --> 00:54.400
+And this is the this is others because of of course I cannot specify with complete accuracy but this
+
+00:54.400 --> 00:58.560
+is because somebody listens to us.
+
+00:58.680 --> 01:05.750
+So our goal now is actually to make moves to certain location is the co-location before diving into
+
+01:05.830 --> 01:14.700
+coding let's understand the theory behind the control of the robot in order to move to a certain point.
+
+01:14.700 --> 01:25.620
+So for what we call proportional control so a portion of the year we have two components one for literacy
+
+01:26.040 --> 01:27.870
+and the other one is for this theory.
+
+01:27.920 --> 01:32.180
+And also what we call the ability.
+
+01:32.450 --> 01:37.780
+So the that we make that the velocity of the robot.
+
+01:37.880 --> 01:39.690
+OK let me get in here.
+
+01:39.900 --> 01:50.380
+But in our case is a lot of the extraction will be a constant that multiplied by what is this.
+
+01:50.380 --> 01:56.210
+This is actually the distance between the location specified by exercise.
+
+01:56.210 --> 02:03.190
+This is the X of the goal location minus X of the current position of the robot.
+
+02:03.480 --> 02:04.160
+OK.
+
+02:04.280 --> 02:09.570
+That's the why of the work on hand that is also Square.
+
+02:09.880 --> 02:17.820
+OK so this is basically that it really is this and you can observe it as hard as the robot is approaching
+
+02:18.000 --> 02:22.610
+or this this is this this is become smaller and smaller.
+
+02:22.910 --> 02:24.170
+Ok it means this.
+
+02:24.160 --> 02:25.860
+This is with zero.
+
+02:25.970 --> 02:28.550
+And as a consequence the velocity.
+
+02:28.550 --> 02:39.130
+Also we want to zero in the same way we are going to define this thing and that is the stuff you take
+
+02:39.130 --> 02:40.670
+out of the goal.
+
+02:40.840 --> 02:51.200
+And this is defined by the standard or the difference between the y component of the position of the
+
+02:51.200 --> 02:57.700
+target the goal location minus the current position divided by x.
+
+02:57.710 --> 03:00.740
+Stop that all the gold mine is the X.
+
+03:00.950 --> 03:07.090
+So this is no can function that actually defines the balls or the anger.
+
+03:07.140 --> 03:12.330
+The old man at this point is the gold age.
+
+03:12.410 --> 03:21.470
+So what's the object of control for the city is actually to minimize the difference between the current
+
+03:22.300 --> 03:28.160
+orientation and the nation toward the goal point.
+
+03:28.450 --> 03:30.540
+So this is the difference between both.
+
+03:30.760 --> 03:33.170
+So why this difference.
+
+03:33.200 --> 03:43.300
+It's become become smaller and smaller so they also become smaller and smaller and we tend to feel the
+
+03:43.300 --> 03:45.700
+need to multiply by a certain constant.
+
+03:45.730 --> 03:50.210
+So of course it depends on the application each set.
+
+03:50.260 --> 03:50.680
+OK.
+
+03:50.680 --> 03:53.310
+And this forces must be greater.
+
+03:53.550 --> 03:56.100
+So with this we are going this year.
+
+03:56.230 --> 04:09.850
+Do we want to take the Undercity the proportion to the difference or the orientation to go are in the
+
+04:09.850 --> 04:17.330
+same way that any of in a city would be proportional to the distance between the goal location and the
+
+04:17.490 --> 04:19.210
+current position.
+
+04:19.590 --> 04:24.270
+Okay look too complicated can perform an implementation of the go to goal control.
+
+04:24.270 --> 04:26.150
+Let's not dismiss it.
+
+04:26.170 --> 04:32.300
+So the idea is that we are going to implement what we call a controller.
+
+04:32.410 --> 04:40.420
+First of all we find out message and that we are going to find any evidence of the anger that you saw
+
+04:40.660 --> 04:51.940
+here that your wife said it you know and I look at some of the why would I need to specify the university
+
+04:52.590 --> 04:53.910
+the x component.
+
+04:54.180 --> 04:55.000
+OK.
+
+04:55.060 --> 04:56.590
+And it's going to be proportional.
+
+04:56.590 --> 05:06.220
+That's what they call is proportional to the distance between the cars you should see at the GO position.
+
+05:06.250 --> 05:13.620
+So here I have to get a distance which is good but it really is.
+
+05:13.660 --> 05:22.460
+So the approaches the go that your ex will come to the gate when it is very close to the goal is going
+
+05:22.480 --> 05:24.050
+to be close to zero.
+
+05:24.170 --> 05:27.420
+And that is exactly the goal of course to be accurate.
+
+05:27.440 --> 05:35.320
+So safety for the city is proportional to the plunger all the way.
+
+05:35.450 --> 05:40.420
+And the most become when it becomes zero all day.
+
+05:40.490 --> 05:43.870
+So it didn't close to zero.
+
+05:43.890 --> 05:53.970
+So this is they despite all the two points on the issues that go under the sea.
+
+05:54.620 --> 06:00.340
+OK so this is going to be the opportunity to use the BP.
+
+06:00.400 --> 06:03.080
+That doesn't seem the goal direction.
+
+06:03.220 --> 06:08.110
+So why don't they see one that the same has the same.
+
+06:08.400 --> 06:09.950
+Yes definitely.
+
+06:10.090 --> 06:14.140
+Of course the last thing becomes because the.
+
+06:14.410 --> 06:17.460
+That's why we got onto it.
+
+06:17.980 --> 06:23.470
+This is the message not are going to publish them the business.
+
+06:23.640 --> 06:32.390
+The and is the most the goal because that is those dollars.
+
+06:32.490 --> 06:38.540
+And finally we are going to publish zero message you know too much to the book store.
+
+06:38.940 --> 06:41.150
+OK now let's test our program.
+
+06:41.220 --> 06:43.100
+So first of all we need to be fine.
+
+06:43.380 --> 06:43.730
+OK.
+
+06:43.760 --> 06:45.360
+Let's go.
+
+06:45.410 --> 06:45.930
+OK.
+
+06:45.960 --> 06:49.200
+This is the go goes to the five to one.
+
+06:49.260 --> 06:49.990
+Wow.
+
+06:50.330 --> 06:59.210
+And you get to sit here and finally make the move go ask to move to the goal point.
+
+06:59.320 --> 07:07.680
+This is OK so let's go out oh go and you could bill.
+
+07:07.930 --> 07:13.660
+And no this is good because you know so this is the position I want.
+
+07:13.700 --> 07:15.040
+So this is the position.
+
+07:15.310 --> 07:17.090
+This is why I'm here.
+
+07:17.320 --> 07:21.340
+So now Mr. Tickle was asked the question.
+
+07:21.590 --> 07:25.310
+So all in all up.
+
+07:25.570 --> 07:30.790
+So because of these polls you should know that we that straight.
+
+07:30.840 --> 07:32.170
+You see here.
+
+07:32.380 --> 07:37.240
+And so on so it's going to be we can't find any candidate other than that but this is one possible.
+
+07:37.240 --> 07:40.240
+Make sure you catch.

@@ -1,0 +1,271 @@
+WEBVTT
+
+00:00.170 --> 00:02.330
+Not have the service fine what's the fine.
+
+00:02.340 --> 00:05.790
+We are ready to go to define the server which is the second step.
+
+00:05.790 --> 00:07.580
+Let's open the server.
+
+00:07.730 --> 00:14.310
+Define defined server is simple and you can think about server is similar to subscriber but of course
+
+00:14.430 --> 00:18.640
+there is a difference because a subscriber does not send anything to the publisher.
+
+00:18.640 --> 00:23.100
+However the server is expected to send a response back to the client.
+
+00:23.100 --> 00:28.650
+So while the service is similar to the subscriber because as you remember the subscriber defines what
+
+00:28.650 --> 00:34.830
+we call a callback function that is executed whenever a new message comes on the topic of interest.
+
+00:34.830 --> 00:37.160
+Also the same thing when we did find a server.
+
+00:37.170 --> 00:43.140
+We did find something similar to a callback function which is a hundred function that is going to process
+
+00:43.200 --> 00:48.600
+the incoming message formulate response and since the response to the client.
+
+00:48.600 --> 00:54.990
+So this is what we got observed with the fine primary function here which is called to its server which
+
+00:54.990 --> 00:56.460
+will initialize the node.
+
+00:56.580 --> 01:04.570
+So we're going to give the name to its server or the server node and then and this is now the key instruction
+
+01:04.920 --> 01:10.010
+we're going to start the service listening to incoming requests.
+
+01:10.030 --> 01:16.170
+So private service is going to create a server that will be listening to incoming requests.
+
+01:16.190 --> 01:22.330
+And this is the name of the service which is similar to the name of the topics when we use subscriber.
+
+01:22.410 --> 01:28.930
+But here we specify the name of the service we specify the type of the message to be exchanged.
+
+01:29.100 --> 01:32.450
+And this is the type of two things that we have already created.
+
+01:32.470 --> 01:39.690
+And as you can observe we need to import add ins add ins to request in response.
+
+01:39.840 --> 01:46.940
+So remember that when we have combined and generated the service messages in the Divell folder include
+
+01:47.070 --> 01:53.550
+we have hidden the data three times to even to request an ad in response.
+
+01:53.550 --> 02:00.180
+So these are the three files that we need to import in order to be able to access the service and the
+
+02:00.180 --> 02:02.010
+message is defined for this.
+
+02:02.040 --> 02:08.680
+So this is at two ends and the like we defined the callback function in a subscriber we defined the
+
+02:08.680 --> 02:14.930
+100 function for the server which is going to be executed any time there is a new request coming.
+
+02:15.000 --> 02:20.990
+So this is like a new thread that is going to execute when a new request arrives from the server.
+
+02:21.000 --> 02:25.620
+So the hand-done method is going to perform the service requested.
+
+02:25.760 --> 02:26.290
+OK.
+
+02:26.310 --> 02:34.190
+So it will perform the song and we will just make a pretty and finally it will be a response to the
+
+02:34.330 --> 02:34.970
+response.
+
+02:34.980 --> 02:36.380
+This is what we import.
+
+02:36.450 --> 02:41.760
+It will formulate a response and the response contains only one argument and this argument is just the
+
+02:41.760 --> 02:43.160
+sum of A and B.
+
+02:43.200 --> 02:46.270
+So you can see that you have here the pattern of the rec.
+
+02:46.290 --> 02:53.010
+It refers to the request and the request as you already know it has two values a and b.
+
+02:53.110 --> 03:00.600
+Ok so request a plus request that B we represent some and then we sent back the response to the client
+
+03:00.600 --> 03:01.910
+using this state.
+
+03:01.920 --> 03:07.850
+So this little statement it is responsible for sending the response back to the client.
+
+03:07.890 --> 03:11.350
+On the other hand let's open the client the byte.
+
+03:11.370 --> 03:16.060
+So same thing we need to import the services that were created.
+
+03:16.170 --> 03:18.090
+So our program here is simple.
+
+03:18.090 --> 03:26.310
+Its going to read x and y from the arguments of some command line and then we print the x and y values.
+
+03:26.340 --> 03:33.560
+And finally now what this is what is important is going to execute a method that is called to in SQLite.
+
+03:33.570 --> 03:39.360
+So this method to its collect will be responsible for formulating the request and sending the request
+
+03:39.360 --> 03:40.050
+to the server.
+
+03:40.080 --> 03:45.060
+So the method to the client it first start by waiting for the service.
+
+03:45.120 --> 03:51.120
+So it must make sure that the service is ready to receive requests because if the service does not exist
+
+03:51.300 --> 03:53.430
+there is no need to send the request.
+
+03:53.430 --> 03:59.910
+So first of all we have to make sure that the server is away and the server is defined by the name of
+
+03:59.910 --> 04:00.570
+the service.
+
+04:00.620 --> 04:02.870
+We are to the topic name this is the service.
+
+04:02.890 --> 04:09.570
+So first of all we wait for the service to be available and then we will use the method spider service
+
+04:09.570 --> 04:17.120
+proxy service proxy will be responsible for sending the requests to the service and specifying the type
+
+04:17.370 --> 04:19.590
+of the service to its.
+
+04:19.630 --> 04:23.280
+So its it contains the information of the request.
+
+04:23.360 --> 04:30.960
+OK so this is now the name of the client object that we have created and from the type to that are really
+
+04:30.960 --> 04:34.860
+defined A and B as part of the West.
+
+04:34.980 --> 04:42.000
+This object is going to take as input x and y it and b that well defined in the.
+
+04:42.120 --> 04:42.750
+OK.
+
+04:42.840 --> 04:49.740
+And this method will be responsible for connecting to the service sending the request by sending the
+
+04:49.740 --> 04:55.550
+values of x and y and then waiting for the response to come when the response comes.
+
+04:55.680 --> 05:02.170
+So the response as we already know it has only one value that is the we are going to return the SOP.
+
+05:02.240 --> 05:07.820
+So you can see this is not the sum that you receive from the response.
+
+05:07.970 --> 05:09.360
+And thats pretty much it.
+
+05:09.380 --> 05:13.870
+Now we can try to on the service and decline.
+
+05:13.880 --> 05:16.730
+So in the first term we are going to run.
+
+05:16.730 --> 05:28.780
+So let me just let us know we can on our server first restrung just essential client server that might
+
+05:29.080 --> 05:35.180
+lead to go back to sort of the set of it is that on and then one other terminal I'm going to add another
+
+05:35.210 --> 05:39.500
+term where we make restaurant or extensions.
+
+05:39.900 --> 05:47.090
+The claim that by so many exit could life is going of course I have to specify x and y values.
+
+05:47.090 --> 05:49.870
+So let me put to band aid.
+
+05:50.210 --> 05:52.110
+I mean Santis value to the server.
+
+05:52.220 --> 05:54.800
+And finally requesting two plus eight.
+
+05:55.100 --> 05:58.960
+And then I receive a response to equity time.
+
+05:59.010 --> 06:01.560
+Now if I go to the terminal of the server.
+
+06:01.660 --> 06:02.290
+Okay.
+
+06:02.420 --> 06:05.510
+So returning to class 8 Equant that's on the server.
+
+06:05.580 --> 06:12.620
+How is it you see x and y values calculate 10 and then send it back to the class.
+
+06:12.620 --> 06:17.940
+Now you know how could you find a client and the server for services in us.
+
+06:18.080 --> 06:18.440
+Okay.
+
+06:18.440 --> 06:25.240
+And just to summarize for the server it looks like a subscriber because when you find yourself that
+
+06:25.240 --> 06:32.680
+he's going to listen to a certain set of his name and it will find the type of the service and also
+
+06:33.010 --> 06:39.590
+a method similar to the function that will handle the request and then send back the response.
+
+06:39.760 --> 06:46.650
+On the other hand the client is going to define a method that will make for the service to be available.
+
+06:46.870 --> 06:53.780
+And then we'll use a proxy to create an object and the object will be used for somebody's quest to the
+
+06:53.800 --> 06:56.790
+server and finally get the response.
+
+06:56.980 --> 07:00.450
+This is the implementation of services in Python.
+
+07:00.650 --> 07:01.980
+In the next video.
+
+07:02.050 --> 07:05.320
+I'm going to show how to implement or services the C++.

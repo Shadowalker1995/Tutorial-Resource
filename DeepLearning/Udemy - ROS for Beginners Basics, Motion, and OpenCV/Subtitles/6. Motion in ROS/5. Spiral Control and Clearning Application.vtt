@@ -1,0 +1,325 @@
+WEBVTT
+
+00:04.040 --> 00:11.930
+Something OK so that's part of the story it is actually to be an application itself.
+
+00:11.990 --> 00:16.370
+So I'm going to propose two ways to get the cleaning application.
+
+00:16.400 --> 00:16.910
+OK.
+
+00:16.910 --> 00:20.790
+So the first one to greet me.
+
+00:20.990 --> 00:24.860
+OK that's one great lady.
+
+00:24.980 --> 00:25.520
+OK.
+
+00:25.520 --> 00:33.410
+And this actually made me go to straight lines making terms and then continued straight line so that
+
+00:33.510 --> 00:38.180
+it makes it bleed when it makes the page.
+
+00:38.180 --> 00:42.030
+So here are going to define the.
+
+00:42.770 --> 00:44.800
+Great.
+
+00:46.030 --> 00:50.600
+OK so this is a possible implementation of the great key.
+
+00:50.720 --> 00:51.880
+It is very simple.
+
+00:51.890 --> 00:59.300
+So in the beginning are going to determine our rights as the final goal post which is from.
+
+00:59.450 --> 01:00.880
+So this is a bold one.
+
+01:00.920 --> 01:01.750
+Wow.
+
+01:01.910 --> 01:02.610
+OK.
+
+01:02.780 --> 01:06.590
+So what we are going to call is going to.
+
+01:06.720 --> 01:17.970
+So the most with up was issue one that supposedly supposedly going to make the robot get to the desired
+
+01:18.570 --> 01:22.230
+zero along the x axis.
+
+01:22.560 --> 01:23.110
+OK.
+
+01:23.150 --> 01:26.150
+And finally got to make straight lines of rotation.
+
+01:26.150 --> 01:30.540
+So here it's going to move for 90 days.
+
+01:30.890 --> 01:35.850
+So he's going to move now you can do this with two units per second.
+
+01:36.080 --> 01:37.730
+And then when it uses them.
+
+01:37.760 --> 01:43.750
+So from one to that then it's going to rotate OK with 90 degrees.
+
+01:43.860 --> 01:49.620
+OK this means counterclockwise and then it's going to move along.
+
+01:50.120 --> 01:56.700
+And that is going to turn again to the left side with 90 degrees.
+
+01:56.940 --> 02:03.790
+And so this is actually going to be for some time until the hole is caught.
+
+02:03.800 --> 02:18.140
+So let's look at it like this grease cleaner first combine and then secured OK.
+
+02:19.160 --> 02:21.530
+First of all the method in the main function.
+
+02:21.570 --> 02:24.830
+So I'm going to call the method Gary.
+
+02:25.550 --> 02:28.230
+We may.
+
+02:28.530 --> 02:30.940
+OK I need to it again
+
+02:35.750 --> 02:41.040
+on because the first goes to the position one
+
+02:44.120 --> 02:52.780
+goes to the position one then two days after it reaches the orientations your ok and then it makes the
+
+02:52.780 --> 02:59.490
+left or 90 degrees OK and then it goes for 90 minutes.
+
+03:00.320 --> 03:03.750
+And then it makes it easier station and so.
+
+03:03.790 --> 03:10.880
+So the press is reporting that the whole area is actually covered by the see.
+
+03:11.300 --> 03:14.460
+So this is a possible way we have used the different methods.
+
+03:14.560 --> 03:16.730
+Got to go you know to go to that point.
+
+03:16.910 --> 03:27.460
+So I decided to point to the rotation with the under the zero and then move to move the state line.
+
+03:27.480 --> 03:32.830
+And so OK.
+
+03:33.830 --> 03:39.750
+So there are other ways to perform the duties of the patient and the second way is to do it in this
+
+03:40.870 --> 03:41.430
+fashion.
+
+03:41.640 --> 03:42.420
+OK.
+
+03:42.570 --> 03:51.680
+Actually it means so you're letting to keep turning around and with an increasing radius and the whole
+
+03:51.680 --> 03:53.140
+area.
+
+03:54.290 --> 04:00.080
+So the second right now you're going to do it using this for the
+
+04:02.790 --> 04:07.190
+method to define the spring cleaning method now.
+
+04:07.380 --> 04:08.760
+OK.
+
+04:08.880 --> 04:15.090
+Is that going to make your day in the.
+
+04:15.500 --> 04:17.110
+So how it was.
+
+04:17.580 --> 04:18.050
+OK.
+
+04:18.060 --> 04:20.490
+Of course you need to create the message.
+
+04:20.680 --> 04:28.850
+So this is we are going to put your philosophy on you this message to publish it.
+
+04:29.770 --> 04:33.320
+OK so let's assume the other costumes see the form.
+
+04:33.370 --> 04:34.720
+This is from the of
+
+04:37.630 --> 04:40.240
+doe OK.
+
+04:40.500 --> 04:47.140
+I'm going to play here and the message.
+
+04:47.190 --> 04:55.440
+So you start to rise mathematically by a constant under-sea.
+
+04:55.920 --> 04:56.530
+OK.
+
+04:56.550 --> 05:01.690
+So takes the officer if you would like me to day.
+
+05:01.900 --> 05:03.580
+So this is what you do.
+
+05:03.750 --> 05:13.350
+You are going to put the city on the end of the business if you if you make you lose your add another
+
+05:13.370 --> 05:19.260
+list to a certain cost and so when you rotate it looks OK.
+
+05:19.450 --> 05:33.510
+Now if you book a constant battle for the X and the cost of bad news for you and the Z in this case
+
+05:34.420 --> 05:45.680
+a search because the other book is characterized by the and it's OK and this is not you looking at my
+
+05:45.680 --> 05:56.910
+books after you've released Ruby the real you should be bothered by the angular velocity so to make
+
+05:57.060 --> 06:07.440
+the day instead of what we should do we should increase the ability so that the radius will also increase
+
+06:08.220 --> 06:18.960
+because it is constant then it has certainly the constant radius but says that it increases the risk
+
+06:18.960 --> 06:21.240
+of the circle which is over time.
+
+06:21.510 --> 06:22.200
+OK.
+
+06:22.200 --> 06:24.430
+And finally when he last year.
+
+06:24.630 --> 06:28.580
+That's the whole idea of the space.
+
+06:28.970 --> 06:29.330
+OK.
+
+06:29.330 --> 06:36.840
+And finally we are going to do this under the position of the robot reaches the boundaries.
+
+06:37.040 --> 06:38.620
+That's the last stopping condition.
+
+06:38.640 --> 06:45.390
+And finally you want to force the rubble to stop by publishing the message.
+
+06:45.900 --> 06:47.680
+OK let's look how that works.
+
+06:47.680 --> 07:02.440
+Now I'm going to call this for you here and now I have to go by and large myself you can see now easily
+
+07:02.470 --> 07:03.050
+deep.
+
+07:03.330 --> 07:03.820
+OK.
+
+07:03.960 --> 07:15.130
+So it's because we have a coastal city and you can see the radius of the sun increasing because the
+
+07:15.820 --> 07:18.590
+closing is also increasing.
+
+07:18.920 --> 07:22.610
+And this is done using this equation here.
+
+07:24.420 --> 07:25.160
+OK.
+
+07:25.530 --> 07:34.420
+The equation of the you live like with Eddie is increased by five
+
+07:37.560 --> 07:40.810
+now which is the bomb that these other rocket stops.
+
+07:41.100 --> 07:41.750
+OK.
+
+07:41.850 --> 07:49.510
+So at this point five can have a bigger if you want to make it bigger here for example 1.0.
+
+07:49.690 --> 07:58.180
+Well so to see that it really is much me but the radius will also be a bit bigger.
+
+07:58.290 --> 07:58.980
+Compiler
+
+08:03.700 --> 08:04.720
+is again
+
+08:07.450 --> 08:13.340
+OK you can see it's increasing faster and faster.
+
+08:13.450 --> 08:18.520
+So you can play in the bottom here on specifying the radius
+
+08:22.300 --> 08:26.580
+but specifying that it is all the stops.
+
+08:28.110 --> 08:31.470
+OK so this will lead to the end of the tutorial.
+
+08:32.070 --> 08:32.570
+OK.
+
+08:32.610 --> 08:42.740
+So in this story I have resort to different methods including the method and the routine method to make
+
+08:42.740 --> 08:49.600
+a robot move forward and also to rotate left and right with a certain speed also.
+
+08:49.760 --> 08:57.860
+Also I have to find a way to go in order to make an normal move from one point to another point for
+
+08:57.920 --> 09:00.170
+from one location to another location.
+
+09:00.530 --> 09:08.270
+So the first that you have reused all these methods in order to be a good Gleaner where the rubber meets
+
+09:08.360 --> 09:16.760
+straight Motors and then when and the second step he had also made a spill over where the rubber actually
+
+09:16.760 --> 09:22.790
+covered the area by maybe going to use fallaciously an increasing radius.
+
+09:22.880 --> 09:30.290
+So I hope you have provided you with sufficient background on the main process of the robot operating
+
+09:30.290 --> 09:37.890
+systems including publishing topics subscribing to topics and also processing messages.
+
+09:37.910 --> 09:39.250
+Thank you for watching.

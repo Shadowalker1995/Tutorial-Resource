@@ -1,0 +1,280 @@
+WEBVTT
+
+00:00.420 --> 00:02.580
+So are in the muscle in the steps.
+
+00:02.580 --> 00:10.450
+The first thing that we need to do to create the rest is to start by creating the service fight up the
+
+00:10.460 --> 00:15.280
+messages that we used to send the service requests and the service response.
+
+00:15.300 --> 00:18.230
+And for this we need to go our package.
+
+00:18.230 --> 00:21.100
+So this is our package was essential.
+
+00:21.300 --> 00:29.500
+And then we need to create a folder called s r RB So we have as RC a different source files as are the.
+
+00:29.630 --> 00:32.460
+Of one that was not created in your package.
+
+00:32.520 --> 00:40.360
+Then you can create a great image like this and then you coding as army or cells and then inside these
+
+00:40.360 --> 00:42.950
+four other women define the set of the site.
+
+00:42.960 --> 00:48.960
+So let's look at the content of the service file he called the set of file to in the US Army.
+
+00:48.970 --> 00:52.770
+So observe the example here is as are we.
+
+00:52.840 --> 00:58.470
+So in this use your code we can go to the Father as Arby and you click on the file that you have just
+
+00:58.470 --> 00:58.870
+joined.
+
+00:58.920 --> 01:05.460
+So as you have observed from the description we have a service request that contains two integers 8
+
+01:05.490 --> 01:07.190
+and B or x and y.
+
+01:07.320 --> 01:13.280
+So these are the two integers that will be sent from the client to the server and you're in the bottom
+
+01:13.290 --> 01:19.750
+but we have the response of the server which is only one value that represents the sum.
+
+01:19.750 --> 01:22.950
+And so this is what we call the service definition.
+
+01:22.950 --> 01:25.470
+So every surface definition has two parts.
+
+01:25.500 --> 01:30.900
+One part that represents the request it will contain all the parameters and all the arguments that the
+
+01:30.900 --> 01:37.680
+service we need to perform the service logic and then the bottom part with get a result the service
+
+01:37.770 --> 01:38.720
+response.
+
+01:38.730 --> 01:44.340
+So after the definition of the server side we need to compile it so that to convert it into a source
+
+01:44.340 --> 01:47.170
+code for C++ and for Python.
+
+01:47.190 --> 01:53.410
+So now there are a certain number of steps that we need to follow in order to compile the satisfied.
+
+01:53.580 --> 01:58.010
+And of course it has to be done only once when the service is created.
+
+01:58.050 --> 02:02.180
+So the first thing we need to do is to go to package that exciseman.
+
+02:02.340 --> 02:09.780
+So remember here in your package you have two important files one that is called the make list and the
+
+02:09.780 --> 02:11.790
+other one that is called package that.
+
+02:11.820 --> 02:18.160
+It provides a description on the package and it provides all the information needed for the compilation.
+
+02:18.390 --> 02:24.840
+So we need to modify the package good X-Men and also to make is that DXi so important.
+
+02:24.900 --> 02:31.670
+Ex-Im and we need to add two lines if it is not done the first line that you need to act is the patent
+
+02:31.980 --> 02:36.970
+message generation and also exit the banner message runtime.
+
+02:36.990 --> 02:43.730
+So if you don't add this information here the request message and the response message will not be generated.
+
+02:43.890 --> 02:51.420
+So these modules here are responsible for reading the server side and then converting it into a source
+
+02:51.630 --> 02:54.300
+code for C++ and for bison.
+
+02:54.330 --> 02:56.910
+And they will show you later on the source code.
+
+02:57.060 --> 03:00.710
+So this is the first thing that you need to do in package look excellent.
+
+03:00.810 --> 03:03.430
+And then you have to do also for modification.
+
+03:03.440 --> 03:09.870
+You make these DXi and these modifications whatever you work with Python or work with C++.
+
+03:09.870 --> 03:14.350
+You have to make them whenever you want to create new or service messages.
+
+03:14.490 --> 03:22.290
+So first of all find package here you have to make sure that you have a message generation module present
+
+03:22.320 --> 03:26.280
+here because this one will be responsible for the message generation.
+
+03:26.280 --> 03:27.900
+So this is important here.
+
+03:28.080 --> 03:31.630
+And then you have to define your service file.
+
+03:31.770 --> 03:35.330
+You have to find the service file into the service section.
+
+03:35.340 --> 03:37.660
+So here you have access to these files.
+
+03:38.040 --> 03:38.550
+OK.
+
+03:38.550 --> 03:41.930
+We can write it in multiple lines we need her.
+
+03:42.060 --> 03:42.750
+OK.
+
+03:42.900 --> 03:46.570
+And here you specify all the files so you specify one by one.
+
+03:46.740 --> 03:48.910
+And this is to eat that s.
+
+03:48.930 --> 03:52.100
+RB It's the fight that we are looking for here.
+
+03:52.110 --> 03:57.820
+So I did just make list that DXP to be considered for the compilation.
+
+03:57.930 --> 04:02.020
+Now we are ready to generate the source files from the servers definition.
+
+04:02.130 --> 04:09.410
+So after doing that we can go to the catkin workspace and compile.
+
+04:09.580 --> 04:16.470
+OK I have the message already created so now we can verify that our service source code was created
+
+04:16.830 --> 04:23.340
+so we can go to the catkin workspace divan include Russ discussions or TBP.
+
+04:23.550 --> 04:27.590
+And here we can find our service file created here.
+
+04:28.050 --> 04:34.110
+So we have to ease that age in request and in response that age.
+
+04:34.110 --> 04:41.260
+So all three different files are created for every service so we can open the file.
+
+04:41.310 --> 04:45.960
+Ok so this find it defines the structure for the service and it defines the request.
+
+04:45.990 --> 04:47.860
+It defines the response here.
+
+04:47.880 --> 04:51.080
+So these files are totally deleted after the compilation.
+
+04:51.230 --> 04:51.600
+OK.
+
+04:51.600 --> 04:56.160
+And will be responsible for the execution of the service.
+
+04:56.160 --> 05:04.640
+We can also look at the two other files so you can see your request it defines a and b to integers.
+
+05:04.640 --> 05:10.430
+So these are the integers that will be used to send the request and the response file it will contain
+
+05:10.520 --> 05:19.760
+some variable that we be sent back to the client or also provide you a nice fu to verify that your service
+
+05:20.060 --> 05:21.050
+is working.
+
+05:21.050 --> 05:22.140
+You can use the command.
+
+05:22.130 --> 05:26.800
+The rest is part of the show and then the name of the status of the site.
+
+05:26.810 --> 05:33.140
+So this provides us nice tools to check the services created in our workspace.
+
+05:33.140 --> 05:35.590
+We can use those as part of the list.
+
+05:35.600 --> 05:37.660
+So there are a lot of commands that we can use.
+
+05:37.690 --> 05:40.720
+You can use list here like we did with the embassy.
+
+05:40.870 --> 05:41.330
+OK.
+
+05:41.360 --> 05:47.000
+And here you can find all the services created in your trust installation including the ones that you
+
+05:47.000 --> 05:49.500
+have defined and that were defined by the system as well.
+
+05:49.520 --> 05:56.360
+For example we can identify where the service shows underscores the BP slash to ease.
+
+05:56.390 --> 06:01.040
+So now we are able to see that our service is already defined in our system.
+
+06:01.040 --> 06:04.470
+I can now have more information about the service I can use.
+
+06:04.520 --> 06:06.500
+Russ is part of the show.
+
+06:06.560 --> 06:10.330
+And then the service say that they have identified that it's OK.
+
+06:10.360 --> 06:16.930
+Now that will give us information that our service has a request maintaining a b and the response at
+
+06:17.690 --> 06:23.630
+the site and by the way we can use just the name of the service without specifying the name of the package.
+
+06:23.870 --> 06:27.350
+It will leave all the packages that define the same service.
+
+06:27.350 --> 06:31.910
+So for example we can't know yet that it is defined in the package.
+
+06:31.980 --> 06:36.480
+Essentially CBP and that is what you find in spite of stories.
+
+06:36.530 --> 06:42.740
+If I go rusty the crossfire tutorials will get there is an.
+
+06:42.890 --> 06:50.460
+RB I can go to as an idiot and will find to eat that s r b so I can look at the content.
+
+06:50.840 --> 06:56.760
+And yet if this is the same one OK so you can see is defined in this package as well.
+
+06:56.900 --> 07:01.430
+So this is the first step is to create the sort of fight.

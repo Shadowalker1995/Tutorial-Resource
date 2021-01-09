@@ -1,0 +1,874 @@
+WEBVTT
+
+00:02.310 --> 00:06.050
+Also beat them such as Yes.
+
+00:06.560 --> 00:12.330
+OK so before starting writing code let me show you what is the expected final application.
+
+00:12.350 --> 00:16.830
+So this is just the illustration of what the beginning of the question.
+
+00:16.850 --> 00:18.250
+Very simple.
+
+00:18.920 --> 00:24.720
+OK so this is the start to see a long way to execute to simply note.
+
+00:24.840 --> 00:33.090
+So you can see here first it goes to this location and then it starts browsing the area and the street
+
+00:33.090 --> 00:33.470
+laughs.
+
+00:33.480 --> 00:42.990
+Now we take it straight so you can see now Silver Foxes up demand gold the gold from this point is that
+
+00:42.990 --> 00:48.000
+one and then moves away when it arrives at the corner.
+
+00:48.000 --> 00:49.270
+It has to stay.
+
+00:49.470 --> 00:51.600
+OK so here I'll take that.
+
+00:51.600 --> 00:58.280
+So I've already told you lately that we are in a developing story.
+
+00:58.650 --> 01:04.400
+So first of all I'm moved to create a cutting package workspace.
+
+01:04.460 --> 01:05.080
+OK.
+
+01:05.100 --> 01:06.400
+And then I need to combine.
+
+01:06.470 --> 01:13.680
+Then you could keep packages and let me make another decision by them to start my work.
+
+01:14.280 --> 01:25.020
+So OK so I just created this package and I need to open it so open it clicks and then it does so I can
+
+01:25.020 --> 01:27.230
+make the fresh doesn't appear.
+
+01:27.230 --> 01:31.080
+Now I can see the new package here.
+
+01:31.460 --> 01:32.340
+OK.
+
+01:32.700 --> 01:35.040
+So it is a command.
+
+01:35.200 --> 01:40.940
+And here your father folder essentially funding for putting the source files.
+
+01:41.310 --> 01:43.040
+Ok so let's do this again.
+
+01:43.200 --> 01:50.040
+So this is and you don't want to create source files that have to go wrong but
+
+01:52.930 --> 01:53.190
+you know
+
+02:01.420 --> 02:03.610
+so are looking for.
+
+02:04.110 --> 02:11.170
+So we do have to trust that each library and this is the main function.
+
+02:11.190 --> 02:17.070
+Now you should know are going to collector to seek either order or with you.
+
+02:17.150 --> 02:17.800
+Anyway.
+
+02:20.700 --> 02:26.150
+Other software used to create a note to have a reference for that.
+
+02:26.290 --> 02:31.590
+OK so my intention is to write a new method to move straight forward.
+
+02:31.940 --> 02:33.710
+OK.
+
+02:34.600 --> 02:39.380
+I don't know what street.
+
+02:39.910 --> 02:43.340
+So the first thing is not the.
+
+02:43.510 --> 02:45.540
+I'm going to check the clock method.
+
+02:45.580 --> 02:48.520
+It takes a spin a double.
+
+02:48.520 --> 02:49.610
+This is the deal.
+
+02:49.720 --> 02:52.100
+This is the distance to move.
+
+02:52.420 --> 02:53.850
+This is the direction of the robot.
+
+02:53.890 --> 03:04.570
+If it is to move forward despite the move backward and that I start the implementation of the method.
+
+03:04.790 --> 03:13.270
+And so it's going to specify a speed limit for such a distance.
+
+03:13.310 --> 03:25.940
+So you know that in physics this field is to the all the distance it will go as you might implode by
+
+03:26.100 --> 03:26.980
+time.
+
+03:28.940 --> 03:30.610
+So this is basically what we're going to use
+
+03:37.250 --> 03:39.750
+so I'm going to make it go from.
+
+03:39.800 --> 03:41.720
+No we need to publish something.
+
+03:41.770 --> 03:44.910
+So but what methods to publish and how.
+
+03:44.980 --> 03:49.450
+So first of all let me do this you know I need to underscore
+
+03:52.800 --> 03:55.730
+So this is on the scene of the.
+
+03:58.010 --> 04:02.590
+OK and not just different topics.
+
+04:02.640 --> 04:07.930
+We need to make this OK.
+
+04:08.080 --> 04:09.210
+You have three topics left.
+
+04:09.210 --> 04:17.100
+Doctor what sort of topic that we need to move the data is what we call the 1 cm demonises for comment.
+
+04:17.160 --> 04:19.230
+So let's look at user comment.
+
+04:19.230 --> 04:22.990
+What is it doing to make you stop the flow
+
+04:26.380 --> 04:27.370
+of the wind.
+
+04:31.000 --> 04:37.940
+Now I can see that there is on one subscriber that you see not the Senate but the diet or the message
+
+04:38.210 --> 04:40.960
+to be sent to this topic is the message.
+
+04:41.000 --> 04:43.440
+So let's look what is inside that message.
+
+04:43.990 --> 04:48.290
+Russ M S G Show.
+
+04:50.270 --> 04:51.920
+Ok this message.
+
+04:52.070 --> 04:58.280
+So Christmas's what these two components the city and under the velocity and each type of because it
+
+04:58.580 --> 05:02.260
+contains the attributes X Y and Z.
+
+05:02.270 --> 05:09.550
+Now since you are a two dimensional space so what matters for us is the x 4 x component and is a component
+
+05:09.550 --> 05:10.470
+of the aggregate.
+
+05:10.550 --> 05:15.320
+You can see the previous use if you want to have more detailed information about this.
+
+05:15.320 --> 05:23.200
+So the idea here is to publish this message from our you know what to make it move.
+
+05:23.510 --> 05:28.780
+So first of all we need to create a message and publish that message.
+
+05:28.790 --> 05:30.490
+So what do we need.
+
+05:30.590 --> 05:35.010
+We need a message of that German team at.
+
+05:35.120 --> 05:41.520
+And also a publisher so that you can publish that message to the subscriber that you to see.
+
+05:41.990 --> 05:49.030
+So for this to create two things First of all the method move I'm going to create this message is your
+
+05:49.040 --> 05:50.530
+medium is just me.
+
+05:50.840 --> 05:58.260
+And also I need to create a publisher for the column.
+
+05:58.310 --> 06:03.110
+So I to create a global variable for the publisher.
+
+06:03.760 --> 06:06.120
+So I'm going to get to publish that as a global variable.
+
+06:06.140 --> 06:09.980
+So these publisher need to be initialized the main function.
+
+06:10.270 --> 06:14.380
+So to get a publisher you tried to publish it equal to advertisers.
+
+06:14.450 --> 06:19.730
+This is the third method that is a top rated method.
+
+06:19.790 --> 06:22.710
+It takes the type of the message to be advertised.
+
+06:22.850 --> 06:29.050
+In this case you have to use message and the name of the topic is that the 170 vote which we funded
+
+06:29.080 --> 06:31.180
+using the last topic.
+
+06:32.240 --> 06:38.220
+OK so now our coverage is Dick Clark and also is its created.
+
+06:38.270 --> 06:46.480
+So my question now is the method that I would give it so to speak for example here I don't get it yet.
+
+06:46.550 --> 06:48.230
+The city of 2.0.
+
+06:48.390 --> 06:52.010
+What a difference what exemplified it.
+
+06:53.540 --> 06:58.580
+For example in the four words that actually so I would like to write and test this method.
+
+07:00.070 --> 07:04.540
+This the method works.
+
+07:04.990 --> 07:09.730
+So first of all I need to define what we mean by action of yours.
+
+07:10.120 --> 07:12.660
+So we created the velocity message.
+
+07:12.690 --> 07:21.370
+Are going to set the daily pounding it must be positive for one that is true and negative if it isn't
+
+07:22.610 --> 07:24.060
+in the action.
+
+07:24.160 --> 07:29.370
+So this is how you said that the evidence that Iraq is for that is before the election.
+
+07:29.380 --> 07:35.950
+I'm going to cite a positive that is of the speech was given by the debate.
+
+07:35.980 --> 07:40.430
+Do you foresee to be positive because moving forward.
+
+07:40.530 --> 07:42.580
+I mean could you be any more.
+
+07:42.660 --> 07:50.340
+Not that I need to defend the city the way I do.
+
+07:50.360 --> 07:55.490
+You don't because we're not going to move either left or right side.
+
+07:56.050 --> 08:01.350
+It's only two dimensional space facing one that actually acts.
+
+08:02.380 --> 08:07.130
+And the second is that we need to set the order in the city.
+
+08:07.450 --> 08:08.060
+OK.
+
+08:08.080 --> 08:09.300
+So what is the message.
+
+08:09.300 --> 08:11.090
+It has two components really.
+
+08:11.560 --> 08:18.880
+So here you have said the new year of the X Y and Z you get a chance and you need to do the C for the
+
+08:18.910 --> 08:23.850
+angular velocity in the x y and z that actually only say.
+
+08:24.010 --> 08:30.410
+So the value of the ballistic must be equal to zero.
+
+08:30.550 --> 08:37.050
+So as you said I wouldn't I'm going to apply that this is equal to speed multiplied by time.
+
+08:37.210 --> 08:47.380
+So first of all I'm going to take the value of time to measure the current time that I'm going to have
+
+08:47.380 --> 08:48.440
+a row.
+
+08:48.960 --> 08:52.320
+OK what do we do.
+
+08:52.350 --> 08:56.860
+We publish publish the results.
+
+08:57.540 --> 08:58.240
+OK.
+
+08:58.510 --> 09:06.830
+So I'm going to make a rule why not reach out to the inner city and
+
+09:10.470 --> 09:14.830
+the distance or the current distance much
+
+09:17.470 --> 09:20.410
+distance made
+
+09:22.990 --> 09:33.270
+by you state what you specified distance or what.
+
+09:33.410 --> 09:35.520
+Let's say it is smaller.
+
+09:36.520 --> 09:45.100
+Ortigas So this is the exact condition I'm going to make to these conditions so yea I'm going to guesstimate
+
+09:45.100 --> 09:46.550
+the distance.
+
+09:47.210 --> 09:52.440
+So to make the distance OK.
+
+09:52.490 --> 09:57.440
+But by the time you of the robot multiplied by.
+
+09:57.770 --> 10:05.960
+OK what is the current time minus the zero that is the time I have measured before that.
+
+10:06.050 --> 10:08.710
+So just give me the duration of execution.
+
+10:09.320 --> 10:10.300
+OK.
+
+10:10.720 --> 10:18.970
+And each time I publish the message I'm going to do it again the distance and then check this see the
+
+10:18.970 --> 10:25.620
+current distance that was moved by what is equal to the speed that they have set here.
+
+10:26.060 --> 10:26.690
+OK.
+
+10:26.690 --> 10:30.990
+Multiply by the difference of the current time minus the initial time.
+
+10:31.020 --> 10:33.210
+This gives Actually the time duration.
+
+10:33.620 --> 10:35.770
+So this is all we are going to do.
+
+10:37.910 --> 10:52.020
+So in order to find the initial time zero we got to use a roast method that is called Barrow's time.
+
+10:52.820 --> 11:01.120
+Now they use value object I'm going to convert it to seconds.
+
+11:01.330 --> 11:11.920
+So to settle these views double the value of the current so called Zero that
+
+11:14.780 --> 11:25.740
+I'm going to say the distance is zero because it usually isn't any anything.
+
+11:26.530 --> 11:29.990
+And finally I want to make my way to my ego.
+
+11:30.020 --> 11:33.020
+That is why.
+
+11:33.390 --> 11:37.630
+Why do I put my condition.
+
+11:38.540 --> 11:41.330
+So it is in my book just published that message.
+
+11:41.330 --> 11:43.870
+So if you remember we have already lost.
+
+11:43.890 --> 11:46.410
+We probably should be initialized.
+
+11:46.640 --> 11:47.770
+You know me.
+
+11:47.900 --> 11:55.980
+I'm going to use these global event to publish the speed of the orbit using this method.
+
+11:56.880 --> 11:57.260
+OK.
+
+11:57.290 --> 12:05.980
+And here I'm going to publish what is the message we're going to publish to get this message.
+
+12:07.200 --> 12:10.960
+Then I need to measure the distance the current distance.
+
+12:10.990 --> 12:11.820
+OK.
+
+12:11.830 --> 12:22.300
+So first of all to take the current time you want one simple question.
+
+12:24.520 --> 12:25.220
+OK.
+
+12:25.320 --> 12:35.310
+And then I can estimate the current distance moved by what it would speed multiplied by Keelung minus
+
+12:35.520 --> 12:36.430
+zero.
+
+12:41.880 --> 12:50.730
+And that is not too big the publisher if I need to make cross the once in the future I'm going to show
+
+12:50.730 --> 12:55.980
+the difference between low speed and the rest of the mass because if we don't make Rusti this should
+
+12:56.070 --> 12:59.480
+not be a leap to actually be buffer.
+
+12:59.680 --> 13:01.680
+And at the speed was Scott
+
+13:04.300 --> 13:07.700
+OK so then we need to make sure the workbook.
+
+13:07.750 --> 13:16.300
+So we are going to repeat the sheet with the policy that is going to keep moving until we get to the
+
+13:16.630 --> 13:19.330
+distance.
+
+13:19.360 --> 13:20.180
+Why.
+
+13:20.410 --> 13:20.650
+Why.
+
+13:20.650 --> 13:24.220
+Because the science is smaller than the distance.
+
+13:24.230 --> 13:28.900
+So while this is smaller than the distance I want to move.
+
+13:28.990 --> 13:34.150
+It's going to perform the role as many times as it gets.
+
+13:34.210 --> 13:43.830
+So of course it's going to do to do this I need to make a smart a small.
+
+13:46.580 --> 13:49.720
+All week do you really object.
+
+13:49.960 --> 13:51.120
+Not really.
+
+13:51.530 --> 13:52.380
+Okay.
+
+13:52.450 --> 13:56.190
+And then maybe second.
+
+13:56.240 --> 14:06.570
+So a message is sent the message is the second so you don't want one second to send that message.
+
+14:06.720 --> 14:10.790
+And then want to make the
+
+14:13.910 --> 14:15.590
+here that's the
+
+14:24.090 --> 14:25.320
+and finally the last thing.
+
+14:25.400 --> 14:27.530
+This is also important.
+
+14:27.870 --> 14:28.450
+We need
+
+14:32.660 --> 14:41.300
+we need to set the glasses back to zero so that whenever it is out of the low whenever it is out of
+
+14:41.300 --> 14:46.550
+the loop I'm going to publish zero message equities.
+
+14:46.580 --> 14:48.870
+So I'm forced to stop immediately.
+
+14:48.970 --> 14:57.200
+Otherwise we keep moving forward sometimes because it takes into the memory so when we publish we to
+
+14:57.230 --> 14:59.510
+execute a certain amount of time.
+
+14:59.870 --> 15:06.560
+But if you do it like this is going to force the robot to stop immediately its comments but this is
+
+15:06.560 --> 15:07.170
+what we want.
+
+15:07.280 --> 15:13.470
+So now we have the mobile book so we can just test it
+
+15:17.340 --> 15:19.390
+so now we are going to go it.
+
+15:19.740 --> 15:31.680
+So if I were to go to Google workspace need to make cake make of course here doesn't take into account
+
+15:32.130 --> 15:34.400
+our new application.
+
+15:34.520 --> 15:35.390
+Why.
+
+15:35.610 --> 15:37.710
+Because we did not like this into the cup.
+
+15:37.710 --> 15:43.950
+You make me so not to be able to come by OK.
+
+15:44.100 --> 15:50.780
+So here in the source directory under the same directory that is a key.
+
+15:50.820 --> 15:59.690
+So each package it has its own document list will treat all of the so we need to add one executable.
+
+16:00.120 --> 16:12.450
+So in order to go by and execute in that key workspace in the middle is this one.
+
+16:12.830 --> 16:20.240
+So here I think will anybody to know you're going to call it not.
+
+16:20.390 --> 16:24.460
+And make reference to be I would like to compile it.
+
+16:24.570 --> 16:28.060
+So we have written what about you the Mississippi.
+
+16:28.140 --> 16:30.450
+So I'm going to specify this here.
+
+16:30.870 --> 16:31.350
+OK.
+
+16:31.390 --> 16:39.780
+Then to execute when this is exit it will note that the target line.
+
+16:39.840 --> 16:40.960
+So this is too late.
+
+16:40.980 --> 16:45.100
+All the love is defined in that key to our newly created node.
+
+16:45.540 --> 16:51.460
+And this is the policy that we need whenever we have messages to be generated but for the states this
+
+16:51.450 --> 16:54.200
+is optional not just want to put it here.
+
+16:54.300 --> 16:59.620
+Now we see what I would do this I'm going to go by the being
+
+17:03.230 --> 17:04.000
+what happens
+
+17:08.830 --> 17:09.340
+here.
+
+17:09.390 --> 17:10.370
+There is a problem.
+
+17:10.370 --> 17:14.690
+There is a dependency problem of course not to fix this.
+
+17:14.720 --> 17:17.600
+To fix this we need to do the following.
+
+17:17.660 --> 17:23.590
+We first need to go to the catkin workspace of the.
+
+17:23.650 --> 17:29.750
+So to get at least OK some dependencies.
+
+17:29.750 --> 17:34.640
+So the first thing we need to add here.
+
+17:34.820 --> 17:35.260
+OK.
+
+17:35.300 --> 17:43.180
+We need to add one package in the components and leave all the packages that our application back on.
+
+17:43.220 --> 17:51.380
+So we are writing is less so because the pump on the nurses BP so articles doesn't depend on Sunday
+
+17:51.380 --> 17:59.370
+messages so it harm any movie just really just in case you could use any of the stations send the message
+
+17:59.390 --> 18:09.320
+that history like what is important is to include them as you swipe because you not included in the
+
+18:09.320 --> 18:11.190
+message is that age.
+
+18:11.580 --> 18:12.010
+OK.
+
+18:12.020 --> 18:15.510
+So the psychics must be included as the.
+
+18:15.890 --> 18:24.430
+So I we did hear in my package and also just done okay getting back page.
+
+18:25.220 --> 18:26.070
+OK.
+
+18:26.190 --> 18:28.620
+It all depends as you copy.
+
+18:28.630 --> 18:31.800
+So this is actually that well what is effective.
+
+18:31.800 --> 18:34.640
+So all of this is the other method.
+
+18:34.960 --> 18:44.980
+The other one I find the packages and your packages dependencies all these dresses the standard messages
+
+18:45.440 --> 18:52.230
+Germany Emmets Yes and message type.
+
+18:52.270 --> 19:03.170
+OK so now even if we combine in we still go to a dependency problem because we need to also look at
+
+19:03.170 --> 19:06.660
+the package for X-amount site.
+
+19:06.800 --> 19:08.240
+So how to do this
+
+19:11.030 --> 19:20.300
+we need a big dependency and drug dependency so all the slavery's must be dependencies in that be compiling
+
+19:20.670 --> 19:22.480
+or running the program.
+
+19:22.550 --> 19:29.340
+So all you need to do is to add some text file and you could you have believed the band was of the year
+
+19:29.450 --> 19:30.570
+for those files.
+
+19:30.700 --> 19:34.070
+And you this is a very important part insofar as your Mickey Mouse.
+
+19:34.070 --> 19:36.800
+Now if I'm going to combat again I can make
+
+19:44.700 --> 19:46.170
+it works perfectly fine.
+
+19:46.290 --> 19:52.230
+So I don't know if I am going to delete this dependency and I compiled it in
+
+19:56.570 --> 19:56.980
+OK.
+
+19:57.040 --> 19:59.950
+It's going to make the same error as before.
+
+20:00.330 --> 20:04.460
+Well Gates says that you cannot find there is this problem.
+
+20:04.590 --> 20:11.680
+OK Joe the message is has to be alive but is not used as a B.
+
+20:12.250 --> 20:12.810
+OK.
+
+20:12.820 --> 20:14.340
+It's not just use as a B.
+
+20:14.370 --> 20:21.050
+And that's what we need to put you back in the competition.
+
+20:28.520 --> 20:30.700
+So often successful compilation.
+
+20:31.010 --> 20:33.680
+Now we are ready to execute our No.
+
+20:34.010 --> 20:38.440
+But before this is the last step is actually to test the mood.
+
+20:38.450 --> 20:40.440
+I'm going to take this code.
+
+20:40.570 --> 20:49.550
+Why don't we ask the user under his feet and the distance that direction.
+
+20:50.030 --> 20:52.690
+And finally to execute the method more.
+
+20:53.150 --> 20:53.730
+OK.
+
+20:53.760 --> 20:54.790
+We him remove this
+
+20:57.670 --> 21:05.790
+of course all of the namespace using the name is
+
+21:11.950 --> 21:20.500
+and we also define the variables and that is in that instance
+
+21:23.520 --> 21:27.070
+boolean use or
+
+21:34.360 --> 21:37.510
+I'm going to combine again.
+
+21:37.810 --> 21:40.590
+Make If that is your goal for completion.
+
+21:40.590 --> 21:44.650
+Also another way to do it using Project B.
+
+21:44.730 --> 21:49.640
+PAUL So you do exactly the same thing project.
+
+21:49.920 --> 21:53.230
+All fun and you with what I'm
+
+21:56.250 --> 22:01.990
+going to make us run so that follow.
+
+22:02.000 --> 22:05.150
+That is good to see.
+
+22:06.120 --> 22:10.150
+You know I could have anyone do that.
+
+22:10.260 --> 22:14.690
+But before this let's all the first
+
+22:21.920 --> 22:22.940
+this you know.
+
+22:23.120 --> 22:26.370
+So this is these to not your.
+
+22:27.640 --> 22:30.760
+Now this is our application Great just what I need.
+
+22:31.010 --> 22:32.210
+So under this.
+
+22:32.360 --> 22:38.750
+That's me doing the distance 5 and forword Yes
+
+22:42.150 --> 22:42.700
+OK.
+
+22:42.710 --> 22:49.910
+So this is not the execution of that you well let's make it work with a speed that will to fight for
+
+22:49.910 --> 22:54.330
+the same distance and also allow it's back to you
+
+22:57.790 --> 22:58.210
+OK.
+
+22:58.210 --> 23:04.120
+So it's a little bit tired because of the distance but you can maybe we can make it more accurate if
+
+23:04.130 --> 23:05.270
+you want.
+
+23:05.560 --> 23:12.240
+So one thing you can do to make it more accurate is actually hearing what you read.
+
+23:12.750 --> 23:13.510
+OK.
+
+23:13.560 --> 23:18.400
+I'm going to make one hundred messages per second instead of 10 messages.
+
+23:18.390 --> 23:21.950
+Says that's what the date is going to be more frequent.
+
+23:22.070 --> 23:24.130
+Again oh by the way
+
+23:28.210 --> 23:33.490
+use the known OK.
+
+23:33.680 --> 23:37.410
+Let's show our to the.
+
+23:38.410 --> 23:42.540
+One way to make it is to Wow.
+
+23:46.460 --> 23:53.520
+And going to in school like
+
+23:58.370 --> 24:03.480
+OK so it's more OK to go to some other news
+
+24:07.140 --> 24:08.020
+disagree.
+
+24:08.040 --> 24:13.770
+This is what you see it's not just fun things that you're seconds in the back of that action.
+
+24:21.490 --> 24:23.260
+So it's pretty much fine.
+
+24:23.710 --> 24:29.110
+So in the next story I'm going to show how we can make a decent day.
+
+24:29.390 --> 24:39.280
+And also how to set up a vision for how to make to take a certain design that I'm good at.
+
+24:39.530 --> 24:47.090
+So if you have any suggestions or comments about this so please step below and you can also find the
+
+24:47.090 --> 24:49.580
+complete code just to look for us.
+
+24:49.850 --> 24:50.800
+Thank you very much.

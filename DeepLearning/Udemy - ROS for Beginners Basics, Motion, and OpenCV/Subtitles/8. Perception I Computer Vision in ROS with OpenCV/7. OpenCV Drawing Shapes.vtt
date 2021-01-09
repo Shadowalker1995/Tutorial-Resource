@@ -1,0 +1,118 @@
+WEBVTT
+
+00:00.270 --> 00:06.720
+One of the nice features of up and see is the ability to draw shapes it's possible to draw circles rectangles
+
+00:06.810 --> 00:10.720
+lines polygons and different kind of shapes so let's see how that works.
+
+00:10.740 --> 00:16.980
+So let us consider this very simple script here we import new pipe and pop and see the libraries and
+
+00:16.980 --> 00:18.630
+then we create an image.
+
+00:18.630 --> 00:20.560
+You'll see no pide and.
+
+00:20.610 --> 00:27.740
+So that zeros is going to create an image where all the values are used in this data structure of 512
+
+00:27.750 --> 00:34.380
+pixels by 500 pixels and containing three colors each red green and blue all of them will be set to
+
+00:34.380 --> 00:35.000
+zero.
+
+00:35.010 --> 00:40.220
+So we're going to have just a black image and this is the encoding of the image.
+
+00:40.260 --> 00:45.720
+It will be an inside integer over 8 bits and we'll open CVB can draw different shapes.
+
+00:45.720 --> 00:50.660
+For example we can draw a line we can draw a rectangle we can do that and lips.
+
+00:50.730 --> 00:56.280
+So for example when you want to draw a line you have to specify in which use you want to draw the line.
+
+00:56.520 --> 01:04.350
+You need to specify the start of the line and the end of the line and then the color of the line.
+
+01:04.380 --> 01:10.690
+So it's going to be white color because all the three RG dividers would be 255.
+
+01:10.950 --> 01:15.090
+And here the thickness of the line for the rectangle is also simple.
+
+01:15.120 --> 01:21.090
+You specify the image where you want to draw the rectangle in and you specify the coordinate of the
+
+01:21.090 --> 01:24.430
+left top corner and the bottom right corner.
+
+01:24.510 --> 01:28.370
+And here the color of the line of the rectangle which would be green in this case.
+
+01:28.380 --> 01:29.750
+And finally the thickness.
+
+01:29.760 --> 01:32.350
+Same thing also applies for the lips.
+
+01:32.370 --> 01:34.900
+And here we specify the coordinates of the center.
+
+01:34.920 --> 01:41.760
+The major axis and the minor axis not the start angle and angle thickness and the color as well.
+
+01:41.850 --> 01:50.160
+It is also possible to draw polygons and polygons are specified by an array and this array will be provided
+
+01:50.220 --> 01:56.970
+as an argument to polyline functions in options you to draw a polygon and also it is possible to put
+
+01:56.970 --> 02:01.780
+the text where you specify the location of the text and the font that will be used.
+
+02:01.780 --> 02:04.910
+So here we use the font we use the following font here.
+
+02:05.190 --> 02:09.110
+Then the color of a text and the thickness of the text.
+
+02:09.150 --> 02:12.420
+And finally we can show everything to the image.
+
+02:12.420 --> 02:17.380
+So let's try to run this example in a row and here let's go.
+
+02:17.670 --> 02:23.130
+So this is our line starting from zero with the last pixel here.
+
+02:23.550 --> 02:25.150
+And it has a white color.
+
+02:25.410 --> 02:26.710
+This is our rectangle.
+
+02:26.710 --> 02:34.410
+Here it is in green as you can see with the coordinates specified you specified the left top and the
+
+02:34.410 --> 02:35.220
+bottom right.
+
+02:35.400 --> 02:42.690
+And this is our polygon here in the yellow color and we have an ellipse in blue color.
+
+02:42.690 --> 02:46.500
+And finally we have a text with the white color here.
+
+02:46.500 --> 02:51.810
+So you can see up and see if he also provides functionality draw inside an image.
+
+02:51.810 --> 02:57.720
+So one of the uses of drawing is for example in object recognition you can use a rectangle to surround
+
+02:57.720 --> 02:59.490
+the object detected and recognize.

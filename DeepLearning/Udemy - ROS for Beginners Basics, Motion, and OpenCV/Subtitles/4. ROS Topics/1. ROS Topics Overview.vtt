@@ -1,0 +1,373 @@
+WEBVTT
+
+00:00.210 --> 00:07.980
+In this video I'm going to give a brief overview about topics topics represent one of the most important
+
+00:08.040 --> 00:15.970
+features of troubled operating system they allow asynchronous communication between publishers and subscribers.
+
+00:16.350 --> 00:21.680
+And I'd love to exchange messages between different notes in various eco.
+
+00:21.750 --> 00:23.510
+So let's see how it works.
+
+00:23.520 --> 00:30.770
+So basically in Rowse It's a collection of several nodes some nodes will produce information and these
+
+00:30.780 --> 00:37.440
+notes we call them publishers and some other nodes we consume this information or the data and these
+
+00:37.440 --> 00:40.010
+notes we typically call them subscribers.
+
+00:40.200 --> 00:46.200
+So lets us consider a very simple example where you have a note that works as a publisher of odometry
+
+00:46.260 --> 00:51.050
+and you have another note that is called subscriber for a scam application.
+
+00:51.270 --> 00:55.920
+So what happens here is that a slap application is responsible for building a map.
+
+00:55.920 --> 01:02.520
+So in order to build the map it be required to have the coordinates x y and data of the robot and these
+
+01:02.520 --> 01:09.660
+coordinates will be provided by a special note that is called odometry which acts as a publisher of
+
+01:09.660 --> 01:10.600
+this information.
+
+01:10.830 --> 01:17.760
+So the odometry is going to perform locally computations in order to estimate the location of the robot
+
+01:17.970 --> 01:24.990
+which is X Y and data and then we publish this information through a particular topic so that the subscriber
+
+01:25.140 --> 01:30.190
+can listen to it whenever there is any change of the value X and Y and data.
+
+01:30.360 --> 01:35.210
+So the communication channel between the publisher and subscriber is called topic.
+
+01:35.220 --> 01:40.990
+It is also possible to have one publisher and multiple subscribers for the same publisher.
+
+01:41.050 --> 01:48.270
+As an example we can have a distance sensor from a laser scanner that will publish the distance to obstacle
+
+01:48.270 --> 01:54.510
+to one node for example and know that is responsible of obstacle avoidance and also can publish the
+
+01:54.660 --> 01:57.130
+same the information to another note.
+
+01:57.150 --> 02:04.020
+For example a node working on this Lamhe operation because we need the distance information to estimate
+
+02:04.620 --> 02:08.710
+the distance to the walls and then build them map based on this information.
+
+02:08.700 --> 02:15.810
+So it's possible to have one to one communication or one to any communication or even multiple publisher
+
+02:15.870 --> 02:19.610
+and multiple subscribers depending on the purpose.
+
+02:19.620 --> 02:25.610
+So to summarize usually in Russia we have some nodes that act as publishers and some others that are
+
+02:25.850 --> 02:32.030
+as subscribers and they communicate between each other using a particular topic.
+
+02:32.130 --> 02:38.220
+So messages that will be exchanged between a publisher and subscriber will be exchanged over a certain
+
+02:38.220 --> 02:42.040
+topic and they will use a certain message format.
+
+02:42.180 --> 02:47.610
+So the message that will be exchanged between the publisher and subscriber will contains the information
+
+02:47.850 --> 02:55.110
+that would be ex-GI and for every message would have a particular type in the lecture where we have
+
+02:55.110 --> 02:58.380
+presented topics nodes and messages.
+
+02:58.380 --> 03:01.310
+We have already explained these concepts.
+
+03:01.440 --> 03:06.590
+So let me show you now how a publisher and subscriber can communicate between each other.
+
+03:06.810 --> 03:13.380
+So basically the first thing that we need to start in our system is to start the master of the master
+
+03:13.380 --> 03:18.300
+know will be responsible of identifying all the different notes all the different topics.
+
+03:18.300 --> 03:23.550
+So for example this note when it wakes up it will contact the master to register itself and register
+
+03:23.610 --> 03:28.440
+all the topics that it may publish or it may subscribe to the same thing for note too.
+
+03:28.500 --> 03:33.900
+And now let's imagine that we have a new iOS network that has started so we first started the roast
+
+03:33.990 --> 03:39.960
+master and the rest is going to maintain all the information about the US network including the node
+
+03:40.230 --> 03:42.810
+list the topic names everything.
+
+03:42.810 --> 03:48.450
+And then later in time imagine that we have a second dog that is called Node 2 and it will act as a
+
+03:48.450 --> 03:50.620
+subscriber for a particular topic.
+
+03:50.700 --> 03:56.190
+So not two is going to declare itself to the master note saying hey I'm and you know I would like to
+
+03:56.190 --> 03:57.360
+join the network.
+
+03:57.450 --> 03:59.840
+This is my name subscriber not me.
+
+04:00.000 --> 04:06.600
+And I would like to subscribe to a topic with a particular name topic name and to exchange messages
+
+04:06.660 --> 04:12.840
+of a certain type so everything would be declared to the roast master node which will keep this information
+
+04:13.140 --> 04:19.360
+waiting to have a publisher that will satisfy his criteria later on a publisher note can wake up.
+
+04:19.470 --> 04:21.620
+And also it will do the same thing.
+
+04:21.660 --> 04:27.480
+Its going to leak itself to the postmaster no presenting all the information about itself the publisher
+
+04:27.480 --> 04:33.360
+know name the topic name and the message type that is going to be exchanged on this topic.
+
+04:33.510 --> 04:39.700
+So the master now will have a global knowledge about these two different nodes and will figure out that
+
+04:39.710 --> 04:43.710
+the topic name required by know to establish and by an old one.
+
+04:43.830 --> 04:51.210
+So we can note too that there is now a new note that act as a publisher for the topic that you are looking
+
+04:51.210 --> 04:51.710
+for.
+
+04:51.930 --> 04:57.750
+So in this case not to what it is is this information is going to send a request for a connection with
+
+04:57.750 --> 05:04.450
+no one using the disappearance protocol and then not to insult back a response to accept the connection
+
+05:04.630 --> 05:07.030
+and start the communication with no two.
+
+05:07.060 --> 05:13.450
+So at this time the subscriber knows we'll create a client for the publisher not using disappearance
+
+05:13.840 --> 05:15.390
+and connects to the publisher no.
+
+05:15.460 --> 05:20.560
+So the connection will be established at this point in time and the communication between the nodes
+
+05:20.560 --> 05:25.960
+using these IP based protocol can start between the two notes.
+
+05:25.960 --> 05:33.250
+So once the connection is fully established then no one can start sending the messages on the common
+
+05:33.250 --> 05:41.350
+topic of interest and no one will be sending messages at regular time intervals depending on the frequency
+
+05:41.560 --> 05:42.960
+of messages to note.
+
+05:43.000 --> 05:50.260
+On the other hand not to is going to have a callback function that whenever there is a new message that
+
+05:50.260 --> 05:56.410
+is received by no two is going to execute this callback function and will perform the required processing
+
+05:56.500 --> 05:59.400
+of the message according to the application logic.
+
+05:59.440 --> 06:06.010
+So let's look at this example here where we have a note that acts as a publisher and is going to receive
+
+06:06.040 --> 06:12.760
+velocity commands from a keyboard and on the other hand we have a turtle sim in simulator which is going
+
+06:12.760 --> 06:19.930
+to receive commands from the keyboard and then execute the commands to make a little bit more in the
+
+06:19.930 --> 06:20.840
+simulation.
+
+06:20.890 --> 06:28.000
+So the first operation is that the turtle sim node will send a request to declare itself into the master
+
+06:28.000 --> 06:28.600
+no.
+
+06:28.690 --> 06:33.340
+So it will tell everybody knows this is the name of the node turtle scene.
+
+06:33.340 --> 06:36.980
+This is the name of the topic you will be in comments on.
+
+06:37.030 --> 06:42.830
+It's called Turtle 1 cm the man and the type of messages for this topic is the truest message and the
+
+06:43.090 --> 06:47.900
+message in the US is used to sound the linear speed and the under the speed of the robot.
+
+06:47.920 --> 06:53.800
+So the second step is that the publisher note is going also to the club itself.
+
+06:54.070 --> 06:57.480
+It will tell the roast master about its no name.
+
+06:57.490 --> 07:04.530
+Tell your turtle about the topic is going to publish and about the type of the message for this topic.
+
+07:04.690 --> 07:10.840
+So when this information reaches the roast master it will figure out that both note will use the same
+
+07:10.840 --> 07:11.570
+topic.
+
+07:11.770 --> 07:15.700
+OK so there is a matching here on the topic and also the message type.
+
+07:15.910 --> 07:22.480
+So in this case it will inform as the first step the simulator that now that is and you know is called
+
+07:22.720 --> 07:28.470
+Turtle but then you also contact this note in order to have the information that you need from it.
+
+07:28.510 --> 07:33.850
+So in this case the turtle you know is going to send the request to the turtle to look up key note and
+
+07:33.850 --> 07:39.940
+then the DeLeo note will send back a response and the connection will be established and then every
+
+07:40.060 --> 07:46.960
+whenever there is a key that is pressed by this note this key will send a command to his simulator which
+
+07:46.960 --> 07:50.050
+is going to execute it and make robot moves.
+
+07:50.050 --> 07:55.960
+So if you lose the lecture by giving practical tips like publisher and subscriber for these topics whenever
+
+07:55.960 --> 07:59.800
+you want to write a publisher there are a number of steps that you need to follow.
+
+07:59.830 --> 08:05.040
+The first step is to determine the name of the topic to publish when you want to have a publisher.
+
+08:05.050 --> 08:11.500
+First of all define a name for your topic and then determine what is the type of messages that you would
+
+08:11.500 --> 08:12.280
+like to publish.
+
+08:12.280 --> 08:12.880
+On the topic.
+
+08:12.880 --> 08:16.420
+The first step is to determine the frequency of a topic publication.
+
+08:16.420 --> 08:21.080
+This means how many messages per second you want to send on this topic.
+
+08:21.100 --> 08:22.860
+This defines the frequency.
+
+08:22.900 --> 08:30.040
+Finally you create a publisher object in the parameter chosen about and at last a step is to keep publishing
+
+08:30.040 --> 08:33.710
+the topic using white group at the selected frequency.
+
+08:33.760 --> 08:37.210
+Regarding the subscriber so what you want to subscribe to a topic.
+
+08:37.210 --> 08:43.280
+First of all you have to know what is the topic name and also what is the type of the messages to be
+
+08:43.290 --> 08:43.990
+received.
+
+08:43.990 --> 08:45.180
+This is very important.
+
+08:45.340 --> 08:51.160
+So the topic name allows you to know which channel you are going to use for communication and the type
+
+08:51.160 --> 08:58.600
+of messages will allow you to know how to process the message received in the callback function and
+
+08:58.600 --> 09:01.540
+how to extract the information coming in this message.
+
+09:01.540 --> 09:04.960
+For example if your message is on fire.
+
+09:05.410 --> 09:14.020
+In this case you can extract the linear velocity v x the Y and Z and you can also extract the angular
+
+09:14.020 --> 09:18.190
+velocity w x W Y and Z.
+
+09:18.250 --> 09:24.130
+So we know that this message type would have the linear velocity information and the angular velocity
+
+09:24.220 --> 09:31.060
+information and the step three for every subscriber you need to define a callback function or callback
+
+09:31.060 --> 09:31.780
+function.
+
+09:31.810 --> 09:38.910
+It's a function that is executed automatically whenever a new message is received by the subscriber.
+
+09:39.160 --> 09:45.550
+So this allows to process in real time every message coming extracting information from the message
+
+09:45.700 --> 09:47.710
+and take appropriate actions.
+
+09:47.710 --> 09:54.730
+And of course you need to start listening for the incoming messages on the topic and C++ in particular.
+
+09:54.730 --> 10:01.720
+You need to run the spin operation that is going to start an endless for the subscriber listening for
+
+10:01.750 --> 10:08.180
+incoming messages this is a summary of the operation you need to do for writing the publisher and subscriber.
+
+10:08.350 --> 10:14.580
+And in the next 10 years we write publishers and subscribers in C++ and in Python.
+
+10:14.590 --> 10:19.740
+And you've got to follow the steps that they have described at the end of this lecture.
+
+10:19.840 --> 10:24.460
+So let's get started with the implementation details of publishers and subscribers.

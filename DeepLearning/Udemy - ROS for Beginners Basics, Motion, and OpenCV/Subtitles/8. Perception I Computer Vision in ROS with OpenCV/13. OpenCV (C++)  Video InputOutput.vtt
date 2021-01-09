@@ -1,0 +1,199 @@
+WEBVTT
+
+00:00.880 --> 00:05.960
+Muscle it will start up on you know how much wider audience is made in the next few videos.
+
+00:05.970 --> 00:10.370
+I'm going to talk about how to work with open TV in C++.
+
+00:10.380 --> 00:12.870
+The principle is almost the same as in Python.
+
+00:12.870 --> 00:19.050
+However there is a little bit of differences on how to execute the programs and also the syntax.
+
+00:19.140 --> 00:25.380
+So I'm going to cover a few of the topics I have covered in python like in this example I'm going to
+
+00:25.500 --> 00:32.580
+show how to open and see images and then show how to read the video stream and also how to work with
+
+00:32.580 --> 00:34.410
+Sivy bridge in C++.
+
+00:34.410 --> 00:36.090
+Let us consider the code.
+
+00:36.120 --> 00:37.020
+I really do.
+
+00:37.020 --> 00:45.080
+The TPP which is in the folder topic 03 perception in the Father c p p we have the read with you two
+
+00:45.090 --> 00:45.710
+people.
+
+00:45.960 --> 00:52.490
+So first of all we need to include up in CB2 library and the syntax is include APCP to slash up and
+
+00:52.500 --> 00:54.000
+see that HBP.
+
+00:54.000 --> 00:59.100
+So this is the header file and then we create the main function and we define an object called video
+
+00:59.100 --> 00:59.540
+capture.
+
+00:59.550 --> 01:05.710
+So video capture is going to open the default camera with index 0 and then in the video capture it is
+
+01:05.700 --> 01:10.670
+not that we're going to exit the program and return minus one as another code.
+
+01:10.740 --> 01:15.980
+And in case of success we're going to start an endless loop and we create a free.
+
+01:16.110 --> 01:22.380
+So modifying the structure or an image or for free in the way look we're going to use video capture
+
+01:22.380 --> 01:24.720
+object in order to collect everything.
+
+01:24.720 --> 01:27.860
+This symbol is going to get a new frame from the camera.
+
+01:27.910 --> 01:32.810
+OK it's going to return in your frame from the computer and assign it with a free object and then we
+
+01:32.810 --> 01:39.480
+can do that classical and see operations like for example we can convert the frame into a greyscale
+
+01:39.540 --> 01:40.020
+image.
+
+01:40.020 --> 01:43.160
+So we take the frame as input and edge as output.
+
+01:43.170 --> 01:46.440
+Or maybe I'm going to call this great image.
+
+01:46.440 --> 01:51.050
+I'm not going to concede the edges there but just a great image.
+
+01:51.180 --> 01:56.630
+And finally we will lose I m sure like an Peiffer in order to link the Greek image.
+
+01:56.640 --> 02:02.360
+Of course you can do even more processing like Goshorn blue or also extract the edges.
+
+02:02.370 --> 02:04.770
+I have just disabling these two operations.
+
+02:04.780 --> 02:08.170
+I'm going just to show the great image as it comes.
+
+02:08.190 --> 02:14.430
+And finally we wait for 30 millisecond if a key is pressed then we're going to exit the wine book and
+
+02:14.430 --> 02:16.380
+we turn as usual to exit the program.
+
+02:16.440 --> 02:17.840
+So this is our code.
+
+02:17.880 --> 02:23.390
+Now if we want to execute it it's not like python we have to create a new executable into the C Make
+
+02:23.460 --> 02:23.820
+list.
+
+02:23.820 --> 02:25.020
+So how can we do that.
+
+02:25.020 --> 02:29.250
+Let's go to see make it extreme and go into the bottom.
+
+02:29.250 --> 02:33.800
+So first of all we need to add the package up and see the fine package.
+
+02:33.840 --> 02:37.130
+We can also add that here in the top in the package section.
+
+02:37.190 --> 02:37.580
+OK.
+
+02:37.590 --> 02:44.670
+Like we had rusty BP or spine we can hear up and see the OK in the case just I did here in the bottom
+
+02:44.670 --> 02:47.200
+just before declaring the executable.
+
+02:47.280 --> 02:51.370
+So this is a required instruction package pop and CD.
+
+02:51.450 --> 02:58.080
+It's going to in the package for the computation and also included that that is for oppositely we use
+
+02:58.140 --> 03:05.410
+include that it is see if we include the X and then this instruction is going to add a new executable.
+
+03:05.550 --> 03:10.050
+So this is the name of the executable we will create in your city B.
+
+03:10.200 --> 03:15.250
+And this is the source file that you have just presented and edited here this one.
+
+03:15.690 --> 03:16.400
+OK.
+
+03:16.410 --> 03:22.860
+And after creating the execute what we need to link the libraries First of all we link the catkin libraries
+
+03:22.860 --> 03:25.180
+to the executable and also here.
+
+03:25.380 --> 03:31.030
+And this is something new we need to also link up and see the libraries.
+
+03:31.230 --> 03:36.550
+So look for example in the simple programs that we did before we just needed for example for the listener
+
+03:36.550 --> 03:43.120
+to know we're just limited it to get Kim libelers because he or not did not use up and.
+
+03:43.140 --> 03:50.570
+However if you use RNC we need also to make sure you add targeting libraries to the executable and you
+
+03:50.700 --> 03:55.440
+add up and see the libraries as well in the same way you're needed for look at King libraries.
+
+03:55.440 --> 03:58.260
+Now we have everything in place after doing that.
+
+03:58.320 --> 04:06.920
+We can go to the catkin workspace and then compiled using that can make you can see or read with your
+
+04:06.920 --> 04:08.780
+city it is now executed.
+
+04:08.880 --> 04:11.090
+And now I can run the code.
+
+04:11.190 --> 04:13.010
+First of all I'm going to underscore
+
+04:18.910 --> 04:26.840
+that you tell me not use restaurant was essentially C.P. be read with you and the source of that is
+
+04:26.840 --> 04:27.540
+accurate.
+
+04:27.620 --> 04:33.620
+So you can you know you have the gray colored image so we capture the frame from the camera and then
+
+04:33.680 --> 04:40.580
+convert it to great image and then we displayed using I am or this is an example on C++ programmer with
+
+04:40.710 --> 04:45.130
+PC in the next video we are going to see how we can read images and save them.

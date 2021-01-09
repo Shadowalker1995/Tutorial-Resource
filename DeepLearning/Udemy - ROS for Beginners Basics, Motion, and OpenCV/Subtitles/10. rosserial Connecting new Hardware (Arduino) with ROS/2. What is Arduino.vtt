@@ -1,0 +1,232 @@
+WEBVTT
+
+00:00.120 --> 00:03.660
+It is when you are going to provide a brief overview about Arduino.
+
+00:03.720 --> 00:07.050
+I do not intend to provide a comprehensive introduction to Arduino.
+
+00:07.050 --> 00:11.420
+There are a lot of documentations that says I'm going to talk about Arduino.
+
+00:11.430 --> 00:18.130
+I will present this technology just to give a flavor for those who are new to the Arduino systems.
+
+00:18.180 --> 00:19.410
+So what is going on.
+
+00:19.620 --> 00:22.510
+Basically it's an open source electronic platform.
+
+00:22.740 --> 00:29.430
+It is one of the most popular electronic platforms used for prototyping and both the hardware and the
+
+00:29.430 --> 00:31.890
+software is very very easy to use.
+
+00:31.890 --> 00:37.100
+You will see later on when I want to present some examples either what I'm going to present the audience
+
+00:37.120 --> 00:43.740
+on the board also how to develop applications for you know you'll see it's really quite simple to use.
+
+00:43.770 --> 00:50.360
+So if you don't know Arduino and you want to learn about this technology is going to be very simple.
+
+00:50.370 --> 00:54.430
+All you need to do is to prove she's a kid which is not expensive.
+
+00:54.450 --> 01:02.610
+So with $50 to $100 you can get like a starter kit to start working with Arduino and making a few prototypes
+
+01:04.280 --> 01:07.410
+and systems basically performs the operation first.
+
+01:07.420 --> 01:13.230
+They kind of the different types of inputs through their analog and digital input ports like for example
+
+01:13.230 --> 01:19.410
+they can leave a light sensor a fingerprint a temperature sensor a gas sensor any kind of sense of information
+
+01:19.500 --> 01:21.750
+and also they are able to write outputs.
+
+01:21.780 --> 01:23.150
+So the app is as well.
+
+01:23.310 --> 01:30.060
+For example you can activate a motor you can turn on or turned off an LCD or send messages etc..
+
+01:30.150 --> 01:34.150
+So the C programming language is used to develop programs for argue you know.
+
+01:34.170 --> 01:40.500
+And basically we use a specific Arduino ID for developing Arduino programs which already comes with
+
+01:40.500 --> 01:45.780
+several predefined libraries for different types of sensors actuators and different functionalities
+
+01:45.880 --> 01:50.970
+and Abdula systems are used in different types of application for example for making prototypes systems
+
+01:51.040 --> 01:55.980
+or Internet of Things devices and platforms or robotics embedded systems.
+
+01:55.980 --> 01:59.150
+And in a few so white out you know is popular.
+
+01:59.170 --> 02:01.140
+There are several reasons behind this.
+
+02:01.150 --> 02:02.710
+So first of all it is very cheap.
+
+02:02.740 --> 02:08.800
+As I already mentioned you can get a starter kit for less than $50 and even the sensors are very cheap
+
+02:08.800 --> 02:12.820
+like around five to 10 15 dollars per sensor.
+
+02:13.030 --> 02:20.140
+So it's really very easy to get into devices and connecting them and developing different types of prototypes.
+
+02:20.140 --> 02:26.940
+Also another advantage it is also a cross platform and this means that the software development framework.
+
+02:26.980 --> 02:33.460
+It can be run on different operating systems namely Windows Mac OS Linux operating system.
+
+02:33.560 --> 02:37.130
+It has also a very simple and easy programming environment.
+
+02:37.130 --> 02:42.710
+You will see later on with a we can make some it's very simple and very intuitive to understand how
+
+02:42.710 --> 02:45.840
+to develop programs in C Arduino.
+
+02:45.890 --> 02:52.610
+In addition Arduino has a very large database of open source extensible software and hardware that is
+
+02:52.610 --> 02:54.650
+contributed by experience with programming.
+
+02:54.650 --> 02:59.840
+So for example if you want to develop any Arduino program or any kind of device or most likely you can
+
+02:59.840 --> 03:04.790
+find a lot of code available on the Internet and in most cases you don't need to write the code from
+
+03:04.790 --> 03:10.390
+scratch so you can find a lot of existing code that you can use and integrated into your application.
+
+03:10.910 --> 03:16.760
+Even the hardware is open source and Arduino boards are published under a Creative Commons license so
+
+03:16.930 --> 03:22.250
+a designer can make their own version of them what you extend it or improve it on their own.
+
+03:22.640 --> 03:25.010
+There are several types of Arduino boards.
+
+03:25.010 --> 03:29.270
+So this is the least that you can find on the Abdeen website and basically in our case we are going
+
+03:29.270 --> 03:30.590
+to use the Arduino.
+
+03:30.710 --> 03:36.860
+So there are so many for example for different levels on three levels in terms of features.
+
+03:36.860 --> 03:39.520
+Internet of things education wearable.
+
+03:39.650 --> 03:42.050
+So this is a basic set for entry level.
+
+03:42.050 --> 03:44.810
+We're going to use some examples on our own.
+
+03:44.870 --> 03:50.440
+Basically the differences here is in terms of microcontrollers or the amount of memory available.
+
+03:50.540 --> 03:54.090
+So it depends on your requirements you may choose one board or the other.
+
+03:54.110 --> 03:58.820
+Some answers are application may be more adapted for one want than the other.
+
+03:58.970 --> 04:04.670
+So in principle when you want to start in a project you need to carefully choose your Arduino work.
+
+04:04.710 --> 04:10.790
+But for 11 foreseeable prototyping basically the add on is the most popular platform that is actually
+
+04:10.790 --> 04:12.590
+used by beginners.
+
+04:12.590 --> 04:20.210
+There are some other boards with enhanced features for example it has much more memory up to 256.
+
+04:20.240 --> 04:25.420
+So if you are interested to know more details about any of these platform you can go to shit and provides
+
+04:25.550 --> 04:32.320
+all the specification for arguing about some other boards are also built for Internet of Things application
+
+04:32.430 --> 04:38.180
+for example argue that it has an Ethernet port available which allows the board to communicate with
+
+04:38.180 --> 04:42.420
+the Internet through a local area network Arduino industrial.
+
+04:42.430 --> 04:47.540
+There is also a GSM board and other boards that allow us to communicate through Wi-Fi.
+
+04:47.540 --> 04:52.760
+So basically this I would glad Farnham's they have different types of communication interfaces allowing
+
+04:52.760 --> 04:56.570
+them to connect to the network and communicate with other devices.
+
+04:56.570 --> 05:02.360
+So when you use Arsinoe board you need to use also some other sensors and there are many types of different
+
+05:02.360 --> 05:02.750
+answers.
+
+05:02.750 --> 05:08.210
+For example you can have body weight for attitude measurement temperature sensors buzzers the sound
+
+05:08.210 --> 05:10.220
+sensors and sensors.
+
+05:10.220 --> 05:15.920
+There is also different types of gas sensors for air quality monitoring ultrasonic sensor for range
+
+05:16.010 --> 05:21.830
+measurement obstacle of lighting sensors color sensors button sensors buzzers So these sensors can be
+
+05:21.830 --> 05:27.320
+easily integrated and connected to the Arduino work on specific pin numbers and then using the Arduino
+
+05:27.340 --> 05:27.960
+Id eat.
+
+05:27.970 --> 05:33.320
+It is possible to read the information coming from the sensors and then perform required processing
+
+05:33.330 --> 05:36.220
+based on the application logic in our demonstration.
+
+05:36.220 --> 05:42.560
+Later on I'm going to show you how to work with and ultrasonics answer to as the middle aged woman obstacle.
+
+05:42.620 --> 05:48.320
+I will show how to connect the sensor how to develop an Arduino program to read the information coming
+
+05:48.320 --> 05:52.820
+from the sensor and then how to use it or sell it in order to connect.
+
+05:52.820 --> 05:56.420
+This will test any sensor to Ross eco system that is running on a computer.

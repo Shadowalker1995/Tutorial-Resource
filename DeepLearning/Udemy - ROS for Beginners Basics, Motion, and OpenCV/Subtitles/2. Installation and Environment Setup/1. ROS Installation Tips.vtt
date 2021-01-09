@@ -1,0 +1,605 @@
+WEBVTT
+
+0
+00:00.290 --> 00:05.140
+In this video I'm going to present some tips and hints for ROS installation.
+
+1
+00:05.160 --> 00:11.280
+In fact for beginner users one of the most difficult tasks and challenges that face them is how to
+
+2
+00:11.280 --> 00:12.930
+install ROS effectively.
+
+3
+00:12.930 --> 00:18.370
+In this video I'm willing to give some recommendations and suggestions to set up rules environment on
+
+4
+00:18.390 --> 00:20.460
+your machine in the most effective way.
+
+5
+00:20.460 --> 00:26.970
+I would first start by explaining the different versions and distributions available and how to choose
+
+6
+00:27.060 --> 00:31.720
+among them then I will discuss the different options possible to install the.
+
+7
+00:31.770 --> 00:37.260
+And would recommend the best options or Rustie installation and of course anyone who would like to download
+
+8
+00:37.260 --> 00:43.230
+Droste he has to go to the Ross wiki pages and the first question that someone may ask is which version
+
+9
+00:43.260 --> 00:44.610
+of us to install.
+
+10
+00:44.640 --> 00:51.030
+So to know which versions are available you can go to the web page we can trust dot or distributions
+
+11
+00:51.120 --> 00:57.510
+and here you can find all available distributions since the release of ros in 2000 and that of course
+
+12
+00:57.510 --> 01:01.240
+you can see some distributions in green and some others in grey.
+
+13
+01:01.260 --> 01:09.300
+The one with the gray color and then of expired for example Russ G started as expired on May two thousand
+
+14
+01:09.660 --> 01:10.410
+seventy.
+
+15
+01:10.500 --> 01:17.160
+So the color can help you to decide which version is not to consider in your installation because it
+
+16
+01:17.160 --> 01:22.770
+is always good to consider versions for which there is still a technical support and for which there
+
+17
+01:22.770 --> 01:25.020
+is still some upgrades.
+
+18
+01:25.020 --> 01:25.990
+This is one point.
+
+19
+01:26.010 --> 01:30.100
+So the second point here we have four versions that are in green colors.
+
+20
+01:30.780 --> 01:39.960
+So you must know that for us distributions Some versions have longtime support as and some other verses
+
+21
+01:40.140 --> 01:42.740
+do not have long term support.
+
+22
+01:42.780 --> 01:51.300
+For example if you look across the globe the release date is 2014 and the update is 2000 19.
+
+23
+01:51.330 --> 01:52.640
+So it means five years.
+
+24
+01:52.650 --> 01:57.270
+So Indigo is one of the versions that has a long term support.
+
+25
+01:57.270 --> 01:59.780
+Same thing for example for Russky network.
+
+26
+01:59.910 --> 02:06.200
+It was released in 2016 and we'll be updated until 2:00 until 2021.
+
+27
+02:06.240 --> 02:08.540
+So you can see for example for us do not.
+
+28
+02:08.550 --> 02:16.500
+It was released in 2017 but it will be only maintained until 2019 so only here three years.
+
+29
+02:16.500 --> 02:21.630
+So that is not an LDS version doesn't have a longtime support.
+
+30
+02:21.630 --> 02:28.290
+However Connecticut has a longtime support and Diego has a longtime support and we can see that the
+
+31
+02:28.290 --> 02:38.300
+latest version we have now Rosse building it was released on 2000 18 and will expire in 2000 23.
+
+32
+02:38.340 --> 02:45.570
+So basically now we have three better choices and deagle genetic and.
+
+33
+02:45.870 --> 02:51.750
+So you can see that here it is recommended to install QinetiQ you may wonder why I probably would say
+
+34
+02:51.750 --> 02:54.460
+I would like to not know the latest version.
+
+35
+02:54.480 --> 02:57.830
+So its true that the latest version would be the most up to date.
+
+36
+02:57.840 --> 03:04.710
+However usually another version would be more stable and contains more packages for example melodic
+
+37
+03:04.830 --> 03:11.670
+because it was recently released some of the packages could still missing in this version and will require
+
+38
+03:11.670 --> 03:13.860
+some time until they are released.
+
+39
+03:13.950 --> 03:20.880
+But for rescue attic since it was released two years ago from the time I'm giving this lecture so it
+
+40
+03:20.880 --> 03:26.640
+should not be more mature and contains the most comprehensive set of packages.
+
+41
+03:26.640 --> 03:31.920
+So at this point in time I would recommend to install a rescue network because this is what is currently
+
+42
+03:31.920 --> 03:34.030
+recommended by US community.
+
+43
+03:34.140 --> 03:41.100
+However if you install Rossmiller dick or even worse and you go it will be fine for this course and
+
+44
+03:41.100 --> 03:43.580
+for that you told us that we are going to present here.
+
+45
+03:43.590 --> 03:49.720
+I just want to mention that we will be having some exercises with total box 3 and rest and the doesn't
+
+46
+03:49.740 --> 03:55.820
+have packages factored in but 3 test only packages for better but Botros kinetically test packages for
+
+47
+03:55.880 --> 03:56.930
+all but three.
+
+48
+03:57.210 --> 03:58.880
+So this is the recommended version.
+
+49
+03:58.920 --> 04:04.950
+And of course maybe later in time the melodic version will be the one that is recommended.
+
+50
+04:04.980 --> 04:11.640
+So this is just to have a brief overview of the different distributions and versions available and how
+
+51
+04:11.640 --> 04:13.050
+to choose among that.
+
+52
+04:13.110 --> 04:19.250
+So the main recommendation is to choose a version that has a long time support.
+
+53
+04:19.260 --> 04:23.160
+OK because it's going to be updated for five years.
+
+54
+04:23.220 --> 04:29.070
+Not like that immediately loses which is just going to be maintained only for two years so the next
+
+55
+04:29.070 --> 04:30.990
+step is to do the installation.
+
+56
+04:30.990 --> 04:38.490
+If you want to do the installation of course you can type in Google or US installation and clicking
+
+57
+04:38.550 --> 04:43.710
+on the first thing is going to redirect you to the latest version.
+
+58
+04:43.740 --> 04:51.090
+So either you can install QinetiQ which is recommended has long term support LDS support them until
+
+59
+04:51.090 --> 04:57.130
+2021 or Rowse melodic so I already explained which version to choose.
+
+60
+04:57.180 --> 05:00.770
+So for example now you can choose this one in this one.
+
+61
+05:00.880 --> 05:02.430
+It's up to you to decide.
+
+62
+05:02.430 --> 05:07.620
+And you can select which platform you would like to install.
+
+63
+05:07.890 --> 05:13.770
+So it is highly recommended to install Windows on Ubuntu although it is said to be working on other
+
+64
+05:13.770 --> 05:16.860
+operating system like Mac OS and others.
+
+65
+05:16.860 --> 05:21.780
+Ubuntu is the most stable operating system to install for us.
+
+66
+05:21.780 --> 05:30.730
+It can also be installed on other Debian like Jesse and 64 or 64 architectures.
+
+67
+05:30.780 --> 05:33.650
+So here I assume that you have a Ubuntu.
+
+68
+05:33.690 --> 05:39.250
+And of course now something that you have to think about is that every version of For us it works on
+
+69
+05:39.330 --> 05:44.820
+specific version of Ubuntu Linux operating system and it is mentioned here for example now.
+
+70
+05:44.850 --> 05:48.060
+If we look at the page of Russky not.
+
+71
+05:48.120 --> 05:54.820
+So in this case Ruskin kinetic only supports Ubuntu fifteen point ten and Ubuntu sixteen point four.
+
+72
+05:54.870 --> 05:58.060
+And just the Debian 8 or the mean packages.
+
+73
+05:58.110 --> 06:04.860
+So here I would recommend that you consider for QinetiQ to first install Ubuntu operating system 4:16.
+
+74
+06:04.880 --> 06:07.420
+And this is very easy we can go to Google.
+
+75
+06:07.830 --> 06:12.490
+OK Ubuntu 16 that there are four.
+
+76
+06:12.960 --> 06:20.940
+And because Ubuntu 16 to 4 is also Ethie as version it has also a longtime support in Ubuntu and you
+
+77
+06:20.940 --> 06:21.810
+can download here.
+
+78
+06:21.820 --> 06:26.970
+The image is either on your physical machine or on your virtual machine.
+
+79
+06:26.970 --> 06:29.690
+I'm going to explain a little bit more.
+
+80
+06:29.970 --> 06:34.630
+The concept of virtual machine and why it is more appropriate for installing grass.
+
+81
+06:34.740 --> 06:40.920
+OK so if for example you go to another version like the latest one melodic go to your bento.
+
+82
+06:40.970 --> 06:42.780
+OK so hit this page.
+
+83
+06:42.790 --> 06:49.200
+We could not find information about which Ubuntu version is appropriate for us melodic but looking to
+
+84
+06:49.230 --> 06:50.180
+another page here.
+
+85
+06:50.190 --> 06:57.510
+So it is said that melodic is primarily targeted for Ubuntu eighteen point five by only to release all
+
+86
+06:57.510 --> 07:00.630
+the other Linux system as well as mapquest and Android.
+
+87
+07:00.630 --> 07:02.820
+Windows are supported to trying to get.
+
+88
+07:02.910 --> 07:08.800
+So here it will be appropriate to install it on Aikens you also 17.
+
+89
+07:08.880 --> 07:13.050
+So this is how to choose your operating system and your own version.
+
+90
+07:13.050 --> 07:19.050
+So if you want to install a host and legal which is also possible in this case it is only supported
+
+91
+07:19.050 --> 07:22.340
+by thirteen point 10 and 14 point zero for that.
+
+92
+07:22.620 --> 07:27.770
+So in this case I would recommend to use 40 points for if you want to work with any other dimension.
+
+93
+07:27.820 --> 07:31.160
+Choosing any of these three versions would be the same thing.
+
+94
+07:31.170 --> 07:36.810
+Considering all that you told is that you are going to develop your work exactly the same on any of
+
+95
+07:36.810 --> 07:38.090
+the versions.
+
+96
+07:38.310 --> 07:43.110
+So now you have understood the difference between different versions of Ross.
+
+97
+07:43.110 --> 07:46.880
+Now the next question is how to install and work to installers.
+
+98
+07:46.880 --> 07:49.110
+So here you have two different options.
+
+99
+07:49.110 --> 07:50.640
+First of all you can have.
+
+100
+07:50.670 --> 07:56.140
+You can install Ubuntu on a physical machine and then you proceed to the installation for us.
+
+101
+07:56.190 --> 08:01.440
+As mentioned here in this tutorial However this approach is not recommended.
+
+102
+08:01.440 --> 08:08.460
+The reason is when you work with us it is possible for any kind of reason that your system got problems
+
+103
+08:08.520 --> 08:12.750
+or get damaged and in some cases maybe it will start to work correctly.
+
+104
+08:12.870 --> 08:18.840
+And this we are required to do a complete reinstallation of the whole system which is very time consuming
+
+105
+08:18.930 --> 08:20.430
+and a very tedious operation.
+
+106
+08:20.460 --> 08:25.060
+So instead of installing Ubuntu and underdose on a physical machine.
+
+107
+08:25.140 --> 08:28.880
+The other alternative is to install it on a virtual machine.
+
+108
+08:28.920 --> 08:36.910
+So for example like in my case I am working on Mac operating system and as you can see I have been to
+
+109
+08:36.970 --> 08:44.400
+virtual machine that is running on top of my operating system so this can be done by installing a virtual
+
+110
+08:44.400 --> 08:51.240
+machine software and then installing Ubuntu on these virtual machine and finally installing grass on
+
+111
+08:51.240 --> 08:52.000
+the virtual machine.
+
+112
+08:52.000 --> 08:57.570
+So for example if you work with Mac OS do this case you can download fusion software.
+
+113
+08:57.600 --> 09:00.000
+So fusion done is a good time machine.
+
+114
+09:00.000 --> 09:06.150
+It's not free but it is very convenient to work with the virtual machine on Mac OS so you can download
+
+115
+09:06.150 --> 09:11.300
+it from here install it and then you will have an interface similar to this one.
+
+116
+09:11.370 --> 09:15.130
+OK so you can see I have two beautiful machines installed.
+
+117
+09:15.210 --> 09:16.910
+So what you can do in this case.
+
+118
+09:17.040 --> 09:23.810
+After of course after downloading Ubuntu version of your choice for example either you download sixteen
+
+119
+09:23.810 --> 09:31.200
+point zero for if you want to install schematics ethics or you download eighteen point zero four if
+
+120
+09:31.200 --> 09:33.120
+you want to install Rossmiller.
+
+121
+09:33.210 --> 09:40.470
+After that you will use the virtual machine software to install the operating system so you can create
+
+122
+09:40.930 --> 09:47.400
+the new virtual machine and then select the option install from disk or image you continue then the
+
+123
+09:47.400 --> 09:51.590
+file that you will not load from Ubuntu which is the operating system image.
+
+124
+09:51.600 --> 09:57.620
+You will it and paste it here and then let the system go into the operating system is fully installed
+
+125
+09:57.780 --> 09:58.890
+on your virtual machine.
+
+126
+09:58.900 --> 10:04.950
+Once the done you will be able to have a virtual machine similar to this one in which you can work with
+
+127
+10:04.960 --> 10:11.120
+it as you are working with a physical machine running Ubuntu operating system.
+
+128
+10:11.430 --> 10:18.720
+So now if you want to install the truss you open a terminal and then go through the installation page
+
+129
+10:19.470 --> 10:22.470
+and finally follow the steps one by one.
+
+130
+10:23.760 --> 10:24.800
+All of the steps here.
+
+131
+10:24.810 --> 10:32.790
+So here you are recommended to install the full desktop full version using the commands to do a pretty
+
+132
+10:32.790 --> 10:36.300
+good install so you just need to copy this command here.
+
+133
+10:36.450 --> 10:41.820
+And so you can see I can do it on my virtual machine.
+
+134
+10:42.300 --> 10:47.900
+So I have already installed but is going to upgrade some of the packages so you install this version
+
+135
+10:47.910 --> 10:48.880
+desktop for.
+
+136
+10:49.410 --> 10:55.470
+And then you follow the different steps to initialize those dependencies and setting up the environment
+
+137
+10:55.560 --> 11:04.190
+exactly like it is explained here and that's pretty much all you'll have are as kinetic or any other
+
+138
+11:04.420 --> 11:10.600
+version installed on your computer and you can do that that audience in a later video.
+
+139
+11:10.600 --> 11:16.150
+I'm going to explain to you how to get the files that we will use in this course if you are working
+
+140
+11:16.270 --> 11:18.130
+on Windows machine.
+
+141
+11:18.220 --> 11:26.140
+In this case you cannot download VM fusion because this is for Mac operating systems but you can download
+
+142
+11:26.620 --> 11:31.750
+the workstation Pro which is the other four windows machine.
+
+143
+11:31.750 --> 11:36.840
+And the process is exactly the same as the one that they have explained or Mac OS.
+
+144
+11:36.880 --> 11:42.700
+So if you don't want to bother yourself with installing grass and if you want to save your time and
+
+145
+11:42.710 --> 11:49.740
+teach your a student in this course I can give you a virtual machine with schematics that contains us
+
+146
+11:49.800 --> 11:54.660
+already installed in all the different files that you need to follow these tutorials.
+
+147
+11:54.670 --> 12:00.190
+So if you want to get a copy of the virtual machine just send me a request through the ME Web site and
+
+148
+12:00.190 --> 12:01.270
+they will send you the link.
+
+149
+12:01.290 --> 12:04.500
+All those virtual machine so that you can start right.
+
+150
+12:04.510 --> 12:08.440
+We weren't going to use without spending time on the installations.

@@ -1,0 +1,301 @@
+WEBVTT
+
+00:00.250 --> 00:03.990
+Sledgehammer Hamal senator said I want to be order this me.
+
+00:04.020 --> 00:04.560
+Hello guys.
+
+00:04.560 --> 00:06.390
+And welcome back to new tutorial.
+
+00:06.410 --> 00:11.430
+A mobile operating system and this time I'm going to talk about our city.
+
+00:11.580 --> 00:16.680
+So you may wonder what is our city and how is important which cases we can use it.
+
+00:16.680 --> 00:19.120
+So basically imagine that you have a new Hodler.
+
+00:19.180 --> 00:26.060
+Imagine that you have for example new sensor or new actuator or any kind of device that you want to
+
+00:26.070 --> 00:27.150
+Rusticus system.
+
+00:27.150 --> 00:32.910
+In this case you are going to face two situations whether this hardware already has or has driver and
+
+00:32.910 --> 00:35.190
+this means that it is already supported by Ross.
+
+00:35.220 --> 00:40.560
+So in this case you can connect it to us ecosystem around the driver and then you can get all the information
+
+00:40.560 --> 00:44.930
+coming from the hard work and then processing it using a robot operating system.
+
+00:44.930 --> 00:50.890
+It's possible for example you can buy a new laser scanner for example you use a scanner or actually
+
+00:50.890 --> 00:56.850
+be camera like a light or unit and they are already supported in robot operating system so you don't
+
+00:56.850 --> 01:02.310
+have to worry about all the problems of how to interface with them how to get data in your programs
+
+01:02.310 --> 01:04.380
+because the drivers are already built for them.
+
+01:04.440 --> 01:09.240
+However if you have another hardware that does not support trust and that you want to use it with a
+
+01:09.240 --> 01:12.030
+robot operating system and this is where we have problems.
+
+01:12.030 --> 01:17.520
+So in this case we are in front of two different situations that we need to develop our own drivers.
+
+01:17.550 --> 01:23.400
+And this is actually time consuming and very tedious operation takes a lot of time and you know actually
+
+01:23.490 --> 01:29.130
+you need to develop your own interfaces and the message exchange between robot operating system and
+
+01:29.130 --> 01:31.080
+between the hardware itself.
+
+01:31.080 --> 01:32.610
+So this is actually time consuming.
+
+01:32.610 --> 01:35.790
+I remember one time I had the project director great sense of no.
+
+01:35.790 --> 01:40.890
+That is that they lost the sense of note and we went through a very long process in order to be able
+
+01:40.890 --> 01:44.740
+to integrate the sensor into a robot operating system we had to develop.
+
+01:44.760 --> 01:51.080
+We had to develop the driver in C and then create a particular message type or the sensors in interface
+
+01:51.300 --> 01:55.730
+and finally publish it into the Ross eco system so it was a little bit a long process.
+
+01:55.830 --> 02:01.670
+So fortunately there is a framework already provide a very important framework that solves this problem
+
+02:01.830 --> 02:03.040
+and it's called diversity.
+
+02:03.060 --> 02:08.670
+So what is it or said here it is basically a protocol that was designed in order to communicate between
+
+02:08.820 --> 02:10.170
+us and new hardware.
+
+02:10.170 --> 02:15.000
+Of course there are different types of hardware that are supported by serial I'm going to present them.
+
+02:15.030 --> 02:20.120
+But basically it allows the integration of microcontrollers and embedded systems with ours for example
+
+02:20.130 --> 02:25.260
+imagine that you have agreeno microcontroller which you have attached some sensors and you would like
+
+02:25.260 --> 02:30.570
+to access the sensor information or the sensor data coming through the Alino microcontroller.
+
+02:30.570 --> 02:32.930
+So this set here in this case can play around.
+
+02:33.030 --> 02:38.420
+There are different types of embedded devices like in belet Linux and other microcontroller boards.
+
+02:38.460 --> 02:44.640
+So instead of defining yourself the hardware drivers the message serialization and all the communication
+
+02:44.640 --> 02:50.130
+protocol everything was already done in Syria and this week simply fight a lot the integration of these
+
+02:50.130 --> 02:52.810
+new hardware into the Ross ecosystem.
+
+02:52.860 --> 02:58.940
+So basically Rosetti allows new electronic hardware that actually talked to us system natively.
+
+02:58.950 --> 03:04.440
+It means you can't even run a command inside the hardware itself and you do not need to develop your
+
+03:04.440 --> 03:08.250
+custom drivers and communication protocols which is basically time consuming.
+
+03:08.290 --> 03:15.030
+Also a silly protocol that Rupp's standard serialized messages and multiplexers multiple topics and
+
+03:15.030 --> 03:19.680
+services over a character device such as a serial port or a network socket.
+
+03:19.680 --> 03:25.320
+So this means resetting provides or the necessary method serialization to be exchanged between the raw
+
+03:25.320 --> 03:30.630
+system running in your embedded device and also the Rustico system that is running on your computer
+
+03:30.630 --> 03:31.140
+machine.
+
+03:31.170 --> 03:37.010
+Of course all of serial can be applied to a certain number of embedded devices not any kind.
+
+03:37.020 --> 03:39.790
+There is a general a serial client library.
+
+03:39.810 --> 03:40.270
+OK.
+
+03:40.290 --> 03:46.560
+And this is the general client side processing implementation that was designed for general microcontrollers
+
+03:46.650 --> 03:52.980
+and can run only on a processor for which you have an ANSI C++ compiler and a serial port connection
+
+03:52.980 --> 03:54.340
+to a computer running gross.
+
+03:54.360 --> 03:59.400
+So basically we can use our serial client for any kind of microcontroller with the condition that it
+
+03:59.400 --> 04:07.390
+has the C++ compiler but also there are specific or serial class libraries for particular embedded systems.
+
+04:07.440 --> 04:12.560
+For example there is a cellular plant level before and and call what a said in Arduino.
+
+04:12.660 --> 04:19.890
+There is rostering for embedded Linux that is Rosselli are also for Windows platforms or embed dieback
+
+04:19.980 --> 04:22.000
+SDN 32 and DC.
+
+04:22.020 --> 04:28.390
+So these are the main embedded system platforms that have their proper serial killer and libraries in
+
+04:28.390 --> 04:29.260
+this area.
+
+04:29.460 --> 04:32.860
+We're going to present what our city arguido.
+
+04:33.000 --> 04:38.950
+So I'm going to show you the full process on how to install Larousse on an audio system and how to connect
+
+04:38.950 --> 04:42.330
+it to us ecosystem that is running on your computer.
+
+04:42.360 --> 04:48.170
+On the other side we need to have interfaces in the computer the machine that is running the main road
+
+04:48.300 --> 04:48.950
+ecosystem.
+
+04:48.960 --> 04:50.910
+So this is actually the architecture.
+
+04:50.910 --> 04:56.190
+You have a new microcontroller lets you have an hour window and we have also a computer that is running
+
+04:56.190 --> 04:58.940
+GROSS And then you connect using a cellular connection.
+
+04:58.960 --> 05:00.720
+The system to the computer.
+
+05:00.730 --> 05:01.290
+OK.
+
+05:01.360 --> 05:08.890
+So we're going to install Arduino into the microcontroller so that we can run our comments inside for
+
+05:08.900 --> 05:11.680
+example we can run publisher recombined subscriber.
+
+05:11.800 --> 05:17.620
+I'm going to show you different examples on how to download psyllium Reno in an arena system and on
+
+05:17.620 --> 05:24.550
+the other side we must have a special note that will actually make the interface between what I said
+
+05:24.790 --> 05:26.610
+Arduino and trust ecosystem.
+
+05:26.620 --> 05:29.820
+So this serial Python is a Python based implementation.
+
+05:29.860 --> 05:35.560
+It's going to be like a server running into a computer machine that is going to receive all the messages
+
+05:35.590 --> 05:37.440
+coming from a serial Arduino.
+
+05:37.510 --> 05:38.970
+A city like application.
+
+05:38.980 --> 05:43.030
+And then we relay them with remaining Rustico system in the same way.
+
+05:43.030 --> 05:50.020
+There is also an agreement in C++ implementation which can also be used Rosetti server which has some
+
+05:50.020 --> 05:54.870
+limitations as compared to history of Python but it is recommended for high performance applications
+
+05:54.880 --> 06:00.310
+so basically them must be commanded cross-city an interface is all serial by them it's easy to use and
+
+06:00.310 --> 06:06.060
+it will represent like a gateway between the embedded system device and also the rest system.
+
+06:06.070 --> 06:11.620
+So just to summarize or cereal is a protocol that allows the communication between imbedded devices
+
+06:11.710 --> 06:12.940
+and Rustico system.
+
+06:12.940 --> 06:19.330
+So basically in the embed device that you can program in a C language we're going to install a library
+
+06:19.420 --> 06:25.270
+for example in case of Urbino you're going to generate or a celebrity specifically for our systems and
+
+06:25.270 --> 06:29.050
+you are going to integrate it into the Arduino integrated development environment.
+
+06:29.080 --> 06:33.880
+And then we will have the restoration Arduino that will be running on this device that will be able
+
+06:33.880 --> 06:35.740
+to publish messages.
+
+06:35.770 --> 06:42.250
+OK which will be received by the recipient by phone which is a local server running an ecosystem that
+
+06:42.250 --> 06:47.200
+will receive the messages and then dispatch them to the remaining ecosystem.
+
+06:47.200 --> 06:51.840
+This is the general architecture of our Sariel applications in the next video.
+
+06:51.850 --> 06:57.010
+I'm going to provide a brief overview about the original technology and then I'm going to illustrate
+
+06:57.010 --> 07:03.700
+two examples how to proceed a Arduino and how to communicate and Arduino device with a robot operating
+
+07:03.700 --> 07:04.090
+system.
+
+07:04.090 --> 07:04.950
+So let's get started.

@@ -1,0 +1,442 @@
+WEBVTT
+
+00:00.150 --> 00:05.700
+In this video I'm going to talk about the study which is the simplest method of image segmentation.
+
+00:05.700 --> 00:07.630
+The principle is very simple.
+
+00:07.680 --> 00:14.240
+We start from a greyscale image and using thresholding we produce a binary image either black or white.
+
+00:14.280 --> 00:15.690
+So the process is the following.
+
+00:15.690 --> 00:22.800
+If a pixel is greater than a threshold value that it can be assigned a certain value for example 255
+
+00:22.930 --> 00:24.300
+assign it as a white color.
+
+00:24.300 --> 00:28.550
+And if it is more than a threshold value that it will be assigned to another value.
+
+00:28.550 --> 00:30.290
+For example 0 to make it black.
+
+00:30.570 --> 00:37.560
+And there are two different types of resolving the simple three Saadiq adapted for the simple thresholding.
+
+00:37.560 --> 00:40.830
+It uses the very simple formula as I already explained.
+
+00:40.890 --> 00:47.760
+If the pixel is greater than a certain value then it will be assigned to a white color 255 and if it
+
+00:47.760 --> 00:51.450
+is smaller than its initial value it will be assigned to a black color to zero.
+
+00:51.570 --> 00:57.240
+And obviously we use the method see if we do that three shot and it takes as you put the great image
+
+00:57.240 --> 01:02.940
+itself and then the three should value which is a value between 0 and 255 the maximum value.
+
+01:02.940 --> 01:09.840
+So typically in a greyscale image the maximum value is equal to 255 because the color is encoded on
+
+01:09.930 --> 01:10.790
+eight beats.
+
+01:10.800 --> 01:15.570
+And finally the three short stack and there are different types pre-define in open.
+
+01:15.600 --> 01:18.060
+We have a three short binary which is very simple.
+
+01:18.060 --> 01:23.720
+So for every pixel position x and y if the value of the pixel is greater than the threshold then we
+
+01:23.720 --> 01:30.270
+can assign the maximum value which is 255 which means white color and the value of the pixel is smaller
+
+01:30.270 --> 01:32.090
+than the C-sharp signs.
+
+01:32.340 --> 01:34.750
+Another type is three short binary inverted.
+
+01:34.830 --> 01:39.650
+And here we do the opposite either because the value is greater than the sum to zero.
+
+01:39.660 --> 01:43.170
+Otherwise we assign it to the maximum back to 55.
+
+01:43.170 --> 01:49.920
+We have also three trunk and for every pixel at location x and y if the pixel value is greater than
+
+01:49.920 --> 01:52.630
+the threshold it would get assigned to the threshold value.
+
+01:52.630 --> 01:57.240
+And if it is smaller than three shock it we just keep the same value of the pixels.
+
+01:57.240 --> 02:02.470
+So in some parts of the image would be truncated would be replaced by a slingshot guide and we have
+
+02:02.480 --> 02:05.210
+to to zero which similarly to the truck.
+
+02:05.220 --> 02:10.530
+But here we're going to assign zero if a piece of value is smaller than the threshold and it will keep
+
+02:10.530 --> 02:11.390
+its own value.
+
+02:11.430 --> 02:17.910
+If the pixel is greater than the future people think something is pretty much simple but it may not
+
+02:17.910 --> 02:23.030
+be good in all conditions especially if the image has different lighting conditions.
+
+02:23.130 --> 02:28.980
+A better approach would be to use the adaptively Shoghi and the algorithm calculates the threshold for
+
+02:29.030 --> 02:34.350
+a small region of the image and then deeper than fishhooks will be calculated for different regions
+
+02:34.410 --> 02:35.320
+on the same image.
+
+02:35.310 --> 02:41.270
+And this approach will have a better robustness to I think lighting conditions opposite view he was
+
+02:41.280 --> 02:46.740
+the method adaptive thresholding which takes the great image as put the maximum value which is typically
+
+02:46.800 --> 02:49.820
+to hit the pipe and then the adaptive method type.
+
+02:49.830 --> 02:51.760
+And here we have two different types.
+
+02:51.780 --> 02:53.900
+It can be adaptive three short means.
+
+02:53.910 --> 02:58.780
+See where the friction is very calculated is the meaning of the neighborhood area.
+
+02:58.800 --> 03:02.830
+So here it's going to take the mean value of the neighborhood area of interest.
+
+03:02.910 --> 03:08.820
+And another adaptive method is to use the gumption method and the threshold value is the some of the
+
+03:08.820 --> 03:12.360
+neighborhood values where weights are a gaucherie window.
+
+03:12.420 --> 03:16.360
+It takes also a block size which decides about the size of the neighborhood area.
+
+03:16.380 --> 03:21.810
+How many pixels we take in the neighborhood and the constancy it is just a constant which is abstracted
+
+03:21.810 --> 03:23.930
+from the mean or weighted mean calculate.
+
+03:23.940 --> 03:29.310
+You can see here in the image the impact of different thresholding so you can see that image we have
+
+03:29.370 --> 03:35.570
+some changes to be all over the image and when applying global thresholding using simple shading in
+
+03:35.570 --> 03:41.370
+the value of the finished article 1:27 is going to create this binary ization of the image which is
+
+03:41.370 --> 03:42.390
+not acceptable.
+
+03:42.600 --> 03:44.670
+However if we use adaptive free shopping.
+
+03:44.760 --> 03:51.030
+So this is using the means recycling and use Ghoshal so we can see it provides a little bit better performance
+
+03:51.090 --> 03:53.750
+as compared to the mean but probably this is not a rule.
+
+03:53.770 --> 04:00.830
+So it might depend from one image the other but yet the adapter is clearly better than the global feature.
+
+04:00.990 --> 04:07.080
+It has to be noted that something is an important technique in computer vision and this step is necessary
+
+04:07.200 --> 04:13.220
+in many applications such as auto detection which is going to be explained in future lectures.
+
+04:13.230 --> 04:16.090
+So now let's see how it works in practice.
+
+04:16.140 --> 04:19.360
+Let us consider the final image in the past.
+
+04:19.370 --> 04:25.680
+Why don't we present how to perform thresholding both using simple thresholding and adaptive feature.
+
+04:25.890 --> 04:29.580
+So this is the main function I'm going to explain the code.
+
+04:29.670 --> 04:34.890
+So first we specify that imagining a way to use two images shapes and tomato.
+
+04:34.940 --> 04:41.180
+OK so let me start by tomato here and then first of all we need to create an image as grayscale image.
+
+04:41.190 --> 04:43.030
+I have created the method read image.
+
+04:43.060 --> 04:43.420
+OK.
+
+04:43.440 --> 04:45.800
+And you can see here this is the method the image.
+
+04:45.930 --> 04:48.430
+It takes an image name and head.
+
+04:48.490 --> 04:51.130
+I specified a boolean variable as agreed.
+
+04:51.360 --> 04:56.340
+So if there is equity you we're going to read the image as the great image.
+
+04:56.340 --> 04:58.040
+And for this we can use to do it.
+
+04:58.130 --> 05:00.750
+I read the same method before.
+
+05:00.960 --> 05:02.700
+And then we specify the image name.
+
+05:02.700 --> 05:04.390
+This is the path to the image.
+
+05:04.470 --> 05:08.430
+And here we specify the flat that is called I read escape.
+
+05:08.580 --> 05:14.850
+So in this case the image is going to be automatically converted into a greyscale image even if it is
+
+05:14.850 --> 05:16.470
+a color image.
+
+05:16.470 --> 05:22.740
+If you want to keep that image as a color image in this case you can just either keep the default like
+
+05:22.850 --> 05:27.190
+articles as if it is specified that you want to use the flexibility that I need.
+
+05:27.300 --> 05:33.570
+OK so in our case we're going to use the eye and regrease just to get the image as grayscale image.
+
+05:33.570 --> 05:39.140
+If you have read that image as a color image in this case you may need to use Sivy to convert image.
+
+05:39.180 --> 05:42.510
+And you can convert it to a great scale as we need in previous years.
+
+05:42.690 --> 05:45.090
+And then we're going just to show the image itself.
+
+05:45.150 --> 05:46.920
+So we call this as in.
+
+05:46.950 --> 05:51.790
+And let me take this great image as an input to the method basically recharging.
+
+05:51.880 --> 05:53.930
+And here I was busy 2:55 should I do.
+
+05:53.940 --> 05:56.480
+So let's see the threshold value is equal to 1.
+
+05:56.510 --> 05:58.440
+If the we can't change it actually.
+
+05:58.620 --> 06:04.970
+So I'm going to disable the adapter thresholding and basically think it's going to call that up and
+
+06:04.970 --> 06:06.010
+see the method.
+
+06:06.030 --> 06:07.510
+SEE two three shot.
+
+06:07.560 --> 06:14.230
+So this is the method they had explained them sleights would take a great image but not the image so.
+
+06:14.340 --> 06:15.730
+So this one would be great.
+
+06:15.780 --> 06:21.180
+And then the threshold value which is you put here of the method that when you find the maximum value
+
+06:21.180 --> 06:22.500
+is equal to 255.
+
+06:22.500 --> 06:25.670
+And here we're going to choose three by.
+
+06:25.770 --> 06:29.480
+So let's first tools which are binary.
+
+06:29.700 --> 06:30.860
+And then we see what happens.
+
+06:30.860 --> 06:34.920
+So you can see now I'm going to display that image after that.
+
+06:34.920 --> 06:39.670
+So let's run the code image got it.
+
+06:40.170 --> 06:43.030
+And here you can see this is the grayscale image.
+
+06:43.090 --> 06:43.770
+OK.
+
+06:44.040 --> 06:47.500
+And this is the basic binary image after conversion.
+
+06:47.520 --> 06:50.100
+So let's play this one on the ship.
+
+06:50.160 --> 06:50.550
+Great.
+
+06:50.590 --> 06:53.300
+Now right on the shape image.
+
+06:55.840 --> 07:01.000
+This is the GOOSE-SKIN image and this is the you can see not only the square shape was discovered.
+
+07:01.000 --> 07:01.240
+Why.
+
+07:01.240 --> 07:04.300
+Because this one it has a high value of the three shots.
+
+07:04.310 --> 07:10.270
+So if we decrease the threshold value or if we increase the threshold value for example 200 it becomes
+
+07:10.520 --> 07:11.250
+brighter.
+
+07:11.260 --> 07:14.870
+In this case we can detect more chicks.
+
+07:14.980 --> 07:19.250
+As you can see because you have considered that this is the operation.
+
+07:19.270 --> 07:25.360
+So basically what you want to have more to have a black background or white and the ships are colored
+
+07:25.360 --> 07:25.690
+in white.
+
+07:25.690 --> 07:28.080
+In this case what we can do we can just hear bird.
+
+07:28.150 --> 07:28.480
+OK.
+
+07:28.480 --> 07:34.600
+So instead of using binary we can use three binary either way just running the same code.
+
+07:34.810 --> 07:37.090
+You see now it's completely inverted.
+
+07:37.120 --> 07:42.910
+What was black becomes white but was white becomes black and basically because later on we are going
+
+07:42.910 --> 07:46.630
+to use this recording for Koto detection Inkatha detection.
+
+07:46.690 --> 07:53.070
+We need to make sure that the background is black so I'm going to keep trudging side to reach all binary.
+
+07:53.110 --> 07:58.470
+So you can see we adapted and we need to play a lot of value in order to detect objects.
+
+07:58.540 --> 08:01.970
+And this is right adaptive is much better.
+
+08:01.960 --> 08:08.790
+So let me put this back at 1:15 and as you can see only when she was identified by the mask and now
+
+08:08.790 --> 08:11.540
+you can use that threshold.
+
+08:11.840 --> 08:19.270
+OK here we can identify all the different shapes we can find some holes here but we can play with the
+
+08:19.270 --> 08:20.520
+value for example.
+
+08:20.550 --> 08:24.230
+And that is the value of sense.
+
+08:24.580 --> 08:29.780
+So you can see with that thresholding able to detect the shapes come here.
+
+08:29.950 --> 08:35.460
+But of course with very low threshold values all six would be considered as black.
+
+08:35.630 --> 08:43.110
+So it uses the method adopted which takes a great image and then to by its maximum value.
+
+08:43.130 --> 08:49.020
+Here I have used a Gulshan method or the computation of data to show every region we used.
+
+08:49.030 --> 08:52.970
+He showed binary inverted underthings shock value which was defined over here.
+
+08:53.260 --> 08:56.980
+We can also use the link just to see what it looks like.
+
+08:56.980 --> 08:58.910
+OK so similar behavior.
+
+09:00.990 --> 09:08.000
+Now putting back the default value so you can see when to be able to identify the different chips.
+
+09:08.280 --> 09:10.880
+Let's apply this on tomato.
+
+09:10.980 --> 09:14.000
+This is with binary data.
+
+09:14.100 --> 09:16.950
+So you can see with the three shining through looks much better.
+
+09:16.950 --> 09:19.320
+So you can see the effect of illumination.
+
+09:19.320 --> 09:25.330
+It is more negative with the simple idea and it is much better managed with the adaptive shortening.
+
+09:25.350 --> 09:31.140
+So in summary thresholding is a simple operation for image segmentation which takes as he put a great
+
+09:31.140 --> 09:33.400
+image and produces a binary image.
+
+09:33.410 --> 09:38.540
+And despite that the image is actually useful in several applications in particular to detection.
+
+09:38.540 --> 09:45.630
+So in the next video I'm going to talk about control detection which is also used in context of object
+
+09:45.630 --> 09:47.310
+detection based on the colors.

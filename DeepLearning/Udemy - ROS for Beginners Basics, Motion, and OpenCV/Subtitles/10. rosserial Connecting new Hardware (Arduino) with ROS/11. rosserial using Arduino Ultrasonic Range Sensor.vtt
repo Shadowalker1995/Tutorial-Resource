@@ -1,0 +1,382 @@
+WEBVTT
+
+00:00.290 --> 00:06.570
+In the previous video I help introduce how to create an exec you trust Nopes into unargued who are the
+
+00:06.570 --> 00:11.900
+first example presented a simple toker application that publishes the messages.
+
+00:12.060 --> 00:19.040
+And the second application subscribes to a topic to control the on off switch of the lead of the argument.
+
+00:19.170 --> 00:25.120
+But in both cases the server in the package is a serial Python was used as a bridge between resetting
+
+00:25.120 --> 00:26.360
+and Arduino.
+
+00:26.370 --> 00:33.060
+The Arduino board and the Rustico system on the workstation in this video will give up a more elaborate
+
+00:33.150 --> 00:40.280
+example that uses the sonic laser scanner but estimates there is an obstacle and that publishes it to
+
+00:40.270 --> 00:41.590
+the Ross ecosystem.
+
+00:42.660 --> 00:48.320
+As you look at the architecture of the application Our STARTING POINT will be the Arduino code that
+
+00:48.320 --> 00:53.840
+we presented earlier and that allows us to estimate the distance to an obstacle by using the time of
+
+00:53.840 --> 00:57.580
+flight information day after we estimate the value of the range.
+
+00:57.680 --> 01:05.690
+We put it inside our message and publish it through a topic to the ecosystem via Sariel by phone bridge.
+
+01:05.870 --> 01:11.930
+While it is possible to transfer the message as a single value or as a string value we will use the
+
+01:11.930 --> 01:14.890
+be defined trust message for changes that is code.
+
+01:14.930 --> 01:21.230
+The answer is yes age which is a specific message that carries out the range data but only the value
+
+01:21.230 --> 01:22.370
+of the measurement range.
+
+01:22.400 --> 01:25.250
+But also other data about the sensor.
+
+01:25.250 --> 01:28.100
+Let us look at the structure of this last message.
+
+01:28.100 --> 01:34.190
+You can look at the documentation of this change message in the documentation website of the US more
+
+01:34.610 --> 01:40.760
+like any other message that each message has a header message that defines the time stamp and some other
+
+01:40.760 --> 01:41.660
+parameters.
+
+01:41.660 --> 01:50.090
+It also has a field of ideation type which can be 0 for sound and unique sensors and one for infrared
+
+01:50.180 --> 01:51.090
+sensors.
+
+01:51.140 --> 01:58.370
+In our case we will use the body of zero as we have with the sonic sensor the sensor message also defines
+
+01:58.430 --> 01:59.620
+the field of view.
+
+01:59.870 --> 02:04.610
+That is the size of the arc but the distance reading is voted for in our case.
+
+02:04.640 --> 02:11.530
+We only have one measurement so we can put anybody value as it is obsolete for our unique sensor that
+
+02:11.610 --> 02:17.900
+age message also define the minimum and maximum ranges which are characteristics of the sonic sensor
+
+02:17.960 --> 02:20.270
+and defers from one sensor to another.
+
+02:20.300 --> 02:27.030
+In our case we really use to something meters as a minimum range and 1.5 meters as a maximum wage.
+
+02:27.140 --> 02:33.410
+Finally and most importantly the value of the age which is the estimated using the arguable program
+
+02:33.500 --> 02:39.770
+that we present it earlier for every new range measurement will update the timestamp of the header and
+
+02:39.920 --> 02:40.410
+the range.
+
+02:40.450 --> 02:46.940
+You measure all other values like minimum range maximum age of your should take our study and do not
+
+02:46.940 --> 02:49.400
+change from one measurement to another.
+
+02:49.400 --> 02:55.100
+Now we understood the principle lets see how it is implemented and executed.
+
+02:55.100 --> 02:56.440
+First let us open the
+
+03:04.360 --> 03:11.340
+and then we open doors are the sketch that determines the range value and publishes it as a sensor and
+
+03:11.360 --> 03:14.460
+as yes range the last message which is this program.
+
+03:14.730 --> 03:17.350
+So this is the code I have written for this purpose.
+
+03:17.460 --> 03:20.460
+And you can get it from the G ID her repository.
+
+03:20.460 --> 03:25.050
+The structure of the code is similar to any program running on workstation.
+
+03:25.050 --> 03:32.160
+First we include the libraries and here specifically we include the library sensor MSDS slashings got
+
+03:32.220 --> 03:36.340
+H which contains the specification of the range sensor.
+
+03:36.360 --> 03:43.290
+This message is defined in the folder there are libraries or sleep sensor images Yes.
+
+03:43.350 --> 03:45.720
+And here we have a range that age
+
+03:48.930 --> 03:55.790
+as you can observe the range that age fine defines a class for the message range which contains all
+
+03:55.790 --> 04:01.840
+the attributes I have presented earlier including the head the radiation type.
+
+04:02.000 --> 04:08.930
+The field of view the minimum age the maximum range and the range value this glass will be used to create
+
+04:09.030 --> 04:11.530
+range messages in the original program.
+
+04:11.960 --> 04:16.980
+Let's go back to the Arduino program for now through the inclusion of the libraries.
+
+04:17.000 --> 04:21.730
+We declared the node hundert that will be used to create a Rosse arguido note.
+
+04:21.730 --> 04:25.910
+Then we defined the message range M.Z. from the class sensor.
+
+04:25.920 --> 04:33.770
+MSDS range also we create the publisher object bobbery age that will be used to publish a range of messages
+
+04:33.860 --> 04:37.710
+on the topic slushed ultrasonic underscore range.
+
+04:37.760 --> 04:41.440
+The constructor also takes as parameter a reference to.
+
+04:41.490 --> 04:42.970
+Message created.
+
+04:43.330 --> 04:47.200
+We defined the frame ID needed in the header part of the message.
+
+04:47.260 --> 04:50.320
+The frame ID is made equal to ultrasonic.
+
+04:50.330 --> 04:55.940
+We will talk more about frames when we present the DFA transformation in a later video.
+
+04:55.970 --> 05:02.480
+For now it is not necessary to know anything as the ultrasonic sensor will be connected to pin number
+
+05:02.480 --> 05:03.020
+7.
+
+05:03.020 --> 05:10.030
+We create a constant Being been assigned to the value of 7 then two boolean constant values centimeters
+
+05:10.100 --> 05:16.600
+and inches that we will specify whether the distance should be estimated in centimeters or in inches.
+
+05:16.760 --> 05:19.680
+The initialization occurs in the setup function.
+
+05:19.700 --> 05:23.070
+As usual we initialize the node using anything.
+
+05:23.180 --> 05:30.020
+And we advertise the publisher Bizarros must note that we define the static parameters of that age message
+
+05:30.080 --> 05:36.410
+which are meta data about the range sensor the radiation type is set to the constant value sensor MSDS
+
+05:36.500 --> 05:40.520
+range ultrasound because we are using an ultrasonic sensor.
+
+05:40.640 --> 05:44.840
+The frame ID is set to the frame ID value that we defined above.
+
+05:44.990 --> 05:49.770
+We try Sonic you provide any fake value to the field of view as it is obsolete.
+
+05:49.790 --> 05:56.630
+In our case as I explained earlier also we set a value of 2 centimeters for the medium range and 1.5
+
+05:56.630 --> 06:02.900
+metre for the maximum age all these parameters defined in the setup function of static in the sense
+
+06:02.900 --> 06:05.040
+that they do not change over time.
+
+06:05.450 --> 06:11.510
+The next function is going to get the range which basically implements the same algorithm for range
+
+06:11.570 --> 06:17.350
+estimation that we have presented in the lecture talking about programming real sense with Arduino.
+
+06:17.490 --> 06:24.260
+Remember that the concept is to send a low high low sequence of passes through the signal be configured
+
+06:24.350 --> 06:25.100
+as output.
+
+06:25.160 --> 06:31.720
+Then listen to the echo response in the same being configured as input based on the roundtrip mutation.
+
+06:31.730 --> 06:36.110
+We estimate the distance droplet which also refers to the range to the obstacle.
+
+06:36.110 --> 06:39.790
+The distance is then implemented in centimeter or in inches.
+
+06:39.800 --> 06:46.170
+Finally the loop method is very simple and compliments the logic of the application first.
+
+06:46.190 --> 06:52.190
+First it updates the value of the range message with the last measured estimated distance.
+
+06:52.190 --> 06:55.210
+It also updates the time stamp duty with the current time.
+
+06:55.340 --> 07:03.100
+And finally it publishes the Rangers message and spin once and repeats the same process every 500 millisecond.
+
+07:03.230 --> 07:11.860
+Let us know upload this code to the Arduino abort the code is now uploaded and the part is slash slash.
+
+07:11.850 --> 07:12.420
+Did you.
+
+07:12.450 --> 07:13.890
+AC zero.
+
+07:14.180 --> 07:19.850
+We can verify that the range message published by the Arduino board can be seen by the rest nodes running
+
+07:19.850 --> 07:21.190
+on the workstation.
+
+07:21.230 --> 07:23.120
+Let us first run scott
+
+07:26.010 --> 07:33.720
+very and us Russ topic list and you can see now we have only two topics out and draws our attack.
+
+07:33.750 --> 07:37.740
+We don't have any topic for the moment related to the ultra sonic sensor.
+
+07:38.740 --> 07:40.040
+Like we did before.
+
+07:40.120 --> 07:43.490
+We need to start the process server by running the command.
+
+07:43.510 --> 07:49.100
+So give us the real Python serial underscored no good bye slash death slash.
+
+07:49.180 --> 07:49.500
+Why.
+
+07:49.510 --> 07:50.450
+AC zero.
+
+07:50.470 --> 07:55.710
+Because this is the port to which the Arduino board is connected.
+
+07:55.800 --> 07:57.350
+Now the server was started.
+
+07:57.420 --> 08:00.340
+And you can see the public should engage messages.
+
+08:00.630 --> 08:07.920
+Again let's try a stop at least you can now observe the topic slushed ultrasonic range that was defined
+
+08:07.950 --> 08:09.360
+in the arguido program.
+
+08:09.540 --> 08:11.810
+Let us see the information of this topic.
+
+08:11.850 --> 08:17.840
+Using the command post topic Imphal slash put us on the page and here you can see that the publishing
+
+08:17.910 --> 08:19.080
+not is silly.
+
+08:19.100 --> 08:19.520
+No.
+
+08:19.530 --> 08:23.060
+And the type of publish your message is the answer is yes.
+
+08:23.090 --> 08:24.000
+Slusher h.
+
+08:24.030 --> 08:27.680
+Which is the message type that we use in the Arduino program.
+
+08:27.690 --> 08:34.170
+Finally we can run the command cross topic echo slash our song underscoring range topic and here we
+
+08:34.170 --> 08:41.430
+can find the in value so upset at the very highest value is now 17 18 centimeters.
+
+08:41.430 --> 08:47.070
+I'm going to go closer and closer and you can see that the range value is growing smaller and smaller.
+
+08:47.080 --> 08:52.300
+Now I'll take the obstacle far away and you can see that the range is becoming bigger and bigger.
+
+08:52.320 --> 08:55.040
+So it is increasing or it is decreasing.
+
+08:55.040 --> 09:02.160
+Based on the distance to the obstacle you can see from the range value that we are able to get the ultrasonic
+
+09:02.160 --> 09:04.540
+range in the Ross ecosystem.
+
+09:05.160 --> 09:06.190
+Congratulation.
+
+09:06.330 --> 09:12.090
+Now you know the whole process and the workflow to deploy any Arduino board with drops and you can collect
+
+09:12.180 --> 09:14.220
+any kind of sensor data.
+
+09:14.250 --> 09:19.380
+Of course if you use different sensors you need to use different messages.
+
+09:19.440 --> 09:25.170
+You can check whether there are existing sensors messages or defined and that meet the requirement of
+
+09:25.170 --> 09:26.990
+the sensor data to be carried out.
+
+09:27.090 --> 09:32.410
+Otherwise you can create your own custom message and use them to transport data.
+
+09:32.430 --> 09:38.320
+Otherwise you can create your own custom Rosse messages and use them to transport data between Arduino
+
+09:38.430 --> 09:39.000
+under us.
+
+09:39.010 --> 09:42.690
+The other process is exactly the same as it was presented in this lecture.

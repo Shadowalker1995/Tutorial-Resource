@@ -1,0 +1,310 @@
+WEBVTT
+
+00:00.480 --> 00:07.230
+I think Forest Service is C++ is also simple in creating the service file and compiling the sort of
+
+00:07.250 --> 00:09.030
+the size of the operation.
+
+00:09.120 --> 00:13.050
+Exactly the same as we did with the Python implementation.
+
+00:13.170 --> 00:21.310
+Now when we define two files that server the TPP and claim that GDP Let us look at the two servers the
+
+00:21.300 --> 00:22.000
+TPP.
+
+00:22.020 --> 00:23.990
+So the application logic is the same.
+
+00:24.000 --> 00:30.230
+Here we have the main function and first of all we initialize the node as we do in any program in C++
+
+00:30.240 --> 00:34.590
+and then we define our service server which is similar to our subscribers.
+
+00:34.590 --> 00:36.400
+As already mentioned is video.
+
+00:36.420 --> 00:38.430
+So this is not the service object.
+
+00:38.420 --> 00:38.880
+OK.
+
+00:38.910 --> 00:45.840
+Which is going to advertise the service on the service and then at the instant Also we define the method
+
+00:45.930 --> 00:48.070
+that will handle the incoming requests.
+
+00:48.070 --> 00:52.140
+So this is similar to the 100 method that you have defined in the pilot and co.
+
+00:52.160 --> 00:53.530
+We call it handle that.
+
+00:53.550 --> 00:59.010
+Its now it just so we can call it the same thing.
+
+00:59.190 --> 01:05.010
+And this is going to have to promotors one parameter that specifies the request and one parameter that
+
+01:05.010 --> 01:06.470
+specifies the response.
+
+01:06.510 --> 01:12.210
+So comparing the Python version we have all these requests as parameter for the Hundal method.
+
+01:12.210 --> 01:16.420
+And here in the server in the C++ version we specify the request.
+
+01:16.650 --> 01:18.000
+Also the response.
+
+01:18.000 --> 01:25.380
+So when the server receives a request is going to execute the method and we extract the information
+
+01:25.710 --> 01:27.050
+and the request.
+
+01:27.060 --> 01:32.640
+So we need to import the service file which also refer to the service request and service response.
+
+01:32.640 --> 01:34.960
+This is why we are able to use them here.
+
+01:35.010 --> 01:35.460
+Okay.
+
+01:35.490 --> 01:41.670
+And then when we calculate the some as being when this is the response that some of this is the response
+
+01:41.730 --> 01:47.110
+object we have to pass by reference here response out of some respect to request that a.
+
+01:47.190 --> 01:54.230
+So remember that the message format of the request contains a and b I can show you that he meant that
+
+01:54.240 --> 01:58.480
+you Plus this or B show them the service name.
+
+01:58.540 --> 02:02.570
+Or you can see it and B are two inputs for the sequence.
+
+02:02.580 --> 02:05.210
+This is why we have a request.
+
+02:05.690 --> 02:07.290
+And then you can collect the sum.
+
+02:07.290 --> 02:12.970
+And finally we will send some back to the client so the service will return a boolean variable.
+
+02:13.030 --> 02:17.670
+When it execute correctly and sends back the response to the client it will return.
+
+02:17.730 --> 02:21.680
+So when it comes to it now it has sent the response to decline.
+
+02:21.690 --> 02:24.040
+On the other hand this is now the file for the client.
+
+02:24.090 --> 02:25.540
+This is our main function.
+
+02:25.540 --> 02:29.570
+The first issue lies our no with the arguments on the command line.
+
+02:29.610 --> 02:29.970
+Okay.
+
+02:29.970 --> 02:33.820
+And then we create a new client So this is our service client.
+
+02:33.970 --> 02:40.500
+Okay using that service sclayn generic method of the node handle and you specify the type of the client
+
+02:40.580 --> 02:47.030
+or in C++ we use generic methods to define the service client is now specifies the type of the client
+
+02:47.140 --> 02:49.070
+and then the name of the service.
+
+02:49.140 --> 02:53.910
+You can see that is a little bit of difference in the way how it is implemented all of the application
+
+02:53.910 --> 02:55.160
+logic is the same.
+
+02:55.200 --> 03:02.670
+We see the stress and pipe case in C++ we use service claim generally in order to find the client that
+
+03:02.670 --> 03:04.310
+we access the service.
+
+03:04.320 --> 03:06.930
+So now we create our service object.
+
+03:06.960 --> 03:13.050
+Okay that would contain a response and request so service that requested 8 we're going to assign the
+
+03:13.050 --> 03:19.620
+value that we need from the command line and where we will assign the value be the second value that
+
+03:19.620 --> 03:25.140
+we receive from the command line and then we will use that service client that we have created in order
+
+03:25.140 --> 03:26.810
+to call the service.
+
+03:26.820 --> 03:31.980
+So claim to call and here we will specify the service message that will be signed.
+
+03:31.980 --> 03:34.350
+So this one is the service message.
+
+03:34.350 --> 03:36.090
+It will be sent to the server.
+
+03:36.090 --> 03:39.480
+And finally we will wait for the response.
+
+03:39.540 --> 03:46.200
+So if the service call is made successfully in this case we can return the sun through the response
+
+03:46.200 --> 03:47.030
+message.
+
+03:47.100 --> 03:49.400
+RB That response would.
+
+03:49.450 --> 03:54.990
+Otherwise we're going to send a message to a forum that the service call was not successful.
+
+03:54.990 --> 03:59.610
+So now this is the explanation of the C++ code and now we need to execute it.
+
+03:59.610 --> 04:04.490
+To be able to execute the code we need to make some modifications into the C Make list.
+
+04:04.500 --> 04:12.180
+So it is you make the XTi we need to add the instructions to the executable of the server and that line
+
+04:12.240 --> 04:17.040
+in the same way that we did before or not and it does not know about either.
+
+04:17.100 --> 04:19.830
+And this is the difference between C++ and Peiffer.
+
+04:19.860 --> 04:25.050
+In Python you don't need to compile and you don't need to bother yourself with Samake least which makes
+
+04:25.050 --> 04:31.830
+Python much more simple but also C++ has its own advantages and sometimes it might be needed to perform
+
+04:31.830 --> 04:33.870
+some specific operations.
+
+04:33.870 --> 04:39.330
+So when you add the executable This is the name of the server node and this is the path with a city
+
+04:39.370 --> 04:48.300
+defined as our service and then out to its clients city and in server Dotsie then we need to add the
+
+04:48.300 --> 04:56.290
+target link library that are not created in libraries and also other dependencies other persons serious
+
+04:56.430 --> 04:58.880
+sanctions and same thing here.
+
+04:58.890 --> 05:01.200
+Now we have every place to combine.
+
+05:01.380 --> 05:07.290
+So I'm going to go to get more space and then get in.
+
+05:07.380 --> 05:10.750
+So you really have to be creative.
+
+05:10.890 --> 05:15.980
+You can see now it is no creativity you have to face up to it.
+
+05:16.060 --> 05:17.770
+Client d be good.
+
+05:17.810 --> 05:21.250
+Oh it's certain to be the pope.
+
+05:21.420 --> 05:24.210
+So we are not good on the surface.
+
+05:24.460 --> 05:34.910
+Russ ran across from us the censors and then the name to its server.
+
+05:34.960 --> 05:36.510
+So this is the name of the server.
+
+05:36.660 --> 05:37.420
+OK.
+
+05:37.670 --> 05:40.460
+This is the server not the executive in C++.
+
+05:40.500 --> 05:46.470
+Now I can go to the first one then restrung essentials to use.
+
+05:46.570 --> 05:50.470
+This is the client causing file for concern.
+
+05:50.640 --> 05:56.750
+OK so the sun is would be 11 and you can see here that it was equal to 4 y equal to 7.
+
+05:56.760 --> 05:58.190
+And the response was.
+
+05:58.380 --> 06:00.890
+And now I have the C++ server right.
+
+06:01.170 --> 06:04.130
+I can also send the request using the Piscean.
+
+06:04.140 --> 06:14.040
+So let's run the cost of the Python code had the plan to fight some 3 9 and then we see from the server
+
+06:14.180 --> 06:15.590
+running you see us.
+
+06:15.630 --> 06:22.750
+So this is now the advantage for us whatever we develop new programs C++ or Python.
+
+06:22.750 --> 06:28.000
+They are portable because they exchange serialized messages.
+
+06:28.340 --> 06:34.780
+So and then we must as a man or whatever it is C++ code I think.
+
+06:34.800 --> 06:42.420
+So in this video I have presented how to implement a client server application in process to develop
+
+06:42.640 --> 06:43.730
+services.
+
+06:43.920 --> 06:49.980
+If you want to develop any other service you will need to follow exactly the same steps starting by
+
+06:49.980 --> 06:55.700
+creating the service file that contains the request message and the response message.
+
+06:55.800 --> 07:00.720
+Compile the satisfice to generate the source code of C++ in Python.
+
+07:00.900 --> 07:06.840
+Then you can create your server then create your client and exiguous all together in the next video.
+
+07:06.840 --> 07:13.560
+I'm going to show how we can use most common place in order to execute and analyze the service that
+
+07:13.560 --> 07:14.240
+we have created.

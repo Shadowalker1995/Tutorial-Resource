@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00.120 --> 00:06.270
+So in this example we will consider a very simple or service application which would consist in adding
+
+00:06.270 --> 00:07.590
+two integer numbers.
+
+00:07.590 --> 00:14.340
+So here in the right side we have a client code to the client which we send a request message containing
+
+00:14.340 --> 00:16.360
+2 integer values x and y.
+
+00:16.410 --> 00:21.810
+When the integer values are received by the server it's going to make local computations here and then
+
+00:21.980 --> 00:28.800
+the second step it will send back a response message containing the value of x y that is the sum of
+
+00:28.860 --> 00:31.140
+x and y and will be received by the client.
+
+00:31.140 --> 00:37.680
+So of course we really need to define a request message that will contain two values x and y and then
+
+00:37.770 --> 00:43.500
+we need to define a response method that will contain only one binding that will have the sum X plus
+
+00:43.500 --> 00:43.720
+1.
+
+00:43.740 --> 00:49.590
+So this is very important to note because when we will create dissatisfied we we need to have this information
+
+00:49.650 --> 00:55.230
+and then we will define the application logic in the server that will add the integer values together
+
+00:55.320 --> 00:57.350
+and then sent back response to the client.
+
+00:57.450 --> 01:02.460
+And when you find the application logic in the cloud that will be sending the request to the server
+
+01:02.520 --> 01:04.290
+and waiting back for the response.
+
+01:04.290 --> 01:07.980
+So this is a very simple but it's an illustrative example.
+
+01:07.990 --> 01:13.310
+And implementing any service will go through the same steps that I'm going to present in this video.

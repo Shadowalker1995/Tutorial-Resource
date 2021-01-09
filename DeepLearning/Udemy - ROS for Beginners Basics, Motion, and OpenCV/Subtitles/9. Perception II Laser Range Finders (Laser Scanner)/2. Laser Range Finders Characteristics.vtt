@@ -1,0 +1,205 @@
+WEBVTT
+
+00:00.300 --> 00:05.460
+So if you have a robot and you want to do that up with the first thing you need to do is actually to
+
+00:05.580 --> 00:08.110
+get or to chase a laser scanner.
+
+00:08.130 --> 00:13.080
+But there are several available devices in the market and there are a lot of characteristics that we
+
+00:13.080 --> 00:14.210
+need to understand.
+
+00:14.310 --> 00:20.640
+And there are a lot of features that will help us making the correct decision about which laser range
+
+00:20.640 --> 00:23.100
+finder that is appropriate for our applications.
+
+00:23.100 --> 00:28.800
+So for emulous or scanner these are the main characteristics that you need to figure out before selecting
+
+00:28.890 --> 00:29.720
+or one application.
+
+00:29.730 --> 00:33.750
+First of all a laser scanner is characterized by a minimum angle and the maximum.
+
+00:33.750 --> 00:40.470
+And so this is how this would look like it will send a beam of laser over a certain angle.
+
+00:40.470 --> 00:45.660
+And here we have the minimum angle and the maximum and the total between the minimum angle and the maximum
+
+00:45.700 --> 00:50.970
+anger that represents the field of view and different places have different feet of use.
+
+00:51.060 --> 00:53.900
+And of course this will impact their cost their performance.
+
+00:53.910 --> 01:00.660
+And so as you can see in the picture the laser is going to send several laser beam from the minimum
+
+01:00.750 --> 01:06.660
+angle to the maximum angle and you can see here we have separate beams and there is an angle difference
+
+01:06.660 --> 01:08.840
+between one and another.
+
+01:08.950 --> 01:09.490
+OK.
+
+01:09.540 --> 01:15.150
+And the difference is it's got the angle increment and this represents the angular discussion of the
+
+01:15.150 --> 01:16.030
+laser range finder.
+
+01:16.110 --> 01:22.060
+OK also that is a scan that is characterized by the time increment which is the time between the measurements.
+
+01:22.170 --> 01:26.610
+We're going to stand by measurement and then another one and that then between two measurements is called
+
+01:26.610 --> 01:31.290
+the time increment and this time increment is different from another time that is called the scan time
+
+01:31.380 --> 01:34.660
+which is the time between two Scots and one scan.
+
+01:34.680 --> 01:37.730
+It means sending all the different beams.
+
+01:37.860 --> 01:42.510
+OK so this is one scan and then after getting all the measurements we sent another Scott.
+
+01:42.630 --> 01:48.270
+So we have the time increment and we have also the scan time that is the time between two different
+
+01:48.270 --> 01:48.860
+scans.
+
+01:48.930 --> 01:52.580
+And very important characteristic of the laser scanner is the range.
+
+01:52.620 --> 01:55.660
+And for this we have the minimum wage and the maximum wage.
+
+01:55.740 --> 01:59.030
+So the minimum range is to present the minimal observable range.
+
+01:59.040 --> 02:04.890
+And for example some sensors are not able to see objects that have a distance lower than for example
+
+02:04.950 --> 02:12.060
+a certain range for example some sensors cannot see objects that are in a distance lower than for example
+
+02:12.300 --> 02:13.750
+a meter or a meter.
+
+02:13.860 --> 02:19.860
+Now this is these are characteristics that may differ from one laser scanner to another and a more important
+
+02:19.860 --> 02:21.930
+characteristic is the maximum range.
+
+02:21.960 --> 02:25.880
+Some sensors are able to see for example only four meters away.
+
+02:25.890 --> 02:30.470
+Some other sensors that they can see 10 meters away or 20 meters away or 30 meters away.
+
+02:30.600 --> 02:34.020
+So the maximum range will depend from one laser scanner to another.
+
+02:34.020 --> 02:38.970
+For example if you work in an indoor environment in this case maybe four meters will be sufficient.
+
+02:38.970 --> 02:44.400
+However if you use four meters kind of an outdoor environment it will not make much sense because in
+
+02:44.400 --> 02:47.640
+outdoor environments spaces are larger and longer.
+
+02:47.630 --> 02:50.200
+So usually we use 20 meters or 30 meters.
+
+02:50.220 --> 02:53.280
+And of course this will have a major impact on the cost.
+
+02:53.320 --> 02:55.880
+The longer the range is the higher the cost will be.
+
+02:55.890 --> 02:59.380
+And of course the laser will return as the list of ranges.
+
+02:59.490 --> 03:05.730
+So you can see here every laser that is going to propagate in space is going to bounce back whenever
+
+03:05.820 --> 03:08.670
+it reaches an object and then it bounces back.
+
+03:08.670 --> 03:12.570
+The laser is able to estimate the distance to that object from this laser.
+
+03:12.580 --> 03:18.540
+OK so here whatever every laser coming back we're going to have energy that will contain the list of
+
+03:18.570 --> 03:24.140
+changes and then we can actually collect the list of ranges and then process them for example to be
+
+03:24.240 --> 03:27.410
+map or to avoid after or to perform navigation.
+
+03:27.420 --> 03:28.070
+And so.
+
+03:28.210 --> 03:33.320
+And finally we have also the list of intensities coming back from the laser scanner.
+
+03:33.330 --> 03:39.230
+So this is an interesting example for example of a laser scanner that will hit obstacles and then we
+
+03:39.230 --> 03:42.820
+will see that every laser beam is going to represent one ridge.
+
+03:42.840 --> 03:49.230
+So rest later on you will see that we can have an array of ranges and every race for example this is
+
+03:49.290 --> 03:56.580
+the minimum angle we one point two and then the angle just after that returned 1.3 and then 2.0 and
+
+03:56.580 --> 04:02.480
+so on depending on the value that bounces back from the laser scanner after it hits an obstacle.
+
+04:02.620 --> 04:06.400
+OK so the distribution of ranges may look something like this.
+
+04:06.450 --> 04:09.200
+We can collect it using cross using software.
+
+04:09.240 --> 04:14.490
+And then we can process this information in order for example to avoid obstacles or build them up.
+
+04:14.490 --> 04:20.180
+So something very important to notice is that the front direction is the angle zero.
+
+04:20.220 --> 04:24.180
+And then you can go the right side you have the minimum angle to the left side.
+
+04:24.210 --> 04:29.760
+You will have the maximum for example here you have a field of view of 90 degrees between zero and minus
+
+04:29.760 --> 04:31.840
+45 and zero plus 45.
+
+04:31.860 --> 04:32.670
+You can actually do.
+
+04:32.670 --> 04:37.570
+I'm going to present the most popular and common laser range finder available.
+
+04:37.640 --> 04:37.900
+Mike.

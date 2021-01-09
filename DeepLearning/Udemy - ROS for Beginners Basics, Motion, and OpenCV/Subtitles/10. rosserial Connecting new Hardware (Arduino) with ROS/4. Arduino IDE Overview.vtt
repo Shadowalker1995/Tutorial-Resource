@@ -1,0 +1,235 @@
+WEBVTT
+
+00:00.240 --> 00:06.060
+Before moving to Rosetti and how to develop programs for Arduino I'm going to introduce the Arduino
+
+00:06.150 --> 00:11.250
+integrated development environment which is the development environment that is used to develop programs
+
+00:11.250 --> 00:13.220
+for Arduino boards and systems.
+
+00:13.230 --> 00:18.570
+So these slides provide a very simple example of a temperature sensor but you can see it in the right
+
+00:18.570 --> 00:23.850
+side we have an arena board and here we have a temperature sensor that will connect to the arm you know.
+
+00:23.970 --> 00:27.540
+OK so as you can see we connect the red wire to the 5 volts.
+
+00:27.540 --> 00:30.450
+We connect the black wire to the ground as usual.
+
+00:30.480 --> 00:33.870
+And here we are going to connect the signal wire the blue one.
+
+00:33.900 --> 00:40.290
+It's the wire that is going to transport the signal that you provide the temperature information the
+
+00:40.290 --> 00:41.790
+part number zero.
+
+00:41.910 --> 00:43.770
+And here we have an analog sensor.
+
+00:43.770 --> 00:44.560
+This example.
+
+00:44.560 --> 00:51.960
+So it's going to be connected to the analog B and we index you know the left side you can see the Arduino
+
+00:52.050 --> 00:56.910
+integrated development environment and later on I'm going to tell you how you can download these from
+
+00:56.910 --> 01:02.190
+the internet and I'm going to show you some real case demonstrations but I would like just to explain
+
+01:02.280 --> 01:05.470
+the structure and the skeleton of an Arduino program.
+
+01:05.520 --> 01:10.970
+So for this one we're going to develop the following our program and before starting talking about the
+
+01:11.040 --> 01:16.570
+details something that we have to know is that the Arduino it has to be important functions.
+
+01:16.590 --> 01:22.230
+The first function is called set up and this function is used to initialize the parameters of the connection.
+
+01:22.230 --> 01:29.010
+For example the serial connection baud rate and any information or any variable that you would like
+
+01:29.010 --> 01:32.850
+to initialize is going to be initialized in the method set up.
+
+01:32.880 --> 01:40.930
+So a set up is only executed once and only one time just when the program starts after being executed.
+
+01:41.070 --> 01:43.770
+The program will never come back to the setup function.
+
+01:43.780 --> 01:46.910
+Only if you reset and restart your program from zero.
+
+01:47.070 --> 01:53.460
+OK after that the program is going to move to the second method that is called the method loop and this
+
+01:53.460 --> 01:55.300
+method look is going to run forever.
+
+01:55.350 --> 01:57.800
+This is like you have an endless loop condition.
+
+01:57.800 --> 02:01.570
+For example it's like you have White who is going to look forever here guys.
+
+02:01.630 --> 02:03.820
+Is the structure of Arduino programs.
+
+02:03.840 --> 02:08.400
+So all the application logic must be defined in the method.
+
+02:08.730 --> 02:15.550
+And of course set up and you do not take any parameters you're as you can see we're going to define
+
+02:15.640 --> 02:20.830
+a constant variable that is called censorship and in this case the sense that print is going to be equal
+
+02:20.830 --> 02:21.860
+to zero.
+
+02:22.270 --> 02:27.870
+Why it is equal to zero because the signal wire that is this one is connected to the PIN number zero.
+
+02:27.910 --> 02:31.740
+For example we have connected it to one or two or three or four or five.
+
+02:31.750 --> 02:36.260
+These numbers should change to be exactly the same as the ping connected from here.
+
+02:36.340 --> 02:39.380
+And then since we are connecting to and other look input.
+
+02:39.400 --> 02:43.420
+So we're going to use the analog read method on the pin numbers.
+
+02:43.450 --> 02:49.600
+So the number that sounds like it refers to the constant zero here and this reading is going to return
+
+02:49.600 --> 02:53.560
+a value between 0 and 1 that you really need to convert to a voltage.
+
+02:53.590 --> 02:59.050
+So the voltage will be equal to 5 volts because here we assume that we use 5 volts if we use the device
+
+02:59.050 --> 03:00.400
+we need to be multiplied by three.
+
+03:00.400 --> 03:05.900
+So if we use 5 bucks as you can observe here because that wire is connected to the pin of the five What's
+
+03:06.130 --> 03:06.880
+the power wire.
+
+03:06.910 --> 03:11.110
+OK we calculate the voltage then we divide by twenty four.
+
+03:11.190 --> 03:14.580
+And this is actually the formula that is related to the temperature sensor.
+
+03:14.590 --> 03:19.510
+Every sense that actually you extract some rote information and then you process the information to
+
+03:19.510 --> 03:21.160
+extract the real temperature.
+
+03:21.200 --> 03:21.510
+OK.
+
+03:21.520 --> 03:22.960
+And then after some processing.
+
+03:23.030 --> 03:26.620
+OK depending on the information extracted from the sensor.
+
+03:26.620 --> 03:31.990
+So here we can extend the temperature incenses And possibly can convert the temperature into fire night.
+
+03:31.990 --> 03:38.200
+And finally we're setting that thing to bring and display the information both in degrees and also in
+
+03:38.200 --> 03:38.710
+fatness.
+
+03:38.710 --> 03:43.660
+So this is a very simple program and every other program is based on the same structure.
+
+03:44.000 --> 03:49.150
+And if you have any other sensor that you would like to use basically you can look into the Internet
+
+03:49.210 --> 03:53.020
+and you'll find existing code that you can integrate into your application.
+
+03:53.110 --> 03:57.850
+For example I'm going to show you if you want to program an arena program for Augustan certainly you
+
+03:57.850 --> 04:00.500
+can do Arduino glass that's OK.
+
+04:00.550 --> 04:04.630
+And then you would find documentation of course there are different natural gas lines and that is MQ
+
+04:04.820 --> 04:08.410
+to five for example let's see if you find your three.
+
+04:08.440 --> 04:08.940
+OK.
+
+04:09.010 --> 04:14.470
+So you can find so many websites the results for you all that information about the suspect.
+
+04:14.500 --> 04:16.930
+And usually at the end you will find code.
+
+04:16.990 --> 04:20.890
+OK so this is how to connect the sensor using a Basic to the Arvina board.
+
+04:20.920 --> 04:23.620
+And then you find something that you can use.
+
+04:23.650 --> 04:28.170
+OK just you need to copy paste this one so this one is also operates on the analog input.
+
+04:28.210 --> 04:30.060
+So it's going to be connected to a zero.
+
+04:30.100 --> 04:31.460
+OK and you can integrate.
+
+04:31.540 --> 04:35.650
+You can just follow the instructions and take this listen to your program and you can do the same for
+
+04:35.650 --> 04:38.130
+any kind of sensor depending on your application.
+
+04:38.260 --> 04:42.370
+So this was an introduction on the Arduino eat in the next video.
+
+04:42.390 --> 04:47.570
+I'm going to develop an application that uses sensors to find to an obstacle.
+
+04:47.590 --> 04:52.780
+I would start first by showing you how to download Arduino idea in your environment and then how to
+
+04:52.780 --> 04:54.790
+write a program or an extension.
+
+04:54.870 --> 04:59.800
+First of all we're going to write the program just using purely Arduino and later on we are going to
+
+04:59.800 --> 05:03.860
+integrate this program into the Rustico system using the rest area.
+
+05:03.880 --> 05:04.790
+So let's make it work.

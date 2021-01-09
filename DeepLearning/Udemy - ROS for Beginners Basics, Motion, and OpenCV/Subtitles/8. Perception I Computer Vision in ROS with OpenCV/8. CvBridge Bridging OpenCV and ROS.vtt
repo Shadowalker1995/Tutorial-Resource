@@ -1,0 +1,334 @@
+WEBVTT
+
+00:00.230 --> 00:03.720
+Learn most of that are on your side.
+
+00:03.870 --> 00:07.770
+So far I have introduced several functionalities of open city.
+
+00:07.800 --> 00:14.890
+And every time we read the images even from fights or from camera devices but directly using up and
+
+00:14.900 --> 00:16.400
+see the functionality.
+
+00:16.410 --> 00:22.810
+However in last images are collected from the topics that are published by the drivers of the cameras
+
+00:22.950 --> 00:28.950
+so we don't have direct access to the cameras to be able to use a specific functionalities but we are
+
+00:28.950 --> 00:31.710
+going to receive the images from those topics.
+
+00:31.710 --> 00:38.070
+So in this case we need to create the subscriber interest in order to receive the image and then sending
+
+00:38.070 --> 00:40.730
+this image to up and Zeevi for further process.
+
+00:40.750 --> 00:47.910
+However we have a challenge here that is the image format supported in ROS is different and not compatible
+
+00:48.180 --> 00:50.980
+with the image format supported by open TV.
+
+00:51.000 --> 00:57.870
+For this reason there is a need to transform any image coming from Rowse into the format of open TV
+
+00:57.930 --> 00:58.770
+and vice versa.
+
+00:58.770 --> 01:04.480
+Also when we want to publish an image coming from up in Sivy we need to transform it into a format to
+
+01:04.490 --> 01:05.380
+important virus.
+
+01:05.400 --> 01:11.190
+Fortunately for us there is a special component called City bridge that loves to make this conversion
+
+01:11.190 --> 01:14.880
+from Ros format to open CD format and vice versa.
+
+01:15.090 --> 01:17.730
+So this is the architecture of City Beach.
+
+01:17.760 --> 01:24.750
+So basically this is Varos ecosystem here and you have images collected through topics and are sent
+
+01:24.900 --> 01:26.790
+into image messages.
+
+01:27.030 --> 01:32.820
+So this is the formative part of the virus and we want to process this image using the OP and see the
+
+01:32.820 --> 01:33.770
+library.
+
+01:33.810 --> 01:40.150
+So processing directly the images is not possible because obviously the library does not recognize the
+
+01:40.150 --> 01:41.390
+image format in a row.
+
+01:41.460 --> 01:43.490
+So what does the single bridge do.
+
+01:43.510 --> 01:49.980
+It is going to transform this image into a format that is understood by up and.
+
+01:50.100 --> 01:56.570
+After doing this conversion we can apply any opposite the functionality to the converted image.
+
+01:56.730 --> 02:03.540
+And also if you have an image in open C B and you want to send the message city which can also do the
+
+02:03.540 --> 02:05.180
+opposite transformation.
+
+02:05.280 --> 02:08.130
+So lets see how this works in practice.
+
+02:08.160 --> 02:14.520
+You can find the code that allows the transformation between the image format and open the image format
+
+02:14.580 --> 02:17.700
+in the file called Image submitted back.
+
+02:17.820 --> 02:22.560
+So as usual you have to import ASPI opposite the libraries and different messages here.
+
+02:22.710 --> 02:28.890
+So the first thing that we need to do is to create a bridge so a bridge This is an object that will
+
+02:28.890 --> 02:34.320
+make the transformation between us image format and see the image format.
+
+02:34.320 --> 02:36.490
+So we use the class the breach.
+
+02:36.520 --> 02:40.510
+This is the constructor and we create this object for later use.
+
+02:40.570 --> 02:43.040
+And now we have our main program.
+
+02:43.230 --> 02:45.130
+We're going to initialize a node.
+
+02:45.330 --> 02:51.150
+I'm going to call it image converter and then simply create a subscriber to an image I would call it
+
+02:51.210 --> 02:52.290
+image subscriber.
+
+02:52.320 --> 02:57.780
+It will subscribe to a particular topic so here we put the topic on which we are going to receive the
+
+02:57.800 --> 02:59.060
+information from.
+
+02:59.070 --> 03:04.500
+For example I'm going to use a webcam so the webcam topic will be this one.
+
+03:04.530 --> 03:07.620
+We are going to verify this later when we run the program.
+
+03:07.620 --> 03:11.280
+And here we have to specify the type of the message being lost.
+
+03:11.430 --> 03:19.380
+So in Russia we have the type image and looking at the documentation of us we can find all the information
+
+03:19.380 --> 03:25.890
+of the image message it has had that it has the height of the image the width of the image the encoding
+
+03:25.890 --> 03:29.040
+used for the image and whether it is big endian or not.
+
+03:29.040 --> 03:34.210
+And finally most importantly all the data of the image is carried out here in one area.
+
+03:34.260 --> 03:34.700
+OK.
+
+03:34.710 --> 03:42.270
+And array of and assigned integer 8 bits and then we call the image callback so whenever we see an image
+
+03:42.570 --> 03:45.960
+through this topic we're going to execute the image Colback.
+
+03:46.020 --> 03:52.500
+OK so the image goes that we will have an image in that format and we want to transform this image into
+
+03:52.590 --> 03:53.940
+up and see format.
+
+03:53.940 --> 04:00.660
+So when we receive the image okay we're going to use the bridge that we have here of also use it as
+
+04:00.660 --> 04:01.790
+a global variable.
+
+04:01.830 --> 04:07.650
+It can be also declared inside the callback if needed but no need to create every time a new object
+
+04:07.710 --> 04:12.990
+can be added only once and that you're just a global variable here to work with the object and that
+
+04:13.070 --> 04:14.730
+based on the image collected.
+
+04:14.730 --> 04:21.690
+So the topic will want to create a CV image or open see the image and use the bridge and then Image
+
+04:21.750 --> 04:23.480
+message to see the too.
+
+04:23.550 --> 04:29.460
+So this is the method that we are going to call from the object the bridge to come back from the last
+
+04:29.460 --> 04:33.090
+message that we received on the topic into the message.
+
+04:33.120 --> 04:36.620
+And here we put the wrong message and which format you want to convert to.
+
+04:36.650 --> 04:41.110
+So we want to convert it into our format in golden on 8.
+
+04:41.130 --> 04:46.340
+And finally we can throw an exception whenever there is an error that happens for this conversion.
+
+04:46.470 --> 04:50.580
+And then after this point anything you do on a PC you can do it.
+
+04:50.580 --> 04:56.790
+For example a camera see the image change because now we have a new by only so I can say the number
+
+04:56.790 --> 05:02.150
+of rows and number of columns the number of channels I can play circle for example.
+
+05:02.180 --> 05:06.580
+This is just a condition if the column number of rows greater than 100 in this case.
+
+05:06.830 --> 05:13.970
+I can turn the circle into this location and use this color and so on so I can also add text.
+
+05:13.970 --> 05:19.450
+So anything we can do with Open C-v we can do it after this point after these combinations.
+
+05:19.460 --> 05:26.030
+So this is the only thing that Silverbridge does for us is just to make the conversion between the rust
+
+05:26.120 --> 05:32.770
+image into an up and see image format and then we can call any method in opposition.
+
+05:32.930 --> 05:34.710
+So let's add on the code now.
+
+05:34.750 --> 05:35.180
+OK.
+
+05:35.210 --> 05:37.060
+First of all we need to run the commit.
+
+05:37.150 --> 05:40.300
+OK so let me first run around Scott those Star-Crossed.
+
+05:40.370 --> 05:42.900
+And then another term and then we're going to run.
+
+05:43.130 --> 05:43.440
+Right.
+
+05:43.470 --> 05:45.660
+Yes we can use because no.
+
+05:45.680 --> 05:48.750
+And then we specify the pixel format as well.
+
+05:48.770 --> 05:50.580
+Why you why.
+
+05:50.630 --> 05:56.000
+So this is actually important because if you don't do it the note may not be running correctly.
+
+05:56.030 --> 05:57.620
+So let me start to come in and now.
+
+05:57.680 --> 05:58.070
+OK.
+
+05:58.100 --> 05:59.680
+So it's not running.
+
+05:59.720 --> 06:04.810
+I can't even if I can make prostatic list and here I can find the topic.
+
+06:04.850 --> 06:05.760
+Yes we can.
+
+06:05.810 --> 06:11.550
+Yes we can slash imaginal So this is the topic we are going to use to see an image from us.
+
+06:11.570 --> 06:14.520
+I cannot truly verify that the camera is working fine.
+
+06:14.600 --> 06:21.500
+I can run across an image you image you an image.
+
+06:21.850 --> 06:24.750
+And then I can specify this topic.
+
+06:24.890 --> 06:27.010
+OK so now it's running.
+
+06:27.200 --> 06:33.280
+So now that we run our program here and we make sure that we are subscribing to the correct topic.
+
+06:33.350 --> 06:39.980
+So remember that the topic we use use becomes less imaginal and this is the topic that you are subscribing
+
+06:39.980 --> 06:40.700
+to.
+
+06:40.790 --> 06:47.540
+Now we run around assumptions image pops up don't buy it.
+
+06:47.780 --> 06:50.760
+OK so you can see now the web cam is running.
+
+06:50.990 --> 06:54.130
+OK so this is when an image comes to us.
+
+06:54.290 --> 06:56.730
+It will be converted to upis TV.
+
+06:56.840 --> 06:58.440
+And then I would draw a circle.
+
+06:58.440 --> 07:04.010
+So this is the circle drawn you can see here and this is the text webcam activated.
+
+07:04.190 --> 07:08.510
+So you can do any opposite the functionality just after making the conversion.
+
+07:08.660 --> 07:14.960
+So in this video we have presented the functionality of CD which is very important it allows to convert
+
+07:15.020 --> 07:21.430
+an image on format to obviously format and also it allows to make the conversion in opposing that.
+
+07:21.440 --> 07:26.620
+Now you have all the ingredients to do image processing we trust and open city.
+
+07:26.630 --> 07:31.310
+You know how to subscribe to an image and you know how to convert an image to opposite the format and
+
+07:31.310 --> 07:38.600
+then you can explore the big ocean of OCDE enough to make any kind of image processing like for example
+
+07:38.630 --> 07:45.580
+image segmentation or resodding or edge detection or imaging detection and recognition any kind of functionality.

@@ -1,0 +1,187 @@
+WEBVTT
+
+00:00.080 --> 00:05.460
+In this video I'm going to present how to open and see images with open oppositely in C++.
+
+00:05.460 --> 00:06.690
+So let's see how it works.
+
+00:06.690 --> 00:12.570
+Let us consider a file open underskirt copy the TPP which is located in Topeka you see the perception
+
+00:12.650 --> 00:13.350
+in the folder.
+
+00:13.420 --> 00:14.010
+CPB.
+
+00:14.010 --> 00:19.850
+So first of all we need to import the different libraries to up see CD and then we define the main function.
+
+00:19.860 --> 00:26.740
+And when you find an image structure using the class which is a class defined the opposite either defines
+
+00:26.790 --> 00:33.570
+a structure of an image in C++ and then we create the image from a fight or game which is located in
+
+00:33.630 --> 00:34.730
+a specific path.
+
+00:34.740 --> 00:39.350
+So basically we're going to read this image that is called Just the GBG.
+
+00:39.360 --> 00:39.930
+OK.
+
+00:40.020 --> 00:43.770
+And you specified the absolute path of the image.
+
+00:43.920 --> 00:45.030
+OK slash home.
+
+00:45.030 --> 00:50.990
+And then the name of the image the page so I specify the absolute path because later on when you execute
+
+00:51.080 --> 00:54.950
+the C++ program you should just specify here.
+
+00:55.110 --> 01:04.140
+For example if you just mention chess the GBG in this case you have to execute the note but I'm the
+
+01:04.140 --> 01:07.200
+same folder where this fire is located.
+
+01:07.230 --> 01:13.010
+If you specify only the file name you have to exit the node from the same location and the same folder
+
+01:13.530 --> 01:15.260
+of the pipe where it is located.
+
+01:15.270 --> 01:21.640
+However if you use here the absolute path in this case independently from where you exit into OK it
+
+01:21.660 --> 01:28.080
+could be able to find the correct height and then use it to open the image and then assign the image
+
+01:28.080 --> 01:33.900
+to the image object that is created here and then the second parameter of the method is you know image
+
+01:33.900 --> 01:37.650
+color which means you would like to read the image as a colored image.
+
+01:37.650 --> 01:42.500
+And then we are going to make a reality check whether the image is correctly read or not.
+
+01:42.510 --> 01:49.260
+So if not image that data and this means if there is no data found in the image for example that was
+
+01:49.260 --> 01:55.190
+not correct or the image is not found in this case we're going to upload an error message.
+
+01:55.190 --> 02:01.560
+Could not open our image and then return minus want to exit the main function so the code will not continue
+
+02:01.560 --> 02:04.030
+the execution because the image was not.
+
+02:04.110 --> 02:09.780
+And in case of that image is read correctly we are going to create an image window and then we will
+
+02:09.780 --> 02:14.610
+use the method I show in code to display the image.
+
+02:14.610 --> 02:17.600
+In addition we can see a copy of the image into a file.
+
+02:17.640 --> 02:18.020
+OK.
+
+02:18.030 --> 02:19.640
+Using the method I would like.
+
+02:19.680 --> 02:24.780
+So here we specify the path I'm going to sail it into the home directory and temporary for there and
+
+02:24.780 --> 02:26.920
+then I would call it image the GBG.
+
+02:26.920 --> 02:30.320
+Then the second parameter is the image object itself.
+
+02:30.360 --> 02:31.450
+And finally to wait.
+
+02:31.510 --> 02:34.290
+Actually when I place a key it's going to exit the program.
+
+02:34.380 --> 02:41.430
+So let's try to execute the code in order to compile the file to BP we need to add the executable into
+
+02:41.430 --> 02:46.500
+the sea make that the XTi the process is similar to what we did in the previous video.
+
+02:46.500 --> 02:52.430
+Of course we have to make sure that we use find package on CD and also include directories Auckland
+
+02:52.460 --> 02:59.340
+Sydney included and then we add the instructions for adding the executable and executable open copy
+
+02:59.420 --> 03:00.650
+underscores GPB.
+
+03:00.890 --> 03:03.660
+And then we find the source files which is this one.
+
+03:03.690 --> 03:07.230
+And then we leave the libraries to catkin Lebanese.
+
+03:07.230 --> 03:11.090
+And also we would need the executable to open city libraries.
+
+03:11.100 --> 03:16.400
+Once this is done we can go and compile our code using that.
+
+03:16.560 --> 03:18.250
+So now let's run the program.
+
+03:18.270 --> 03:25.210
+So first of all we need to compile our code get an engine that is executable for a piece of it underscores
+
+03:25.220 --> 03:26.290
+UDP.
+
+03:26.850 --> 03:29.090
+Let's check first the before.
+
+03:29.150 --> 03:31.180
+This is the home company for that.
+
+03:31.180 --> 03:39.080
+There is nothing you can cite and then I'm going to run the restaurant essentially see if the open copy
+
+03:39.160 --> 03:41.950
+underscores the b b c the name of the.
+
+03:42.060 --> 03:49.200
+And then display First the origin an image that is red and this is the chessboard and then coming back
+
+03:49.590 --> 03:52.580
+to our top room for that we can find another copy image.
+
+03:52.680 --> 04:01.920
+OK so using I am right get in the dumper for that we can find now the copy image already created using
+
+04:02.190 --> 04:07.440
+this method and I am sure this displayed the images that you have that sound bite.
+
+04:07.730 --> 04:11.410
+And this is the original image that you have that is located.
+
+04:11.460 --> 04:17.580
+So in the next video I'm going to show you how to work with cross-breed in C++ and then we present how
+
+04:17.580 --> 04:23.600
+to convert an image from a to z format into the format and from Rose format into the opposite the format.
+
+04:23.610 --> 04:24.700
+So let's see how that works.

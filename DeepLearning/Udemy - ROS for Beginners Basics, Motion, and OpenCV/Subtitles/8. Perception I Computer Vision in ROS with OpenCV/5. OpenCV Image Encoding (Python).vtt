@@ -1,0 +1,253 @@
+WEBVTT
+
+00:00.070 --> 00:06.780
+In the previous video we have presented data structures that manipulate images on TV.
+
+00:06.780 --> 00:13.520
+We have also analyzed the content of these data structures and know how to access pixels rows and columns
+
+00:13.540 --> 00:14.540
+in an image.
+
+00:14.610 --> 00:17.920
+However an image can be included in different ways.
+
+00:18.030 --> 00:24.390
+In this video I'm going to give a brief overview about image encoding and how this coding are working
+
+00:24.540 --> 00:25.560
+in options.
+
+00:25.680 --> 00:29.620
+So there are several types of coding over however are female.
+
+00:29.670 --> 00:37.950
+Once an image can be coded into grayscale color and in this case we have only one channel of grayscale
+
+00:37.950 --> 00:43.040
+colors and the variance of the colors will range from 0 to 255.
+
+00:43.290 --> 00:47.770
+0 means black and 2:55 means a white color.
+
+00:47.790 --> 00:56.550
+Another type of common encoding is the RGV format by an image is the total into three channels red green
+
+00:56.910 --> 01:02.400
+and blue in the previous videos we have open the image in our before.
+
+01:02.610 --> 01:07.920
+But in computer vision and image processing techniques there are other encodings that facilitates the
+
+01:07.920 --> 01:09.510
+processing of the image.
+
+01:09.510 --> 01:17.130
+One of the most important encodings is the use saturation involves HSP to indicate the type of color
+
+01:17.400 --> 01:27.350
+that we see in 360 degrees for example that is represented by the volume 0 to 60 yellow from 60 to 120.
+
+01:27.420 --> 01:39.680
+We from 120 to one 80 and between 80 and 240 no between 40 and 300 and Magento between 300 and 360 the
+
+01:39.690 --> 01:46.860
+saturation is an indication of how saturated and individually color is which is the amount of gray in
+
+01:46.860 --> 01:51.760
+the color and it takes values between 0 to 100 percent.
+
+01:51.860 --> 01:58.760
+Finally the Vadhu also known as the brightness it expresses the brightness or the intensity of the color
+
+01:59.030 --> 02:05.860
+from zero to 100 percent whereas it is completely black and 100 is the brightest level.
+
+02:06.050 --> 02:07.910
+And that is the most color.
+
+02:07.910 --> 02:12.110
+Now let's see how in that encoding works up and see work on the subject.
+
+02:12.110 --> 02:15.300
+Let's open the fine image China has got five.
+
+02:15.680 --> 02:20.000
+Let us consider the following code to open a colored image.
+
+02:20.000 --> 02:25.490
+So as usual we need to import non-pilot and open city libraries that we use.
+
+02:25.550 --> 02:26.230
+I.
+
+02:26.360 --> 02:31.330
+In order to create a color image so here we're going to read the GBG.
+
+02:31.550 --> 02:37.100
+And here we specifically specify that we want to read that as a colored image using this flat and then
+
+02:37.100 --> 02:45.050
+we put it into an object color image then let as display the color image using item show and display
+
+02:45.110 --> 02:46.270
+into a window.
+
+02:46.520 --> 02:51.410
+So let me run this code Now image encoding and this is now the tree image.
+
+02:51.470 --> 02:54.610
+This is the original image that we read from the file.
+
+02:55.010 --> 02:58.360
+Now we're going to extract the different channels of the image.
+
+02:58.370 --> 03:05.360
+This image is composed of three Chinitz as you can see here we have red green and blue up and see if
+
+03:05.390 --> 03:08.640
+it is possible to read these channels individually.
+
+03:08.960 --> 03:10.260
+So let's see how it works.
+
+03:10.400 --> 03:15.520
+So you can see the shape of the image is two hundred ninety three two hundred twenty.
+
+03:15.530 --> 03:19.120
+And we have three channels red green and blue.
+
+03:19.310 --> 03:24.770
+So color the chip allows to return the height the width and the channels and I would explain in the
+
+03:24.770 --> 03:33.230
+previous video and you will want to use the function split off up and see the library applied on the
+
+03:33.230 --> 03:39.380
+color image in order to split the image into three different channels one channel for the blue color
+
+03:39.620 --> 03:42.960
+one channel for the green color and one channel for the red color.
+
+03:43.070 --> 03:46.310
+So not every child will represent an image by itself.
+
+03:46.400 --> 03:52.160
+For example now I can print the blue image meaning the image in the blue channel.
+
+03:52.640 --> 03:58.700
+OK so let me ask you all the code and you can see now you have a grayscale image which represent the
+
+03:58.700 --> 04:01.700
+blue component of this colored image.
+
+04:01.700 --> 04:06.250
+I can do also the same for the green and for the red images.
+
+04:06.380 --> 04:13.130
+So now we're going to show the red channel applied to the red component of the image and then we also
+
+04:13.130 --> 04:18.750
+show the green channel applied to the green component of the image and running the code.
+
+04:18.750 --> 04:23.210
+Now we're going to have three different images every image.
+
+04:23.210 --> 04:27.220
+We're going to present a challenge so you can see here you have the original Chinle.
+
+04:27.290 --> 04:31.660
+This is the blue china image that China image and the green china image.
+
+04:31.790 --> 04:38.430
+All of these three images combined together with the result into the region colored image up and see
+
+04:38.510 --> 04:45.260
+is a very powerful library and it is very easy to go from one encoding to another.
+
+04:45.260 --> 04:52.520
+For example I would like to convert the image into h as the image that is possible in this case we can
+
+04:52.520 --> 04:58.580
+use the method see with the color of the OP and see the library applied to the color image.
+
+04:58.700 --> 05:02.260
+And when we specify which conversion we would like to have.
+
+05:02.450 --> 05:13.150
+So this flag color vision are to edge as V is going to convert the image from the format to the form.
+
+05:13.550 --> 05:20.260
+So here we're going to have the complete edge as the image we can split the image into three components.
+
+05:20.300 --> 05:25.500
+You saturation and value and then we can concatenate.
+
+05:25.640 --> 05:34.730
+So because as we are not quite a race so we can use the library to concatenate these three images together
+
+05:34.910 --> 05:36.650
+and put them into one window.
+
+05:36.740 --> 05:41.320
+So here we can show you Tunisian and biting into one window.
+
+05:41.480 --> 05:43.940
+That's run the code you can see.
+
+05:44.180 --> 05:48.120
+This is the you this one is about the saturation.
+
+05:48.290 --> 05:52.220
+And this one is about the value and the brightness.
+
+05:52.430 --> 05:57.340
+And of course these are three channels that you have extracted in the previous operations.
+
+05:57.350 --> 06:02.140
+It is also possible to convert a color image into a greyscale image.
+
+06:02.330 --> 06:08.840
+And this is a transformation very much used in computer vision and image processing because it is simpler
+
+06:08.960 --> 06:13.100
+to analyze the grayscale image as compared to a color image.
+
+06:13.100 --> 06:19.890
+So the operation is also very simple like we did with etch as we can do here with gray color transformation.
+
+06:20.000 --> 06:23.370
+So we use CVT color applied to the color image.
+
+06:23.390 --> 06:26.130
+And here we have another flag that is color.
+
+06:26.440 --> 06:34.310
+We are two grade instead of HSV and year the image is going to be converted into a great image.
+
+06:34.350 --> 06:36.220
+So let's see the execution.
+
+06:36.330 --> 06:38.580
+And this is our greyscale image.
+
+06:38.580 --> 06:43.740
+So one last shot is to print the content of the image so you can observe.
+
+06:43.760 --> 06:49.520
+Now we have only one channel so the gray image is encoded only on one channel.
+
+06:49.680 --> 06:55.490
+However H is V and RGV are both encoded into three channels.
+
+06:55.650 --> 07:02.970
+So to summarize in open TV we can open an image and then we can transform it into different codings
+
+07:03.210 --> 07:04.770
+whatever we want to have.
+
+07:04.770 --> 07:13.350
+RG any color or use saturation value or Also the scale encoding options if it is a very powerful library
+
+07:13.680 --> 07:17.730
+allowing you to do complex tasks like this in just one line of code.

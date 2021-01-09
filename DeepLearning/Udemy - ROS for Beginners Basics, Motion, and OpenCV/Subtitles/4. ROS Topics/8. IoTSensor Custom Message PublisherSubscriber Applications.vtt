@@ -1,0 +1,346 @@
+WEBVTT
+
+00:00.590 --> 00:07.380
+It this video present a publisher subscriber application that communicate with each other using the
+
+00:07.410 --> 00:09.480
+ideas and so that's the message.
+
+00:09.480 --> 00:14.370
+So first of all I would like to highlight that there was a spelling error as the hour was missing for
+
+00:14.430 --> 00:15.450
+the temperature.
+
+00:15.510 --> 00:23.250
+I have other art to fix spelling error and also I have combined to then using that make to generate
+
+00:23.250 --> 00:25.330
+the correct answer message.
+
+00:25.370 --> 00:25.760
+OK.
+
+00:25.800 --> 00:33.120
+So as I mentioned before we can use the US and the zip show that the BE sensor to see the content of
+
+00:33.120 --> 00:34.080
+the message.
+
+00:34.080 --> 00:38.040
+Now we will create an application that uses the ID sensor message.
+
+00:38.040 --> 00:43.740
+It will be very similar to the application with all of the threats that the message that will be exchanged
+
+00:43.830 --> 00:47.700
+between the talker and the listener will be the same message.
+
+00:47.700 --> 00:52.310
+So first let's consider the fire and the sensor potential that pipe.
+
+00:52.320 --> 00:55.860
+This is the equivalent of the Talgarth not by application.
+
+00:55.860 --> 01:02.370
+So if you remember it'll go by we have an important message then we can either the publisher on the
+
+01:02.460 --> 01:05.130
+other topic and we use this message type.
+
+01:05.250 --> 01:08.400
+Finally we keep sending a message every second.
+
+01:08.580 --> 01:10.340
+So we do exactly the same.
+
+01:10.560 --> 01:16.110
+The only difference is that instead of publishing this new message we're going to publish an instant
+
+01:16.190 --> 01:16.870
+message.
+
+01:16.900 --> 01:25.440
+So when you say you know we want to import the disaster message from the package was Sasha's CPB and
+
+01:25.580 --> 01:31.940
+that image is you white because the fire is located it the your folder.
+
+01:31.980 --> 01:34.690
+This is the essential CTP package.
+
+01:34.770 --> 01:38.420
+And this is the embassy folder with the IDs and so image is located.
+
+01:38.580 --> 01:41.080
+So we import from that folder.
+
+01:41.470 --> 01:43.900
+Russ essentially CVP This is the name of the package.
+
+01:43.910 --> 01:48.380
+And this is the folder where the sensor message type is located.
+
+01:48.660 --> 01:52.410
+And then we create a publisher in the same way we did with the Torker.
+
+01:52.500 --> 01:56.900
+So instead of using the shuttle to become we to call the topic the sensor topic.
+
+01:56.940 --> 01:59.730
+And here we really get the message type of the sensor.
+
+01:59.790 --> 02:03.870
+And you find the crew size as before then we initialize the node.
+
+02:03.870 --> 02:05.070
+This is the name of the node.
+
+02:05.130 --> 02:06.810
+I had the sensor publisher of.
+
+02:07.290 --> 02:10.110
+And we will use the same plate of one second.
+
+02:10.110 --> 02:13.500
+So this means we want to send one message per second.
+
+02:13.650 --> 02:17.810
+And inside the way you will want to find out the sensor object.
+
+02:18.120 --> 02:19.830
+And then we repopulate with somebody.
+
+02:19.830 --> 02:22.380
+So I'm going to assign an ID equal to one.
+
+02:22.560 --> 02:30.300
+I'm going to assign a name equal to Tea Party for example and then we'll assign some values to the temperature
+
+02:30.380 --> 02:31.790
+of to humility.
+
+02:31.860 --> 02:37.770
+So as you can see here I am assigning some random values for the temperature using random that random
+
+02:37.860 --> 02:42.310
+multiplied by some constant Just plus plus minus 2 and something for the immediate.
+
+02:42.330 --> 02:46.520
+This is just emulate that we receive kind of random values from Sassenach.
+
+02:46.540 --> 02:48.150
+This is just for emulation.
+
+02:48.360 --> 02:52.260
+And then I'm going to display the coyote sensor object.
+
+02:52.260 --> 02:54.400
+And finally we publish this one.
+
+02:54.600 --> 02:56.990
+So let's try this example.
+
+02:58.390 --> 03:04.450
+Let me ask you tell me what was the one we need to start a telescope.
+
+03:06.410 --> 03:18.620
+OK let me turn that neuron was one of those essential CVB and then I think I see I don't find any.
+
+03:18.850 --> 03:22.000
+And you know with all that it was defined here.
+
+03:24.470 --> 03:26.250
+The SIRC of the
+
+03:29.580 --> 03:30.670
+would be sunset.
+
+03:30.950 --> 03:36.670
+So the problem is that when you create a fire in fire by the fire it is not executable.
+
+03:36.830 --> 03:38.530
+So we need to make this fight.
+
+03:38.570 --> 03:41.050
+You could put in order to be able to run it.
+
+03:41.110 --> 03:46.560
+There are different ways on how we can make it so you can come on the fire and click on the properties.
+
+03:46.700 --> 03:51.620
+You go to the permissions and then you click on the love executing file as a program.
+
+03:51.800 --> 03:56.490
+So in this case Usie is going to appear for us.
+
+03:56.510 --> 04:01.160
+This is the sensor publisher.
+
+04:01.180 --> 04:05.140
+We can also say for subscribing to tie up we do that later.
+
+04:05.240 --> 04:06.520
+So let's start this one.
+
+04:06.680 --> 04:12.620
+So as you can see now it's publishing the value of the ID and with some random batches of the temperature.
+
+04:12.620 --> 04:16.980
+And do you mean as you can see because users topic this year.
+
+04:17.300 --> 04:20.300
+So you'll find we will find that we have discussed that topic.
+
+04:20.450 --> 04:21.960
+You can use lots of nice.
+
+04:22.220 --> 04:24.820
+We will find that we have an uncensored publisher.
+
+04:24.970 --> 04:27.070
+No one that you to.
+
+04:27.260 --> 04:28.580
+We can use the rest of.
+
+04:30.180 --> 04:31.910
+Go.
+
+04:32.040 --> 04:37.530
+And then the name of the top that the or underscore topic
+
+04:40.450 --> 04:43.340
+again and you are able to listen to that topic.
+
+04:43.510 --> 04:49.870
+So now we get to be a subscriber in the same way that we did for the listener not to listen to this
+
+04:49.870 --> 04:51.900
+incoming information.
+
+04:51.970 --> 05:06.320
+We can also do stop the evil eye and the censor topic OK.
+
+05:06.410 --> 05:11.480
+So as that type is essentially is sensible This is the type of the message.
+
+05:11.610 --> 05:12.920
+Now we have only one.
+
+05:12.940 --> 05:14.360
+That is the publisher.
+
+05:14.350 --> 05:16.660
+No that's not the subscriber.
+
+05:16.820 --> 05:20.630
+So the subscriber is going to be in the same way as we can for the listener.
+
+05:20.650 --> 05:26.700
+Let me put up the misconduct by the PI We created the subscriber object on the same topic of the Torker
+
+05:26.900 --> 05:32.630
+and then we defined the type of the message it was week and now out is to become the answer and then
+
+05:32.690 --> 05:37.410
+a chapter back when we do the same strategy in the absence of subscriber time.
+
+05:37.610 --> 05:43.020
+So we define subscriber in this case is going to subscribe to the same topic that was published by the
+
+05:43.490 --> 05:49.970
+publisher that is called the sense of topic and this is the name of the message type so to impart the
+
+05:49.970 --> 05:51.730
+same message that from here.
+
+05:51.880 --> 05:56.280
+And when you find a callback function I'm going to call the callback function I will be sensor callback
+
+05:57.230 --> 06:00.350
+and it does answer a callback when will receive the message.
+
+06:00.370 --> 06:06.820
+And simply going to print the message that you only date and see person for the ID person.
+
+06:06.970 --> 06:13.180
+As for the need at some point for the temperature and person point to where you are immediately.
+
+06:13.550 --> 06:14.000
+OK.
+
+06:14.030 --> 06:15.190
+So lets make it work.
+
+06:16.990 --> 06:30.030
+Camisole is the Bangi now on women and going out run our subscriber Clow restaurant was a Sanchez CVB.
+
+06:30.480 --> 06:35.670
+So I only see people initially because the subscriber is not me.
+
+06:35.700 --> 06:42.960
+Its a good one so I can do the same way I can go here and go to propertys admission and executing the
+
+06:42.960 --> 06:52.440
+program file as a program or otherwise we can go to the package to the file itself.
+
+06:52.560 --> 06:55.630
+Slush a busy one.
+
+06:56.730 --> 07:04.720
+OK I think you answered so we can try as much as we can see this is non-degreed one is a good one but
+
+07:04.720 --> 07:12.600
+its not the case or the ID sensor subscriber that like what we can do we can mix the HMO and the permissions
+
+07:12.620 --> 07:13.620
+with 777.
+
+07:13.620 --> 07:18.460
+So is it enough to really drive and execute the fight.
+
+07:18.570 --> 07:22.460
+And then we will do this as a subscriber to buy.
+
+07:22.860 --> 07:28.420
+And then the find becomes basically what we can see now its in the green color now.
+
+07:28.590 --> 07:35.510
+Now I am able to execute the subscriber growth Rose essentially CPB.
+
+07:35.970 --> 07:44.220
+And then the sensor subscriber that by and you'll see it's going to show the data that the CDC every
+
+07:44.220 --> 07:54.220
+time new Iraqi data receive what is published 24 83 for 83 it's published.
+
+07:54.460 --> 08:04.790
+Again we can do also now to of the info on the topic the central topic.
+
+08:04.920 --> 08:10.560
+So we can see we have a substracted publisher that is sort publish a note and a subscriber that is out
+
+08:10.650 --> 08:12.610
+to censor subscribers.
+
+08:13.110 --> 08:18.990
+And you can see now we have a complete application based on the customers message that we have created
+
+08:18.990 --> 08:21.070
+that is the AG sponsored message.
+
+08:21.180 --> 08:25.100
+And of course you can do the same for any other type of message that you want to create.
+
+08:25.110 --> 08:26.740
+It depends on the application.
+
+08:26.760 --> 08:32.290
+So here I made it very simple example using some ideas of the device.
+
+08:32.400 --> 08:38.880
+But of course it can be applied to any hardware or any device that you want to get any information from
+
+08:38.880 --> 08:41.580
+me and plug it into a custom Cross message.

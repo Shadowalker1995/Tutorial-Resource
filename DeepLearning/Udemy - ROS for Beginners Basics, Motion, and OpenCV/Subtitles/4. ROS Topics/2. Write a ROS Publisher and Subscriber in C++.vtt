@@ -1,0 +1,1072 @@
+WEBVTT
+
+00:01.470 --> 00:04.540
+So that was a side issue.
+
+00:04.600 --> 00:07.750
+OK so welcome to this story in this part of it.
+
+00:07.770 --> 00:11.930
+I'm going to explain how to write and publish it just like that.
+
+00:11.950 --> 00:20.560
+And this is based on the story on this page and quite like an explanation of how to do it.
+
+00:20.830 --> 00:26.000
+And also the different comments for creating a publisher and also a subscriber.
+
+00:26.110 --> 00:32.960
+OK so I assume that you have already installed eclipse and contributed to the roster.
+
+00:32.960 --> 00:38.560
+I mean otherwise you can use your text editor for writing the code.
+
+00:39.060 --> 00:43.740
+OK so this is my package.
+
+00:44.340 --> 00:47.870
+OK so we have gotten workspace.
+
+00:47.940 --> 00:50.300
+You say you have a building to it or you.
+
+00:50.530 --> 00:56.150
+And now we're going to pull out and this is our inside as I see one.
+
+00:56.170 --> 00:58.590
+That is the source file folder.
+
+00:58.780 --> 01:09.020
+So first of all we need to create a fight and when to call it Torker city be.
+
+01:09.220 --> 01:16.340
+So instead of using the same way in I can also create another fight but there is going to be similar
+
+01:17.940 --> 01:30.300
+to again in the beginning of the story and especially for our knowledge that the here OK so I have my
+
+01:30.330 --> 01:31.120
+toker node
+
+01:35.270 --> 01:37.250
+just the flash not the listener.
+
+01:37.550 --> 01:38.590
+And both are empty.
+
+01:38.600 --> 01:46.500
+So all I need to do now is to write to copy paste the code that is in the tutorial.
+
+01:47.060 --> 01:53.570
+So I'm going to copy it from the code here.
+
+01:55.340 --> 01:56.510
+So this is the code for
+
+02:00.520 --> 02:03.410
+you to see when I'm going to go the list.
+
+02:03.480 --> 02:05.840
+Don't see.
+
+02:06.380 --> 02:07.450
+OK so this goes on.
+
+02:07.490 --> 02:09.140
+These are two files.
+
+02:09.140 --> 02:18.730
+So the first thing you need to the Eurozone is to include those library rows that shows that age.
+
+02:18.950 --> 02:26.780
+And also here we are going to create a publisher and a subscriber so the publisher publishes the message.
+
+02:26.780 --> 02:31.930
+So this is basically how our publisher and subscriber look like.
+
+02:31.970 --> 02:40.250
+OK so we know that we publish publish is a chapter topic and this chapter will carry the message of
+
+02:40.250 --> 02:41.270
+time.
+
+02:41.410 --> 02:43.390
+The end is yes stream.
+
+02:43.400 --> 02:50.600
+So just the message but is going to be published by the talker and then it is going to be collected
+
+02:51.110 --> 02:54.540
+by this is which is which implemented subscriber.
+
+02:54.780 --> 02:58.500
+And of course you know to get in touch with the Master.
+
+02:58.720 --> 03:04.790
+So the talk is that it is a partnership to know it would be publishing the chuck of topic and that is
+
+03:04.780 --> 03:10.450
+that we are looking for a chapter we can be contacted for what is first.
+
+03:10.670 --> 03:22.130
+OK so now for doing this I mean to do that message seemed the message that these messages are just message
+
+03:23.180 --> 03:29.810
+and by the way you need to make sure that you are getting Maylis.
+
+03:30.140 --> 03:36.660
+So you find this the package it is yes will get here.
+
+03:36.770 --> 03:39.240
+And also you added bonus.
+
+03:39.850 --> 03:48.430
+So we can look at the debunkers used the back gate and it depends on the city and its all standard messages.
+
+03:48.710 --> 03:52.730
+We provide dependencies for the project.
+
+03:52.790 --> 03:58.610
+We are working on the spec and should be looking at the target and also the same thing in the package
+
+03:58.610 --> 04:03.600
+that ex-inmate we have to make sure that CDMA is yes.
+
+04:03.710 --> 04:04.410
+Okay.
+
+04:04.530 --> 04:11.150
+Is it the panacea for both running the program and also building operation.
+
+04:11.390 --> 04:15.470
+You have to make sure that we are.
+
+04:16.580 --> 04:18.030
+Okay.
+
+04:18.270 --> 04:27.720
+So that we know will be the first thing you need to initialize the not using gross.
+
+04:28.330 --> 04:28.950
+Okay.
+
+04:29.030 --> 04:36.930
+And you give to this knowing this case is going to be called Torker because this is not going to policy.
+
+04:37.140 --> 04:38.550
+So its a talker.
+
+04:38.910 --> 04:39.440
+Okay.
+
+04:39.440 --> 04:42.960
+So when and you talk.
+
+04:43.140 --> 04:50.070
+And then the second step is to create in order to have that and this would represent the references
+
+04:50.080 --> 04:54.450
+side to and you know create of it.
+
+04:54.750 --> 05:06.960
+So this is done through laws no glass but we provide one object and the you know that will be used for
+
+05:07.230 --> 05:12.030
+creating publishers and also for creating subscribers.
+
+05:12.520 --> 05:20.460
+So the next step is to create a publisher because we patent the talkers so the doctor is a publisher.
+
+05:20.640 --> 05:29.640
+We use Ross publisher of glass to create a publisher object code to check the publishing OK and if not
+
+05:29.990 --> 05:32.470
+then you have to read it here.
+
+05:32.980 --> 05:44.070
+And then one of the methods is us gay advertisers love to advertise and you told me whose name is chatter
+
+05:44.740 --> 05:48.420
+and the message is I see I see.
+
+05:48.820 --> 05:49.990
+Yes.
+
+05:50.540 --> 05:57.990
+And this is the buffer size how many messages can be actually accumulated before being processed or
+
+05:58.550 --> 06:04.850
+up to ten thousand OK.
+
+06:06.310 --> 06:13.800
+So so far we cannot stop publishing anything but just we are a new publisher.
+
+06:14.320 --> 06:19.040
+OK so here we divide the Lubavitchers and this is the start of a comeback.
+
+06:19.210 --> 06:23.830
+This is the center for the topic.
+
+06:24.130 --> 06:26.360
+Almost nothing is published yet.
+
+06:26.860 --> 06:27.800
+OK.
+
+06:28.030 --> 06:32.870
+So we are way to use these objects either very selective on the part of the best.
+
+06:33.280 --> 06:45.410
+OK so to get some DNA on that we can do this using the grocery class and we can see that this could
+
+06:45.840 --> 06:48.130
+be and ugly.
+
+06:48.300 --> 06:51.370
+And we are willing to create one message for.
+
+06:51.880 --> 06:54.600
+So one last question and this is the number of messages.
+
+06:54.610 --> 07:02.390
+Second if I want them to be specific and Jiji to 1 0 or if I want 100 message for a second that can
+
+07:02.400 --> 07:02.950
+change it too.
+
+07:02.950 --> 07:05.940
+So this is the number of messages per second.
+
+07:05.980 --> 07:09.080
+So in this case I'm going to change it to one second.
+
+07:09.430 --> 07:10.330
+That's what I see.
+
+07:10.420 --> 07:16.740
+So I'm going to make the publisher publishing messages each one second and of course you can choose
+
+07:16.880 --> 07:20.130
+this one if you want to post these two seconds.
+
+07:20.410 --> 07:28.550
+You can put this up on my sister second so this case will have one major and one message each 10 seconds.
+
+07:28.600 --> 07:30.600
+So I'm going to make it one.
+
+07:31.250 --> 07:32.070
+OK.
+
+07:33.310 --> 07:37.220
+Now we are going to make this look for the publisher.
+
+07:37.220 --> 07:48.030
+So why GROSZ OK this is easy to see on the side of the usual press control-C So this is better than
+
+07:48.030 --> 07:50.860
+me because well to this is.
+
+07:51.270 --> 08:00.580
+If you make less OK so you can actually enter the program by placing Control-C to see later on this.
+
+08:01.270 --> 08:05.150
+How to stop the problem when he is writing.
+
+08:05.680 --> 08:10.910
+OK so now everything is only read first put me into my search to be published.
+
+08:11.000 --> 08:13.920
+So I'm going to create a message of Pepsi.
+
+08:14.120 --> 08:18.200
+OK so this is a rare sight in Pakistan.
+
+08:18.200 --> 08:30.100
+The message is and that this industry this is C++ will put him to work.
+
+08:30.210 --> 08:35.930
+I will become fine in the message that I have created.
+
+08:35.990 --> 08:45.480
+MC So you think the sort of attributes that you think are so amazing those data is going to echo to
+
+08:45.480 --> 08:47.350
+the masses that I have formulated
+
+08:50.600 --> 08:53.220
+and then I'm going to make this what I read.
+
+08:53.400 --> 09:00.710
+So I polish person so that with the message that is published and.
+
+09:00.840 --> 09:02.690
+So this is the key point here.
+
+09:02.770 --> 09:05.170
+This is where the message will be published.
+
+09:05.290 --> 09:07.710
+So this is message.
+
+09:07.940 --> 09:10.850
+So we are going to call check the publisher
+
+09:13.850 --> 09:22.420
+and then we are going to call the Publish method to publish method to put the message of type some of
+
+09:22.420 --> 09:27.580
+that is yes of course the site was already specified here.
+
+09:27.990 --> 09:33.200
+So if you put any of message on the front that is going to be a compilation error.
+
+09:33.570 --> 09:40.200
+So obviously you think that the publisher has taken a stand on the street.
+
+09:40.440 --> 09:45.120
+This is the same type of the message that you find here.
+
+09:46.440 --> 09:49.740
+OK so not everything is really fine.
+
+09:49.830 --> 09:59.230
+I know to make all those months so this is actually it allows us to send all the messages that are in
+
+09:59.230 --> 10:07.720
+the buffer so publish will put the message in about her only when she was a biscop then the message
+
+10:07.720 --> 10:15.150
+would be processed and would be effectively Poche that we are going to try to stop what would happen.
+
+10:15.520 --> 10:23.930
+OK and finally I'm going to make a small sip of one second before publishing the next message that we
+
+10:23.980 --> 10:24.790
+might encounter.
+
+10:24.790 --> 10:31.270
+I repeat all the process so here we are going to publish one message.
+
+10:31.360 --> 10:37.630
+Steps three which are in work because we should be reminded each time.
+
+10:38.040 --> 10:38.850
+OK.
+
+10:39.040 --> 10:43.900
+And finally this is going to be printed in the terminal.
+
+10:44.340 --> 10:46.760
+And finally zero because this is the arm.
+
+10:47.020 --> 10:55.590
+So this is a very simple program OK to present a model what anybody should come across later on we are
+
+10:55.600 --> 10:59.030
+going to make some other stories and get all that messages.
+
+10:59.200 --> 11:02.400
+But the police say no.
+
+11:02.460 --> 11:06.620
+So again it may all to us to say right now.
+
+11:06.710 --> 11:08.410
+Not long go.
+
+11:08.530 --> 11:13.180
+First of all I need to make a small contribution to make this OK.
+
+11:13.630 --> 11:24.280
+I need to make a see so that the new goal is compact because if you don't get it site you don't have.
+
+11:24.860 --> 11:33.190
+So now I'm going to make it work space and they can actually make.
+
+11:34.060 --> 11:34.910
+OK.
+
+11:36.240 --> 11:42.340
+Now does that make me look at you decompiled the newly created Torker.
+
+11:42.690 --> 11:46.520
+Because it was not it was not.
+
+11:46.530 --> 11:55.360
+So this is another not that is you know for example finding any any kind of conclusion ever.
+
+11:56.050 --> 11:59.010
+Ok if I make any competition or on purpose.
+
+11:59.040 --> 12:04.490
+We can say that the company is not going to make another go at it.
+
+12:04.560 --> 12:05.840
+Nothing has changed.
+
+12:06.200 --> 12:15.710
+So enough to make this getting more space to make this fight.
+
+12:15.910 --> 12:25.360
+And finally I one executable so I'm just going to come in here to I'm going to ask you for one of the
+
+12:25.380 --> 12:26.820
+talker.
+
+12:27.450 --> 12:32.510
+Again this is actually the same this is also explained in the story here.
+
+12:33.220 --> 12:34.010
+OK.
+
+12:34.200 --> 12:36.980
+You told me to execute it works.
+
+12:37.300 --> 12:39.830
+So.
+
+12:41.500 --> 12:45.300
+So give me exactly what we call.
+
+12:45.590 --> 12:47.250
+OK.
+
+12:47.490 --> 12:56.180
+Final question of the it as such so is the name of the file that we have created that is seen by the
+
+12:57.530 --> 13:00.840
+that you need to do.
+
+13:01.580 --> 13:02.600
+This is a good one.
+
+13:02.600 --> 13:09.390
+That is the talk you get with vocabularies so you can compile fine.
+
+13:09.440 --> 13:12.100
+Otherwise it is just not happening.
+
+13:13.000 --> 13:16.310
+This is my message but in this particular case.
+
+13:16.310 --> 13:19.130
+We don't have any comment at the moment.
+
+13:19.160 --> 13:30.760
+Now if I can and get a key made of course the effect of this or message of this should be detected.
+
+13:32.560 --> 13:32.980
+OK.
+
+13:33.050 --> 13:37.070
+So there is a letter here it says it is used not the clock.
+
+13:37.100 --> 13:39.780
+This is just because you have to define it twice.
+
+13:40.010 --> 13:45.670
+So now I'm going to make it right then.
+
+13:45.830 --> 13:47.770
+Let me combine again.
+
+13:47.870 --> 13:53.800
+So now consider when it's created and is called Tavor.
+
+13:54.350 --> 14:03.240
+So we are almost done now the next step is to create to run this executable.
+
+14:04.030 --> 14:04.820
+OK.
+
+14:04.840 --> 14:06.280
+We're going to drop.
+
+14:06.310 --> 14:15.760
+So this is a good will is inside the workspace and inside the building of all your baggage.
+
+14:16.290 --> 14:27.600
+So I'm going to make a fuss first of all to run Roscoe OK so I can but no I don't trust Mr. OK.
+
+14:27.600 --> 14:29.820
+The second step would be to
+
+14:33.450 --> 14:38.160
+the you know that you got me to select from the name of the packages.
+
+14:38.600 --> 14:39.240
+OK.
+
+14:39.360 --> 14:45.000
+And then I can find what they have told you already and you can make a dog or
+
+14:49.290 --> 14:51.640
+you can see know everything works fine.
+
+14:52.010 --> 14:56.920
+It's think the same message I published the word message.
+
+14:57.020 --> 14:57.520
+OK.
+
+14:57.510 --> 15:02.690
+Exactly the same way that you didn't hear in be.
+
+15:02.790 --> 15:07.140
+If I compiled again so I haven't change.
+
+15:08.370 --> 15:11.760
+I don't need his help to get the letter.
+
+15:12.100 --> 15:17.950
+Working capital letters so you can search and you can also visit here.
+
+15:18.330 --> 15:20.370
+So I was Doherty's.
+
+15:20.510 --> 15:21.660
+So all I need to do.
+
+15:21.780 --> 15:23.980
+I'm going to go back again.
+
+15:26.090 --> 15:33.710
+Using the mailing engine you talk.
+
+15:34.020 --> 15:35.840
+OK.
+
+15:36.220 --> 15:46.380
+Now I can say you guys you know the changes affect me makes it her the.
+
+15:47.600 --> 15:48.280
+OK.
+
+15:48.410 --> 15:53.160
+So then on the machine they can actually verify this.
+
+15:53.390 --> 16:00.550
+So you can listen to any published topic using Russ..
+
+16:00.550 --> 16:10.790
+So first of all stopping a call or stopping this so I can find my chatter topping up.
+
+16:10.820 --> 16:17.700
+I can't believe I mentioned above the topic was topic useful.
+
+16:18.470 --> 16:19.110
+OK.
+
+16:19.190 --> 16:31.310
+So it's a type of message history case you know was partially the topic of this role for no suspect.
+
+16:31.430 --> 16:33.050
+All we want to know.
+
+16:33.460 --> 16:35.910
+OK now I'm going to stop over.
+
+16:35.940 --> 16:37.870
+I want to see.
+
+16:38.420 --> 16:43.950
+OK so when I see it it's white because you mean the OK.
+
+16:44.050 --> 16:44.620
+OK.
+
+16:44.840 --> 16:51.890
+OK so why he's not going to run forever OK.
+
+16:52.160 --> 17:03.630
+So if I make those totally again find the title because I know how close the toker know I'm going to
+
+17:03.650 --> 17:12.970
+look bad could not again gay and can't get the gist big comes back ok.
+
+17:13.180 --> 17:21.630
+I know I can also make big people I would love to listen to his message.
+
+17:24.580 --> 17:32.520
+So you can see how that is published we can we can write the content of that message so we can see here
+
+17:32.520 --> 17:35.020
+they can see it this way.
+
+17:35.050 --> 17:42.050
+This is the beauty of the message and this is the message that the Spanish word.
+
+17:43.330 --> 17:47.230
+So everything works fine for the talker.
+
+17:47.740 --> 17:57.670
+OK for substracting the talk using something but also to the subscriber for the title.
+
+17:57.880 --> 18:05.500
+So now this is not a fight that you can be OK.
+
+18:05.740 --> 18:07.030
+No.
+
+18:07.780 --> 18:08.800
+OK.
+
+18:09.280 --> 18:09.750
+OK.
+
+18:09.770 --> 18:22.640
+So again we do all those cases the fantasy is also the story of sodomizes package.
+
+18:23.370 --> 18:31.910
+OK so stuff we're going to create this this which we subscribe to the Chucko topic.
+
+18:32.670 --> 18:33.560
+OK.
+
+18:33.910 --> 18:35.220
+That's very simple.
+
+18:35.560 --> 18:41.800
+So I would say the only function we first need to know as we did with the doctor and this is you are
+
+18:41.800 --> 18:45.140
+going to call it initialising.
+
+18:45.520 --> 18:53.550
+We know know the reference you see when we get to the doctor at least this time will be.
+
+18:53.650 --> 18:56.030
+No but you can.
+
+18:56.110 --> 18:59.370
+And finally I want to get a subscriber.
+
+18:59.560 --> 19:06.450
+So the subscriber is the class but it will allow me to stop.
+
+19:06.770 --> 19:09.770
+And no this is not how we get here.
+
+19:10.120 --> 19:16.450
+The subscriber will take the first name of the topic its structure.
+
+19:16.750 --> 19:23.640
+So I have a chapter on this topic and they have to tell you the name of the book to be subscribe to.
+
+19:23.830 --> 19:30.050
+This is the buffer size how many messages will be back for that process.
+
+19:30.350 --> 19:38.530
+You can put a number if you really low number one if you have two messages that come to the bottom one
+
+19:38.530 --> 19:40.660
+of them of course.
+
+19:40.660 --> 19:51.570
+And finally OK we are able to create a threat OK for processing any incoming message.
+
+19:51.610 --> 20:00.390
+So this is a subscriber OK and for subscriber Amos's the process it must be processed right.
+
+20:00.400 --> 20:04.090
+So we are able to create a function that we would call a callback.
+
+20:04.360 --> 20:10.210
+This callback will be automatically executed whenever a new message.
+
+20:10.500 --> 20:13.480
+OK all the chatter got me will we.
+
+20:13.650 --> 20:16.450
+Let me see what I see.
+
+20:16.590 --> 20:19.000
+Message the callback.
+
+20:19.100 --> 20:24.050
+So I tried to pull back but to keep it any other way.
+
+20:24.460 --> 20:34.360
+So automatically executed OK whenever a message see here or the name of the message of the message that
+
+20:34.360 --> 20:38.550
+would be executed and that I need to find that and I thought OK.
+
+20:38.560 --> 20:42.730
+So it's a voice of code that it takes on my part.
+
+20:42.970 --> 20:46.180
+That is the message OK.
+
+20:46.190 --> 20:52.170
+So I pointer to the message stream.
+
+20:52.180 --> 20:57.860
+OK so this cost of the optics is also wanted for the message.
+
+20:58.360 --> 20:59.000
+OK.
+
+20:59.110 --> 21:03.930
+And finally Whenever I just speak you know I don't have too much processing here.
+
+21:04.150 --> 21:12.440
+But of course what other topics you need to process you need to process it in different ways.
+
+21:12.470 --> 21:24.770
+You can just to stay the message or at least say I heard person ask you this is my system is very simple.
+
+21:25.300 --> 21:29.140
+And of course you should not forget to me cruel to me.
+
+21:29.980 --> 21:38.960
+This is supposed to be months once we the process the first one time.
+
+21:39.130 --> 21:46.150
+And trust me and I'm just processing all of the incoming messages in the callbacks.
+
+21:46.150 --> 21:47.390
+This is a different source.
+
+21:47.510 --> 21:54.530
+Once it stays on for about time that the back of incoming message has to be processed.
+
+21:54.730 --> 22:02.690
+And once we make the that any messages callback functions so that's it.
+
+22:02.890 --> 22:11.090
+Now the reason that I can say we are going to execute it of course I need to come to my house you make
+
+22:11.090 --> 22:18.230
+this copy from your quantification.
+
+22:18.360 --> 22:24.200
+So this is this is another this is the name of the note I'm going to get.
+
+22:24.780 --> 22:29.160
+And this is the name of the file that they have created.
+
+22:29.170 --> 22:32.230
+This not add to the list.
+
+22:32.380 --> 22:33.020
+OK.
+
+22:33.180 --> 22:39.960
+In the other way I'm going to be back to this.
+
+22:40.050 --> 22:42.680
+Let's talk about Mr..
+
+22:42.930 --> 22:47.270
+So you know no to all the letters.
+
+22:47.310 --> 22:48.680
+That's very simple.
+
+22:49.130 --> 22:49.670
+OK.
+
+22:49.680 --> 22:59.930
+So the next step would be to say to go by you know to make workspace.
+
+23:00.560 --> 23:03.310
+This could mean
+
+23:14.110 --> 23:18.870
+for some time now we can see there is a new executable that is generated.
+
+23:18.940 --> 23:20.370
+It's the listener.
+
+23:21.030 --> 23:27.120
+OK so fine I can go around my my both nodes.
+
+23:27.940 --> 23:38.150
+So let us run.
+
+23:39.020 --> 23:41.230
+OK but before I knew the.
+
+23:42.270 --> 23:46.930
+Let's let's run this.
+
+23:47.950 --> 23:49.000
+OK.
+
+23:49.420 --> 23:58.060
+Now there is nothing that you discover is never into that one because there is no.
+
+23:58.280 --> 24:08.210
+So I love the daughter OK because if for a public message I heard the word too.
+
+24:08.220 --> 24:11.180
+So this class would be executed.
+
+24:11.640 --> 24:16.180
+OK so you can see this is
+
+24:19.620 --> 24:20.860
+a new message.
+
+24:25.210 --> 24:26.070
+OK.
+
+24:28.390 --> 24:32.150
+So his message started to go to YouTube and so on.
+
+24:32.410 --> 24:33.220
+So if I saw
+
+24:36.570 --> 24:44.220
+day of the last Mrs. 4:37 and he said is so it works fine.
+
+24:44.330 --> 24:50.750
+So I'm sure if I want to get the frequency with the son one message each to say it's going to click
+
+24:50.750 --> 24:52.200
+into one.
+
+24:52.910 --> 24:53.630
+OK.
+
+24:53.830 --> 24:54.860
+Twenty two point five
+
+24:58.100 --> 25:02.340
+I'm going to make another me.
+
+25:03.590 --> 25:15.250
+So I told her so now are two seconds and you can see that such prejudice is missing.
+
+25:16.010 --> 25:18.890
+OK so now it's second messages generated.
+
+25:20.310 --> 25:23.050
+Because I have just seen the talker.
+
+25:23.370 --> 25:23.850
+OK.
+
+25:23.910 --> 25:34.030
+So what happens when I subscribed for any message Mrs. OK the callback for the call button function
+
+25:34.080 --> 25:35.220
+to be executed.
+
+25:35.420 --> 25:42.640
+But this is going to be using grazin force us to eat please.
+
+25:42.750 --> 25:44.920
+It's going to be this message.
+
+25:45.210 --> 25:45.690
+OK.
+
+25:45.700 --> 25:55.570
+I've heard that the message is this is this is the message you see that this is the easy to see because
+
+25:55.570 --> 25:59.260
+you can see here she works that much from
+
+26:06.250 --> 26:06.760
+OK
+
+26:11.530 --> 26:20.580
+so or the publisher already told you just before finishing you can do the same.
+
+26:20.840 --> 26:25.800
+And listen to music by for whatever reason that is you see.
+
+26:26.090 --> 26:29.470
+This is the piping version.
+
+26:29.970 --> 26:30.660
+OK.
+
+26:30.690 --> 26:35.560
+So this is a person that you don't eat pork roast by the roots.
+
+26:35.910 --> 26:36.940
+OK.
+
+26:36.960 --> 26:43.530
+And also the Wall Street message from some of the messages package.
+
+26:44.010 --> 26:53.490
+And then we have to find a new function that is called Dr. OK so you start when you create a perfect
+
+26:54.250 --> 26:55.690
+type checker.
+
+26:56.270 --> 27:01.120
+Ok off topic for the type of message you see the one that you put in.
+
+27:01.130 --> 27:06.700
+Yes I did you say it's only for text messages.
+
+27:06.920 --> 27:09.060
+There usually is no.
+
+27:09.590 --> 27:19.380
+OK so one of the differences is that the publisher is using frostbite 5 class not with the handler.
+
+27:19.410 --> 27:23.050
+It's been banned here.
+
+27:23.680 --> 27:28.770
+And that you should you know again the CROSSFIRE does it not.
+
+27:29.280 --> 27:30.250
+OK.
+
+27:30.420 --> 27:38.840
+You know here it started we are going to publish the message is certainly so who the heck is going to
+
+27:38.850 --> 27:43.030
+be one one second.
+
+27:43.160 --> 27:44.110
+Why.
+
+27:44.300 --> 27:44.860
+OK.
+
+27:44.990 --> 27:46.100
+Look would.
+
+27:46.310 --> 27:53.630
+This is equivalent to OK in the US we create Heyworth message.
+
+27:54.220 --> 27:55.310
+OK.
+
+27:55.700 --> 28:08.050
+By the time and finally we are going to read the message published see for some time.
+
+28:08.210 --> 28:11.100
+According to the plan here.
+
+28:11.120 --> 28:16.130
+So he got my message for I said so this is all about the document.
+
+28:16.190 --> 28:20.050
+You can see that in the US version.
+
+28:20.080 --> 28:30.550
+It was the same one that you find the main function to execute this method call and that's it.
+
+28:30.560 --> 28:37.350
+So the contract is when you use file for finding your notes.
+
+28:37.400 --> 28:38.880
+You don't need to add anything.
+
+28:38.910 --> 28:47.570
+You could make these so all you need to do day is to go to
+
+28:51.120 --> 28:58.360
+the father he'll have the skills for that and make sure that you're not executable.
+
+28:58.680 --> 29:11.660
+So usually you can do this if you say age old 7 7 7 8 x the name of an object is OK.
+
+29:11.940 --> 29:24.010
+So you have to have an executable if it is not executable so this scholar and if want to if you want
+
+29:24.010 --> 29:37.460
+to know who that's going to make us slum and then looking at the two men talking about.
+
+29:37.600 --> 29:44.630
+So this is the name of the executable Python code.
+
+29:44.710 --> 29:46.010
+What is it.
+
+29:46.440 --> 29:51.510
+You can see here is the time of day.
+
+29:52.080 --> 29:52.940
+OK.
+
+29:52.960 --> 30:02.200
+Now I can on my subscriber that I really see this plus start OK and you can see it works pretty much
+
+30:02.270 --> 30:07.330
+finer than I am and it's not easy.
+
+30:07.340 --> 30:10.750
+Let's let's and it works pretty much
+
+30:13.960 --> 30:16.840
+the same way you can buy it.
+
+30:16.980 --> 30:24.850
+So we import those foreign imports the message from standard messages can and we are willing to find
+
+30:24.850 --> 30:35.550
+them is all need to do is initialize a node and then create the subscriber of course both of them using
+
+30:35.550 --> 30:37.590
+crossfire.
+
+30:37.950 --> 30:44.300
+So this is the table the note that this is the name of the topic chapter which you can find in the main
+
+30:44.300 --> 30:44.990
+method.
+
+30:45.090 --> 30:48.000
+We just need pullouts the listener.
+
+30:48.180 --> 30:52.900
+And of course you need to define that because it's called that OK.
+
+30:53.100 --> 30:54.620
+This is the callback.
+
+30:54.640 --> 31:02.930
+Let the child find out what you can keep and so that will be a starter.
+
+31:02.940 --> 31:05.500
+And finally we believe.
+
+31:05.650 --> 31:09.870
+You can see there is no pointers to that in the garden.
+
+31:10.190 --> 31:19.230
+But actually the rule of thumb here is when you want to use like us weeks maybe bison would be more
+
+31:19.330 --> 31:20.240
+appropriate.
+
+31:20.520 --> 31:27.330
+But if you want to make like larger programs in this case that's more appropriate.
+
+31:27.450 --> 31:37.890
+But it's up to you to decide what they want to use and or six plus letters so we can execute.
+
+31:38.290 --> 31:44.720
+We can also use it but it takes a good five years.
+
+31:45.010 --> 31:48.970
+It doesn't mean it's not going to pop.
+
+31:49.090 --> 31:56.510
+It works like I got out of here like I'm told for the nursery
+
+31:59.980 --> 32:02.180
+on the end of the season.
+
+32:02.340 --> 32:05.250
+It works fine.
+
+32:06.530 --> 32:12.150
+So I hope that was helpful for you.
+
+32:12.150 --> 32:14.250
+Thank you for your attention this year.
+
+32:14.270 --> 32:15.190
+In the next story is.

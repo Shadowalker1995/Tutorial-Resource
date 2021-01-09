@@ -1,0 +1,346 @@
+WEBVTT
+
+00:00.380 --> 00:08.060
+In the previous video I have presented how to open display and save an image into a file using open
+
+00:08.060 --> 00:08.610
+C.
+
+00:08.790 --> 00:09.710
+That's awesome.
+
+00:09.990 --> 00:16.170
+But in computer vision applications we need to process the image so we need to have access to the pixels
+
+00:16.260 --> 00:19.330
+to the different colors and process them in this video.
+
+00:19.350 --> 00:26.160
+I will discuss the structure of an image and how to access the pixels of an image and which data structures
+
+00:26.190 --> 00:28.710
+are used to store an image and pictures.
+
+00:28.740 --> 00:30.170
+So let's see how it works.
+
+00:30.180 --> 00:35.850
+Let us consider the fine image structure of the bike in the previous lecture we have executed the file
+
+00:35.940 --> 00:41.440
+using different ways even using a restaurant or by executing it as a pipe from scratch.
+
+00:41.490 --> 00:48.060
+In this exercise I'm going to execute the instructions one by one into a python environment so that
+
+00:48.060 --> 00:51.930
+to show the impact of each instruction individually.
+
+00:51.930 --> 00:57.900
+So the first thing we need to do we we need to go with the folder topic 3 perception because it is there
+
+00:57.900 --> 01:01.710
+when we have the image folder from which we are going to read images.
+
+01:01.710 --> 01:09.290
+So let me go to his father CD as RC tropically perception.
+
+01:09.430 --> 01:12.500
+Now I am here I can execute the fight right away.
+
+01:12.570 --> 01:16.320
+Image is structured but I would like to exact the instructions one by one.
+
+01:16.320 --> 01:18.720
+So first of all let's go to a Python environment.
+
+01:18.720 --> 01:25.350
+Or just typing Python and the first thing we need to do is to import pi as empy which is the data structures
+
+01:25.650 --> 01:31.530
+that contains multi-dimensional and multidimensional arrays are used to store an image.
+
+01:31.530 --> 01:37.950
+So this is the structure where we will store an image when we loaded from the file we start into Mumbai
+
+01:38.460 --> 01:45.370
+and then we need to import Zeevi to be able to use up and Zeevi methods and then open the image.
+
+01:45.390 --> 01:48.710
+So I'm going to open the image called black and white.
+
+01:48.810 --> 01:50.060
+So I am.
+
+01:50.470 --> 01:53.140
+When CB2 not I am married.
+
+01:53.190 --> 01:58.470
+And then you have to specify the name of the image so the image is located in the images folder and
+
+01:58.470 --> 02:01.740
+the name is called black or white dot G.
+
+02:01.770 --> 02:02.290
+B.
+
+02:02.370 --> 02:04.100
+Ok so I have another image.
+
+02:04.110 --> 02:05.830
+So this is the image that you can read.
+
+02:05.880 --> 02:08.130
+It's an image that contains just two cells.
+
+02:08.130 --> 02:11.960
+One said that is white and another one that is black.
+
+02:11.970 --> 02:18.120
+So I use this simple image so that you can add so that you can identify the color of the pixels.
+
+02:18.120 --> 02:25.170
+So basically the white color is coded with the value 255 and the black color is usually encoded with
+
+02:25.170 --> 02:26.300
+the value 0.
+
+02:26.310 --> 02:33.160
+So we may be able to observe these colors when we print the content of the array studying the image.
+
+02:33.180 --> 02:35.860
+So let's now look at what is inside the image.
+
+02:35.880 --> 02:41.130
+So I'm going just to type I m g and you can see here this is the norm by a reader to represent the image.
+
+02:41.130 --> 02:46.800
+It's a multi dimensional array and although this image is a black and white it is considered as a color
+
+02:46.890 --> 02:47.220
+image.
+
+02:47.220 --> 02:53.000
+This is why here we have three channels one channel four blue red and green.
+
+02:53.010 --> 02:55.920
+So we have the R.G. encoding of the image.
+
+02:55.920 --> 03:02.910
+For example 255 to 55 to 55 it means all together means a white color and we can see that the black
+
+03:02.910 --> 03:05.430
+color is Inkatha over zero or very low.
+
+03:05.440 --> 03:07.210
+I like to here for example.
+
+03:07.470 --> 03:13.530
+So this is a present the first photo of that image is this is the first row of that image and then the
+
+03:13.530 --> 03:15.240
+second row the third row and so on.
+
+03:15.240 --> 03:18.680
+So we can also extract other information of the image.
+
+03:18.680 --> 03:24.360
+So in Python an image is stored into a new pie and we can also determine the type of image you can use
+
+03:24.360 --> 03:31.490
+Type I and you and your type is a multi dimensional array of the new by Lebert.
+
+03:31.510 --> 03:35.380
+It is also possible to find the size of an image by MGE that size.
+
+03:35.380 --> 03:38.970
+And here it is equal to 1350 pixels.
+
+03:38.980 --> 03:42.160
+So what is this number we can look at the shape of the image.
+
+03:42.160 --> 03:42.570
+OK.
+
+03:42.580 --> 03:49.030
+So the shape here it will tell us how many rows how many columns and here the number of challenges.
+
+03:49.090 --> 03:53.830
+So for example this image has 15 rows 30 columns and through each other.
+
+03:53.860 --> 03:57.090
+So 15 is also referred to as black.
+
+03:57.190 --> 03:57.670
+OK.
+
+03:57.730 --> 04:02.530
+So for example you can write like that when I am cheap cheap.
+
+04:02.680 --> 04:04.130
+And the first index.
+
+04:04.230 --> 04:05.460
+OK printing the lung.
+
+04:05.590 --> 04:14.420
+So the length to be equal to 50 with you said going to MGE don't shave.
+
+04:14.860 --> 04:16.660
+And it's the second index.
+
+04:16.970 --> 04:20.160
+OK so he can pin the width of the image in this case.
+
+04:20.190 --> 04:30.700
+It's something Cullens and three is the number of channels.
+
+04:30.850 --> 04:38.470
+So in this year and here we have three channels so you can see this number one thousand three hundred
+
+04:38.520 --> 04:47.130
+fifty is just the number of colors inside the image which is equal to 15 multiplied by the 480 multiplied
+
+04:47.140 --> 04:47.880
+by three.
+
+04:48.000 --> 04:49.960
+Gives us 1300.
+
+04:49.990 --> 04:55.970
+You can also find the length of the image by just typing an image or gays going to the terms of.
+
+04:56.070 --> 05:01.310
+Well there are two different ways either you can get it with images or Jay or you can also get it with
+
+05:01.710 --> 05:02.580
+an image.
+
+05:02.590 --> 05:06.240
+So in person it's possible to extract all the information from shape.
+
+05:06.280 --> 05:09.780
+OK assigning them to three different bodies for example height width and time.
+
+05:09.790 --> 05:12.930
+So sometimes we can call clanks sometimes you can call type.
+
+05:13.010 --> 05:19.120
+OK so you can see that it's going to collect the values from Image.
+
+05:19.150 --> 05:20.960
+You can also find the type of the image.
+
+05:21.070 --> 05:22.340
+I imagine that type.
+
+05:22.420 --> 05:29.190
+OK so it means that the elements are encoded as an assigned integer values over 8 bits.
+
+05:29.230 --> 05:36.410
+And also using Lynam by structure it is possible to access a row or a column or even a big set.
+
+05:36.490 --> 05:43.220
+So for example if you want to access a pixel row and column fight we can do I MGE 10 5.
+
+05:43.310 --> 05:47.400
+Ok so I MGE 10:5 it's equil to this value here.
+
+05:47.470 --> 05:50.870
+We can also access the value of a complete row.
+
+05:50.890 --> 05:52.110
+OK so this is Nuro.
+
+05:52.120 --> 05:54.130
+These are the values of the tenth.
+
+05:54.200 --> 05:57.580
+Or of course it has 30 values because the with is equal to 40.
+
+05:57.580 --> 06:00.200
+You can also check what is the shape of a row.
+
+06:00.210 --> 06:01.010
+I m g.
+
+06:01.030 --> 06:03.740
+So this is the wrong button for example the chip.
+
+06:03.820 --> 06:04.510
+OK.
+
+06:04.690 --> 06:11.500
+So it's 13 rose and three columns because three is the number of channels and 30 is actually the width
+
+06:11.950 --> 06:13.850
+or the number of rows here.
+
+06:13.980 --> 06:14.890
+What index.
+
+06:14.970 --> 06:21.040
+Then it is also possible to slice the image and only look at a single channel at a time.
+
+06:21.100 --> 06:27.700
+OK so for example if you want to only to look at the channel at the first China index 0 you can use
+
+06:27.820 --> 06:28.500
+i m g.
+
+06:28.600 --> 06:34.330
+Column come up column and then we specify which index of the child.
+
+06:34.360 --> 06:39.410
+So these are all the values for the first channel if you want to return the second Channon.
+
+06:39.700 --> 06:44.100
+It is possible and if you want to return to search on it you can change by.
+
+06:44.120 --> 06:46.470
+I will exit out the python environment.
+
+06:46.480 --> 06:52.550
+And if you want to execute this file as a whole you can do like we did before.
+
+06:52.920 --> 06:54.650
+As in the structure right.
+
+06:54.910 --> 06:59.130
+And here you have all the execution for the different instructions obviously.
+
+06:59.170 --> 07:05.740
+So based on this example you can understand that and V is a powerful tool that allows not only to the
+
+07:05.830 --> 07:13.190
+images but also to represent them into an efficient data structure using the byte multi dimensional
+
+07:13.220 --> 07:14.010
+array.
+
+07:14.230 --> 07:21.010
+And then we were able to access every pixel and every color in the pixel of the image.
+
+07:21.050 --> 07:27.940
+And by the salvific library that is very powerful and offers a lot of functionality and a lot of tools
+
+07:28.240 --> 07:30.520
+to process multi-dimensional areas.
+
+07:30.520 --> 07:37.090
+You have also observed that when we load a color image it has three channels one for that one for the
+
+07:37.090 --> 07:42.710
+green and one for Blue is the next picture we are going to have a deeper look into channels and we will
+
+07:42.710 --> 07:49.120
+show how to display every channel individually and how also to display an image in two different formats
+
+07:49.390 --> 07:51.720
+like you saturation and value.
+
+07:51.850 --> 07:58.450
+So in summary whenever you read an image or you get an image in an open CD you can access any of it's
+
+07:58.500 --> 08:01.790
+pixel just by manipulating the new byte.

@@ -1,0 +1,280 @@
+WEBVTT
+
+00:00.330 --> 00:07.770
+Learn human a Olenda being I'm about your mate in this video I'm going to present those services so
+
+00:07.770 --> 00:14.940
+those services are different from those topics in the previous videos we have seen how to create topics
+
+00:15.300 --> 00:21.240
+and how to work with topics and topics a actually effective way of communication between two different
+
+00:21.500 --> 00:25.830
+notes and it involves one note that works as a publisher.
+
+00:26.040 --> 00:32.610
+And another note that works as a subscriber and the publisher keeps sending every new information and
+
+00:32.670 --> 00:34.620
+every new data to the subscriber.
+
+00:34.650 --> 00:38.590
+This is how it works for the topics where there are services.
+
+00:38.610 --> 00:44.060
+It is another communication paradigm that involves a server and a client.
+
+00:44.060 --> 00:45.600
+So lets see how it works.
+
+00:45.600 --> 00:51.300
+So as we mentioned we are a service we have two entities that are server.
+
+00:51.570 --> 00:55.430
+Its the No that is going to provide the service and are plain.
+
+00:55.500 --> 01:02.490
+It's not going to consume the service and its different from the topic in the sense that the service
+
+01:02.580 --> 01:04.370
+is one time communication.
+
+01:04.650 --> 01:10.590
+It means the client sends a request and then the server will send the response and then the communication
+
+01:10.590 --> 01:11.640
+will be closed.
+
+01:12.150 --> 01:19.710
+If the client would like to have additional information from the server it needs to send another request.
+
+01:19.860 --> 01:25.350
+So only when communication happens for every connection between the client and the server.
+
+01:25.520 --> 01:32.130
+And this is not like with topic's because with topic's the publisher keeps sending information to the
+
+01:32.130 --> 01:38.850
+subscriber whenever there is any update the publisher that keeps sending to the subscriber which is
+
+01:38.850 --> 01:43.710
+going to continue to consume the data received from the publisher.
+
+01:43.710 --> 01:53.460
+However we are services the client will send the request and then the server will just sent back a response
+
+01:54.000 --> 01:56.130
+and then the communication would be close.
+
+01:56.130 --> 02:01.220
+There are different scenarios where the services are more effective than those topics.
+
+02:01.410 --> 02:08.610
+And basically we need services when we want to request a specific action to be performed by the Robert.
+
+02:08.610 --> 02:13.820
+Imagine for example youd like to do planning from a point A to Point B.
+
+02:14.070 --> 02:21.630
+So in this case if we sent a request to the planner and the planner should be implemented as a service.
+
+02:21.630 --> 02:28.170
+So the plan that is going to receive a point A to Point B and we have information about the map and
+
+02:28.170 --> 02:33.540
+then is going to make the appropriate computations in order to find the path.
+
+02:33.600 --> 02:36.290
+And finally sense back to the client.
+
+02:36.360 --> 02:43.260
+So this is an example where we need a rail service and we dont need a topic because we all need to have
+
+02:43.350 --> 02:51.390
+one path that is also spawning a rabbit in the simulator like it is the case with the sim and you can
+
+02:51.390 --> 02:53.110
+see an example right now.
+
+02:53.980 --> 02:58.540
+So to quickly understand the concept lets do this very simple example.
+
+02:58.630 --> 03:07.240
+I'm going to start crosscourt and then I'm going to start turtles you know.
+
+03:07.320 --> 03:17.820
+So now as you can see we have only one person in the simulator we can display the list of all services
+
+03:17.910 --> 03:24.390
+available for these men so we can see not using the command or service list.
+
+03:24.780 --> 03:32.130
+We are able to find all of the services related to the node to see one of the services is called Spolin
+
+03:32.420 --> 03:32.760
+phone.
+
+03:32.760 --> 03:34.170
+It means the application.
+
+03:34.470 --> 03:39.270
+And this allows to create an additional Thurtell into the simulator.
+
+03:39.660 --> 03:40.940
+But before doing that.
+
+03:40.980 --> 03:47.910
+So we want to understand what the structure of the cell phone what does is expect as arguments because
+
+03:48.360 --> 03:54.720
+when the plane sends a request to the server it's going to send that request with some arguments and
+
+03:54.720 --> 03:57.620
+then the shuttle is going to send back a response.
+
+03:57.660 --> 04:04.320
+So the request you're going to send to the server is to duplicate the turtle in the simulator so we
+
+04:04.320 --> 04:11.540
+can use the command rule service info and then the name of the service for.
+
+04:11.590 --> 04:18.350
+So you can see that here the service is provided by vnode turtles so we can find those.
+
+04:18.350 --> 04:19.540
+No dice.
+
+04:20.060 --> 04:20.550
+OK.
+
+04:20.590 --> 04:22.400
+And here we have crossed up.
+
+04:22.550 --> 04:26.150
+It's either on second or third this is the No.
+
+04:26.200 --> 04:31.850
+So these turtles you know it provides a service that is called Spahn and this is the you or I where
+
+04:31.900 --> 04:33.280
+the service is located.
+
+04:33.280 --> 04:35.770
+The port number and the type of the server.
+
+04:35.770 --> 04:41.930
+So this is the type of the message to the Sims phone because see the message format here.
+
+04:42.160 --> 04:48.440
+And then the arguments for the client when it's sensitive quest it must send the x y coordinates.
+
+04:48.520 --> 04:54.650
+It means what it will be located here in the simulation environment.
+
+04:54.920 --> 04:58.190
+So from here we have zero zero point.
+
+04:58.580 --> 05:02.310
+And these flunkeys fly like.
+
+05:02.490 --> 05:10.770
+And then the orientation and then the we can also check the tire of the surface.
+
+05:10.860 --> 05:12.210
+This is the diver here.
+
+05:12.440 --> 05:19.670
+See spoiled so we can use the command Ross as RV for a service info full see him.
+
+05:20.170 --> 05:23.270
+And here we can find the structure of the message.
+
+05:23.590 --> 05:33.130
+And as I rule explain the service consist of a request sent by the client and a response sent by the
+
+05:33.130 --> 05:33.700
+server.
+
+05:33.910 --> 05:41.330
+So we can see that the format of the service is composed of two different parts the upper part here
+
+05:41.560 --> 05:46.550
+that contains Ex-White that name are the same as the arguments.
+
+05:46.550 --> 05:53.360
+And these are the arguments that the flying troops on request and the second part.
+
+05:53.800 --> 05:57.110
+It represents the response of the server.
+
+05:57.380 --> 06:04.240
+And here we can see that the server is going just to retire the need of the robot that is created.
+
+06:04.610 --> 06:11.130
+So let's try to apply this here to create a new system in the simulator.
+
+06:11.330 --> 06:19.490
+We're going to use our service call and then we're going to call the name of the service.
+
+06:19.490 --> 06:26.140
+So obviously sort of a series called spawn and now we will provide the arguments of that inquest Ex-White
+
+06:26.150 --> 06:30.570
+that that name so that could be 1 7 7.
+
+06:30.710 --> 06:34.890
+So remember it is Fontanes 5 5 7 7 should be somewhere here.
+
+06:35.300 --> 06:41.480
+And then this is the orientation I would put one eighty can zero.
+
+06:41.920 --> 06:42.720
+OK.
+
+06:43.070 --> 06:47.320
+And finally the name I'm going to get to.
+
+06:47.440 --> 06:53.330
+So you can see now we have created a new in the simulator.
+
+06:53.950 --> 06:58.040
+And the position 7 7 we can do for another one.
+
+06:58.140 --> 07:03.120
+For example I want to create a that's a file name.
+
+07:03.140 --> 07:09.190
+I'm going to eat the city and let me make it 90 degrees of orientation.
+
+07:09.380 --> 07:19.200
+Now that is going to create some thing must have Ok so you can see you know this is how the service
+
+07:20.190 --> 07:24.840
+requests and the response works so you can see the response now is just the name.
+
+07:25.230 --> 07:26.860
+OK the name.
+
+07:27.150 --> 07:30.300
+This is the format of the response.
+
+07:30.450 --> 07:35.170
+So in the next video you're going to understand how we can implement a service.
+
+07:35.190 --> 07:43.380
+Now in this demonstration I'm showing how to use a service that already exists but you also demonstrate
+
+07:43.770 --> 07:46.710
+how to implement and read and use service.
+
+07:46.710 --> 07:49.130
+And what are the different steps.
+
+07:49.140 --> 07:57.120
+So at this point in time you just need to understand that the service has two different parts the client
+
+07:57.270 --> 07:59.970
+and the server and the exchange of message.
+
+07:59.970 --> 08:06.750
+So one message is sent by the client and the response message is sent by the service back to the client.

@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00.540 --> 00:02.160
+Come back to a new tutorial.
+
+00:02.430 --> 00:07.620
+And in this video we were talking about how to create a new message in the race.
+
+00:07.800 --> 00:14.430
+So far we have been dealing with already defined race messages like thunder and buzziest streaming geometry
+
+00:14.450 --> 00:17.700
+and was just released for windows to the commands etc..
+
+00:18.120 --> 00:25.080
+However we might have the need to find our own messages if not existing message type defines the content
+
+00:25.200 --> 00:27.720
+that you want to carry out in the message.
+
+00:27.720 --> 00:33.410
+For example you have new hardware that will provide you a new data that is not defined in any existing
+
+00:33.630 --> 00:38.880
+message that in this case you want to define your own custom message.
+
+00:38.880 --> 00:42.570
+First let us understand the structure of our message.
+
+00:42.990 --> 00:49.690
+Typically our message is defined by two things the package name where it belongs to its proper name.
+
+00:49.830 --> 00:57.300
+For example the string message type is a type defined in the package standard Yes whereas the message
+
+00:57.330 --> 01:00.830
+is defined in the package geometry as yes.
+
+01:00.900 --> 01:01.760
+The same thing.
+
+01:01.950 --> 01:07.270
+If we want to define our own message it will be associated to a package.
+
+01:07.330 --> 01:11.610
+I will show you how to create your own message inside the rest package.
+
+01:11.610 --> 01:18.090
+In addition every last message has some content which is defined by the type of field and also a field
+
+01:18.090 --> 01:21.510
+that will have a value with respect to it's typed.
+
+01:21.540 --> 01:28.220
+For example the street message contains one field of types 3 and its name is data.
+
+01:28.320 --> 01:30.460
+Another example is the message.
+
+01:30.470 --> 01:32.490
+Use it for velocity comments.
+
+01:32.490 --> 01:37.280
+It has two attributes linear and angular type vectors.
+
+01:37.380 --> 01:41.640
+Each of these two attributes is composed of three float values.
+
+01:41.640 --> 01:45.360
+The x y and z components of the velocities.
+
+01:45.360 --> 01:51.420
+Now let us consider a simple example where we will develop our customers message for an Internet of
+
+01:51.420 --> 01:51.990
+Things.
+
+01:52.070 --> 01:58.620
+Or no let us assume that you have a sensor not attached to us and provides for values the ID of the
+
+01:58.620 --> 02:00.720
+sensor which is an integer.
+
+02:00.780 --> 02:03.320
+The name of the sensor which is a string.
+
+02:03.390 --> 02:10.650
+Also the temperature and humidity which are Froud values such a message is not defined in the US so
+
+02:10.770 --> 02:16.320
+we would like to define it and create a custom message that can be used to publish these values in Rowse
+
+02:16.390 --> 02:22.110
+ecosystem and also create a subscriber that can listen to these values and process them.
+
+02:22.290 --> 02:28.650
+So I will demonstrate how to create this complete application starting from defining the new Rosmah
+
+02:28.650 --> 02:34.590
+such then writing the publisher note and a subscriber note that we communicate together using the created
+
+02:34.850 --> 02:35.350
+method.
+
+02:35.430 --> 02:38.410
+The steps to create a new message are as follows.
+
+02:38.760 --> 02:44.120
+First we need to create a folder inside the package where the message will be created.
+
+02:44.130 --> 02:48.480
+This father will be called MSDE for defining Grus messages.
+
+02:48.480 --> 02:55.200
+Second we will create a message file with the extension that MSEE and we re edit this fight two of the
+
+02:55.200 --> 02:57.810
+attributes of the methods and their types.
+
+02:57.810 --> 03:01.370
+Every attribute should be defined in one line in the MHs you fight.
+
+03:01.500 --> 03:07.980
+Then we need to update the dependencies in the package that X-amount and this you make this look XTi
+
+03:08.070 --> 03:11.990
+so that the message can be generated as a library in the ecosystem.
+
+03:12.000 --> 03:16.250
+After that you must compile the package using that can make such.
+
+03:16.260 --> 03:21.330
+The message will be generated and after words it can be used by different rules notes.
+
+03:21.330 --> 03:24.780
+Finally we can make sure that the message is created using the command.
+
+03:24.850 --> 03:31.370
+Russ M.Z. showed in the next video I will demonstrate how to implement these steps to create a customer's
+
+03:31.410 --> 03:36.110
+message and a publisher subscriber application that uses this message.
+
+03:36.420 --> 03:37.560
+Let's see how it works.

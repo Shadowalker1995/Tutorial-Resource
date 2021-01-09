@@ -1,0 +1,457 @@
+WEBVTT
+
+00:00.780 --> 00:04.090
+American-Muslim Salaman you know what Alexeyevitch mean.
+
+00:04.090 --> 00:08.710
+Welcome back to new tutorial on robot operating system and now it is time to write.
+
+00:09.270 --> 00:11.440
+As a subscriber to the laser scanner.
+
+00:11.480 --> 00:12.690
+The previous videos.
+
+00:12.810 --> 00:13.580
+I have presented.
+
+00:13.610 --> 00:19.080
+Laser scanners using the camera and these are real findings and they have also presented how to connect
+
+00:19.080 --> 00:24.930
+them how to visualize them using Arbys how to store them using grows back and how to play them from
+
+00:25.230 --> 00:25.930
+backlight.
+
+00:25.950 --> 00:32.130
+In this video we are going to write our first real snow to subscribe to this kind of topic and to process
+
+00:32.130 --> 00:32.270
+it.
+
+00:32.280 --> 00:34.450
+Let me first clarify the process.
+
+00:34.530 --> 00:40.430
+First of all we need to start the drivers of the laser scanner whatever it is you R.G. or the like Lytro
+
+00:40.440 --> 00:42.200
+camera or any other device.
+
+00:42.240 --> 00:48.030
+If you have an ethernet if you don't have a device you can also start a robot file which you can find
+
+00:48.030 --> 00:48.680
+on the site.
+
+00:48.690 --> 00:53.820
+You have a repository of the course and then you have to make sure that the scan topic is available
+
+00:54.030 --> 00:58.910
+so that when you subscribe to it you are sure that you receive messages in the callback function that
+
+00:59.000 --> 00:59.610
+you like.
+
+00:59.610 --> 01:05.370
+Let us know that we subscribe to this topic and then the callback function it will receive the messages
+
+01:05.640 --> 01:11.010
+and process them for example to calculate the mean age the maximum range the average range and the different
+
+01:11.070 --> 01:12.400
+average statistics.
+
+01:12.420 --> 01:14.540
+So let's see how it works in practice.
+
+01:14.700 --> 01:19.560
+Let's get started with the Python code of the root node subscriber with the laser scanner.
+
+01:19.560 --> 01:24.750
+So here in Topeka for such a laser we can click on skun subscriber.
+
+01:25.110 --> 01:29.030
+So basically misfile the main function it initialises.
+
+01:29.060 --> 01:30.690
+No it is called the No.
+
+01:30.750 --> 01:36.630
+And here it will just start and you subscribe using last find subscriber and if you subscribe to the
+
+01:36.630 --> 01:37.540
+topic scan.
+
+01:37.560 --> 01:43.320
+This is the type of the messages Laserscope and this is the name of the callback function.
+
+01:43.490 --> 01:43.950
+OK.
+
+01:44.040 --> 01:51.180
+So we need to import the laser scan message Rob sensor image just that energy and also we define the
+
+01:51.200 --> 01:56.330
+scan callback and data here present the scandale and that be the seat from the sensor.
+
+01:56.430 --> 01:58.340
+Let me connect now.
+
+01:58.650 --> 01:59.150
+There you are.
+
+01:59.150 --> 02:01.880
+Here is a scanner just to make a refresher.
+
+02:01.900 --> 02:05.790
+And we start a Scott and me I will start there you know.
+
+02:05.950 --> 02:08.380
+Now are we to make or stop this.
+
+02:08.460 --> 02:14.160
+So this is the topic that we are going to substract with and then what data were going to collect is
+
+02:14.160 --> 02:21.770
+the data that will get inside the topic so we can make of course come OK and this is the data that we
+
+02:21.760 --> 02:22.220
+got.
+
+02:23.240 --> 02:32.440
+So basically we have under me under the max agreement three months time maximum raised minimum wage
+
+02:32.680 --> 02:40.990
+and then we have an array that contains the list of ranges from the minimal angle to the maximum and
+
+02:41.950 --> 02:42.480
+OK.
+
+02:42.590 --> 02:45.660
+So remember that these Unger's are expressed in review.
+
+02:45.860 --> 02:49.740
+So basically this is the structure of the scanned message that we are going to receive.
+
+02:49.820 --> 02:58.430
+And we can extract this information by OK so in the pullback method we have received a message data
+
+02:58.520 --> 03:06.050
+so that we can scan data and basically in the scan callback you're going to print some statistics for
+
+03:06.050 --> 03:13.280
+example with and then the minimum raise by the maximum raised by the average age value and also the
+
+03:13.280 --> 03:16.810
+average between two indices so year.
+
+03:16.850 --> 03:22.310
+I have defined a couple of my function I'm going to describe below for example this function is going
+
+03:22.310 --> 03:26.510
+to retire the minimum age and the index of the minimum range.
+
+03:26.600 --> 03:27.060
+OK.
+
+03:27.120 --> 03:32.150
+And this function is going to return the maximum range and the index of the maximum range of course
+
+03:32.510 --> 03:35.580
+it takes us improving the array of ranges.
+
+03:35.840 --> 03:41.400
+So here we have underlaid that is called dreariest inside the callback function.
+
+03:41.450 --> 03:47.700
+We have the object scan data and inside scan data we have a great rageous.
+
+03:47.750 --> 03:53.780
+So this array will be input to a method that they have to be that below I'm going to explain and then
+
+03:53.900 --> 04:00.290
+we're going to extract the value the maximum range so the maximum value even just and also the index
+
+04:00.290 --> 04:06.020
+that corresponds to the maximum the age when we do the same for calculating the average value.
+
+04:06.110 --> 04:06.720
+OK.
+
+04:06.860 --> 04:10.510
+And we will agree as you put here.
+
+04:10.550 --> 04:13.270
+Also the average between two indices.
+
+04:13.340 --> 04:18.290
+This is the average value among all the values in the ranges and this is the average wedding for example
+
+04:18.290 --> 04:21.240
+between index to an index.
+
+04:21.320 --> 04:26.680
+So we can use any kind of next year whatever we want the left side the right side or in the middle.
+
+04:26.880 --> 04:27.190
+OK.
+
+04:27.230 --> 04:35.920
+Let me correct the spelling error for these two methods so it's actually a very powerful language and
+
+04:35.920 --> 04:42.220
+it has a lot of tools and libraries that make it easier actually to extract the maximum values from
+
+04:42.360 --> 04:43.530
+energy.
+
+04:43.590 --> 04:49.600
+For example the method mean rage index that you are going to call about here.
+
+04:49.930 --> 04:57.060
+We're going to apply the punch me that is defined in Python which takes the argument the meaning is
+
+04:57.070 --> 05:04.620
+going just to return the minimum by date so minimum wage is going to be returned by the method ranges.
+
+05:04.780 --> 05:10.340
+And then we can use ranges that index and then we will provide the minimum each year.
+
+05:10.540 --> 05:12.310
+It's going to return it's index.
+
+05:12.310 --> 05:19.560
+That's why this mean rage index is going to return both the range and also the index.
+
+05:19.660 --> 05:21.880
+And this is the output of the method year.
+
+05:21.920 --> 05:26.700
+It's going to be two values the minimum wage and the index of the minimum wage.
+
+05:26.740 --> 05:29.300
+Same thing will be for the maximum wage index.
+
+05:29.350 --> 05:29.750
+OK.
+
+05:29.770 --> 05:35.080
+We're going to return the maximum range and the index of the maximum range using the same thing instead
+
+05:35.080 --> 05:41.710
+of using the method we were going to use the method Maxentius really defined in Python OK and can be
+
+05:41.770 --> 05:43.210
+applied on ranges.
+
+05:43.210 --> 05:45.290
+OK something very important here.
+
+05:45.490 --> 05:49.960
+So we have observed that some of the values can actually equal to 9.
+
+05:49.960 --> 05:51.130
+So let me check here.
+
+05:51.160 --> 05:52.320
+Yes you can see.
+
+05:52.340 --> 05:53.590
+So we have to deal with that.
+
+05:53.590 --> 05:59.440
+We need to find the maximum value such that it is different from the okay whatever it is the maximum
+
+05:59.470 --> 06:01.360
+or the minimum value for that.
+
+06:01.510 --> 06:02.720
+We don't have any problem.
+
+06:03.010 --> 06:08.650
+But for maximum value or turtling the average if you don't discard the number.
+
+06:08.840 --> 06:09.400
+OK.
+
+06:09.470 --> 06:13.390
+At the end the results will be equal to none because it is not defined.
+
+06:13.420 --> 06:14.680
+So what we can do here.
+
+06:15.010 --> 06:21.550
+We can't filter out the non-value so is equil every x inside ranges if x is not enough.
+
+06:21.670 --> 06:26.920
+So we use here the function is none that is defined in the module.
+
+06:27.070 --> 06:32.050
+OK so if it is not not in this case ranges OK will contain the Exabyte.
+
+06:32.110 --> 06:34.360
+Otherwise the x value will be discarded.
+
+06:34.360 --> 06:41.950
+So here we're going to discard all the non blanks so that when we apply the me on ranges and the max
+
+06:42.030 --> 06:49.080
+on the list we are sure that we are going to apply them on the double values and not undefined values.
+
+06:49.120 --> 06:55.230
+So since the ranges First of all we think that the range is from the volumes or undefined values.
+
+06:55.270 --> 06:58.890
+And then we're going to use some changes is going to return to some.
+
+06:59.020 --> 07:02.590
+And then we will divide the sum by the length of ranges.
+
+07:02.590 --> 07:09.580
+So here we need to do small cast on float such that you we return a float value for the average So the
+
+07:09.580 --> 07:15.700
+average range is some of our ranges divided by the total number of ranges and the same thing is for
+
+07:15.700 --> 07:17.570
+the average between two indices.
+
+07:17.620 --> 07:24.280
+So here instead of specifying only the range sixty five range and also the first index and the last
+
+07:24.280 --> 07:32.200
+index we figure out then undefine it values and then we slice the array.
+
+07:32.260 --> 07:34.990
+So in Python you can use a slicing.
+
+07:34.990 --> 07:41.610
+So we're going to select all the values in ranges from index type to the index plus 1.
+
+07:41.710 --> 07:44.470
+OK because this index will be excluding.
+
+07:44.590 --> 07:49.400
+So if you want to read it and get really to make it between I and J plus 1.
+
+07:49.420 --> 07:53.650
+And finally we're going to make the average on this slices array.
+
+07:53.890 --> 08:00.310
+OK the sum of the size array divided by the length of the slice is going to return the average distance
+
+08:00.310 --> 08:02.420
+between these two indices.
+
+08:02.450 --> 08:04.030
+OK that's pretty much it.
+
+08:04.030 --> 08:08.770
+Now in the callback function you're going to call the different methods that we have defined below.
+
+08:08.800 --> 08:12.460
+And then Niccol on our program and check how it works.
+
+08:12.520 --> 08:15.310
+OK so now we have already the driver around.
+
+08:15.400 --> 08:24.000
+Now I can run us run was essentially CVP then we have scanned subscriber that by.
+
+08:24.190 --> 08:26.710
+OK so you can see now it is actually calculating.
+
+08:26.800 --> 08:28.100
+Let me stop it.
+
+08:28.720 --> 08:34.430
+OK so the minimum range value is 0.07 the index is 44.
+
+08:34.540 --> 08:40.890
+OK the maximum range is five point ninety so you can see it can look up to five meters and the index
+
+08:40.900 --> 08:42.010
+is fifty nine.
+
+08:42.010 --> 08:48.730
+The average rate is one point sixty seven or 76 and the average between that and this is two and 70s
+
+08:48.730 --> 08:50.370
+zero point zero eighty.
+
+08:50.380 --> 08:53.340
+Of course these values can change from one scan to another.
+
+08:53.370 --> 08:58.570
+You can see that we have the callback function is going to be called ten times the second because it
+
+08:58.570 --> 09:01.060
+operates on 10 hurts.
+
+09:01.490 --> 09:07.120
+OK so if we make this topic go OK this is the time we do point one.
+
+09:07.120 --> 09:09.290
+It means every second that are done.
+
+09:09.300 --> 09:10.420
+Scan by.
+
+09:10.480 --> 09:15.130
+OK so this final call was actually able to find the maximum value.
+
+09:15.320 --> 09:17.890
+And of course you'll be just displaying information.
+
+09:17.900 --> 09:23.110
+But now for example if you have the laser on the Robert we can use this information in order to avoid
+
+09:23.170 --> 09:23.740
+obstacles.
+
+09:23.740 --> 09:26.870
+For example we can try to find out what is the minimum resteal Robert.
+
+09:26.920 --> 09:30.820
+And then if it is in the left side you try to move towards the right right side.
+
+09:30.820 --> 09:34.150
+And if the obstacle is the closest obstacle is the right side.
+
+09:34.150 --> 09:35.840
+We try to move to the left side and so on.
+
+09:35.860 --> 09:37.700
+So we can develop application logic.
+
+09:37.690 --> 09:40.090
+For example you can also make an alarm system.
+
+09:40.120 --> 09:40.600
+OK.
+
+09:40.720 --> 09:46.300
+If we have an object that comes very close to the laser in this case for example we can make an alarm
+
+09:46.390 --> 09:51.670
+or if the robot is moving we can't force it to stop so that it doesn't crash through the obstacle to
+
+09:52.030 --> 09:57.210
+implement application logic by assessing the information coming from the laser scanner.
+
+09:57.310 --> 10:02.470
+For the moment as already mentioned we are just playing diminished but now we have all the tools in
+
+10:02.470 --> 10:04.940
+order to implement the application logic.
+
+10:04.990 --> 10:09.850
+So we're going to have an assignment where we are going to practice on processing delays this kind of
+
+10:09.850 --> 10:12.870
+information the callback function is the next video.
+
+10:12.970 --> 10:16.270
+I'm going to show how we can write a subscriber in C++.

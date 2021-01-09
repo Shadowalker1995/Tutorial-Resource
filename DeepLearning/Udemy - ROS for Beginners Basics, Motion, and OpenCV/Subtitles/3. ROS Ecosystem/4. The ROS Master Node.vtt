@@ -1,0 +1,109 @@
+WEBVTT
+
+00:00.320 --> 00:03.700
+So that was one in a billion.
+
+00:03.770 --> 00:09.660
+So I guess my point is smaller when you told him I'm going to present basic operation.
+
+00:09.720 --> 00:13.660
+So first of all I assume that you have already installed Rowse in your system.
+
+00:13.920 --> 00:16.750
+Now the first thing we need to do is to stop terrorists.
+
+00:16.800 --> 00:22.500
+We need the master know of the reservoir master.
+
+00:23.250 --> 00:29.820
+So if you want to start close the first thing that you need to you must and must note or what we call
+
+00:29.820 --> 00:31.970
+the Roscoff gate.
+
+00:32.120 --> 00:38.270
+So what is the main node in the US that will ensure the communication between any other node in the
+
+00:38.270 --> 00:39.650
+Robert operating system.
+
+00:39.750 --> 00:41.960
+So now the node is already on.
+
+00:42.090 --> 00:48.990
+So we can see here it gives it the link for the rescore that we call the postmaster you or I.
+
+00:48.990 --> 00:51.260
+So this is the rest mustardy or I we needed.
+
+00:51.570 --> 01:00.540
+Ok so now in order to see what is the effect of this what does the different nodes that we do want to
+
+01:00.540 --> 01:02.340
+see it go.
+
+01:02.370 --> 01:05.810
+Yes we can run node list.
+
+01:06.380 --> 01:06.800
+OK.
+
+01:06.810 --> 01:09.240
+So for the moment you have only one or at is point.
+
+01:09.260 --> 01:12.520
+First of all you are not that is called out.
+
+01:13.340 --> 01:13.890
+OK.
+
+01:13.960 --> 01:20.460
+There is one other note and this is because you have already started our crosscourt server so its waiting
+
+01:20.550 --> 01:28.010
+for other notes for publishing or subscribing topics so we can also check if we have subtopics this
+
+01:29.310 --> 01:31.910
+topic list to find the list of topics.
+
+01:31.920 --> 01:34.920
+For now we have two topics of interest.
+
+01:35.220 --> 01:39.640
+So these are the two different topics and ecosystem.
+
+01:39.660 --> 01:47.600
+So if he if we close I may Control-C underscore if we Clozaril score then if I try to find the road
+
+01:47.600 --> 01:50.220
+not least unable to communicate with the master.
+
+01:50.430 --> 01:50.990
+Why.
+
+01:51.000 --> 01:52.920
+Because it is no longer working.
+
+01:52.950 --> 01:58.250
+There is no central node is actually ensuring communication between the different ones.
+
+01:58.440 --> 02:04.760
+So there is no new words only there are no topics if I want to come back I have to restart again.
+
+02:05.190 --> 02:11.230
+Roscoff OK now I have to rush up close and personal.
+
+02:11.230 --> 02:15.630
+MS They both give the same as this.
+
+02:15.750 --> 02:18.710
+OK so now what the source code is activated.
+
+02:18.870 --> 02:21.340
+I can actually minimize the window.
+
+02:21.390 --> 02:21.740
+OK.
+
+02:21.750 --> 02:24.750
+Now we're going to start our first application.

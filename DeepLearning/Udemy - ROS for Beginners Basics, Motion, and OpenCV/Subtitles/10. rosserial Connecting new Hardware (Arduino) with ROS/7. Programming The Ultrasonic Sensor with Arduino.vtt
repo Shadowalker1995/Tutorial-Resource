@@ -1,0 +1,235 @@
+WEBVTT
+
+00:00.360 --> 00:05.670
+So after making the connection you are now ready to program the Arduino or know for the ultrasonic cleaner
+
+00:05.700 --> 00:06.400
+sensor.
+
+00:06.450 --> 00:10.840
+And this is actually the base that we use as a reference for our program.
+
+00:10.890 --> 00:13.230
+We're going to use the same program as here.
+
+00:13.230 --> 00:18.790
+So let me open the I don't mean I'm going to the Adina for lower than that slushed Adreno
+
+00:22.980 --> 00:32.280
+we can find the example of that would try something sensor here so we can go to sensor being days so
+
+00:32.280 --> 00:36.690
+this is the same coding that we can find in the story which can be found here.
+
+00:37.720 --> 00:39.650
+Sounds hurt big.
+
+00:39.960 --> 00:45.090
+So this being that I end up the a program that you be using now.
+
+00:45.210 --> 00:47.270
+So let's see the structure of the program.
+
+00:47.610 --> 00:50.290
+First of all the find a concept for the pin number.
+
+00:50.310 --> 00:55.860
+And here in this example you have used the number 7 and then initialize the serial communication using
+
+00:55.910 --> 00:59.080
+said maybe underspecified here the boundary.
+
+00:59.310 --> 01:06.570
+So this is going to specify what is the speed of the data that will be exchanged with a report between
+
+01:06.570 --> 01:09.270
+the Arduino board and also the computer.
+
+01:09.270 --> 01:15.280
+In this case the mod. is 9600 after initializing our program.
+
+01:15.330 --> 01:20.010
+Then we go to the loop method which we implement the logic of the application.
+
+01:20.070 --> 01:26.910
+First of all the signal being is going to be configured to be used as an output B because he's going
+
+01:26.910 --> 01:29.790
+to send the ship signal.
+
+01:30.290 --> 01:30.710
+OK.
+
+01:30.720 --> 01:37.410
+And this is not the structure of the signal we're going to send low pulse then high pass and then a
+
+01:37.410 --> 01:39.740
+low pulse after sending the signal.
+
+01:39.810 --> 01:43.430
+The pin is going to be converted into that input mode.
+
+01:43.440 --> 01:49.440
+So the same pin is used to read the signon from the pig and the high pulse whose duration is the time
+
+01:49.500 --> 01:55.240
+in microsecond from the sending of the pig to the reception of its echo of an object.
+
+01:55.260 --> 02:01.450
+So these high signal is going to bounce back and then will be captured by the echo transducer.
+
+02:01.470 --> 02:08.240
+And based on this we are going to estimate the duration which is on the time from Sunday behind us and
+
+02:08.260 --> 02:14.280
+to the time of receiving back behind Echo and using that duration we can then estimate the distance
+
+02:14.370 --> 02:16.840
+either in inches or in centimeters.
+
+02:16.850 --> 02:22.410
+OK so here you can find that are two methods one that converts a microseconds into inches.
+
+02:22.500 --> 02:28.530
+And this is done by dividing the duration by 74 and 2 and you can also estimate the distance in something
+
+02:28.530 --> 02:30.870
+metres by dividing it by 29.
+
+02:30.990 --> 02:36.600
+And so for example here this is because of the speed of the sound is three hundred forty meters per
+
+02:36.600 --> 02:39.890
+second or 29 microsecond person meter.
+
+02:39.900 --> 02:45.870
+So the big travels up and back so defined the distance of objects we take half of the distance traveled
+
+02:46.050 --> 02:49.560
+because that is the time when it goes and it don't back.
+
+02:49.590 --> 02:53.850
+So this is why we need to divide by two here and here as well.
+
+02:53.970 --> 02:58.600
+And these value 29 is related to the speed of the sound in the air.
+
+02:58.710 --> 02:59.990
+Everything is fine.
+
+03:00.000 --> 03:02.010
+We first compiled the program.
+
+03:02.010 --> 03:05.700
+So now we can see that the compilation is done.
+
+03:05.700 --> 03:07.770
+And finally we will upload the program
+
+03:10.350 --> 03:11.700
+into the you know what.
+
+03:11.910 --> 03:16.340
+So you can see here that we have an error message that it cannot find that device.
+
+03:16.350 --> 03:18.680
+Did you write ACM what so.
+
+03:18.750 --> 03:24.360
+First of all you have to make sure that we know what is connected to you or your bent operating system
+
+03:24.360 --> 03:24.950
+machine.
+
+03:25.000 --> 03:30.820
+You have to select the board being on so you can see that are different types of parts in our case.
+
+03:30.910 --> 03:32.280
+As you all know.
+
+03:32.340 --> 03:34.200
+So we have to select this one.
+
+03:34.260 --> 03:39.870
+And the second step is to find the parts are here we couldn't find any port for the Arduino on board.
+
+03:39.890 --> 03:41.310
+I'm going to reconnect it again
+
+03:44.340 --> 03:44.760
+and then.
+
+03:44.760 --> 03:48.800
+So I have this connection box and there is a connector Lileks.
+
+03:48.840 --> 03:50.090
+Los Angeles.
+
+03:50.200 --> 03:51.340
+Can go back to work.
+
+03:51.390 --> 03:55.560
+And now I would find that they are doing what's disconnected on the part slash.
+
+03:55.650 --> 03:56.970
+Slash did you right.
+
+03:57.000 --> 03:57.960
+AC zero.
+
+03:57.960 --> 03:59.250
+So this is Arduino.
+
+03:59.320 --> 04:06.470
+You know I have to select this one and this time I'm able to upload the program now to get on board.
+
+04:06.960 --> 04:07.770
+As you can see
+
+04:11.620 --> 04:13.820
+this is uploaded.
+
+04:13.880 --> 04:20.960
+Now we can use a monitor in order to see the messages received from the our you know all about your
+
+04:21.010 --> 04:25.720
+radios so that print is going to print them to the city monitor.
+
+04:25.820 --> 04:29.290
+So as you can see here this is the increase sensor.
+
+04:29.420 --> 04:35.260
+And you can observe as a person the sensor This is going to decrease.
+
+04:35.410 --> 04:44.540
+OK so 9 9 centimeters 6 centimeters 4 centimeters something that isn't not going to work our way on
+
+04:44.540 --> 04:45.200
+the sensor.
+
+04:45.230 --> 04:53.030
+And then you can see that the distance to increase that we can see in our sensor is working pretty much
+
+04:53.030 --> 04:58.370
+fight and is now finding and estimating the distance to the obstacle.
+
+04:58.370 --> 05:05.260
+Of course now we are able actually to read the values within the city in winter but we cannot actually
+
+05:05.290 --> 05:07.150
+read the patterns from us.
+
+05:07.200 --> 05:16.220
+And this is why we use to get information from the laser sensor that it enters your system so you can
+
+05:16.220 --> 05:20.490
+see all of the above is not from that system.
+
+05:20.510 --> 05:24.420
+There is no connection between them in the next video.
+
+05:24.410 --> 05:32.030
+I'm going to show you how to use a cell you want to comment about the hospital system is receiving this
+
+05:32.090 --> 05:35.680
+information given in the sensor as the voice messages.

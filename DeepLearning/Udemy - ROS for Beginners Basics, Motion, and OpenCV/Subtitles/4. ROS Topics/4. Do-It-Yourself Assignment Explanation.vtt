@@ -1,0 +1,265 @@
+WEBVTT
+
+00:00.460 --> 00:05.740
+In this exercise you will develop a simple program that applies the knowledge that you have learned
+
+00:05.800 --> 00:11.620
+in previous cultures in order to make global move and also display its position.
+
+00:11.620 --> 00:18.010
+So to make things simple we're going to use the turtle simulator and the principle is the same if we
+
+00:18.010 --> 00:19.540
+work with any other robot.
+
+00:19.600 --> 00:25.550
+So you need first to start the simulator will you start using a scope and then you open another term
+
+00:26.000 --> 00:30.970
+and you run a restaurant scene you know.
+
+00:31.150 --> 00:33.460
+So you will have the 60 minute.
+
+00:33.520 --> 00:34.660
+So now what do you want to do.
+
+00:34.660 --> 00:40.870
+We want to develop a program that we publish command to see to make it work for a certain distance and
+
+00:40.930 --> 00:48.090
+also that we subscribe to the topic that we provide us with the location of the position.
+
+00:48.340 --> 00:53.530
+OK so what you can do YOU CAN OPEN THIS is your goal and get you that S or C finder.
+
+00:53.890 --> 00:57.660
+You can create a new Finder that's called assignment.
+
+00:57.730 --> 01:00.480
+Folder and then you can create a new file.
+
+01:04.960 --> 01:08.010
+Nicolete Robert Moore
+
+01:11.010 --> 01:16.090
+topics like so you can develop in Python.
+
+01:16.270 --> 01:19.380
+You can also develop in C++.
+
+01:19.690 --> 01:26.190
+OK so basically here we need to develop a subscriber in the same program code.
+
+01:26.230 --> 01:39.190
+So the same as a subscriber for the topic that we show the location of that object that will be a publisher
+
+01:42.080 --> 01:46.340
+to the topic that we make.
+
+01:46.440 --> 02:02.380
+But of course the first question is what is the topic of the position and what is the topic that makes
+
+02:03.230 --> 02:04.600
+around work.
+
+02:05.470 --> 02:15.090
+So we need to find the topic needs of course and the usual way that we can do it is to use race topic.
+
+02:15.460 --> 02:18.310
+And yet we have the list of all the topics available.
+
+02:18.610 --> 02:27.350
+So it is clear from his lectures that the top post will represent the position of what and the topics
+
+02:27.560 --> 02:28.670
+given.
+
+02:29.070 --> 02:31.340
+It means command velocity.
+
+02:31.350 --> 02:36.130
+It represented the topic that will make the robot move.
+
+02:36.180 --> 02:43.590
+So what you can do you can actually take any of these scripts for example I'm going to start from the
+
+02:43.590 --> 02:45.150
+listeners.
+
+02:46.090 --> 02:52.000
+Let's start from the PALKOT script going just to copy exactly the same.
+
+02:52.110 --> 02:54.320
+And then we make necessary changes.
+
+02:54.600 --> 03:01.110
+So of course here you need to change the type of the message because in this case you're not going to
+
+03:01.470 --> 03:02.960
+publish on the street message.
+
+03:02.960 --> 03:06.170
+This was the case from the publisher's subscriber.
+
+03:06.330 --> 03:07.990
+Simple applications.
+
+03:08.130 --> 03:14.610
+But yet we are going to publish on the topic of the event which is going to contain information about
+
+03:14.610 --> 03:15.220
+the speed.
+
+03:15.240 --> 03:20.530
+So first thing I can say for example I would choose to be born here instead of the shuttle.
+
+03:20.580 --> 03:26.850
+So I would create a publisher that Michelet publisher
+
+03:29.930 --> 03:40.030
+OK it's going to be a publisher on the scene the main topic again later on I have to see how the public
+
+03:40.040 --> 03:41.900
+side will change this later.
+
+03:41.940 --> 03:47.340
+You need to change this later but now the second information yet.
+
+03:47.410 --> 03:53.790
+So this topic is not of type string so I need to know what is the type of this topic.
+
+03:53.860 --> 03:59.520
+So remember from a previous capture we have used this topic.
+
+04:00.000 --> 04:00.430
+OK.
+
+04:00.520 --> 04:07.800
+And the rest of the info allows us to find what is the information about this topic and one of the information
+
+04:08.160 --> 04:15.360
+it gives as the title of the message that is used by these topics are the top of the message here is
+
+04:15.420 --> 04:17.880
+your is just slash twist.
+
+04:17.920 --> 04:20.090
+So with is the message of our list.
+
+04:20.320 --> 04:26.970
+So this information is useful for us in the cold because now we're going to change this from a statement
+
+04:27.240 --> 04:37.650
+with another one from Joe German to him as yes that and it's very important.
+
+04:37.930 --> 04:39.690
+So you use the message.
+
+04:39.710 --> 04:44.880
+So that message contains the information about the speed of the robot.
+
+04:44.960 --> 04:48.080
+Whatever it is the linear speed or the angular speed.
+
+04:48.080 --> 04:53.440
+Now the question how what is the content of this message that this is something that you have to know.
+
+04:53.510 --> 05:01.330
+So just to give you another hint I remember from the lecture where we talk about intellectual topics
+
+05:01.560 --> 05:09.440
+not endless messages we have used the command process and as we showed and then we can apply here the
+
+05:09.440 --> 05:14.560
+type of the message that we want to see its content.
+
+05:14.670 --> 05:26.050
+So look you know this message it contains two components one that is linear for the linear city and
+
+05:26.050 --> 05:30.410
+the second one that is angular for the angular velocity.
+
+05:30.730 --> 05:38.440
+And here that has x component y component and z component because any motion occurs in three dimensional
+
+05:38.440 --> 05:39.290
+space.
+
+05:40.290 --> 05:45.570
+In the case of courtesy you have only two dimensional space X and Y.
+
+05:46.600 --> 05:54.900
+But for example if you are flying a drone we also have the z component with respect to the altitude
+
+05:56.730 --> 05:57.230
+OK.
+
+05:57.280 --> 06:05.110
+So on the other hand we also define the angular velocity that is the rotational speed or rotational
+
+06:05.110 --> 06:11.870
+velocity which is also defined in terms of x y and z coordinates.
+
+06:12.220 --> 06:19.960
+OK so you must know how to use this information in your Python code in order to define the velocity
+
+06:20.050 --> 06:24.210
+of the message for example now I can give you some more hints.
+
+06:24.220 --> 06:24.770
+OK.
+
+06:24.880 --> 06:28.560
+So let's say we want to find a new velocity message.
+
+06:28.630 --> 06:29.850
+So let me find it.
+
+06:29.890 --> 06:31.300
+As to its object
+
+06:35.840 --> 06:37.730
+this is the way and then what we can do.
+
+06:37.790 --> 06:44.160
+So we defined it with object and then inside that was blood.
+
+06:44.300 --> 06:47.970
+So we can select linear that x.
+
+06:48.260 --> 06:55.260
+For example I want to make the robot move forward so I can assign a value 1.0.
+
+06:55.400 --> 07:00.870
+And of course it can do other assignments for the velocity and inner cities.
+
+07:01.100 --> 07:12.460
+So I to think about this in order to modify this method then you can make it for example move method
+
+07:16.150 --> 07:16.580
+OK.
+
+07:16.680 --> 07:23.620
+So you need to make the city changes in order to publish the message correctly.
+
+07:23.760 --> 07:30.540
+So try to think about this exercise and later on you can see the solution that presents the you can
+
+07:30.540 --> 07:32.890
+watch the video that presents the solution.
+
+07:32.910 --> 07:37.500
+Just a final comment before I start working on the exercise.
+
+07:37.740 --> 07:43.800
+Do not worry if you feel that you're facing a lot of difficulties because this is normal for new users.
+
+07:43.800 --> 07:48.960
+And later on when the explanation we'll be able to understand more and more the concepts.
+
+07:49.170 --> 07:55.470
+But before looking at the solutions try your best to solve this exercise and later on have a look at
+
+07:55.470 --> 07:56.800
+the tailored solution with your.

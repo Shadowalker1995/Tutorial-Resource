@@ -1,0 +1,187 @@
+WEBVTT
+
+00:00.550 --> 00:09.870
+Lot of the letters and typically in robotics robots get a continuous feed of images through its camera.
+
+00:10.170 --> 00:16.280
+So it is mandatory to be able to read a video stream up and see the library supports this functionality.
+
+00:16.290 --> 00:23.040
+It is possible to read BILYEU streams from cameras or from video files and also to save them to some
+
+00:23.040 --> 00:23.950
+other files.
+
+00:24.120 --> 00:25.060
+In this video.
+
+00:25.080 --> 00:31.550
+I'm going to show how we can read that video stream from this become also from a video file.
+
+00:31.800 --> 00:34.770
+Let us consider the fired real video by.
+
+00:34.920 --> 00:41.160
+So as usual we need to import no pie and Sivi to library and often see the library.
+
+00:41.160 --> 00:49.170
+And then in order to capture a video stream we're going to use the method that capture of the up and
+
+00:49.170 --> 00:50.160
+see the lever.
+
+00:50.280 --> 00:57.660
+So video capture can be applied either to really from a camera device attached to the computer or also
+
+00:57.720 --> 00:59.210
+to read from a video file.
+
+00:59.310 --> 01:06.330
+So for example when we put zero it means we're going to connect to the first video device connected
+
+01:06.330 --> 01:07.370
+to the computer.
+
+01:07.620 --> 01:15.030
+So on a computer it's going to be US becoming a video stream is actually a collection of images we need
+
+01:15.030 --> 01:18.300
+to have a way to read the phrase coming from the video stream.
+
+01:18.300 --> 01:20.510
+So here we go for an endless row.
+
+01:20.580 --> 01:26.490
+And we use the video capture object that we have created here and the method tree.
+
+01:26.570 --> 01:33.570
+So that is going to retire one image from the biggest is going to the image by image and we returned
+
+01:33.620 --> 01:40.410
+them one by one and they we can just use the same like an image from an image file.
+
+01:40.530 --> 01:47.490
+So for example you can display the image or to clearly see that we will have some delay between one
+
+01:47.490 --> 01:48.540
+frame and another.
+
+01:48.570 --> 01:53.450
+So usually we can play with this depending on how fast we want the video to be played.
+
+01:53.460 --> 01:59.760
+And this is expressed in millisecond So if I make a delay of 1000 millisecond it means every single
+
+01:59.960 --> 02:02.240
+I'm able to process one free.
+
+02:02.360 --> 02:06.010
+So for example we are going to see only one frame per second.
+
+02:06.030 --> 02:09.410
+However we want to have a smoother review stream.
+
+02:09.540 --> 02:13.770
+In this case we can put in a very small study for example then millisecond.
+
+02:14.100 --> 02:20.840
+And finally we're going to wait for the key cue to be pressed in order to break the loop and close the
+
+02:20.850 --> 02:21.300
+program.
+
+02:21.300 --> 02:26.100
+So here we release the video capture and destroy all the windows that are.
+
+02:26.340 --> 02:29.770
+So let us run the script now and see what happens.
+
+02:29.940 --> 02:36.830
+So you can see how the camera has opened and I can play my hand so you can see my hand here moving with
+
+02:36.830 --> 02:39.560
+me because we have put a very small delay.
+
+02:39.660 --> 02:41.680
+That's right not to increase the delay.
+
+02:41.790 --> 02:44.140
+I'm going to ask you to leave program.
+
+02:44.310 --> 02:49.410
+Now I'm going to put one second delay between one frame and the other.
+
+02:49.410 --> 02:51.080
+Now we can play again.
+
+02:51.270 --> 02:59.670
+So you can see now that is much bigger delay of the motion of the motion becomes less smoother than
+
+02:59.880 --> 03:04.020
+before because you put one second delay between one frame.
+
+03:04.050 --> 03:11.270
+And so there is the delay is not easy but it is also possible to read the video stream from a file.
+
+03:11.400 --> 03:19.470
+So instead of reading from the device we can specify the path to a video file and then using the same
+
+03:19.500 --> 03:25.290
+will why we will read the file frame by frame and then we will show every frame in the window so we
+
+03:25.290 --> 03:30.660
+can't right now on the spine so we can see now this is the bit you are doing now is going to be very
+
+03:30.660 --> 03:33.720
+slow because you really have to be able to one second.
+
+03:33.720 --> 03:37.970
+So let me put this one at one millisecond and then we try to run again.
+
+03:38.130 --> 03:41.900
+And by the way the last of the five is around 30 minutes.
+
+03:41.970 --> 03:48.990
+So you can see when I put it that way the second the fight is going to be executed pretty much fast.
+
+03:49.240 --> 03:54.600
+Now instead of having three minutes of lag is going to run on in a few seconds.
+
+03:54.600 --> 03:57.780
+This is because people are so afraid very fast.
+
+03:57.780 --> 03:59.320
+One frame per second.
+
+03:59.460 --> 04:03.880
+So here you need to carefully adjust the value of the delay.
+
+04:03.930 --> 04:07.440
+And usually 25 milliseconds would be an appropriate.
+
+04:07.620 --> 04:15.170
+So you can see in the video is exactly the minutes that you is going to exist in only a few seconds.
+
+04:15.210 --> 04:20.860
+We can also lose some image processing before showing the video for example here.
+
+04:21.050 --> 04:24.030
+I would love to convert the image to gray color.
+
+04:24.180 --> 04:30.030
+OK so you can see now when you want to be black and white grayscale.
+
+04:30.300 --> 04:31.610
+You can also resize.
+
+04:31.620 --> 04:35.570
+You can do any kind of processing on the plane for this plane.
+
+04:35.690 --> 04:38.190
+OK so now you have resized to 50 percent.
+
+04:38.250 --> 04:45.210
+So in this video we have demonstrated how we can upload a video screen up and CD either from a camera
+
+04:45.540 --> 04:46.900
+or from a video file.

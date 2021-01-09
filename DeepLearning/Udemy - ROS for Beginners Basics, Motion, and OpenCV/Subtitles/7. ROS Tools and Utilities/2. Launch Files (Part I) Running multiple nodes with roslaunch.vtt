@@ -1,0 +1,277 @@
+WEBVTT
+
+00:00.230 --> 00:03.450
+Learn a lot of people so that there was more than a venum comedy audience.
+
+00:03.460 --> 00:10.560
+I mean if this is your I'm going to present launch fights Indras those fights are very important.
+
+00:10.560 --> 00:16.420
+In particular if you have many programs to imagine that you have several nodes and you want to run that.
+
+00:16.420 --> 00:22.110
+So what you have been doing so far is we open a terminal and we use the restaurant to open every node
+
+00:22.200 --> 00:23.460
+in a separate them.
+
+00:23.640 --> 00:28.440
+This becomes really cumbersome when we have a lot of notes to open at the same time.
+
+00:28.620 --> 00:35.880
+Fortunately in the there are large files which allow you to define several nodes which can be executed
+
+00:35.940 --> 00:36.820
+all at once.
+
+00:36.840 --> 00:40.550
+So let's see how it works before going into the coding part.
+
+00:40.680 --> 00:43.310
+Let's understand what is a long fight.
+
+00:43.320 --> 00:50.630
+So olanzapine is nothing but an excellent document which specifies if you thinks it specifies what are
+
+00:50.640 --> 00:53.310
+the notes that we execute.
+
+00:53.310 --> 00:58.230
+It also specifies some of the parameters that we can collect into the notes.
+
+00:58.230 --> 01:05.450
+And also it can include some other existing launch fights in order to run a large file.
+
+01:05.550 --> 01:10.670
+We can use the command or a slash like we use Roussillon for executing a node.
+
+01:10.920 --> 01:12.080
+We use the commanders.
+
+01:12.080 --> 01:17.670
+Now that is a program that easily launches multiple rows of notes that are defined in the lunchtime
+
+01:18.180 --> 01:22.760
+and by convention the last viage would have a large extension.
+
+01:22.770 --> 01:31.300
+Now let's go to the coding I'm now to show the importance and usability of Rumsfeld's other simple example
+
+01:31.300 --> 01:32.750
+using the simulator.
+
+01:32.770 --> 01:38.190
+But of course you can extend and generalize the use of lost files with any Rusnak.
+
+01:38.530 --> 01:43.980
+So remember that you have the same cleaner application that you have the before.
+
+01:44.140 --> 01:47.410
+And now imagine that I would like to open a simulator.
+
+01:47.410 --> 01:49.950
+So first of all I need to start the score.
+
+01:50.110 --> 01:54.200
+This is a first terminal that you have to open or to start with Scott.
+
+01:54.670 --> 02:02.560
+And then I need to open a second terminal where I on the simulator turtle theme and then that's you
+
+02:02.560 --> 02:03.250
+know.
+
+02:03.610 --> 02:09.520
+OK so this is a second term and if I want to open a third note for example making the operation of the
+
+02:09.520 --> 02:18.120
+robot I need to open a third then we don't use ingress to run then our third scheme and then it's the.
+
+02:18.290 --> 02:19.230
+And that's Kartini up.
+
+02:19.240 --> 02:21.410
+This is the third node.
+
+02:21.520 --> 02:23.280
+So I can use the oars to make more.
+
+02:23.410 --> 02:29.440
+And if I want to open my own program which is called turtled simply or I need to open a fourth 10 minute
+
+02:29.810 --> 02:34.990
+run which is not interest is such a city B then turtle seem greener.
+
+02:35.080 --> 02:40.790
+But back then I was going to exit at the second is going to go to this location here.
+
+02:42.600 --> 02:47.790
+So you can see I had to open so many terminals and of course if I have programs to open I need to open
+
+02:48.270 --> 02:52.830
+more and more terminals which is very cumbersome and not very efficient.
+
+02:52.830 --> 02:59.570
+So instead of doing that we can simplify the process by defining large fights.
+
+02:59.640 --> 03:00.540
+So let's see how it works.
+
+03:00.540 --> 03:02.800
+I'm going to stop programs.
+
+03:02.890 --> 03:05.760
+Let be just move somewhere.
+
+03:06.060 --> 03:12.870
+I'm going to stop the whole programs and instead of running four different nodes into four different
+
+03:12.870 --> 03:16.090
+10 minutes I can define a lunch right.
+
+03:16.620 --> 03:23.720
+So here we have lunch like go to the scene of which just happen to notice.
+
+03:23.730 --> 03:25.860
+So we're going to open the turtle.
+
+03:25.960 --> 03:27.900
+Note and also the opening.
+
+03:28.050 --> 03:28.470
+OK.
+
+03:28.530 --> 03:39.090
+So remember here we have often the turtle C note and we have also opened the deli up no the last five
+
+03:39.130 --> 03:43.240
+is actually an extremely fine that starts with the tag lounge.
+
+03:43.360 --> 03:50.230
+And we also finish with a top lounge and beside the lounge that we can define several notes using the
+
+03:50.230 --> 03:56.310
+tag node and the year that I've noticed has several parameters like the package name.
+
+03:56.530 --> 03:59.480
+OK so here we make restaurant.
+
+03:59.710 --> 04:02.690
+Then we call the package name.
+
+04:03.270 --> 04:03.890
+OK.
+
+04:03.970 --> 04:13.330
+So the packaging needs to see and then the type is actually the node name OK.
+
+04:13.340 --> 04:18.300
+So the no need here is called the C underscore Nazis is the name of the package.
+
+04:18.410 --> 04:20.330
+And this is the name of the node.
+
+04:20.570 --> 04:21.140
+OK.
+
+04:21.140 --> 04:25.880
+That you are going to start or the type of the node we're going to start and then we can give a custom
+
+04:25.900 --> 04:30.900
+name OK we can give a custom name so that Nicolete and we can call it.
+
+04:30.930 --> 04:32.920
+And it's sort of this the symbol.
+
+04:33.110 --> 04:39.360
+So this is the name of the note when we execute the note we're going to assign the following name in
+
+04:39.520 --> 04:45.350
+the initialiser is going to use this name for the particular note that you will execute.
+
+04:46.570 --> 04:46.950
+OK.
+
+04:46.960 --> 04:50.940
+And then in the same file I'm going to start of the tally up in the same way.
+
+04:50.950 --> 04:58.030
+We're going to use the time note and then the package name which is also 30 C and then the type of the
+
+04:58.030 --> 05:05.670
+node it use turtle Eliakim just this one and then we going to assign a name for the node which is called
+
+05:05.710 --> 05:07.830
+the turtle into your name.
+
+05:08.080 --> 05:18.220
+Now instead of running these for 10 minutes I can run these two notes OK just by launching this number
+
+05:18.450 --> 05:24.670
+that is up and the school lunch for this I not need even to underscore because when we use the rest
+
+05:24.670 --> 05:26.910
+now it's going to start to score.
+
+05:26.950 --> 05:34.940
+If it is not already started and then this does seem that now it's defined in our package or as such.
+
+05:35.020 --> 05:37.170
+This is the name of the package where it is defined.
+
+05:37.300 --> 05:39.250
+And I do find it either.
+
+05:39.370 --> 05:44.300
+So if you look at the workspace as I see this is essential CPB.
+
+05:44.550 --> 05:45.420
+OK.
+
+05:45.490 --> 05:48.780
+And then this is the SAAC in topic to motion.
+
+05:48.850 --> 05:54.820
+We had lunch and then we were going to start this lunch right.
+
+05:54.820 --> 05:59.960
+So this violence is actually belongs to essential CBP.
+
+06:00.280 --> 06:06.730
+So now I'm going to make Ross the sensors separately and then I can see that they have many large files
+
+06:06.730 --> 06:12.450
+I'm going to use the one that they have just declined which is called See daily job.
+
+06:13.450 --> 06:15.660
+And here is going to start two notes.
+
+06:15.820 --> 06:19.140
+So it has already started the turtle C simulator.
+
+06:19.310 --> 06:22.720
+And in addition to this it has already started later.
+
+06:22.950 --> 06:25.830
+Low key so we can verify that.
+
+06:26.100 --> 06:26.840
+OK.
+
+06:28.340 --> 06:35.350
+You can see know I'm able to control the motion using the DeLeo we can verify the name of the notes
+
+06:35.470 --> 06:37.810
+using Krasnow.
+
+06:39.100 --> 06:45.280
+And you can see now the note and you start to see underscore no this is the name of the note that we
+
+06:45.280 --> 06:50.560
+have a sign in the fight we can find it out in the snow just yet.
+
+06:50.650 --> 06:52.540
+And also they simply are not.
+
+06:52.540 --> 06:56.100
+This is the other name that you have the same as in a.

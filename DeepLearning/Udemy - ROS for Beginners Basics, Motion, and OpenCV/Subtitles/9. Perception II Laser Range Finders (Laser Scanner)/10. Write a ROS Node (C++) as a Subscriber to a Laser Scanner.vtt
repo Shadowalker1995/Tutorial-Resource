@@ -1,0 +1,445 @@
+WEBVTT
+
+00:00.220 --> 00:06.330
+In this video I'm going to present how could I trust note in C++ as a subscriber to a laser scanner
+
+00:06.640 --> 00:07.920
+in the previous video.
+
+00:07.980 --> 00:12.780
+We have written a note using Python and in this video we're going to write it in C++.
+
+00:12.780 --> 00:14.270
+You will see C++.
+
+00:14.280 --> 00:19.350
+Things are a little bit more complicated because we don't have the utilities that person provide to
+
+00:19.350 --> 00:24.450
+easily calculate just the sticks from an array like the minimum value with a maximum value and the average
+
+00:24.450 --> 00:24.850
+value.
+
+00:24.900 --> 00:26.600
+So let's see how it works.
+
+00:26.610 --> 00:32.190
+Remember the python program we have already predefined functions that allow us to calculate the minimum
+
+00:32.190 --> 00:37.600
+value inside and the rate the maximum value also the sum of all the values in an array.
+
+00:37.740 --> 00:43.300
+That is a plus plus we don't have this utilities for that reason I have created some 5s.
+
+00:43.320 --> 00:45.490
+So what were first five is called utility.
+
+00:45.500 --> 00:51.240
+It's just a library that they have created which performs a few computations like for example it converts
+
+00:51.240 --> 00:57.180
+radio to a degree degree radiant and then the distance between two different poses so these are some
+
+00:57.180 --> 01:02.850
+functionalities that you may need or we may want to use whenever we work with laser scanner and also
+
+01:02.850 --> 01:07.620
+most importantly this is another library where we have a community class that is called laser scanner
+
+01:07.740 --> 01:09.740
+and it contains a static methods.
+
+01:09.750 --> 01:15.270
+For example there is a static method that allows to find the average age in the laser scanner between
+
+01:15.270 --> 01:21.530
+two indices start index and and index some method that allows to find the maximum range the minimum
+
+01:21.540 --> 01:22.020
+range.
+
+01:22.020 --> 01:28.350
+Also the front range the front range its in the middle of the field of view usually at the angle zero
+
+01:28.410 --> 01:29.070
+in the middle.
+
+01:29.070 --> 01:34.020
+So these are different functions that they have created and they have implemented in order to calculate
+
+01:34.020 --> 01:37.670
+some statistics for the scan messages that we will receive.
+
+01:37.890 --> 01:43.480
+Another function is called also is obstacle to close that it takes Elisa's kind of a message and start
+
+01:43.500 --> 01:48.470
+index an index to specify an interval of values and also a distance 3 shot.
+
+01:48.470 --> 01:54.850
+So it is going to return to the maximum distance inside this interval is smaller than a distance three
+
+01:54.860 --> 02:01.200
+short the five laser scanner the TPP contains the implementations of these different methods for example
+
+02:01.320 --> 02:02.830
+to calculate the average age.
+
+02:02.850 --> 02:09.250
+We go from the start index and the index and we calculate the sum of all the values.
+
+02:09.310 --> 02:12.910
+And finally we divide by the total number of bodies.
+
+02:13.110 --> 02:20.430
+Of course here we have to exclude all the values that are not so we use SDD is none.
+
+02:20.460 --> 02:25.630
+If it is not none we're going to calculate the average for the dividing some other functions also loves
+
+02:25.640 --> 02:28.520
+you to give you the index finger and index to anger.
+
+02:28.530 --> 02:33.960
+So if you get an index inside this array is going to give you what is the relative and ok on target.
+
+02:34.080 --> 02:42.300
+We have the angles between angle and angle Max and every measurement response to an angle and also a
+
+02:42.300 --> 02:44.720
+response to an index inside.
+
+02:44.760 --> 02:50.160
+So if I know the index I can determine what is the angle and if I have the angle I can also determine
+
+02:50.160 --> 02:51.030
+what is the index.
+
+02:51.030 --> 02:56.790
+So these are just some computations that we do in order to find the index from the angle and the angle
+
+02:56.790 --> 03:03.300
+from the index and all the other utilities for example to calculate the average range in the right side
+
+03:03.930 --> 03:06.560
+on the left side or even straight direction.
+
+03:06.570 --> 03:07.760
+Getting the minimum range.
+
+03:07.770 --> 03:13.740
+So we're going to have initialize a mean index and every time we find a minimum value we're going to
+
+03:13.740 --> 03:19.100
+update the index and finally return the minimum value in the index.
+
+03:19.200 --> 03:25.700
+So you can look at the implementation of laser scanner TPD And don't forget that all the methods here
+
+03:25.760 --> 03:28.560
+are static so you don't need to create an object.
+
+03:28.560 --> 03:32.070
+You can't just call all of them by the name of the class.
+
+03:32.070 --> 03:38.250
+These two libraries are located in the laser scan for the inside topic perception's to leyser.
+
+03:38.300 --> 03:44.600
+For now let's look at scan subscriber TPP which has the same structure of the Python code.
+
+03:44.670 --> 03:50.400
+So if you have the main function we initialize the node we give it a name so the name node will be scanned
+
+03:50.400 --> 03:52.090
+subscriber CPB.
+
+03:52.410 --> 03:58.190
+And here we can either not handle and that we will create the subscriber to the topic and then redefine
+
+03:58.240 --> 04:05.280
+the callback function that is called scan callback so it can callback is going to take laser scanner
+
+04:05.340 --> 04:06.300
+message again.
+
+04:06.380 --> 04:10.610
+And then this is the header definition of the callback function.
+
+04:10.740 --> 04:14.820
+And this is its implementation is similar to subscriber.
+
+04:14.870 --> 04:20.340
+In the mean value the maximum value the average value is the pipe Emberton and even the C++ version
+
+04:20.400 --> 04:21.660
+will print the minimum.
+
+04:21.720 --> 04:23.230
+So how to bring the medium range.
+
+04:23.240 --> 04:25.570
+We use the static method laser scanner.
+
+04:25.620 --> 04:29.630
+Get minimum range and you put the scanned message received.
+
+04:29.870 --> 04:31.820
+Same thing that get the maximum range.
+
+04:31.830 --> 04:37.890
+Same thing to get the average age average age is going to be computed between the starting TX 0 and
+
+04:37.930 --> 04:39.930
+600 and also here.
+
+04:39.930 --> 04:45.850
+This is a testing of the method is obstacle to knows which takes a scan message.
+
+04:45.870 --> 04:48.810
+Start index and index and the distance.
+
+04:48.840 --> 04:53.520
+So every distance that is smaller than zero point sixty nine is going to light.
+
+04:53.520 --> 04:55.050
+The obstacle is too close.
+
+04:55.050 --> 04:59.650
+Of course you can change the value of the threshold depending on the requirements of your application.
+
+04:59.640 --> 05:01.530
+Something very important to note here.
+
+05:01.570 --> 05:07.510
+In order to use a laser scanner get minimum range and different methods that were defined in this file.
+
+05:07.540 --> 05:13.960
+So it is important to import the laser scanner that H had a file which is located in the laser scanner
+
+05:14.080 --> 05:17.870
+folder so we have to include the library and also this library.
+
+05:17.890 --> 05:24.250
+It includes the utility library that they have presented first that contains a few methods by converting
+
+05:24.360 --> 05:26.870
+Radio 2 degrees to get ready and so.
+
+05:27.130 --> 05:36.160
+So you can see here that laser scanner includes utility and scan subscriber that GDP it includes laser
+
+05:36.160 --> 05:41.450
+scanner slash laser scanner that H of course and C++ is not like in Python.
+
+05:41.500 --> 05:45.140
+This inclusions has to be reflected in the list.
+
+05:45.190 --> 05:48.060
+So what we should know before being able to compile.
+
+05:48.100 --> 05:50.810
+We need to add these libraries into the mix.
+
+05:50.860 --> 05:54.620
+So first of all we need to use our library instruction.
+
+05:54.700 --> 06:01.420
+OK so we specify the library names that you want to produce ongoing just a coded utility library and
+
+06:01.420 --> 06:07.780
+then we provide the source file of the utility library that you want to add to this you make list to
+
+06:07.870 --> 06:08.860
+the build system.
+
+06:09.040 --> 06:16.480
+It is located in SIAC topic for such into lasers flash lasers control the market is what I have with
+
+06:16.480 --> 06:21.940
+the library and then utility the GDP will do the same thing for the laser scanner.
+
+06:22.070 --> 06:28.360
+Some way to create a library called laser scanner leap and then I have to specify what is the source
+
+06:28.450 --> 06:29.940
+file for this library.
+
+06:30.070 --> 06:37.390
+And since laser scanner only includes utility in this case we have to add an instruction target link
+
+06:37.390 --> 06:40.680
+libraries laser scanner Lepe utility.
+
+06:40.750 --> 06:45.930
+So this means that utility is included in the laser scanner.
+
+06:46.150 --> 06:52.660
+This will tell the system that the laser scanner really is using the library utility.
+
+06:52.660 --> 06:59.050
+And here these are two instructions that you have to do to add laser kind of leap into the catkin libraries
+
+06:59.160 --> 07:03.090
+and also adding as a dependency to get exported targets.
+
+07:03.100 --> 07:07.650
+So these are the two libraries that we need to add in our system.
+
+07:08.020 --> 07:14.590
+And of course we need to add an executable for the scan subscriber as we did for other nodes so we need
+
+07:14.590 --> 07:19.520
+to add executable like we did for the other nodes and services.
+
+07:19.540 --> 07:26.870
+I'm going to call it scan's subscribers see the peak and this is the source of this concept of TPP.
+
+07:26.980 --> 07:33.690
+OK which is going to be used to create the executable and then we need to add all Khakee libraries to
+
+07:33.770 --> 07:35.330
+scan subscribers CTP.
+
+07:35.500 --> 07:43.150
+And also since scuzz subscriber includes laser scanner so we need also to add target link libraries
+
+07:43.540 --> 07:46.840
+scans subscriber CTP laser scanner.
+
+07:47.020 --> 07:52.620
+This is because of the include statement that we have scanned subscriber or the laser scanner that H.
+
+07:52.660 --> 07:55.380
+These are the changes that we have to do in this email list.
+
+07:55.390 --> 08:01.960
+Whenever you include your custom libraries into your post notes so to summarize most of what we needed
+
+08:01.960 --> 08:08.020
+to add the library utility DB which contains some basic functionality is to convert from reputed a great
+
+08:08.140 --> 08:14.550
+degree to the ages and then we need also to add the latest leap and also to link between laser's cannot
+
+08:14.550 --> 08:18.420
+live and utility because laser scanner includes utility.
+
+08:18.430 --> 08:24.730
+And finally when we create the executable we need also to target link libraries between scans subscriber
+
+08:24.990 --> 08:26.840
+and also laser scanner.
+
+08:26.980 --> 08:29.050
+So now we can try to crack this code.
+
+08:29.050 --> 08:36.550
+First of all I'm going to unload the car and then I will go to the back find that you have created last
+
+08:36.550 --> 08:38.620
+time and I'm going just to play it.
+
+08:38.740 --> 08:41.350
+So let me have some scanning topics.
+
+08:41.530 --> 08:47.320
+And this is the benefit of having backslides so I don't need every time to connect again with a laser
+
+08:47.320 --> 08:49.360
+scanner and start the port and so on.
+
+08:49.360 --> 08:56.640
+So just for testing and debugging I can use the back files and replay to get I'm going to use.
+
+08:56.920 --> 08:59.300
+Probably played.
+
+08:59.470 --> 09:00.230
+It is playing
+
+09:03.010 --> 09:08.800
+of course I'm going to go to get clean and compile again after making all the changes we need to compile
+
+09:09.280 --> 09:10.330
+everything again.
+
+09:10.510 --> 09:18.730
+OK so I have really come by that and then making a strong cross essentially CTP and then the subscriber
+
+09:19.180 --> 09:22.250
+underskirt CVP this is the you that we have created.
+
+09:22.450 --> 09:27.330
+And you can see now we are getting the minimum age.
+
+09:27.340 --> 09:28.970
+This is the maximum we look at it.
+
+09:28.970 --> 09:29.550
+You change it
+
+09:33.490 --> 09:36.050
+to the maximum range.
+
+09:36.160 --> 09:39.270
+So after doing that I need to combine a good
+
+09:43.530 --> 09:44.760
+case so it has created.
+
+09:44.780 --> 09:51.330
+Again I see no I'm going to play again the back five.
+
+09:52.060 --> 10:01.400
+And then we can get on our program again so we can see you know it's giving the minimum wage the maximum
+
+10:01.400 --> 10:04.000
+range the average range.
+
+10:04.230 --> 10:11.830
+And also when it is slower than 0.16 time like in this case it's just the return obstacle.
+
+10:11.900 --> 10:12.360
+Too close.
+
+10:12.360 --> 10:17.790
+This is the condition that you have set in our program to detect whether an obstacle is too close or
+
+10:17.790 --> 10:18.160
+not.
+
+10:18.220 --> 10:26.490
+OK so to summarize in this lecture I have presented out a process images in C++ using Krasnow in C++.
+
+10:26.490 --> 10:33.000
+And for this I had to create a new library that is called laser scanner that contains different methods
+
+10:33.170 --> 10:39.840
+that allow to process the laser scan the message because in C++ there is no ready to use methods that
+
+10:39.830 --> 10:43.560
+allows to process arrays easily like this in python.
+
+10:43.650 --> 10:49.410
+Now we have everything in hand in order to use the laser scanner to develop a robotic application that
+
+10:49.470 --> 10:55.170
+allows to control the motion of the robot using the information coming from the laser scanner.
+
+10:55.440 --> 11:01.170
+For example a very simple project will be to make a robot move until the minimum distance to an obstacle
+
+11:01.260 --> 11:02.820
+is lower than a certain threshold.
+
+11:02.850 --> 11:05.640
+In this case we stop the robot for safety purposes.
+
+11:05.640 --> 11:11.310
+This is one of the many many applications that we can use laser scanner in order to control the motion
+
+11:11.370 --> 11:11.930
+of the robot.

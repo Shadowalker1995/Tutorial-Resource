@@ -1,0 +1,154 @@
+WEBVTT
+
+00:00.360 --> 00:03.730
+Larmer Hamilton said I want to be getting hammered and excuse me.
+
+00:03.780 --> 00:09.480
+Hi guys and welcome back to new tutorial in the course robot operating system basics motion and open
+
+00:09.480 --> 00:10.210
+city.
+
+00:10.230 --> 00:16.670
+So so far we have covered a lot of different concepts including those basics like the Russified system.
+
+00:16.670 --> 00:20.560
+Those topics are snowdrops messages are services and different things.
+
+00:20.610 --> 00:23.970
+Then we have talked about motion and how to make a robot move.
+
+00:23.970 --> 00:29.610
+What are the different topics that are responsible for making a move and other topics that are responsible
+
+00:29.610 --> 00:31.850
+for finding the location of the robot.
+
+00:31.890 --> 00:37.650
+Of course we have applied this on some simulator and in future lectures you're going to talk about more
+
+00:37.650 --> 00:45.220
+realistic robots and then in the third part we have talked about up and see which is about robotic perception.
+
+00:45.360 --> 00:51.120
+So today I'm going to talk about a new tutorial how laser scanners or laser rangefinders work and this
+
+00:51.120 --> 00:54.000
+is actually another way of robotic perception.
+
+00:54.000 --> 00:57.450
+So the robot can actually see the work using a camera.
+
+00:57.480 --> 01:03.060
+And for these we use tools like oppositely in order to process the images and video streams coming from
+
+01:03.060 --> 01:06.210
+the camera and extract useful information from that.
+
+01:06.210 --> 01:12.360
+But the problem the camera up on provide us today matching that information on the picture and a picture
+
+01:12.390 --> 01:18.860
+doesn't say anything about for example the distance of obstacles or the distance of objects from that
+
+01:18.870 --> 01:25.140
+orbit and for this we need a third dimension which is actually obtained using a specific device like
+
+01:25.230 --> 01:28.440
+rangefinders or we call them also a laser scanner.
+
+01:28.650 --> 01:34.770
+And these devices are able to find the distance to objects and they are taking much useful in several
+
+01:34.830 --> 01:36.020
+types of applications.
+
+01:36.030 --> 01:39.110
+So let's see how these laser scanners work.
+
+01:39.270 --> 01:40.730
+So what is a laser scanner.
+
+01:40.800 --> 01:44.310
+Basically it is a device that can measure the distance to obstacles.
+
+01:44.390 --> 01:50.550
+And there are several devices not only based on laser they are also intra sonic sensors which are based
+
+01:50.550 --> 01:56.550
+on sound not to determine the distance to obstacles but laser scanners or laser rings find those are
+
+01:56.550 --> 01:59.820
+based on a laser to detect the distance the obstacles.
+
+01:59.820 --> 02:00.780
+So how do they work.
+
+02:00.780 --> 02:07.300
+Actually a device like the following is going to send a laser beam in different directions and then
+
+02:07.300 --> 02:11.200
+displays that are going to bounce back when they hit an obstacle.
+
+02:11.250 --> 02:13.690
+And there are going to be captured by a camera.
+
+02:13.860 --> 02:20.610
+So knowing the offset between the laser source and the camera it is possible to estimate using that
+
+02:20.610 --> 02:24.550
+type of flight because the laser travels at the speed of light.
+
+02:24.570 --> 02:31.080
+It's possible to estimate using type of light the distance to the objects and these devices are actually
+
+02:31.080 --> 02:34.850
+very useful in several robotics applications for example.
+
+02:34.890 --> 02:40.680
+They are used in some application for building a map and some it means simultaneous localization and
+
+02:40.680 --> 02:41.520
+mapping.
+
+02:41.520 --> 02:45.170
+They are also used for obstacle avoidance without lasers.
+
+02:45.240 --> 02:51.060
+The robot cannot know the distance to obstacles and in this case it can easily be an obstacle that comes
+
+02:51.150 --> 02:52.020
+in his path.
+
+02:52.230 --> 02:57.750
+So for example when we worked with the turtle sea we just used kind of bland that we didn't consider
+
+02:57.750 --> 02:58.470
+any obstacle.
+
+02:58.530 --> 03:02.060
+This is not realistic orbit when it operate in an environment.
+
+03:02.160 --> 03:05.230
+It will have to manage how to avoid obstacles in his path.
+
+03:05.250 --> 03:09.810
+And for this we need rangefinders like laser scanners or ultrasonic sensors.
+
+03:09.810 --> 03:17.190
+And for this reason laser scans are crucial and important and necessary for any navigation mission of
+
+03:17.190 --> 03:17.610
+the job.
+
+03:17.610 --> 03:23.700
+So that's why the objective of this section is to understand how the laser scanner works how we can
+
+03:23.790 --> 03:29.400
+connect a laser scanner to Russ how we can read the information come coming from the laser scanner.
+
+03:29.490 --> 03:33.380
+What are the medical information or the meta data of the laser scanner.
+
+03:33.420 --> 03:36.690
+All of these are going to be described in these coming lectures.

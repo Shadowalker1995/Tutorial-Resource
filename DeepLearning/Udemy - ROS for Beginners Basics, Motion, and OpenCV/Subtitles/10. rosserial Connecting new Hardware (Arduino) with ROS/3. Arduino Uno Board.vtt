@@ -1,0 +1,79 @@
+WEBVTT
+
+00:00.260 --> 00:05.400
+In this video I'm going to present the main properties of the argument on to a book or you know you
+
+00:05.400 --> 00:11.490
+know is a microcontroller board based on a bit of mega 328 microcontroller.
+
+00:11.580 --> 00:19.770
+It also has other components such as crystal oscillator operating at 16 megahertz frequency of communication
+
+00:19.770 --> 00:27.360
+through us part a voltage regulator to regulate voltage at three or five parts and many different input
+
+00:27.450 --> 00:28.720
+output parts.
+
+00:29.080 --> 00:36.590
+Arduino has 14 digital input output pins out of which six can be used as P.W. and outputs.
+
+00:36.600 --> 00:44.430
+It also has six analog input is ID from zero to five about a bottle of Jack that receives an input voltage
+
+00:44.490 --> 00:49.490
+of 12 volt and circuit serial programming header and a reset button.
+
+00:50.680 --> 00:57.640
+There are two types of sensors that can be used with Arduino on board some sensors provide digital data
+
+00:57.730 --> 01:03.490
+and some other sensors provide analog data digital data sensors should be connected to the board through
+
+01:03.490 --> 01:09.780
+the digital input output pins and analog sensors must be connected to the board with the analog bits.
+
+01:09.890 --> 01:15.820
+Everything has a number and this number allows to identify the signal being in the programming environment
+
+01:15.880 --> 01:18.520
+through which the data will be received from the sensor.
+
+01:18.520 --> 01:24.160
+This makes it so easy to interface with any sensor in the programming environment what you observe in
+
+01:24.160 --> 01:29.860
+the top is called the Arduino based shield the shield can be mounted on top of the arguido board to
+
+01:29.860 --> 01:37.320
+be able to connect sensors through it to be able to connect sensor to it using four pin connectors.
+
+01:37.360 --> 01:43.090
+This is the Arduino based shield Vol. 2 and this is the 4 pin connector and you can observe that the
+
+01:43.090 --> 01:45.190
+base shield has several inputs.
+
+01:45.190 --> 01:51.760
+We have digital inputs the two the three 4 and to the eight we have to see inputs and also you have
+
+01:51.860 --> 01:52.990
+analog inputs.
+
+01:53.140 --> 01:59.770
+It's possible also to configure the base shield whether to operate at 5 volt or three vote using this
+
+01:59.890 --> 02:00.540
+switch.
+
+02:00.550 --> 02:04.810
+This is the reset button here and it has also a u r interface.
+
+02:04.810 --> 02:10.150
+The base is very useful to connect multiple sensors to the Arduino book in the next video.
+
+02:10.330 --> 02:16.900
+I will try a sample program using the Arduino ID and demonstrate how simple it is to develop a program
+
+02:16.900 --> 02:18.340
+that interfaces with sensors.

@@ -1,0 +1,349 @@
+WEBVTT
+
+00:00.230 --> 00:05.400
+In the previous video I have introduced launch heights and how to create a large file with multiple
+
+00:05.400 --> 00:07.210
+notes in this video.
+
+00:07.230 --> 00:13.050
+I'm going to show how we can extend the lounge vised by including some existing large files and also
+
+00:13.170 --> 00:16.930
+specifying some parameters that you can use inside the No.
+
+00:17.250 --> 00:18.570
+So let's see how that works.
+
+00:18.570 --> 00:23.670
+So in the previous video I have introduced the turtle see underskirt video of the flash which contains
+
+00:23.670 --> 00:25.250
+two different notes.
+
+00:25.270 --> 00:32.420
+Now to consider the other five code to see underscore when or where we are going to use the little note
+
+00:32.430 --> 00:36.670
+that we have defined in the previous section of them that can see motion.
+
+00:36.930 --> 00:43.390
+In addition to that we are going to include the last five that we have defined and which is called 13
+
+00:43.390 --> 00:44.730
+sim underscored Gilleo.
+
+00:44.940 --> 00:49.290
+So that gives seen underscore the computer will contain all the notes of this classified.
+
+00:49.410 --> 00:52.880
+Plus one more note that is got the cleaner.
+
+00:52.980 --> 00:54.190
+So how to do that.
+
+00:54.210 --> 00:57.580
+Now we are excited to see him and the skull clean or Nash.
+
+00:57.840 --> 01:03.890
+So we can add the additional note in the same way that we did before.
+
+01:03.990 --> 01:09.100
+So this is the node it belongs to the package or essential CBP.
+
+01:09.210 --> 01:15.200
+So basically I'm going to use the note that you have defined it here which is called Total simply that
+
+01:15.480 --> 01:18.920
+by which is defined in that package.
+
+01:18.960 --> 01:23.840
+Are those essential CBP dispatches that we are using during this course.
+
+01:23.850 --> 01:28.840
+And then the task of the node is called courtesy and that can be done by.
+
+01:28.980 --> 01:36.370
+This is the note that we have defined before and which makes the robot move go to go locations and perform
+
+01:36.530 --> 01:37.640
+unique applications.
+
+01:37.800 --> 01:44.700
+So yeah were going just to ask the robot to go to the code 1 1 for x and y coordinates and then said
+
+01:44.710 --> 01:50.790
+that these are location 290 and then move forward with Chinglish to forward.
+
+01:51.510 --> 01:54.430
+Thats what we want to do here in the community.
+
+01:54.630 --> 01:57.250
+So we put everything together into the lungs.
+
+01:57.470 --> 02:03.000
+And the new thing here is that were going to include the last fire that we have defined previously which
+
+02:03.000 --> 02:06.680
+is Coltart to see underscore the latch.
+
+02:06.780 --> 02:09.030
+So we will use that that include.
+
+02:09.210 --> 02:12.480
+And then we specify the location of the flight.
+
+02:12.780 --> 02:15.540
+And for this we are going to use the command fine.
+
+02:15.870 --> 02:23.040
+Okay fine dress as such a you pick and this one it is going to return the absolute path of the package.
+
+02:23.100 --> 02:26.990
+Host essentials BP is Ysidro essential to BP.
+
+02:26.990 --> 02:36.170
+We have asked the public to motion slush slush symp underscore the deep dark Lodge which is the fact
+
+02:36.180 --> 02:40.280
+that we have defined over here which is located in this location.
+
+02:40.440 --> 02:44.130
+So we have such a CVP this is that package name.
+
+02:44.130 --> 02:53.650
+And this is now the path to the package home workspace at c and be then we go to the s RC for the then
+
+02:53.820 --> 02:56.450
+top into motion and then that.
+
+02:56.550 --> 03:00.590
+And now we have we're going to import or to include that to see.
+
+03:00.740 --> 03:03.400
+And the scope hope that lush.
+
+03:03.450 --> 03:04.340
+So not the.
+
+03:04.380 --> 03:05.280
+Is going to start.
+
+03:05.280 --> 03:11.910
+Both the previous five courtesy undercut the up and also an additional note which is called the ductless
+
+03:12.150 --> 03:13.350
+underscore cleaner.
+
+03:13.520 --> 03:15.010
+Don't buy it.
+
+03:15.030 --> 03:16.640
+Now let's get to this.
+
+03:16.680 --> 03:17.560
+No.
+
+03:18.040 --> 03:18.390
+OK.
+
+03:18.390 --> 03:22.330
+Can you trust launch are those assumptions CBP.
+
+03:22.440 --> 03:28.210
+And then we're going to use the steam cleaner flush.
+
+03:28.450 --> 03:36.010
+And here you can see it's going to go to the location 1 1 and at the same time I can also Les Miserables
+
+03:36.010 --> 03:43.220
+it using the keyboard for an hour later the time is taking control over the robot.
+
+03:43.280 --> 03:48.020
+Now I can also do some additional controls with the keyboard.
+
+03:48.140 --> 03:48.600
+OK.
+
+03:48.640 --> 03:54.680
+I'm now rotating with the keyboard as you can see now and fully control immediately one of the end of
+
+03:54.680 --> 03:56.900
+the it is simply not a right.
+
+03:57.200 --> 04:06.050
+OK so two notes were actually around the same time because we have it we did the tortoise and the scope
+
+04:06.230 --> 04:07.080
+of the flash.
+
+04:07.100 --> 04:10.520
+Also we have the underscore at the back.
+
+04:10.640 --> 04:19.670
+So you observe that when you have started this node or this fire in the beginning this would have started
+
+04:19.670 --> 04:21.390
+to go to this location.
+
+04:21.570 --> 04:22.620
+Wow what.
+
+04:22.840 --> 04:23.220
+OK.
+
+04:23.240 --> 04:24.700
+Which was the frame here.
+
+04:24.950 --> 04:31.670
+You that that is simply imagine that now I would like to start at some different locations.
+
+04:31.700 --> 04:34.820
+I'd not want the robot to go to a location one one for example.
+
+04:34.820 --> 04:38.370
+I want to go to some other locations one of the ways.
+
+04:38.460 --> 04:42.440
+What do you find is manually here and then execute the program.
+
+04:42.450 --> 04:50.720
+And another way is actually to define parameters inside the Lonsway and then collect these parameters
+
+04:50.970 --> 04:54.560
+from your node.
+
+04:55.440 --> 04:56.950
+So let's see how it works.
+
+04:56.970 --> 05:02.070
+Now imagine that instead of setting specifically the value of the x and y coordinates of the goldbricking
+
+05:02.070 --> 05:05.680
+should we want to get them as part of inters from the fight.
+
+05:05.970 --> 05:14.430
+So for example here I'm going to define an X goal location which will be equal to some parameter value
+
+05:14.670 --> 05:16.090
+and the Y.
+
+05:16.290 --> 05:21.360
+And there's got a good location but also the equity the perimeter and the bottom and that needs to be
+
+05:21.360 --> 05:23.520
+defined into the last fight first.
+
+05:23.550 --> 05:29.270
+So I'm going to go to the last fight and yet I'm going to be fine but I'm.
+
+05:29.550 --> 05:37.000
+And then give a name to the bottom and the name of the I'm OK will be used later on to select this parameter
+
+05:37.350 --> 05:38.430
+in the Peiffer node.
+
+05:38.610 --> 05:42.940
+And then for example let me call in just like the name of the variable x goal.
+
+05:43.660 --> 05:49.830
+And we set the value the value for example equal to three point zero.
+
+05:50.630 --> 05:51.070
+OK.
+
+05:51.120 --> 05:55.310
+So this is the part I'm I'm going to do another parameter for the Y location.
+
+05:55.650 --> 05:59.430
+OK you can define any of the parameters that you want.
+
+05:59.430 --> 06:06.020
+And for example let me put this to what so remember in the code here.
+
+06:06.150 --> 06:11.430
+You have used one one location so I'm going to change it with execute and we know we have defined the
+
+06:11.480 --> 06:16.900
+parameter and you have to make sure to define the parameter before the node is called.
+
+06:17.040 --> 06:23.550
+So that these parameters are added as you said into the parameter server so that we can retrieve them
+
+06:23.610 --> 06:28.990
+from the underscore number by some code.
+
+06:29.130 --> 06:34.350
+And now the second step after defining the bottom of the downside we need to collect these parameters
+
+06:34.420 --> 06:37.040
+from the snow and to do so.
+
+06:37.080 --> 06:45.600
+We will use respire that get squat from and then you have to specify the name so the name of the apartment
+
+06:45.600 --> 06:47.620
+that was ex go.
+
+06:47.820 --> 06:56.820
+So I'm going to use X go here to specify the name of the author and the same thing would be our that's
+
+06:56.940 --> 06:59.520
+why go.
+
+07:00.130 --> 07:00.770
+OK.
+
+07:01.110 --> 07:09.520
+And now instead of using these static by use I can use your X goal which we did it from the file.
+
+07:09.570 --> 07:12.220
+And my goal would be that come along.
+
+07:12.240 --> 07:13.090
+Right.
+
+07:13.510 --> 07:22.450
+And then also here in the back you make read X gold and use your X and those cortico.
+
+07:22.700 --> 07:23.380
+OK.
+
+07:23.550 --> 07:31.520
+And then also the like of course in order to display this in the large file we need to set the output
+
+07:33.450 --> 07:40.910
+to screen I'll put it in use it's getting so that the output.
+
+07:41.600 --> 07:46.580
+Not everything is in place I can try to run the code.
+
+07:46.850 --> 07:55.380
+OK I'm going to use those sources and then that I would find this God and see him know the clutch now
+
+07:57.490 --> 08:03.230
+he's going to start the turtle him and now is going to go to the location 3 7.
+
+08:03.310 --> 08:11.180
+So if we look at the X not x is equal to 3 and Y is equal to 7.
+
+08:11.690 --> 08:16.800
+So the value now is taking.
+
+08:17.510 --> 08:22.100
+OK so you can see now we have successively added the third in the third into our last five.
+
+08:22.370 --> 08:26.530
+And this is the way how you can connect the parameter into the Rossmo.
+
+08:26.600 --> 08:33.350
+This is indeed very practical because instead of changing every time the code manually you just need
+
+08:33.350 --> 08:35.860
+to set your parameters into the launch right.
+
+08:36.050 --> 08:42.240
+So at the end you can see it as very effective to execute multiple notes by just calling only one type
+
+08:42.270 --> 08:45.520
+instead of slamming multiple notes into different.

@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00.250 --> 00:06.810
+This video I'm going to show how to install the army integrated development environment so that later
+
+00:06.810 --> 00:12.420
+on we will use it in order that up a small program when we know the process is very simple.
+
+00:12.420 --> 00:17.300
+This is the lead of the Web site from where you can download the Arduino the software.
+
+00:17.550 --> 00:23.910
+As already mentioned is a cross-platform so you can install it on any operating system including Mac
+
+00:23.910 --> 00:27.140
+operating system Windows and Ubuntu.
+
+00:27.410 --> 00:33.060
+Yes we are going to work with our we know and integrate with the US so we need to install it in our
+
+00:33.180 --> 00:36.220
+Ubuntu operating system where rust is started.
+
+00:36.270 --> 00:38.290
+So let's see how that works.
+
+00:38.400 --> 00:44.850
+Now I move back to my Ubuntu machine where I have just installed and this is the software download website.
+
+00:44.880 --> 00:50.700
+You can download the latest version and currently the latest version is Arduino one point eight point
+
+00:50.700 --> 00:51.510
+six.
+
+00:51.690 --> 00:56.430
+So you can download it for a different operating system whether it is for Windows Mac operating system
+
+00:56.610 --> 00:58.840
+and Linux operating system.
+
+00:58.860 --> 01:06.810
+So in our case we're going to choose Linux 64 bits just need to click here and then download the software
+
+01:09.210 --> 01:12.770
+and file would be saved into the downloads folder.
+
+01:14.320 --> 01:19.270
+Takes a little bit of time to install and now it's done
+
+01:23.550 --> 01:31.570
+you can go download folder and then what you need to do is just extract the zip package like this and
+
+01:31.570 --> 01:35.380
+finally copy the package into the home directory.
+
+01:35.380 --> 01:41.730
+Now I have it here to the home that actually it's called Adreno one point a point x.
+
+01:42.340 --> 01:44.570
+Ok this is in the source folder.
+
+01:44.830 --> 01:51.550
+OK we have the original executable that you are going to use to start a new integrated development environment
+
+01:51.870 --> 01:54.330
+and you have different other folders.
+
+01:54.370 --> 01:55.490
+So it is for them.
+
+01:55.510 --> 02:01.350
+It has several examples that we can access from the Integrated Development Environment.
+
+02:01.690 --> 02:07.450
+Also here we have some libraries and this is where you are going to have the libraries related to or
+
+02:07.570 --> 02:10.300
+about operating system at a later stage.
+
+02:10.370 --> 02:11.540
+Not to start.
+
+02:11.740 --> 02:17.340
+When you open a terminal and then you need to go to the other window.
+
+02:17.440 --> 02:20.990
+OK so here we have our window and you can see that we have to execute a plan.
+
+02:21.010 --> 02:26.980
+So all you need to do is to do that slash Arduino and even open.
+
+02:27.120 --> 02:31.940
+So these are different programs so we can go here.
+
+02:35.470 --> 02:39.020
+The examples are these are examples that they have shown to you before.
+
+02:39.070 --> 02:42.340
+OK you can add one examples.
+
+02:42.370 --> 02:49.000
+So the next video I'm going to show you how to write a program for a neutral range sensor.

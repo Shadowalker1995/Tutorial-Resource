@@ -1,0 +1,685 @@
+WEBVTT
+
+00:00.270 --> 00:06.350
+Now it is time to talk about gotos or edge detection of an image edge detection.
+
+00:06.450 --> 00:11.550
+Also known as contour detection is an image processing technique that consists in finding the boundaries
+
+00:11.580 --> 00:18.060
+of objects with an image and contour detection to present another template for image segmentation techniques
+
+00:18.120 --> 00:21.020
+to detect and identify objects in an image.
+
+00:21.060 --> 00:26.850
+In the previous videos we have used color filtering techniques to identify objects that have the city
+
+00:26.850 --> 00:27.390
+colors.
+
+00:27.390 --> 00:33.900
+However color spectrum does not allow to find objects with any kind of colors so contour detection provide
+
+00:34.010 --> 00:40.960
+another ultimately that can be even more Jenour the go to detection technique works by detecting discontinuity
+
+00:41.040 --> 00:41.820
+in practice.
+
+00:41.820 --> 00:46.980
+So an edge represents the borderline between a dark and the bright areas.
+
+00:46.980 --> 00:52.670
+And this is a useful tool for that analysis image segmentation object detection and recognition.
+
+00:52.920 --> 00:57.610
+So actually we see how to implement conta detection using up and but fought.
+
+00:57.750 --> 01:00.270
+Let's see what are the different steps that you have to follow.
+
+01:00.480 --> 01:05.790
+So first of all we need to get an image that would be an arch of the image and then you have to convert
+
+01:05.790 --> 01:08.250
+this image into a grayscale image.
+
+01:08.250 --> 01:14.520
+Then we use thresholding to convert the greyscale image into a binary image that we had introduced in
+
+01:14.520 --> 01:16.260
+the thresholding lecture.
+
+01:16.260 --> 01:24.480
+And finally we apply the method you don't find contours on the binary image so that to identify all
+
+01:24.480 --> 01:26.120
+the contours in the image.
+
+01:26.430 --> 01:31.800
+So then we will have a data structure that will store all the contours of an image and then we can process
+
+01:31.800 --> 01:32.640
+this data structure.
+
+01:32.640 --> 01:39.240
+For example we can find the area of the contour the closing circle the perimeter at the moment and the
+
+01:39.240 --> 01:40.340
+subtle point.
+
+01:40.380 --> 01:45.190
+It is important to note that contours follows a certain hierarchy in open sea.
+
+01:45.210 --> 01:50.750
+In fact in an image some shapes are inside the case of the outer shape.
+
+01:50.760 --> 01:53.900
+It's called The Path and the inner shape is called a child.
+
+01:54.060 --> 02:01.890
+So for example here we can say that the shape to a is actually a child of its parent shape to however
+
+02:02.160 --> 02:05.120
+represent a parent shape 3 and so on.
+
+02:05.160 --> 02:10.800
+So this is the shape hierarchy and because of this there are several ways on how to retrieve controls
+
+02:10.890 --> 02:11.670
+in an image.
+
+02:11.670 --> 02:17.100
+So the simplest way and the easiest way is to retrieve contours as in this case or so retrieves the
+
+02:17.100 --> 02:17.710
+contours.
+
+02:17.760 --> 02:21.040
+And in this case it doesn't create any parent child relationship.
+
+02:21.060 --> 02:24.300
+It is just that these patterns and child's are equal.
+
+02:24.510 --> 02:27.780
+There is actually no hierarchy between the different contours.
+
+02:27.780 --> 02:33.660
+When we use the least flex all the controls are just constructs they belong to in the same hierarchy.
+
+02:33.840 --> 02:36.770
+We can also say that all the external controls.
+
+02:36.840 --> 02:43.530
+So if we use the flag to retrieve external in this case it retains the extreme outer reflex or extreme
+
+02:43.590 --> 02:46.850
+ultra controls all child controls are left behind.
+
+02:47.010 --> 02:51.770
+And you can see that this No only the eldest of every family is considered.
+
+02:51.810 --> 02:53.940
+So the flag is.
+
+02:54.190 --> 03:00.190
+Seacom and this flag retrieves all the contours and raises them to a two level hierarchy.
+
+03:00.510 --> 03:07.140
+External and internal so external controls are considered as placed in hierarchy one and the contours
+
+03:07.140 --> 03:11.730
+of host that are inside the objects are placed in the hierarchy.
+
+03:11.850 --> 03:17.640
+And finally the fourth flat is the retrieve tree which leaves all the contours and create a full family
+
+03:17.640 --> 03:19.870
+hierarchy different from parent to child.
+
+03:19.920 --> 03:22.320
+So here we have parent child relationship.
+
+03:22.320 --> 03:28.270
+So because computers will be considered as a tree they can tell even with the grandfather the father
+
+03:28.270 --> 03:29.920
+of the son the grandson and so.
+
+03:29.970 --> 03:33.390
+So these are the different tools available in open city.
+
+03:33.420 --> 03:36.340
+And now it's time to see how it can be implemented.
+
+03:36.400 --> 03:37.460
+Let's see how it works.
+
+03:37.530 --> 03:42.690
+So let us get started with the simple example consider the file called Tools underscore detection booked
+
+03:42.810 --> 03:43.220
+by.
+
+03:43.230 --> 03:45.380
+And here let's go to the main function.
+
+03:45.410 --> 03:46.350
+I'm going to explain.
+
+03:46.350 --> 03:51.540
+So first of all we need to identify the name of the image and then we will read that image.
+
+03:51.540 --> 03:53.850
+So here we will read the image.
+
+03:53.850 --> 03:56.430
+So these are different messages that they have defined or both.
+
+03:56.430 --> 04:01.880
+I'm going to explain them one by one just to show you the different steps that we need to follow.
+
+04:02.280 --> 04:09.000
+Ok so first of all we need to get that image in color and then we convert the image into a gray color
+
+04:09.030 --> 04:09.920
+image.
+
+04:09.960 --> 04:10.470
+OK.
+
+04:10.530 --> 04:16.650
+They can put the ugly image that you have read previously reducing the great image and then using new
+
+04:16.650 --> 04:17.430
+techniques.
+
+04:17.490 --> 04:21.380
+We need to convert the great image into a binary image.
+
+04:21.420 --> 04:27.750
+We take a simple image that we find in the set and then we produce the binary image.
+
+04:27.880 --> 04:29.000
+And here we have some flags.
+
+04:28.990 --> 04:33.170
+So whether we want to use adaptive you sholden or simple.
+
+04:33.230 --> 04:40.830
+Shortly after that we get all the controls from the binary image so we'll see how to limit this method.
+
+04:40.830 --> 04:43.520
+And finally we throw all the contours of that image.
+
+04:43.530 --> 04:46.970
+So let's go one by one first of all we need to read the image.
+
+04:47.190 --> 04:48.930
+And this is pretty much straight forward.
+
+04:48.930 --> 04:50.980
+So you'll just see that.
+
+04:51.260 --> 04:54.420
+I Imry what would the image need.
+
+04:54.510 --> 04:56.600
+And here we have a boolean variable.
+
+04:56.760 --> 04:59.230
+If it is true it will going to show the image.
+
+04:59.320 --> 05:01.030
+Otherwise you cannot show the image.
+
+05:01.050 --> 05:05.220
+The second step is to take this image as input to the method.
+
+05:05.250 --> 05:07.940
+Then you need to convert it to a greyscale image.
+
+05:08.070 --> 05:12.840
+And as before you can use a boolean that you will hear whether you want to show the great image or not.
+
+05:12.840 --> 05:16.960
+And finally we will turn the great image has an output of the method.
+
+05:17.040 --> 05:24.510
+So this image will be an input to the next method that is conver great binary and we will use either
+
+05:24.710 --> 05:27.540
+adaptive thresholding or simple resizing.
+
+05:27.540 --> 05:32.730
+So you should not remember what is adaptive thresholding and superstitiously you can go to the lecture
+
+05:32.820 --> 05:35.760
+where we talk about sholden techniques we often see.
+
+05:35.760 --> 05:43.650
+So here there is a flag that we define what it is it is true will going to create a binary image using
+
+05:44.000 --> 05:45.400
+an adaptive threshold.
+
+05:45.570 --> 05:49.240
+So we can use the other option for the mean adaptive technique.
+
+05:49.290 --> 05:52.320
+And these are the different parameters of the method.
+
+05:52.320 --> 05:56.790
+So you can use the short binary and this is the neighborhood region.
+
+05:56.880 --> 06:03.860
+The second thing is that we can use simple links that we shall apply to the great image.
+
+06:03.870 --> 06:11.910
+And here we can specify 1:27 as the threshold value of course we can change this depending on the performance
+
+06:11.910 --> 06:14.700
+we want to achieve on a certain image.
+
+06:14.760 --> 06:20.130
+We find that using the shows boolean variable whether we want to show the binary events or so a way
+
+06:20.130 --> 06:24.420
+to enable other than the ability to do the next method is get called.
+
+06:24.440 --> 06:29.840
+So how did you find that computer going to use the opposite function fine contours.
+
+06:29.870 --> 06:30.510
+OK.
+
+06:30.560 --> 06:33.050
+So fine contours it's not the function.
+
+06:33.060 --> 06:39.360
+It takes a binary image input and then it will return three different variables in the interest into
+
+06:39.660 --> 06:42.700
+the second variable index fund contours.
+
+06:42.780 --> 06:49.050
+So Kontos is going to have a data structure that contains all of the contours identified in the binary
+
+06:49.080 --> 06:49.800
+image.
+
+06:49.800 --> 06:52.870
+So in this example we have used the flag.
+
+06:53.190 --> 06:56.620
+OK so the last function here is called drawcard 2.
+
+06:57.000 --> 06:59.430
+Ok that will call the opposite function.
+
+06:59.490 --> 07:02.610
+Dreux contours it takes that image.
+
+07:02.670 --> 07:03.660
+You're OK.
+
+07:03.690 --> 07:10.620
+The contours that you have found on the binary image and that we specify which are two to three because
+
+07:10.620 --> 07:12.090
+the control is like an array.
+
+07:12.150 --> 07:18.210
+So you can specify which index of the a little bit if you specify minus what it means you will need
+
+07:18.300 --> 07:22.070
+all the contours will throw all the contours in the image.
+
+07:22.260 --> 07:26.130
+If your press holds up a 0 it's going to display the first two.
+
+07:26.220 --> 07:31.990
+If you choose the index equal to Y is going to display the second quarter and so minus one.
+
+07:32.040 --> 07:34.390
+It's going to display all the computers.
+
+07:34.590 --> 07:36.710
+So this is the thickness of the contour.
+
+07:36.770 --> 07:38.870
+We just to have a line of these two.
+
+07:38.940 --> 07:41.100
+And this is the color of the control.
+
+07:41.290 --> 07:42.430
+If I get any color.
+
+07:42.480 --> 07:49.350
+So here is 255 0 2 but it can be any other than 5 and we can show that image after dropping the control
+
+07:49.410 --> 07:50.720
+on top of that.
+
+07:51.000 --> 07:54.180
+So let's apply this program.
+
+07:56.670 --> 07:58.860
+Mirror now going to detection.
+
+07:58.950 --> 08:02.270
+And you can see you know all I'm going to measure now is.
+
+08:02.400 --> 08:04.040
+OK so this is the accident.
+
+08:04.080 --> 08:05.440
+This is the great image.
+
+08:05.580 --> 08:08.350
+Then we created the binary image.
+
+08:08.460 --> 08:13.940
+Finally we draw the contours on the initial in of course here and that's sure if this is the machine
+
+08:14.010 --> 08:16.270
+have a background that is black.
+
+08:16.290 --> 08:21.890
+So we're going to use this by the inverted black comb.
+
+08:22.040 --> 08:28.060
+So these are is the same here the black background the Cocos fire white.
+
+08:28.140 --> 08:30.670
+So here we have news flash.
+
+08:30.840 --> 08:36.180
+It means so we can also use with simple three shot
+
+08:43.320 --> 08:49.780
+so you can see how simple things are not for the areas where did that on this farm and his farm.
+
+08:49.890 --> 08:52.270
+So only three voters.
+
+08:52.660 --> 08:55.940
+Again that is he certainly might be more appropriate.
+
+08:56.160 --> 09:04.950
+Of course he can apply from images like the metal image so we can see here.
+
+09:04.970 --> 09:07.290
+Now you can find the control of image.
+
+09:07.300 --> 09:10.200
+So this is using Mr. O'Keefe.
+
+09:10.540 --> 09:14.280
+You can see these photos that you see shining on them.
+
+09:14.480 --> 09:21.930
+So there's a lot of things sort of in the way we need to be a little bit with the value of reasons because
+
+09:22.090 --> 09:28.880
+it's a little bit small but it puts them to the test actually all of the borders require that he should
+
+09:28.950 --> 09:37.140
+place especially that some borders yet and the pranging he the value of the wall here.
+
+09:37.390 --> 09:37.700
+OK.
+
+09:37.720 --> 09:42.530
+So we have different behavior by the decision.
+
+09:42.660 --> 09:49.230
+So to summarize it is possible to find the control of an image using the publicity function finds gotos
+
+09:49.560 --> 09:57.840
+which must be applied to a violent image so you have an image to grayscale then convert it to a binary
+
+09:57.900 --> 09:59.550
+image using one of.
+
+09:59.700 --> 10:07.170
+It's rather simple something that is shoddy and find that you can call the local Toops method of publicity
+
+10:07.170 --> 10:08.860
+to all the conflicts.
+
+10:08.960 --> 10:15.200
+But if you want to draw only particular onto all of that all want to find the area of the country this
+
+10:15.240 --> 10:16.170
+is also possible.
+
+10:16.170 --> 10:21.780
+So I'm going to switch to the other file the so-called Cancun's processing and basically follow the
+
+10:21.780 --> 10:29.070
+same steps with just the image that the tricolored then converted to a binary color using one of the
+
+10:29.320 --> 10:33.920
+three sunny days and then getting all the contours of the fine contours.
+
+10:33.960 --> 10:35.550
+We do all the same way.
+
+10:35.790 --> 10:40.830
+So this is broken to the it won't load all the contours but instead of drawing the contours I would
+
+10:40.830 --> 10:42.000
+like to process them.
+
+10:42.090 --> 10:49.120
+So I related a method called photos both the body image and the object in that year.
+
+10:49.240 --> 10:55.000
+Also the list of concepts so imprecise in the complex can be done in several ways.
+
+10:55.020 --> 11:02.460
+For example we can follow that we go through all of this and go to compose the contours of the structure.
+
+11:02.460 --> 11:08.950
+So for every call to either data structure the contours you can leave the area using the method CO-2
+
+11:09.030 --> 11:09.640
+area.
+
+11:09.820 --> 11:16.410
+See the perimeter using our last see the flight route.
+
+11:16.560 --> 11:20.260
+We can also find the minimum inclosing circle.
+
+11:20.370 --> 11:25.840
+OK so minimum the circle is defined by the x y coordinates of the center.
+
+11:25.920 --> 11:27.520
+Also it saves.
+
+11:27.540 --> 11:34.410
+So when we use these changes in order to draw a circle around around the code to do this we maybe draw
+
+11:34.410 --> 11:37.700
+a circle on detected objects in that image.
+
+11:37.860 --> 11:44.240
+OK so we have different functions that we can look towards the coastal area or our plans minimal enclosing
+
+11:44.280 --> 11:45.000
+circle.
+
+11:45.030 --> 11:48.600
+So it's possible now to go to using the image.
+
+11:48.600 --> 11:51.900
+So this is the go to select control here.
+
+11:51.930 --> 11:57.590
+So we pass it as an array here when we move the index minus 1 degree on the contours.
+
+11:57.580 --> 11:59.470
+This is you are welcome to it.
+
+11:59.690 --> 12:02.850
+That is to define the color and the width of the light.
+
+12:02.910 --> 12:09.480
+So when you look the contour all the safety mesh in it's part of the image and also you create the black
+
+12:09.510 --> 12:10.030
+image.
+
+12:10.140 --> 12:15.600
+Well just to bring the of black images onto the conclusions drawn on them.
+
+12:15.900 --> 12:21.190
+So if you want to draw a circle on the control you need to find something else.
+
+12:21.420 --> 12:26.660
+And for this we can use a method that will allow us to find the center.
+
+12:26.880 --> 12:29.530
+So what is the strategy to find the center point.
+
+12:29.550 --> 12:36.970
+So the only way to find something that will come to is to use the method of other call modes.
+
+12:36.980 --> 12:39.780
+We're going to calculate the moments all conclude.
+
+12:39.870 --> 12:47.750
+And then by definition the center point is coordinates X and C right is defined by the moment in that
+
+12:47.750 --> 12:56.070
+someone's being divided by the moment at from zero zero and C-y is defined by the MoD in this 0 1.
+
+12:56.100 --> 13:03.750
+Dividing by moment at this 0 0 it is not a problem if you don't understand very well the concept of
+
+13:03.750 --> 13:10.450
+moments but you can't just use this formula as it is when you want to get rid of of control.
+
+13:10.530 --> 13:17.900
+Of course you need to make this condition to make sure that we will not do this division East End 0
+
+13:17.910 --> 13:19.980
+0 is different from zero.
+
+13:20.070 --> 13:22.050
+Otherwise we're going to skip.
+
+13:22.170 --> 13:26.240
+So this is by definition how we can to the center point.
+
+13:26.340 --> 13:28.330
+So this method gets caught or something.
+
+13:28.600 --> 13:30.970
+We can call it here get to center.
+
+13:31.350 --> 13:35.290
+So we pass code to us and the parameter.
+
+13:35.500 --> 13:38.480
+And then you can expect to see X and Z.
+
+13:38.490 --> 13:41.430
+What are the coordinates of the center point.
+
+13:41.490 --> 13:48.380
+And finally we can draw a circle on the edge of the image also on the black image specify the detected
+
+13:48.470 --> 13:51.880
+object we get three different parameters like the area and the payment.
+
+13:51.880 --> 13:58.620
+And here finally after exiting the for loop we can get the number contours showing the ends and black
+
+13:58.680 --> 13:59.630
+image.
+
+13:59.860 --> 14:01.150
+The contours around them.
+
+14:01.230 --> 14:07.840
+So you may wonder what is the advantage of this method as compared to the previous post which zos open
+
+14:07.850 --> 14:08.400
+close.
+
+14:08.490 --> 14:13.340
+So it actually can do some of the stations on which wouldn't want to.
+
+14:13.380 --> 14:16.220
+For example it's possible to make a statement.
+
+14:16.290 --> 14:25.550
+For example if the area is greater than that or that a certain value we're going to do the day.
+
+14:25.740 --> 14:28.690
+So for example we're going to ignore that.
+
+14:28.740 --> 14:30.010
+So it can be.
+
+14:30.100 --> 14:33.410
+It seems that some of the controls in the image.
+
+14:33.780 --> 14:36.020
+OK so let's round out this Barbara.
+
+14:36.200 --> 14:43.970
+So you want to process the that by running again.
+
+14:44.200 --> 14:46.170
+So see images.
+
+14:46.350 --> 14:53.260
+This is the imagery because either you have your number of Contos is equal to I want to see four or
+
+14:53.650 --> 15:02.120
+five every object detection has a specific code to Auggie and you can see the surrounding circle around
+
+15:02.180 --> 15:10.330
+every object this is the image that you have to read and that all the laws the code books and this is
+
+15:10.330 --> 15:12.210
+now the great escape image.
+
+15:12.220 --> 15:13.560
+This is the vitamin D.
+
+15:13.930 --> 15:15.690
+So you can see the different steps.
+
+15:15.760 --> 15:16.600
+It starts right.
+
+15:16.630 --> 15:17.860
+Absolutely.
+
+15:18.340 --> 15:19.140
+OK.
+
+15:19.480 --> 15:21.170
+And then really sorry.
+
+15:21.240 --> 15:21.670
+Yes.
+
+15:21.690 --> 15:28.400
+Then the late great state image they on the stage is the image the violent image.
+
+15:28.680 --> 15:29.230
+OK.
+
+15:29.260 --> 15:36.700
+Using the back of the image the camera files goes on to allow us to find the least of all contours and
+
+15:36.700 --> 15:39.390
+then finally load them.

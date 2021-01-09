@@ -1,0 +1,475 @@
+WEBVTT
+
+00:00.120 --> 00:06.550
+Several Newroz users find it difficult in the beginning to differentiate between a workspace and roast
+
+00:06.600 --> 00:13.100
+package and also may find difficulties in understanding how to set up their first projects.
+
+00:13.140 --> 00:19.070
+In this video I'm going to explain the process of creating a new workspace and a new package.
+
+00:19.140 --> 00:25.650
+So after installing glass we need to do a little bit of configurations to enable us in your mental operating
+
+00:25.650 --> 00:26.100
+system.
+
+00:26.100 --> 00:31.290
+So those will be installed in the directory up on us and then the remove of the budget.
+
+00:31.290 --> 00:32.770
+In this case it's kinetic.
+
+00:32.790 --> 00:36.740
+And here we can find the whole workspace for the ros installation.
+
+00:36.750 --> 00:43.720
+So the workspace represents the working area and any workspace would have a special site that is set
+
+00:43.730 --> 00:44.220
+up.
+
+00:44.250 --> 00:44.670
+OK.
+
+00:44.670 --> 00:52.380
+So we have set up that bus and set up the S H for a different type of checks and this file must be executed
+
+00:52.890 --> 00:54.500
+to enable the workspace.
+
+00:54.570 --> 01:01.330
+So the workspace is actually the working area that contains the file that we need to run across our
+
+01:01.340 --> 01:02.650
+most applications.
+
+01:02.670 --> 01:08.070
+So we need for example to run the set to the bus using the command source.
+
+01:08.100 --> 01:15.540
+So instead of writing this manually every time in a terminal we should write it into the bus of C which
+
+01:15.540 --> 01:20.680
+is defined automatically executed whenever you start a new terminal.
+
+01:20.880 --> 01:25.060
+So the dog bus or C contains several script commands.
+
+01:25.080 --> 01:29.520
+That will be automatically executed every time you open a terminal.
+
+01:29.520 --> 01:32.200
+So is the home directory we can type.
+
+01:32.410 --> 01:33.150
+I bash.
+
+01:33.260 --> 01:33.800
+I see.
+
+01:33.810 --> 01:40.190
+And then we will have this file open and then I'm going to write the command source slash of lusterless
+
+01:40.260 --> 01:43.510
+masculinity lunatic which is the path to the workspace.
+
+01:43.510 --> 01:48.780
+And this is the file set up that bus that will be executed to enable the workspace.
+
+01:48.960 --> 01:55.770
+So here if I type rescore before opening a new terminal before the changes take effect you will see
+
+01:55.950 --> 01:57.870
+a score is not detected.
+
+01:57.930 --> 01:58.410
+OK.
+
+01:58.410 --> 02:02.820
+Same thing if I run a CD that takes me to the default workspace.
+
+02:02.820 --> 02:03.430
+OK.
+
+02:03.450 --> 02:04.890
+It cannot be executed.
+
+02:04.890 --> 02:10.970
+Now if I close this terminal and open another one so that changes will be effective.
+
+02:11.010 --> 02:12.910
+And then I can make arrests.
+
+02:12.960 --> 02:15.890
+See it will take me to the default workspace.
+
+02:15.900 --> 02:23.280
+So this is not the default workspace and also Roscoff which sucks the main node is going to be working.
+
+02:23.550 --> 02:26.560
+However when working with groups it is not convenient.
+
+02:26.640 --> 02:33.450
+Work in the default workspace the common practice is to create your own workspace where to put your
+
+02:33.450 --> 02:40.230
+trust projects so that your rescored and programs will be in a workspace different from the default
+
+02:40.230 --> 02:40.560
+one.
+
+02:40.590 --> 02:43.820
+And for this we need to create our own workspace.
+
+02:43.920 --> 02:45.830
+So let's see how it works.
+
+02:45.840 --> 02:49.260
+So let me first go to the home directory.
+
+02:50.420 --> 02:56.950
+So this is our home directory and basically we need to follow the instructions in those tutorials.
+
+02:57.020 --> 02:59.370
+Create a workspace for.
+
+02:59.930 --> 03:07.800
+In a nutshell that is just the compilation framework used by the environment to create a clean workspace.
+
+03:07.910 --> 03:15.020
+So it means the workspace where we are going to set up our projects and put our files were going first
+
+03:15.020 --> 03:21.170
+to create a new directory in the home folder and the common practice is to put it in the home folder
+
+03:21.290 --> 03:22.650
+and give it a name.
+
+03:22.790 --> 03:26.090
+Kathleen w s or catkin workspace.
+
+03:26.420 --> 03:32.300
+You can give me any name of your choice but this is the common name in Russ and then we will create
+
+03:32.360 --> 03:39.560
+Also the s r folder which is going to be the father that will contain the source file of your code it
+
+03:39.560 --> 03:43.670
+will contain packages that you will create later on.
+
+03:43.670 --> 03:50.390
+So first of all workspace let's say this is a big area you can consider it as like a big table where
+
+03:50.510 --> 03:58.040
+later on you're going to organize your projects which are going to call them packages into this workspace
+
+03:58.160 --> 04:04.040
+so we can see that a workspace is a complete working environment and packages will be your own individual
+
+04:04.040 --> 04:07.490
+projects that will be put inside the workspace.
+
+04:07.490 --> 04:09.930
+So let's create the directory.
+
+04:09.930 --> 04:17.270
+Now you can go to the directory in workspace.
+
+04:17.270 --> 04:25.650
+And finally you can compile the workspace using the command that kin make and now the workspace is created.
+
+04:25.760 --> 04:31.970
+So after compilation we have now created to get the workspace into the home directory which contains
+
+04:32.060 --> 04:34.830
+also a big development and source FARGHER.
+
+04:34.880 --> 04:41.540
+So you can see if make Russy which is the command that takes you to the default workspace is going to
+
+04:41.540 --> 04:49.040
+take as is still the default workspace up slashers QinetiQ even if I close and open again.
+
+04:49.130 --> 04:56.480
+So you can see the new workspace is still not enabled in order to enable the workspace we must also
+
+04:56.480 --> 05:04.370
+source the setup that bash that is located in this workspace and you can find it in the developed folder.
+
+05:04.580 --> 05:12.560
+So here we have set up that this one must be source to enable this workspace to be the default like.
+
+05:12.760 --> 05:14.660
+So how to do this permanently.
+
+05:16.080 --> 05:20.130
+We go to you Ellie the bus.
+
+05:20.740 --> 05:22.200
+I see.
+
+05:22.290 --> 05:26.060
+And we need also to do a source home.
+
+05:26.120 --> 05:27.150
+That's what I do.
+
+05:27.150 --> 05:29.450
+This is the name of the user.
+
+05:29.530 --> 05:31.850
+And so now this is the home directory.
+
+05:32.040 --> 05:35.040
+This is our workspace that we have created.
+
+05:35.430 --> 05:37.500
+And this is the event finder.
+
+05:37.530 --> 05:42.460
+And finally we execute the setup of bash game.
+
+05:42.660 --> 05:45.390
+So now I enable this instruction.
+
+05:45.410 --> 05:53.300
+Now I will open a new terminal so you can see how I make RISELEY it's going to take us by the fall to
+
+05:53.320 --> 05:57.480
+the clean workspace that we have created right now.
+
+05:57.480 --> 05:57.980
+Why.
+
+05:57.990 --> 06:01.100
+Because this one was sourced after the default.
+
+06:01.290 --> 06:09.270
+So you can see now if I go back to a little bash I see I am printing not us back and stuff which is
+
+06:09.270 --> 06:10.200
+shown here.
+
+06:10.380 --> 06:12.070
+This is now the default web.
+
+06:12.130 --> 06:15.130
+And this is the workspace of the installation.
+
+06:15.300 --> 06:21.590
+Now that you have created you workspace it is time to start creating your projects.
+
+06:21.600 --> 06:29.030
+So for us project is actually called a package and a package is defined inside a workspace as a location
+
+06:29.030 --> 06:32.710
+where to create the files and the programs of the last project.
+
+06:32.760 --> 06:36.110
+So first of all we need to go to look at the workspace.
+
+06:36.150 --> 06:43.050
+And as you already know the catkin workspace contains a three for work one for the b that contains the
+
+06:43.050 --> 06:48.260
+compiled files one for the development and one called sarcy for the source files.
+
+06:48.420 --> 06:53.920
+So our packages or projects will be created into the RC folder.
+
+06:54.120 --> 07:00.640
+So let me go to the sarcy and then not have to create a new package we need to use the command catkin
+
+07:00.730 --> 07:04.850
+create an EKG and then we specify the name of the package.
+
+07:04.860 --> 07:10.650
+In this case I'm going to call it truss basics features.
+
+07:10.680 --> 07:17.250
+And finally we need to specify the dependencies which means the cross libraries on which the project
+
+07:17.250 --> 07:18.300
+will be back of course.
+
+07:18.300 --> 07:24.090
+There are common libraries that we can include in the project since the creation time like for example
+
+07:24.420 --> 07:33.600
+standard messages or spy for Python and the recipe for C++ we can include also other libraries.
+
+07:33.840 --> 07:40.170
+But at the creation time we may not be able to know what are all the libraries that our project will
+
+07:40.170 --> 07:41.050
+depend on.
+
+07:41.130 --> 07:48.600
+So this is not a problem because later on I will explain how to create a neuros applications and programs.
+
+07:48.870 --> 07:54.180
+I also explained on how to add manually new dependencies into the project.
+
+07:54.270 --> 08:01.050
+So for now it will be ok to just leave the project with only these three dependencies.
+
+08:01.050 --> 08:06.890
+So now we execute the command and the newest package is created.
+
+08:07.210 --> 08:12.480
+But still I need to compile the workspace to complete the creation of the package.
+
+08:12.520 --> 08:19.720
+So to compile the new package we need to go to the cutting workspace that actually and then we use the
+
+08:19.720 --> 08:27.010
+command that we make.
+
+08:27.040 --> 08:33.280
+So now our project is created and we can go to the SSD finder and we can check that we have already
+
+08:33.280 --> 08:36.030
+Arris basics tutorials created.
+
+08:36.170 --> 08:38.850
+OK this is getting paid assassin.
+
+08:39.400 --> 08:42.670
+And inside you have an S R C finder.
+
+08:42.670 --> 08:48.260
+And this is where to put the source code of those programs that we will develop and include here.
+
+08:48.700 --> 08:51.170
+The place where to put libraries.
+
+08:51.440 --> 08:59.270
+One of the moment our source folder is empty and we are able to create new programs here.
+
+08:59.620 --> 09:04.930
+So now we can use an integrated development environment to open this project.
+
+09:04.930 --> 09:10.200
+For example I'm going to use Visual Studio code and you can use any other of your choice.
+
+09:10.210 --> 09:16.210
+Remember that you can refer to the video which ID to choose if you want to have more information about
+
+09:16.270 --> 09:24.130
+the different possibilities available to develop those programs with different integrated environments.
+
+09:24.310 --> 09:26.920
+So we can and visit you code
+
+09:30.920 --> 09:36.430
+and then you can drag and drop that here.
+
+09:36.520 --> 09:44.460
+So we get to the source wonder then we can create new files.
+
+09:45.660 --> 09:50.040
+McGlade for example told Kirk CVP
+
+09:57.770 --> 10:05.080
+needs to be so just for illustration purposes.
+
+10:05.480 --> 10:14.860
+This is something called for Mr. Dodd to be and this is another called for conductivity.
+
+10:14.880 --> 10:17.970
+Of course I'm going to explain more in details.
+
+10:17.970 --> 10:21.270
+The Tyrker listener application in a later video.
+
+10:21.300 --> 10:27.630
+But just to show you how to create notes and how to execute them after creating your workspace and your
+
+10:27.630 --> 10:28.450
+package.
+
+10:28.500 --> 10:33.070
+The next step is to add the compilation information into the catkin workspace.
+
+10:33.090 --> 10:37.620
+So I will add an executable for the target and execute but it's not.
+
+10:37.710 --> 10:43.780
+Of course this concept will be explained in the complete details in the lecture of how to implement
+
+10:43.820 --> 10:45.610
+a publisher and subscriber.
+
+10:45.960 --> 10:51.220
+So here when you add the executable we must make sure to specify the correct path to the note.
+
+10:51.300 --> 10:56.520
+So here this is the path to the not Colcord is TTP.
+
+10:56.570 --> 11:01.080
+So we go to Kinnaman space S or C busy.
+
+11:01.220 --> 11:05.780
+So this is now the SIRC the semi-closed.
+
+11:05.870 --> 11:10.530
+So you have to be the same thing here.
+
+11:10.840 --> 11:11.690
+I see this.
+
+11:11.750 --> 11:12.570
+I don't see the
+
+11:15.770 --> 11:36.150
+after that we can go to look at workspace and find that exit a comment that we make.
+
+11:36.240 --> 11:40.920
+So now our two executable files are created and we can run the program.
+
+11:41.220 --> 11:43.560
+So first of all we run the scope
+
+11:47.030 --> 11:53.370
+then using Control shift key open a new terminal we can run a restaurant.
+
+11:53.660 --> 11:58.830
+So the name of the package that we have created we choose the most basic tutorial.
+
+11:59.210 --> 12:00.560
+And then you have two notes.
+
+12:00.650 --> 12:03.050
+So let's start with a little girl.
+
+12:03.940 --> 12:04.640
+OK.
+
+12:04.700 --> 12:05.860
+Now is publicI
+
+12:09.080 --> 12:14.460
+in the second term of we're on that list.
+
+12:16.010 --> 12:19.880
+Program which is also in its package.
+
+12:20.140 --> 12:28.230
+And then we press listener or US note and you can see now Dilawar 11 12.
+
+12:28.310 --> 12:32.230
+So you can see now 30 you can find 13 and so on.
+
+12:32.270 --> 12:36.690
+So this is a publisher publishing and this is subscale subscriber.
+
+12:36.680 --> 12:42.020
+So as already mentioned I'm going to explain in more detail how the publisher subscriber works.
+
+12:42.020 --> 12:50.150
+It is just a matter of demonstrating on how to create an application right away after creating a workspace
+
+12:50.200 --> 12:51.500
+and Parros package.

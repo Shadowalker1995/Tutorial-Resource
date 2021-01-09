@@ -1,0 +1,460 @@
+WEBVTT
+
+00:00.210 --> 00:05.940
+In this lecture I'm going to talk about colorful three which is an interesting technique in computer
+
+00:05.940 --> 00:07.410
+vision and image process.
+
+00:07.530 --> 00:13.360
+Consider the following image where we have a tennis ball that you would like to detect inside the image.
+
+00:13.440 --> 00:18.030
+It is clear that the tennis ball has a very specific color in the image which is different from the
+
+00:18.030 --> 00:19.610
+colors of the other pixels.
+
+00:19.710 --> 00:24.660
+So we can use the color feature of the tennis ball in order to detect its location inside the image.
+
+00:24.690 --> 00:27.470
+And for this we can use color filtering techniques.
+
+00:27.540 --> 00:34.230
+So colorful theory is defined as displaying only a specific color in the image and it is used in wide
+
+00:34.230 --> 00:39.790
+range of computer vision applications especially for detecting objects with specific colors.
+
+00:39.870 --> 00:42.640
+The algorithms is composed of four steps.
+
+00:42.690 --> 00:49.770
+First within the image as an object color image and then we convert the image into the HSV color space
+
+00:49.860 --> 00:54.310
+and you can see why it is more suitable for these type of applications.
+
+00:54.330 --> 00:59.380
+And then when you find the upper and lower ranges of the color of interest.
+
+00:59.400 --> 01:04.780
+And finally we create a mask based on the color ranges applied to that age as the image form.
+
+01:04.890 --> 01:07.010
+So let's see how it works in practice.
+
+01:07.020 --> 01:09.620
+So now this is the code of color filtering.
+
+01:09.630 --> 01:16.480
+First of all we open an image using Siri to add imagery and then we access one of the images in the
+
+01:16.480 --> 01:17.260
+images for that.
+
+01:17.280 --> 01:19.170
+So we started this one.
+
+01:19.270 --> 01:22.240
+But also we can later on tape on different ends.
+
+01:22.260 --> 01:27.800
+So here we're going to show the original images and the code to so this is the original image.
+
+01:27.870 --> 01:33.120
+And as I mentioned in the introduction the first thing we need to do is to convert the image into the
+
+01:33.500 --> 01:36.190
+situation but it is equal space.
+
+01:36.190 --> 01:47.240
+So the point bird image which is the color space and do so revues so I'm going to create a new object
+
+01:47.490 --> 01:52.480
+called HSV silly to convert the color within the image.
+
+01:52.500 --> 02:00.210
+Then you don't color BGR too much history and let us show the image.
+
+02:02.320 --> 02:07.290
+OK so this is how it looks like at this stage you may wonder why we need to make the conversion.
+
+02:07.380 --> 02:09.260
+OK so let me first explain.
+
+02:09.780 --> 02:15.950
+So our problem is to the image for using its color and the color is yellow.
+
+02:15.960 --> 02:21.810
+The problem with actually color space is that it is not close to the word external lighting changes
+
+02:21.930 --> 02:26.740
+and this is why we prefer to use it as the color space instead of the color.
+
+02:26.760 --> 02:31.550
+Just to illustrate the problem that's causing the rescript with different red colors.
+
+02:32.160 --> 02:39.140
+So the colors if we use the space do we have completely different values.
+
+02:39.180 --> 02:44.820
+So it's going to be very difficult to find a range of real violence to which we are going to use the
+
+02:44.820 --> 02:46.410
+filter of the colors.
+
+02:46.410 --> 02:54.050
+However using the color space we know that all the red values are ranging between 0 and 60 degrees.
+
+02:54.120 --> 03:00.310
+OK so this is now the representation of it is the color space which looks like a cone.
+
+03:00.360 --> 03:07.680
+So we have here the circle represent the value and it ranges from zero to three 60 degrees.
+
+03:07.680 --> 03:12.800
+OK so the balance between 0 and 60 that corresponds to the red.
+
+03:12.840 --> 03:17.290
+So you can see now the rates start from zero and then it moves.
+
+03:17.340 --> 03:22.020
+And then the value of 60 begins at 60 degrees we start to have the yellow.
+
+03:22.100 --> 03:24.920
+This this is the part of the yellow here.
+
+03:25.080 --> 03:31.620
+Then we move at one hundred twenty we start to have the green color case of the green color is between
+
+03:31.620 --> 03:37.250
+one twenty and one eighty twenty eight you start to have the same color which is this one.
+
+03:37.410 --> 03:42.530
+And then the blue and then the magenta So all the circle here it represent the colors.
+
+03:42.570 --> 03:46.590
+And this is very useful if we want to filter out certain colors.
+
+03:46.590 --> 03:54.400
+For example if we want to just have the euro we can have a mask applied to the of 60 and 120 for example.
+
+03:54.500 --> 03:58.600
+OK if we want to filter red values we can use between 0 and 60.
+
+03:58.770 --> 04:06.000
+So you can see the edge as we call the space allow us to clearly define about for any kind of colors
+
+04:06.120 --> 04:09.150
+and the axes they represent the situation and the pattern.
+
+04:09.270 --> 04:14.640
+So you can think about the situation as the amount of shade or the gray color that you do have color.
+
+04:14.670 --> 04:20.320
+So you can see when me move in this direction we have more saturated colors and the value it represent
+
+04:20.340 --> 04:26.360
+the level of brightness and this blue line is usually they are caught in between zero and 100 as a percentage.
+
+04:26.370 --> 04:33.240
+So 0 percent it means there is no saturation and 100 percent means it's completely saturated and zero
+
+04:33.240 --> 04:35.070
+it means very dark.
+
+04:35.160 --> 04:37.910
+So it's black 1 and 100.
+
+04:37.920 --> 04:40.230
+We represent the very bright pixels.
+
+04:40.350 --> 04:46.140
+So as such that is the color space is much more suitable than the actually colored space in our two
+
+04:46.260 --> 04:50.970
+or four color three because the color balance well defined.
+
+04:50.970 --> 04:56.140
+Now there's one note that you have to consider when we work with HSV colors face.
+
+04:56.150 --> 05:01.650
+We all can see is that it uses different ranges for the color space.
+
+05:01.650 --> 05:08.810
+So the cleanest light I have muscles that they do is encoded between 0 and 360 degrees but oppositely
+
+05:09.020 --> 05:11.870
+just encode the values between 0 and 1 8.
+
+05:11.880 --> 05:15.220
+So in this case we need to define every range by two.
+
+05:15.390 --> 05:21.210
+So this means that the red color will be defined in open city between 0 and 30 and the yellow color
+
+05:21.210 --> 05:24.280
+will be defined between 30 and 120.
+
+05:24.300 --> 05:30.690
+And so the situation and the values are not included as a percentage like it is in the standard representation
+
+05:30.750 --> 05:35.240
+but they are important as values between 0 and 2 0.
+
+05:35.280 --> 05:38.140
+It means great for saturation and to 55.
+
+05:38.250 --> 05:45.000
+It means a saturated color and the value 0 means dark color and 2:55 means bright color.
+
+05:45.000 --> 05:51.210
+So this is the convention that is being used in open city and you will be using it not to define the
+
+05:51.210 --> 05:54.190
+upper range in the lower range of our desires.
+
+05:54.240 --> 06:00.270
+So looking at our problem now we would like to detect a tennis ball and a tennis ball has the yellow
+
+06:00.270 --> 06:00.670
+color.
+
+06:00.690 --> 06:07.040
+So now we need actually to select the color space in the h is v format that specifies the color.
+
+06:07.080 --> 06:10.860
+Now based on the statement the value should be between 60 and 120.
+
+06:10.860 --> 06:15.850
+Considering the complexity of this even the is encoded between 0 and 1 80.
+
+06:15.870 --> 06:23.070
+In this case we need to divide this by two so it will be defined between 30 and 60 degrees up in C..
+
+06:23.070 --> 06:25.010
+So let's see how it works.
+
+06:25.050 --> 06:27.790
+Nobody understood why we need to use h.
+
+06:27.810 --> 06:29.340
+It's v format.
+
+06:29.360 --> 06:30.490
+What color direction.
+
+06:30.550 --> 06:36.800
+Let's now define the upper bound and a lower bound for the yellow color that we would like to filter
+
+06:36.810 --> 06:37.600
+into an image.
+
+06:37.650 --> 06:43.980
+Now we'll find the upper and lower box of the yellow color.
+
+06:44.120 --> 06:46.590
+OK for this what.
+
+06:46.770 --> 06:50.130
+So let us define the yellow lower color.
+
+06:50.250 --> 06:56.670
+So remember in the standard representation of the edge as we format the yellow bound is between 60 and
+
+06:56.670 --> 06:57.370
+120.
+
+06:57.390 --> 06:59.020
+And since we work with others.
+
+06:59.100 --> 07:01.100
+So we need to divide this value by two.
+
+07:01.200 --> 07:06.480
+So it's going to be between 30 as the lower value and providing be 60.
+
+07:06.540 --> 07:10.870
+Now we need to define the situation and the brightness of the lower bound.
+
+07:10.910 --> 07:18.060
+And so the general rule here is that we need to choose low values for situation and put the brightness
+
+07:18.200 --> 07:23.310
+the lower bound and higher values saturation and the brightness for the upper body.
+
+07:23.550 --> 07:25.380
+So you know we can choose.
+
+07:25.410 --> 07:27.560
+There is no actually a rule to follow.
+
+07:27.570 --> 07:30.110
+But it's kind of right and check operation.
+
+07:30.120 --> 07:34.340
+So we're going to just propose somebody and then it doesn't work fine.
+
+07:34.380 --> 07:38.580
+We can cure them so that the color filtering will be as much as possible.
+
+07:38.640 --> 07:45.020
+So let's choose the maximum values for the situation and for the brightness in the upper bound.
+
+07:45.030 --> 07:54.400
+Now we need to use the HSV imaging format and the no upper bound not to define a mask so completely
+
+07:54.470 --> 08:00.410
+fine mask using the lower and upper bounds of yellow color.
+
+08:00.510 --> 08:01.550
+How can you do that.
+
+08:01.580 --> 08:06.960
+You can define the image mask and use the method to do it in range.
+
+08:06.990 --> 08:08.470
+It takes as parameter.
+
+08:08.490 --> 08:13.290
+The H is v image and then the lower bound and the upper.
+
+08:13.410 --> 08:15.870
+OK so finally everything is done.
+
+08:16.020 --> 08:23.690
+We can just now print the mask using Sevigny Look I am showing with the mask as usual reducing it to
+
+08:23.730 --> 08:25.850
+the weight of zero.
+
+08:26.340 --> 08:31.730
+You don't destroy all windows at the plastic OK that's pretty much it.
+
+08:31.730 --> 08:33.370
+Now we're going to apply this.
+
+08:33.400 --> 08:36.600
+I would get in on that one which is this one.
+
+08:36.710 --> 08:38.220
+And you will see three images.
+
+08:38.270 --> 08:42.080
+The original image the HSP image and the mask image.
+
+08:42.080 --> 08:48.440
+So what we expect to have is that the mask must show the yellow color as white and any different color
+
+08:48.590 --> 08:49.540
+as a black color.
+
+08:49.640 --> 08:51.610
+So that's sort of the application now.
+
+08:51.620 --> 08:55.240
+Now we have three images as you can see this is the original image.
+
+08:55.250 --> 08:57.020
+This is the h is the image.
+
+08:57.080 --> 08:58.390
+And this is the mask image.
+
+08:58.430 --> 09:04.990
+You can see everything you can see here a little bit of you know values similar to the body.
+
+09:05.540 --> 09:10.670
+So maybe we can remove them by just playing with the situation and the brightness.
+
+09:10.670 --> 09:11.980
+Let's do some work here.
+
+09:12.080 --> 09:15.980
+For example maybe we can use higher saturation and the higher brightness
+
+09:19.980 --> 09:27.500
+you can see now the book almost looks to be that we don't have these days is not because of these colors
+
+09:27.510 --> 09:33.900
+here we'll have something similar to the yellow but a lower brightness and lower saturation will also
+
+09:34.120 --> 09:35.470
+be selling us.
+
+09:35.490 --> 09:42.120
+Also try some other images so you can see here now you have the box selected but also because some other
+
+09:42.120 --> 09:44.860
+places also have some kind of green color.
+
+09:44.880 --> 09:50.990
+So maybe we can actually improve this by reducing the value of the you in the upper about gays or something.
+
+09:51.000 --> 09:53.040
+If a tree is designed to be 50 on the
+
+09:56.850 --> 09:58.770
+still have bottoms.
+
+09:58.880 --> 10:00.910
+OK so we did something.
+
+10:00.920 --> 10:07.630
+In any case we can choose also some of the images you see in the performance of other images.
+
+10:07.720 --> 10:10.500
+So you can see just this place.
+
+10:10.520 --> 10:15.470
+Maybe we can play with the situation to improve the performance.
+
+10:15.480 --> 10:18.180
+We can try on that image work also.
+
+10:18.230 --> 10:18.790
+OK.
+
+10:18.890 --> 10:25.750
+Here we have a very nice action because we have the other well specific in this thread the last image.
+
+10:25.910 --> 10:26.380
+OK.
+
+10:26.480 --> 10:28.590
+It also works pretty much.
+
+10:28.880 --> 10:32.370
+So you can see the performance will depend on the lighting conditions.
+
+10:32.510 --> 10:33.800
+But it's almost by the way.
+
+10:33.800 --> 10:39.690
+So we had a light on five images one of them had a very good performance.
+
+10:39.770 --> 10:46.490
+So many imagery can actually turn a little bit more the upper and lower bounds in order to improve the
+
+10:46.490 --> 10:48.180
+accuracy of the action.
+
+10:48.190 --> 10:55.220
+So in this video we have to use the color filtering technique that allows to select a particular color
+
+10:55.320 --> 10:56.180
+in the image.
+
+10:56.180 --> 11:02.180
+This technique is used to action when the object has a specific color in the image.
+
+11:02.330 --> 11:08.630
+It would be even nicer and more interesting if you are able to draw a circle around the ball in the
+
+11:08.630 --> 11:13.040
+mask image so as to identify it according to the image.
+
+11:13.060 --> 11:17.660
+And for this we need to do contouring action which is going to be explained in the next video.

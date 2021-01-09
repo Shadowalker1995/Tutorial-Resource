@@ -1,0 +1,424 @@
+WEBVTT
+
+00:00.760 --> 00:04.320
+Not come with me.
+
+00:04.500 --> 00:09.150
+Hello guys and welcome back to new tutorial on laser rangefinders withdraws.
+
+00:09.390 --> 00:12.610
+In this video I'm going to demonstrate how to connect.
+
+00:12.620 --> 00:17.110
+How cool you are you are 0 for the x rays finder with reskin at.
+
+00:17.150 --> 00:21.930
+And this particular razor is very popular and is used in many robotic platforms.
+
+00:22.020 --> 00:28.290
+As already explained in the introductory lecture this laser sensor has seen a range of around 4 meters
+
+00:28.380 --> 00:33.880
+and a few of you of 200 40 degrees with an approximate cost of 1000 dollars.
+
+00:33.890 --> 00:39.720
+There are a number of steps that we need to follow in order to connect the sensor and make it up and
+
+00:39.720 --> 00:40.360
+running with it.
+
+00:40.360 --> 00:46.500
+So first of all we need to make sure that the you know package is downloaded to our system and then
+
+00:46.590 --> 00:50.590
+we have to run it using the command Rajasthani you know the genome.
+
+00:50.640 --> 00:56.940
+So this is a genetic node that can be used in order to access and connect to many sensors including
+
+00:57.700 --> 01:01.810
+zero for an x that we are dealing with in this video.
+
+01:02.010 --> 01:07.740
+By running this node all the information coming from the laser range finder will be published in a topic
+
+01:07.740 --> 01:11.780
+called Sky and this topic as already mentioned several times.
+
+01:11.820 --> 01:20.920
+This is the common name of topic for laser scanners data and information so unlike the case of the camera
+
+01:21.180 --> 01:26.940
+we don't have good depth image that we need to convert a scanned topic but we will have direct access
+
+01:26.940 --> 01:34.140
+to the topic as soon as we execute the node you know which is going to start the drivers of the laser
+
+01:34.140 --> 01:34.630
+scanner.
+
+01:34.650 --> 01:40.980
+However there is one thing that we need to define which is very important and that is the transformation
+
+01:40.980 --> 01:43.220
+between the map frame and the laser free.
+
+01:43.260 --> 01:47.380
+Of course we will have a complete chapter on the transformation Indras.
+
+01:47.610 --> 01:53.110
+So don't worry about that if you don't understand what our transformation is and what you see.
+
+01:53.210 --> 01:59.640
+But to explain it in a very simple way we're going just to tell us what is the location of this sensor
+
+01:59.730 --> 02:01.080
+into the environment.
+
+02:01.080 --> 02:07.530
+OK so since we don't have any specific location we're going to say that this sensor is located at point
+
+02:07.950 --> 02:12.790
+0 0 0 coordinate in x y and z coordinates.
+
+02:12.810 --> 02:13.310
+OK.
+
+02:13.380 --> 02:15.140
+And the orientation will be zero.
+
+02:15.360 --> 02:22.680
+So to do that we are going to use the package D F and the No that is called static transform publisher
+
+02:22.770 --> 02:27.570
+which is going to create a transformation between the map frame and the laser.
+
+02:27.660 --> 02:28.750
+As already mentioned.
+
+02:28.770 --> 02:34.770
+It is just specifying the position of the laser in the water and you are going to say that this position
+
+02:34.800 --> 02:41.330
+is going to be zeros or x y z coordinates and also 0 for the orientation or the end.
+
+02:41.490 --> 02:46.470
+As already mentioned we are going to talk about this into more details for now it doesn't matter if
+
+02:46.470 --> 02:52.890
+we put any kind of number here because our objective is to visualize the sensory data and not to localize
+
+02:52.950 --> 02:55.030
+objects with respect to what.
+
+02:55.290 --> 03:01.680
+This is basically the simplest explanation so just assume that we can define the position of the laser
+
+03:01.770 --> 03:09.960
+with respect to the water as being at the location 0 0 0 and at the only station zero that's a and then
+
+03:10.050 --> 03:15.750
+after starting the static transform and you actually know you're going to visualize the formation of
+
+03:15.750 --> 03:22.140
+this country big both using just a big echo and also using Arbys which is the trust visualization.
+
+03:22.170 --> 03:25.380
+So let's see how it works in practice.
+
+03:25.430 --> 03:29.060
+Now we are ready to start working with the Hoquiam sensor.
+
+03:29.240 --> 03:35.720
+The first thing we need to do is to connect the sensor to be current.
+
+03:36.620 --> 03:42.210
+And then as you can see we need to connect to the since you're going to work on the Linux environment.
+
+03:42.210 --> 03:48.320
+Now we are ready to start the driver was powered on of course in order to run the driver we need to
+
+03:48.310 --> 03:55.910
+start Scott because we will use our son so first of what we need to start M.A. and that we need to make
+
+03:55.910 --> 03:58.860
+sure that you know you you start.
+
+03:59.030 --> 04:09.350
+So what we can do we can do is you know if we get it it's time for us you know did you or did he not
+
+04:09.510 --> 04:11.000
+get the password.
+
+04:11.090 --> 04:13.120
+So it's already installed on my computer.
+
+04:13.220 --> 04:14.250
+If it is not this cold.
+
+04:14.320 --> 04:21.050
+So you have to install it first and then you are ready to start the drive restaurant.
+
+04:21.190 --> 04:30.920
+You already know you are you know now it is connected to the serial device and start streaming the data.
+
+04:31.130 --> 04:39.290
+So let me first close the connection and before connecting let's make it stop exist.
+
+04:39.400 --> 04:43.020
+So as you can see we don't have any on topic for the moment.
+
+04:43.040 --> 04:44.470
+Now I'm going to start again.
+
+04:44.480 --> 04:45.310
+Do you already know
+
+04:48.220 --> 04:50.120
+not it is connected again.
+
+04:50.160 --> 05:00.100
+So I can now rest topic list as you can see now we have the second topic gay and different other topics
+
+05:00.340 --> 05:04.720
+but we are not interested to discuss topics that contains all the information as usual what you can
+
+05:04.720 --> 05:05.390
+do.
+
+05:05.650 --> 05:10.470
+You can use this topic echo scandal.
+
+05:10.710 --> 05:14.260
+And here we are getting the array of ranges.
+
+05:14.310 --> 05:16.050
+OK so this is the early ages.
+
+05:16.050 --> 05:18.000
+You can observe it.
+
+05:18.000 --> 05:22.210
+It is much longer than the Asias life pro are going to be coming up.
+
+05:22.230 --> 05:26.380
+So don't forget that here we have a field of view of 270 degrees.
+
+05:26.430 --> 05:31.430
+But as we age just like we have a field of view of only 60 degrees.
+
+05:31.440 --> 05:38.230
+And basically this is now the minimum angle and the maximum again in region if we convert this one in
+
+05:38.240 --> 05:43.140
+two degrees so you'll find around minus 135.
+
+05:43.270 --> 05:45.910
+We can use a calculator just to check it.
+
+05:45.910 --> 05:50.490
+So we have two certified 6:1.
+
+05:50.520 --> 05:54.210
+We were told by the 14 multiplied by one patient.
+
+05:54.240 --> 05:56.630
+So it's around yes 135.
+
+05:56.700 --> 05:59.720
+So it's between 145 and minus 135.
+
+05:59.790 --> 06:03.710
+So the field of your here is actually two hundred seventy.
+
+06:03.810 --> 06:09.870
+So now we are able to get all the information using or stopping a goal like we did in the previous video
+
+06:09.990 --> 06:14.640
+with the other day we come in and up we would like to visualize Melissa Scott and for this we are going
+
+06:14.640 --> 06:17.360
+to use the restaurant Arby's Arby's again.
+
+06:17.740 --> 06:20.610
+And remember that Arby's is the rest of the realization to
+
+06:24.730 --> 06:29.520
+here initially we don't have any topic because it's not in our list.
+
+06:29.560 --> 06:31.350
+So we can do it from here.
+
+06:31.510 --> 06:36.560
+And we use Laserscope then we can select the topic here.
+
+06:36.810 --> 06:44.680
+Scott as you can see we're still unable to see anything here because we have a warning says that there
+
+06:44.680 --> 06:46.660
+is no data.
+
+06:46.990 --> 06:48.370
+There is no transformation date.
+
+06:48.370 --> 06:55.030
+Now here we are if it's true the map is not defined and there is no frame associated with the laser
+
+06:55.030 --> 06:57.240
+range finder you would find.
+
+06:57.370 --> 07:04.540
+So the difference is that when we started open I to it already started with the signing frames for the
+
+07:04.540 --> 07:05.330
+camera.
+
+07:05.650 --> 07:09.410
+That's why we were able actually to visualize the laser scanner.
+
+07:09.580 --> 07:16.000
+But here with the hook or your sensor using this driver you know it doesn't actually start any brain
+
+07:16.180 --> 07:19.470
+doesn't about what is the position of sensor in the world.
+
+07:19.480 --> 07:21.680
+For this reason we need to find this man.
+
+07:21.730 --> 07:22.750
+How can he do that so.
+
+07:22.770 --> 07:24.000
+Look no there isn't.
+
+07:24.180 --> 07:30.470
+I'm going to use transformation has already explained in the introduction we would use a static transform
+
+07:30.490 --> 07:36.300
+publisher between the free map that represents the word environment.
+
+07:36.520 --> 07:44.590
+And that is a tree that represents the location of the laser was really explained just for you and he
+
+07:44.830 --> 07:51.080
+literally position is this is going to be zero on the x y and z coordinates and also for the patient
+
+07:51.640 --> 07:58.300
+of course he mumbled that talk about this study he said more than is when you talk about formations
+
+07:59.440 --> 08:01.050
+because this topic is a problem.
+
+08:01.060 --> 08:10.590
+But for now it's been just a matter of finding a certain location for the laser scanner and all of this
+
+08:10.720 --> 08:12.820
+the patient would be just the something.
+
+08:13.050 --> 08:20.070
+Now when I started the F formation OK I no longer have any problem here.
+
+08:20.220 --> 08:26.350
+So you can see now the map is defined and they have also the laser both of them well-define.
+
+08:26.670 --> 08:34.600
+Well first of all we can move this intersection here just looking the size of two point five and we
+
+08:34.600 --> 08:37.020
+can have some observations.
+
+08:37.030 --> 08:44.470
+So the first observation that we can do now is that the field of view of the laser scanner is much larger
+
+08:44.740 --> 08:48.860
+than the life boat camera that we discussed in the previous video.
+
+08:49.090 --> 08:56.650
+So you can see now we have complete coverage of almost And then around 270 degrees.
+
+08:56.650 --> 09:02.310
+Remember for the camera we only had this fortunate that was covered in present.
+
+09:02.380 --> 09:07.720
+Almost one fourth or one fifth of these total coverage by the laser scanner.
+
+09:07.780 --> 09:14.380
+We can also show the position of the laser scanner by here X and so here in the middle.
+
+09:14.380 --> 09:15.540
+So it's absurd.
+
+09:15.580 --> 09:18.580
+This is 150 degrees on the left and the right side.
+
+09:18.580 --> 09:20.950
+And also it can go even backward.
+
+09:20.950 --> 09:24.250
+OK so you can see I'm sitting here now.
+
+09:24.370 --> 09:31.030
+And you can see now the laser is actually in my motion as well because it's not even behind me with
+
+09:31.030 --> 09:35.220
+an optical front of a laser scanner as you can see now.
+
+09:35.560 --> 09:36.060
+OK.
+
+09:36.250 --> 09:39.970
+So now I'm looking this bar.
+
+09:40.290 --> 09:45.650
+We can see now this is the location of the bar in front of the laser scanner.
+
+09:45.910 --> 09:51.690
+So this shows actually the capabilities for using laser scanner to detect obstacles.
+
+09:51.700 --> 09:55.280
+A wider view of this is a major advantage.
+
+09:55.340 --> 09:58.860
+Compare with use that actually can become better.
+
+09:58.990 --> 10:06.070
+So this matters a lot especially if we use the laser scanner to build maps using some algorithms they
+
+10:06.110 --> 10:12.540
+need maps some with larger if you will result in a better accuracy on the maps.
+
+10:12.580 --> 10:17.880
+And this is why because of the laser scanner depends on the effect.
+
+10:18.430 --> 10:24.450
+Now we were able to visualize the laser scanner out of Houston also using at least the next step is
+
+10:24.540 --> 10:31.140
+all that information coming from the laser scanner system and using some application logic.
+
+10:31.240 --> 10:37.900
+So in the next video I'm going to show you what we know and what you subscribe to the laser scanner
+
+10:38.160 --> 10:44.410
+the political and statistics for example if you want to calculate the maximum distance of the maximum
+
+10:44.410 --> 10:47.130
+range the angle of the maximum range.
+
+10:47.230 --> 10:48.790
+What is the minimum distance.
+
+10:48.850 --> 10:51.070
+What is the distance to a certain angle.
+
+10:51.070 --> 10:54.860
+So all of these parameters can be calculated using gross.
+
+10:54.880 --> 11:00.190
+First of all you need to be a no subscriber the talking scan.
+
+11:00.280 --> 11:05.670
+And then in the callback function you can process information coming from the center.
+
+11:05.740 --> 11:06.850
+So let's see how that works.

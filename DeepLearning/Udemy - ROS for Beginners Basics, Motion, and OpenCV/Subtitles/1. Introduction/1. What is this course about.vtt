@@ -1,0 +1,127 @@
+WEBVTT
+
+00:00.210 --> 00:08.370
+Hi welcome to the course or for beginners basics motion and up in theory Ross is the main development
+
+00:08.370 --> 00:10.770
+framework for robotics applications.
+
+00:10.800 --> 00:18.720
+However it takes a long time for a new user to grasp well the concepts and understand well the internal
+
+00:18.720 --> 00:22.080
+mechanics of for us due to the steep learning curve.
+
+00:22.380 --> 00:29.070
+I'm glad to put this course at the heart of the beginners users learners in the pragmatic and focused
+
+00:29.070 --> 00:29.730
+fashion.
+
+00:29.760 --> 00:32.210
+Step by step with a clear roadmap.
+
+00:32.280 --> 00:39.010
+This course is a result of several years of experience of working and developing programs with us.
+
+00:39.030 --> 00:45.390
+I am a new school professor in computer science and I have a long experience developing programs we
+
+00:45.390 --> 00:50.020
+trust in both academia and industry at academic level.
+
+00:50.370 --> 00:57.030
+I have taught Ross for university students and this allowed me to understand well the problems that
+
+00:57.030 --> 01:02.000
+make the students struggle to learn the ropes and develop solutions to overcome them.
+
+01:02.160 --> 01:08.660
+I have also developed training programs for learning Gruss in the context of research projects.
+
+01:08.910 --> 01:16.590
+I developed several softwares for us including the Rosling protocol that integrates robots with cloud
+
+01:16.680 --> 01:18.510
+and Internet of Things.
+
+01:18.560 --> 01:25.620
+The my boat service Robert for home and office usage I've plugins for robot operating system and maturer
+
+01:25.830 --> 01:27.870
+systems for us enabling robots.
+
+01:27.900 --> 01:30.750
+Much more industrial level.
+
+01:30.750 --> 01:37.230
+I have been leading the research and development department of Gaeltacht robotics and we have developed
+
+01:37.320 --> 01:40.800
+aerial and ground robots platform all around us.
+
+01:40.830 --> 01:47.160
+I am also the founder and the maintainer of Gatwick it you portering and I have good many books on race
+
+01:47.190 --> 01:56.160
+with Springer based on my experience in numerous user has to learn concepts and system then learn how
+
+01:56.160 --> 02:03.810
+to make a robot move in the environment and also learn how Robert sees the environment as such.
+
+02:03.810 --> 02:07.060
+The course is organized in three main parts.
+
+02:07.170 --> 02:15.450
+The first part deals with various concepts including gross computation graphs such as Rush notes topics
+
+02:15.540 --> 02:23.920
+messages services actually and chose how to develop simple programs for us in both C++ and Python.
+
+02:24.090 --> 02:28.880
+The Course also gives new users how to install trust on their system.
+
+02:28.890 --> 02:35.210
+Once these concepts are understood the second part deals with basic robot motion.
+
+02:35.310 --> 02:41.520
+We build a simple application using the turtle sim simulator that makes the robot moves in different
+
+02:41.520 --> 02:45.830
+trajectories and simulates a robot meaning application.
+
+02:45.840 --> 02:53.340
+This part illustrates how to manage a Ross project in C++ and how to decompose a large problem into
+
+02:53.370 --> 02:58.050
+a subset of problems that need to develop into a global solution.
+
+02:58.050 --> 03:05.450
+In addition it will make you understand Robert kinematics and how to control a robot motion mirrorless.
+
+03:05.490 --> 03:12.600
+The first part of the course deals with Robert perception and presents an overview on up and see which
+
+03:12.600 --> 03:18.770
+is the most powerful library to develop computer vision and image processing and what it is we get most
+
+03:18.780 --> 03:25.620
+with several programs of open Zeevi on Russ and show how to bridge between rows image format and up
+
+03:25.630 --> 03:27.290
+is Zeevi image format.
+
+03:27.330 --> 03:33.930
+The Course also provides many hints on activities so that the student can assess his understanding of
+
+03:33.930 --> 03:36.190
+the concepts presented in the lectures.
+
+03:36.240 --> 03:43.320
+At the end viscose provides a comprehensive overview of ros and allows a new user to quickly find his
+
+03:43.320 --> 03:46.920
+path into developing his own project with us.
+
+03:46.920 --> 03:47.950
+Welcome to the course.

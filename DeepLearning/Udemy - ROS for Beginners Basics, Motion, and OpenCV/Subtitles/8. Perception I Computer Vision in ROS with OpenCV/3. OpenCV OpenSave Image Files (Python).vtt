@@ -1,0 +1,256 @@
+WEBVTT
+
+00:01.060 --> 00:03.340
+Muscle it was not meant to be.
+
+00:03.770 --> 00:09.830
+So I mean to me this is the first practical lecture about Auckland TV And just to explain the roadmap.
+
+00:09.860 --> 00:15.470
+First of all I'm going to start with presenting some of the most important features and functionalities
+
+00:15.470 --> 00:22.190
+of open CV through illustrative examples and demonstrations and later on I would present how images
+
+00:22.250 --> 00:27.220
+are presented and dressed and how they can be handled by open Zeevi for further processing.
+
+00:27.230 --> 00:34.280
+So the next couple of lectures I will be talking about your CV without us and then I will talk about
+
+00:34.340 --> 00:40.550
+how easy it was to integrate the two us and how images collected from rest of us can be read and assessed
+
+00:40.550 --> 00:42.340
+by open civil liberties.
+
+00:42.350 --> 00:49.540
+One of the basic functions of our policy is to open and see images from fights so let's see how it works.
+
+00:49.580 --> 00:56.520
+So let us open with you your code and your interest essentially projects that open up and copy that.
+
+00:56.660 --> 01:02.570
+So this is a very basic Python script in open Zilly that allows you to see an image from a find and
+
+01:02.570 --> 01:04.660
+then save it in another way.
+
+01:04.730 --> 01:12.190
+So first of all looking at the directory will be the perception.
+
+01:12.190 --> 01:14.010
+So here we have images.
+
+01:14.330 --> 01:23.600
+We have an image of our image and you have just image and black and white image.
+
+01:24.030 --> 01:27.980
+And this is exactly logical copy where the copy are going to be based.
+
+01:28.020 --> 01:32.560
+So let me remove these copies first so I will not have any image images copy.
+
+01:32.610 --> 01:34.250
+And then let's look at the screen.
+
+01:34.260 --> 01:35.940
+So first of all you have to import.
+
+01:36.030 --> 01:40.350
+No pipe no pipe is a data structure that can handle the image.
+
+01:40.410 --> 01:48.210
+So it is a library for scientific computing and it can handle multi-dimensional arrays the structure
+
+01:48.210 --> 01:56.530
+is going to store all the pixel values of an image and then we open we import the import TV2.
+
+01:56.580 --> 02:01.060
+And finally so that specifying the image that you want to read is equal to three.
+
+02:01.110 --> 02:01.580
+OK.
+
+02:01.650 --> 02:08.430
+And then we would call the method CB2 which is imported but I.
+
+02:08.460 --> 02:13.190
+Emily means imagery and then you have to specify the path to the image.
+
+02:13.410 --> 02:20.010
+So here I'm going to read the image in the file the images and image names just look at this one so
+
+02:20.010 --> 02:22.230
+this is not the font image.
+
+02:22.530 --> 02:25.840
+This is leader G-B.
+
+02:26.090 --> 02:33.330
+Then it opens you can create a window where to display the image so it will that name a window as if
+
+02:33.430 --> 02:34.930
+by the name of the window.
+
+02:34.940 --> 02:37.160
+I'm just going to call it image.
+
+02:37.550 --> 02:39.890
+And here we have the flexibility that window normally.
+
+02:39.900 --> 02:42.740
+It means we can resize manually the window.
+
+02:42.740 --> 02:46.390
+And finally we get an order in order to show the image.
+
+02:46.400 --> 02:52.910
+So here I am Scholomance image so we're going to show this image and this is the name of the window
+
+02:53.060 --> 02:54.870
+where we display the image.
+
+02:54.890 --> 03:00.200
+And finally we will wait for the key to be pressed when the key is pressed execute the order.
+
+03:00.260 --> 03:02.160
+Silly to do am right.
+
+03:02.190 --> 03:05.760
+And then we will write a copy of the image and the copies.
+
+03:05.770 --> 03:09.630
+Look now before the copy does not contain anything.
+
+03:09.640 --> 03:11.300
+Now let me execute the code.
+
+03:11.360 --> 03:13.870
+And here there are several ways on how we can execute the code.
+
+03:13.910 --> 03:26.240
+So now I'm interested censures folder so I can go to as I see Gothic 3 in here I have all the different
+
+03:26.270 --> 03:32.820
+Python scripts so I can run them so one way to run is to use Python and then the name of the file.
+
+03:32.870 --> 03:36.690
+So now the name of the find is open copy.
+
+03:36.790 --> 03:43.140
+OK so this is now the image display again displayed by the command and show.
+
+03:43.330 --> 03:49.540
+So and this is the name of the window image and this is the image display.
+
+03:49.780 --> 03:52.690
+And now looking at the copy for.
+
+03:52.850 --> 03:54.210
+So there is nothing.
+
+03:54.350 --> 03:55.640
+And I press a key.
+
+03:55.770 --> 03:57.680
+So let me press you now.
+
+03:58.000 --> 04:00.970
+And then this for months if you do that I am right.
+
+04:01.240 --> 04:04.550
+It's going to be executed and we have no copy.
+
+04:04.750 --> 04:08.460
+So three copies of the same image copy again.
+
+04:08.470 --> 04:17.730
+So you can see it on the CD you are able to open an image when needed and then displayed on a window.
+
+04:17.760 --> 04:20.650
+And also we can copy the image file.
+
+04:20.790 --> 04:23.610
+We can also execute the same code but differently.
+
+04:23.610 --> 04:30.540
+So instead of writing Python and then the name of the script we can just type the name of the script
+
+04:30.820 --> 04:33.920
+that it is so open can be like this.
+
+04:34.130 --> 04:36.290
+OK Doc slash open copy.
+
+04:36.300 --> 04:36.540
+Ms.
+
+04:36.540 --> 04:42.600
+Executing the copy the script in the current directory and then it's going to be executed.
+
+04:42.720 --> 04:48.600
+OK so that's a key but of course this one only works when you have this command in the first line of
+
+04:48.600 --> 04:48.870
+this.
+
+04:48.870 --> 04:54.690
+So if I remove this comment here because this what it does about what kind of sleep is going to be used
+
+04:54.690 --> 04:56.070
+for this fight.
+
+04:56.070 --> 05:00.450
+So if I remove it and you won't do exactly that like this it's not going to work because we did not
+
+05:00.450 --> 05:02.870
+specify the type of the screen.
+
+05:02.880 --> 05:07.530
+However if we use Python and then upon copy is going to work.
+
+05:07.710 --> 05:10.860
+So now it depends on how you want to execute it.
+
+05:10.920 --> 05:15.960
+But if you want to execute without using Python so you have to specify the type of the script here as
+
+05:15.960 --> 05:21.430
+a python in the first line as a comment like yes it's possible to run it without using a restaurant
+
+05:21.630 --> 05:25.190
+because this script is actually doesn't make much difference.
+
+05:25.250 --> 05:26.050
+Exactly.
+
+05:26.170 --> 05:29.640
+And you are not necessarily inside the cup in workspace.
+
+05:29.640 --> 05:34.710
+It can be executed in any location because it's just a Python script.
+
+05:34.800 --> 05:36.830
+It doesn't have to do with cross over.
+
+05:36.870 --> 05:45.910
+You can still use the recently executed if you want run all those sensors and then that ended the skip
+
+05:46.080 --> 05:54.620
+just copy up and copy OK and also execute because the sun is going also to run by the.
+
+05:54.660 --> 05:58.110
+These are the three different ways on how we can and by asking.
+
+05:58.200 --> 06:04.020
+So in this video I have presented the code to open and read an image from a file and house it to a fight.
+
+06:04.020 --> 06:06.750
+But now we want to know what is inside this image.
+
+06:06.750 --> 06:08.210
+What is the content of the image.
+
+06:08.220 --> 06:10.230
+And this is the objective of the next lecture.

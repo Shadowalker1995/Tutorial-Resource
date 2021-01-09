@@ -1,0 +1,205 @@
+WEBVTT
+
+00:00.110 --> 00:06.060
+During this course I will be demonstrating several programs and examples to make things simple and easy
+
+00:06.060 --> 00:06.650
+for you.
+
+00:06.660 --> 00:13.050
+I will show you how you can easily get all the code in the program files that I will be explaining during
+
+00:13.050 --> 00:13.820
+this course.
+
+00:13.890 --> 00:20.010
+So first I assume that you have already created your roast workspace and you are ready to create the
+
+00:20.010 --> 00:23.610
+roast project that contains the programs of this course.
+
+00:23.640 --> 00:25.080
+So let's get started.
+
+00:25.440 --> 00:32.760
+So I explained before this project files will be located into our workspace so that we have a cat king
+
+00:32.790 --> 00:33.530
+workspace.
+
+00:33.570 --> 00:36.810
+So here we have a fresh cut in workspace.
+
+00:36.810 --> 00:42.980
+So what we do we open a terminal OK we make sure that our workspace is limited by default.
+
+00:43.020 --> 00:49.220
+So this is the case you can write a CD and it will take you to the cutting workspace here.
+
+00:49.620 --> 00:52.250
+Then we go to the source finder.
+
+00:52.320 --> 00:56.420
+And here we are we are going to add our packages.
+
+00:56.610 --> 00:59.160
+So for the moment they don't have any package here.
+
+00:59.370 --> 01:02.100
+You may have your own packages so you can add this one.
+
+01:02.100 --> 01:06.970
+In addition it is possible all you can have also a fresh box inside.
+
+01:07.230 --> 01:08.630
+And have you here now.
+
+01:08.790 --> 01:12.950
+So we will get the package from my account manager.
+
+01:13.010 --> 01:15.780
+I do have a repository is located in this.
+
+01:15.820 --> 01:22.470
+You are right you have to become slush on the school bus so you can hear and then you go to the different
+
+01:22.470 --> 01:29.180
+repositories and then you select those essentials CPV that are two different options to get the code.
+
+01:29.220 --> 01:32.200
+The simplest one will be to download the zip file
+
+01:35.240 --> 01:36.610
+and then open it.
+
+01:36.620 --> 01:43.640
+One thing you need to do is to remove the word master because these are the presents of the brush.
+
+01:43.970 --> 01:50.230
+So we don't need to have it in the name of the folder and then copy this wonder.
+
+01:50.300 --> 01:55.010
+Then you can take it into the source form of your workspace like here.
+
+01:55.040 --> 01:56.860
+Now we have all the files here.
+
+01:56.920 --> 02:02.020
+However I do not recommend this approach although it's going to work fine and there is another way.
+
+02:02.070 --> 02:03.690
+So I'm going to delete this one.
+
+02:05.270 --> 02:10.160
+And the other ways to use terminal command with the command line.
+
+02:10.160 --> 02:17.180
+So first of all you must make sure that you have your ID installed on your computer if you don't you
+
+02:17.180 --> 02:20.320
+can install it easily using sudo.
+
+02:20.420 --> 02:21.860
+If we get
+
+02:24.620 --> 02:30.260
+install and then install.
+
+02:30.480 --> 02:34.430
+So I have it already installed on my computer.
+
+02:34.770 --> 02:41.360
+Then in order to get the package we go to the folder again and now it is empty as you can see.
+
+02:41.370 --> 02:48.720
+You can click on this link to make a copy of this you're on here and then using the command line you
+
+02:49.230 --> 02:53.510
+clone and then copy the Niek over here.
+
+02:55.780 --> 03:05.040
+So now it's going to clone means making a copy of the files into your workspace so you can see now it
+
+03:05.050 --> 03:07.240
+has been copied again.
+
+03:08.910 --> 03:11.680
+Do unless I find the money.
+
+03:11.960 --> 03:18.460
+So this approach is better because later on if for example I will make some changes to the repository.
+
+03:18.680 --> 03:24.790
+You just need to put again the changes without the need to download the whole package again.
+
+03:25.270 --> 03:31.470
+And in any case either the first approach or the second approach will work pretty much fine.
+
+03:31.490 --> 03:34.910
+To get the good program files that you need in this course.
+
+03:34.910 --> 03:40.430
+So after that you need to change the rules package that you have downloaded compiles and works fine.
+
+03:40.460 --> 03:49.500
+In this case you go to the catkin workspace directory and then you can make compile.
+
+03:49.680 --> 03:55.520
+So if everything works fine you will have a correct compilation as is the case on my computer here.
+
+03:55.620 --> 03:56.160
+OK.
+
+03:56.210 --> 04:03.820
+Now if you go to the build directory you will find that the binary is now are located in this directory
+
+04:04.690 --> 04:11.750
+and also you have find that here sanctions in the division share directory.
+
+04:11.880 --> 04:15.700
+And finally you can open these eyes to your code.
+
+04:20.130 --> 04:26.150
+And as usual you drag the project directory into visit's you do code and you will have all the files
+
+04:26.240 --> 04:30.570
+so the files will be located here into the RC folder.
+
+04:30.650 --> 04:38.890
+So you can see here you as the finder and you have two folders to pick one basic's topic to motion.
+
+04:38.900 --> 04:46.810
+So basically here all the tutorials related to publisher subscriber service actually interests are located
+
+04:46.810 --> 04:53.530
+in topic one of the tutorials related to the total simplistic application and Mashi are entirely to
+
+04:53.720 --> 04:54.480
+wander.
+
+04:54.500 --> 04:57.620
+You can open any of the files here.
+
+04:57.830 --> 05:04.410
+And also you can enable the integrated terminal so that you can execute your comments from here.
+
+05:04.550 --> 05:10.610
+Or Also you can execute them from an extension so you can run from here or from from here.
+
+05:10.610 --> 05:13.050
+So here for example I can run.
+
+05:13.310 --> 05:21.550
+Let me just caught on these external coalminer and here I'm going to run the target application using
+
+05:21.550 --> 05:26.450
+a restaurant the name of the package that's essential and then it'll go to No.
+
+05:26.480 --> 05:28.240
+No it's it's working.
+
+05:30.590 --> 05:36.230
+So this was an overview on how we can get the code and open it using Visual Studio code in the next
+
+05:36.230 --> 05:41.520
+hour I'm going to provide a detailed explanation of the code presented in this package.

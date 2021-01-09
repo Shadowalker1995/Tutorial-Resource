@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00.120 --> 00:05.130
+Know that you had you started arguing an integrated development environment we are ready to start developing
+
+00:05.220 --> 00:06.350
+our first program.
+
+00:06.420 --> 00:14.070
+And we are going to use the ultrasonic ring sensor in this example and ultrasonic sensor devices allow
+
+00:14.070 --> 00:18.940
+us to estimate that age to obstacles using ultrasound signals.
+
+00:19.010 --> 00:26.960
+Let us first understand how an ultrasonic sensor works that we create sensor has two users which are
+
+00:27.020 --> 00:30.990
+microphones used to send and receive pulse signals.
+
+00:31.160 --> 00:38.440
+The first transducer will send a pulse signal by sending a low signal first which is zero then high
+
+00:38.530 --> 00:42.950
+that that is one and then a low signal that is zero.
+
+00:43.130 --> 00:49.440
+And when the signal is an obstacle it is going to bounce back and be received by the microphone.
+
+00:49.730 --> 00:56.240
+The sensor will then estimate the distance obstacle by measuring the duration between sending the high
+
+00:56.240 --> 01:04.190
+pulse signal and receiving it back by the receiver the time calculated is the down time to the obstacle
+
+01:04.490 --> 01:06.150
+which will be divided by two.
+
+01:06.200 --> 01:12.430
+We'll have the actualisation in one direction and then it will be multiplied by the speed of the sun
+
+01:12.500 --> 01:16.520
+in the air which is three hundred forty meters per second.
+
+01:16.640 --> 01:23.270
+And that's all the process is repeated and ranges are measured periodically every certain number of
+
+01:23.270 --> 01:25.020
+milliseconds.
+
+01:25.160 --> 01:32.390
+Sensors can be used in many applications such as presence to detect intruders lover for container for
+
+01:32.390 --> 01:36.950
+example smart containers or what the level measurement position and distance.
+
+01:36.980 --> 01:40.390
+They are also called proximity sensors.
+
+01:40.420 --> 01:47.120
+I walk also to attract your attention that there are different types of sensors in the market.
+
+01:47.120 --> 01:53.270
+The first type is the h g s r 0 4 sensor which has four points.
+
+01:53.300 --> 02:00.590
+The left beam is four pounds of light Vcc is for the ground and the two the best in the middle are four
+
+02:00.590 --> 02:01.570
+to six months.
+
+02:01.700 --> 02:08.990
+The three beam is responsible for something the height bounced signal whereas the copy is responsible
+
+02:08.990 --> 02:10.730
+for the reception of the echo.
+
+02:10.730 --> 02:13.870
+After that it bounces back against an obstacle.
+
+02:14.020 --> 02:20.480
+The order may change from one manufacturers to an other but in total we have four means where two different
+
+02:20.480 --> 02:26.190
+signal pins are used one for sending the pulse and the second is for receiving the bus.
+
+02:26.210 --> 02:29.430
+The second type is the parallax being sensor.
+
+02:29.450 --> 02:36.080
+It has only three beats one for this is the one for the ground and only one bill for CNN.
+
+02:36.110 --> 02:43.810
+It's good to see the same signal being used for both being the pulse and also receiving the echo.
+
+02:43.880 --> 02:46.650
+So it will take between two states.
+
+02:46.670 --> 02:51.130
+We will be using this type of sensor in our demonstration and implementation.
+
+02:51.140 --> 02:58.400
+And you will figure out later on how the same being can be used for sending and receiving on the right
+
+02:58.400 --> 03:03.280
+side of the slide the exact sensor that you will be using in the implementation.
+
+03:03.280 --> 03:10.490
+It's show but you can observe it it has for this although the biggies being like sensor like this one.
+
+03:10.730 --> 03:16.350
+So we can observe that it has the ground been and will be on the left side.
+
+03:16.490 --> 03:20.640
+And then it has the NCP that is not used for any signal.
+
+03:20.750 --> 03:27.020
+And you have healed the sick in on the right side which is used for both sending the pulse and receiving
+
+03:27.080 --> 03:28.170
+it back.
+
+03:28.170 --> 03:35.730
+We'll be connecting this being to let his input output pin number seven for sending and receiving pulses.
+
+03:35.750 --> 03:38.950
+Let us see how to connect the sensors to the arm you know what.
+
+03:39.020 --> 03:44.280
+So basically the connection schema will be as follows you'll have a nutritionist some sort of the brain
+
+03:44.290 --> 03:46.600
+be connected to you know work.
+
+03:46.610 --> 03:52.760
+So as you can see we connected to the fibroid power to the ground and the signal will be connected to
+
+03:52.990 --> 03:53.570
+being here.
+
+03:53.570 --> 03:58.700
+So we're going to try pin number so that you can find more details about this sunset which is called
+
+03:58.790 --> 04:05.890
+The Big sensor in this website or we know that CCDs flush toilets flush speak.
+
+04:06.110 --> 04:12.140
+So if you open up and use the ex-president and this other require devices that we use in this experiment
+
+04:12.590 --> 04:21.480
+all you have an answer or one when we have an I.V. machine that you are going to use to collect the
+
+04:21.480 --> 04:22.140
+sensor.
+
+04:22.220 --> 04:24.540
+It is going to be touched.
+
+04:24.720 --> 04:30.010
+You know when you have a sensor.
+
+04:30.570 --> 04:31.560
+OK.
+
+04:32.240 --> 04:35.030
+This is the warping connector.
+
+04:35.960 --> 04:42.880
+They use the cable to connect the board to the laptop.
+
+04:42.910 --> 04:45.900
+So this is the wrestlings so that we are going to use.
+
+04:45.940 --> 04:49.940
+So as you can see it has four beams OK and one foot down.
+
+04:50.010 --> 04:52.050
+That is the one on the left side.
+
+04:52.120 --> 04:55.340
+Then you see them and see which one is not.
+
+04:55.390 --> 05:02.110
+And then you have the signal being OK so the signal ping is going to sound and echo signal and then
+
+05:02.200 --> 05:09.630
+it receives back a response that will be used correctly to estimate the range to an obstacle using the
+
+05:09.640 --> 05:12.520
+song saying.
+
+05:12.690 --> 05:19.220
+OK so in order to make the connection first of all we need to put the sheet on the Adreno or by this
+
+05:22.790 --> 05:31.510
+going to get the seat of the unknown and then use the 4 pin connector.
+
+05:31.750 --> 05:33.820
+And you like it here.
+
+05:33.980 --> 05:37.420
+The sensor so you can see the wire.
+
+05:37.550 --> 05:38.140
+OK.
+
+05:38.190 --> 05:39.610
+Response to the signal.
+
+05:40.060 --> 05:48.700
+And that is why Autocar response to the VCAT and the black wire corresponds to the ground.
+
+05:50.070 --> 05:54.600
+And then you're going to the number seven.
+
+05:54.620 --> 05:57.410
+What are the connections on here in DC.
+
+05:57.480 --> 06:01.050
+Because this is a digital sensor so I'm going to put it here.
+
+06:01.120 --> 06:02.370
+Nice.
+
+06:03.510 --> 06:04.220
+OK.
+
+06:04.350 --> 06:11.540
+And you can see what this wired the yellow wire to the server.
+
+06:11.890 --> 06:13.380
+Ok so this is the.
+
+06:13.640 --> 06:16.530
+But will be used for the system.
+
+06:16.860 --> 06:24.570
+We will see later on how to use this in the program but only the sensor estimate the distance to an
+
+06:24.600 --> 06:25.860
+optical.
+
+06:25.890 --> 06:35.040
+And finally we need to get that border locked up like this.

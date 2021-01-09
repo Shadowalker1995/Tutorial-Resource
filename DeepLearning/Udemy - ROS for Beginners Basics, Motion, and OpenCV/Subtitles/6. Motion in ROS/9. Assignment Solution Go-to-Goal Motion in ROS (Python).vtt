@@ -1,0 +1,295 @@
+WEBVTT
+
+00:00.240 --> 00:02.800
+Now the search function is then go to a good location.
+
+00:02.970 --> 00:06.060
+And here it takes as parameter the go location.
+
+00:06.060 --> 00:11.220
+It's got rid of the location of the right location and the objective here is actually to dig that up
+
+00:11.220 --> 00:13.650
+from one location it's up from here to here.
+
+00:13.650 --> 00:15.570
+OK we want to start from this one.
+
+00:15.840 --> 00:19.000
+OK so how can we do this we can actually make a rotation into this.
+
+00:19.040 --> 00:22.520
+And then they're moving straight but that is not a smooth motion.
+
+00:22.530 --> 00:27.980
+We want to make a smooth motion so that the robot moves automatically to this location here and then
+
+00:28.130 --> 00:30.420
+confidence up and started the cleaning mission.
+
+00:30.570 --> 00:37.330
+So in order to do this we're going to use the the controller as already explained the C++ version.
+
+00:37.620 --> 00:38.070
+OK.
+
+00:38.070 --> 00:41.700
+So this robot is going to move from this one to this point.
+
+00:41.970 --> 00:48.720
+So what we can do we can set the linear velocity and that it is looking at this direction we can set
+
+00:48.750 --> 00:55.370
+the linear velocity as proportional to the distance to the GO location.
+
+00:55.620 --> 01:01.800
+So when it is far from the location for example the US is going to be high.
+
+01:01.830 --> 01:04.540
+So it's going to move fast to where to go.
+
+01:04.740 --> 01:12.390
+And as it is approaching the goal location is going to use its linear speed and that it stops completely
+
+01:12.690 --> 01:15.680
+when it reaches this point safety.
+
+01:15.720 --> 01:19.140
+So you can see in either direction is this Rachel.
+
+01:19.170 --> 01:23.320
+Actually it has to rotate either in this direction or either in that direction.
+
+01:23.400 --> 01:30.420
+So we need to apply at the same time an angular velocity so that to make a smooth motion and smooth
+
+01:30.420 --> 01:32.710
+rotation toward the location.
+
+01:32.850 --> 01:36.540
+OK so I really explain the mathematics in the C++ version.
+
+01:36.600 --> 01:37.200
+OK.
+
+01:37.380 --> 01:39.740
+And here we're going to calculate the distance.
+
+01:39.780 --> 01:46.560
+So the distance is between the current location and the go location will be calculated using the linear
+
+01:47.040 --> 01:47.640
+equation.
+
+01:47.670 --> 01:53.760
+And then I'm going to set a speed that will do the distance multiplied by some kind of constant.
+
+01:53.760 --> 01:59.710
+This is what we call it proportional control because here it is proportional to the error and the error
+
+01:59.710 --> 02:05.480
+in this case is actually the distance when the distance is equal to the location the linear is going
+
+02:05.550 --> 02:06.790
+to be equal to zero.
+
+02:06.830 --> 02:09.870
+The Robert is going to stop and this is what you want.
+
+02:10.790 --> 02:11.430
+OK.
+
+02:11.440 --> 02:17.790
+And of course this constant can be any cause of your choice in some cases you have to do it carefully.
+
+02:17.790 --> 02:22.540
+Otherwise you can have a bad behavior or an expected behavior.
+
+02:22.560 --> 02:25.780
+So 0.5 would be fine.
+
+02:25.810 --> 02:34.740
+But if the moment OK this is what concerns the NTSB and we will do the same for the animals first of
+
+02:34.740 --> 02:36.660
+all we need to calculate the desired angle.
+
+02:36.690 --> 02:42.120
+So now this robot is looking in this direction and you want it to go to that direction.
+
+02:42.120 --> 02:48.800
+So look the whole angle we need to measure this hole and the OK.
+
+02:48.850 --> 02:56.110
+In theory we can use that tangent method in order to calculate the angle between this location and this
+
+02:56.110 --> 02:57.080
+location.
+
+02:57.280 --> 03:04.620
+And this is one to our attention to the position of wind gold mine and slide the current location of
+
+03:04.620 --> 03:07.690
+that about an X goal minus x.
+
+03:07.750 --> 03:12.100
+This is the current location of the X location of the rover.
+
+03:12.410 --> 03:12.760
+OK.
+
+03:12.760 --> 03:20.560
+Using this equation you can turn that angle into a date and then the angle speed will be proportional
+
+03:20.650 --> 03:26.920
+to the angle the difference between that and the desired angle and or minus the current rotation of
+
+03:26.910 --> 03:27.300
+the rubber.
+
+03:27.310 --> 03:33.720
+So this is going to give me the relative to rotate in order to move to the location and as such and
+
+03:33.740 --> 03:39.580
+the spin is going to be different from zero as long as the difference is different from zero.
+
+03:39.740 --> 03:45.300
+The angle is equal to the center of the what then is going to become zero.
+
+03:45.310 --> 03:51.190
+And in this case you will guarantee that the rubber is going to rotate to war the ball location.
+
+03:51.420 --> 03:51.900
+OK.
+
+03:51.970 --> 03:55.630
+And it looks straight to the location in this case.
+
+03:55.630 --> 03:57.940
+This component is going to be zero.
+
+03:57.950 --> 04:04.260
+And finally we will Abdeen the velocity message X by the leniency that we have calculated here.
+
+04:04.350 --> 04:06.630
+I'm going to see that you have got created here.
+
+04:06.670 --> 04:13.410
+And finally you publish the first message and maybe even this is smaller than a certain threshold to
+
+04:13.410 --> 04:19.240
+the location because we cannot have an exact equality between the location of the current location because
+
+04:19.240 --> 04:22.490
+these are low numbers so exactly why it is impossible.
+
+04:22.540 --> 04:28.380
+So in this case I'm going to use a small three shot just to make sure that the distance is smaller to
+
+04:28.380 --> 04:29.700
+a very small value.
+
+04:29.950 --> 04:35.340
+OK in this case I would consider that they have Richy and then exit the Y.
+
+04:35.560 --> 04:37.140
+This is what you will do.
+
+04:37.300 --> 04:40.070
+And we can check this behavior here.
+
+04:40.070 --> 04:42.190
+So for example I would go to one.
+
+04:42.220 --> 04:42.670
+Wow.
+
+04:42.820 --> 04:45.760
+So now let us try and go to one function.
+
+04:45.910 --> 04:51.440
+We're going to move that from this location that is almost five five point one.
+
+04:51.590 --> 04:52.360
+Wow.
+
+04:52.870 --> 04:53.420
+OK.
+
+04:53.560 --> 04:55.710
+So let's see how it works.
+
+04:58.300 --> 05:04.520
+Insecurely and then you can see this is a smooth motion.
+
+05:04.530 --> 05:13.420
+One the go location OK so it's going to continue moving and it reaches almost the desired point.
+
+05:17.650 --> 05:20.650
+So the next strategy is for example to send an
+
+05:23.820 --> 05:26.150
+I'm going to bring the x y here
+
+05:29.380 --> 05:31.250
+to bring the x y coordinates
+
+05:33.880 --> 05:38.840
+I would expect you to get.
+
+05:38.970 --> 05:49.130
+You can see more than eight inches X-Fi calling it book it's almost seven here and almost eight here
+
+05:50.700 --> 05:51.170
+or one.
+
+05:51.190 --> 05:52.760
+This is very very small.
+
+05:52.810 --> 05:57.570
+Seven point ninety nine and six that night the it's almost seven and eight.
+
+05:57.700 --> 06:00.620
+So what are you going to stop tonight.
+
+06:00.640 --> 06:02.840
+I'm demanding three behaviors.
+
+06:02.920 --> 06:03.990
+Move on.
+
+06:04.340 --> 06:09.990
+Go to go now we have all the ingredients into need cleaning.
+
+06:10.020 --> 06:10.610
+Publication
+
+06:13.880 --> 06:14.920
+but of course.
+
+06:15.050 --> 06:26.870
+So the message got to the position 1 1 the beginning from the they give birth to 1 1 you'll see
+
+06:31.270 --> 06:34.320
+what is going to look into that action.
+
+06:34.480 --> 06:38.100
+Now I want to move straight in this line like this.
+
+06:38.380 --> 06:38.970
+OK.
+
+06:39.160 --> 06:46.960
+So these kids have to go out and make each politician in addition to zero in this case so we need a
+
+06:46.960 --> 06:51.350
+method that we rotate rubber under the orientation.
+
+06:51.730 --> 06:52.140
+OK.
+
+06:52.170 --> 06:57.960
+For example these days I want to make it in this direction so it can move straight into research.
+
+06:58.130 --> 07:01.870
+And for this when we do a method that's all said orientation.

@@ -1,0 +1,148 @@
+WEBVTT
+
+00:00.430 --> 00:04.700
+Not you to slow the rest of your libraries and this will be done in two steps.
+
+00:04.700 --> 00:10.590
+First of all you need to install those libraries into the robot operating system itself and then we
+
+00:10.590 --> 00:14.720
+need to generate get those libraries for the agreeno in that system.
+
+00:14.820 --> 00:16.620
+OK so let's see how it works.
+
+00:16.620 --> 00:23.130
+So this is the reference page for the rest of the protocol in tweaky which is available in the web site.
+
+00:23.130 --> 00:30.750
+We trust that Oracle slush said you can hear more information about it even if in the specification
+
+00:30.750 --> 00:32.200
+of the protocol itself.
+
+00:32.220 --> 00:38.700
+And also you can access that to Tony page for the whole city of you know what we say in the following
+
+00:38.700 --> 00:39.290
+videos.
+
+00:39.300 --> 00:42.310
+So the first thing you need to do is to install Arduino.
+
+00:42.390 --> 00:46.690
+And this was also to install a serious software.
+
+00:46.740 --> 00:51.980
+So as you mentioned the first step is to use Rosetti into this workstation.
+
+00:52.160 --> 00:54.030
+And this is done using sudo.
+
+00:54.040 --> 01:00.030
+It didn't get installed Ross and neither version are safe.
+
+01:00.240 --> 01:05.940
+Actually I have already installed my system so I think it's going to happen but if you don't have it
+
+01:05.940 --> 01:10.980
+on your system it's going to install it and then you have to also install Rosetti.
+
+01:11.160 --> 01:14.260
+It's a great plan.
+
+01:14.670 --> 01:17.740
+I have also installed in my system.
+
+01:18.000 --> 01:23.310
+So after doing this installation we are able to have access to the package or serial Python.
+
+01:23.310 --> 01:29.400
+We should present the server in the workstation site that is going to intercept messages coming from
+
+01:29.400 --> 01:30.710
+the embedded system.
+
+01:30.720 --> 01:36.350
+Now the second step is actually to generate libraries for the embedded system.
+
+01:36.360 --> 01:41.910
+Now looking at the Adreno find that if you go to libraries OK these are the available levers for the
+
+01:41.910 --> 01:42.250
+moment.
+
+01:42.250 --> 01:48.150
+We don't have any library related to us so we may first read this literally and then put it inside the
+
+01:48.300 --> 01:49.500
+Lebanese folder.
+
+01:49.520 --> 01:54.160
+So the way to do it would be to go to the folder then the libraries.
+
+01:55.960 --> 02:00.490
+Make sure that we don't have any reason to keep it here.
+
+02:00.610 --> 02:04.440
+We don't have any library for the moment that we can use reverse.
+
+02:04.720 --> 02:07.100
+OK let's run for another.
+
+02:07.100 --> 02:11.720
+Let me know if you are on the rise eco system.
+
+02:12.080 --> 02:19.670
+And then it release for that we run a restaurant or city and Adreno make libraries that buy it and you
+
+02:19.690 --> 02:27.870
+have to specify the location so that Miss the current location then it's going to generate for us all
+
+02:28.020 --> 02:32.430
+the libraries needed to program with us into another we know what.
+
+02:32.650 --> 02:34.930
+So let's look now at the library's folder.
+
+02:34.930 --> 02:37.350
+Now we have a new folder that was added.
+
+02:37.390 --> 02:38.600
+It's called trust.
+
+02:38.710 --> 02:44.520
+And this seemed to represent the whole roast system adapted or the original platform.
+
+02:44.570 --> 02:50.890
+OK so you can see now these are the headers files for the operating system and you can have different
+
+02:50.890 --> 02:52.300
+type of messages.
+
+02:52.400 --> 02:59.190
+It is supposedly arguido like Turkel but the messages are to see the notes of different packages which
+
+02:59.210 --> 03:02.370
+are not adapted for agreeno platform.
+
+03:02.670 --> 03:09.610
+Ok by doing so now we have Rowse already integrated into the ID of Avino and now it is possible to develop
+
+03:09.840 --> 03:13.190
+a program adapted for the agreeno platform.
+
+03:13.200 --> 03:21.960
+Now we can argue no and use your examples we have examples integrated for robot operating system and
+
+03:21.970 --> 03:25.130
+in the next video I'm going to start with the Hillward example.
+
+03:25.130 --> 03:31.940
+So at this stage we have everything that not to develop plus program for the argument platform and then
+
+03:32.270 --> 03:35.640
+connected to a workstation in the next video.
+
+03:35.690 --> 03:41.720
+I'm going to show how we can upload those programs to you know how to run them using less in the workstation.

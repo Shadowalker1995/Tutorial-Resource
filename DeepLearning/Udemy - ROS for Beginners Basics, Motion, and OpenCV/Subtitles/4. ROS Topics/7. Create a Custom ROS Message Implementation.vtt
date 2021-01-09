@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.140 --> 00:05.670
+In this video I demonstrate how to add new customers message and how to make sure that the message is
+
+00:05.880 --> 00:08.030
+effectively added and can be used by.
+
+00:08.080 --> 00:10.190
+So let's get started.
+
+00:10.200 --> 00:16.440
+Our objective is to develop an idea some sort of cast a message that contains three attributes the id
+
+00:16.500 --> 00:19.190
+the name the temperature and humidity.
+
+00:19.260 --> 00:24.300
+We have already presented the steps in the previous culture and now we start implementing that.
+
+00:24.320 --> 00:26.570
+First let's get to our rust package.
+
+00:26.670 --> 00:28.810
+This is cooking workspace.
+
+00:28.920 --> 00:33.180
+Archie was essentially besotted you is the name of the roast package.
+
+00:33.180 --> 00:36.320
+Where are we going to implement the roast message.
+
+00:36.360 --> 00:41.280
+First we need to create an image folder inside the rest package route Finder which is this one
+
+00:45.480 --> 00:51.330
+make sure that the location is growth package for that and not any other insight or example if you create
+
+00:51.330 --> 00:57.780
+the finder here or at the site of this father is not going to be visible and the father will not be
+
+00:57.790 --> 01:00.280
+recognized and the message cannot be created.
+
+01:00.300 --> 01:05.800
+So it must be created Navarros package Felger then we create our message.
+
+01:06.030 --> 01:08.270
+So let's create a new text file.
+
+01:08.380 --> 01:09.990
+I just answered that and it's
+
+01:13.170 --> 01:15.540
+a good document.
+
+01:16.250 --> 01:18.080
+So that means.
+
+01:18.320 --> 01:20.520
+And let me open the whole project into line.
+
+01:20.540 --> 01:24.440
+Are any of your choices in the business to cope now.
+
+01:24.540 --> 01:32.730
+Inside the embassy father we have the sun's energy which is now country and we create our custom message.
+
+01:32.730 --> 01:34.800
+We add different fields to the fight.
+
+01:34.830 --> 01:38.340
+So first of all we had the idea which is an integer.
+
+01:38.340 --> 01:46.320
+So I would use for 30 to post the name of type string with the temperature of type 32
+
+01:49.010 --> 01:54.770
+and also will add the humidity of type 132 as well.
+
+01:57.980 --> 02:02.540
+Now the message file is created you can refer to look emendations page.
+
+02:02.540 --> 02:08.720
+We can go to that or slash energy if you want to have more information about the different primitive
+
+02:08.720 --> 02:15.880
+types available for you to create customers messages and to find the attributes of various messages.
+
+02:15.890 --> 02:23.810
+In our case we have used 32 in 32 and string but there are a bunch of different other types that can
+
+02:23.840 --> 02:25.010
+also be used.
+
+02:25.010 --> 02:31.340
+So after getting the Iraqi message the next step is to update the dependencies in both Pakistan ex-inmate
+
+02:31.670 --> 02:33.260
+and semi-gloss that the XTi.
+
+02:33.350 --> 02:36.010
+So we can divide these two fives over here.
+
+02:36.140 --> 02:42.920
+We start by package that amount and we have to make sure that we have been depan message generation.
+
+02:43.070 --> 02:44.190
+It's already there.
+
+02:44.330 --> 02:48.090
+And also you have an execution the band message intact.
+
+02:48.280 --> 02:54.050
+So these are the two lines that are important to generate messages with us.
+
+02:54.170 --> 02:57.320
+We also will update the dependencies in the C Make list.
+
+02:57.320 --> 03:07.960
+So first of all in the final package section we need to add a message generation as a component that
+
+03:08.050 --> 03:13.680
+we do our message fifes and we're going to come with this section your
+
+03:16.480 --> 03:17.090
+right.
+
+03:17.150 --> 03:20.710
+The correct name of our message right so our message fighting squad.
+
+03:20.960 --> 03:25.780
+We censor the image.
+
+03:26.180 --> 03:31.910
+OK so this is threatening to be responsible for adding this fight to the rest of the system.
+
+03:31.970 --> 03:36.330
+In addition in that package we need to add another dependency.
+
+03:36.590 --> 03:38.890
+That is the message I'm dying.
+
+03:39.590 --> 03:46.250
+And finally make sure the generic message dependency standard emphasis is also activated here.
+
+03:46.520 --> 03:51.520
+Now you have done all the required configurations and we are ready to integrate our message.
+
+03:51.620 --> 03:58.630
+Now are we to combine our backwards so that the message is generated we open a terminal and then we
+
+03:58.630 --> 04:01.240
+go to look at the workspace.
+
+04:01.240 --> 04:05.660
+And then you have to compile it using that can make.
+
+04:05.710 --> 04:10.130
+So you can see that our message is now generated on the sensor imagery.
+
+04:10.390 --> 04:17.520
+And if you want to make sure that the message is correctly generated and we can do Russ MSCE joke I
+
+04:17.580 --> 04:19.190
+won't be censored.
+
+04:20.200 --> 04:25.580
+So he is going to provide us all information about the disaster message.
+
+04:25.720 --> 04:32.470
+It is located in the back and are most essential CBP and the title is IOTAs has said and this is the
+
+04:32.470 --> 04:39.580
+content it has to do is the ID Street need both temperature and humidity.
+
+04:39.580 --> 04:44.680
+So these are the four people that have defined our idea sounds good and it's fine.
+
+04:44.920 --> 04:51.130
+So a big step we have already generated a message that can be used either step sister in the next video
+
+04:51.250 --> 04:57.360
+I'm going to demonstrate how we use this message to communicate between two Snoad.
+
+04:57.460 --> 04:57.910
+Why not.
+
+04:57.900 --> 05:00.970
+That is the publisher of this message and the second note.
+
+05:01.010 --> 05:04.350
+Well as a subscriber to as I said a message.
+
+05:04.480 --> 05:05.640
+So let's see how it works.

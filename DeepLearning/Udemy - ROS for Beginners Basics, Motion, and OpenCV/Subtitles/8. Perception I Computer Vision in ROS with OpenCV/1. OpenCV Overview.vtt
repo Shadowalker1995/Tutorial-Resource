@@ -1,0 +1,175 @@
+WEBVTT
+
+00:00.310 --> 00:06.690
+The previous lectures we have presented the motion of the robot and how those represents the motion
+
+00:06.690 --> 00:08.540
+comments to make a robot move.
+
+00:08.580 --> 00:14.220
+However what we have done so far is kind of a blank motion without awareness of the surrounding environment
+
+00:14.250 --> 00:16.140
+of the robot in real applications.
+
+00:16.170 --> 00:21.990
+It is mandatory that a robot perceives the environment around it and extract useful information from
+
+00:21.990 --> 00:26.670
+the environment to be able to plan his motion and add in an appropriate fashion.
+
+00:26.670 --> 00:33.150
+This is referred to as robot perception which is a popular feeling robotics based on computer and computer
+
+00:33.150 --> 00:39.540
+vision includes method for acquiring processing analyzing and understanding digital images.
+
+00:39.540 --> 00:42.500
+Typically Robert uses a camera to see the world around it.
+
+00:42.600 --> 00:48.840
+And this camera will provide the robot with a feed of images that it needs to process so that to extract
+
+00:48.840 --> 00:49.970
+useful information.
+
+00:50.010 --> 00:52.890
+Image Processing is a very complex and challenging task.
+
+00:52.890 --> 00:58.880
+Fortunately in the last 20 years a lot of research has been done and significant advancement took place.
+
+00:58.890 --> 01:04.620
+It is not possible to accurately analyze the content of an image and extract useful information out
+
+01:04.620 --> 01:05.030
+of it.
+
+01:05.040 --> 01:09.380
+The most popular library for computer vision and image processing is open.
+
+01:09.450 --> 01:15.870
+It provides a comprehensive set of tools and when it comes to perform complex operation of image processing
+
+01:15.930 --> 01:21.660
+and complete revision in real time the objective of this lecture is to get an overview about oppositely
+
+01:21.710 --> 01:23.170
+and it's an important feature.
+
+01:23.220 --> 01:29.310
+So open Sivy is an open source computer vision Leibert it was released under the BSD license and it
+
+01:29.310 --> 01:31.950
+is free for both academic and commercial use.
+
+01:31.950 --> 01:39.720
+It supports multiple programming languages namely C++ wife and Java and works under different operating
+
+01:39.720 --> 01:44.940
+systems including Windows Mac OS Linux iOS and Android.
+
+01:44.940 --> 01:51.540
+It has a strong focus on realtime since it was written C++ and has been optimized open Sivy can perform
+
+01:51.540 --> 01:54.240
+a lot of operations related to computer vision.
+
+01:54.240 --> 01:56.280
+This is a sample of these operations.
+
+01:56.280 --> 01:58.680
+It can do to the image processing.
+
+01:58.680 --> 02:03.530
+It can also form image input and output and video input output.
+
+02:03.540 --> 02:10.350
+It can read images from files it can read video streams coming from us be cameras from video files it
+
+02:10.350 --> 02:16.300
+can perform camera calibration video analysis like motional extract and feature tracking foreground
+
+02:16.380 --> 02:21.960
+extraction and nowadays with the advances of much learning and deep learning technology it is possible
+
+02:21.960 --> 02:25.840
+to accurately perform object detection and also recognition.
+
+02:25.870 --> 02:32.340
+OPEC also supports accelerated computer vision and it has much much more functionalities so let's see
+
+02:32.340 --> 02:35.300
+a couple of functionalities that we can use with our PC.
+
+02:35.310 --> 02:40.920
+One of the basic functions of a PC is to do image segmentation so image segmentation is the process
+
+02:40.950 --> 02:46.770
+of partitioning a digital image into a multiple segments and it is used to locate objects and boundaries
+
+02:46.900 --> 02:48.160
+in images.
+
+02:48.180 --> 02:54.220
+Another operation is industry shoaling and thresholding is the simplest method of image segmentation.
+
+02:54.480 --> 02:58.590
+It allows to transform a grayscale image to a binary image.
+
+02:58.590 --> 03:05.580
+So the idea here is to take a color as a shot and any color above the threshold will be considered as
+
+03:05.580 --> 03:12.150
+white and any color below the threshold will be considered as black so the resulting image will be binary
+
+03:12.450 --> 03:13.920
+either black or white.
+
+03:13.950 --> 03:19.710
+With the advances of machine learning and deep neural networks it is not possible to detect and they
+
+03:19.710 --> 03:21.940
+cognize objects inside an image.
+
+03:21.990 --> 03:28.950
+And this technology has promoted a lot of applications like for example autonomous vehicles which rely
+
+03:29.070 --> 03:32.750
+on computer vision technique to observe the world around them.
+
+03:32.760 --> 03:36.060
+It is also possible to do nice drawing with open Zeevi.
+
+03:36.090 --> 03:41.540
+For example it's possible to draw circles lines polygons text and make different shapes.
+
+03:41.610 --> 03:46.350
+The practical lecturer we're going to do a little bit of drawing actually the action is also an important
+
+03:46.350 --> 03:48.180
+operation in complete revision.
+
+03:48.180 --> 03:54.000
+It consists in finding the boundaries of objects within the image and works by detecting discontinuities
+
+03:54.090 --> 03:55.020
+in brightness.
+
+03:55.020 --> 03:58.820
+Edge detection is used for image segmentation and data structure.
+
+03:58.830 --> 04:05.150
+One of the very useful functionalities in AAPC is that to read and write images and videos trips up
+
+04:05.160 --> 04:11.700
+and TV it becomes very simple to read an image and load it into a data structure for further processing.
+
+04:11.700 --> 04:13.140
+This was a brief background.
+
+04:13.170 --> 04:15.130
+An open Zeevi functionalities.
+
+04:15.150 --> 04:18.060
+And now let's move to the practical part of this section.

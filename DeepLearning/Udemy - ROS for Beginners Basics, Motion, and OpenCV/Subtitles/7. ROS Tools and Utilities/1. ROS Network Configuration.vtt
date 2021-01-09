@@ -1,0 +1,415 @@
+WEBVTT
+
+00:00.430 --> 00:05.580
+Schoolwork Mannerheim muscle it was Salom want to be me.
+
+00:05.820 --> 00:12.570
+So in this video tutorial I'm going to show how to make the network configuration between the body machine
+
+00:12.600 --> 00:16.210
+or a robot machine and a workstation.
+
+00:16.500 --> 00:25.440
+So the objective is to allow so is to allow a workstation to control a robot remotely through the network.
+
+00:25.500 --> 00:29.460
+And for this we need to do a small number of operations.
+
+00:29.910 --> 00:36.730
+So we have here in the left side we have a virtual machine that represents the workstation and here
+
+00:36.810 --> 00:42.250
+on the right side have another machine that represents the robot machine itself.
+
+00:42.300 --> 00:47.320
+So first of all we are going to do some changes in the machine or see phyto.
+
+00:47.370 --> 00:51.570
+I'm going to open it up to see in the workstation.
+
+00:51.600 --> 00:52.130
+OK.
+
+00:52.200 --> 00:58.760
+And here I'm going to up with rush of see into the robot machine.
+
+00:59.160 --> 01:06.890
+Ok so in the robot machine here we need to add some configuration we need to export the rest must that
+
+01:06.910 --> 01:08.020
+you and I.
+
+01:08.580 --> 01:10.860
+So these are environment variables.
+
+01:10.920 --> 01:12.680
+So that's my story you right.
+
+01:12.810 --> 01:15.610
+Rose is going to run on the robot machine.
+
+01:15.900 --> 01:21.490
+So the roast master is going to run into the local host of the robot machines.
+
+01:21.540 --> 01:25.840
+That's why he can host and this is the default port number.
+
+01:26.730 --> 01:29.840
+And then also we need to specify the hostname Rosati.
+
+01:29.850 --> 01:34.870
+These are environment variables related to the host environment.
+
+01:34.950 --> 01:36.290
+So those hostname.
+
+01:36.630 --> 01:38.040
+And when we put the IP either.
+
+01:38.040 --> 01:43.380
+So we need to find what is the IP address of the robot first.
+
+01:43.380 --> 01:54.180
+So I'm going to make it stick until we find that this is the IP address where it H-1 it and the other
+
+01:54.480 --> 01:57.220
+interfaces depending on your network configuration.
+
+01:57.450 --> 02:06.410
+So when you find the IP address you have to change it accordingly into the bastard.
+
+02:06.510 --> 02:10.110
+So I remind that we are now into the robot machine.
+
+02:10.230 --> 02:14.580
+We have to change those hostname in the Rose IP environment variables.
+
+02:14.650 --> 02:18.020
+According to the IP address of the robot.
+
+02:18.240 --> 02:26.040
+So and then these three lines it allows us to display the environment variables that have said so to
+
+02:26.040 --> 02:29.050
+make sure that they are correct.
+
+02:29.620 --> 02:32.840
+And once it's don't have to open a new terminal.
+
+02:33.570 --> 02:39.930
+So when we open a new terminal you're going to have the Russos team and the IP address according to
+
+02:40.500 --> 02:42.670
+what we already know.
+
+02:42.780 --> 02:46.840
+So we have to make sure that it corresponds to the real us.
+
+02:46.980 --> 02:51.220
+So now we have competing with the configuration of the robot machine.
+
+02:51.300 --> 02:55.030
+We will do almost the same with the workstation.
+
+02:55.290 --> 03:05.540
+So first of all we need to open another and find the IP address so we can find the IP address is monitored
+
+03:05.600 --> 03:12.130
+to I'm going to take this and we do the same thing we need to explore.
+
+03:12.190 --> 03:21.970
+Ross IP so I'm going to expose IP to the other side just to change this value and that what is very
+
+03:21.970 --> 03:29.330
+important we need to specify the correct we need to specify the correct rules must right.
+
+03:29.410 --> 03:39.560
+So remember that what is going to run on a robot machine that has an IP address 1 2 6 8 8 8 1 1.
+
+03:39.910 --> 03:48.610
+So he it must be 1 9 2 2 1 6 8 8 8 and 1 0 1.
+
+03:48.610 --> 03:53.930
+So it corresponds to the IP address of this machine.
+
+03:54.530 --> 03:55.010
+OK.
+
+03:55.180 --> 03:58.970
+So maybe it's the IP address of the workstation.
+
+03:59.090 --> 04:02.080
+Rush hostname is the IP address of the workstation.
+
+04:02.320 --> 04:10.730
+And most M.D what I referred to the IP address of the robot machine here.
+
+04:11.040 --> 04:11.470
+OK.
+
+04:11.490 --> 04:19.720
+So as you can see your last message you're right is going to run on the local host of narrowboat machine.
+
+04:20.910 --> 04:26.380
+Ok so now if we are going to test if everything is running fine.
+
+04:26.820 --> 04:28.350
+OK I'm going to open
+
+04:35.160 --> 04:37.880
+it close and open again.
+
+04:37.950 --> 04:42.210
+So we have also those of us here showing one or two.
+
+04:42.350 --> 04:42.670
+OK.
+
+04:42.780 --> 04:45.000
+And then those mustardy you are cream.
+
+04:45.090 --> 04:49.200
+One of the robot machines now let's run Rowse on the robot machine.
+
+04:49.200 --> 05:02.150
+I'm going to watch for moggy and on another meaning let me down the road that I'm seeing that is ignored.
+
+05:03.690 --> 05:07.370
+So now I have Russ running on Robert Mashi.
+
+05:07.650 --> 05:11.070
+I can do a rose LOEBBECKE list.
+
+05:12.570 --> 05:19.840
+And they can find my stocking list here showing all the topics related to this.
+
+05:20.280 --> 05:28.710
+So now everything is fine if I'm going to do roast topic list of what they should i should also see
+
+05:28.710 --> 05:35.840
+the same topics you can see now that we have all the topics.
+
+05:35.840 --> 05:41.760
+So if I close Russ in this machine I'm going to close roads here.
+
+05:42.260 --> 05:46.610
+If I make most of it list unable to communicate with the master.
+
+05:46.610 --> 05:46.880
+Why.
+
+05:46.880 --> 05:48.830
+Because I have closed the doors here.
+
+05:48.860 --> 05:59.340
+So if I put trust back a score from this machine I am able to find the topics.
+
+05:59.360 --> 06:00.020
+OK.
+
+06:00.230 --> 06:03.360
+Running on the Michi of the robot.
+
+06:03.500 --> 06:05.000
+If I wanted to see me again.
+
+06:06.890 --> 06:08.930
+And there on the it.
+
+06:09.150 --> 06:18.540
+So you can see that now this workstation have access to these robot machines so any code that you write
+
+06:19.140 --> 06:26.340
+in these workstation machines will be able to control all the rest nodes and the rest of peaks that
+
+06:26.430 --> 06:29.230
+are running into the machine.
+
+06:29.420 --> 06:30.320
+OK.
+
+06:30.840 --> 06:34.360
+So let's see if you make any effort into consideration.
+
+06:34.380 --> 06:37.470
+For example I'm going to close everything again.
+
+06:37.880 --> 06:38.520
+OK.
+
+06:38.560 --> 06:47.480
+And let me go to the as I see so imagine that you are not able to.
+
+06:47.510 --> 06:49.330
+You did not do that correctly.
+
+06:49.330 --> 06:53.120
+Let's see if you put the idea of the workstation.
+
+06:53.350 --> 06:54.060
+OK.
+
+06:54.390 --> 06:56.540
+Of the sheets.
+
+06:57.470 --> 07:10.900
+So now I have to close all these notes up and then again.
+
+07:11.840 --> 07:13.420
+OK so let's see what happens.
+
+07:13.420 --> 07:17.350
+Now we can't underscore here.
+
+07:17.820 --> 07:19.140
+OK.
+
+07:19.900 --> 07:25.410
+I'm able to make a stop list least no problem on the ceiling or with machine.
+
+07:26.000 --> 07:32.930
+Now even the rest of the police is OK it's not it's not raining.
+
+07:32.930 --> 07:33.380
+Why.
+
+07:33.380 --> 07:37.430
+Because because he says that the must tell you is in the same workstation.
+
+07:37.440 --> 07:45.650
+So now he doesn't refer to this sort of message if I want to fix what they should do with respect to
+
+07:46.220 --> 07:48.490
+the IP address of the machine.
+
+07:48.930 --> 07:49.610
+OK.
+
+07:49.740 --> 07:53.010
+I have to make source that I see again.
+
+07:54.350 --> 07:58.050
+To take effect so now I can see that those mustardy takes effect.
+
+07:58.190 --> 08:04.650
+And if I may cross it just so we'll able to see the same topics.
+
+08:04.700 --> 08:06.650
+And here this machine.
+
+08:06.690 --> 08:07.960
+Now I.
+
+08:08.850 --> 08:10.200
+The load.
+
+08:10.740 --> 08:16.500
+And again I would be able to see all the topics on the pitch.
+
+08:17.030 --> 08:24.020
+So to summarize when you want to continually Walkstation to control over the machine.
+
+08:24.440 --> 08:29.520
+So you have to make a configuration into both the machine and the workstation.
+
+08:29.750 --> 08:33.870
+So in the machine you have to specify the roast master.
+
+08:34.320 --> 08:43.400
+As in any local host this is the default port number and you have also explored the rows the IP of the
+
+08:43.400 --> 08:49.880
+robot machine to be equal to the IP address of the on that machine and the IP address you can get it
+
+08:50.270 --> 08:52.910
+using that if.
+
+08:53.290 --> 08:53.920
+OK.
+
+08:54.110 --> 08:56.710
+Which gives you the IP address.
+
+08:56.720 --> 09:00.440
+So exactly the same thing what you should do in the workstation.
+
+09:00.530 --> 09:10.430
+You have to find those IP and DOS hostname as the IP address of the workstation the IP address of the
+
+09:10.570 --> 09:12.830
+world.
+
+09:13.460 --> 09:15.070
+Same thing for that also.
+
+09:15.210 --> 09:16.900
+The.
+
+09:17.930 --> 09:24.860
+And then the Rassmussen you must find the remote machine of what is the robot machine.
+
+09:25.040 --> 09:26.960
+So this is the IP address of the robot.
+
+09:27.050 --> 09:35.450
+As you can see here so doing so you will be able to develop programs that run into your workstation
+
+09:35.500 --> 09:39.460
+and control the robot machine.
+
+09:39.920 --> 09:47.750
+So illustrate this are an example I'm going to run an application on the workstation machine that controls
+
+09:47.750 --> 09:49.870
+the sim on Match.
+
+09:50.090 --> 09:55.640
+So we not only across run seem to see know.
+
+09:56.300 --> 10:02.640
+So now we have to see and they want to control this using the theory of application of the C.
+
+10:02.720 --> 10:10.550
+So instead of running on the same machine I'm going to run into the workstation a C so all you need
+
+10:10.550 --> 10:11.900
+to do is to make a restaurant.
+
+10:12.080 --> 10:16.280
+So not to say that I didn't try and rescore cake.
+
+10:16.400 --> 10:22.450
+The firing squad is going to have a conflict because it is already running on one one.
+
+10:22.460 --> 10:24.850
+This is the robot machine.
+
+10:24.920 --> 10:30.280
+So you should not run us again because it's already running but you can do it.
+
+10:30.280 --> 10:33.950
+And I'm so certain up
+
+10:37.480 --> 10:38.740
+to.
+
+10:39.580 --> 10:41.570
+Totally up.
+
+10:42.170 --> 10:47.340
+Now I am in the workstation machine here.
+
+10:47.340 --> 10:48.690
+I mean this workstation machine.
+
+10:48.750 --> 10:56.190
+I'm going to press the auto keys and you to see that the now Winterton is moving.
+
+10:57.250 --> 11:00.250
+Controlling its motions on the workstation.
+
+11:00.870 --> 11:02.770
+So now we come to the end of this story.
+
+11:02.790 --> 11:03.700
+Thanks for watching.

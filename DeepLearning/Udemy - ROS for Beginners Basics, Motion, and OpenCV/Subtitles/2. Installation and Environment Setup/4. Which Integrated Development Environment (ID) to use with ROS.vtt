@@ -1,0 +1,262 @@
+WEBVTT
+
+00:00.300 --> 00:06.240
+In this video I'm going to talk about which integrated development environment would be better to use
+
+00:06.240 --> 00:09.600
+with Ross usually especially for new users.
+
+00:09.600 --> 00:15.020
+They face the difficulty to decide which development environment to use to develop with us.
+
+00:15.030 --> 00:20.210
+There are different alternatives so I'm willing to discuss a few of them in this video.
+
+00:20.220 --> 00:25.650
+The first possible option is to use Eclipse so here when you open eclipse you need to open it in the
+
+00:25.650 --> 00:33.310
+cut clean workspace so you have to choose the cutting workspace here and then you have to meet here
+
+00:33.650 --> 00:35.970
+in the beginning when I started develop with Ross.
+
+00:35.970 --> 00:38.310
+I usually use Eclipse very often.
+
+00:38.310 --> 00:40.520
+It's a very nice development environment.
+
+00:40.710 --> 00:43.600
+However it's a little bit slow and a bit heavy.
+
+00:43.710 --> 00:49.980
+So there are other alternatives I'm going to show a little bit later so you can actually develop in
+
+00:49.980 --> 00:54.350
+Python you can develop in C++.
+
+00:54.540 --> 01:01.470
+Over there are some configurations that you need to do to configure it needs to work with your workspace.
+
+01:01.470 --> 01:07.230
+Let me make a demonstration on a new workspace so I'm going to close this one because it's already configured
+
+01:07.770 --> 01:09.930
+so let's create a new workspace.
+
+01:09.930 --> 01:12.730
+Just test how to up an eclipse with it.
+
+01:12.780 --> 01:16.800
+I'm going to call it Myra's workspace.
+
+01:16.880 --> 01:28.350
+Does associate know I'm going to then make so now our workspace is created so after creating the workspace
+
+01:28.380 --> 01:30.990
+we need to create an Eclipse project inside.
+
+01:30.990 --> 01:37.320
+And for this we're going to use the following command we execute this command here and now we have an
+
+01:37.320 --> 01:39.450
+Eclipse project created.
+
+01:39.450 --> 01:44.140
+So now I'm ready to use Eclipse to work in my new cat keen workspace.
+
+01:44.170 --> 01:51.940
+So I'm going to open eclipse now and then I have to browse and select the new workspace.
+
+01:51.940 --> 01:53.710
+Now you can see what you offer the workspace.
+
+01:53.710 --> 01:59.080
+There is no project so we need to import the project use import.
+
+01:59.480 --> 02:07.240
+You go to join the existing projects into workspace and then you have to browse and select the root
+
+02:07.360 --> 02:08.130
+directory.
+
+02:08.470 --> 02:11.950
+So here pay attention that little directory is the big directory.
+
+02:11.950 --> 02:22.830
+So we have to select be less okay and then finish and then we will see that we have this is our source
+
+02:22.830 --> 02:24.380
+directly for the moment.
+
+02:24.570 --> 02:27.380
+We don't have any project here.
+
+02:27.570 --> 02:29.820
+We can create a new package for example.
+
+02:29.940 --> 02:36.930
+So let's create a new package I need to go to the source for work and then I'm going to create a package
+
+02:37.050 --> 02:40.240
+digging tutorials so you can give it any name.
+
+02:40.420 --> 02:45.140
+So the package is now created and then we need to do a cat can.
+
+02:45.240 --> 02:52.220
+So I use the shortcuts the M which is an alias that they made to the command I can make.
+
+02:52.320 --> 02:55.560
+So I do cat can make now and our project is now compiled.
+
+02:55.620 --> 02:57.230
+So if I refresh.
+
+02:57.510 --> 03:01.100
+We're going to find our package big in the toilet here.
+
+03:01.170 --> 03:05.390
+So now you can create any file you can create to find in Python.
+
+03:06.010 --> 03:06.380
+OK.
+
+03:06.390 --> 03:14.940
+For example you can create a file listener that by and write your code over here.
+
+03:14.940 --> 03:19.280
+You can create some BP files you have you have the see make list at the extremes.
+
+03:19.320 --> 03:23.840
+Now you can develop your program or you can add a new program using Eclipse.
+
+03:23.850 --> 03:27.850
+So this is how to configure eclipse to work in that environment.
+
+03:27.840 --> 03:31.270
+Another editor that you can also use is to blame.
+
+03:31.510 --> 03:33.250
+So you blame me as a lightweight editor.
+
+03:33.300 --> 03:38.720
+So actually you can take your whole project and rugged into the cage workspace.
+
+03:38.730 --> 03:40.950
+So for example here we have different packages.
+
+03:40.950 --> 03:42.000
+I'm going to take this one.
+
+03:42.030 --> 03:42.790
+Bring it here.
+
+03:42.820 --> 03:45.230
+Then you have all the different files saleable.
+
+03:45.260 --> 03:45.550
+Okay.
+
+03:45.570 --> 03:51.280
+So for example you can program in C++ and you can also program in Python nicely.
+
+03:51.450 --> 03:57.690
+So now for example if you want to execute any program for example I want to execute the Tucker and the
+
+03:57.690 --> 03:58.070
+listener.
+
+03:58.060 --> 04:00.120
+Now I'm in the package right.
+
+04:00.300 --> 04:10.310
+Trading so I'm going to make the world a score and then of course restaurant during less training and
+
+04:10.310 --> 04:12.660
+then I'll cut that out.
+
+04:13.920 --> 04:18.460
+So of course you can modify using the sublime Ed and then you can write using a terminal.
+
+04:18.900 --> 04:19.640
+So it's sublime.
+
+04:19.650 --> 04:22.670
+There is no integrated terminal.
+
+04:23.130 --> 04:33.780
+And that's why my actually favorite editor is visit a studio called visual studio code is another alternative
+
+04:33.810 --> 04:42.180
+that you can use in order to program with Russ in two parts C++ Python and different programming languages.
+
+04:43.030 --> 04:43.490
+Okay.
+
+04:43.490 --> 04:46.710
+And it works pretty much the same way as sublime.
+
+04:47.580 --> 04:53.700
+So for example if I open a new window and they would like to put some projects here I will do in the
+
+04:53.700 --> 04:56.580
+same way I'm going to take this one for example.
+
+04:56.580 --> 05:04.410
+Let me take a take it you another one I'll put it here and then you will have all the files.
+
+05:04.410 --> 05:04.970
+OK.
+
+05:05.100 --> 05:08.350
+So you have this listener and this is staggered by.
+
+05:09.480 --> 05:16.070
+And the good thing that I like here is that you have an integrated terminal so you can write your code
+
+05:16.850 --> 05:19.070
+over here integrated so you.
+
+05:19.730 --> 05:23.660
+Another alternative is to open another extension terminal like this.
+
+05:23.680 --> 05:32.390
+But it probably year or any appropriate place but also it is very convenient to use this integrated
+
+05:32.390 --> 05:36.590
+terminal whenever you want to run some programs like for example what you can do.
+
+05:36.590 --> 05:43.890
+You can have a really low score running here and then you can put all our comments here so I can make
+
+05:43.910 --> 05:46.210
+this topic list.
+
+05:46.250 --> 05:52.810
+So I have a rough score running and then I can run my programs from here.
+
+05:52.820 --> 05:57.230
+Let me run again to tell her the fight that is going to run.
+
+05:57.710 --> 06:02.590
+So this integrated tempura is a nice feature in the visual pseudocode.
+
+06:02.710 --> 06:10.520
+The layout is also nice and simple to use and it is lightweight as compared to eclipse for example it
+
+06:10.520 --> 06:13.310
+is a much lighter weight.
+
+06:13.310 --> 06:18.890
+So I would recommend to use visual to your content of course you can use any editor of your choice.
+
+06:18.890 --> 06:24.310
+These are just some suggestions that may help you select an appropriate development environment for
+
+06:24.310 --> 06:24.460
+you.
+
+06:24.460 --> 06:25.790
+Ross projects.

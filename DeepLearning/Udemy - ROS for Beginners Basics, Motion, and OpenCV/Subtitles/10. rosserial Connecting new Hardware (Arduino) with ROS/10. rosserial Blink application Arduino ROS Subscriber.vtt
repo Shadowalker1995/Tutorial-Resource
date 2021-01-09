@@ -1,0 +1,189 @@
+WEBVTT
+
+0
+00:00.270 --> 00:05.860
+In this video I'm going to present the Blink application and how to write a ROS subscriber in Arduino.
+
+1
+00:06.030 --> 00:07.280
+So let's see how it works.
+
+2
+00:07.290 --> 00:12.660
+I'm going now to present the blink example which shows step by step on how to write a subscriber.
+
+3
+00:12.660 --> 00:16.300
+So in this tutorial we have presented how to create a publisher.
+
+4
+00:16.350 --> 00:21.080
+You can also create the subscriber inside a rosserial arduino board.
+
+5
+00:21.330 --> 00:27.710
+So let's open the sketch on the blink application which creates a subscriber and here in the same way we're
+
+6
+00:27.720 --> 00:35.940
+going to include ROS libraries you know here and the subscriber is a family and the message here is when
+
+7
+00:35.940 --> 00:38.710
+you subscribe to a topic that is called Tuggle.
+
+8
+00:38.740 --> 00:46.410
+And so whenever an empty is seen on this topic in this case the callback function message is going to
+
+9
+00:46.410 --> 00:47.440
+be executed.
+
+10
+00:47.670 --> 00:50.930
+And what it will do is really just to leave that.
+
+11
+00:51.210 --> 00:54.340
+OK so the lead is looking in the number 13.
+
+12
+00:54.360 --> 01:00.290
+I've been on the board and this operation is going actually to talk all the lead sometimes and sometimes.
+
+13
+01:00.330 --> 01:04.050
+So let's upload this sketch into the our universe.
+
+14
+01:04.430 --> 01:06.790
+Ok you should never have this kind of error.
+
+15
+01:06.870 --> 01:09.010
+It's better that you reset your connections.
+
+16
+01:09.060 --> 01:10.900
+So I'm going to close everything.
+
+17
+01:11.000 --> 01:12.390
+Set the connection.
+
+18
+01:18.910 --> 01:20.700
+I start to get the idea you know.
+
+19
+01:22.610 --> 01:25.120
+Not open the link of negation again.
+
+20
+01:25.150 --> 01:27.040
+Let me see it up close.
+
+21
+01:27.080 --> 01:29.540
+You have to check your number.
+
+22
+01:29.570 --> 01:32.890
+So no because you know what I have to be committed again.
+
+23
+01:32.970 --> 01:33.930
+I see.
+
+24
+01:34.270 --> 01:43.730
+Now it gives us the white one so I'm going to send them this one and then upload it to get uploaded.
+
+25
+01:44.600 --> 01:46.640
+So let's do the same steps.
+
+26
+01:46.690 --> 01:52.510
+Ran LASKOFF and then we will run a city in person city.
+
+27
+01:52.510 --> 01:53.190
+No.
+
+28
+01:53.500 --> 01:55.190
+So now part has changed.
+
+29
+01:55.330 --> 02:01.650
+Instead of just be if you like it's MDO it is now and that's that's that's the way it is.
+
+30
+02:01.750 --> 02:02.260
+Wow.
+
+31
+02:04.010 --> 02:04.430
+OK.
+
+32
+02:04.440 --> 02:10.310
+He's not going there because he's not interested in that but he's a subscriber on the topic so that
+
+33
+02:12.250 --> 02:14.350
+we can use those.
+
+34
+02:15.050 --> 02:26.290
+But the thing is we have talking now Toben and even so are going to use the commander to stop the part
+
+35
+02:26.760 --> 02:29.900
+of the boot to send the message.
+
+36
+02:30.130 --> 02:32.040
+This is OK.
+
+37
+02:32.540 --> 02:43.070
+Now when I'm with this message the reader or the lead you know me and switch on it you can see that.
+
+38
+02:43.670 --> 02:49.130
+Now if I were to say message again going to see no switch.
+
+39
+02:49.440 --> 02:56.160
+So I guess it's possible that some of those for months in order to switch off and off the net and you
+
+40
+02:56.160 --> 03:04.820
+can see how that is a function BP Rusticus even workstation and also the system that is running on a
+
+41
+03:05.250 --> 03:06.460
+platform is.
+
+42
+03:06.960 --> 03:17.190
+You have the subscriber you will put that when there is any message coming up in the lead which is on
+
+43
+03:17.670 --> 03:18.300
+and off.
+
+44
+03:18.300 --> 03:26.700
+So the next video I'm going to how Prospero a Them program in Reno to read the information coming from
+
+45
+03:27.120 --> 03:31.350
+the sensor of this information into those systems.
+
+46
+03:31.470 --> 03:32.370
+And the workstation.

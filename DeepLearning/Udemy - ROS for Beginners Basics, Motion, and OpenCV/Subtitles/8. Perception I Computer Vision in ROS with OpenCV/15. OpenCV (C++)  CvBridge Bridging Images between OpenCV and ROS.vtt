@@ -1,0 +1,460 @@
+WEBVTT
+
+00:00.360 --> 00:05.850
+When you work with us the image format in appeals and draws are different.
+
+00:05.850 --> 00:13.170
+We are get a program in Python using privilege that converts between opposite reformatories format and
+
+00:13.170 --> 00:16.090
+from format to a specific format.
+
+00:16.290 --> 00:22.680
+In this video we're going to do the same but using the C++ language I'm going to present how we can
+
+00:22.680 --> 00:25.670
+use Sylvian each in C++ with.
+
+00:25.750 --> 00:31.830
+And obviously the first thing you need to do is to make sure that you have the latest versions of options
+
+00:31.840 --> 00:33.720
+A B and also of Sivy beach.
+
+00:33.780 --> 00:37.220
+In some cases if the civil bridge version is updated.
+
+00:37.230 --> 00:40.840
+You may find problems later on to compile your programs.
+
+00:40.920 --> 00:45.220
+So it would not hurt to use it.
+
+00:45.380 --> 00:50.520
+If you get update to update your system repositories
+
+00:53.310 --> 01:00.940
+and then we use to do it we get started.
+
+01:01.080 --> 01:06.210
+Russ QinetiQ up and see.
+
+01:06.560 --> 01:07.030
+OK.
+
+01:07.090 --> 01:10.300
+So now I'm sure that they have the latest version.
+
+01:10.390 --> 01:17.350
+Also we do the same thing for the DVB-H.
+
+01:17.480 --> 01:20.600
+I have also the latest version.
+
+01:20.690 --> 01:28.430
+Then let us consider the code image Suppe that TPP that is located in top city underscore perception
+
+01:28.860 --> 01:30.700
+in the CGP finder.
+
+01:31.070 --> 01:35.570
+So first of all we need to include Larry quited up and see the libraries.
+
+01:35.630 --> 01:42.470
+And here we will include the image transport library which is used to define the transport protocol
+
+01:42.470 --> 01:44.460
+for streaming images.
+
+01:44.480 --> 01:51.240
+We will also import the Seaview bridge library and the other open city libraries image broke and guide
+
+01:51.260 --> 01:51.880
+you.
+
+01:52.010 --> 01:57.330
+So you really follow on object oriented programming version although you can also do it without using
+
+01:57.330 --> 02:01.620
+classes but you're going to find a class image converter.
+
+02:02.150 --> 02:08.090
+And then the main function you're going just to create a new object from Image converter and then all
+
+02:08.090 --> 02:10.180
+the work will be done in the constructor.
+
+02:10.250 --> 02:18.920
+So here we find some attributes for the class including a not handled the image transport ID the image
+
+02:18.920 --> 02:21.410
+subscriber and the image publisher.
+
+02:21.470 --> 02:27.800
+So what is the objective of this program is to read a video stream from us be coming up for example
+
+02:27.800 --> 02:29.580
+it can be from any candidate.
+
+02:29.600 --> 02:36.410
+So we're going to subscribe to a topic OK using image subscriber and then we can do some modification
+
+02:36.530 --> 02:43.070
+where the image will do some processing for example printing something and then we publish again the
+
+02:43.070 --> 02:45.890
+image using a publisher on another topic.
+
+02:45.890 --> 02:48.330
+So this is the idea here of this program.
+
+02:48.380 --> 02:51.560
+Thats why we create publisher and also a subscriber.
+
+02:51.650 --> 02:57.950
+So the difference here the subscription is not going to be done using the Internet as we did in previous
+
+02:57.950 --> 03:03.740
+programs and this is one of the differences between the subscription to a topic and a subscription of
+
+03:03.950 --> 03:05.930
+an image in C++.
+
+03:05.930 --> 03:08.130
+So I think we didn't notice that difference.
+
+03:08.390 --> 03:14.480
+But here in the past plus we need to create an image transport object that we will use in order to create
+
+03:14.510 --> 03:20.390
+a subscriber for the image topic and also to create a public service or we're going to advertise here
+
+03:20.480 --> 03:26.730
+to produce that image and we will publish it into another topic so it's going to be called image and
+
+03:26.730 --> 03:29.790
+the score converter output we do.
+
+03:30.170 --> 03:33.460
+So this will be done here into the image converter.
+
+03:33.500 --> 03:39.290
+And of course we need to initialize also the node handled okay by calling the constructor of the image
+
+03:39.380 --> 03:40.340
+transport.
+
+03:40.520 --> 03:43.600
+Okay we can create also a destructor here.
+
+03:43.670 --> 03:48.530
+Never destroy all the windows when we complete.
+
+03:48.800 --> 03:55.880
+And really the subscriber will define the image Colback associated to the class image co-marketing that
+
+03:55.880 --> 03:57.300
+we find here.
+
+03:58.130 --> 04:05.250
+And that image callback is going to take a pointer to an image which is defined hitting and busy and
+
+04:05.250 --> 04:13.020
+then we create a new object a new CD but each object has a point here and then we will use the method
+
+04:13.110 --> 04:15.790
+see the breach to see the copy.
+
+04:15.810 --> 04:22.920
+It means it's going to make a conversion from Russ formit to open Sivy format.
+
+04:23.070 --> 04:29.100
+It will take the message that we received from the callback function and then is going to convert it
+
+04:29.100 --> 04:31.470
+to end up in a different format.
+
+04:31.680 --> 04:35.440
+And this is the encoding of image is going to be easy.
+
+04:36.060 --> 04:42.850
+Once the conversion is done we can now look at the information off of the image we can use that see
+
+04:42.860 --> 04:48.130
+the bleach finder know to check the number of rows of the image and the number of columns of that image.
+
+04:48.150 --> 04:49.920
+If it is greater than 60.
+
+04:50.290 --> 04:50.850
+OK.
+
+04:50.970 --> 04:57.960
+We're going to draw a point at this location 50/50 you reduce that and then we will use.
+
+04:57.990 --> 05:04.620
+I showed it not to display the image that we have collected so this is now the Open see the image which
+
+05:04.620 --> 05:07.700
+is collected using Sivy point or image.
+
+05:07.750 --> 05:08.060
+OK.
+
+05:08.070 --> 05:13.530
+So this is how we can collect the opposite image and then we can access different attributes putting
+
+05:13.530 --> 05:19.380
+up a number of rows number of columns or the image itself that you want to display using.
+
+05:19.890 --> 05:26.280
+OK so this is going to open a window and then we display the image coming from the video stream.
+
+05:26.430 --> 05:33.720
+And what we can also do is to publish the new image in addition to displaying the image we can create
+
+05:33.780 --> 05:36.440
+an other topic to publish the image.
+
+05:36.450 --> 05:44.490
+So we would use the image publisher to publish and we will use this method see the pointer to image
+
+05:44.550 --> 05:45.850
+message what does it do.
+
+05:45.870 --> 05:52.530
+It's going to convert the opposite image into the image format supported by Ross and then it will publish
+
+05:52.650 --> 05:54.930
+this image into the Rustico system.
+
+05:55.020 --> 06:01.300
+We can collect this image by just creating a subscriber to image converter upload video.
+
+06:01.470 --> 06:06.500
+Of course the subscriber that you will create it will be a type image from the packet sensor.
+
+06:06.650 --> 06:13.860
+I and this method to Image image is going to convert the message from open CD format to a Cross message
+
+06:13.950 --> 06:16.270
+of type sounds and images yes image.
+
+06:16.290 --> 06:18.870
+Now we are ready to compile and execute this code.
+
+06:18.900 --> 06:23.700
+And of course like any C++ program we need to add this into CMYK list.
+
+06:23.730 --> 06:26.940
+And here there are a couple of things that we need to add.
+
+06:27.210 --> 06:34.230
+First of all we need to add two packages the civic blitz package and the image transport package into
+
+06:34.230 --> 06:37.100
+the dependencies needed by this project.
+
+06:37.200 --> 06:43.980
+So in the final package we need to add civil breach and also image transport because these two libraries
+
+06:43.980 --> 06:50.120
+were included into our C++ code bridge and also image transfer.
+
+06:50.130 --> 06:55.910
+So you need to add these packages into the make list and then we to clean the executable.
+
+06:55.910 --> 06:58.190
+So we'll add an executable.
+
+06:58.260 --> 07:01.510
+And this is the name of the executable image pops up CPB.
+
+07:01.560 --> 07:07.110
+We specify the source file which is the source file that we have just explained and presented here like
+
+07:07.110 --> 07:08.860
+we did with the previous codes.
+
+07:08.880 --> 07:14.680
+We need to add the target libraries in libraries and also we need to link up and see the libraries to
+
+07:14.680 --> 07:17.070
+the executable image pops up CVP.
+
+07:17.130 --> 07:22.780
+And of course we should not forget to add the package up and see me and also to include the directories.
+
+07:23.160 --> 07:29.980
+This is already done for the previous code and it's also added for the new executable that you are adding.
+
+07:30.210 --> 07:33.750
+So after doing these changes we can compile our code.
+
+07:33.870 --> 07:36.300
+Ok so you can see image pops up.
+
+07:36.320 --> 07:38.280
+CBP is not key of course.
+
+07:38.280 --> 07:44.130
+Now we need to add several programs we need to run the driver for the user become gay which is a restaurant
+
+07:45.560 --> 07:51.610
+that's become used become known and we need to run also an image.
+
+07:51.740 --> 07:56.390
+We need to run several nodes instead of running them one by one in a terminal.
+
+07:56.390 --> 08:02.660
+It is more effective to create a lunch fight for creating all these different notes and starting them
+
+08:02.720 --> 08:03.480
+all together.
+
+08:03.560 --> 08:10.220
+So for this you can go to the folder topic for the perception CBP launch and you can open this launch
+
+08:10.220 --> 08:10.460
+site.
+
+08:10.460 --> 08:15.680
+So the number that allows five is a file that allows to start multiple nodes at the same time.
+
+08:15.770 --> 08:18.380
+In this case we want to start three different notes.
+
+08:18.380 --> 08:22.450
+The first note is do you use become node which belongs to the second package.
+
+08:22.480 --> 08:28.760
+And these winds the driver of the US because he is going to start you as we can for streaming and get
+
+08:28.760 --> 08:31.440
+a certain number of parameters that we need to adjust.
+
+08:31.460 --> 08:37.950
+For example we have to specify the video device being that first device at slash upstairs video zero.
+
+08:38.180 --> 08:42.430
+This is faster the first video and device connected to the computer.
+
+08:42.710 --> 08:44.600
+The image with the image right.
+
+08:44.600 --> 08:48.340
+These are options we can put them to some form and this is actually the work.
+
+08:48.620 --> 08:53.830
+And also we're going to map the image topic to be camera slash imagery.
+
+08:54.020 --> 08:59.970
+The second node will represent the image of you know and he's going to subscribe to the topic us because
+
+08:59.980 --> 09:01.270
+there are no images.
+
+09:01.320 --> 09:06.140
+OK which is going to correspond to the topic of this image of this node because here we have the no
+
+09:06.140 --> 09:07.610
+name is used become it or not.
+
+09:07.610 --> 09:12.200
+So this is the No Name and this is the name of the topic that we are going to use.
+
+09:12.680 --> 09:19.520
+And same thing we're going to start to sort of note that is our image pops up CPB and yet we're going
+
+09:19.520 --> 09:21.550
+to limit the topic name image.
+
+09:21.620 --> 09:27.810
+So we're going to map the topic name image into the topic name that is going to be published by DC.
+
+09:27.890 --> 09:34.430
+Of course you can add a fourth note that is going to subscribe to the full on topic image converter
+
+09:34.490 --> 09:35.460
+output video.
+
+09:35.520 --> 09:38.800
+And now we have last five that is going to start everything at once.
+
+09:38.870 --> 09:44.230
+So everything is ready now will be our program is really combined.
+
+09:44.390 --> 09:46.430
+Now we get we can use the roast lunch
+
+09:49.040 --> 09:50.300
+essentially CPB
+
+09:53.850 --> 10:02.730
+and then you have the image of the Dutch at the start of this no.
+
+10:03.040 --> 10:03.340
+OK.
+
+10:03.350 --> 10:05.620
+That is one small error that we can fix.
+
+10:05.620 --> 10:12.840
+There are multiple notes that I've named image view you know swing easy to that because we have this
+
+10:12.840 --> 10:15.980
+note has the same name as this no.
+
+10:16.700 --> 10:23.130
+So let me call this one image view to note and then you can start the program again.
+
+10:23.310 --> 10:24.540
+OK so you can see now
+
+10:27.390 --> 10:29.340
+we have three windows.
+
+10:29.340 --> 10:32.660
+This is the window that subscribes to the origin image.
+
+10:32.910 --> 10:36.390
+OK this is the second window that we have in the last fight.
+
+10:36.590 --> 10:40.810
+OK which subscribe to this video stream.
+
+10:41.070 --> 10:48.040
+OK because now we differentiated using the size that is bigger 1280 and 720.
+
+10:48.360 --> 10:55.040
+And this one is the third window that is so that subscribes to the image of with video.
+
+10:55.040 --> 10:57.710
+This one that is published by that image pops up.
+
+10:57.710 --> 10:59.740
+Not that we have yet.
+
+10:59.780 --> 11:05.810
+So this is an example of how we can use a bridge in order to subscribe to an image converted to pop
+
+11:05.810 --> 11:12.160
+and see the format and then publish again the options of the format into using Publisher.
+
+11:12.350 --> 11:19.270
+So you can clearly observe that working with a PC in C++ and Rowse is much more complicated than working
+
+11:19.280 --> 11:19.950
+in person.
+
+11:19.970 --> 11:25.850
+This is why my recommendation is actually to do most of your programs interface with Python because
+
+11:25.850 --> 11:28.510
+it's going to simplify more the development process.
+
+11:28.520 --> 11:34.550
+Unless you want to have realtime execution in this case it's going to be worth investing your time in
+
+11:34.550 --> 11:36.110
+developing with C++.

@@ -1,0 +1,124 @@
+WEBVTT
+
+00:00.280 --> 00:01.690
+It's not.
+
+00:01.890 --> 00:04.050
+So that was one of them.
+
+00:04.350 --> 00:10.150
+And so as my welcome to this new auditorium in the audience.
+
+00:10.280 --> 00:16.680
+I have presented to write the publisher and subscriber in Ross music C++ and by following the story
+
+00:16.680 --> 00:22.100
+and we are going to apply this principle in order to develop a new application the school called that
+
+00:22.290 --> 00:23.190
+is cleaner.
+
+00:23.300 --> 00:29.870
+So the idea here is that you that seem to make the coverage of certain Edgar and this can be in different
+
+00:29.870 --> 00:30.370
+ways.
+
+00:30.440 --> 00:36.860
+For example in this picture you can see the title goes first to a certain point and then try to move
+
+00:36.860 --> 00:39.110
+straight and then retain and move straight.
+
+00:39.310 --> 00:39.750
+And so on.
+
+00:39.770 --> 00:45.410
+So this is actually emulating overclean or like goombah or others.
+
+00:45.500 --> 00:48.150
+So there is no single word to cover or to clean.
+
+00:48.170 --> 00:52.180
+Certainly here we can have another exiguous in like the following.
+
+00:52.180 --> 00:57.980
+And now the idea is that we develop this application using the principles of Publisher and subscribers
+
+00:58.160 --> 01:03.250
+of course when we have a large problem like the following and when we do something about our problems
+
+01:03.280 --> 01:06.560
+in two different desks or different functions.
+
+01:06.590 --> 01:14.460
+So here we can observe whatever the execution is about to move in a certain direction forward or backward.
+
+01:14.720 --> 01:19.070
+It needs to make alterations either in the left side or in the right side.
+
+01:19.130 --> 01:23.600
+And in this case it needs to go to a certain goal point.
+
+01:23.630 --> 01:30.620
+So we just have our problems tied to the right of primitives and functions that we can use to be our
+
+01:30.620 --> 01:31.660
+cleaning application.
+
+01:31.710 --> 01:36.620
+OK these are the different functions we are going to start with the development and then we will move
+
+01:36.620 --> 01:39.340
+to writing the cleaning function.
+
+01:39.710 --> 01:46.740
+So he is going to develop a method that is called Move that allows a little bit to move straight.
+
+01:46.960 --> 01:51.080
+We specify the speed we specify what is the distance.
+
+01:51.080 --> 01:54.800
+And also we specify whether it needs to move forward or backward.
+
+01:55.930 --> 02:01.570
+You will also write the function that is going to rotate and these we may get over to date either in
+
+02:01.570 --> 02:08.240
+the left side or in the right side so we need to specify the angular velocity or the angular speed.
+
+02:08.790 --> 02:18.880
+We need to specify also the angle that we need to move and also either it turns clockwise or counterclockwise.
+
+02:18.920 --> 02:29.720
+So since all the all the angles in Rus are expressed in radian And we human beings we actually it's
+
+02:29.780 --> 02:32.480
+easier for us to express the angle in degrees.
+
+02:32.780 --> 02:39.550
+So we are going to also to the right method is called degrees to radiance which make the conversion.
+
+02:39.830 --> 02:46.550
+So it takes ongoing in degrees and then it returns the angle in radians that makes a simple conversion
+
+02:46.550 --> 02:53.270
+so that the user enters a certain value in degrees it will be converted first to radians so that it
+
+02:53.280 --> 02:58.580
+can be well understood and executed by Ross.
+
+02:58.590 --> 03:06.690
+So in addition we are going to write a method that is called Move goal which takes a good position that
+
+03:06.690 --> 03:09.310
+we need to go to.
+
+03:09.770 --> 03:18.320
+And also the distance talers least it means how much we can target the two when you on with the rest
+
+03:18.320 --> 03:18.780
+of the goal.
+
+03:18.780 --> 03:22.240
+So now let's move to the implementation of our.
