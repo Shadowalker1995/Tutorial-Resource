@@ -1,0 +1,183 @@
+1
+00:00:00,660 --> 00:00:05,690
+Hello everyone and welcome to this python tutorial in this section of the course.
+
+2
+00:00:05,720 --> 00:00:12,470
+We are going to work on transfer learning and fine tuning project in the first video in this section.
+
+3
+00:00:12,480 --> 00:00:18,630
+We discussed the what transfer learning is and from this with your own words we are going to apply that
+
+4
+00:00:18,630 --> 00:00:26,300
+knowledge in practice these cute cats and dogs are images from the dataset that we are going to use
+
+5
+00:00:26,390 --> 00:00:32,740
+in this section the dataset contains only two classes cats and dogs.
+
+6
+00:00:32,770 --> 00:00:36,580
+At first glance the task may look very simple.
+
+7
+00:00:36,580 --> 00:00:44,290
+We as humans can quickly tell what a dog is and what the cat is but that is not that obvious for computers.
+
+8
+00:00:44,290 --> 00:00:54,280
+Both classes have very similar features eyes years for tails and even the environment is very similar
+
+9
+00:00:55,440 --> 00:00:59,090
+if we were to create the custom architecture for this task.
+
+10
+00:00:59,340 --> 00:01:08,380
+We wouldn't achieve more than let's say 75 maybe 80 percent and our goal is to pass 95 percent and get
+
+11
+00:01:08,440 --> 00:01:15,220
+almost state of the art results on this data set by using transfer learning technique alone.
+
+12
+00:01:15,460 --> 00:01:21,820
+Before we started with the project let's install all dependencies and set up our environment.
+
+13
+00:01:21,850 --> 00:01:28,460
+The first step as always is to set up our environment to use drip you instead of you to do that.
+
+14
+00:01:28,480 --> 00:01:36,220
+Go to edit notebook settings and here you can select your python version and hardware accelerator which
+
+15
+00:01:36,220 --> 00:01:38,250
+is exactly what we need.
+
+16
+00:01:38,260 --> 00:01:41,280
+Select the Jeep you from the menu and click save.
+
+17
+00:01:42,300 --> 00:01:46,330
+Now it's time to install all dependencies for the project.
+
+18
+00:01:46,440 --> 00:01:51,570
+The first one is tensor flow 2.0 in the first free cell.
+
+19
+00:01:51,570 --> 00:01:52,470
+Right.
+
+20
+00:01:52,470 --> 00:01:53,940
+Exclamation mark.
+
+21
+00:01:53,950 --> 00:01:54,290
+Beep.
+
+22
+00:01:54,290 --> 00:01:57,730
+Install then the flow that should keep you.
+
+23
+00:01:57,960 --> 00:02:05,610
+Equals equals to two point zero point zero point alpha zero okay.
+
+24
+00:02:05,620 --> 00:02:07,180
+Tens of low is installed.
+
+25
+00:02:07,350 --> 00:02:11,820
+There is one more library to install called TDM.
+
+26
+00:02:12,000 --> 00:02:18,680
+It is most certainly already installed by default but to be more sure lets try to install it.
+
+27
+00:02:19,080 --> 00:02:20,040
+Right.
+
+28
+00:02:20,040 --> 00:02:21,120
+Exclamation mark.
+
+29
+00:02:21,150 --> 00:02:23,310
+Beep install IDM.
+
+30
+00:02:23,760 --> 00:02:28,400
+And as we discussed it was already installed which is perfect.
+
+31
+00:02:28,620 --> 00:02:35,720
+The last thing for this video is to download the data set to our Google color environment this command
+
+32
+00:02:35,750 --> 00:02:40,730
+will be in the resources for this lesson so you don't have to learn by heart.
+
+33
+00:02:40,730 --> 00:02:45,560
+But let's explain some of these parts to know what's going on here.
+
+34
+00:02:46,570 --> 00:02:54,560
+The first part is w get this comment will go to a particular server and download the package to our
+
+35
+00:02:54,560 --> 00:02:57,690
+local computer then we have this.
+
+36
+00:02:57,840 --> 00:03:02,900
+Then we have this link which is the location where we can find the data set.
+
+37
+00:03:02,940 --> 00:03:10,230
+And lastly we have this dash O which is the way to specify the output folder where our data is going
+
+38
+00:03:10,230 --> 00:03:10,970
+to be saved.
+
+39
+00:03:12,640 --> 00:03:18,360
+I'll just specify these dot slash the file name.
+
+40
+00:03:18,370 --> 00:03:22,410
+This will save the file to the current directory and for the file name.
+
+41
+00:03:22,450 --> 00:03:27,440
+I've just copied the name from the link but you can name it whatever you want.
+
+42
+00:03:27,610 --> 00:03:31,810
+Execute a cell and it is already downloaded.
+
+43
+00:03:31,880 --> 00:03:33,820
+Let's go to files here.
+
+44
+00:03:33,820 --> 00:03:41,140
+You will have these cats and dogs zip file which will unpack in the next video if you have any questions
+
+45
+00:03:41,140 --> 00:03:44,350
+or comments please post them in the comments section.
+
+46
+00:03:44,350 --> 00:03:46,300
+Otherwise I'll see in the next tutorial.

@@ -1,0 +1,151 @@
+1
+00:00:00,360 --> 00:00:05,850
+Hello and welcome to the intuition tutorials for the artificial neural networks part of the course.
+
+2
+00:00:06,000 --> 00:00:08,750
+Super excited to get these things started.
+
+3
+00:00:08,940 --> 00:00:11,820
+And today we're going to find out how we're going to tackle this section.
+
+4
+00:00:11,820 --> 00:00:14,660
+So in this section we will learn the following things.
+
+5
+00:00:14,700 --> 00:00:16,380
+First of all we'll talk about the neurons.
+
+6
+00:00:16,380 --> 00:00:23,070
+So there'll be a little bit of neuroscience and we'll find out a bit about how the human brain works
+
+7
+00:00:23,100 --> 00:00:25,670
+and why we're trying to replicate that.
+
+8
+00:00:25,680 --> 00:00:31,940
+And we'll also see what the main building block of a neural network of the neuron looks like.
+
+9
+00:00:32,100 --> 00:00:37,680
+Then in the next story we'll talk about the activation function and we'll look at a couple of examples
+
+10
+00:00:37,710 --> 00:00:41,160
+of activation functions that you could use in your neural networks.
+
+11
+00:00:41,160 --> 00:00:49,110
+And we'll find out which ones of which one of them is the most commonly used one in neural networks
+
+12
+00:00:49,140 --> 00:00:53,770
+and in which layers you would rather use which functions.
+
+13
+00:00:53,770 --> 00:00:56,370
+Then we'll talk about how neural networks work.
+
+14
+00:00:56,370 --> 00:01:03,960
+So in contrast to what you would expect and what it was probably conveyed in other courses and tutorials
+
+15
+00:01:04,200 --> 00:01:07,220
+we're not going to go into the learning.
+
+16
+00:01:07,320 --> 00:01:13,740
+We're actually going to go into the working of the neural networks first because that way by seeing
+
+17
+00:01:13,740 --> 00:01:20,550
+a neural network in action that will allow us to understand what we're aiming towards what our goal
+
+18
+00:01:20,550 --> 00:01:20,670
+is.
+
+19
+00:01:20,670 --> 00:01:27,060
+So here we'll look at an example of a neural network we're going to look at a very simplified a very
+
+20
+00:01:27,060 --> 00:01:33,300
+simplified hypothetical example of neural network working to predict housing prices for basically real
+
+21
+00:01:33,300 --> 00:01:39,980
+estate prices and by looking at that example will understand better exactly what we're aiming towards
+
+22
+00:01:39,980 --> 00:01:42,000
+and what we want to achieve in the end.
+
+23
+00:01:42,000 --> 00:01:49,500
+And then we will move on to understanding how neural networks learn because that way we'll be more prepared
+
+24
+00:01:49,500 --> 00:01:51,100
+for what's coming.
+
+25
+00:01:51,150 --> 00:01:52,950
+Then we'll talk about gradient descent.
+
+26
+00:01:52,950 --> 00:02:00,720
+This is also part of neural networks learning and we'll understand how that algorithm is better than
+
+27
+00:02:00,720 --> 00:02:08,640
+just the brute force method that you might be intending or willing to take as a first resort a first
+
+28
+00:02:08,880 --> 00:02:10,080
+method that comes to mind.
+
+29
+00:02:10,080 --> 00:02:16,200
+So we'll find out how great what the advantage of gradient descent are and then we'll talk about stochastic
+
+30
+00:02:16,200 --> 00:02:17,100
+gradient descent.
+
+31
+00:02:17,100 --> 00:02:23,550
+It's a it's a continuation of the gradient descent tutorial but it's an even better and even stronger
+
+32
+00:02:23,550 --> 00:02:26,150
+method and we'll find out exactly how it works.
+
+33
+00:02:26,190 --> 00:02:33,000
+And finally we'll wrap things up by mentioning the important things about back propagation and summarizing
+
+34
+00:02:33,000 --> 00:02:40,370
+everything in a step by step a set of instructions for running your artificial neural networks.
+
+35
+00:02:40,380 --> 00:02:46,170
+I hope this all sounds very exciting to you because I am very excited myself and I can't wait to get
+
+36
+00:02:46,170 --> 00:02:46,880
+started.
+
+37
+00:02:46,890 --> 00:02:49,230
+I look forward to seeing you on the first tutorial.
+
+38
+00:02:49,260 --> 00:02:51,360
+And until then enjoy deep learning.

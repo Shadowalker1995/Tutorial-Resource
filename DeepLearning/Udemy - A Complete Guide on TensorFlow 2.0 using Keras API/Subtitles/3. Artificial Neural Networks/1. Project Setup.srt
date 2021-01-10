@@ -1,0 +1,331 @@
+1
+00:00:00,480 --> 00:00:05,280
+Hello and welcome to this new section on artificial neural networks.
+
+2
+00:00:05,280 --> 00:00:10,440
+We're going to learn how to build an artificial new network in terms of flow 2.0.
+
+3
+00:00:10,560 --> 00:00:12,750
+And that's why I have here in front of me.
+
+4
+00:00:12,840 --> 00:00:17,900
+A new notebook which was shared with you too so that you can follow it with me.
+
+5
+00:00:17,940 --> 00:00:24,960
+And in the annual get a series of practical activities to practice your skills on building artificial
+
+6
+00:00:24,960 --> 00:00:27,620
+new networks with sense of low 2.0.
+
+7
+00:00:27,780 --> 00:00:28,180
+All right.
+
+8
+00:00:28,190 --> 00:00:33,260
+And so as you can see well the first cell is the image of the data set.
+
+9
+00:00:33,270 --> 00:00:36,870
+We're going to work on which is the fashion minced data set.
+
+10
+00:00:36,870 --> 00:00:40,200
+That's a classic an artificial neural networks.
+
+11
+00:00:40,260 --> 00:00:47,160
+And not only it is a classic but also it is used as a benchmark you know to test the power of your artificial
+
+12
+00:00:47,160 --> 00:00:48,150
+neural networks.
+
+13
+00:00:48,180 --> 00:00:50,150
+You're going to see that at the end of this notebook.
+
+14
+00:00:50,160 --> 00:00:56,190
+We will end up with a certain accuracy that we managed to obtain after training the artificial neural
+
+15
+00:00:56,190 --> 00:00:58,550
+network we'll build on this data set.
+
+16
+00:00:58,620 --> 00:01:04,530
+And so you know you'll be able to compare this accuracy with other accuracies obtained through other
+
+17
+00:01:04,530 --> 00:01:09,510
+models and other architectures of new networks and you'll see how well you're doing and how much you
+
+18
+00:01:09,510 --> 00:01:10,080
+can improve.
+
+19
+00:01:10,620 --> 00:01:12,140
+So let's do this.
+
+20
+00:01:12,330 --> 00:01:18,110
+But before we start with the first steps let me show you the original data set that is on Kaggle.
+
+21
+00:01:18,120 --> 00:01:24,350
+That's why here I precisely the image source from Kaggle and the exact link is this one the fashion
+
+22
+00:01:24,350 --> 00:01:33,150
+in this data set which is a data set composed of of 70000 images of size 28 by 28 of different clothes.
+
+23
+00:01:33,150 --> 00:01:35,270
+And you actually have 10 different clothes.
+
+24
+00:01:35,310 --> 00:01:36,630
+The first one is a T-shirt.
+
+25
+00:01:36,660 --> 00:01:43,170
+The second one is a trouser then a pullover a dress a coat a sandal a shirt sneaker bag and an ankle
+
+26
+00:01:43,170 --> 00:01:43,780
+boot.
+
+27
+00:01:43,830 --> 00:01:49,230
+And so you guess the challenge we're going to have to solve in this new section it is going to be of
+
+28
+00:01:49,230 --> 00:01:53,690
+course to build a new network that can recognize these objects.
+
+29
+00:01:53,730 --> 00:01:58,190
+So it will have to predict 10 classes which are these ones here.
+
+30
+00:01:58,290 --> 00:02:01,620
+And of course it will have to predict them correctly and the accuracy will get.
+
+31
+00:02:01,620 --> 00:02:08,130
+The end is simply the number of correct predictions out of the total number of images in the test set
+
+32
+00:02:08,160 --> 00:02:15,660
+which is 10000 right because in total we have 70000 images including 60000 images in the training set
+
+33
+00:02:15,930 --> 00:02:18,230
+and 10000 images in the test.
+
+34
+00:02:18,300 --> 00:02:23,630
+And of course we'll train our artificial neural network on the training set after which we will evaluate
+
+35
+00:02:23,630 --> 00:02:28,780
+it on the test set and this accuracy that will get in the end will be of course computed out of the
+
+36
+00:02:28,800 --> 00:02:32,200
+ten thousand images of the test set.
+
+37
+00:02:32,220 --> 00:02:38,850
+All right and then if you want to know more well each image is 28 pixels by 28 pixels which is a total
+
+38
+00:02:38,850 --> 00:02:41,670
+of seven hundred and eighty four pixels.
+
+39
+00:02:41,730 --> 00:02:47,520
+That's actually an important number because you know since we are now starting with the classic artificial
+
+40
+00:02:47,520 --> 00:02:53,550
+neural network and not yet a convolution on the one that worked well you know the input of your new
+
+41
+00:02:53,550 --> 00:02:55,830
+network will be of one dimension.
+
+42
+00:02:55,830 --> 00:03:01,230
+It's going to be a one day vector and that's why we will actually do a reshape you know we will reshape
+
+43
+00:03:01,470 --> 00:03:10,160
+the 2D images you know 28 by 28 into a single input vector of seven hundred and eighty four elements.
+
+44
+00:03:10,170 --> 00:03:11,880
+So that's important to know this number.
+
+45
+00:03:11,940 --> 00:03:15,930
+But nor is it we'll be reminded in the implementation.
+
+46
+00:03:15,930 --> 00:03:22,380
+I also remind that this is a practical course on sense of flow 2.0 and not really a theoretical course
+
+47
+00:03:22,380 --> 00:03:25,440
+where we learn about auditioning all networks.
+
+48
+00:03:25,470 --> 00:03:30,180
+So this theory an artificial neural networks is not provided in this section.
+
+49
+00:03:30,180 --> 00:03:33,910
+It is actually provided at the end of this course in the annex part.
+
+50
+00:03:33,990 --> 00:03:39,420
+For those of you who need a refresh on artificial new networks or even if you're very new to this you
+
+51
+00:03:39,420 --> 00:03:44,550
+know you can learn them and you should really if that's the case you know you should start with the
+
+52
+00:03:44,550 --> 00:03:45,490
+annex parts.
+
+53
+00:03:45,600 --> 00:03:51,030
+And so actually I was just reminding that indeed for an artificial new network well the input layer
+
+54
+00:03:51,030 --> 00:03:54,540
+is just one vector composed of a certain number of elements.
+
+55
+00:03:54,540 --> 00:03:59,790
+And in that case it's going to be 784 elements corresponding to the pixels.
+
+56
+00:03:59,790 --> 00:04:05,850
+All right then you have to know you know an image processing that each pixel is actually a single value
+
+57
+00:04:06,090 --> 00:04:16,950
+between 0 and 255 therefore you know our training set and test sets will have 785 columns each one corresponding
+
+58
+00:04:16,950 --> 00:04:24,090
+to each pixel of the images and the rows in the training and test sets will be the images you know each
+
+59
+00:04:24,090 --> 00:04:30,180
+row will correspond to an image and all the columns of this row will correspond to different pixels
+
+60
+00:04:30,480 --> 00:04:31,680
+of this image.
+
+61
+00:04:31,680 --> 00:04:32,320
+Right.
+
+62
+00:04:32,340 --> 00:04:33,050
+OK.
+
+63
+00:04:33,090 --> 00:04:36,320
+So I think we got all the information we needed.
+
+64
+00:04:36,360 --> 00:04:42,970
+And so now let's start let's start building our artificial new network and sense of flow 2.0.
+
+65
+00:04:43,200 --> 00:04:48,660
+And the first step as usual is to install the dependencies you know if you want to execute the different
+
+66
+00:04:48,660 --> 00:04:49,730
+cells of this notebook.
+
+67
+00:04:49,740 --> 00:04:55,850
+Well I included everything from the installation to how you import it and all the rest of course.
+
+68
+00:04:55,860 --> 00:05:02,200
+So here as we said everything is already executed and I kept the outputs that we can see together.
+
+69
+00:05:02,280 --> 00:05:08,280
+But if you want to re execute things again and try for example other architectures of new networks.
+
+70
+00:05:08,310 --> 00:05:12,920
+Well you can directly re execute the cells here but here we already have the outputs.
+
+71
+00:05:12,930 --> 00:05:14,270
+Let's not do this.
+
+72
+00:05:14,460 --> 00:05:22,170
+That's once again what you get after installing tensor flow GP you 2.0 porno with this command so exactly
+
+73
+00:05:22,170 --> 00:05:29,280
+as in the previous section then in step two we simply bought the libraries and the dataset and so the
+
+74
+00:05:29,280 --> 00:05:31,920
+libraries that we need are known by.
+
+75
+00:05:31,950 --> 00:05:37,470
+You know that now tend to flow 2.0 works really well with numbers so we import it and we also import
+
+76
+00:05:37,470 --> 00:05:44,020
+daytime to get some time related info during the training then sense of flow of course and then tons
+
+77
+00:05:44,070 --> 00:05:45,780
+of flow that carries data sets.
+
+78
+00:05:45,810 --> 00:05:49,490
+And that's because it contains that fashion this dataset.
+
+79
+00:05:49,530 --> 00:05:49,800
+Right.
+
+80
+00:05:49,800 --> 00:05:53,400
+So it's actually from the data sets module of the caris library.
+
+81
+00:05:53,420 --> 00:05:53,980
+OK.
+
+82
+00:05:54,120 --> 00:06:01,110
+So that's it for the introduction and now in and next oil will begin the first code section which is
+
+83
+00:06:01,110 --> 00:06:06,690
+about data processing after which we'll start building our artificial new network.

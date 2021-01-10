@@ -1,0 +1,115 @@
+1
+00:00:00,670 --> 00:00:06,320
+Hello everyone and welcome to this very exciting section throughout this section.
+
+2
+00:00:06,320 --> 00:00:14,250
+We are going to create our own stock market trading agent with reinforcement learning strategies specifically
+
+3
+00:00:14,520 --> 00:00:15,060
+for that.
+
+4
+00:00:15,060 --> 00:00:18,280
+We are going to use deep cue network.
+
+5
+00:00:18,330 --> 00:00:21,690
+Our board will trade actions for us.
+
+6
+00:00:21,690 --> 00:00:28,960
+It wont make millions of dollars but it will be mostly positive and just to mention this right the way
+
+7
+00:00:29,670 --> 00:00:37,430
+we don suggest using this algorithm with your own money trading with this algorithm is on your own risk.
+
+8
+00:00:37,430 --> 00:00:44,230
+So please be very cautious let's start by setting up our environment and installing all dependencies
+
+9
+00:00:44,350 --> 00:00:47,190
+for the project okay.
+
+10
+00:00:47,430 --> 00:00:54,060
+As we did before to set up the environment go to edit and notebook settings and here we can choose the
+
+11
+00:00:54,060 --> 00:01:01,260
+Python runtime and we can specify a hardware accelerator because the training process of the agent won't
+
+12
+00:01:01,260 --> 00:01:02,660
+be very easy.
+
+13
+00:01:02,670 --> 00:01:06,870
+We need to switch it to GPO for hardware accelerator.
+
+14
+00:01:06,870 --> 00:01:14,770
+After doing that click save the next step is to install all dependencies that we are going to need luckily
+
+15
+00:01:14,980 --> 00:01:21,210
+there are only two libraries that we have to install so in the first free cell we are going to install
+
+16
+00:01:21,240 --> 00:01:23,330
+tens offload 2.0.
+
+17
+00:01:23,700 --> 00:01:24,600
+To do that.
+
+18
+00:01:24,600 --> 00:01:25,600
+Right.
+
+19
+00:01:25,710 --> 00:01:30,000
+Exclamation mark pip install tens of flow Dash.
+
+20
+00:01:30,060 --> 00:01:41,870
+GP You equal equal to point zero point zero point alpha zero execute a cell now that we are down with
+
+21
+00:01:41,870 --> 00:01:42,700
+a tensor flow.
+
+22
+00:01:42,750 --> 00:01:49,200
+There is a one library left in most cases it is already installed so this will be just for our track
+
+23
+00:01:50,770 --> 00:01:54,360
+the library is called PANDAS data reader.
+
+24
+00:01:54,490 --> 00:02:01,210
+This library helps us to retrieve all stock market data directly to our environment.
+
+25
+00:02:01,210 --> 00:02:06,050
+It is very easy to use so to install it right.
+
+26
+00:02:06,080 --> 00:02:14,800
+Exclamation mark pip install pandas dash data reader and execute the cell and that's all what we have
+
+27
+00:02:14,800 --> 00:02:19,780
+to do in this video in the next video we'll start working on the model itself.
+
+28
+00:02:21,010 --> 00:02:26,470
+If you have any questions or comments so far please post them in the comments section otherwise I'll
+
+29
+00:02:26,470 --> 00:02:27,580
+see you in the next tutorial.

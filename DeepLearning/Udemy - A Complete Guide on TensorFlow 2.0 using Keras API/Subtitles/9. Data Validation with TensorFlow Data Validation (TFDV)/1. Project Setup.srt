@@ -1,0 +1,191 @@
+1
+00:00:00,520 --> 00:00:03,790
+Hello everyone and welcome to this biking tutorial.
+
+2
+00:00:03,790 --> 00:00:07,910
+In this video we are going to start with our data validation project.
+
+3
+00:00:08,050 --> 00:00:13,510
+We are going to complete this project by utilizing the tensor flow data validation package which is
+
+4
+00:00:13,510 --> 00:00:16,540
+a part of the technology stack called Tesla flow.
+
+5
+00:00:16,540 --> 00:00:23,750
+Extended the Tesla flow extended is a built around tons of flow to put any model in production end to
+
+6
+00:00:23,750 --> 00:00:28,190
+end from data validation to serving it on a server.
+
+7
+00:00:28,190 --> 00:00:34,430
+The first step for our environment setup is to change it from Python free to Python too.
+
+8
+00:00:34,460 --> 00:00:41,700
+We are doing this because it has a flow data validation is more suited for Python to to change our environment.
+
+9
+00:00:41,700 --> 00:00:46,030
+Go to edit and then notebook settings in there.
+
+10
+00:00:46,080 --> 00:00:49,690
+You will have an option to change your runtime type.
+
+11
+00:00:49,770 --> 00:00:52,610
+It is currently selected to be Python free.
+
+12
+00:00:52,710 --> 00:00:57,140
+Just select Python two instead under a hardware accelerator.
+
+13
+00:00:57,170 --> 00:01:04,740
+You can leave it at none but if you want faster performance change to keep you after your media changes
+
+14
+00:01:04,950 --> 00:01:05,680
+click on save.
+
+15
+00:01:06,360 --> 00:01:10,560
+It is going to initialize our environment and it's ready to be used.
+
+16
+00:01:10,620 --> 00:01:15,750
+Now that we have our environment set up it's time to install a few dependencies that we are going to
+
+17
+00:01:15,750 --> 00:01:16,800
+need.
+
+18
+00:01:16,800 --> 00:01:19,650
+The first package is Python snappy.
+
+19
+00:01:19,650 --> 00:01:24,720
+It is here to accelerate the performance of the tens of data validation package.
+
+20
+00:01:24,720 --> 00:01:31,500
+It is not necessary by all means but it is a good practice to install it will go for the first free
+
+21
+00:01:31,500 --> 00:01:40,110
+cell and type exclamation mark to use batch commands and then apt there get installed python dev for
+
+22
+00:01:40,110 --> 00:01:44,890
+Python development and then Python snappy after death.
+
+23
+00:01:44,980 --> 00:01:47,520
+Execute a self okay.
+
+24
+00:01:47,520 --> 00:01:53,230
+Now that we have installed our Python snappy package it's time to install the offload data validation
+
+25
+00:01:53,230 --> 00:01:54,430
+package.
+
+26
+00:01:54,430 --> 00:02:01,660
+Position your cursor to the next free cell and type exclamation mark pip install dash queue and then
+
+27
+00:02:01,710 --> 00:02:03,820
+there's a flow data validation.
+
+28
+00:02:04,120 --> 00:02:10,880
+Execute the cell that tells upload data validation package is now being installed for us it is going
+
+29
+00:02:10,880 --> 00:02:12,740
+to take some time to install it.
+
+30
+00:02:12,740 --> 00:02:15,700
+So I'll skip to the part when it's finished.
+
+31
+00:02:15,910 --> 00:02:17,320
+Welcome back.
+
+32
+00:02:17,330 --> 00:02:22,690
+Now we have everything installed of our dependencies for our project.
+
+33
+00:02:22,730 --> 00:02:25,140
+Don't worry about these two errors.
+
+34
+00:02:25,310 --> 00:02:28,030
+Everything will work in spite of them.
+
+35
+00:02:28,050 --> 00:02:35,040
+The last thing we have to do in this video is to import our data set to import the data set into Google
+
+36
+00:02:35,040 --> 00:02:39,020
+club click on the arrow here and go to files.
+
+37
+00:02:39,150 --> 00:02:41,320
+Here you will find the upload button.
+
+38
+00:02:41,550 --> 00:02:47,810
+The data set we will be using in the tens of extended sections tends to flow transform and tens flow
+
+39
+00:02:47,820 --> 00:02:54,600
+data validation sections is a specific data set for the air pollution of the city of Belgrade.
+
+40
+00:02:54,600 --> 00:03:00,990
+We will provide a data set for you in the resources of both sections so click on upload button and select
+
+41
+00:03:00,990 --> 00:03:07,520
+the provided CSC which you previously downloaded and one selected click on open.
+
+42
+00:03:07,530 --> 00:03:09,260
+This is just a reminder for you.
+
+43
+00:03:09,330 --> 00:03:11,870
+Nothing to worry about so click Okay.
+
+44
+00:03:12,120 --> 00:03:18,210
+Now we have the data set uploaded to our environment that's everything we have to do for this video
+
+45
+00:03:18,770 --> 00:03:19,620
+in the next one.
+
+46
+00:03:19,620 --> 00:03:22,830
+We will continue with our data validation project.
+
+47
+00:03:22,830 --> 00:03:27,240
+If you have any questions or comments so far please post them in the comments section.
+
+48
+00:03:27,660 --> 00:03:29,670
+Otherwise I'll assume the next tutorial.

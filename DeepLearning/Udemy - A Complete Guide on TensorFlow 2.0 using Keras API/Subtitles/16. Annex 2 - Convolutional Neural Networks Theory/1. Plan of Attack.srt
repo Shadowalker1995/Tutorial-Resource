@@ -1,0 +1,211 @@
+1
+00:00:00,330 --> 00:00:04,080
+Hello and welcome to the section on kind of volitional neural networks.
+
+2
+00:00:04,110 --> 00:00:07,680
+Super excited that you're joining us for this section as well.
+
+3
+00:00:07,680 --> 00:00:13,590
+And today we're going to cover off the plan of attack how we're going to learn everything in this section
+
+4
+00:00:13,590 --> 00:00:15,440
+there's so much to learn.
+
+5
+00:00:15,600 --> 00:00:17,420
+Let's see how we're going to approach this.
+
+6
+00:00:17,430 --> 00:00:17,840
+All right.
+
+7
+00:00:17,910 --> 00:00:22,800
+What we will learn in the section first of all we'll talk about what kind of volitional networks actually
+
+8
+00:00:22,830 --> 00:00:27,930
+are very important to understand the end goal that you're working towards before you actually start
+
+9
+00:00:27,930 --> 00:00:28,710
+working towards it.
+
+10
+00:00:28,710 --> 00:00:32,030
+So we'll hear what features will have a look at a few little examples.
+
+11
+00:00:32,040 --> 00:00:36,740
+We'll compare the human brain to artificial neural networks in terms of image recognition.
+
+12
+00:00:36,780 --> 00:00:42,570
+So it'll be a fun light toiled to get us started for this whole section.
+
+13
+00:00:42,570 --> 00:00:47,350
+Then we'll talk about step one diving straight into it can evolution operations.
+
+14
+00:00:47,370 --> 00:00:56,000
+So this part of the course contains several steps that we need to go through in order to build a convolution
+
+15
+00:00:56,010 --> 00:00:56,970
+or neural network.
+
+16
+00:00:56,970 --> 00:00:58,970
+And that's how these tutorials are going to be broken up.
+
+17
+00:00:58,980 --> 00:01:06,420
+So this was going to be step one the evolution operation will learn everything about feature detectors.
+
+18
+00:01:06,430 --> 00:01:12,660
+We'll talk about which are also filters we'll talk about future maps and you know how.
+
+19
+00:01:12,660 --> 00:01:16,530
+What are the different parameters there what they mean and we'll have a look at some visual examples
+
+20
+00:01:16,530 --> 00:01:17,410
+as well.
+
+21
+00:01:17,460 --> 00:01:25,950
+Then we'll talk about step one part be there value layer or real you layer which is the rectified linear
+
+22
+00:01:26,070 --> 00:01:34,770
+unit and we'll talk about why linearity is not good and how we want more non linearity in our network
+
+23
+00:01:34,770 --> 00:01:36,760
+for image recognition.
+
+24
+00:01:36,810 --> 00:01:42,120
+Then we'll talk about step two pooling and we'll understand how pooling works will talk specifically
+
+25
+00:01:42,120 --> 00:01:43,150
+about Max pooling.
+
+26
+00:01:43,170 --> 00:01:49,080
+And we also mentioned a couple of things about mean pooling or some pooling and other approaches that
+
+27
+00:01:49,080 --> 00:01:51,960
+you can take to the process of pooling.
+
+28
+00:01:51,960 --> 00:01:55,470
+Also in this lecture we'll have a really cool example.
+
+29
+00:01:55,470 --> 00:01:59,670
+So there'll be a very visual interactive tool that we're going to look at.
+
+30
+00:01:59,670 --> 00:02:05,130
+So make sure to stick around to the end of that lecture because that's going to add a lot of value to
+
+31
+00:02:05,130 --> 00:02:06,750
+your learning process.
+
+32
+00:02:06,750 --> 00:02:08,740
+What we're going to discuss at the end there.
+
+33
+00:02:09,060 --> 00:02:10,620
+Step three flattening.
+
+34
+00:02:10,620 --> 00:02:11,870
+So here we will.
+
+35
+00:02:11,880 --> 00:02:17,460
+It's gonna be a quick tutorial on how to proceed from your pooled layers to your flattened layer and
+
+36
+00:02:17,460 --> 00:02:19,500
+then we're going to talk about full connections.
+
+37
+00:02:19,500 --> 00:02:26,070
+This is the very meaty tutorial that puts everything together and puts everything into perspective and
+
+38
+00:02:26,070 --> 00:02:33,300
+actually shows you how everything works at the end of the day and how those final neurons understand
+
+39
+00:02:33,300 --> 00:02:34,230
+how to classify image.
+
+40
+00:02:34,230 --> 00:02:41,910
+Very very important material and hopefully that will summarize or kind of put everything together for
+
+41
+00:02:41,910 --> 00:02:42,090
+you.
+
+42
+00:02:42,480 --> 00:02:47,550
+And finally we'll have a summary which will summarize everything we've talked about and as an extra
+
+43
+00:02:47,610 --> 00:02:52,200
+little feature I've included a tutorial on soft Max and cross entropy.
+
+44
+00:02:52,200 --> 00:02:57,720
+So you don't have to take this material but I thought it'd be a great addition of knowledge because
+
+45
+00:02:57,720 --> 00:03:01,990
+these are terms that you will come across when dealing with a conventional neural networks.
+
+46
+00:03:02,010 --> 00:03:08,070
+So maybe maybe take it right away maybe when you come across these terms you can you will always know
+
+47
+00:03:08,070 --> 00:03:13,740
+you can come back to this course and take this tutorial to understand better what soft Max and cross
+
+48
+00:03:13,740 --> 00:03:14,640
+entropy are.
+
+49
+00:03:14,700 --> 00:03:21,030
+And also as always throughout these tutorials there'll be lots of recommended reading for you to further
+
+50
+00:03:21,030 --> 00:03:22,730
+up skill and get more knowledge.
+
+51
+00:03:23,340 --> 00:03:25,980
+And on that note I can't wait to see you on the first tutorial.
+
+52
+00:03:25,980 --> 00:03:29,010
+This is going to be a very fun and exciting section.
+
+53
+00:03:29,010 --> 00:03:31,200
+And until next time enjoy deep learning.

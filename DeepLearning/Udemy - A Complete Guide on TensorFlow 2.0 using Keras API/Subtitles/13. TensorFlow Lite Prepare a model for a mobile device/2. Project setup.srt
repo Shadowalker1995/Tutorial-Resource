@@ -1,0 +1,95 @@
+1
+00:00:00,390 --> 00:00:03,360
+Hello everyone and welcome to this python tutorial.
+
+2
+00:00:03,360 --> 00:00:09,270
+In this section we are going to use tens of flow light library to convert any model to tens of low light
+
+3
+00:00:09,270 --> 00:00:15,400
+version of it so we can serve it on a mobile device either Android or IRS.
+
+4
+00:00:15,690 --> 00:00:22,390
+Before we do anything else we need to set up our environment to use drip you instead of you.
+
+5
+00:00:22,530 --> 00:00:24,060
+So let's do that.
+
+6
+00:00:24,060 --> 00:00:31,800
+Go to edit then notable settings and instead of none under hardware acceleration choose GIP you and
+
+7
+00:00:31,800 --> 00:00:39,880
+click save now your environment is set up to use drip you the first and only library that we have to
+
+8
+00:00:39,880 --> 00:00:44,310
+install is tends to flow version one point thirteen.
+
+9
+00:00:44,380 --> 00:00:49,030
+You might ask yourself this causes men to be tends to flow too.
+
+10
+00:00:49,150 --> 00:00:52,150
+Why are we using this version 1 13.
+
+11
+00:00:52,240 --> 00:00:54,490
+And it is fair and very good question.
+
+12
+00:00:55,250 --> 00:01:00,830
+To answer that in terms of flow two they didn't make tens of flow light supported.
+
+13
+00:01:00,830 --> 00:01:06,890
+At the moment it is very new a library and we are going to use that as flow light only to convert our
+
+14
+00:01:06,890 --> 00:01:14,000
+model but the model itself is written in the same way as we would use it in terms of flow to.
+
+15
+00:01:14,030 --> 00:01:20,420
+So once this library is upgraded to support has a flow 2.0 you won't need to change anything.
+
+16
+00:01:20,900 --> 00:01:22,070
+That's pretty much it.
+
+17
+00:01:22,250 --> 00:01:24,840
+And it is very straightforward and very useful.
+
+18
+00:01:25,580 --> 00:01:33,530
+Let's install our library type exclamation mark pip install and instead of installing a offload 2.0
+
+19
+00:01:33,860 --> 00:01:44,390
+right there's a flow that GPO and equal equal to one point thirteen point one execute a cell it is going
+
+20
+00:01:44,390 --> 00:01:46,780
+to take some time to install this library.
+
+21
+00:01:46,820 --> 00:01:49,440
+So for me I didn't have it installed before.
+
+22
+00:01:49,790 --> 00:01:57,140
+And once it's finish we are ready to go in the next video we are going to work on the data set pre processing
+
+23
+00:01:57,890 --> 00:02:03,520
+and for now if you have any questions or comments please pause them in the comments section otherwise
+
+24
+00:02:03,670 --> 00:02:04,910
+I'll see in the next tutorial.

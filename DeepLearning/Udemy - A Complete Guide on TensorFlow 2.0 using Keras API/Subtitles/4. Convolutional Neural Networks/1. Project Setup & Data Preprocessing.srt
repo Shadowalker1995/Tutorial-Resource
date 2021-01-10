@@ -1,0 +1,443 @@
+1
+00:00:00,480 --> 00:00:06,000
+Hello and welcome to Section 4 now on convolution all neural networks.
+
+2
+00:00:06,010 --> 00:00:12,660
+We're now going to learn how to build a CNN with tens of float 2.0 and of course the application is
+
+3
+00:00:12,660 --> 00:00:19,220
+going to be similar to the application we did with our new networks because a convolution on the one
+
+4
+00:00:19,220 --> 00:00:26,220
+network is mostly used for object recognition face recognition object detection or image classification.
+
+5
+00:00:26,220 --> 00:00:32,400
+And well speaking of image classification that's exactly what we're going to do in this section because
+
+6
+00:00:32,610 --> 00:00:39,000
+once again we're going to use a classic and simple datasets so that we can focus on tens of float 2.0
+
+7
+00:00:39,330 --> 00:00:46,680
+and this classic dataset is the C for 10 data set where this time we don't have to recognize close we
+
+8
+00:00:46,680 --> 00:00:54,210
+have to recognize objects of Charles airplane a car a bird a cat deer duck frog horse chip truck.
+
+9
+00:00:54,360 --> 00:00:54,630
+Right.
+
+10
+00:00:54,630 --> 00:01:01,200
+So we're gonna have lots of images on which are convolution or neural network is going to learn to recognize
+
+11
+00:01:01,200 --> 00:01:01,670
+them.
+
+12
+00:01:01,770 --> 00:01:08,880
+And in the end again we'll have an evaluation set where it will measure a relevant accuracy to see which
+
+13
+00:01:08,880 --> 00:01:12,670
+percentage of correct predictions it manages to achieve.
+
+14
+00:01:12,680 --> 00:01:13,210
+All right.
+
+15
+00:01:13,260 --> 00:01:14,400
+So let's do this.
+
+16
+00:01:14,460 --> 00:01:20,670
+As usual we begin with the step one where we install all the dependencies and notebook chip use setup
+
+17
+00:01:21,030 --> 00:01:28,770
+as you can notice I did not execute the cell and that's because turns of flow GP 2.0 point 0 is at the
+
+18
+00:01:28,770 --> 00:01:33,600
+time I'm speaking the version of tensor flow to in Google collab.
+
+19
+00:01:33,660 --> 00:01:39,780
+But I left the cell in case you know sense of flow evolves and you still want to use tensor flow 2.0
+
+20
+00:01:39,780 --> 00:01:40,400
+Bono.
+
+21
+00:01:40,470 --> 00:01:46,230
+Well in that case you would have to execute this cell then after installing all the dependencies we
+
+22
+00:01:46,230 --> 00:01:47,880
+import the libraries.
+
+23
+00:01:47,880 --> 00:01:53,040
+And so these are the same libraries as before although I haven't imported them by this time because
+
+24
+00:01:53,040 --> 00:01:58,140
+we won't use it but I important Matlock late because you're going to see we're going to plot an image
+
+25
+00:01:58,620 --> 00:02:05,880
+and also I imported the different data set this time which is the CFR 10 data set which is still taken
+
+26
+00:02:05,970 --> 00:02:09,540
+from the cares modules inside the 10th floor library.
+
+27
+00:02:09,540 --> 00:02:09,770
+Right.
+
+28
+00:02:09,770 --> 00:02:15,540
+So the same data sets modules which had also the fashion in this data set and this time we are importing
+
+29
+00:02:15,780 --> 00:02:22,410
+C4 turn you know just to change and when we call for diversion just to check which version we have well
+
+30
+00:02:22,410 --> 00:02:25,760
+indeed we have tensor flow 2.0 porno.
+
+31
+00:02:25,800 --> 00:02:26,370
+All right.
+
+32
+00:02:26,400 --> 00:02:33,780
+So now let's begin with Step Three data repricing and of course the first step you know any first step
+
+33
+00:02:33,780 --> 00:02:36,710
+of data pricing is to load the data set.
+
+34
+00:02:36,840 --> 00:02:44,580
+And again well here that's very simple because thanks to this low data function by the C 410 data set
+
+35
+00:02:44,610 --> 00:02:51,210
+which is taken from the data sets module by carers Well we import that very very easily.
+
+36
+00:02:51,210 --> 00:02:57,930
+And again everything is already put into the training set composed of X strain which contains all the
+
+37
+00:02:57,930 --> 00:03:05,190
+input images and why train which contains the class names for each of the images and the test set composed
+
+38
+00:03:05,220 --> 00:03:11,720
+of same X containing all the input images of the test and wine test containing all their class names
+
+39
+00:03:11,730 --> 00:03:15,640
+and speaking of class names well I got them for us here.
+
+40
+00:03:15,810 --> 00:03:21,600
+Here all the class names that are convolution or neural network will have to recognize and we have indeed
+
+41
+00:03:21,600 --> 00:03:23,100
+these same objects.
+
+42
+00:03:23,100 --> 00:03:25,350
+So very different objects actually.
+
+43
+00:03:25,380 --> 00:03:30,180
+So our new network will have to be trained quite well to recognize them.
+
+44
+00:03:30,180 --> 00:03:34,680
+This is actually a data set a little bit more challenging than the one we had before.
+
+45
+00:03:34,800 --> 00:03:39,030
+And you will see that at the end with the accuracy that we managed to achieve and that you will have
+
+46
+00:03:39,030 --> 00:03:41,070
+to improve yourself.
+
+47
+00:03:41,100 --> 00:03:47,900
+All right then when we execute this sale will of course this is downloading the data from this Web site
+
+48
+00:03:47,970 --> 00:03:55,110
+which is the deep Lunar Research Laboratory which contains these datasets that are used mostly for experiments.
+
+49
+00:03:55,110 --> 00:04:01,800
+You know it once again used as a benchmark you know so that then we can research on some new architectures
+
+50
+00:04:01,800 --> 00:04:07,230
+of new networks or some brand new deep learning models or even some brand new theory and see if we managed
+
+51
+00:04:07,230 --> 00:04:13,680
+to beat the leader board for that specific data set and by leader board I mean the highest accuracy
+
+52
+00:04:13,950 --> 00:04:17,530
+that was able to be achieved on this dataset.
+
+53
+00:04:18,060 --> 00:04:18,770
+Okay.
+
+54
+00:04:18,810 --> 00:04:20,930
+And then after we load the data set.
+
+55
+00:04:20,940 --> 00:04:23,940
+Well we have to normalize the images right.
+
+56
+00:04:23,940 --> 00:04:25,020
+Remember this.
+
+57
+00:04:25,020 --> 00:04:26,530
+This is exactly the same.
+
+58
+00:04:26,580 --> 00:04:32,340
+We want to normalize the images so that our convolution or neural network can train faster and the way
+
+59
+00:04:32,400 --> 00:04:35,870
+we initialize images is exactly the same as before.
+
+60
+00:04:35,930 --> 00:04:42,450
+We're going to divide each pixel of all the images by two hundred and fifty five because this is the
+
+61
+00:04:42,720 --> 00:04:47,850
+highest value that a pixel can have and two hundred and fifty five point zero because we are doing a
+
+62
+00:04:47,850 --> 00:04:55,020
+float operation and that will put all the pixels in the images into the range 0 and 1.
+
+63
+00:04:55,140 --> 00:04:57,690
+And that's exactly what normalization is about.
+
+64
+00:04:57,780 --> 00:05:03,020
+And that will be much better for the training all right and then I actually provided this time the shape
+
+65
+00:05:03,020 --> 00:05:06,250
+of exchanges so that you can visualize this well.
+
+66
+00:05:06,350 --> 00:05:12,170
+So this time it's actually in four dimensions as opposed to three as before you know because we only
+
+67
+00:05:12,170 --> 00:05:14,090
+had black and white images.
+
+68
+00:05:14,090 --> 00:05:16,520
+And this time we will have colored images.
+
+69
+00:05:16,520 --> 00:05:20,150
+So that's another reason why it's more challenging this time.
+
+70
+00:05:20,150 --> 00:05:25,370
+So the first dimension corresponds to simply the indexes of the images.
+
+71
+00:05:25,430 --> 00:05:25,700
+Right.
+
+72
+00:05:25,700 --> 00:05:31,640
+So each row of this first dimension corresponds to an image the index of the image.
+
+73
+00:05:31,640 --> 00:05:34,830
+Then the second and third dimension here corresponds to.
+
+74
+00:05:34,910 --> 00:05:38,320
+Well you know the two by two dimension of the image.
+
+75
+00:05:38,420 --> 00:05:41,660
+Meaning you know they're pixels into a 2D array.
+
+76
+00:05:41,840 --> 00:05:42,110
+Right.
+
+77
+00:05:42,110 --> 00:05:47,360
+So instead of having 28 by 28 as before we have a size of 32 by 32.
+
+78
+00:05:47,390 --> 00:05:50,100
+That's the dimensions of the image.
+
+79
+00:05:50,300 --> 00:05:56,480
+And then we have three here and that corresponds to the RTP format containing the three channels red
+
+80
+00:05:56,480 --> 00:05:59,330
+green and blue with which you can make colors.
+
+81
+00:05:59,450 --> 00:06:04,790
+And this will allow our new network to indeed see the colors in the images.
+
+82
+00:06:04,790 --> 00:06:08,030
+Right so that's Ojibwe scale and of course that's part of the index.
+
+83
+00:06:08,030 --> 00:06:13,970
+Once again if you're new to this especially deep learning or mostly convolution on the one network well
+
+84
+00:06:13,970 --> 00:06:16,240
+you have to see the annexes first.
+
+85
+00:06:16,400 --> 00:06:18,940
+This is a practical course on tensor flow.
+
+86
+00:06:18,980 --> 00:06:23,930
+We of course provided the theory of deep learning and neural networks and convolution on the one that
+
+87
+00:06:23,930 --> 00:06:25,370
+works in this course.
+
+88
+00:06:25,370 --> 00:06:27,110
+In case you're new to this.
+
+89
+00:06:27,110 --> 00:06:30,920
+And so if that's the case well you have to go see the annexes first.
+
+90
+00:06:30,920 --> 00:06:37,130
+And we explained that format you know with the three dimensions first two corresponding to the pixels
+
+91
+00:06:37,160 --> 00:06:38,390
+in the two the arrays.
+
+92
+00:06:38,390 --> 00:06:42,000
+And the third dimension corresponding to the colors.
+
+93
+00:06:42,080 --> 00:06:51,230
+All right then once again we divide all the pixels in accessed by 255 the highest value that a pixel
+
+94
+00:06:51,230 --> 00:06:51,920
+can have.
+
+95
+00:06:51,980 --> 00:06:55,520
+So that we put all the pixels of excess between 0 and 1.
+
+96
+00:06:55,700 --> 00:07:03,110
+And so we normalize well x strain and access and then I just plotted with E.M. show by P LTE which is
+
+97
+00:07:03,110 --> 00:07:09,740
+my plot lib which we imported actually in the libraries just a single image as an example of the test
+
+98
+00:07:09,740 --> 00:07:10,340
+set actually.
+
+99
+00:07:10,370 --> 00:07:16,170
+So I'm actually pulling the 10th image of access and that's this one right.
+
+100
+00:07:16,190 --> 00:07:21,740
+We recognize a plane which are new network will have to recognize in the future.
+
+101
+00:07:22,170 --> 00:07:22,740
+OK.
+
+102
+00:07:22,760 --> 00:07:28,110
+So that's done for the image normalization and then the next step is to build a convolution or neural
+
+103
+00:07:28,190 --> 00:07:29,060
+network.
+
+104
+00:07:29,060 --> 00:07:30,620
+And we'll see that in the next material.
+
+105
+00:07:30,620 --> 00:07:32,330
+We're gonna have many steps.
+
+106
+00:07:32,360 --> 00:07:38,930
+So just make sure you know all the different steps of how to build a convolution or no network on the
+
+107
+00:07:38,930 --> 00:07:39,710
+theory side.
+
+108
+00:07:39,710 --> 00:07:42,150
+So you know we start with the convolution with layers.
+
+109
+00:07:42,160 --> 00:07:46,010
+Then Max bullying and then flattening and then the fully connected layers.
+
+110
+00:07:46,010 --> 00:07:48,880
+So just make sure you have a quick refresh on that.
+
+111
+00:07:48,950 --> 00:07:54,200
+And then well let's build our convolution or neural network on sense of flow 2.0.
